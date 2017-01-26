@@ -1,0 +1,182 @@
+require 'rake/clean'
+
+# ==============
+# important info
+# ==============
+
+target = "simtrace"
+version = IO.read("version").chomp
+date = Time.now.strftime("%Y-%m-%d")
+revision = `git log --pretty=oneline "#{target}.sch" | wc -l`.chomp.to_i
+# symbol library for gschem
+LIB = "lib/symbols/"
+# gEDA scheme
+GEDA_SCHEME_DIRS=["/usr/share/gEDA/scheme","/usr/local/gEDA/scheme"].collect{|path| File.directory?(path) ? path : nil}.compact
+unless GEDA_SCHEME_DIRS.size==0 then
+  GEDA_SCHEME_DIR=GEDA_SCHEME_DIRS[0]
+else
+  GEDA_SCHEME_DIR=nil
+  puts "warning: could not find gEDA scheme directory. can not print schematic"
+end
+
+
+# schema
+sch = "#{target}.sch"
+# schema with version
+vsch = "#{target}_v#{version}.#{revision.to_s.rjust(3,'0')}.sch"
+
+
+# ================
+# helper functions
+# ================
+
+# read schema
+# return a list of components
+def read_sch(path)
+  # get all symbols
+  symbols = read_symbols(LIB)
+  # read schema
+  text = IO.read(path)
+  # parse all elements
+  elements = []
+  element = {}
+  block = false
+  text.each_line do |line|
+    l = line.chomp
+    if l=="{" then
+      block = true
+      element[:block] = {} unless element[:block]
+    elsif l=="}" then
+      block = false
+    elsif block then
+      # only take attributes
+      if l.include?("=") then
+        k,v = l.split("=")
+        element[:block][k] = v
+      end
+    elsif !block then
+      elements << element unless element.empty?
+      element = {}
+      element[:line] = l
+      element[:type] = l[0,1]
+      if element[:type]=="C" then
+        element[:symbol] = l.split(" ")[-1]
+        # get the default attributes (if any)
+        element[:block] = symbols[element[:symbol]].dup if symbols[element[:symbol]]
+      end
+    else
+      raise "don't know how to handle line: #{l}"
+    end
+  end
+  return elements
+end
+
+# read the attributes from a symbol
+# return { name => value }
+# warning: it only get uniq attributes (not multiple slots, ...)
+def read_symbol(file)
+  text = IO.read(file)
+  symbol = {}
+  block = false
+  text.each_line do |line|
+    l = line.chomp
+    if l=="{" then
+      block = true
+    elsif l=="}" then
+      block = false
+    elsif block then
+      next
+    elsif l.include?("=") then
+      name = l.split("=")[0]
+      value = l.split("=")[1..-1]*"="
+      symbol[name] = value
+    else
+      next
+    end
+  end
+  return symbol
+end
+
+# read all symbols
+# return a list fo symbols { name => symbol } (see read_symbol)
+def read_symbols(folder)
+  symbols = {}
+  Dir.entries(folder).each do |file|
+    next unless file =~ /\.sym$/
+    symbols[file.split("/")[-1]] = read_symbol(folder+"/"+file)
+  end
+  return symbols
+end
+
+# =========
+# the tasks
+# =========
+
+task :default => [:version,:print,:pdf,:install,:check]
+
+desc "set version in schema"
+task :version => vsch
+CLEAN.include(vsch)
+CLOBBER.include("#{target}_*.sch")
+
+desc "print schema (into ps)"
+task :print => "#{target}.ps"
+CLEAN.include("#{target}.ps")
+
+desc "get printed schema in pdf"
+task :pdf => "#{target}.pdf"
+CLEAN.include("#{target}.pdf")
+
+desc "put printed schema in output folder"
+task :install => "#{target}.pdf" do
+  mkdir "../pcb/schema" unless File.directory? "../pcb/schema"
+  cp "#{target}.pdf","../pcb/schema/#{target}.pdf"
+end
+CLOBBER.include("../pcb/schema/#{target}.pdf")
+
+
+# every component should have: refdes without ?, device, value,
+# footprint, manufacturer, documentation, digikey
+task :check => sch do
+  elements = read_sch(sch)
+  elements.each do |element|
+    if element[:type]=="C" then
+      if element[:block] and element[:block]["refdes"] then
+        name = element[:block]["refdes"]
+        name += " (#{element[:block]['device']})" if element[:block]["device"]
+        puts name+" has no ID" if element[:block]["refdes"].include? "?"
+        ["device","value","footprint","manufacturer","manufacturer-part","documentation","digikey-part"].each do |attribute|
+          puts name+" has no "+attribute unless element[:block][attribute]
+          break if element[:block]["footprint"] =~ /^HEADER/ or element[:block]["footprint"] =~ /^JUMPER/
+        end
+      end
+    end
+  end
+end
+
+# ===============
+# file processing
+# ===============
+
+file vsch => sch do
+  sh "cp #{sch} #{vsch}"
+  # on \ is to prevent ruby interpreting it, th other is for sed
+  # the version
+  sh "sed -i 's/\\(version=\\)\\$Version\\$/\\1#{version}/' #{vsch}"
+  # the date
+  sh "sed -i 's/\\(date=\\)\\$Date\\$/\\1#{date}/' #{vsch}"
+  # the revision
+  sh "sed -i 's/\\(revision=\\)\\$Revision\\$/\\1#{revision}/' #{vsch}"
+end
+
+file "#{target}.ps" => vsch do
+  if GEDA_SCHEME_DIR then
+    sh "gschem -p -o #{target}.ps -s #{GEDA_SCHEME_DIR}/print.scm #{vsch} > /dev/null 2>&1"
+  else
+    puts "can not print schematic. gEDA scheme directory missing"
+  end
+end
+
+file "#{target}.pdf" => "#{target}.ps" do
+  sh "ps2pdf -sPAPERSIZE=a4 #{target}.ps"
+end

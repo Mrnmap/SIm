@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="chapter_firmware">
+    <title>Getting and Building the Firmware</title>
+    <section id="building_fw_intro">
+        <title>Introduction</title>
+        <para>The Firmware is the Software that is running on the
+        Microcontroller of the SIMtrace hardware. The Firmware itself
+        consists out of a couple of components for different parts of
+        the system. Besides the source code for the firmware you will
+        also need to have an ARM Cross-Compile Toolchain, a copy of the
+        SAM7 utilities to initially program the device or recover from
+        a fatal error and dfu-util to update the main part of the firmware
+        using the Device Firmware Update (DFU) mode.</para>
+    </section>
+
+    <section id="getting_a_toolchain">
+        <title>Getting a Toolchain</title>
+        <para>The toolchain needs to include a GCC newer than 3.4
+        and it may not be an EABI toolchain. EABI toolchains fail to properly
+        link the SIMtrace binary. You can easily build a toolchain yourself
+        or use one of the known working pre-built ones. Please see the
+        <ulink url="http://bb.osmocom.org/trac/wiki/toolchain">SIMtrace wiki</ulink>
+        for more information about getting a toolchain.
+        </para>
+    </section>
+
+    <section id="getting_the_firmware">
+        <title>Getting and Building the Firmware</title>
+
+        <para>The SIMtrace firmware is based on the OpenPCD RFID Reader Firmware and the
+        SIMtrace firmware code is located in the OpenPCD repository. You can use the
+        <command>git</command> to clone the repository.
+        <screen>
+$ git clone git://git.gnumonks.org/openpcd.git
+        </screen>
+        </para>
+    
+        <para>The firmware consists out of two separate binaries that will be concatted
+        and flashed into the NOR flash of the microcontroller. The main part is the dfu
+        program that will handle basic USB functionality and respond to Device Firmware
+        Update (DFU) requests to allow to update the firmware in the NOR or execute
+        software in RAM.
+        <screen>
+$ cd openpcd/firmware
+$ make -f Makefile.dfu BOARD=SIMTRACE
+$ make BOARD=SIMTRACE DEBUG=1 TARGET=main_simtrace
+$ cat dfu.bin main_simtrace.bin > main_simtrace.samba
+$ cd ../..
+        </screen></para>
+    </section>
+    <section id="firmware_details">
+        <title>Firmware Details</title>
+        <para>
+        The handling for the DFU part can be found in the <filename>src/dfu</filename>
+        directory, it also provides low-level USB routines to work with USB Device
+        Port (UDP). These functions will be called from the main payload.
+        </para>
+        <para>The operating system part is in <filename>src/os</filename> it provides
+        basic hardware control and services to be used by the main application, this
+        includes USB enumeration, Watchdog programming, running the mainloop, interrupt
+        dispatching. The main application for SIMtrace can be found in
+        <filename>src/simtrace</filename> and this includes programming the two USART,
+        configuring the bus switch according to the mode.
+        </para>
+    </section>
+
+    <section id="firmware_programming_sam_ba">
+        <title>Initial Firmware Programming</title>
+        <para>In case the NOR Flash of the SAM7 Microcontroller is either blank or has
+        become corrupted the Microcontrollers support entering a mode called SAM-BA which
+        then allows flashing the device using the <filename>sam</filename> application. The
+        SAM-BA mode can be easily entered by following the below procedure.</para>
+
+        <procedure>
+            <title>Entering SAM-BA Mode</title>
+            <step><para>Unplug the SIMtrace Hardware from USB.</para></step>
+            <step><para>Short TEST to VCC (3.3V) pin by using the Jumper. Leave PA0, PA1, PA2 unconnected.</para></step>
+            <step><para>Power up the SIMtrace Hardware from USB.</para></step>
+            <step><para>Wait for 20 seconds.</para></step>
+            <step><para>Unplug the SIMtrace Hardware from USB.</para></step>
+            <step><para>Open/Remove the Jumper.</para></step>
+        </procedure>
+
+        <figure>
+            <title>TEST Jumper</title>
+            <mediaobject><imageobject>
+                <imagedata fileref="images/shortTEST.jpg" width="12cm"/>
+            </imageobject></mediaobject>
+        </figure>
+
+        <note><title>v1.0p/v1.1p Hardware Owners</title>
+            <para>Sometimes the SAM-BA mode is not entered. This is the case when the
+            two LEDs are on when powering up the SIMtrace Hardware with the Jumper set.
+            The reason for this is unknown but there are several workarounds:
+            <itemizedlist>
+                <listitem><para>Press the RESET button while powering up.</para></listitem>
+                <listitem><para>In addition, remove the jumper and put it back.</para></listitem>
+            </itemizedlist>
+
+            As soon as the two LEDs go off, the SAM-BA mode is properly entered.
+            </para>
+        </note>
+        <para>The <command>sam</command> application can be compiled to either use libusb or
+        normal files to program the device, depending on the drivers used you will
+        need to configure the application one way or another. The programming can then
+        be done using the below command.
+        <screen>
+$ ./sam7 --exec set_clock --exec unlock_regions --exec "flash ../openpcd/firmware/main_simtrace.samba"
+        </screen>
+        <note><title>Silent failures</title>
+        <para>The <command>sam</command> can silently fail when not finding or being
+        able to configure the device properly. It is best to enter the interactive mode
+        by not providing any <command>--exec</command> commands.</para>
+        </note>
+        </para>
+    </section>
+
+    <section id="firmware_programming_dfu">
+        <title>Device Firmware Update</title>
+        <para>The Device Firmware Update (DFU) part of the firmware will be
+        booted first, it is checking if a button is active or if the software
+        reset reason was for DFU and then activates the DFU part or jumps to
+        the main application. DFU can be activated at any time using
+        <command>dfu-util</command> on the USB Host.</para>
+        <para>The <command>dfu-util</command> application might be already
+        packaged for your distribution, the source code can be found on the
+        <ulink url="http://dfu-util.gnumonks.org/">dfu-util.gnumonks.org</ulink>
+        website. To update the main part of the firmware simply do:
+        <screen>
+$ dfu-util -d 16c0:0762 -a0 -D ./main_simtrace.bin -R
+        </screen></para>
+    </section>
+
+    <section id="firmware_programming_upgrade">
+        <title>Upgrading to v0.4 Firmware</title>
+        <para>Upgrading to v0.4 requires flashing both the Bootloader and the
+        SIMtrace application. The procedure is first to flash the bootloader,
+        then the SIMtrace application and finally reset the device.
+        </para>
+
+        <screen>
+$ dfu-util -d 16c0:0762 -a 1  -D ./dfu.bin
+$ dfu-util -d 16c0:0762 -a 0  -D ./main_simtrace.bin
+... reset the device
+        </screen>
+    </section>
+
+    <section id="firmware_serial_console">
+	<title>Serial Console for debugging</title>
+	<para>The serial console operates at 115200 bauds with 8n1 and no flow control.</para>
+    </section>
+</chapter>

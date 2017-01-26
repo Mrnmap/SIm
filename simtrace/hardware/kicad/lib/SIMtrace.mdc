@@ -1,0 +1,20 @@
+PCBNEW-LibDoc----V1  Mo 20 Jun 2011 21:34:10 CEST
+#
+$MODULE pin_array_10x2
+Li pin_array_10x2
+Cd Double rangee de contacts 2 x 12 pins
+Kw CONN
+$EndMODULE
+#
+$MODULE USB-MINI-B_UX60
+Li USB-MINI-B_UX60
+Cd Hirose UX60-MB-5ST
+$EndMODULE
+#
+$MODULE SSOP20_BDQ
+Li SSOP20_BDQ
+Cd SSOP 20 pins
+Kw CMS SSOP SMD
+$EndMODULE
+#
+$EndLIBDOC
