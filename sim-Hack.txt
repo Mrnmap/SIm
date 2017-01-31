@@ -1,1 +1,7 @@
 http://hack74.skyrock.com/316698121-Clonez-une-carte-sim.html
+simscan
+woron_scan 1.07
+sim-emu 6.01
+twinsim
+
+"envoyé un message caché" fait craquer certaines cartes sim (DES)
