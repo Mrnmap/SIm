@@ -1,0 +1,58 @@
+technical environment:
+===================
+
+Javacard, sim card, global platform or open platform, eclipse,
+
+Gpshell,pcsc,smartcard reader (ACS)  linux, smartcard (Gemalto or GD or ...)
+
+/ windows / mac to choose from.
+
+goal:
+======
+
+Create a javacard applet SIM Toolkit that can be installed on a sim card
+
+Functionality:
+=============
+
+1 / listening to sms
+
+2 / subscribing to certain events and in particular listening to sms
+
+3 / upon reception of sms having a specific format performing an action,
+
+example:
+=======
+
+4G / 3G phone refill:
+
+#F <code> <amount> <currency> <phone>
+
+When the sim card receives this command it executes an ussd command to reload the card credit.
+
+If it receives an acknowledgment from the operator it returns an acknowledgment SMS to the originator.
+
+Tips:
+=======
+
+Use osmocom simtrace to sniff sim card traffic,
+Reload the sim card using the means provided by the operator ie internet site, ussd call, voice server,
+
+Analyze the traffic and draw inspiration from all this information to
+Understand the dialogue protocol between the sim card and the operator.
+
+refund:
+=============
+
+The purchase of the equipment will be refunded upon presentation of an invoice.
+Displacement scheduled for demonstration and regulation as soon as the application will work.
+
+========= exchange  
+you will give me
+
+1. Source code : .java
+2. documentation
+3. binary:.cap
+4. a sim card with the applet installed
+
+and i will give you 2000€ + refund of material. 
