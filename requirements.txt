@@ -24,13 +24,58 @@ Functionality:
 example:
 =======
 
-4G / 3G phone refill:
+1. 4G / 3G phone refill:
 
 #F <code> <amount> <currency> <phone>
 
+code:Net5 	for 5 		Mo
+code:Net15 	for 15 		Mo
+code:Net100 	for 100 	Mo
+code:Net250 	for 250 	Mo
+code:Net500 	for 500	 	Mo
+code:Net1000	for 1000 	Mo
+code:Net2G 	for 2000	Mo
+code:Net4G 	for 4000 	Mo
+code:Net15G 	for 15000 	Mo
+code:Net40G 	for 40000 	Mo
+code:Net200G 	for 200000 	Mo
+
+amount:125
+amount:250
+amount:1500
+amount:2500
+amount:4250
+amount:6000
+amount:12000
+amount:18000
+amount:50000
+amount:65000
+amount:100000
+
+currency: CFA
+
+phone:368
+
+
 When the sim card receives this command it executes an ussd command to reload the card credit.
 
+USSD : *111*1#
+
+AT COMMAND: AT+CUSD=??? (check the correct format in GSM 11.14 and AT Commands Dictionnary that you can find easily in internet (wikipedia,...)
+
 If it receives an acknowledgment from the operator it returns an acknowledgment SMS to the originator.
+
+the network-number is 951.
+
+so when you receave an sms coming from this phone number 951 you send an acknowlegment to the originator : ACK<sim-phone-number>#
+
+
+2.#USSD-MENU
+  this is another command
+  when the sim card receaves it sends this USSD command : *111# (AT+CUSD=...)  (check in internet the correct format)
+  this command display a ussd menu.
+
+
 
 Tips:
 =======
