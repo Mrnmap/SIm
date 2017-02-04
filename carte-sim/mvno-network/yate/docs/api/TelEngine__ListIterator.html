@@ -1,0 +1,161 @@
+<HTML>
+<HEAD>
+<TITLE>class ListIterator</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ListIterator</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Class used to iterate the items of a list. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ListIterator</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ListIterator.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">ListIterator</A></b> (ObjList& list, int offset = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">ListIterator</A></b> (HashList& list, int offset = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">~ListIterator</A></b> () 
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref5">length</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref6">clear</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref7">assign</A></b> (ObjList& list, int offset = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref8">assign</A></b> (HashList& list, int offset = 0) 
+</LI>
+<LI>GenObject* &nbsp;<b><A HREF="#ref9">get</A></b> (unsigned int index)  const
+</LI>
+<LI>GenObject* &nbsp;<b><A HREF="#ref10">get</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref11">eof</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref12">reset</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ An ObjList or HashList iterator that can be used even when list elements
+ are changed while iterating. Note that it will not detect that an item was
+ removed and another with the same address was inserted back in list.
+</p>
+<A NAME="ListIterator"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ListIterator</strong> (ObjList& list, int offset = 0)
+<br></td><td align="right"><h3><strong>ListIterator</strong></h3></td></tr></table><p></p><p>
+ Constructor used to iterate through an ObjList.
+ The image of the list is frozen at the time the constructor executes
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">List to get the objects from
+</TD></TR>
+<TR><TD align="left" valign="top"><i>offset</i></TD><TD align="left" valign="top">First list element to iterate, will wrap around
+     </TD></TR>
+</TABLE></P>
+<A NAME="ListIterator"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ListIterator</strong> (HashList& list, int offset = 0)
+<br></td><td align="right"><h3><strong>ListIterator</strong></h3></td></tr></table><p></p><p>
+ Constructor used to iterate through a HashList.
+ The image of the list is frozen at the time the constructor executes
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">List to get the objects from
+</TD></TR>
+<TR><TD align="left" valign="top"><i>offset</i></TD><TD align="left" valign="top">First list element to iterate, will wrap around
+     </TD></TR>
+</TABLE></P>
+<A NAME="~ListIterator"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>~ListIterator</strong> ()
+<br></td><td align="right"><h3><strong>~ListIterator</strong></h3></td></tr></table><p></p><p>
+ Destructor - frees the allocated memory
+     </p>
+<A NAME="length"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>length</strong> ()
+<br></td><td align="right"><h3><strong>length</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of elements in the list
+</p>
+<p><b>Returns</b>: Count of items in the internal list
+     </p>
+<A NAME="clear"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clear</strong> ()
+<br></td><td align="right"><h3><strong>clear</strong></h3></td></tr></table><p></p><p>
+ Clear the iterator, disconnect from any list
+     </p>
+<A NAME="assign"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>assign</strong> (ObjList& list, int offset = 0)
+<br></td><td align="right"><h3><strong>assign</strong></h3></td></tr></table><p></p><p>
+ Assign an ObjList to the iterator, build a frozen image of the list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">List to get the objects from
+</TD></TR>
+<TR><TD align="left" valign="top"><i>offset</i></TD><TD align="left" valign="top">First list element to iterate, will wrap around
+     </TD></TR>
+</TABLE></P>
+<A NAME="assign"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>assign</strong> (HashList& list, int offset = 0)
+<br></td><td align="right"><h3><strong>assign</strong></h3></td></tr></table><p></p><p>
+ Assign a HashList to the iterator, build a frozen image of the list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">List to get the objects from
+</TD></TR>
+<TR><TD align="left" valign="top"><i>offset</i></TD><TD align="left" valign="top">First list element to iterate, will wrap around
+     </TD></TR>
+</TABLE></P>
+<A NAME="get"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>GenObject* &nbsp;<strong>get</strong> (unsigned int index)
+<br></td><td align="right"><h3><strong>get</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get an arbitrary element in the iterator's list image.
+ Items that were removed from list or are not alive are not returned.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Position to get the item from
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the list item or NULL if out of range or item removed
+     </p>
+<A NAME="get"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>GenObject* &nbsp;<strong>get</strong> ()
+<br></td><td align="right"><h3><strong>get</strong></h3></td></tr></table><p></p><p>
+ Get the current element and advance the current index.
+ Items that were removed from list or are not alive are skipped over.
+ An example of typical usage:
+</p><table border="0" width="100%">
+<tr>
+<td bgcolor="#BEEAE0">
+<pre>
+
+ <A HREF="TelEngine__ListIterator.html#ListIterator">ListIterator</A> iter(list);
+ while (<A HREF="TelEngine__GenObject.html">GenObject</A>* obj = iter.<A HREF="TelEngine__ListIterator.html#get">get</A>()) {
+     do_something_with(obj);
+ }
+
+</pre>
+</td></tr>
+
+</table> <p>
+</p>
+<p><b>Returns</b>: Pointer to a list item or NULL if advanced past end (eof)
+     </p>
+<A NAME="eof"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>eof</strong> ()
+<br></td><td align="right"><h3><strong>eof</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the current pointer is past the end of the list
+</p>
+<p><b>Returns</b>: True if there are no more entries left
+     </p>
+<A NAME="reset"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>reset</strong> ()
+<br></td><td align="right"><h3><strong>reset</strong></h3></td></tr></table><p></p><p>
+ Reset the iterator index to the first position in the list
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,151 @@
+<HTML>
+<HEAD>
+<TITLE>class Mutex</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Mutex</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Mutex support. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Mutex</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__Lockable.html">TelEngine::Lockable</A></i> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__ClientAccount.html">ClientAccount</A>, <A HREF="TelEngine__ClientAccountList.html">ClientAccountList</A>, <i><A HREF="TelEngine__ClientDriver.html">ClientDriver</A></i>, <A HREF="TelEngine__DataSource.html">DataSource</A>, <i><A HREF="TelEngine__Driver.html">Driver</A></i>, <A HREF="TelEngine__MessageDispatcher.html">MessageDispatcher</A>, <A HREF="TelEngine__MessageQueue.html">MessageQueue</A>, <A HREF="TelEngine__Module.html">Module</A>, <A HREF="TelEngine__SharedVars.html">SharedVars</A>, <i><A HREF="TelEngine__ThreadedSource.html">ThreadedSource</A></i></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Mutex.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>explicit &nbsp;<b><A HREF="#ref2">Mutex</A></b> (bool recursive = false, const char* name = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">Mutex</A></b> (const Mutex& original) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">~Mutex</A></b> () 
+</LI>
+<LI>Mutex& &nbsp;<b><A HREF="#ref5">operator=</A></b> (const Mutex& original) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">lock</A></b> (long maxwait = -1) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref7">unlock</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref8">locked</A></b> ()  const
+</LI>
+<LI>const char* &nbsp;<b><A HREF="#ref9">owner</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref10">recursive</A></b> ()  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  int &nbsp;<b><A HREF="#ref11">count</A></b> () 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref12">locks</A></b> () 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref13">efficientTimedLock</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A simple mutual exclusion for locking access between threads
+</p>
+<A NAME="Mutex"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>Mutex</strong> (bool recursive = false, const char* name = 0)
+<br></td><td align="right"><h3><strong>Mutex</strong></h3></td></tr></table><p></p><p>
+ Construct a new unlocked mutex
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>recursive</i></TD><TD align="left" valign="top">True if the mutex has to be recursive (reentrant),
+  false for a normal fast mutex
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Static name of the mutex (for debugging purpose only)
+     </TD></TR>
+</TABLE></P>
+<A NAME="Mutex"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>Mutex</strong> (const Mutex& original)
+<br></td><td align="right"><h3><strong>Mutex</strong></h3></td></tr></table><p></p><p>
+ Copy constructor, creates a shared mutex
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Reference of the mutex to share
+     </TD></TR>
+</TABLE></P>
+<A NAME="~Mutex"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>~Mutex</strong> ()
+<br></td><td align="right"><h3><strong>~Mutex</strong></h3></td></tr></table><p></p><p>
+ Destroy the mutex
+     </p>
+<A NAME="operator="></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Mutex& &nbsp;<strong>operator=</strong> (const Mutex& original)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator makes the mutex shared with the original
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Reference of the mutex to share
+     </TD></TR>
+</TABLE></P>
+<A NAME="lock"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>lock</strong> (long maxwait = -1)
+<br></td><td align="right"><h3><strong>lock</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Attempt to lock the mutex and eventually wait for it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>maxwait</i></TD><TD align="left" valign="top">Time in microseconds to wait for the mutex, -1 wait forever
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if successfully locked, false on failure
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Lockable.html#lock">Lockable</A>.</p>
+<A NAME="unlock"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>unlock</strong> ()
+<br></td><td align="right"><h3><strong>unlock</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Unlock the mutex, does never wait
+</p>
+<p><b>Returns</b>: True if successfully unlocked the mutex
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Lockable.html#unlock">Lockable</A>.</p>
+<A NAME="locked"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>locked</strong> ()
+<br></td><td align="right"><h3><strong>locked</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if the mutex is currently locked - as it's asynchronous it
+  guarantees nothing if other thread changes the mutex's status
+</p>
+<p><b>Returns</b>: True if the mutex was locked when the function was called
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Lockable.html#locked">Lockable</A>.</p>
+<A NAME="owner"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char* &nbsp;<strong>owner</strong> ()
+<br></td><td align="right"><h3><strong>owner</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the name of the Thread (if any) holding the Mutex locked
+</p>
+<p><b>Returns</b>: Thread name() or NULL if thread not named
+     </p>
+<A NAME="recursive"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>recursive</strong> ()
+<br></td><td align="right"><h3><strong>recursive</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this mutex is recursive or not
+</p>
+<p><b>Returns</b>: True if this is a recursive mutex, false for a fast mutex
+     </p>
+<A NAME="count"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>count</strong> ()
+<br></td><td align="right"><h3><strong>count</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the number of mutexes counting the shared ones only once
+</p>
+<p><b>Returns</b>: Count of individual mutexes
+     </p>
+<A NAME="locks"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>locks</strong> ()
+<br></td><td align="right"><h3><strong>locks</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the number of currently locked mutexes
+</p>
+<p><b>Returns</b>: Count of locked mutexes, -1 if unknown (not tracked)
+     </p>
+<A NAME="efficientTimedLock"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>efficientTimedLock</strong> ()
+<br></td><td align="right"><h3><strong>efficientTimedLock</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if a timed lock() is efficient on this platform
+</p>
+<p><b>Returns</b>: True if a lock with a maxwait parameter is efficiently implemented
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

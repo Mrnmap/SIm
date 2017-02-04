@@ -1,0 +1,147 @@
+<HTML>
+<HEAD>
+<TITLE>class XmlParent</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class XmlParent</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Xml Parent. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::XmlParent</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatexml_h.html">yatexml.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__XmlDocument.html">XmlDocument</A>, <A HREF="TelEngine__XmlElement.html">XmlElement</A>, <A HREF="TelEngine__XmlFragment.html">XmlFragment</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__XmlParent.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">XmlParent</A></b> () 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref2">~XmlParent</A></b> () 
+</LI>
+<LI>virtual  XmlDocument* &nbsp;<b><A HREF="#ref3">document</A></b> () 
+</LI>
+<LI>virtual  XmlFragment* &nbsp;<b><A HREF="#ref4">fragment</A></b> () 
+</LI>
+<LI>virtual  XmlElement* &nbsp;<b><A HREF="#ref5">element</A></b> () 
+</LI>
+<LI>virtual  XmlSaxParser::Error &nbsp;<b><i><A HREF="#ref6">addChild</A></i></b> (XmlChild* child) 
+</LI>
+<LI>inline XmlChild* &nbsp;<b><A HREF="#ref7">addChildSafe</A></b> (XmlChild* child) 
+</LI>
+<LI>virtual  XmlChild* &nbsp;<b><i><A HREF="#ref8">removeChild</A></i></b> (XmlChild* child, bool delObj = true) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref9">reset</A></b> () 
+</LI>
+<LI>virtual  const ObjList& &nbsp;<b><A HREF="#ref10">getChildren</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref11">clearChildren</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref12">hasChildren</A></b> ()  const
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Xml Parent for a Xml child
+</p>
+<A NAME="XmlParent"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XmlParent</strong> ()
+<br></td><td align="right"><h3><strong>XmlParent</strong></h3></td></tr></table><p></p><p>
+ Constructor
+     </p>
+<A NAME="~XmlParent"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~XmlParent</strong> ()
+<br></td><td align="right"><h3><strong>~XmlParent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="document"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlDocument* &nbsp;<strong>document</strong> ()
+<br></td><td align="right"><h3><strong>document</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get an XmlDocument object from this XmlParent.
+ Default implementation return 0
+</p>
+<p><b>Returns</b>: 0
+     </p>
+<A NAME="fragment"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlFragment* &nbsp;<strong>fragment</strong> ()
+<br></td><td align="right"><h3><strong>fragment</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get an XmlFragment object from this XmlParent.
+ Default implementation return 0
+</p>
+<p><b>Returns</b>: 0
+     </p>
+<A NAME="element"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlElement* &nbsp;<strong>element</strong> ()
+<br></td><td align="right"><h3><strong>element</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get an XmlElement object from this XmlParent.
+ Default implementation return 0
+</p>
+<p><b>Returns</b>: 0
+     </p>
+<A NAME="addChild"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlSaxParser::Error &nbsp;<i><strong>addChild</strong></i> (XmlChild* child)
+<br></td><td align="right"><h3><i><strong>addChild</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Append a new child to this XmlParent
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>child</i></TD><TD align="left" valign="top">The child to append
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: NoError if the child was successfully added
+     </p>
+<A NAME="addChildSafe"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XmlChild* &nbsp;<strong>addChildSafe</strong> (XmlChild* child)
+<br></td><td align="right"><h3><strong>addChildSafe</strong></h3></td></tr></table><p></p><p>
+ Append a new child of this XmlParent, release the object on failure
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>child</i></TD><TD align="left" valign="top">The child to append
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The child on success, 0 on failure
+     </p>
+<A NAME="removeChild"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlChild* &nbsp;<i><strong>removeChild</strong></i> (XmlChild* child, bool delObj = true)
+<br></td><td align="right"><h3><i><strong>removeChild</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Remove a child
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>child</i></TD><TD align="left" valign="top">The child to remove
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delObj</i></TD><TD align="left" valign="top">True to delete the object
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: XmlChild pointer if found and not deleted
+     </p>
+<A NAME="reset"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>reset</strong> ()
+<br></td><td align="right"><h3><strong>reset</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Reset this xml parent.
+ Default implementation does nothing
+     </p>
+<A NAME="getChildren"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const ObjList& &nbsp;<strong>getChildren</strong> ()
+<br></td><td align="right"><h3><strong>getChildren</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Obtain this xml parent children.
+ Default implementation returns an empty list
+</p>
+<p><b>Returns</b>: The list of children
+     </p>
+<A NAME="clearChildren"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>clearChildren</strong> ()
+<br></td><td align="right"><h3><strong>clearChildren</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Clear this xml parent children.
+ Default implementation does nothing
+     </p>
+<A NAME="hasChildren"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>hasChildren</strong> ()
+<br></td><td align="right"><h3><strong>hasChildren</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if at least one child element exists
+</p>
+<p><b>Returns</b>: True if this parent has at least one child
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,133 @@
+<HTML>
+<HEAD>
+<TITLE>class SharedVars</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SharedVars</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Atomic access and operations to shared variables. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SharedVars</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatengine_h.html">yatengine.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SharedVars.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref1">SharedVars</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref2">get</A></b> (const String& name, String& rval) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref3">set</A></b> (const String& name, const char* val) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref4">create</A></b> (const String& name, const char* val = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref5">clear</A></b> (const String& name) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref6">exists</A></b> (const String& name) 
+</LI>
+<LI>unsigned int &nbsp;<b><A HREF="#ref7">inc</A></b> (const String& name, unsigned int wrap = 0) 
+</LI>
+<LI>unsigned int &nbsp;<b><A HREF="#ref8">dec</A></b> (const String& name, unsigned int wrap = 0) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Class that implements atomic / locked access and operations to its shared variables
+</p>
+<A NAME="SharedVars"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SharedVars</strong> ()
+<br></td><td align="right"><h3><strong>SharedVars</strong></h3></td></tr></table><p></p><p>
+ Constructor
+     </p>
+<A NAME="get"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>get</strong> (const String& name, String& rval)
+<br></td><td align="right"><h3><strong>get</strong></h3></td></tr></table><p></p><p>
+ Get the string value of a variable
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the variable
+</TD></TR>
+<TR><TD align="left" valign="top"><i>rval</i></TD><TD align="left" valign="top">String to return the value into
+     </TD></TR>
+</TABLE></P>
+<A NAME="set"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>set</strong> (const String& name, const char* val)
+<br></td><td align="right"><h3><strong>set</strong></h3></td></tr></table><p></p><p>
+ Set the string value of a variable
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the variable to set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>val</i></TD><TD align="left" valign="top">New value to assign to a variable
+     </TD></TR>
+</TABLE></P>
+<A NAME="create"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>create</strong> (const String& name, const char* val = 0)
+<br></td><td align="right"><h3><strong>create</strong></h3></td></tr></table><p></p><p>
+ Create and set a variable only if the variable is not already set
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the variable to set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>val</i></TD><TD align="left" valign="top">New value to assign to a variable
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if a new variable was created
+     </p>
+<A NAME="clear"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clear</strong> (const String& name)
+<br></td><td align="right"><h3><strong>clear</strong></h3></td></tr></table><p></p><p>
+ Clear a variable
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the variable to clear
+     </TD></TR>
+</TABLE></P>
+<A NAME="exists"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>exists</strong> (const String& name)
+<br></td><td align="right"><h3><strong>exists</strong></h3></td></tr></table><p></p><p>
+ Check if a variable exists
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the variable
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the variable exists
+     </p>
+<A NAME="inc"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int &nbsp;<strong>inc</strong> (const String& name, unsigned int wrap = 0)
+<br></td><td align="right"><h3><strong>inc</strong></h3></td></tr></table><p></p><p>
+ Atomically increment a variable as unsigned integer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the variable
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wrap</i></TD><TD align="left" valign="top">Value to wrap around at, zero disables
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Value of the variable before increment, zero if it was not defined or not numeric
+     </p>
+<A NAME="dec"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int &nbsp;<strong>dec</strong> (const String& name, unsigned int wrap = 0)
+<br></td><td align="right"><h3><strong>dec</strong></h3></td></tr></table><p></p><p>
+ Atomically decrement a variable as unsigned integer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the variable
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wrap</i></TD><TD align="left" valign="top">Value to wrap around at, zero disables (stucks at zero)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Value of the variable after decrement, zero if it was not defined or not numeric
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

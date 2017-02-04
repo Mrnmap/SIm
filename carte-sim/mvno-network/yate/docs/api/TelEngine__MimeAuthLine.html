@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<TITLE>class MimeAuthLine</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class MimeAuthLine</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">MIME authentication line. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::MimeAuthLine</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatemime_h.html">yatemime.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__MimeHeaderLine.html">TelEngine::MimeHeaderLine</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__MimeAuthLine.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">MimeAuthLine</A></b> (const char* name, const String& value) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">MimeAuthLine</A></b> (const MimeAuthLine& original, const char* newName = 0) 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref3">getObject</A></b> (const String& name)  const
+</LI>
+<LI>virtual  MimeHeaderLine* &nbsp;<b><A HREF="#ref4">clone</A></b> (const char* newName = 0)  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref5">buildLine</A></b> (String& line, bool header = true)  const
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A MIME header line containing authentication data.
+</p>
+<A NAME="MimeAuthLine"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MimeAuthLine</strong> (const char* name, const String& value)
+<br></td><td align="right"><h3><strong>MimeAuthLine</strong></h3></td></tr></table><p></p><p>
+ Constructor.
+ Builds a MIME authentication header line from a string buffer.
+ Splits the value into header parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The header name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">The header value
+     </TD></TR>
+</TABLE></P>
+<A NAME="MimeAuthLine"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MimeAuthLine</strong> (const MimeAuthLine& original, const char* newName = 0)
+<br></td><td align="right"><h3><strong>MimeAuthLine</strong></h3></td></tr></table><p></p><p>
+ Constructor.
+ Builds this MIME authentication header line from another one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Original header line to build from.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>newName</i></TD><TD align="left" valign="top">Optional new header name. If 0, the original name will be used
+     </TD></TR>
+</TABLE></P>
+<A NAME="getObject"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ RTTI method, get a pointer to a derived class given the class name.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__MimeHeaderLine.html#getObject">MimeHeaderLine</A>.</p>
+<A NAME="clone"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> MimeHeaderLine* &nbsp;<strong>clone</strong> (const char* newName = 0)
+<br></td><td align="right"><h3><strong>clone</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Duplicate this MIME header line.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newName</i></TD><TD align="left" valign="top">Optional new header name. If 0, this header's name will be used
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Copy of this MIME header line
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__MimeHeaderLine.html#clone">MimeHeaderLine</A>.</p>
+<A NAME="buildLine"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>buildLine</strong> (String& line, bool header = true)
+<br></td><td align="right"><h3><strong>buildLine</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Build a string line from this MIME header without adding a line separator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>line</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>header</i></TD><TD align="left" valign="top">True to add the header in front of line text
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__MimeHeaderLine.html#buildLine">MimeHeaderLine</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

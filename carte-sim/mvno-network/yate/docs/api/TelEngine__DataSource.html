@@ -1,0 +1,161 @@
+<HTML>
+<HEAD>
+<TITLE>class DataSource</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class DataSource</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">
+ A data source
+  <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::DataSource</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatephone_h.html">yatephone.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__DataNode.html">TelEngine::DataNode</A> <small>[public ]</small>, <A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><i><A HREF="TelEngine__ThreadedSource.html">ThreadedSource</A></i></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__DataSource.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline explicit &nbsp;<b><A HREF="#ref3">DataSource</A></b> (const char* format = "slin") 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref4">destroyed</A></b> () 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref5">getObject</A></b> (const String& name)  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">valid</A></b> ()  const
+</LI>
+<LI>unsigned long &nbsp;<b><A HREF="#ref7">Forward</A></b> (const DataBlock& data, unsigned long tStamp = invalidStamp(),
+	unsigned long flags = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref8">attach</A></b> (DataConsumer* consumer, bool override = false) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref9">detach</A></b> (DataConsumer* consumer) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref10">clear</A></b> () 
+</LI>
+<LI>inline DataTranslator* &nbsp;<b><A HREF="#ref11">getTranslator</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref12">synchronize</A></b> (unsigned long tStamp) 
+</LI>
+<LI>inline unsigned long &nbsp;<b><A HREF="#ref13">nextStamp</A></b> ()  const
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>unsigned long <b><A HREF="#ref14">m_nextStamp</A></b></LI>
+<LI>ObjList <b><A HREF="#ref15">m_consumers</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A data source
+ </p>
+<A NAME="DataSource"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline explicit &nbsp;<strong>DataSource</strong> (const char* format = "slin")
+<br></td><td align="right"><h3><strong>DataSource</strong></h3></td></tr></table><p></p><p>
+ Source constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">Name of the data format, default "slin" (Signed Linear)
+     </TD></TR>
+</TABLE></P>
+<A NAME="destroyed"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destroyed</strong> ()
+<br></td><td align="right"><h3><strong>destroyed</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Source's destruct notification - detaches all consumers
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__RefObject.html#destroyed">RefObject</A>.</p>
+<A NAME="getObject"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__RefObject.html#getObject">RefObject</A>.</p>
+<A NAME="valid"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>valid</strong> ()
+<br></td><td align="right"><h3><strong>valid</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if this data source is still valid
+</p>
+<p><b>Returns</b>: True if still valid, false if node should be removed
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__DataNode.html#valid">DataNode</A>.</p>
+<A NAME="Forward"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned long &nbsp;<strong>Forward</strong> (const DataBlock& data, unsigned long tStamp = invalidStamp(),
+	unsigned long flags = 0)
+<br></td><td align="right"><h3><strong>Forward</strong></h3></td></tr></table><p></p><p>
+ Forwards the data to its consumers
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">The raw data block to forward
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tStamp</i></TD><TD align="left" valign="top">Timestamp of data - typically samples
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">Indicator flags associated with the data block
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of samples actually forwarded to all consumers
+     </p>
+<A NAME="attach"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>attach</strong> (DataConsumer* consumer, bool override = false)
+<br></td><td align="right"><h3><strong>attach</strong></h3></td></tr></table><p></p><p>
+ Attach a data consumer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>consumer</i></TD><TD align="left" valign="top">Data consumer to attach
+</TD></TR>
+<TR><TD align="left" valign="top"><i>override</i></TD><TD align="left" valign="top">Attach as temporary source override
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, false on failure
+     </p>
+<A NAME="detach"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>detach</strong> (DataConsumer* consumer)
+<br></td><td align="right"><h3><strong>detach</strong></h3></td></tr></table><p></p><p>
+ Detach a data consumer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>consumer</i></TD><TD align="left" valign="top">Data consumer to detach
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, false on failure
+     </p>
+<A NAME="clear"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clear</strong> ()
+<br></td><td align="right"><h3><strong>clear</strong></h3></td></tr></table><p></p><p>
+ Detach all data consumers
+     </p>
+<A NAME="getTranslator"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline DataTranslator* &nbsp;<strong>getTranslator</strong> ()
+<br></td><td align="right"><h3><strong>getTranslator</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the master translator object if this source is part of a translator
+</p>
+<p><b>Returns</b>: A pointer to the DataTranslator object or NULL
+     </p>
+<A NAME="synchronize"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>synchronize</strong> (unsigned long tStamp)
+<br></td><td align="right"><h3><strong>synchronize</strong></h3></td></tr></table><p></p><p>
+ Synchronize the source and attached consumers with another timestamp
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>tStamp</i></TD><TD align="left" valign="top">New timestamp of data - typically samples
+     </TD></TR>
+</TABLE></P>
+<A NAME="nextStamp"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned long &nbsp;<strong>nextStamp</strong> ()
+<br></td><td align="right"><h3><strong>nextStamp</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the next expected position in the data stream
+</p>
+<p><b>Returns</b>: Timestamp of next expected data position, may be invalid/unknown
+     </p>
+<A NAME="m_nextStamp"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned long  <strong>m_nextStamp</strong>
+</td><td align="right"><h3><strong>m_nextStamp</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_consumers"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>m_consumers</strong>
+</td><td align="right"><h3><strong>m_consumers</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

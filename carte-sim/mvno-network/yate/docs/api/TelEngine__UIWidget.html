@@ -1,0 +1,291 @@
+<HTML>
+<HEAD>
+<TITLE>class UIWidget</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class UIWidget</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1"></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::UIWidget</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatecbase_h.html">yatecbase.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__String.html">TelEngine::String</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__UIWidget.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline explicit &nbsp;<b><A HREF="#ref2">UIWidget</A></b> (const char* name = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~UIWidget</A></b> () 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref4">name</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref5">setParams</A></b> (const NamedList& params) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">getOptions</A></b> (NamedList& items) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref7">addTableRow</A></b> (const String& item, const NamedList* data = 0,
+	bool atStart = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref8">setMultipleRows</A></b> (const NamedList& data, const String& prefix = String::empty()) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref9">updateTableRows</A></b> (const NamedList* data, bool atStart = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref10">insertTableRow</A></b> (const String& item, const String& before,
+	const NamedList* data = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref11">delTableRow</A></b> (const String& item) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref12">setTableRow</A></b> (const String& item, const NamedList* data) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref13">getTableRow</A></b> (const String& item, NamedList* data = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref14">clearTable</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref15">setSelect</A></b> (const String& item) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref16">getSelect</A></b> (String& item) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref17">getSelect</A></b> (NamedList& items) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref18">addLines</A></b> (const NamedList& lines, unsigned int max, bool atStart = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref19">setText</A></b> (const String& text, bool richText = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref20">getText</A></b> (String& text, bool richText = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref21">setBusy</A></b> (bool on) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><A NAME="UIWidget"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline explicit &nbsp;<strong>UIWidget</strong> (const char* name = 0)
+<br></td><td align="right"><h3><strong>UIWidget</strong></h3></td></tr></table><p></p><p>
+ Constructor, creates a new widget
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The widget's name
+     </TD></TR>
+</TABLE></P>
+<A NAME="~UIWidget"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~UIWidget</strong> ()
+<br></td><td align="right"><h3><strong>~UIWidget</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="name"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>name</strong> ()
+<br></td><td align="right"><h3><strong>name</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the standard name of this Window
+</p>
+<p><b>Returns</b>: Identifier of this window
+     </p>
+<A NAME="setParams"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setParams</strong> (const NamedList& params)
+<br></td><td align="right"><h3><strong>setParams</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set widget's parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">List of parameters
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if all parameters could be set
+     </p>
+<A NAME="getOptions"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>getOptions</strong> (NamedList& items)
+<br></td><td align="right"><h3><strong>getOptions</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get widget's items
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>items</i></TD><TD align="left" valign="top">List to fill with widget's items
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False on failure (e.g. not initialized)
+     </p>
+<A NAME="addTableRow"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>addTableRow</strong> (const String& item, const NamedList* data = 0,
+	bool atStart = false)
+<br></td><td align="right"><h3><strong>addTableRow</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Add a row to a table
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Name of the item to add
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Table's columns to set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>atStart</i></TD><TD align="left" valign="top">True to insert, false to append
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="setMultipleRows"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setMultipleRows</strong> (const NamedList& data, const String& prefix = String::empty())
+<br></td><td align="right"><h3><strong>setMultipleRows</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p> Append or update several table rows at once
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Parameters to initialize the rows with
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prefix</i></TD><TD align="left" valign="top">Prefix to match (and remove) in parameter names
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if all the operations were successfull
+     </p>
+<A NAME="updateTableRows"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>updateTableRows</strong> (const NamedList* data, bool atStart = false)
+<br></td><td align="right"><h3><strong>updateTableRows</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Add or set one or more table row(s). Screen update is locked while changing the table.
+ Each data list element is a NamedPointer carrying a NamedList with item parameters.
+ The name of an element is the item to update.
+ Set element's value to boolean value 'true' to add a new item if not found
+  or 'false' to set an existing one. Set it to empty string to delete the item
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">The list of items to add/set/delete
+</TD></TR>
+<TR><TD align="left" valign="top"><i>atStart</i></TD><TD align="left" valign="top">True to add new items at start, false to add them to the end
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="insertTableRow"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>insertTableRow</strong> (const String& item, const String& before,
+	const NamedList* data = 0)
+<br></td><td align="right"><h3><strong>insertTableRow</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Insert a row into a table
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Name of the item to insert
+</TD></TR>
+<TR><TD align="left" valign="top"><i>before</i></TD><TD align="left" valign="top">Name of the item to insert before
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Table's columns to set
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="delTableRow"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>delTableRow</strong> (const String& item)
+<br></td><td align="right"><h3><strong>delTableRow</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Delete a row from a table
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Name of the item to remove
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="setTableRow"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setTableRow</strong> (const String& item, const NamedList* data)
+<br></td><td align="right"><h3><strong>setTableRow</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Update a table's row
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Name of the item to update
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Data to update
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="getTableRow"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>getTableRow</strong> (const String& item, NamedList* data = 0)
+<br></td><td align="right"><h3><strong>getTableRow</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Retrieve a row from a table
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Name of the item to retrieve
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">List to fill with table's columns contents
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="clearTable"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>clearTable</strong> ()
+<br></td><td align="right"><h3><strong>clearTable</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Clear (delete all rows) a table
+</p>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="setSelect"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setSelect</strong> (const String& item)
+<br></td><td align="right"><h3><strong>setSelect</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the widget's selection
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">String containing the new selection
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="getSelect"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>getSelect</strong> (String& item)
+<br></td><td align="right"><h3><strong>getSelect</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Retrieve the widget's selection
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">String to fill with selection's contents
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="getSelect"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>getSelect</strong> (NamedList& items)
+<br></td><td align="right"><h3><strong>getSelect</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Retrieve widget's multiple selection
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>items</i></TD><TD align="left" valign="top">List to be to filled with selection's contents
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="addLines"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>addLines</strong> (const NamedList& lines, unsigned int max, bool atStart = false)
+<br></td><td align="right"><h3><strong>addLines</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Append or insert text lines to this widget
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>lines</i></TD><TD align="left" valign="top">List containing the lines
+</TD></TR>
+<TR><TD align="left" valign="top"><i>max</i></TD><TD align="left" valign="top">The maximum number of lines allowed to be displayed. Set to 0 to ignore
+</TD></TR>
+<TR><TD align="left" valign="top"><i>atStart</i></TD><TD align="left" valign="top">True to insert, false to append
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="setText"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setText</strong> (const String& text, bool richText = false)
+<br></td><td align="right"><h3><strong>setText</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the displayed text of this widget
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Text value to set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>richText</i></TD><TD align="left" valign="top">True if the text contains format data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="getText"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>getText</strong> (String& text, bool richText = false)
+<br></td><td align="right"><h3><strong>getText</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Retrieve the displayed text of this widget
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Text value
+</TD></TR>
+<TR><TD align="left" valign="top"><i>richText</i></TD><TD align="left" valign="top">True to retrieve formatted data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="setBusy"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setBusy</strong> (bool on)
+<br></td><td align="right"><h3><strong>setBusy</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Show or hide control busy state
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>on</i></TD><TD align="left" valign="top">True to show, false to hide
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if all the operations were successfull
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

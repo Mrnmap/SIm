@@ -1,0 +1,206 @@
+<HTML>
+<HEAD>
+<TITLE>class SctpSocket</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SctpSocket</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Abstract SCTP Socket. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SctpSocket</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__Socket.html">TelEngine::Socket</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SctpSocket.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">SctpSocket</A></b> () 
+</LI>
+<LI>inline explicit &nbsp;<b><A HREF="#ref3">SctpSocket</A></b> (<A HREF="#SOCKET">SOCKET</A> fd) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref4">~SctpSocket</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref5">bindx</A></i></b> (ObjList& addresses) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref6">connectx</A></i></b> (ObjList& addresses) 
+</LI>
+<LI>virtual  int &nbsp;<b><i><A HREF="#ref7">sendTo</A></i></b> (void* buffer, int length, int stream, SocketAddr& addr, int flags) 
+</LI>
+<LI>virtual  Socket* &nbsp;<b><A HREF="#ref8">accept</A></b> (SocketAddr& addr) 
+</LI>
+<LI>virtual  int &nbsp;<b><i><A HREF="#ref9">sendMsg</A></i></b> (const void* buf, int length, int stream, int& flags) 
+</LI>
+<LI>virtual  int &nbsp;<b><i><A HREF="#ref10">recvMsg</A></i></b> (void* buf, int length, SocketAddr& addr, int& stream, int& flags) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref11">setStreams</A></i></b> (int inbound, int outbound) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref12">subscribeEvents</A></i></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref13">getStreams</A></i></b> (int& inbound, int& outbound) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref14">setPayload</A></i></b> (<A HREF="#u_int32_t">u_int32_t</A> payload) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ The SctpSocket interface provides access to SCTP specific functions
+</p>
+<A NAME="SctpSocket"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SctpSocket</strong> ()
+<br></td><td align="right"><h3><strong>SctpSocket</strong></h3></td></tr></table><p></p><p>
+ Constructor
+     </p>
+<A NAME="SctpSocket"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline explicit &nbsp;<strong>SctpSocket</strong> (<A HREF="#SOCKET">SOCKET</A> fd)
+<br></td><td align="right"><h3><strong>SctpSocket</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>fd</i></TD><TD align="left" valign="top">File descriptor of an existing handle
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SctpSocket"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SctpSocket</strong> ()
+<br></td><td align="right"><h3><strong>~SctpSocket</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="bindx"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>bindx</strong></i> (ObjList& addresses)
+<br></td><td align="right"><h3><i><strong>bindx</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Bind this socket to multiple addresses
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addresses</i></TD><TD align="left" valign="top">The list of addresses (SocketAddr)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the socket bind succeded
+     </p>
+<A NAME="connectx"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>connectx</strong></i> (ObjList& addresses)
+<br></td><td align="right"><h3><i><strong>connectx</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Connect this socket to multiple addresses
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addresses</i></TD><TD align="left" valign="top">the list of addresses (SocketAddr)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the socket connect succeded
+     </p>
+<A NAME="sendTo"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<i><strong>sendTo</strong></i> (void* buffer, int length, int stream, SocketAddr& addr, int flags)
+<br></td><td align="right"><h3><i><strong>sendTo</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Send a message over a connected or unconnected socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Buffer for data transfer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>length</i></TD><TD align="left" valign="top">Length of the buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">The stream number
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to send the message to, if NULL will behave like send()
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">Operating system specific bit flags that change the behaviour
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of bytes transferred, socketError() if an error occurred
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Socket.html#sendTo">Socket</A>.</p>
+<A NAME="accept"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Socket* &nbsp;<strong>accept</strong> (SocketAddr& addr)
+<br></td><td align="right"><h3><strong>accept</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Accept an incoming connection
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">The socket address of the incoming connection
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A new SctpSocket if an incoming connection was detected
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Socket.html#accept">Socket</A>.</p>
+<A NAME="sendMsg"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<i><strong>sendMsg</strong></i> (const void* buf, int length, int stream, int& flags)
+<br></td><td align="right"><h3><i><strong>sendMsg</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Send a buffer of data over a connected socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">The data to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>length</i></TD><TD align="left" valign="top">Data length
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">The stream number to send over
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">Flags, gets altered on return
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number of bytes sent
+     </p>
+<A NAME="recvMsg"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<i><strong>recvMsg</strong></i> (void* buf, int length, SocketAddr& addr, int& stream, int& flags)
+<br></td><td align="right"><h3><i><strong>recvMsg</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Receive data from a connected socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">The buffer where the data will be stored
+</TD></TR>
+<TR><TD align="left" valign="top"><i>length</i></TD><TD align="left" valign="top">The buffer length
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Gets the remote address from which the data was received
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">Gets the stream number on which the data was read
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">Flags, gets altered on return
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number of bytes read
+     </p>
+<A NAME="setStreams"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>setStreams</strong></i> (int inbound, int outbound)
+<br></td><td align="right"><h3><i><strong>setStreams</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Set the number of streams
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>inbound</i></TD><TD align="left" valign="top">The number of inbound streams
+</TD></TR>
+<TR><TD align="left" valign="top"><i>outbound</i></TD><TD align="left" valign="top">The number of outbound streams
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the number of streams was set
+     </p>
+<A NAME="subscribeEvents"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>subscribeEvents</strong></i> ()
+<br></td><td align="right"><h3><i><strong>subscribeEvents</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Subscribe to SCTP events
+ This method should be called if we need to find from which stream the data came
+</p>
+<p><b>Returns</b>: True if subscription has succeeded
+     </p>
+<A NAME="getStreams"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>getStreams</strong></i> (int& inbound, int& outbound)
+<br></td><td align="right"><h3><i><strong>getStreams</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Get the number of negotiated streams
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>inbound</i></TD><TD align="left" valign="top">Number of inbound streams
+</TD></TR>
+<TR><TD align="left" valign="top"><i>outbound</i></TD><TD align="left" valign="top">Number of outbound streams
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation has succeded
+     </p>
+<A NAME="setPayload"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>setPayload</strong></i> (<A HREF="#u_int32_t">u_int32_t</A> payload)
+<br></td><td align="right"><h3><i><strong>setPayload</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Set the SCTP payload protocol identifier (RFC 4960)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>payload</i></TD><TD align="left" valign="top">Payload identifier code
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if set successfully
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

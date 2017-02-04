@@ -1,0 +1,1854 @@
+<HTML>
+<HEAD>
+<TITLE>class Client</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Client</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Class that runs the User Interface. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Client</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatecbase_h.html">yatecbase.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__MessageReceiver.html">TelEngine::MessageReceiver</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Client.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref5">MsgID</A> {	CallCdr = 0,
+	UiAction,
+	UserLogin,
+	UserNotify,
+	ResourceNotify,
+	ResourceSubscribe,
+	ClientChanUpdate,
+	UserRoster,
+	ContactInfo,
+	ChanNotify,
+	MucRoom,
+	MsgExecute,
+	EngineStart,
+	TransferNotify,
+	UserData,
+	FileInfo,
+	MsgIdCount
+    }
+</LI>
+<LI>enum <A HREF="#ref6">ClientToggle</A> {	OptMultiLines = 0,               
+	OptAutoAnswer,                   
+	OptRingIn,                       
+	OptRingOut,                      
+	OptActivateLastOutCall,          
+	OptActivateLastInCall,           
+	OptActivateCallOnSelect,         
+	OptKeypadVisible,                
+	OptOpenIncomingUrl,              
+	OptAddAccountOnStartup,          
+	OptDockedChat,                   
+	OptDestroyChat,                  
+	OptNotifyChatState,              
+	OptShowEmptyChat,                
+	OptSendEmptyChat,                
+	OptCount
+    }
+</LI>
+<LI>enum <A HREF="#ref7">TrayIconType</A> {	TrayIconMain = 0,
+	TrayIconInfo = 1000,
+	TrayIconIncomingChat = 3000,
+	TrayIconNotification = 5000,
+	TrayIconIncomingCall = 10000,
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>explicit &nbsp;<b><A HREF="#ref8">Client</A></b> (const char *name = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref9">~Client</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref10">startup</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref11">run</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref12">cleanup</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref13">main</A></i></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref14">lock</A></i></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref15">unlock</A></i></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref16">lockOther</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref17">unlockOther</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref18">setThread</A></b> (Thread* th) 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref19">allHidden</A></i></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref20">loadUI</A></b> (const char* file = 0, bool init = true) 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref21">quit</A></i></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref22">openUrlSafe</A></b> (const String& url) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref23">openUrl</A></i></b> (const String& url) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref24">received</A></b> (Message& msg, int id) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref25">createWindowSafe</A></b> (const String& name,
+	const String& alias = String::empty()) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref26">createDialog</A></b> (const String& name, Window* parent, const String& title,
+	const String& alias = String::empty(), const NamedList* params = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref27">createObject</A></b> (void** dest, const String& type, const char* name,
+	NamedList* params = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref28">closeWindow</A></b> (const String& name, bool hide = true) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref29">closeDialog</A></b> (const String& name, Window* wnd, Window* skip = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref30">debugHook</A></b> (bool active) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref31">addToLog</A></b> (const String& text) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref32">setStatus</A></b> (const String& text, Window* wnd = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref33">setStatusLocked</A></b> (const String& text, Window* wnd = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref34">setParams</A></b> (const NamedList* params, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref35">action</A></b> (Window* wnd, const String& name, NamedList* params = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref36">toggle</A></b> (Window* wnd, const String& name, bool active) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref37">select</A></b> (Window* wnd, const String& name, const String& item, const String& text = String::empty()) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref38">select</A></b> (Window* wnd, const String& name, const NamedList& items) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref39">oneThread</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref40">line</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref41">line</A></b> (int newLine) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref42">hasElement</A></b> (const String& name, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref43">setActive</A></b> (const String& name, bool active, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref44">setFocus</A></b> (const String& name, bool select = false, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref45">setShow</A></b> (const String& name, bool visible, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref46">setText</A></b> (const String& name, const String& text, bool richText = false,
+	Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref47">setCheck</A></b> (const String& name, bool checked, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref48">setSelect</A></b> (const String& name, const String& item, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref49">setUrgent</A></b> (const String& name, bool urgent, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref50">hasOption</A></b> (const String& name, const String& item, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref51">getOptions</A></b> (const String& name, NamedList* items,
+	Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref52">addOption</A></b> (const String& name, const String& item, bool atStart,
+	const String& text = String::empty(), Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref53">delOption</A></b> (const String& name, const String& item, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref54">addLines</A></b> (const String& name, const NamedList* lines, unsigned int max,
+	bool atStart = false, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref55">addTableRow</A></b> (const String& name, const String& item, const NamedList* data = 0,
+	bool atStart = false, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref56">setMultipleRows</A></b> (const String& name, const NamedList& data, const String& prefix = String::empty(), Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref57">insertTableRow</A></b> (const String& name, const String& item,
+	const String& before, const NamedList* data = 0,
+	Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref58">delTableRow</A></b> (const String& name, const String& item, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref59">setTableRow</A></b> (const String& name, const String& item, const NamedList* data,
+	Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref60">getTableRow</A></b> (const String& name, const String& item, NamedList* data = 0,
+	Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref61">clearTable</A></b> (const String& name, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref62">updateTableRow</A></b> (const String& name, const String& item, const NamedList* data = 0,
+	bool atStart = false, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref63">updateTableRows</A></b> (const String& name, const NamedList* data, bool atStart = false,
+	Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref64">setBusy</A></b> (const String& name, bool on, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref65">getText</A></b> (const String& name, String& text, bool richText = false, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref66">getCheck</A></b> (const String& name, bool& checked, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref67">getSelect</A></b> (const String& name, String& item, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref68">getSelect</A></b> (const String& name, NamedList& items, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref69">buildMenu</A></b> (const NamedList& params, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref70">removeMenu</A></b> (const NamedList& params, Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref71">setImage</A></b> (const String& name, const String& image,
+	Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref72">setImageFit</A></b> (const String& name, const String& image,
+	Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref73">setProperty</A></b> (const String& name, const String& item, const String& value,
+	Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref74">getProperty</A></b> (const String& name, const String& item, String& value,
+	Window* wnd = 0, Window* skip = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref75">moveRelated</A></b> (const Window* wnd, int dx, int dy) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref76">initialized</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref89">idleActions</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref90">postpone</A></b> (const Message& msg, int id, bool copyUserData = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref91">chooseFile</A></b> (Window* parent, NamedList& params) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref92">setClientParam</A></b> (const String& param, const String& value,
+	bool save, bool update) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref93">backspace</A></b> (const String& name, Window* wnd = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref94">installRelay</A></b> (const char* name, int id, int prio) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref95">callRouting</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref96">imRouting</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref97">imExecute</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref98">buildIncomingChannel</A></b> (Message& msg, const String& dest) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref99">buildOutgoingChannel</A></b> (NamedList& params) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref100">callIncoming</A></b> (Message& msg, const String& dest) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref101">callAnswer</A></b> (const String& id, bool setActive = true) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref102">callTerminate</A></b> (const String& id, const char* reason = 0, const char* error = 0) 
+</LI>
+<LI>ClientChannel* &nbsp;<b><A HREF="#ref103">getActiveChannel</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref104">ringer</A></b> (bool in, bool on) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref105">createSound</A></b> (const char* name, const char* file, const char* device = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref106">emitDigits</A></b> (const char* digits, const String& id = String::empty()) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref107">emitDigit</A></b> (char digit, const String& id = String::empty()) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref108">getBoolOpt</A></b> (ClientToggle toggle) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref109">setBoolOpt</A></b> (ClientToggle toggle, bool value, bool updateUi = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref110">formatDateTime</A></b> (String& dest, unsigned int secs, const char* format,
+	bool utc = false) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static inline  Client* &nbsp;<b><A HREF="#ref77">self</A></b> () 
+</LI>
+<LI>static inline  void &nbsp;<b><A HREF="#ref78">setSelf</A></b> (Client* client) 
+</LI>
+<LI>static  inline bool &nbsp;<b><A HREF="#ref79">valid</A></b> () 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref80">isClientMsg</A></b> (Message& msg) 
+</LI>
+<LI>static inline  bool &nbsp;<b><A HREF="#ref81">changing</A></b> () 
+</LI>
+<LI>static  Window* &nbsp;<b><A HREF="#ref82">getWindow</A></b> (const String& name) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref83">setVisible</A></b> (const String& name, bool show = true, bool activate = false) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref84">getVisible</A></b> (const String& name) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref85">openPopup</A></b> (const String& name, const NamedList* params = 0, const Window* parent = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref86">openMessage</A></b> (const char* text, const Window* parent = 0, const char* context = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref87">openConfirm</A></b> (const char* text, const Window* parent = 0, const char* context = 0) 
+</LI>
+<LI>static  ObjList* &nbsp;<b><A HREF="#ref88">listWindows</A></b> () 
+</LI>
+<LI>static  inline bool &nbsp;<b><A HREF="#ref111">exiting</A></b> () 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref112">getActive</A></b> (const String& name) 
+</LI>
+<LI>static  Message* &nbsp;<b><A HREF="#ref113">buildMessage</A></b> (const char* msg, const String& account,
+	const char* oper = 0) 
+</LI>
+<LI>static  Message* &nbsp;<b><A HREF="#ref114">buildNotify</A></b> (bool online, const String& account,
+	const ClientResource* from = 0) 
+</LI>
+<LI>static  Message* &nbsp;<b><A HREF="#ref115">buildSubscribe</A></b> (bool request, bool ok, const String& account,
+	const String& contact, const char* proto = 0) 
+</LI>
+<LI>static  Message* &nbsp;<b><A HREF="#ref116">buildUserRoster</A></b> (bool update, const String& account,
+	const String& contact, const char* proto = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref117">addLogic</A></b> (ClientLogic* logic) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref118">removeLogic</A></b> (ClientLogic* logic) 
+</LI>
+<LI>static  ClientLogic* &nbsp;<b><A HREF="#ref119">findLogic</A></b> (const String& name) 
+</LI>
+<LI>static  Message* &nbsp;<b><A HREF="#ref120">eventMessage</A></b> (const String& event, Window* wnd = 0,
+	const char* name = 0, NamedList* params = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref121">save</A></b> (Configuration& cfg, Window* parent = 0, bool showErr = true) 
+</LI>
+<LI>static  ClientToggle &nbsp;<b><A HREF="#ref122">getBoolOpt</A></b> (const String& name) 
+</LI>
+<LI>static  inline void &nbsp;<b><A HREF="#ref123">setLogicsTick</A></b> () 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref124">appendEscape</A></b> (String& buf, ObjList& list, char sep = ',', bool force = false) 
+</LI>
+<LI>static  ObjList* &nbsp;<b><A HREF="#ref125">splitUnescape</A></b> (const String& buf, char sep = ',', bool emptyOk = false) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref126">removeChars</A></b> (String& buf, const char* chars) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref127">fixPhoneNumber</A></b> (String& number, const char* chars = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref128">addTrayIcon</A></b> (const String& wndName, int prio, NamedList* params) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref129">removeTrayIcon</A></b> (const String& wndName, const String& name) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref130">updateTrayIcon</A></b> (const String& wndName) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref131">generateGuid</A></b> (String& buf, const String& extra = String::empty()) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref132">plain2html</A></b> (String& buf, bool spaceEol = false) 
+</LI>
+<LI>static  NamedString* &nbsp;<b><A HREF="#ref133">findParamByValue</A></b> (NamedList& list, const String& value,
+	NamedString* skip = 0) 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref134">decodeFlags</A></b> (const TokenDict* dict, const NamedList& params,
+	const String& prefix = String::empty()) 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref135">decodeFlags</A></b> (const TokenDict* dict, const String& flags, int defVal = 0) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref136">addPathSep</A></b> (String& dest, const String& path, char sep = 0) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref137">fixPathSep</A></b> (String& path) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref138">removeEndsWithPathSep</A></b> (String& dest, const String& path, char sep = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref139">getLastNameInPath</A></b> (String& dest, const String& path, char sep = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref140">removeLastNameInPath</A></b> (String& dest, const String& path, char sep = 0,
+	const String& equalOnly = String::empty()) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref141">addToLogFormatted</A></b> (const char* format, ...) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static Configuration <b><A HREF="#ref142">s_settings</A></b></LI>
+<LI>static Configuration <b><A HREF="#ref143">s_actions</A></b></LI>
+<LI>static Configuration <b><A HREF="#ref144">s_accounts</A></b></LI>
+<LI>static Configuration <b><A HREF="#ref145">s_contacts</A></b></LI>
+<LI>static Configuration <b><A HREF="#ref146">s_providers</A></b></LI>
+<LI>static Configuration <b><A HREF="#ref147">s_history</A></b></LI>
+<LI>static Configuration <b><A HREF="#ref148">s_calltoHistory</A></b></LI>
+<LI>static Regexp <b><A HREF="#ref149">s_notSelected</A></b></LI>
+<LI>static Regexp <b><A HREF="#ref150">s_guidRegexp</A></b></LI>
+<LI>static String <b><A HREF="#ref151">s_skinPath</A></b></LI>
+<LI>static String <b><A HREF="#ref152">s_soundPath</A></b></LI>
+<LI>static String <b><A HREF="#ref153">s_ringInName</A></b></LI>
+<LI>static String <b><A HREF="#ref154">s_ringOutName</A></b></LI>
+<LI>static String <b><A HREF="#ref155">s_statusWidget</A></b></LI>
+<LI>static String <b><A HREF="#ref156">s_debugWidget</A></b></LI>
+<LI>static String <b><A HREF="#ref157">s_toggles[OptCount]</A></b></LI>
+<LI>static int <b><A HREF="#ref158">s_maxConfPeers</A></b></LI>
+<LI>static bool <b><A HREF="#ref159">s_engineStarted</A></b></LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  ClientLogic* &nbsp;<b><A HREF="#ref160">createDefaultLogic</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref161">createWindow</A></i></b> (const String& name,
+	const String& alias = String::empty()) 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref162">loadWindows</A></i></b> (const char* file = 0) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref163">initWindows</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref164">initClient</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref165">exitClient</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref166">isUIThread</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref167">needProxy</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref168">driverLockLoop</A></b> () 
+</LI>
+</ul><h4>Protected Static Methods</h4><ul><LI>static  bool &nbsp;<b><A HREF="#ref169">driverLock</A></b> (long maxwait = 0) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref170">driverUnlock</A></b> () 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>static bool <b><A HREF="#ref171">s_exiting</A></b></LI>
+<LI>ObjList <b><A HREF="#ref172">m_windows</A></b></LI>
+<LI>bool <b><A HREF="#ref173">m_initialized</A></b></LI>
+<LI>int <b><A HREF="#ref174">m_line</A></b></LI>
+<LI>bool <b><A HREF="#ref175">m_oneThread</A></b></LI>
+<LI>bool <b><A HREF="#ref176">m_toggles[OptCount]</A></b></LI>
+<LI>ObjList <b><A HREF="#ref177">m_relays</A></b></LI>
+<LI>ClientLogic* <b><A HREF="#ref178">m_defaultLogic</A></b></LI>
+<LI>static Client* <b><A HREF="#ref179">s_client</A></b></LI>
+<LI>static int <b><A HREF="#ref180">s_changing</A></b></LI>
+<LI>static ObjList <b><A HREF="#ref181">s_logics</A></b></LI>
+<LI>static bool <b><A HREF="#ref182">s_idleLogicsTick</A></b></LI>
+<LI>Thread* <b><A HREF="#ref183">m_clientThread</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Singleton class that holds the User Interface's main  methods
+</p>
+<A NAME="MsgID"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>MsgID</strong> {	CallCdr = 0,
+	UiAction,
+	UserLogin,
+	UserNotify,
+	ResourceNotify,
+	ResourceSubscribe,
+	ClientChanUpdate,
+	UserRoster,
+	ContactInfo,
+	ChanNotify,
+	MucRoom,
+	MsgExecute,
+	EngineStart,
+	TransferNotify,
+	UserData,
+	FileInfo,
+	MsgIdCount
+    }
+</td><td align="right"><h3><strong>MsgID</strong></h3></td></tr></table><p></p><p>
+ Message relays installed by this receiver.
+     </p>
+<A NAME="ClientToggle"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>ClientToggle</strong> {	OptMultiLines = 0,               
+	OptAutoAnswer,                   
+	OptRingIn,                       
+	OptRingOut,                      
+	OptActivateLastOutCall,          
+	OptActivateLastInCall,           
+	OptActivateCallOnSelect,         
+	OptKeypadVisible,                
+	OptOpenIncomingUrl,              
+	OptAddAccountOnStartup,          
+	OptDockedChat,                   
+	OptDestroyChat,                  
+	OptNotifyChatState,              
+	OptShowEmptyChat,                
+	OptSendEmptyChat,                
+	OptCount
+    }
+</td><td align="right"><h3><strong>ClientToggle</strong></h3></td></tr></table><p></p><p>
+ Client boolean options mapped to UI toggles
+     </p>
+<A NAME="TrayIconType"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>TrayIconType</strong> {	TrayIconMain = 0,
+	TrayIconInfo = 1000,
+	TrayIconIncomingChat = 3000,
+	TrayIconNotification = 5000,
+	TrayIconIncomingCall = 10000,
+    }
+</td><td align="right"><h3><strong>TrayIconType</strong></h3></td></tr></table><p></p><p>
+ Tray icon valuers used in stack
+     </p>
+<A NAME="Client"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>Client</strong> (const char *name = 0)
+<br></td><td align="right"><h3><strong>Client</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The client's name
+     </TD></TR>
+</TABLE></P>
+<A NAME="~Client"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~Client</strong> ()
+<br></td><td align="right"><h3><strong>~Client</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="startup"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>startup</strong> ()
+<br></td><td align="right"><h3><strong>startup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Start up the client thread
+</p>
+<p><b>Returns</b>: True if the client thread is started, false otherwise
+     </p>
+<A NAME="run"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>run</strong> ()
+<br></td><td align="right"><h3><strong>run</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Run the client's main loop
+     </p>
+<A NAME="cleanup"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>cleanup</strong> ()
+<br></td><td align="right"><h3><strong>cleanup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Cleanup when thread terminates
+     </p>
+<A NAME="main"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>main</strong></i> ()
+<br></td><td align="right"><h3><i><strong>main</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Execute the client
+     </p>
+<A NAME="lock"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>lock</strong></i> ()
+<br></td><td align="right"><h3><i><strong>lock</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Lock the client
+     </p>
+<A NAME="unlock"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>unlock</strong></i> ()
+<br></td><td align="right"><h3><i><strong>unlock</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Unlock the client
+     </p>
+<A NAME="lockOther"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>lockOther</strong> ()
+<br></td><td align="right"><h3><strong>lockOther</strong></h3></td></tr></table><p></p><p>
+ Lock the client only if we are using more then 1 thread
+     </p>
+<A NAME="unlockOther"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>unlockOther</strong> ()
+<br></td><td align="right"><h3><strong>unlockOther</strong></h3></td></tr></table><p></p><p>
+ Unlock the client only if we are using more then 1 thread
+     </p>
+<A NAME="setThread"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setThread</strong> (Thread* th)
+<br></td><td align="right"><h3><strong>setThread</strong></h3></td></tr></table><p></p><p>
+ Set the client's thread
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>th</i></TD><TD align="left" valign="top">The thread on which the client will run on
+     </TD></TR>
+</TABLE></P>
+<A NAME="allHidden"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>allHidden</strong></i> ()
+<br></td><td align="right"><h3><i><strong>allHidden</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Handle all windows closed event from UI
+     </p>
+<A NAME="loadUI"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>loadUI</strong> (const char* file = 0, bool init = true)
+<br></td><td align="right"><h3><strong>loadUI</strong></h3></td></tr></table><p></p><p>
+ Load windows and optionally (re)initialize the client's options.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>file</i></TD><TD align="left" valign="top">The resource file describing the windows. Set to 0 to use the default one
+</TD></TR>
+<TR><TD align="left" valign="top"><i>init</i></TD><TD align="left" valign="top">True to (re)initialize the client
+     </TD></TR>
+</TABLE></P>
+<A NAME="quit"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>quit</strong></i> ()
+<br></td><td align="right"><h3><i><strong>quit</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Terminate application
+     </p>
+<A NAME="openUrlSafe"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>openUrlSafe</strong> (const String& url)
+<br></td><td align="right"><h3><strong>openUrlSafe</strong></h3></td></tr></table><p></p><p>
+ Open an URL (link) in the client's thread
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>url</i></TD><TD align="left" valign="top">The URL to open
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="openUrl"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>openUrl</strong></i> (const String& url)
+<br></td><td align="right"><h3><i><strong>openUrl</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Open an URL (link)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>url</i></TD><TD align="left" valign="top">The URL to open
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="received"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>received</strong> (Message& msg, int id)
+<br></td><td align="right"><h3><strong>received</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process a received message. Check for a logic to process it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Received message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Message id
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if a logic processed the message (stop dispatching it)
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__MessageReceiver.html#received">MessageReceiver</A>.</p>
+<A NAME="createWindowSafe"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>createWindowSafe</strong> (const String& name,
+	const String& alias = String::empty())
+<br></td><td align="right"><h3><strong>createWindowSafe</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Create a window with a given name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The window's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>alias</i></TD><TD align="left" valign="top">Window name alias after succesfully loaded.
+  Set to empty string to use the given name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="createDialog"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>createDialog</strong> (const String& name, Window* parent, const String& title,
+	const String& alias = String::empty(), const NamedList* params = 0)
+<br></td><td align="right"><h3><strong>createDialog</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Create a modal dialog owned by a given window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Dialog name (resource config section)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>parent</i></TD><TD align="left" valign="top">Parent window
+</TD></TR>
+<TR><TD align="left" valign="top"><i>title</i></TD><TD align="left" valign="top">Dialog title
+</TD></TR>
+<TR><TD align="left" valign="top"><i>alias</i></TD><TD align="left" valign="top">Optional dialog alias (used as dialog object name)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional dialog parameters
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="createObject"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>createObject</strong> (void** dest, const String& type, const char* name,
+	NamedList* params = 0)
+<br></td><td align="right"><h3><strong>createObject</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Ask to an UI factory to create an object in the UI's thread
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination to be filled with the newly create object's address
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Object's type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Object's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional object parameters
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="closeWindow"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>closeWindow</strong> (const String& name, bool hide = true)
+<br></td><td align="right"><h3><strong>closeWindow</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Hide/destroy a window with a given name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The window's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>hide</i></TD><TD align="left" valign="top">True to hide, false to close
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="closeDialog"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>closeDialog</strong> (const String& name, Window* wnd, Window* skip = 0)
+<br></td><td align="right"><h3><strong>closeDialog</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destroy a modal dialog
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Dialog name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Window owning the dialog
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip if wnd is null
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="debugHook"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>debugHook</strong> (bool active)
+<br></td><td align="right"><h3><strong>debugHook</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Install/uninstall a debugger output hook
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>active</i></TD><TD align="left" valign="top">True to install, false to uninstall the hook
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="addToLog"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>addToLog</strong> (const String& text)
+<br></td><td align="right"><h3><strong>addToLog</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Add a log line
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Text to add
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="setStatus"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setStatus</strong> (const String& text, Window* wnd = 0)
+<br></td><td align="right"><h3><strong>setStatus</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the status text
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Status text
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window owning the status control
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="setStatusLocked"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setStatusLocked</strong> (const String& text, Window* wnd = 0)
+<br></td><td align="right"><h3><strong>setStatusLocked</strong></h3></td></tr></table><p></p><p>
+ Set the status text safely
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Status text
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window owning the status control
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="setParams"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setParams</strong> (const NamedList* params, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>setParams</strong></h3></td></tr></table><p></p><p>
+ Set multiple window parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">The parameter list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window whose params are to be set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip if wnd is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="action"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>action</strong> (Window* wnd, const String& name, NamedList* params = 0)
+<br></td><td align="right"><h3><strong>action</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Handle actions from user interface. Enqueue an ui.event message if
+  the action is not handled by a client logic
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">The window in which the user did something
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The action's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional action parameters
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the action was handled by a client logic
+     </p>
+<A NAME="toggle"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>toggle</strong> (Window* wnd, const String& name, bool active)
+<br></td><td align="right"><h3><strong>toggle</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Handle actions from checkable widgets. Enqueue an ui.event message if
+  the action is not handled by a client logic
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">The window in which the user did something
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The object's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>active</i></TD><TD align="left" valign="top">Object's state
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the action was handled by a client logic
+     </p>
+<A NAME="select"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>select</strong> (Window* wnd, const String& name, const String& item, const String& text = String::empty())
+<br></td><td align="right"><h3><strong>select</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Handle 'select' actions from user interface. Enqueue an ui.event message if
+  the action is not handled by a client logic
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">The window in which the user selected the object
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The action's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Item identifying the selection
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Selection's text
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the action was handled by a client logic
+     </p>
+<A NAME="select"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>select</strong> (Window* wnd, const String& name, const NamedList& items)
+<br></td><td align="right"><h3><strong>select</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Handle 'select' with multiple items actions from user interface. Enqueue an ui.event message if
+  the action is not handled by a client logic
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">The window in which the user selected the object
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The action's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>items</i></TD><TD align="left" valign="top">List containing the selection
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the action was handled by a client logic
+     </p>
+<A NAME="oneThread"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>oneThread</strong> ()
+<br></td><td align="right"><h3><strong>oneThread</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the client is using more then 1 thread
+</p>
+<p><b>Returns</b>: True if the client is using more then 1 thread
+     </p>
+<A NAME="line"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>line</strong> ()
+<br></td><td align="right"><h3><strong>line</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the currently selected line
+</p>
+<p><b>Returns</b>: The selected line
+     </p>
+<A NAME="line"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>line</strong> (int newLine)
+<br></td><td align="right"><h3><strong>line</strong></h3></td></tr></table><p></p><p>
+ Set the selected line
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newLine</i></TD><TD align="left" valign="top">The selected line
+     </TD></TR>
+</TABLE></P>
+<A NAME="hasElement"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>hasElement</strong> (const String& name, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>hasElement</strong></h3></td></tr></table><p></p><A NAME="setActive"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setActive</strong> (const String& name, bool active, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>setActive</strong></h3></td></tr></table><p></p><A NAME="setFocus"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setFocus</strong> (const String& name, bool select = false, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>setFocus</strong></h3></td></tr></table><p></p><A NAME="setShow"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setShow</strong> (const String& name, bool visible, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>setShow</strong></h3></td></tr></table><p></p><A NAME="setText"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setText</strong> (const String& name, const String& text, bool richText = false,
+	Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>setText</strong></h3></td></tr></table><p></p><A NAME="setCheck"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setCheck</strong> (const String& name, bool checked, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>setCheck</strong></h3></td></tr></table><p></p><A NAME="setSelect"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setSelect</strong> (const String& name, const String& item, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>setSelect</strong></h3></td></tr></table><p></p><A NAME="setUrgent"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setUrgent</strong> (const String& name, bool urgent, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>setUrgent</strong></h3></td></tr></table><p></p><A NAME="hasOption"></A><A NAME="ref50"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>hasOption</strong> (const String& name, const String& item, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>hasOption</strong></h3></td></tr></table><p></p><A NAME="getOptions"></A><A NAME="ref51"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>getOptions</strong> (const String& name, NamedList* items,
+	Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>getOptions</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get an element's items
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element to search for
+</TD></TR>
+<TR><TD align="left" valign="top"><i>items</i></TD><TD align="left" valign="top">List to fill with element's items
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window owning the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip when searching for the element
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the element exists
+     </p>
+<A NAME="addOption"></A><A NAME="ref52"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>addOption</strong> (const String& name, const String& item, bool atStart,
+	const String& text = String::empty(), Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>addOption</strong></h3></td></tr></table><p></p><A NAME="delOption"></A><A NAME="ref53"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>delOption</strong> (const String& name, const String& item, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>delOption</strong></h3></td></tr></table><p></p><A NAME="addLines"></A><A NAME="ref54"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>addLines</strong> (const String& name, const NamedList* lines, unsigned int max,
+	bool atStart = false, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>addLines</strong></h3></td></tr></table><p></p><p>
+ Append or insert text lines to a widget
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of the widget
+</TD></TR>
+<TR><TD align="left" valign="top"><i>lines</i></TD><TD align="left" valign="top">List containing the lines
+</TD></TR>
+<TR><TD align="left" valign="top"><i>max</i></TD><TD align="left" valign="top">The maximum number of lines allowed to be displayed. Set to 0 to ignore
+</TD></TR>
+<TR><TD align="left" valign="top"><i>atStart</i></TD><TD align="left" valign="top">True to insert, false to append
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window owning the widget
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip if wnd is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="addTableRow"></A><A NAME="ref55"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>addTableRow</strong> (const String& name, const String& item, const NamedList* data = 0,
+	bool atStart = false, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>addTableRow</strong></h3></td></tr></table><p></p><A NAME="setMultipleRows"></A><A NAME="ref56"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setMultipleRows</strong> (const String& name, const NamedList& data, const String& prefix = String::empty(), Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>setMultipleRows</strong></h3></td></tr></table><p></p><p>
+ Append or update several table rows at once
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Parameters to initialize the rows with
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prefix</i></TD><TD align="left" valign="top">Prefix to match (and remove) in parameter names
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window owning the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip if wnd is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if all the operations were successfull
+     </p>
+<A NAME="insertTableRow"></A><A NAME="ref57"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>insertTableRow</strong> (const String& name, const String& item,
+	const String& before, const NamedList* data = 0,
+	Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>insertTableRow</strong></h3></td></tr></table><p></p><p>
+ Insert a row into a table owned by this window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Name of the item to insert
+</TD></TR>
+<TR><TD align="left" valign="top"><i>before</i></TD><TD align="left" valign="top">Name of the item to insert before
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Table's columns to set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window owning the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip if wnd is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="delTableRow"></A><A NAME="ref58"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>delTableRow</strong> (const String& name, const String& item, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>delTableRow</strong></h3></td></tr></table><p></p><A NAME="setTableRow"></A><A NAME="ref59"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setTableRow</strong> (const String& name, const String& item, const NamedList* data,
+	Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>setTableRow</strong></h3></td></tr></table><p></p><A NAME="getTableRow"></A><A NAME="ref60"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getTableRow</strong> (const String& name, const String& item, NamedList* data = 0,
+	Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>getTableRow</strong></h3></td></tr></table><p></p><A NAME="clearTable"></A><A NAME="ref61"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>clearTable</strong> (const String& name, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>clearTable</strong></h3></td></tr></table><p></p><A NAME="updateTableRow"></A><A NAME="ref62"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>updateTableRow</strong> (const String& name, const String& item, const NamedList* data = 0,
+	bool atStart = false, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>updateTableRow</strong></h3></td></tr></table><p></p><p>
+ Set a table row or add a new one if not found
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Table item to set/add
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Optional list of parameters used to set row data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>atStart</i></TD><TD align="left" valign="top">True to add item at start, false to add them to the end
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window owning the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip if wnd is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="updateTableRows"></A><A NAME="ref63"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>updateTableRows</strong> (const String& name, const NamedList* data, bool atStart = false,
+	Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>updateTableRows</strong></h3></td></tr></table><p></p><p>
+ Add or set one or more table row(s). Screen update is locked while changing the table.
+ Each data list element is a NamedPointer carrying a NamedList with item parameters.
+ The name of an element is the item to update.
+ Set element's value to boolean value 'true' to add a new item if not found
+  or 'false' to set an existing one. Set it to empty string to delete the item
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the table
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">The list of items to add/set/delete
+</TD></TR>
+<TR><TD align="left" valign="top"><i>atStart</i></TD><TD align="left" valign="top">True to add new items at start, false to add them to the end
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window owning the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip if wnd is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="setBusy"></A><A NAME="ref64"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setBusy</strong> (const String& name, bool on, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>setBusy</strong></h3></td></tr></table><p></p><p>
+ Show or hide control busy state
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>on</i></TD><TD align="left" valign="top">True to show, false to hide
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window owning the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip if wnd is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if all the operations were successfull
+     </p>
+<A NAME="getText"></A><A NAME="ref65"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getText</strong> (const String& name, String& text, bool richText = false, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>getText</strong></h3></td></tr></table><p></p><p>
+ Get an element's text
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">The destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>richText</i></TD><TD align="left" valign="top">True to get the element's roch text if supported.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window owning the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip if wnd is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="getCheck"></A><A NAME="ref66"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getCheck</strong> (const String& name, bool& checked, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>getCheck</strong></h3></td></tr></table><p></p><A NAME="getSelect"></A><A NAME="ref67"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getSelect</strong> (const String& name, String& item, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>getSelect</strong></h3></td></tr></table><p></p><A NAME="getSelect"></A><A NAME="ref68"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getSelect</strong> (const String& name, NamedList& items, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>getSelect</strong></h3></td></tr></table><p></p><p>
+ Retrieve an element's multiple selection
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>items</i></TD><TD align="left" valign="top">List to be to filled with selection's contents
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window owning the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip if wnd is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="buildMenu"></A><A NAME="ref69"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>buildMenu</strong> (const NamedList& params, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>buildMenu</strong></h3></td></tr></table><p></p><p>
+ Build a menu from a list of parameters and add it to a target.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Menu build parameters (list name is the menu name).
+ Each menu item is indicated by a parameter item:[item_name]=[display_text].
+ A separator will be added if 'item_name' is empty.
+ A new item will be created if 'display_text' is not empty.
+ Set 'display_text' to empty string to use an existing item.
+ Item image can be set by an 'image:item_name' parameter.
+ If the item parameter is a NamedPointer carrying a NamedList a submenu will be created.
+ Menu item properties can be set from parameters with format
+  property:item_name:property_name=value.
+ The following parameters can be set:
+  - title: menu display text (defaults to menu name)
+  - owner: optional menu owner (the window building the menu is
+   assumed to be the owner if this parameter is empty)
+  - target: optional menu target (defaults to owner)
+  - before: optional item to insert before if the target is a menu container
+   (another menu or a menu bar)
+  - before_separator: check if a separator already exists before the item
+   'before' and insert the menu before the separator
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional target window
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip if wnd is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="removeMenu"></A><A NAME="ref70"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>removeMenu</strong> (const NamedList& params, Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>removeMenu</strong></h3></td></tr></table><p></p><p>
+ Remove a menu (from UI and memory)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Menu remove parameters.
+ The following parameters can be set:
+  - owner: optional menu owner (the window building the menu is
+   assumed to be the owner if this parameter is empty)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional target window
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip if wnd is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="setImage"></A><A NAME="ref71"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setImage</strong> (const String& name, const String& image,
+	Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>setImage</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set an element's image
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>image</i></TD><TD align="left" valign="top">Image to set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional target window
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip if wnd is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="setImageFit"></A><A NAME="ref72"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setImageFit</strong> (const String& name, const String& image,
+	Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>setImageFit</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set an element's image. Request to fit the image in element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>image</i></TD><TD align="left" valign="top">Image to set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional target window
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip if wnd is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="setProperty"></A><A NAME="ref73"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setProperty</strong> (const String& name, const String& item, const String& value,
+	Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>setProperty</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set a property
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Property's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Property's value
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional target window
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip if wnd is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="getProperty"></A><A NAME="ref74"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>getProperty</strong> (const String& name, const String& item, String& value,
+	Window* wnd = 0, Window* skip = 0)
+<br></td><td align="right"><h3><strong>getProperty</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get a property
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Property's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Property's value
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional target window
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip if wnd is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="moveRelated"></A><A NAME="ref75"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>moveRelated</strong> (const Window* wnd, int dx, int dy)
+<br></td><td align="right"><h3><strong>moveRelated</strong></h3></td></tr></table><p></p><A NAME="initialized"></A><A NAME="ref76"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>initialized</strong> ()
+<br></td><td align="right"><h3><strong>initialized</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="self"></A><A NAME="ref77"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  Client* &nbsp;<strong>self</strong> ()
+<br></td><td align="right"><h3><strong>self</strong></h3></td></tr></table><p> <small>[static]</small></p><A NAME="setSelf"></A><A NAME="ref78"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  void &nbsp;<strong>setSelf</strong> (Client* client)
+<br></td><td align="right"><h3><strong>setSelf</strong></h3></td></tr></table><p> <small>[static]</small></p><A NAME="valid"></A><A NAME="ref79"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline bool &nbsp;<strong>valid</strong> ()
+<br></td><td align="right"><h3><strong>valid</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if the client object still exists and the client or engine is not exiting
+</p>
+<p><b>Returns</b>: True if the client is valid (running) or the method is called from client's thread
+     </p>
+<A NAME="isClientMsg"></A><A NAME="ref80"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>isClientMsg</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>isClientMsg</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if a message is sent by the client
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The message to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the message has a 'module' parameter with the client driver's name
+     </p>
+<A NAME="changing"></A><A NAME="ref81"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  bool &nbsp;<strong>changing</strong> ()
+<br></td><td align="right"><h3><strong>changing</strong></h3></td></tr></table><p> <small>[static]</small></p><A NAME="getWindow"></A><A NAME="ref82"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Window* &nbsp;<strong>getWindow</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getWindow</strong></h3></td></tr></table><p> <small>[static]</small></p><A NAME="setVisible"></A><A NAME="ref83"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setVisible</strong> (const String& name, bool show = true, bool activate = false)
+<br></td><td align="right"><h3><strong>setVisible</strong></h3></td></tr></table><p> <small>[static]</small></p><A NAME="getVisible"></A><A NAME="ref84"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>getVisible</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getVisible</strong></h3></td></tr></table><p> <small>[static]</small></p><A NAME="openPopup"></A><A NAME="ref85"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>openPopup</strong> (const String& name, const NamedList* params = 0, const Window* parent = 0)
+<br></td><td align="right"><h3><strong>openPopup</strong></h3></td></tr></table><p> <small>[static]</small></p><A NAME="openMessage"></A><A NAME="ref86"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>openMessage</strong> (const char* text, const Window* parent = 0, const char* context = 0)
+<br></td><td align="right"><h3><strong>openMessage</strong></h3></td></tr></table><p> <small>[static]</small></p><A NAME="openConfirm"></A><A NAME="ref87"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>openConfirm</strong> (const char* text, const Window* parent = 0, const char* context = 0)
+<br></td><td align="right"><h3><strong>openConfirm</strong></h3></td></tr></table><p> <small>[static]</small></p><A NAME="listWindows"></A><A NAME="ref88"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ObjList* &nbsp;<strong>listWindows</strong> ()
+<br></td><td align="right"><h3><strong>listWindows</strong></h3></td></tr></table><p> <small>[static]</small></p><A NAME="idleActions"></A><A NAME="ref89"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>idleActions</strong> ()
+<br></td><td align="right"><h3><strong>idleActions</strong></h3></td></tr></table><p></p><A NAME="postpone"></A><A NAME="ref90"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>postpone</strong> (const Message& msg, int id, bool copyUserData = false)
+<br></td><td align="right"><h3><strong>postpone</strong></h3></td></tr></table><p></p><p>
+ Postpone a copy of a message to be dispatched from the UI thread
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Message to be postponed
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Identifier of the message to be used on dispatch
+</TD></TR>
+<TR><TD align="left" valign="top"><i>copyUserData</i></TD><TD align="left" valign="top">Copy source user data in postponed message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the UI thread was not current so the message was postponed
+     </p>
+<A NAME="chooseFile"></A><A NAME="ref91"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>chooseFile</strong> (Window* parent, NamedList& params)
+<br></td><td align="right"><h3><strong>chooseFile</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Show a file open/save dialog window
+ This method isn't using the proxy thread since it's usually called on UI action
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>parent</i></TD><TD align="left" valign="top">Dialog window's parent
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Dialog window's params. Parameters that can be specified include 'caption',
+  'dir', 'filters', 'selectedfilter', 'confirmoverwrite', 'choosedir'.
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="setClientParam"></A><A NAME="ref92"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setClientParam</strong> (const String& param, const String& value,
+	bool save, bool update)
+<br></td><td align="right"><h3><strong>setClientParam</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Request to a logic to set a client's parameter. Save the settings file
+  and/or update interface
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">Parameter's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">The value of the parameter
+</TD></TR>
+<TR><TD align="left" valign="top"><i>save</i></TD><TD align="left" valign="top">True to save the configuration file
+</TD></TR>
+<TR><TD align="left" valign="top"><i>update</i></TD><TD align="left" valign="top">True to update the interface
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, false if the parameter doesn't exist, the value
+  is incorrect or failed to save the file
+     </p>
+<A NAME="backspace"></A><A NAME="ref93"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>backspace</strong> (const String& name, Window* wnd = 0)
+<br></td><td align="right"><h3><strong>backspace</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove the last character of the given widget
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The widget (it might be the window itself)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window containing the widget that triggered the action
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="installRelay"></A><A NAME="ref94"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>installRelay</strong> (const char* name, int id, int prio)
+<br></td><td align="right"><h3><strong>installRelay</strong></h3></td></tr></table><p></p><p>
+ Create and install a message relay owned by this client.
+ The new relay will be unistalled when the client is terminated
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Message name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Relay id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">Message priority
+     </TD></TR>
+</TABLE></P>
+<A NAME="callRouting"></A><A NAME="ref95"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>callRouting</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>callRouting</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Call routing handler called by the driver
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The call.route message
+     </TD></TR>
+</TABLE></P>
+<A NAME="imRouting"></A><A NAME="ref96"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>imRouting</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>imRouting</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ IM message routing handler called by the driver
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The im.route message
+     </TD></TR>
+</TABLE></P>
+<A NAME="imExecute"></A><A NAME="ref97"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>imExecute</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>imExecute</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process an IM message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The im.execute of chan.text message
+     </TD></TR>
+</TABLE></P>
+<A NAME="buildIncomingChannel"></A><A NAME="ref98"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>buildIncomingChannel</strong> (Message& msg, const String& dest)
+<br></td><td align="right"><h3><strong>buildIncomingChannel</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Build an incoming channel.
+ Answer it if succesfully connected and auto answer is set.
+ Reject it if multiline is false and the driver is busy.
+ Set the active one if requested by config and there is no active channel.
+ Start the ringer if there is no active channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The call.execute message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">The destination (target)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if a channel was created and connected
+     </p>
+<A NAME="buildOutgoingChannel"></A><A NAME="ref99"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>buildOutgoingChannel</strong> (NamedList& params)
+<br></td><td align="right"><h3><strong>buildOutgoingChannel</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Build an outgoing channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Call parameters
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if a channel was created its router started
+     </p>
+<A NAME="callIncoming"></A><A NAME="ref100"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>callIncoming</strong> (Message& msg, const String& dest)
+<br></td><td align="right"><h3><strong>callIncoming</strong></h3></td></tr></table><p></p><p>
+ Call execute handler called by the driver.
+ Ask the logics to create the channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The call.execute message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">The destination (target)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if a channel was created and connected
+     </p>
+<A NAME="callAnswer"></A><A NAME="ref101"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>callAnswer</strong> (const String& id, bool setActive = true)
+<br></td><td align="right"><h3><strong>callAnswer</strong></h3></td></tr></table><p></p><p>
+ Answer an incoming call
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The accepted channel's id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>setActive</i></TD><TD align="left" valign="top">True to activate the answered channel
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="callTerminate"></A><A NAME="ref102"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>callTerminate</strong> (const String& id, const char* reason = 0, const char* error = 0)
+<br></td><td align="right"><h3><strong>callTerminate</strong></h3></td></tr></table><p></p><p>
+ Terminate a call
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The channel's id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Optional termination reason
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Optional termination error
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="getActiveChannel"></A><A NAME="ref103"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ClientChannel* &nbsp;<strong>getActiveChannel</strong> ()
+<br></td><td align="right"><h3><strong>getActiveChannel</strong></h3></td></tr></table><p></p><p>
+ Get the active channel if any
+</p>
+<p><b>Returns</b>: Referenced pointer to the active channel or 0
+     </p>
+<A NAME="ringer"></A><A NAME="ref104"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>ringer</strong> (bool in, bool on)
+<br></td><td align="right"><h3><strong>ringer</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Start/stop ringer. The ringer is started only if not disabled
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>in</i></TD><TD align="left" valign="top">True if the request is for the incoming call alert, false if it
+  is for the outgoing call ringing alert
+</TD></TR>
+<TR><TD align="left" valign="top"><i>on</i></TD><TD align="left" valign="top">True to start, false to stop the sound
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="createSound"></A><A NAME="ref105"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>createSound</strong> (const char* name, const char* file, const char* device = 0)
+<br></td><td align="right"><h3><strong>createSound</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Create a sound object. Append it to the global list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of sound object
+</TD></TR>
+<TR><TD align="left" valign="top"><i>file</i></TD><TD align="left" valign="top">The file to play (should contain the whole path and the file name)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>device</i></TD><TD align="left" valign="top">Optional device used to play the file. Set to 0 to use the default one
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, false if a sound with the given name already exists
+     </p>
+<A NAME="emitDigits"></A><A NAME="ref106"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>emitDigits</strong> (const char* digits, const String& id = String::empty())
+<br></td><td align="right"><h3><strong>emitDigits</strong></h3></td></tr></table><p></p><p>
+ Send digits on selected channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>digits</i></TD><TD align="left" valign="top">The digits to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The channel id. Use the active one if empty
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="emitDigit"></A><A NAME="ref107"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>emitDigit</strong> (char digit, const String& id = String::empty())
+<br></td><td align="right"><h3><strong>emitDigit</strong></h3></td></tr></table><p></p><p>
+ Send a digit on selected channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>digit</i></TD><TD align="left" valign="top">The digit to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The channel id. Use the active one if empty
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="getBoolOpt"></A><A NAME="ref108"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>getBoolOpt</strong> (ClientToggle toggle)
+<br></td><td align="right"><h3><strong>getBoolOpt</strong></h3></td></tr></table><p></p><p>
+ Get a boolean option of this client
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>toggle</i></TD><TD align="left" valign="top">Options's id to retrieve
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="setBoolOpt"></A><A NAME="ref109"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setBoolOpt</strong> (ClientToggle toggle, bool value, bool updateUi = false)
+<br></td><td align="right"><h3><strong>setBoolOpt</strong></h3></td></tr></table><p></p><p>
+ Set a boolean option of this client
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>toggle</i></TD><TD align="left" valign="top">Options's id to set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>updateUi</i></TD><TD align="left" valign="top">True to update UI
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the option's value changed
+     </p>
+<A NAME="formatDateTime"></A><A NAME="ref110"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>formatDateTime</strong> (String& dest, unsigned int secs, const char* format,
+	bool utc = false)
+<br></td><td align="right"><h3><strong>formatDateTime</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Build a date/time string from UTC time
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>secs</i></TD><TD align="left" valign="top">Seconds since EPOCH
+</TD></TR>
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">Format string used to build the destination
+</TD></TR>
+<TR><TD align="left" valign="top"><i>utc</i></TD><TD align="left" valign="top">True to build UTC time instead of local time
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="exiting"></A><A NAME="ref111"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline bool &nbsp;<strong>exiting</strong> ()
+<br></td><td align="right"><h3><strong>exiting</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if the client is exiting
+</p>
+<p><b>Returns</b>: True if the client therad is exiting
+     </p>
+<A NAME="getActive"></A><A NAME="ref112"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>getActive</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getActive</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Retrieve the active state of a window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Window name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the window is found and it's active
+     </p>
+<A NAME="buildMessage"></A><A NAME="ref113"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Message* &nbsp;<strong>buildMessage</strong> (const char* msg, const String& account,
+	const char* oper = 0)
+<br></td><td align="right"><h3><strong>buildMessage</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build a message to be sent by the client.
+ Add module, line and operation parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Message name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>account</i></TD><TD align="left" valign="top">The account sending the message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>oper</i></TD><TD align="left" valign="top">Optional operation parameter
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Message pointer
+     </p>
+<A NAME="buildNotify"></A><A NAME="ref114"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Message* &nbsp;<strong>buildNotify</strong> (bool online, const String& account,
+	const ClientResource* from = 0)
+<br></td><td align="right"><h3><strong>buildNotify</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build a resource.notify message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>online</i></TD><TD align="left" valign="top">True to build an 'online' message, false to build an 'offline' one
+</TD></TR>
+<TR><TD align="left" valign="top"><i>account</i></TD><TD align="left" valign="top">The account sending the message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>from</i></TD><TD align="left" valign="top">Optional resource to add to message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Message pointer
+     </p>
+<A NAME="buildSubscribe"></A><A NAME="ref115"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Message* &nbsp;<strong>buildSubscribe</strong> (bool request, bool ok, const String& account,
+	const String& contact, const char* proto = 0)
+<br></td><td align="right"><h3><strong>buildSubscribe</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build a resource.subscribe or resource.notify message to request a subscription
+  or respond to a request
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>request</i></TD><TD align="left" valign="top">True to build a request, false to build a response
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ok</i></TD><TD align="left" valign="top">True to build a subscribe(d) message, false to build an unsubscribe(d) message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>account</i></TD><TD align="left" valign="top">The account to use for the message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>contact</i></TD><TD align="left" valign="top">The destination contact
+</TD></TR>
+<TR><TD align="left" valign="top"><i>proto</i></TD><TD align="left" valign="top">Optional protocol
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Valid Message pointer
+     </p>
+<A NAME="buildUserRoster"></A><A NAME="ref116"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Message* &nbsp;<strong>buildUserRoster</strong> (bool update, const String& account,
+	const String& contact, const char* proto = 0)
+<br></td><td align="right"><h3><strong>buildUserRoster</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build an user.roster message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>update</i></TD><TD align="left" valign="top">True to build an update, false to build a delete request
+</TD></TR>
+<TR><TD align="left" valign="top"><i>account</i></TD><TD align="left" valign="top">The account to use for the message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>contact</i></TD><TD align="left" valign="top">The contact to update or delete
+</TD></TR>
+<TR><TD align="left" valign="top"><i>proto</i></TD><TD align="left" valign="top">Optional protocol
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Valid Message pointer
+     </p>
+<A NAME="addLogic"></A><A NAME="ref117"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>addLogic</strong> (ClientLogic* logic)
+<br></td><td align="right"><h3><strong>addLogic</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Add a logic to the list. The added object is not owned by the client
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>logic</i></TD><TD align="left" valign="top">Pointer to the logic to add
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success. False if the pointer is 0 or already added
+     </p>
+<A NAME="removeLogic"></A><A NAME="ref118"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>removeLogic</strong> (ClientLogic* logic)
+<br></td><td align="right"><h3><strong>removeLogic</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Remove a logic from the list without destroying it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>logic</i></TD><TD align="left" valign="top">Pointer to the logic to remove
+     </TD></TR>
+</TABLE></P>
+<A NAME="findLogic"></A><A NAME="ref119"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientLogic* &nbsp;<strong>findLogic</strong> (const String& name)
+<br></td><td align="right"><h3><strong>findLogic</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Convenience method to retrieve a logic
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The logic's name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientLogic pointer or 0
+     </p>
+<A NAME="eventMessage"></A><A NAME="ref120"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Message* &nbsp;<strong>eventMessage</strong> (const String& event, Window* wnd = 0,
+	const char* name = 0, NamedList* params = 0)
+<br></td><td align="right"><h3><strong>eventMessage</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build an 'ui.event' message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">Event's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window to add to message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Optional 'name' parameter value
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Other optional parameters to be added to the message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Valid Message pointer
+     </p>
+<A NAME="save"></A><A NAME="ref121"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>save</strong> (Configuration& cfg, Window* parent = 0, bool showErr = true)
+<br></td><td align="right"><h3><strong>save</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Save a configuration file. Call openMessage() on failure
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>cfg</i></TD><TD align="left" valign="top">The configuration file to save
+</TD></TR>
+<TR><TD align="left" valign="top"><i>parent</i></TD><TD align="left" valign="top">The parent of the error window if needded
+</TD></TR>
+<TR><TD align="left" valign="top"><i>showErr</i></TD><TD align="left" valign="top">True to open a message popup on failure
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="getBoolOpt"></A><A NAME="ref122"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientToggle &nbsp;<strong>getBoolOpt</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getBoolOpt</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if a string names a client's boolean option
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">String to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Valid client option index or OptCount if not found
+     </p>
+<A NAME="setLogicsTick"></A><A NAME="ref123"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline void &nbsp;<strong>setLogicsTick</strong> ()
+<br></td><td align="right"><h3><strong>setLogicsTick</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set the flag indicating that the client should tick the logics
+     </p>
+<A NAME="appendEscape"></A><A NAME="ref124"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>appendEscape</strong> (String& buf, ObjList& list, char sep = ',', bool force = false)
+<br></td><td align="right"><h3><strong>appendEscape</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Append URI escaped String items to a String buffer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">Source list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">Destination list separator. It will be escaped in each added string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to allow appending empty strings
+     </TD></TR>
+</TABLE></P>
+<A NAME="splitUnescape"></A><A NAME="ref125"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ObjList* &nbsp;<strong>splitUnescape</strong> (const String& buf, char sep = ',', bool emptyOk = false)
+<br></td><td align="right"><h3><strong>splitUnescape</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Splits a string at a delimiter character. URI unescape each string in result
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Source string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">Character where to split the string. It will be unescaped in each string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>emptyOk</i></TD><TD align="left" valign="top">True if empty strings should be inserted in list
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A newly allocated list of strings, must be deleted after use
+     </p>
+<A NAME="removeChars"></A><A NAME="ref126"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>removeChars</strong> (String& buf, const char* chars)
+<br></td><td align="right"><h3><strong>removeChars</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Remove characters from a given string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Source string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>chars</i></TD><TD align="left" valign="top">Characters to remove from input string
+     </TD></TR>
+</TABLE></P>
+<A NAME="fixPhoneNumber"></A><A NAME="ref127"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>fixPhoneNumber</strong> (String& number, const char* chars = 0)
+<br></td><td align="right"><h3><strong>fixPhoneNumber</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Fix a phone number. Remove extra '+' from begining.
+ Remove requested characters. Adding '+' to characters to remove won't remove
+  the plus sign from the begining.
+ Clear the number if a non digit char is found
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>number</i></TD><TD align="left" valign="top">Phone number to fix
+</TD></TR>
+<TR><TD align="left" valign="top"><i>chars</i></TD><TD align="left" valign="top">Optional characters to remove from number
+     </TD></TR>
+</TABLE></P>
+<A NAME="addTrayIcon"></A><A NAME="ref128"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>addTrayIcon</strong> (const String& wndName, int prio, NamedList* params)
+<br></td><td align="right"><h3><strong>addTrayIcon</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Add a tray icon to a window's stack. Update it if already there.
+ Show it if it's the first one and the client is started.
+ This method must be called from client's thread
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>wndName</i></TD><TD align="left" valign="top">The window owning the icon
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">Tray icon priority. The list is kept in ascending order
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Tray icon parameters. It will be consumed
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="removeTrayIcon"></A><A NAME="ref129"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>removeTrayIcon</strong> (const String& wndName, const String& name)
+<br></td><td align="right"><h3><strong>removeTrayIcon</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Remove a tray icon from a window's stack.
+ Show the next one if it's the first
+ This method must be called from client's thread
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>wndName</i></TD><TD align="left" valign="top">The window owning the icon
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Tray icon name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="updateTrayIcon"></A><A NAME="ref130"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>updateTrayIcon</strong> (const String& wndName)
+<br></td><td align="right"><h3><strong>updateTrayIcon</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Update the first tray icon in a window's stack.
+ Remove any existing icon the the stack is empty
+ This method must be called from client's thread
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>wndName</i></TD><TD align="left" valign="top">The window owning the icon
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="generateGuid"></A><A NAME="ref131"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>generateGuid</strong> (String& buf, const String& extra = String::empty())
+<br></td><td align="right"><h3><strong>generateGuid</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Generate a GUID string in the format 8*HEX-4*HEX-4*HEX-4*HEX-12*HEX
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>extra</i></TD><TD align="left" valign="top">Optional string whose hash will be inserted in the GUID
+     </TD></TR>
+</TABLE></P>
+<A NAME="plain2html"></A><A NAME="ref132"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>plain2html</strong> (String& buf, bool spaceEol = false)
+<br></td><td align="right"><h3><strong>plain2html</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Replace plain text chars with HTML escape or markup
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>spaceEol</i></TD><TD align="left" valign="top">True to replace end of line with space instead of html markup
+     </TD></TR>
+</TABLE></P>
+<A NAME="findParamByValue"></A><A NAME="ref133"></A><table width="100%"><tr bgcolor="#eeeeee"><td> NamedString* &nbsp;<strong>findParamByValue</strong> (NamedList& list, const String& value,
+	NamedString* skip = 0)
+<br></td><td align="right"><h3><strong>findParamByValue</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Find a list parameter by its value
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">The list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Parameter value
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional parameter to skip
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: NamedString pointer, 0 if not found
+     </p>
+<A NAME="decodeFlags"></A><A NAME="ref134"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>decodeFlags</strong> (const TokenDict* dict, const NamedList& params,
+	const String& prefix = String::empty())
+<br></td><td align="right"><h3><strong>decodeFlags</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Decode flags from dictionary values found in a list of parameters
+ Flags are allowed to begin with '!' to reset
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dict</i></TD><TD align="left" valign="top">The dictionary containing the flags
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">The list of parameters used to update the flags
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prefix</i></TD><TD align="left" valign="top">Optional parameter prefix
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Decoded flags
+     </p>
+<A NAME="decodeFlags"></A><A NAME="ref135"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>decodeFlags</strong> (const TokenDict* dict, const String& flags, int defVal = 0)
+<br></td><td align="right"><h3><strong>decodeFlags</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Decode flags from dictionary values and comma separated list.
+ Flags are allowed to begin with '!' to reset
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dict</i></TD><TD align="left" valign="top">The dictionary containing the flags
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">The list of flags
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defVal</i></TD><TD align="left" valign="top">Default value to return if empty or no non 0 value is found in dictionary
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Decoded flags
+     </p>
+<A NAME="addPathSep"></A><A NAME="ref136"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>addPathSep</strong> (String& dest, const String& path, char sep = 0)
+<br></td><td align="right"><h3><strong>addPathSep</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Add path separator at string end. Set destination string.
+ Source and dstination may be the same string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>path</i></TD><TD align="left" valign="top">Source string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">Path separator, use Engine::pathSeparator() if 0
+     </TD></TR>
+</TABLE></P>
+<A NAME="fixPathSep"></A><A NAME="ref137"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>fixPathSep</strong> (String& path)
+<br></td><td align="right"><h3><strong>fixPathSep</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Fix path separator. Set it to platform default
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>path</i></TD><TD align="left" valign="top">The path
+     </TD></TR>
+</TABLE></P>
+<A NAME="removeEndsWithPathSep"></A><A NAME="ref138"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>removeEndsWithPathSep</strong> (String& dest, const String& path, char sep = 0)
+<br></td><td align="right"><h3><strong>removeEndsWithPathSep</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Remove path separator from string end. Set destination string.
+ Source and dstination may be the same string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>path</i></TD><TD align="left" valign="top">Source string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">Path separator, use Engine::pathSeparator() if 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if destination string is not empty
+     </p>
+<A NAME="getLastNameInPath"></A><A NAME="ref139"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>getLastNameInPath</strong> (String& dest, const String& path, char sep = 0)
+<br></td><td align="right"><h3><strong>getLastNameInPath</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set destination from last item in path.
+ Source and dstination may be the same string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>path</i></TD><TD align="left" valign="top">Source string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">Path separator, use Engine::pathSeparator() if 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if destination string is not empty
+     </p>
+<A NAME="removeLastNameInPath"></A><A NAME="ref140"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>removeLastNameInPath</strong> (String& dest, const String& path, char sep = 0,
+	const String& equalOnly = String::empty())
+<br></td><td align="right"><h3><strong>removeLastNameInPath</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Remove last name in path, set destination from remaining.
+ If the path ends with 'sep', only 'sep' is removed
+ If the path don't contain 'sep' dest is set to empty.
+ Source and dstination may be the same string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>path</i></TD><TD align="left" valign="top">Source string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">Path separator, use Engine::pathSeparator() if 0
+</TD></TR>
+<TR><TD align="left" valign="top"><i>equalOnly</i></TD><TD align="left" valign="top">Optional string to match last item.
+  Don't remove (set destination to empty) if not equal
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if removed
+     </p>
+<A NAME="addToLogFormatted"></A><A NAME="ref141"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>addToLogFormatted</strong> (const char* format, ...)
+<br></td><td align="right"><h3><strong>addToLogFormatted</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Add a formatted log line
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">Text format
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="s_settings"></A><A NAME="ref142"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static Configuration  <strong>s_settings</strong>
+</td><td align="right"><h3><strong>s_settings</strong></h3></td></tr></table><p></p><A NAME="s_actions"></A><A NAME="ref143"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static Configuration  <strong>s_actions</strong>
+</td><td align="right"><h3><strong>s_actions</strong></h3></td></tr></table><p></p><A NAME="s_accounts"></A><A NAME="ref144"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static Configuration  <strong>s_accounts</strong>
+</td><td align="right"><h3><strong>s_accounts</strong></h3></td></tr></table><p></p><A NAME="s_contacts"></A><A NAME="ref145"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static Configuration  <strong>s_contacts</strong>
+</td><td align="right"><h3><strong>s_contacts</strong></h3></td></tr></table><p></p><A NAME="s_providers"></A><A NAME="ref146"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static Configuration  <strong>s_providers</strong>
+</td><td align="right"><h3><strong>s_providers</strong></h3></td></tr></table><p></p><A NAME="s_history"></A><A NAME="ref147"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static Configuration  <strong>s_history</strong>
+</td><td align="right"><h3><strong>s_history</strong></h3></td></tr></table><p></p><A NAME="s_calltoHistory"></A><A NAME="ref148"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static Configuration  <strong>s_calltoHistory</strong>
+</td><td align="right"><h3><strong>s_calltoHistory</strong></h3></td></tr></table><p></p><A NAME="s_notSelected"></A><A NAME="ref149"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static Regexp  <strong>s_notSelected</strong>
+</td><td align="right"><h3><strong>s_notSelected</strong></h3></td></tr></table><p></p><A NAME="s_guidRegexp"></A><A NAME="ref150"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static Regexp  <strong>s_guidRegexp</strong>
+</td><td align="right"><h3><strong>s_guidRegexp</strong></h3></td></tr></table><p></p><A NAME="s_skinPath"></A><A NAME="ref151"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_skinPath</strong>
+</td><td align="right"><h3><strong>s_skinPath</strong></h3></td></tr></table><p></p><A NAME="s_soundPath"></A><A NAME="ref152"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_soundPath</strong>
+</td><td align="right"><h3><strong>s_soundPath</strong></h3></td></tr></table><p></p><A NAME="s_ringInName"></A><A NAME="ref153"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_ringInName</strong>
+</td><td align="right"><h3><strong>s_ringInName</strong></h3></td></tr></table><p></p><A NAME="s_ringOutName"></A><A NAME="ref154"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_ringOutName</strong>
+</td><td align="right"><h3><strong>s_ringOutName</strong></h3></td></tr></table><p></p><A NAME="s_statusWidget"></A><A NAME="ref155"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_statusWidget</strong>
+</td><td align="right"><h3><strong>s_statusWidget</strong></h3></td></tr></table><p></p><A NAME="s_debugWidget"></A><A NAME="ref156"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_debugWidget</strong>
+</td><td align="right"><h3><strong>s_debugWidget</strong></h3></td></tr></table><p></p><A NAME="s_toggles[OptCount]"></A><A NAME="ref157"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_toggles[OptCount]</strong>
+</td><td align="right"><h3><strong>s_toggles[OptCount]</strong></h3></td></tr></table><p></p><A NAME="s_maxConfPeers"></A><A NAME="ref158"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static int  <strong>s_maxConfPeers</strong>
+</td><td align="right"><h3><strong>s_maxConfPeers</strong></h3></td></tr></table><p></p><A NAME="s_engineStarted"></A><A NAME="ref159"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static bool  <strong>s_engineStarted</strong>
+</td><td align="right"><h3><strong>s_engineStarted</strong></h3></td></tr></table><p></p><A NAME="createDefaultLogic"></A><A NAME="ref160"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientLogic* &nbsp;<strong>createDefaultLogic</strong> ()
+<br></td><td align="right"><h3><strong>createDefaultLogic</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Create the default logic
+ The default implementation creates a DefaultLogic object
+</p>
+<p><b>Returns</b>: ClientLogic pointer or 0
+     </p>
+<A NAME="createWindow"></A><A NAME="ref161"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>createWindow</strong></i> (const String& name,
+	const String& alias = String::empty())
+<br></td><td align="right"><h3><i><strong>createWindow</strong></i></h3></td></tr></table><p> <small>[protected pure virtual]</small></p><A NAME="loadWindows"></A><A NAME="ref162"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>loadWindows</strong></i> (const char* file = 0)
+<br></td><td align="right"><h3><i><strong>loadWindows</strong></i></h3></td></tr></table><p> <small>[protected pure virtual]</small></p><A NAME="initWindows"></A><A NAME="ref163"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>initWindows</strong> ()
+<br></td><td align="right"><h3><strong>initWindows</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><A NAME="initClient"></A><A NAME="ref164"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>initClient</strong> ()
+<br></td><td align="right"><h3><strong>initClient</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><A NAME="exitClient"></A><A NAME="ref165"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>exitClient</strong> ()
+<br></td><td align="right"><h3><strong>exitClient</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><A NAME="isUIThread"></A><A NAME="ref166"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>isUIThread</strong> ()
+<br></td><td align="right"><h3><strong>isUIThread</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><A NAME="needProxy"></A><A NAME="ref167"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>needProxy</strong> ()
+<br></td><td align="right"><h3><strong>needProxy</strong></h3></td></tr></table><p> <small>[protected const]</small></p><A NAME="driverLockLoop"></A><A NAME="ref168"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>driverLockLoop</strong> ()
+<br></td><td align="right"><h3><strong>driverLockLoop</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="driverLock"></A><A NAME="ref169"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>driverLock</strong> (long maxwait = 0)
+<br></td><td align="right"><h3><strong>driverLock</strong></h3></td></tr></table><p> <small>[protected static]</small></p><A NAME="driverUnlock"></A><A NAME="ref170"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>driverUnlock</strong> ()
+<br></td><td align="right"><h3><strong>driverUnlock</strong></h3></td></tr></table><p> <small>[protected static]</small></p><A NAME="s_exiting"></A><A NAME="ref171"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static bool  <strong>s_exiting</strong>
+</td><td align="right"><h3><strong>s_exiting</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_windows"></A><A NAME="ref172"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>m_windows</strong>
+</td><td align="right"><h3><strong>m_windows</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_initialized"></A><A NAME="ref173"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_initialized</strong>
+</td><td align="right"><h3><strong>m_initialized</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_line"></A><A NAME="ref174"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_line</strong>
+</td><td align="right"><h3><strong>m_line</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_oneThread"></A><A NAME="ref175"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_oneThread</strong>
+</td><td align="right"><h3><strong>m_oneThread</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_toggles[OptCount]"></A><A NAME="ref176"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_toggles[OptCount]</strong>
+</td><td align="right"><h3><strong>m_toggles[OptCount]</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_relays"></A><A NAME="ref177"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>m_relays</strong>
+</td><td align="right"><h3><strong>m_relays</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_defaultLogic"></A><A NAME="ref178"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ClientLogic*  <strong>m_defaultLogic</strong>
+</td><td align="right"><h3><strong>m_defaultLogic</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="s_client"></A><A NAME="ref179"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static Client*  <strong>s_client</strong>
+</td><td align="right"><h3><strong>s_client</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="s_changing"></A><A NAME="ref180"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static int  <strong>s_changing</strong>
+</td><td align="right"><h3><strong>s_changing</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="s_logics"></A><A NAME="ref181"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static ObjList  <strong>s_logics</strong>
+</td><td align="right"><h3><strong>s_logics</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="s_idleLogicsTick"></A><A NAME="ref182"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static bool  <strong>s_idleLogicsTick</strong>
+</td><td align="right"><h3><strong>s_idleLogicsTick</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_clientThread"></A><A NAME="ref183"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Thread*  <strong>m_clientThread</strong>
+</td><td align="right"><h3><strong>m_clientThread</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

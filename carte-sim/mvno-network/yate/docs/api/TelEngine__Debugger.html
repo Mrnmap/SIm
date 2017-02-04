@@ -1,0 +1,203 @@
+<HTML>
+<HEAD>
+<TITLE>class Debugger</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Debugger</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An object that logs messages on creation and destruction. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Debugger</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Debugger.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Formatting</A> {	None = 0,
+	Relative,  
+	Absolute,  
+	Textual,   
+	TextLocal, 
+	TextSep,   
+	TextLSep,  
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>explicit &nbsp;<b><A HREF="#ref2">Debugger</A></b> (const char* name, const char* format = 0, ...) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">Debugger</A></b> (int level, const char* name, const char* format = 0, ...) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">~Debugger</A></b> () 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  void &nbsp;<b><A HREF="#ref5">setOutput</A></b> (void (*outFunc)(const char*,int) = 0) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref6">setIntOut</A></b> (void (*outFunc)(const char*,int) = 0) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref7">setAlarmHook</A></b> (void (*alarmFunc)(const char*,int,const char*,const char*) = 0) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref8">setRelayHook</A></b> (void (*relayFunc)(int,const char*,const char*,const char*) = 0) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref9">enableOutput</A></b> (bool enable = true, bool colorize = false) 
+</LI>
+<LI>static  <A HREF="#uint32_t">uint32_t</A> &nbsp;<b><A HREF="#ref10">getStartTimeSec</A></b> () 
+</LI>
+<LI>static  Formatting &nbsp;<b><A HREF="#ref11">getFormatting</A></b> () 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref12">setFormatting</A></b> (Formatting format, <A HREF="#uint32_t">uint32_t</A> startTimeSec = 0) 
+</LI>
+<LI>static  unsigned int &nbsp;<b><A HREF="#ref13">formatTime</A></b> (char* buf, Formatting format = getFormatting()) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref14">relayOutput</A></b> (int level, char* buffer, const char* component = 0, const char* info = 0) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class is used as an automatic variable that logs messages on creation
+  and destruction (when the instruction block is left or function returns).
+ IMPORTANT: the name is not copied so it should best be static.
+</p>
+<A NAME="Formatting"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Formatting</strong> {	None = 0,
+	Relative,  
+	Absolute,  
+	Textual,   
+	TextLocal, 
+	TextSep,   
+	TextLSep,  
+    }
+</td><td align="right"><h3><strong>Formatting</strong></h3></td></tr></table><p></p><p>
+ Timestamp formatting
+     </p>
+<A NAME="Debugger"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>Debugger</strong> (const char* name, const char* format = 0, ...)
+<br></td><td align="right"><h3><strong>Debugger</strong></h3></td></tr></table><p></p><p>
+ The constructor prints the method entry message and indents.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the function or block entered, must be static
+</TD></TR>
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">printf() style format string
+     </TD></TR>
+</TABLE></P>
+<A NAME="Debugger"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>Debugger</strong> (int level, const char* name, const char* format = 0, ...)
+<br></td><td align="right"><h3><strong>Debugger</strong></h3></td></tr></table><p></p><p>
+ The constructor prints the method entry message and indents.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">The level of the message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the function or block entered, must be static
+</TD></TR>
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">printf() style format string
+     </TD></TR>
+</TABLE></P>
+<A NAME="~Debugger"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>~Debugger</strong> ()
+<br></td><td align="right"><h3><strong>~Debugger</strong></h3></td></tr></table><p></p><p>
+ The destructor prints the method leave message and deindents.
+     </p>
+<A NAME="setOutput"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setOutput</strong> (void (*outFunc)(const char*,int) = 0)
+<br></td><td align="right"><h3><strong>setOutput</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set the output callback
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>outFunc</i></TD><TD align="left" valign="top">Pointer to the output function, NULL to use stderr
+     </TD></TR>
+</TABLE></P>
+<A NAME="setIntOut"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setIntOut</strong> (void (*outFunc)(const char*,int) = 0)
+<br></td><td align="right"><h3><strong>setIntOut</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set the interactive output callback
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>outFunc</i></TD><TD align="left" valign="top">Pointer to the output function, NULL to disable
+     </TD></TR>
+</TABLE></P>
+<A NAME="setAlarmHook"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setAlarmHook</strong> (void (*alarmFunc)(const char*,int,const char*,const char*) = 0)
+<br></td><td align="right"><h3><strong>setAlarmHook</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set the alarm hook callback
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>alarmFunc</i></TD><TD align="left" valign="top">Pointer to the alarm callback function, NULL to disable
+     </TD></TR>
+</TABLE></P>
+<A NAME="setRelayHook"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setRelayHook</strong> (void (*relayFunc)(int,const char*,const char*,const char*) = 0)
+<br></td><td align="right"><h3><strong>setRelayHook</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set the relay hook callback that will process all Output, Debug and Alarm
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>relayFunc</i></TD><TD align="left" valign="top">Pointer to the relay callback function, NULL to disable
+     </TD></TR>
+</TABLE></P>
+<A NAME="enableOutput"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>enableOutput</strong> (bool enable = true, bool colorize = false)
+<br></td><td align="right"><h3><strong>enableOutput</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Enable or disable the debug output
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>enable</i></TD><TD align="left" valign="top">Set to true to globally enable output
+</TD></TR>
+<TR><TD align="left" valign="top"><i>colorize</i></TD><TD align="left" valign="top">Enable ANSI colorization of output
+     </TD></TR>
+</TABLE></P>
+<A NAME="getStartTimeSec"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> <A HREF="#uint32_t">uint32_t</A> &nbsp;<strong>getStartTimeSec</strong> ()
+<br></td><td align="right"><h3><strong>getStartTimeSec</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Retrieve the start timestamp
+</p>
+<p><b>Returns</b>: Start timestamp value in seconds
+     </p>
+<A NAME="getFormatting"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Formatting &nbsp;<strong>getFormatting</strong> ()
+<br></td><td align="right"><h3><strong>getFormatting</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Retrieve the format of timestamps
+</p>
+<p><b>Returns</b>: The current formatting type for timestamps
+     </p>
+<A NAME="setFormatting"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setFormatting</strong> (Formatting format, <A HREF="#uint32_t">uint32_t</A> startTimeSec = 0)
+<br></td><td align="right"><h3><strong>setFormatting</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set the format of timestamps on output messages and set the time start reference
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">Desired timestamp formatting
+</TD></TR>
+<TR><TD align="left" valign="top"><i>startTimeSec</i></TD><TD align="left" valign="top">Optional start timestamp (in seconds)
+     </TD></TR>
+</TABLE></P>
+<A NAME="formatTime"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>formatTime</strong> (char* buf, Formatting format = getFormatting())
+<br></td><td align="right"><h3><strong>formatTime</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Fill a buffer with a current timestamp prefix
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Buffer to fill, must be at least 24 characters long
+</TD></TR>
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">Desired timestamp formatting
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Length of the prefix written in buffer excluding final NUL
+     </p>
+<A NAME="relayOutput"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>relayOutput</strong> (int level, char* buffer, const char* component = 0, const char* info = 0)
+<br></td><td align="right"><h3><strong>relayOutput</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Processes a preformatted string as Output, Debug or Alarm.
+ This method is intended to relay messages from other processes, DO NOT USE!
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">The level of the debug or alarm, negative for an output
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Preformatted text buffer, MUST HAVE SPACE for at least strlen + 2
+</TD></TR>
+<TR><TD align="left" valign="top"><i>component</i></TD><TD align="left" valign="top">Component that emits the alarm if applicable
+</TD></TR>
+<TR><TD align="left" valign="top"><i>info</i></TD><TD align="left" valign="top">Extra alarm information if applicable
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

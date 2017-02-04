@@ -1,0 +1,286 @@
+<HTML>
+<HEAD>
+<TITLE>class Hasher</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Hasher</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An abstract hashing class. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Hasher</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__MD5.html">MD5</A>, <A HREF="TelEngine__SHA1.html">SHA1</A>, <A HREF="TelEngine__SHA256.html">SHA256</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Hasher.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref1">~Hasher</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref2">clear</A></i></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref3">finalize</A></i></b> () 
+</LI>
+<LI>virtual  const unsigned char* &nbsp;<b><i><A HREF="#ref4">rawDigest</A></i></b> () 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref5">hexDigest</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref6">update</A></b> (const void* buf, unsigned int len) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref7">update</A></b> (const DataBlock& data) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref8">update</A></b> (const String& str) 
+</LI>
+<LI>inline Hasher& &nbsp;<b><A HREF="#ref9">operator<<</A></b> (const String& value) 
+</LI>
+<LI>inline Hasher& &nbsp;<b><A HREF="#ref10">operator<<</A></b> (const DataBlock& data) 
+</LI>
+<LI>Hasher& &nbsp;<b><A HREF="#ref11">operator<<</A></b> (const char* value) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref12">hmacStart</A></b> (DataBlock& opad, const void* key, unsigned int keyLen) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref13">hmacStart</A></b> (DataBlock& opad, const DataBlock& key) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref14">hmacStart</A></b> (DataBlock& opad, const String& key) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref15">hmacFinal</A></b> (const DataBlock& opad) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref16">hmac</A></b> (const void* key, unsigned int keyLen, const void* msg, unsigned int msgLen) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref17">hmac</A></b> (const DataBlock& key, const DataBlock& msg) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref18">hmac</A></b> (const String& key, const String& msg) 
+</LI>
+<LI>virtual  unsigned int &nbsp;<b><i><A HREF="#ref19">hashLength</A></i></b> ()  const
+</LI>
+<LI>virtual  unsigned int &nbsp;<b><A HREF="#ref20">hmacBlockSize</A></b> ()  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref21">Hasher</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref22">updateInternal</A></i></b> (const void* buf, unsigned int len) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>void* <b><A HREF="#ref23">m_private</A></b></LI>
+<LI>String <b><A HREF="#ref24">m_hex</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Abstract base class representing a hash calculator
+</p>
+<A NAME="~Hasher"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~Hasher</strong> ()
+<br></td><td align="right"><h3><strong>~Hasher</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destroy the instance, free allocated memory
+     </p>
+<A NAME="clear"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>clear</strong></i> ()
+<br></td><td align="right"><h3><i><strong>clear</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Clear the digest and prepare for reuse
+     </p>
+<A NAME="finalize"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>finalize</strong></i> ()
+<br></td><td align="right"><h3><i><strong>finalize</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Finalize the digest computation, make result ready.
+ Subsequent calls to <A HREF="TelEngine__Hasher.html#update">update</A>() will fail
+     </p>
+<A NAME="rawDigest"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const unsigned char* &nbsp;<i><strong>rawDigest</strong></i> ()
+<br></td><td align="right"><h3><i><strong>rawDigest</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Returns a pointer to the raw 16-byte binary value of the message digest.
+ The digest is finalized if if wasn't already
+</p>
+<p><b>Returns</b>: Pointer to the raw digest data or NULL if some error occured
+     </p>
+<A NAME="hexDigest"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>hexDigest</strong> ()
+<br></td><td align="right"><h3><strong>hexDigest</strong></h3></td></tr></table><p></p><p>
+ Returns the standard hexadecimal representation of the message digest.
+ The digest is finalized if if wasn't already
+</p>
+<p><b>Returns</b>: A String which holds the hex digest or a null one if some error occured
+     </p>
+<A NAME="update"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>update</strong> (const void* buf, unsigned int len)
+<br></td><td align="right"><h3><strong>update</strong></h3></td></tr></table><p></p><p>
+ Update the digest from a buffer of data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Pointer to the data to be included in digest
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data in the buffer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if success, false if <A HREF="TelEngine__Hasher.html#finalize">finalize</A>() was already called
+     </p>
+<A NAME="update"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>update</strong> (const DataBlock& data)
+<br></td><td align="right"><h3><strong>update</strong></h3></td></tr></table><p></p><p>
+ Update the digest from the content of a DataBlock
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Data to be included in digest
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if success, false if <A HREF="TelEngine__Hasher.html#finalize">finalize</A>() was already called
+     </p>
+<A NAME="update"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>update</strong> (const String& str)
+<br></td><td align="right"><h3><strong>update</strong></h3></td></tr></table><p></p><p>
+ Update the digest from the content of a String
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to be included in digest
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if success, false if <A HREF="TelEngine__Hasher.html#finalize">finalize</A>() was already called
+     </p>
+<A NAME="operator%3C%3C"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Hasher& &nbsp;<strong>operator<<</strong> (const String& value)
+<br></td><td align="right"><h3><strong>operator<<</strong></h3></td></tr></table><p></p><p>
+ Digest updating operator for Strings
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">String to be included in digest
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator%3C%3C"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Hasher& &nbsp;<strong>operator<<</strong> (const DataBlock& data)
+<br></td><td align="right"><h3><strong>operator<<</strong></h3></td></tr></table><p></p><p>
+ Digest updating operator for DataBlocks
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Data to be included in digest
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator%3C%3C"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Hasher& &nbsp;<strong>operator<<</strong> (const char* value)
+<br></td><td align="right"><h3><strong>operator<<</strong></h3></td></tr></table><p></p><p>
+ Digest updating operator for C strings
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">String to be included in digest
+     </TD></TR>
+</TABLE></P>
+<A NAME="hmacStart"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>hmacStart</strong> (DataBlock& opad, const void* key, unsigned int keyLen)
+<br></td><td align="right"><h3><strong>hmacStart</strong></h3></td></tr></table><p></p><p>
+ Start a HMAC calculation, initialize the hash and the outer pad
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>opad</i></TD><TD align="left" valign="top">Outer pad to be filled from key
+</TD></TR>
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Secret key
+</TD></TR>
+<TR><TD align="left" valign="top"><i>keyLen</i></TD><TD align="left" valign="top">Secret key length
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if hash and outer pad were successfully initialized
+     </p>
+<A NAME="hmacStart"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>hmacStart</strong> (DataBlock& opad, const DataBlock& key)
+<br></td><td align="right"><h3><strong>hmacStart</strong></h3></td></tr></table><p></p><p>
+ Start a HMAC calculation, initialize the hash and the outer pad
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>opad</i></TD><TD align="left" valign="top">Outer pad to be filled from key
+</TD></TR>
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Secret key
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if hash and outer pad were successfully initialized
+     </p>
+<A NAME="hmacStart"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>hmacStart</strong> (DataBlock& opad, const String& key)
+<br></td><td align="right"><h3><strong>hmacStart</strong></h3></td></tr></table><p></p><p>
+ Start a HMAC calculation, initialize the hash and the outer pad
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>opad</i></TD><TD align="left" valign="top">Outer pad to be filled from key
+</TD></TR>
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Secret key string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if hash and outer pad were successfully initialized
+     </p>
+<A NAME="hmacFinal"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>hmacFinal</strong> (const DataBlock& opad)
+<br></td><td align="right"><h3><strong>hmacFinal</strong></h3></td></tr></table><p></p><p>
+ Finalize a HMAC calculation with this hash
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>opad</i></TD><TD align="left" valign="top">Outer pad as filled by hmacStart
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, HMAC result is left in hasher
+     </p>
+<A NAME="hmac"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>hmac</strong> (const void* key, unsigned int keyLen, const void* msg, unsigned int msgLen)
+<br></td><td align="right"><h3><strong>hmac</strong></h3></td></tr></table><p></p><p>
+ Compute a Message Authentication Code with this hash
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Secret key
+</TD></TR>
+<TR><TD align="left" valign="top"><i>keyLen</i></TD><TD align="left" valign="top">Secret key length
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Message to authenticate
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msgLen</i></TD><TD align="left" valign="top">Message length
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if HMAC was computed correctly, result is left in hasher
+     </p>
+<A NAME="hmac"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>hmac</strong> (const DataBlock& key, const DataBlock& msg)
+<br></td><td align="right"><h3><strong>hmac</strong></h3></td></tr></table><p></p><p>
+ Compute a Message Authentication Code with this hash
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Secret key
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Message to authenticate
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if HMAC was computed correctly, result is left in hasher
+     </p>
+<A NAME="hmac"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>hmac</strong> (const String& key, const String& msg)
+<br></td><td align="right"><h3><strong>hmac</strong></h3></td></tr></table><p></p><p>
+ Compute a Message Authentication Code with this hash
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Secret key string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Message string to authenticate
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if HMAC was computed correctly, result is left in hasher
+     </p>
+<A NAME="hashLength"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<i><strong>hashLength</strong></i> ()
+<br></td><td align="right"><h3><i><strong>hashLength</strong></i></h3></td></tr></table><p> <small>[const pure virtual]</small></p><p>
+ Return the length of the raw binary digest
+</p>
+<p><b>Returns</b>: Length of the digest in octets
+     </p>
+<A NAME="hmacBlockSize"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>hmacBlockSize</strong> ()
+<br></td><td align="right"><h3><strong>hmacBlockSize</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Return the size of the block used in HMAC calculations
+</p>
+<p><b>Returns</b>: HMAC block size in octets, usually 64
+     </p>
+<A NAME="Hasher"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>Hasher</strong> ()
+<br></td><td align="right"><h3><strong>Hasher</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Default constructor
+     </p>
+<A NAME="updateInternal"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>updateInternal</strong></i> (const void* buf, unsigned int len)
+<br></td><td align="right"><h3><i><strong>updateInternal</strong></i></h3></td></tr></table><p> <small>[protected pure virtual]</small></p><p>
+ Update the digest from a buffer of data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Pointer to the data to be included in digest
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data in the buffer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if success, false if <A HREF="TelEngine__Hasher.html#finalize">finalize</A>() was already called
+     </p>
+<A NAME="m_private"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void*  <strong>m_private</strong>
+</td><td align="right"><h3><strong>m_private</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_hex"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_hex</strong>
+</td><td align="right"><h3><strong>m_hex</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

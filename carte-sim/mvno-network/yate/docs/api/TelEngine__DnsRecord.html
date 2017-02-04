@@ -1,0 +1,118 @@
+<HTML>
+<HEAD>
+<TITLE>class DnsRecord</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class DnsRecord</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A DNS record. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::DnsRecord</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__NaptrRecord.html">NaptrRecord</A>, <A HREF="TelEngine__SrvRecord.html">SrvRecord</A>, <A HREF="TelEngine__TxtRecord.html">TxtRecord</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__DnsRecord.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">DnsRecord</A></b> (int ttl, int order, int pref) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref3">DnsRecord</A></b> () 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref4">ttl</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref5">order</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref6">pref</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref7">dump</A></b> (String& buf, const char* sep = " ") 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  bool &nbsp;<b><A HREF="#ref8">insert</A></b> (ObjList& list, DnsRecord* rec, bool ascPref) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>int <b><A HREF="#ref9">m_ttl</A></b></LI>
+<LI>int <b><A HREF="#ref10">m_order</A></b></LI>
+<LI>int <b><A HREF="#ref11">m_pref</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds a DNS (resolver) record
+</p>
+<A NAME="DnsRecord"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>DnsRecord</strong> (int ttl, int order, int pref)
+<br></td><td align="right"><h3><strong>DnsRecord</strong></h3></td></tr></table><p></p><p>
+ Build a DNS record
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ttl</i></TD><TD align="left" valign="top">Record Time To Live
+</TD></TR>
+<TR><TD align="left" valign="top"><i>order</i></TD><TD align="left" valign="top">Record order (priority)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>pref</i></TD><TD align="left" valign="top">Record preference
+     </TD></TR>
+</TABLE></P>
+<A NAME="DnsRecord"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>DnsRecord</strong> ()
+<br></td><td align="right"><h3><strong>DnsRecord</strong></h3></td></tr></table><p></p><p>
+ Default constructor
+     </p>
+<A NAME="ttl"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>ttl</strong> ()
+<br></td><td align="right"><h3><strong>ttl</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the Time To Live
+</p>
+<p><b>Returns</b>: Record TTL
+     </p>
+<A NAME="order"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>order</strong> ()
+<br></td><td align="right"><h3><strong>order</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the record order
+</p>
+<p><b>Returns</b>: Record order
+     </p>
+<A NAME="pref"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>pref</strong> ()
+<br></td><td align="right"><h3><strong>pref</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the record preference
+</p>
+<p><b>Returns</b>: Record preference
+     </p>
+<A NAME="dump"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>dump</strong> (String& buf, const char* sep = " ")
+<br></td><td align="right"><h3><strong>dump</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Dump a record for debug purposes
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Destination buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">Fields separator
+     </TD></TR>
+</TABLE></P>
+<A NAME="insert"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>insert</strong> (ObjList& list, DnsRecord* rec, bool ascPref)
+<br></td><td align="right"><h3><strong>insert</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Insert a DnsRecord into a list in the proper location given by order and preference
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">Destination list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>rec</i></TD><TD align="left" valign="top">The item to insert
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ascPref</i></TD><TD align="left" valign="top">Order preference ascending
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, false on failure (already in the list)
+     </p>
+<A NAME="m_ttl"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_ttl</strong>
+</td><td align="right"><h3><strong>m_ttl</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_order"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_order</strong>
+</td><td align="right"><h3><strong>m_order</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_pref"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_pref</strong>
+</td><td align="right"><h3><strong>m_pref</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

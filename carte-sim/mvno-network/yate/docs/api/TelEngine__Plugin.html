@@ -1,0 +1,134 @@
+<HTML>
+<HEAD>
+<TITLE>class Plugin</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Plugin</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Plugin support. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Plugin</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatengine_h.html">yatengine.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__DebugEnabler.html">TelEngine::DebugEnabler</A> <small>[public ]</small>, <A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><i><A HREF="TelEngine__ClientDriver.html">ClientDriver</A></i>, <i><A HREF="TelEngine__Driver.html">Driver</A></i>, <A HREF="TelEngine__Module.html">Module</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Plugin.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>explicit &nbsp;<b><A HREF="#ref1">Plugin</A></b> (const char* name, bool earlyInit = false) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref2">~Plugin</A></b> () 
+</LI>
+<LI>virtual  const String& &nbsp;<b><A HREF="#ref3">toString</A></b> ()  const
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref4">getObject</A></b> (const String& name)  const
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref5">initialize</A></i></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">isBusy</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref7">name</A></b> ()  const
+</LI>
+<LI>inline NamedCounter* &nbsp;<b><A HREF="#ref8">objectsCounter</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref9">earlyInit</A></b> ()  const
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Initialization and information about plugins.
+ Plugins are located in <em>shared</em> libraries that are loaded at runtime.
+</p>
+<p></p><table border="0" width="100%">
+<tr>
+<td bgcolor="#BEEAE0">
+<pre>
+
+ // Create static <A HREF="TelEngine__Plugin.html#Plugin">Plugin</A> object by using the provided macro
+ <A HREF="TelEngine.html#INIT_PLUGIN">INIT_PLUGIN</A>(<A HREF="TelEngine__Plugin.html#Plugin">Plugin</A>);
+
+</pre>
+</td></tr>
+
+</table> <p>
+</p>
+<A NAME="Plugin"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>Plugin</strong> (const char* name, bool earlyInit = false)
+<br></td><td align="right"><h3><strong>Plugin</strong></h3></td></tr></table><p></p><p>
+ Creates a new Plugin container.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">the undecorated name of the library that contains the plugin
+</TD></TR>
+<TR><TD align="left" valign="top"><i>earlyInit</i></TD><TD align="left" valign="top">True to initialize the plugin early
+     </TD></TR>
+</TABLE></P>
+<A NAME="~Plugin"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~Plugin</strong> ()
+<br></td><td align="right"><h3><strong>~Plugin</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destroys the plugin.
+ The destructor must never be called directly - the Loader will do it
+  when the shared object's reference count reaches zero.
+     </p>
+<A NAME="toString"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>toString</strong> ()
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a string representation of this object
+</p>
+<p><b>Returns</b>: Name of the plugin
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="getObject"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="initialize"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>initialize</strong></i> ()
+<br></td><td align="right"><h3><i><strong>initialize</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Initialize the plugin after it was loaded and registered.
+     </p>
+<A NAME="isBusy"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>isBusy</strong> ()
+<br></td><td align="right"><h3><strong>isBusy</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if the module is actively used.
+</p>
+<p><b>Returns</b>: True if the plugin is in use, false if should be ok to restart
+     </p>
+<A NAME="name"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>name</strong> ()
+<br></td><td align="right"><h3><strong>name</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the name of the plugin
+</p>
+<p><b>Returns</b>: The plugin's name as String
+     </p>
+<A NAME="objectsCounter"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline NamedCounter* &nbsp;<strong>objectsCounter</strong> ()
+<br></td><td align="right"><h3><strong>objectsCounter</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the objects counter associated to this plugin
+</p>
+<p><b>Returns</b>: Pointer to plugin's objects counter or NULL
+     </p>
+<A NAME="earlyInit"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>earlyInit</strong> ()
+<br></td><td align="right"><h3><strong>earlyInit</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the module is to be initialized early
+</p>
+<p><b>Returns</b>: True if the module should be initialized before regular ones
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

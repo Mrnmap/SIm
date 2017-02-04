@@ -1,0 +1,225 @@
+<HTML>
+<HEAD>
+<TITLE>class ClientDriver</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ClientDriver</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Base Driver with client specific functions. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ClientDriver</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatecbase_h.html">yatecbase.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__Driver.html">TelEngine::Driver</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ClientDriver.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref3">ClientDriver</A></b> () 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref4">~ClientDriver</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref5">initialize</A></i></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">msgExecute</A></b> (Message& msg, String& dest) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref7">msgTimer</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref8">msgRoute</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref9">received</A></b> (Message& msg, int id) 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref10">activeId</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref11">setActive</A></b> (const String& id = String::empty()) 
+</LI>
+<LI>ClientChannel* &nbsp;<b><A HREF="#ref12">findLine</A></b> (int line) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static inline  ClientDriver* &nbsp;<b><A HREF="#ref13">self</A></b> () 
+</LI>
+<LI>static inline  const String& &nbsp;<b><A HREF="#ref14">device</A></b> () 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref15">dropCalls</A></b> (const char* reason = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref16">setAudioTransfer</A></b> (const String& id, const String& target = String::empty()) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref17">setConference</A></b> (const String& id, bool in, const String* confName = 0,
+	bool buildFromChan = false) 
+</LI>
+<LI>static  ClientChannel* &nbsp;<b><A HREF="#ref18">findChan</A></b> (const String& id) 
+</LI>
+<LI>static  ClientChannel* &nbsp;<b><A HREF="#ref19">findChanByPeer</A></b> (const String& peer) 
+</LI>
+<LI>static  inline ClientChannel* &nbsp;<b><A HREF="#ref20">findActiveChan</A></b> () 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref21">dropChan</A></b> (const String& chan, const char* reason = 0, bool peer = false) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static String <b><A HREF="#ref22">s_confName</A></b></LI>
+<LI>static bool <b><A HREF="#ref23">s_dropConfPeer</A></b></LI>
+</ul><h4>Protected Methods</h4><ul><LI>void &nbsp;<b><A HREF="#ref24">setup</A></b> () 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>static ClientDriver* <b><A HREF="#ref25">s_driver</A></b></LI>
+<LI>static String <b><A HREF="#ref26">s_device</A></b></LI>
+<LI>String <b><A HREF="#ref27">m_activeId</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Abstract client Driver that implements some of the specific functionality
+</p>
+<A NAME="ClientDriver"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ClientDriver</strong> ()
+<br></td><td align="right"><h3><strong>ClientDriver</strong></h3></td></tr></table><p></p><A NAME="~ClientDriver"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~ClientDriver</strong> ()
+<br></td><td align="right"><h3><strong>~ClientDriver</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="initialize"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>initialize</strong></i> ()
+<br></td><td align="right"><h3><i><strong>initialize</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__Driver.html#initialize">Driver</A>.</p>
+<A NAME="msgExecute"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgExecute</strong> (Message& msg, String& dest)
+<br></td><td align="right"><h3><strong>msgExecute</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__Driver.html#msgExecute">Driver</A>.</p>
+<A NAME="msgTimer"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>msgTimer</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgTimer</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__Module.html#msgTimer">Module</A>.</p>
+<A NAME="msgRoute"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgRoute</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgRoute</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__Driver.html#msgRoute">Driver</A>.</p>
+<A NAME="received"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>received</strong> (Message& msg, int id)
+<br></td><td align="right"><h3><strong>received</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__Driver.html#received">Driver</A>.</p>
+<A NAME="activeId"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>activeId</strong> ()
+<br></td><td align="right"><h3><strong>activeId</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the active channel's id
+</p>
+<p><b>Returns</b>: The active channel's id
+     </p>
+<A NAME="setActive"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setActive</strong> (const String& id = String::empty())
+<br></td><td align="right"><h3><strong>setActive</strong></h3></td></tr></table><p></p><p>
+ Set/reset the active channel.
+ Does nothing if the selected channel is the active one.
+ Put the active channel on hold before trying to set the active channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The new active channel's id. Set to empty if don't want
+  to set a new active channel
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="findLine"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ClientChannel* &nbsp;<strong>findLine</strong> (int line)
+<br></td><td align="right"><h3><strong>findLine</strong></h3></td></tr></table><p></p><p>
+ Find a channel by its line
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>line</i></TD><TD align="left" valign="top">The line to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientChannel pointer of 0
+     </p>
+<A NAME="self"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  ClientDriver* &nbsp;<strong>self</strong> ()
+<br></td><td align="right"><h3><strong>self</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the global client driver object's address
+</p>
+<p><b>Returns</b>: The global client driver object's address
+     </p>
+<A NAME="device"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  const String& &nbsp;<strong>device</strong> ()
+<br></td><td align="right"><h3><strong>device</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the current audio device's name
+</p>
+<p><b>Returns</b>: The current audio device's name
+     </p>
+<A NAME="dropCalls"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>dropCalls</strong> (const char* reason = 0)
+<br></td><td align="right"><h3><strong>dropCalls</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Drop all calls belonging to the active driver
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Optional drop reason
+     </TD></TR>
+</TABLE></P>
+<A NAME="setAudioTransfer"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setAudioTransfer</strong> (const String& id, const String& target = String::empty())
+<br></td><td align="right"><h3><strong>setAudioTransfer</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Attach/detach client channels peers' source/consumer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The id of the channel to tranfer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>target</i></TD><TD align="left" valign="top">The transfer target. Leave blank to reset the channel's transfer id
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="setConference"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setConference</strong> (const String& id, bool in, const String* confName = 0,
+	bool buildFromChan = false)
+<br></td><td align="right"><h3><strong>setConference</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Attach/detach a client channel to/from a conference room
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The id of the channel to process
+</TD></TR>
+<TR><TD align="left" valign="top"><i>in</i></TD><TD align="left" valign="top">True to enter the conference room, false to exit from it
+</TD></TR>
+<TR><TD align="left" valign="top"><i>confName</i></TD><TD align="left" valign="top">Optional id of the conference. Set to 0 to use the default one
+  Ignored if 'in' is false
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buildFromChan</i></TD><TD align="left" valign="top">Build conference name from channel id if true
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="findChan"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientChannel* &nbsp;<strong>findChan</strong> (const String& id)
+<br></td><td align="right"><h3><strong>findChan</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get a referenced channel found by its id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The id of the channel to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Referenced ClientChannel pointer or 0
+     </p>
+<A NAME="findChanByPeer"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientChannel* &nbsp;<strong>findChanByPeer</strong> (const String& peer)
+<br></td><td align="right"><h3><strong>findChanByPeer</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get a referenced channel whose stored peer is the given one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>peer</i></TD><TD align="left" valign="top">Peer id to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Referenced ClientChannel pointer or 0
+     </p>
+<A NAME="findActiveChan"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline ClientChannel* &nbsp;<strong>findActiveChan</strong> ()
+<br></td><td align="right"><h3><strong>findActiveChan</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the active channel
+</p>
+<p><b>Returns</b>: Referenced ClientChannel pointer or 0
+     </p>
+<A NAME="dropChan"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>dropChan</strong> (const String& chan, const char* reason = 0, bool peer = false)
+<br></td><td align="right"><h3><strong>dropChan</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Drop a channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>chan</i></TD><TD align="left" valign="top">Channel id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Optional reason
+</TD></TR>
+<TR><TD align="left" valign="top"><i>peer</i></TD><TD align="left" valign="top">Set it to true to drop a client channel peer used to reconnect
+     </TD></TR>
+</TABLE></P>
+<A NAME="s_confName"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_confName</strong>
+</td><td align="right"><h3><strong>s_confName</strong></h3></td></tr></table><p></p><A NAME="s_dropConfPeer"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static bool  <strong>s_dropConfPeer</strong>
+</td><td align="right"><h3><strong>s_dropConfPeer</strong></h3></td></tr></table><p></p><A NAME="setup"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setup</strong> ()
+<br></td><td align="right"><h3><strong>setup</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Indicates wether a channel should drop its former peer when
+  terminated while in conference
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Driver.html#setup">Driver</A>.</p>
+<A NAME="s_driver"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static ClientDriver*  <strong>s_driver</strong>
+</td><td align="right"><h3><strong>s_driver</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="s_device"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_device</strong>
+</td><td align="right"><h3><strong>s_device</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_activeId"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_activeId</strong>
+</td><td align="right"><h3><strong>m_activeId</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

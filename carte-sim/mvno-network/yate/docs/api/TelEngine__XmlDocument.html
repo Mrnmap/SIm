@@ -1,0 +1,226 @@
+<HTML>
+<HEAD>
+<TITLE>class XmlDocument</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class XmlDocument</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Xml Document. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::XmlDocument</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatexml_h.html">yatexml.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__XmlParent.html">TelEngine::XmlParent</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__XmlDocument.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">XmlDocument</A></b> () 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref2">~XmlDocument</A></b> () 
+</LI>
+<LI>virtual  XmlDocument* &nbsp;<b><A HREF="#ref3">document</A></b> () 
+</LI>
+<LI>virtual  XmlSaxParser::Error &nbsp;<b><A HREF="#ref4">addChild</A></b> (XmlChild* child) 
+</LI>
+<LI>XmlDeclaration* &nbsp;<b><A HREF="#ref5">declaration</A></b> ()  const
+</LI>
+<LI>XmlElement* &nbsp;<b><A HREF="#ref6">root</A></b> (bool completed = false)  const
+</LI>
+<LI>inline XmlElement* &nbsp;<b><A HREF="#ref7">takeRoot</A></b> (bool completed = false) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref8">reset</A></b> () 
+</LI>
+<LI>virtual  XmlChild* &nbsp;<b><A HREF="#ref9">removeChild</A></b> (XmlChild* child, bool delObj = true) 
+</LI>
+<LI>virtual  XmlSaxParser::Error &nbsp;<b><A HREF="#ref10">read</A></b> (Stream& in, int* error = 0) 
+</LI>
+<LI>virtual  int &nbsp;<b><A HREF="#ref11">write</A></b> (Stream& out, bool escape = true,
+	const String& indent = String::empty(), const String& origIndent = String::empty(),
+	bool completeOnly = true)  const
+</LI>
+<LI>XmlSaxParser::Error &nbsp;<b><A HREF="#ref12">loadFile</A></b> (const char* file, int* error = 0) 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref13">saveFile</A></b> (const char* file = 0, bool escape = true,
+	const String& indent = String::empty(), bool completeOnly = true)  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref14">toString</A></b> (String& dump, bool escape = true, const String& indent = String::empty(),
+	const String& origIndent = String::empty())  const
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Xml Document
+</p>
+<A NAME="XmlDocument"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XmlDocument</strong> ()
+<br></td><td align="right"><h3><strong>XmlDocument</strong></h3></td></tr></table><p></p><p>
+ The Constructor
+     </p>
+<A NAME="~XmlDocument"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~XmlDocument</strong> ()
+<br></td><td align="right"><h3><strong>~XmlDocument</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="document"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlDocument* &nbsp;<strong>document</strong> ()
+<br></td><td align="right"><h3><strong>document</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get an Xml Document
+</p>
+<p><b>Returns</b>: This
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlParent.html#document">XmlParent</A>.</p>
+<A NAME="addChild"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlSaxParser::Error &nbsp;<strong>addChild</strong> (XmlChild* child)
+<br></td><td align="right"><h3><strong>addChild</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Append a new child to this document.
+ Set the root to an XML element if not already set. If we already have a completed root
+  the element will be added to the root, otherwise an error will be returned.
+ If we don't have a root non xml elements (other then text) will be added the list
+  of elements before root
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>child</i></TD><TD align="left" valign="top">The child to append
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: An error code if an error was detected
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlParent.html#addChild">XmlParent</A>.</p>
+<A NAME="declaration"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XmlDeclaration* &nbsp;<strong>declaration</strong> ()
+<br></td><td align="right"><h3><strong>declaration</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the document declaration
+</p>
+<p><b>Returns</b>: XmlDeclaration pointer or 0 if not found
+     </p>
+<A NAME="root"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XmlElement* &nbsp;<strong>root</strong> (bool completed = false)
+<br></td><td align="right"><h3><strong>root</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the root element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>completed</i></TD><TD align="left" valign="top">True to retrieve the root element if is not completed
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Root pointer or 0 if not found or is not completed
+     </p>
+<A NAME="takeRoot"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XmlElement* &nbsp;<strong>takeRoot</strong> (bool completed = false)
+<br></td><td align="right"><h3><strong>takeRoot</strong></h3></td></tr></table><p></p><p>
+ Take the root element from the document
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>completed</i></TD><TD align="left" valign="top">True to retrieve the root element if is not completed
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Root pointer or 0 if not found or is not completed
+     </p>
+<A NAME="reset"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>reset</strong> ()
+<br></td><td align="right"><h3><strong>reset</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Reset this Xml Document
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlParent.html#reset">XmlParent</A>.</p>
+<A NAME="removeChild"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlChild* &nbsp;<strong>removeChild</strong> (XmlChild* child, bool delObj = true)
+<br></td><td align="right"><h3><strong>removeChild</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove a child
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>child</i></TD><TD align="left" valign="top">The child to remove
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delObj</i></TD><TD align="left" valign="top">True to delete the object
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: XmlChild pointer if found and not deleted
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlParent.html#removeChild">XmlParent</A>.</p>
+<A NAME="read"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlSaxParser::Error &nbsp;<strong>read</strong> (Stream& in, int* error = 0)
+<br></td><td align="right"><h3><strong>read</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Load this document from data stream and parse it.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>in</i></TD><TD align="left" valign="top">The input stream
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Optional pointer to data to be filled with error if IOError is returned
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Parser error (NoError on success)
+     </p>
+<A NAME="write"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>write</strong> (Stream& out, bool escape = true,
+	const String& indent = String::empty(), const String& origIndent = String::empty(),
+	bool completeOnly = true)
+<br></td><td align="right"><h3><strong>write</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Write this document to a data stream.
+ A indent + n * origIndent will be added before each xml child,
+  where n is the imbrication level, starting with 0.
+ A indent + (n + 1) * origIndent will be added before each attribute
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>out</i></TD><TD align="left" valign="top">The output stream
+</TD></TR>
+<TR><TD align="left" valign="top"><i>escape</i></TD><TD align="left" valign="top">True if the attributes values need to be escaped
+</TD></TR>
+<TR><TD align="left" valign="top"><i>indent</i></TD><TD align="left" valign="top">Line indent
+</TD></TR>
+<TR><TD align="left" valign="top"><i>origIndent</i></TD><TD align="left" valign="top">Original indent
+</TD></TR>
+<TR><TD align="left" valign="top"><i>completeOnly</i></TD><TD align="left" valign="top">True to build only if complete
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Written bytes, negative on error
+     </p>
+<A NAME="loadFile"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XmlSaxParser::Error &nbsp;<strong>loadFile</strong> (const char* file, int* error = 0)
+<br></td><td align="right"><h3><strong>loadFile</strong></h3></td></tr></table><p></p><p>
+ Load a file an parse it
+ Reset the document
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>file</i></TD><TD align="left" valign="top">The file to load
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Pointer to data to be filled with file error if IOError is returned
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Parser error (NoError on success)
+     </p>
+<A NAME="saveFile"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>saveFile</strong> (const char* file = 0, bool escape = true,
+	const String& indent = String::empty(), bool completeOnly = true)
+<br></td><td align="right"><h3><strong>saveFile</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Save this xml document in the specified file. Create a new fle if not found.
+ Truncate an existing one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>file</i></TD><TD align="left" valign="top">The file to save or will be used the file used on load
+</TD></TR>
+<TR><TD align="left" valign="top"><i>escape</i></TD><TD align="left" valign="top">True if the attributes values need to be escaped
+</TD></TR>
+<TR><TD align="left" valign="top"><i>indent</i></TD><TD align="left" valign="top">Spaces for output
+</TD></TR>
+<TR><TD align="left" valign="top"><i>completeOnly</i></TD><TD align="left" valign="top">True to build only if complete
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: 0 on success, error code on failure
+     </p>
+<A NAME="toString"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>toString</strong> (String& dump, bool escape = true, const String& indent = String::empty(),
+	const String& origIndent = String::empty())
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Build a String from this XmlDocument
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dump</i></TD><TD align="left" valign="top">The string where to append representation
+</TD></TR>
+<TR><TD align="left" valign="top"><i>escape</i></TD><TD align="left" valign="top">True if the attributes values need to be escaped
+</TD></TR>
+<TR><TD align="left" valign="top"><i>indent</i></TD><TD align="left" valign="top">Spaces for output
+</TD></TR>
+<TR><TD align="left" valign="top"><i>origIndent</i></TD><TD align="left" valign="top">Original indent
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,246 @@
+<HTML>
+<HEAD>
+<TITLE>class ObjVector</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ObjVector</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A vector holding GenObjects. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ObjVector</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ObjVector.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline explicit &nbsp;<b><A HREF="#ref2">ObjVector</A></b> (bool autodelete = true) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">ObjVector</A></b> (unsigned int maxLen, bool autodelete = true) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">ObjVector</A></b> (ObjList& list, bool move = true, unsigned int maxLen = 0, bool autodelete = true) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref5">~ObjVector</A></b> () 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref6">getObject</A></b> (const String& name)  const
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref7">length</A></b> ()  const
+</LI>
+<LI>unsigned int &nbsp;<b><A HREF="#ref8">count</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref9">null</A></b> ()  const
+</LI>
+<LI>inline GenObject* &nbsp;<b><A HREF="#ref10">at</A></b> (int index)  const
+</LI>
+<LI>inline GenObject* &nbsp;<b><A HREF="#ref11">operator[]</A></b> (signed int index)  const
+</LI>
+<LI>inline GenObject* &nbsp;<b><A HREF="#ref12">operator[]</A></b> (unsigned int index)  const
+</LI>
+<LI>unsigned int &nbsp;<b><A HREF="#ref13">assign</A></b> (ObjList& list, bool move = true, unsigned int maxLen = 0) 
+</LI>
+<LI>GenObject* &nbsp;<b><A HREF="#ref14">take</A></b> (unsigned int index) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref15">set</A></b> (GenObject* obj, unsigned int index) 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref16">index</A></b> (const GenObject* obj)  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref17">index</A></b> (const String& str)  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref18">clear</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref19">autoDelete</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref20">setDelete</A></b> (bool autodelete) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Simple vector class that holds objects derived from GenObject
+</p>
+<A NAME="ObjVector"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline explicit &nbsp;<strong>ObjVector</strong> (bool autodelete = true)
+<br></td><td align="right"><h3><strong>ObjVector</strong></h3></td></tr></table><p></p><p>
+ Constructor of a zero capacity vector
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>autodelete</i></TD><TD align="left" valign="top">True to delete objects on destruct, false otherwise
+     </TD></TR>
+</TABLE></P>
+<A NAME="ObjVector"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ObjVector</strong> (unsigned int maxLen, bool autodelete = true)
+<br></td><td align="right"><h3><strong>ObjVector</strong></h3></td></tr></table><p></p><p>
+ Constructor of an empty vector
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>maxLen</i></TD><TD align="left" valign="top">Maximum number of objects the vector can hold
+</TD></TR>
+<TR><TD align="left" valign="top"><i>autodelete</i></TD><TD align="left" valign="top">True to delete objects on destruct, false otherwise
+     </TD></TR>
+</TABLE></P>
+<A NAME="ObjVector"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ObjVector</strong> (ObjList& list, bool move = true, unsigned int maxLen = 0, bool autodelete = true)
+<br></td><td align="right"><h3><strong>ObjVector</strong></h3></td></tr></table><p></p><p>
+ Constructor from an object list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">List of objects to store in vector
+</TD></TR>
+<TR><TD align="left" valign="top"><i>move</i></TD><TD align="left" valign="top">True to move elements from list, false to just copy the pointer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxLen</i></TD><TD align="left" valign="top">Maximum number of objects to put in vector, zero to put all
+</TD></TR>
+<TR><TD align="left" valign="top"><i>autodelete</i></TD><TD align="left" valign="top">True to delete objects on destruct, false otherwise
+     </TD></TR>
+</TABLE></P>
+<A NAME="~ObjVector"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~ObjVector</strong> ()
+<br></td><td align="right"><h3><strong>~ObjVector</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destroys the vector and the objects if automatic delete is set
+     </p>
+<A NAME="getObject"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="length"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>length</strong> ()
+<br></td><td align="right"><h3><strong>length</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the capacity of the vector
+</p>
+<p><b>Returns</b>: Number of items the vector can hold
+     </p>
+<A NAME="count"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int &nbsp;<strong>count</strong> ()
+<br></td><td align="right"><h3><strong>count</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of non-null objects in the vector
+</p>
+<p><b>Returns</b>: Count of items
+     </p>
+<A NAME="null"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>null</strong> ()
+<br></td><td align="right"><h3><strong>null</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the vector is empty
+</p>
+<p><b>Returns</b>: True if the vector contains no objects
+     </p>
+<A NAME="at"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline GenObject* &nbsp;<strong>at</strong> (int index)
+<br></td><td align="right"><h3><strong>at</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the object at a specific index in vector
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of the object to retrieve
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the object or NULL
+     </p>
+<A NAME="operator[]"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline GenObject* &nbsp;<strong>operator[]</strong> (signed int index)
+<br></td><td align="right"><h3><strong>operator[]</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Indexing operator with signed parameter
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of the object to retrieve
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the object or NULL
+     </p>
+<A NAME="operator[]"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline GenObject* &nbsp;<strong>operator[]</strong> (unsigned int index)
+<br></td><td align="right"><h3><strong>operator[]</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Indexing operator with unsigned parameter
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of the object to retrieve
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the object or NULL
+     </p>
+<A NAME="assign"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int &nbsp;<strong>assign</strong> (ObjList& list, bool move = true, unsigned int maxLen = 0)
+<br></td><td align="right"><h3><strong>assign</strong></h3></td></tr></table><p></p><p>
+ Clear the vector and assign objects from a list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">List of objects to store in vector
+</TD></TR>
+<TR><TD align="left" valign="top"><i>move</i></TD><TD align="left" valign="top">True to move elements from list, false to just copy the pointer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxLen</i></TD><TD align="left" valign="top">Maximum number of objects to put in vector, zero to put all
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Capacity of the vector
+     </p>
+<A NAME="take"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>GenObject* &nbsp;<strong>take</strong> (unsigned int index)
+<br></td><td align="right"><h3><strong>take</strong></h3></td></tr></table><p></p><p>
+ Retrieve and remove an object from the vector
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of the object to retrieve
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the stored object, NULL for out of bound index
+     </p>
+<A NAME="set"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>set</strong> (GenObject* obj, unsigned int index)
+<br></td><td align="right"><h3><strong>set</strong></h3></td></tr></table><p></p><p>
+ Store an object in the vector
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">Object to store in vector
+</TD></TR>
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of the object to store
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True for success, false if index was out of bounds
+     </p>
+<A NAME="index"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>index</strong> (const GenObject* obj)
+<br></td><td align="right"><h3><strong>index</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the position in vector of a GenObject by a pointer to it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">Pointer to the object to search for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Index of object in vector, -1 if not found
+     </p>
+<A NAME="index"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>index</strong> (const String& str)
+<br></td><td align="right"><h3><strong>index</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the position in vector of the first GenObject with a given value
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String value (toString) of the object to search for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Index of object in vector, -1 if not found
+     </p>
+<A NAME="clear"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clear</strong> ()
+<br></td><td align="right"><h3><strong>clear</strong></h3></td></tr></table><p></p><p>
+ Clear the vector and optionally delete all contained objects
+     </p>
+<A NAME="autoDelete"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>autoDelete</strong> ()
+<br></td><td align="right"><h3><strong>autoDelete</strong></h3></td></tr></table><p></p><p>
+ Get the automatic delete flag
+</p>
+<p><b>Returns</b>: True if will delete objects on destruct, false otherwise
+     </p>
+<A NAME="setDelete"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setDelete</strong> (bool autodelete)
+<br></td><td align="right"><h3><strong>setDelete</strong></h3></td></tr></table><p></p><p>
+ Set the automatic delete flag
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>autodelete</i></TD><TD align="left" valign="top">True to delete objects on destruct, false otherwise
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

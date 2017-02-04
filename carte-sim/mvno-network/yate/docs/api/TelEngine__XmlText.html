@@ -1,0 +1,122 @@
+<HTML>
+<HEAD>
+<TITLE>class XmlText</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class XmlText</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Xml Declaration. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::XmlText</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatexml_h.html">yatexml.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__XmlChild.html">TelEngine::XmlChild</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__XmlText.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">XmlText</A></b> (const String& text) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">XmlText</A></b> (const XmlText& orig) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~XmlText</A></b> () 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref4">getText</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref5">setText</A></b> (const char* text) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref6">toString</A></b> (String& dump, bool escape = true, const String& indent = String::empty(),
+	const String* auth = 0, const XmlElement* parent = 0)  const
+</LI>
+<LI>virtual  XmlText* &nbsp;<b><A HREF="#ref7">xmlText</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref8">onlySpaces</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A Xml Declaration for Xml document
+</p>
+<A NAME="XmlText"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XmlText</strong> (const String& text)
+<br></td><td align="right"><h3><strong>XmlText</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">The text
+     </TD></TR>
+</TABLE></P>
+<A NAME="XmlText"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XmlText</strong> (const XmlText& orig)
+<br></td><td align="right"><h3><strong>XmlText</strong></h3></td></tr></table><p></p><p>
+ Copy constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>orig</i></TD><TD align="left" valign="top">Original XmlText
+     </TD></TR>
+</TABLE></P>
+<A NAME="~XmlText"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~XmlText</strong> ()
+<br></td><td align="right"><h3><strong>~XmlText</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="getText"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getText</strong> ()
+<br></td><td align="right"><h3><strong>getText</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+</p>
+<p><b>Returns</b>: The text kept by this Xml Text
+     </p>
+<A NAME="setText"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setText</strong> (const char* text)
+<br></td><td align="right"><h3><strong>setText</strong></h3></td></tr></table><p></p><p>
+ Set the text
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Text to set in this XmlText
+     </TD></TR>
+</TABLE></P>
+<A NAME="toString"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>toString</strong> (String& dump, bool escape = true, const String& indent = String::empty(),
+	const String* auth = 0, const XmlElement* parent = 0)
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Build a String from this XmlText
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dump</i></TD><TD align="left" valign="top">The string where to append representation
+</TD></TR>
+<TR><TD align="left" valign="top"><i>escape</i></TD><TD align="left" valign="top">True if the text need to be escaped
+</TD></TR>
+<TR><TD align="left" valign="top"><i>indent</i></TD><TD align="left" valign="top">Spaces for output
+</TD></TR>
+<TR><TD align="left" valign="top"><i>auth</i></TD><TD align="left" valign="top">Optional list of tag and attribute names to be replaced with '***'. This
+  parameter can be used when the result will be printed to output to avoid printing
+  authentication data to output. The array must end with an empty string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>parent</i></TD><TD align="left" valign="top">Optional parent element whose tag will be searched in the auth list
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="xmlText"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlText* &nbsp;<strong>xmlText</strong> ()
+<br></td><td align="right"><h3><strong>xmlText</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get the Xml text
+</p>
+<p><b>Returns</b>: This object
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlChild.html#xmlText">XmlChild</A>.</p>
+<A NAME="onlySpaces"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>onlySpaces</strong> ()
+<br></td><td align="right"><h3><strong>onlySpaces</strong></h3></td></tr></table><p></p><p>
+ Helper method to check if the text held by this XmlText contains only spaces
+</p>
+<p><b>Returns</b>: False if the text contains non space characters.
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,12 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          sysmobts
+# Required-Start:    
+# Required-Stop:     $local_fs
+# Default-Start:     5
+# Default-Stop:      0 6
+# Short-Description: Start screen session with sysmobts software
+# Description:       
+### END INIT INFO
+
+case "$1" 

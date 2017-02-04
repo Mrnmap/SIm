@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<TITLE>class SrvRecord</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SrvRecord</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A SRV record. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SrvRecord</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__DnsRecord.html">TelEngine::DnsRecord</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SrvRecord.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">SrvRecord</A></b> (int ttl, int prio, int weight, const char* addr, int port) 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref3">address</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref4">port</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref5">dump</A></b> (String& buf, const char* sep = " ") 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  void &nbsp;<b><A HREF="#ref6">copy</A></b> (ObjList& dest, const ObjList& src) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>String <b><A HREF="#ref7">m_address</A></b></LI>
+<LI>int <b><A HREF="#ref8">m_port</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds a SRV (Service Location) record
+</p>
+<A NAME="SrvRecord"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SrvRecord</strong> (int ttl, int prio, int weight, const char* addr, int port)
+<br></td><td align="right"><h3><strong>SrvRecord</strong></h3></td></tr></table><p></p><p>
+ Build a SRV record
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ttl</i></TD><TD align="left" valign="top">Record Time To Live
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">Record priority (order)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>weight</i></TD><TD align="left" valign="top">Record weight (preference)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Record address
+</TD></TR>
+<TR><TD align="left" valign="top"><i>port</i></TD><TD align="left" valign="top">Record port
+     </TD></TR>
+</TABLE></P>
+<A NAME="address"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>address</strong> ()
+<br></td><td align="right"><h3><strong>address</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the record address
+</p>
+<p><b>Returns</b>: Record address
+     </p>
+<A NAME="port"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>port</strong> ()
+<br></td><td align="right"><h3><strong>port</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the record port
+</p>
+<p><b>Returns</b>: Record port
+     </p>
+<A NAME="dump"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>dump</strong> (String& buf, const char* sep = " ")
+<br></td><td align="right"><h3><strong>dump</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Dump this record for debug purposes
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Destination buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">Fields separator
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__DnsRecord.html#dump">DnsRecord</A>.</p>
+<A NAME="copy"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>copy</strong> (ObjList& dest, const ObjList& src)
+<br></td><td align="right"><h3><strong>copy</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Copy a SrvRecord list into another one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">Source list
+     </TD></TR>
+</TABLE></P>
+<A NAME="m_address"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_address</strong>
+</td><td align="right"><h3><strong>m_address</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_port"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_port</strong>
+</td><td align="right"><h3><strong>m_port</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

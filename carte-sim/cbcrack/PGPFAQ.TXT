@@ -1,0 +1,460 @@
+Path: sct.fr!rain.fr!jussieu.fr!math.ohio-state.edu!uwm.edu!news.alpha.net!news.mathworks.com!news.kei.com!bloom-beacon.mit.edu!senator-bedfellow.mit.edu!
+From: Andre Bacard <abacard@well.sf.ca.us>
+Newsgroups: alt.security.pgp,talk.politics.crypto,sci.crypt,alt.privacy,comp.society.privacy,comp.privacy,alt.answers,comp.answers,sci.answers,talk.answer
+Subject: PGP miniFAQ
+Followup-To: poster
+Date: 17 May 1995 16:10:44 GMT
+Organization: none
+Lines: 443
+Approved: news-answers-request@mit.edu
+Expires: 21 Jun 1995 16:06:54 GMT
+Message-ID: <pgp-faq/mini-overview_800726814@rtfm.mit.edu>
+Reply-To: Andre Bacard <abacard@well.sf.ca.us>
+NNTP-Posting-Host: bloom-picayune.mit.edu
+X-Last-Updated: 1995/05/17
+Originator: faqserv@bloom-picayune.MIT.EDU
+Xref: sct.fr alt.security.pgp:606 talk.politics.crypto:130 sci.crypt:263 alt.privacy:436 comp.society.privacy:7 comp.answers:243 sci.answers:64 talk.answe
+
+
+Archive-name: pgp-faq/mini-overview
+Last-modifed: 95/2/25
+Distribution-agent: ldetweil@csn.org
+
+
+(This document has been brought to you in part by CRAM. See the 
+bottom for more information, including instructions on how to
+obtain updates.)
+
+===
+
+-----BEGIN PGP SIGNED MESSAGE-----
+ 
+          *** Frequently Asked Questions about PGP ***
+                               by
+                    Andre Bacard, Author of>
+                  THE COMPUTER PRIVACY HANDBOOK
+                   [Version February 25, 1995]
+ 
+  ============================================================
+     This article offers a nontechnical overview of PGP to
+     help you decide whether or not to use this globally
+     popular computer software to safeguard your computer
+     files and e-mail. I have written this especially for
+     persons with a sense of humor. You may distribute this
+     (unaltered) FAQ for non-commercial purposes.
+   ===========================================================
+ 
+What is PGP?
+ 
+     PGP (also called "Pretty Good Privacy") is a computer
+     program that encrypts (scrambles) and decrypts
+     (unscrambles) data. For example, PGP can encrypt "Andre"
+     so that it reads "457mRT&%$354." Your computer can
+     decrypt this garble back into "Andre" if you have PGP.
+ 
+Who created PGP?
+ 
+     Philip Zimmermann <prz@acm.org> wrote the initial
+     program. Phil, a a hero to many pro-privacy activists,
+     works as a computer security consultant in Boulder,
+     Colorado. Phil Zimmermann, Peter Gutmann, Hal Finney,
+     Branko Lankester and other programmers around the globe
+     have created subsequent PGP versions and shells.
+ 
+     PGP uses the RSA public-key encryption system. RSA was
+     announced in 1977 by its inventors: Ronald Rivest of MIT,
+     Adi Shamir of the Weizmann Institute in Israel, and
+     Leonard Adelman of USC. It is called "RSA" after the
+     initials of these men. PGP also employs an encryption
+     system called IDEA which surfaced in 1990 due to Xuejia
+     Lai and James Massey's inventiveness.
+ 
+Who uses PGP encryption [or other RSA-based systems]?
+ 
+     People who value privacy use PGP. Politicians running
+     election campaigns, taxpayers storing IRS records,
+     therapists protecting clients' files, entrepreneurs
+     guarding trade secrets, journalists protecting their
+     sources, and people seeking romance are a few of the law
+     abiding citizens who use PGP to keep their computer files
+     and their e-mail confidential.
+ 
+     Businesses also use PGP. Suppose you're a corporate
+     manager and you need to e-mail an employee about his job
+     performance. You may be required by law to keep this e-
+     mail confidential. Suppose you're a saleswoman, and you
+     must communicate over public computer networks with a
+     branch office about your customer list. You may be
+     compelled by your company and the law to keep this list
+     confidential. These are a few reasons why businesses use
+     encryption to protect their customers, their employees,
+     and themselves.
+ 
+     PGP also helps secure financial transactions. For
+     example, the Electronic Frontier Foundations uses PGP to
+     encrypt members' charge account numbers, so that members
+     can pay dues via e-mail.
+ 
+     Thomas G. Donlan, an editor at BARRON'S [a financial
+     publication related to THE WALL STREET JOURNAL], wrote a
+     full-page editorial in the April 25, 1994 BARRON'S
+     entitled "Privacy and Security: Computer Technology Opens
+     Secrets, And Closes Them."
+ 
+     Mr. Donlan wrote, in part:
+ 
+          RSA Data Security, the company founded by the
+          three inventors, has hundreds of satisfied
+          customers, including Microsoft, Apple, Novell,
+          Sun, AT&T and Lotus. Versions of RSA are
+          available for almost any personal computer or
+          workstation, many of them built into the
+          operating systems. Lotus Notes, the network
+          communications system, automatically encrypts
+          all it messages using RSA. Other companies
+          have similar products designed around the same
+          basic concept, and some versions are available
+          for free on computer bulletin boards.
+ 
+     Donlan continues:
+ 
+          Without security, the Internet is little more
+          than the world's biggest bulletin board. With
+         security, it could become the information
+          supermarket of the world. RSA lets people and
+          banks feels secure putting their credit-card
+          numbers on the public network. Although it
+          still  seems that computers created an age of
+          snoopery, the age of privacy is at hand.
+ 
+Aren't computers and e-mail already safe?
+ 
+     Your computer files (unless encrypted) can be read by
+     anyone with access to your machine. E-mail is notoriously
+     unsafe. Typical e-mail travels through many computers.
+     The persons who run these computers can read, copy, and
+     store your mail. Many competitors and voyeurs are highly
+     motivated to intercept e-mail. Sending your business,
+     legal, and personal mail through computers is even less
+     confidential than sending the same material on a
+     postcard. PGP is one secure "envelope" that keeps
+     busybodies, competitors, and criminals from victimizing
+     you.
+ 
+I have nothing to hide. Why do I need privacy?
+ 
+     Show me a human being who has no secrets from her family,
+     her neighbors, or her colleagues, and I'll show you
+     someone who is either an extraordinary exhibitionist or
+     an incredible dullard.
+ 
+     Show me a business that has no trade secrets or
+     confidential records, and I'll show you a business that
+     is not very successful.
+ 
+      On a lighter note, a college student wrote me the following:
+ 
+     "I had a part-time job at a dry cleaner. One day I
+     returned a diamond ring that I'd found in a man's coat
+     pocket to his wife. Unfortunately, it was NOT her ring!
+     It belonged to her husband's  girlfriend. His wife was
+     furious and divorced her husband over this incident. My
+     boss told me: 'Return jewelry ONLY to the person whose
+     clothes you found it in, and NEVER return underwear that
+     you find in pockets!' Until that moment, I thought my
+     boss was a finicky woman. But she taught me the need for
+     PGP."
+ 
+     Privacy, discretion, confidentiality, and prudence are
+     hallmarks of civilization.
+ 
+I've heard police say that encryption should be outlawed because
+criminals use it to avoid detection. Is this true?
+ 
+     The next time you hear someone say this, ask him if he
+     wants to outlaw the likes of Thomas Jefferson, the
+     "Father of American Cryptography."
+ 
+     Many governments, corporations, and law enforcement
+     agencies use encryption to hide their operations. Yes, a
+     few criminals also use encryption. Criminals are more
+     likely to use cars, gloves, and ski-masks to evade
+     capture.
+ 
+     PGP is "encryption for the masses." It gives average law
+     abiding citizens a few of the privacy rights which
+     governments and corporations insist that they need for
+     themselves.
+ 
+How does PGP work?
+ 
+     PGP is a type of "public key cryptography." When you
+     start using PGP, the program generates two "keys" that
+     belong uniquely to you. Think of these keys as computer
+     counterparts of the keys in your pocket. One PGP key is
+     SECRET and stays in your computer. The other key is
+     PUBLIC. You give this second key to your correspondents.
+     Here is a sample PUBLIC KEY:
+ 
+ 
+- - - -----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: 2.7
+ 
+mQA9Ai2wD2YAAAEBgJ18cV7rMAFv7P3eBd/cZayI8EEO6XGYkhEO9SLJOw+DFyHg
+Px5o+IiR2A6Fh+HguQAFEbQZZGVtbyA8ZGVtb0B3ZWxsLnNmLmNhLnVzPokARQIF
+EC2wD4yR2A6Fh+HguQEB3xcBfRTi3D/2qdU3TosScYMAHfgfUwCelbb6wikSxoF5
+ees9DL9QMzPZXCioh42dEUXP0g==
+=sw5W
+- - - -----END PGP PUBLIC KEY BLOCK-----
+ 
+     Suppose the PUBLIC KEY listed above belongs to you and
+     that you e-mail it to me. I can store your PUBLIC KEY in
+     my PGP program and use your PUBLIC KEY to encrypt a
+     message that only you can read. One beauty of PGP is that
+     you can advertise your PUBLIC KEY the same way that you
+     can give out your telephone number. If I have your
+     telephone nber, I can call your telephone; however, I
+     cannot answer your telephone. Similarly, if I have your
+     PUBLIC KEY, I can send you mail; however, I cannot read
+     your mail.
+ 
+     This PUBLIC KEY concept might sound a bit mysterious at
+     first. However, it bcomes very clear when you play with
+     PGP for awhile.
+ 
+How safe is PGP? Will it really protect my privacy?
+ 
+     Perhaps your government or your mother-in-law can "break"
+     PGP messages by using supercomputers and\or pure
+     brilliance. I have no way of knowing. Three facts are
+     certain. First, top-rate civilian cryptographers and
+     computer experts have tried unsuccessfully to break PGP.
+     Second, whoever proves that he or she can unravel PGP
+     will earn quick fame in crypto circles. He or she will be
+     applauded at banquets and attract grant money. Third,
+     PGP's programmers will broadcast this news at once.
+ 
+     Almost daily, someone posts a notice such as "PGP Broken
+     by Omaha Teenager." Take these claims with a grain of
+     salt. The crypto world attracts its share of paranoids,
+     provocateurs, and UFO aliens.
+ 
+     To date, nobody has publicly demonstrated the skill to
+     outsmart or outmuscle PGP.
+ 
+Is PGP available for my machine?
+ 
+     Versions are available for DOS and Windows, as well as
+     various Unixes, Macintosh, Amiga, Atari ST, OS/2, and
+     CompuServe's WinCIM & CSNav. Many persons are working to
+     expand PGP's usability. Read the Usenet alt.security.pgp
+     news group for the latest developments.
+ 
+Are these versions of PGP mutually compatible?
+ 
+     Yes. For example, a document encrypted with PGP on a PC
+     can be decrypted with someone using PGP on a Unix
+     machine.
+ 
+     As of September 1, 1994, Versions 2.6 and higher can read
+     previous versions. However, pre-2.6 versions can no
+     longer read the newer versions. I strongly recommend that
+     everyone upgrade to Versions 2.6.2 or 2.7.
+ 
+Where do I get PGP?
+ 
+     For computer non-experts, the easiest way to get PGP is to
+     telephone ViaCrypt (a software company) in Phoenix, Arizona at
+     (602) 944-0773.
+ 
+     PGP is available from countless BBSs (Bulletin Board
+     Systems) and ftp ("File Transfer Protocol") sites around
+     the world. These sites, like video stores, come and go.
+ 
+     To find PGP, here are two options: 1) Learn how to use
+     ARCHIE to search for files on the Internet. 2) Read
+     BOARDWATCH magazine to find the BBSs in your area.
+ 
+How expensive is PGP?
+ 
+     The PGP versions that you will find at BBSs and ftp sites
+     are "freeware." This means that they are free. People
+     from New Zealand to Mexico use these versions every day.
+     Depending on where you live, this "freeware" may or may
+     not violate local laws.
+ 
+     I use PGP Version 2.7 which is distributed by ViaCrypt in
+     the United States [see below].
+ 
+Is PGP legal in the United States?
+ 
+     Yes. MIT's PGP Version is licensed for non-commercial use. You
+     can it from ftp sites or BBSs. ViaCrypt's PGP Version is
+     licensed for commercial use. You can get it from ViaCrypt.
+ 
+     +++ Important Note +++. It is illegal to export PGP out of the
+     United States. Do not even think of doing so! To communicate
+     with friends in, say, England, have your friends get PGP from
+     sources outside the United States.
+ 
+What is a PGP digital signature?
+ 
+     At the end of this document, you will see a PGP
+     signature. This "digital signature" allows persons who
+     have PGP and my PUBLIC KEY to verify that 1) I, Andre
+     Bacard, (not a SPORTS ILLUSTRATED superstar pretending to
+     be me!) wrote this document, and 2) Nobody has altered
+     this text since I signed it.
+ 
+     PGP signatures might be helpful for signing contracts,
+     transferring money, and verifying a person's identity.
+ 
+How difficult is it to learn PGP?
+ 
+     PGP has around two dozen commands. It is a relatively
+     easy program to learn.
+ 
+Where can I learn more about the PGP and related subjects?
+ 
+     The following News Groups are a good place to start:
+ 
+     alt.privacy
+        [to hear about electronic privacy issues]
+     alt.security.pgp
+        [to learn everything known about PGP]
+     talk.politics.crypto
+        [to keep abreast of legal & political changes]
+ 
+Anything else I should know?
+ 
+     YOUR privacy and safety are in danger! The black market
+     price for your IRS records is $500. YOUR medical records
+     are even cheaper. Prolific bank, credit and medical
+     databases, the Clipper Chip Initiative, computer matching
+     programs, cordless & cellular phone scanners, Digital
+     Telephony legislation, and (hidden) video surveillance
+     are just a few factors that threaten every law abiding
+     citizen. Our anti-privacy society gives criminals and
+     snoops computer data about YOU on a silver platter.
+ 
+     If you want to protect your privacy, I urge you to join
+     organizations such as the Electronic Frontier Foundation
+     <membership@eff.org>.
+ 
+***************************************************************
+                           Bacard wrote "The Computer Privacy
+   "Privacy permits you    Handbook: A Practical Guide to E-Mail
+    to be yourself."       Encryption, Data Protection, and PGP
+                           Privacy Software" [for novices/experts].
+ 
+Introduction by Mitchell Kapor, Co-Founder of Electronic Frontier
+Foundation and Creator of Lotus1-2-3.
+ 
+          Book Available Spring 1995. Write for Details
+ 
+[Bacard has been interviewed on hundreds of radio-talk shows about
+his previous book ("Hunger for Power"), technology, and society.]
+*****************************************************************
+ 
+ 
+ 
+-----BEGIN PGP SIGNATURE-----
+Version: 2.7
+ 
+iQCVAwUBL1ZcUt6pT6nCx/9/AQEczQP+P0yOdeVy06PGQRCeLuBdSEvI1ajvkP2C
+GEFuSBz3y7t+/qitEUbHAvgwS5lRfAS2KdE2tldAoyChPY+7+DapZYE039daoxuz
+hbkPQKn0Y9tzaLuqpzk0VqAr8m4liAI9ZLui50O24mp7TncmOuict0+0QDPF80An
+Pt2BT32+7TM=
+=UL89
+-----END PGP SIGNATURE-----
+
+===
+DISTRIBUTION: How to obtain this document
+
+This document has been brought to you in part by CRAM, involved in the
+redistribution of valuable information to a wider USENET audience (see
+below). The most recent version of this document can be obtained via
+the author's instructions above. The following directions apply to 
+retrieve the possibly less-current USENET FAQ version.
+
+  FTP
+  ---
+    This FAQ is available from the standard FAQ server rtfm.mit.edu via
+    FTP in the file /pub/usenet/news.answers
+
+  Email
+  -----
+    Email requests for FAQs go to mail-server@rtfm.mit.edu with commands
+    on lines in the message body, e.g. `help' and `index'.
+
+  Usenet
+  ------
+    This FAQ is posted every 21 days to the groups
+
+      alt.security.pgp
+      talk.politics.crypto
+      sci.crypt
+      alt.privacy
+      comp.society.privacy
+      comp.privacy
+      alt.answers
+      comp.answers
+      sci.answers
+      news.answers
+
+
+_ _, _ ___ _, __,  _, _  _, ___ _  _, _, _ _  _, __,  _, _  _ ___ __,
+| |\ | |_ / \ | )  |\/| / \  |  | / \ |\ | | (_  | ) / \ |  | |_  | )
+| | \| |  \ / |~\  |  | |~|  |  | \ / | \| | , ) |~  \ / |/\| |   |~\
+~ ~  ~ ~   ~  ~  ~ ~  ~ ~ ~  ~  ~  ~  ~  ~ ~  ~  ~    ~  ~  ~ ~~~ ~  ~
+
+===
+CRAM: The Cyberspatial Reality Advancement Movement
+
+In an effort to bring valuable information to the masses, and as a
+service to motivated information compilers, a member of CRAM can help
+others unfamiliar with Usenet `publish' their documents for
+widespread dissemination via the FAQ structure, and act as a
+`sponsor' knowledgable in the submissions process. This document is
+being distributed under this arrangement.
+
+We have found these compilations tend to appear on various mailing
+lists and are valuable enough to deserve wider distribution. If you
+know of an existing compilation of Internet information that is not
+currently a FAQ, please contact us and we may `sponsor' it. The
+benefits to the author include:
+
+- use of the existing FAQ infrastructure for distribution:
+  - automated mail server service
+  - FTP archival
+  - automated posting
+
+- a far wider audience that can improve the quality, accuracy, and 
+  coverage of the document enormously through email feedback
+
+- potential professional inquiries for the use of your document in 
+  other settings, such as newsletters, books, etc.
+
+- with us as your sponsor, we will also take care of the 
+  technicalities in the proper format of the posted version and 
+  updating procedures, leaving you free of the `overhead' to focus on 
+  the basic updates alone
+
+The choice of who we `sponsor' is entirely arbitrary. You always have
+the option of handling the submission process yourself.  See the FAQ
+submission guidelines FAQ in news.answers. 
+
+For information, send mail to <ldetweil@csn.org>.
+
+ \   \   \   \   \   \   \   \   \   |   /   /   /   /   /   /   /   /   /   /
+          _______       ________          _____        _____  _____
+         ///   \\\      |||   \\\        /// \\\       |||\\\///|||
+        |||     ~~      |||   ///       |||   |||      ||| \\// |||
+        |||     __      |||~~~\\\       |||~~~|||      |||  ~~  |||
+         \\\   ///      |||    \\\      |||   |||      |||      |||
+          ~~~~~~~       ~~~     ~~~     ~~~   ~~~      ~~~      ~~~
+ /   /   /   /   /   /   /   /   /   |   \   \   \   \   \   \   \   \   \   \
+
+C y b e r s p a t i a l  R e a l i t y  A d v a n c e m e n t  M o v e m e n t
+
+* CIVILIZING CYBERSPACE: send `info cypherwonks' to majordomo@lists.eunet.fi *

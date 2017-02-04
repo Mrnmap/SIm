@@ -1,0 +1,1491 @@
+<HTML>
+<HEAD>
+<TITLE>class String</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class String</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A C-style string handling class. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::String</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__CapturedEvent.html">CapturedEvent</A>, <A HREF="TelEngine__ClientAccountList.html">ClientAccountList</A>, <A HREF="TelEngine__ClientSound.html">ClientSound</A>, <i><A HREF="TelEngine__Compressor.html">Compressor</A></i>, <A HREF="TelEngine__Configuration.html">Configuration</A>, <A HREF="TelEngine__DataFormat.html">DataFormat</A>, <A HREF="TelEngine__Message.html">Message</A>, <i><A HREF="TelEngine__MessageHandler.html">MessageHandler</A></i>, <A HREF="TelEngine__MessageRelay.html">MessageRelay</A>, <A HREF="TelEngine__MimeAuthLine.html">MimeAuthLine</A>, <A HREF="TelEngine__MimeHeaderLine.html">MimeHeaderLine</A>, <A HREF="TelEngine__NamedCounter.html">NamedCounter</A>, <A HREF="TelEngine__NamedInt.html">NamedInt</A>, <A HREF="TelEngine__NamedList.html">NamedList</A>, <A HREF="TelEngine__NamedPointer.html">NamedPointer</A>, <A HREF="TelEngine__NamedString.html">NamedString</A>, <A HREF="TelEngine__Regexp.html">Regexp</A>, <i><A HREF="TelEngine__UIFactory.html">UIFactory</A></i>, <A HREF="TelEngine__UIWidget.html">UIWidget</A>, <A HREF="TelEngine__URI.html">URI</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__String.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Align</A> {	Left = 0,
+	Center,
+	Right
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">String</A></b> () 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">String</A></b> (const char* value, int len = -1) 
+</LI>
+<LI>explicit &nbsp;<b><A HREF="#ref4">String</A></b> (char value, unsigned int repeat = 1) 
+</LI>
+<LI>explicit &nbsp;<b><A HREF="#ref5">String</A></b> (<A HREF="#int32_t">int32_t</A> value) 
+</LI>
+<LI>explicit &nbsp;<b><A HREF="#ref6">String</A></b> (<A HREF="#uint32_t">uint32_t</A> value) 
+</LI>
+<LI>explicit &nbsp;<b><A HREF="#ref7">String</A></b> (<A HREF="#int64_t">int64_t</A> value) 
+</LI>
+<LI>explicit &nbsp;<b><A HREF="#ref8">String</A></b> (<A HREF="#uint64_t">uint64_t</A> value) 
+</LI>
+<LI>explicit &nbsp;<b><A HREF="#ref9">String</A></b> (bool value) 
+</LI>
+<LI>explicit &nbsp;<b><A HREF="#ref10">String</A></b> (double value) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref11">String</A></b> (const String& value) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref12">String</A></b> (const String* value) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref13">~String</A></b> () 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref14">getObject</A></b> (const String& name)  const
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref17">c_str</A></b> ()  const
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref18">safe</A></b> ()  const
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref19">safe</A></b> (const char* defStr)  const
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref20">length</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref21">null</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref23">lenUtf8</A></b> (<A HREF="#uint32_t">uint32_t</A> maxChar = 0x10ffff, bool overlong = false)  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref24">fixUtf8</A></b> (const char* replace = 0, <A HREF="#uint32_t">uint32_t</A> maxChar = 0x10ffff, bool overlong = false) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref26">checkBOM</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref29">stripBOM</A></b> () 
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref30">hash</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref32">clear</A></b> () 
+</LI>
+<LI>char &nbsp;<b><A HREF="#ref33">at</A></b> (int index)  const
+</LI>
+<LI>String &nbsp;<b><A HREF="#ref34">substr</A></b> (int offs, int len = -1)  const
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref35">trimBlanks</A></b> () 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref36">trimSpaces</A></b> () 
+</LI>
+<LI>virtual  const String& &nbsp;<b><A HREF="#ref37">toString</A></b> ()  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref38">toInteger</A></b> (int defvalue = 0, int base = 0, int minvalue = INT_MIN,
+	int maxvalue = INT_MAX, bool clamp = true)  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref39">toInteger</A></b> (const TokenDict* tokens, int defvalue = 0, int base = 0)  const
+</LI>
+<LI>long int &nbsp;<b><A HREF="#ref40">toLong</A></b> (long int defvalue = 0, int base = 0, long int minvalue = LONG_MIN,
+	long int maxvalue = LONG_MAX, bool clamp = true)  const
+</LI>
+<LI><A HREF="#int64_t">int64_t</A> &nbsp;<b><A HREF="#ref41">toInt64</A></b> (<A HREF="#int64_t">int64_t</A> defvalue = 0, int base = 0, <A HREF="#int64_t">int64_t</A> minvalue = LLONG_MIN,
+	<A HREF="#int64_t">int64_t</A> maxvalue = LLONG_MAX, bool clamp = true)  const
+</LI>
+<LI>double &nbsp;<b><A HREF="#ref42">toDouble</A></b> (double defvalue = 0.0)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref43">toBoolean</A></b> (bool defvalue = false)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref44">isBoolean</A></b> ()  const
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref45">toUpper</A></b> () 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref46">toLower</A></b> () 
+</LI>
+<LI>inline char &nbsp;<b><A HREF="#ref47">operator[]</A></b> (signed int index)  const
+</LI>
+<LI>inline char &nbsp;<b><A HREF="#ref48">operator[]</A></b> (unsigned int index)  const
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref49">operator const char*</A></b> ()  const
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref50">assign</A></b> (const char* value, int len = -1) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref51">assign</A></b> (char value, unsigned int repeat = 1) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref52">hexify</A></b> (void* data, unsigned int len, char sep = 0, bool upCase = false) 
+</LI>
+<LI>inline String& &nbsp;<b><A HREF="#ref53">operator=</A></b> (const String& value) 
+</LI>
+<LI>inline String& &nbsp;<b><A HREF="#ref54">operator=</A></b> (const String* value) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref55">operator=</A></b> (const char* value) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref56">operator=</A></b> (char value) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref57">operator=</A></b> (<A HREF="#int32_t">int32_t</A> value) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref58">operator=</A></b> (<A HREF="#uint32_t">uint32_t</A> value) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref59">operator=</A></b> (<A HREF="#int64_t">int64_t</A> value) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref60">operator=</A></b> (<A HREF="#uint64_t">uint64_t</A> value) 
+</LI>
+<LI>inline String& &nbsp;<b><A HREF="#ref61">operator=</A></b> (bool value) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref62">operator=</A></b> (double value) 
+</LI>
+<LI>inline String& &nbsp;<b><A HREF="#ref63">operator+=</A></b> (const char* value) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref64">operator+=</A></b> (char value) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref65">operator+=</A></b> (<A HREF="#int32_t">int32_t</A> value) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref66">operator+=</A></b> (<A HREF="#uint32_t">uint32_t</A> value) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref67">operator+=</A></b> (<A HREF="#int64_t">int64_t</A> value) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref68">operator+=</A></b> (<A HREF="#uint64_t">uint64_t</A> value) 
+</LI>
+<LI>inline String& &nbsp;<b><A HREF="#ref69">operator+=</A></b> (bool value) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref70">operator+=</A></b> (double value) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref71">operator==</A></b> (const char* value)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref72">operator!=</A></b> (const char* value)  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref73">operator==</A></b> (const String& value)  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref74">operator!=</A></b> (const String& value)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref75">operator&=</A></b> (const char* value)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref76">operator|=</A></b> (const char* value)  const
+</LI>
+<LI>inline String& &nbsp;<b><A HREF="#ref77">operator<<</A></b> (const char* value) 
+</LI>
+<LI>inline String& &nbsp;<b><A HREF="#ref78">operator<<</A></b> (char value) 
+</LI>
+<LI>inline String& &nbsp;<b><A HREF="#ref79">operator<<</A></b> (<A HREF="#int32_t">int32_t</A> value) 
+</LI>
+<LI>inline String& &nbsp;<b><A HREF="#ref80">operator<<</A></b> (<A HREF="#uint32_t">uint32_t</A> value) 
+</LI>
+<LI>inline String& &nbsp;<b><A HREF="#ref81">operator<<</A></b> (<A HREF="#int64_t">int64_t</A> value) 
+</LI>
+<LI>inline String& &nbsp;<b><A HREF="#ref82">operator<<</A></b> (<A HREF="#uint64_t">uint64_t</A> value) 
+</LI>
+<LI>inline String& &nbsp;<b><A HREF="#ref83">operator<<</A></b> (bool value) 
+</LI>
+<LI>inline String& &nbsp;<b><A HREF="#ref84">operator<<</A></b> (double value) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref85">operator>></A></b> (const char* skip) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref86">operator>></A></b> (char& store) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref87">operator>></A></b> (UChar& store) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref88">operator>></A></b> (int& store) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref89">operator>></A></b> (unsigned int& store) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref90">operator>></A></b> (bool& store) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref91">append</A></b> (const char* value, int len) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref92">append</A></b> (const char* value, const char* separator = 0, bool force = false) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref93">append</A></b> (const ObjList* list, const char* separator = 0, bool force = false) 
+</LI>
+<LI>inline String& &nbsp;<b><A HREF="#ref94">append</A></b> (const ObjList& list, const char* separator = 0, bool force = false) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref95">append</A></b> (double value, unsigned int decimals = 3) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref96">printf</A></b> (const char* format, ...) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref97">printf</A></b> (unsigned int length, const char* format,  ...) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref98">appendFixed</A></b> (unsigned int fixedLength, const char* str, unsigned int len = -1, char fill = ' ', int align = Left) 
+</LI>
+<LI>inline String& &nbsp;<b><A HREF="#ref99">appendFixed</A></b> (unsigned int fixedLength, const String& str, char fill = ' ', int align = Left) 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref100">find</A></b> (char what, unsigned int offs = 0)  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref101">find</A></b> (const char* what, unsigned int offs = 0)  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref102">rfind</A></b> (char what)  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref103">rfind</A></b> (const char* what)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref104">startsWith</A></b> (const char* what, bool wordBreak = false, bool caseInsensitive = false)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref105">endsWith</A></b> (const char* what, bool wordBreak = false, bool caseInsensitive = false)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref106">startSkip</A></b> (const char* what, bool wordBreak = true, bool caseInsensitive = false) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref107">extractTo</A></b> (const char* sep, String& store) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref108">extractTo</A></b> (const char* sep, bool& store) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref109">extractTo</A></b> (const char* sep, int& store, int base = 0) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref110">extractTo</A></b> (const char* sep, int& store, const TokenDict* tokens, int base = 0) 
+</LI>
+<LI>String& &nbsp;<b><A HREF="#ref111">extractTo</A></b> (const char* sep, double& store) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref112">matches</A></b> (const String& value)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref113">matches</A></b> (const Regexp& rexp) 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref114">matchOffset</A></b> (int index = 0)  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref115">matchLength</A></b> (int index = 0)  const
+</LI>
+<LI>inline String &nbsp;<b><A HREF="#ref116">matchString</A></b> (int index = 0)  const
+</LI>
+<LI>String &nbsp;<b><A HREF="#ref117">replaceMatches</A></b> (const String& templ)  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref118">matchCount</A></b> ()  const
+</LI>
+<LI>ObjList* &nbsp;<b><A HREF="#ref119">split</A></b> (char separator, bool emptyOK = true)  const
+</LI>
+<LI>inline String &nbsp;<b><A HREF="#ref121">msgEscape</A></b> (char extraEsc = 0)  const
+</LI>
+<LI>inline String &nbsp;<b><A HREF="#ref123">msgUnescape</A></b> (int* errptr = 0, char extraEsc = 0)  const
+</LI>
+<LI>inline String &nbsp;<b><A HREF="#ref125">sqlEscape</A></b> (char extraEsc = 0)  const
+</LI>
+<LI>inline String &nbsp;<b><A HREF="#ref127">uriEscape</A></b> (char extraEsc = 0, const char* noEsc = 0)  const
+</LI>
+<LI>inline String &nbsp;<b><A HREF="#ref129">uriUnescape</A></b> (int* errptr = 0)  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  const String& &nbsp;<b><A HREF="#ref15">empty</A></b> () 
+</LI>
+<LI>static inline  const char* &nbsp;<b><A HREF="#ref16">boolText</A></b> (bool value) 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref22">lenUtf8</A></b> (const char* value, <A HREF="#uint32_t">uint32_t</A> maxChar = 0x10ffff, bool overlong = false) 
+</LI>
+<LI>static inline  bool &nbsp;<b><A HREF="#ref25">checkBOM</A></b> (const char* str) 
+</LI>
+<LI>static inline  bool &nbsp;<b><A HREF="#ref27">stripBOM</A></b> (const char*& str) 
+</LI>
+<LI>static inline  bool &nbsp;<b><A HREF="#ref28">stripBOM</A></b> (char*& str) 
+</LI>
+<LI>static  unsigned int &nbsp;<b><A HREF="#ref31">hash</A></b> (const char* value, unsigned int h = 0) 
+</LI>
+<LI>static  String &nbsp;<b><A HREF="#ref120">msgEscape</A></b> (const char* str, char extraEsc = 0) 
+</LI>
+<LI>static  String &nbsp;<b><A HREF="#ref122">msgUnescape</A></b> (const char* str, int* errptr = 0, char extraEsc = 0) 
+</LI>
+<LI>static  String &nbsp;<b><A HREF="#ref124">sqlEscape</A></b> (const char* str, char extraEsc = 0) 
+</LI>
+<LI>static  String &nbsp;<b><A HREF="#ref126">uriEscape</A></b> (const char* str, char extraEsc = 0, const char* noEsc = 0) 
+</LI>
+<LI>static  String &nbsp;<b><A HREF="#ref128">uriUnescape</A></b> (const char* str, int* errptr = 0) 
+</LI>
+<LI>static  const String* &nbsp;<b><A HREF="#ref130">atom</A></b> (const String*& str, const char* val) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref131">changed</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A simple string handling class for C style (one byte) strings.
+ For simplicity and read speed no copy-on-write is performed.
+ Strings have hash capabilities and comparations are using the hash
+ for fast inequality check.
+</p>
+<A NAME="Align"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Align</strong> {	Left = 0,
+	Center,
+	Right
+    }
+</td><td align="right"><h3><strong>Align</strong></h3></td></tr></table><p></p><A NAME="String"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>String</strong> ()
+<br></td><td align="right"><h3><strong>String</strong></h3></td></tr></table><p></p><p>
+ Creates a new, empty string.
+     </p>
+<A NAME="String"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>String</strong> (const char* value, int len = -1)
+<br></td><td align="right"><h3><strong>String</strong></h3></td></tr></table><p></p><p>
+ Creates a new initialized string.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Initial value of the string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data to copy, -1 for full string
+     </TD></TR>
+</TABLE></P>
+<A NAME="String"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>String</strong> (char value, unsigned int repeat = 1)
+<br></td><td align="right"><h3><strong>String</strong></h3></td></tr></table><p></p><p>
+ Creates a new initialized string.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Character to fill the string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>repeat</i></TD><TD align="left" valign="top">How many copies of the character to use
+     </TD></TR>
+</TABLE></P>
+<A NAME="String"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>String</strong> (<A HREF="#int32_t">int32_t</A> value)
+<br></td><td align="right"><h3><strong>String</strong></h3></td></tr></table><p></p><p>
+ Creates a new initialized string from a 32 bit integer.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to convert to string
+     </TD></TR>
+</TABLE></P>
+<A NAME="String"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>String</strong> (<A HREF="#uint32_t">uint32_t</A> value)
+<br></td><td align="right"><h3><strong>String</strong></h3></td></tr></table><p></p><p>
+ Creates a new initialized string from a 32 bit unsigned int.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to convert to string
+     </TD></TR>
+</TABLE></P>
+<A NAME="String"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>String</strong> (<A HREF="#int64_t">int64_t</A> value)
+<br></td><td align="right"><h3><strong>String</strong></h3></td></tr></table><p></p><p>
+ Creates a new initialized string from a 64 bit integer.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to convert to string
+     </TD></TR>
+</TABLE></P>
+<A NAME="String"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>String</strong> (<A HREF="#uint64_t">uint64_t</A> value)
+<br></td><td align="right"><h3><strong>String</strong></h3></td></tr></table><p></p><p>
+ Creates a new initialized string from a 64 bit unsigned int.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to convert to string
+     </TD></TR>
+</TABLE></P>
+<A NAME="String"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>String</strong> (bool value)
+<br></td><td align="right"><h3><strong>String</strong></h3></td></tr></table><p></p><p>
+ Creates a new initialized string from a boolean.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to convert to string
+     </TD></TR>
+</TABLE></P>
+<A NAME="String"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>String</strong> (double value)
+<br></td><td align="right"><h3><strong>String</strong></h3></td></tr></table><p></p><p>
+ Creates a new initialized string from a double value.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to convert to string
+     </TD></TR>
+</TABLE></P>
+<A NAME="String"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>String</strong> (const String& value)
+<br></td><td align="right"><h3><strong>String</strong></h3></td></tr></table><p></p><p>
+ Copy constructor.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Initial value of the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="String"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>String</strong> (const String* value)
+<br></td><td align="right"><h3><strong>String</strong></h3></td></tr></table><p></p><p>
+ Constructor from String pointer.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Initial value of the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="~String"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~String</strong> ()
+<br></td><td align="right"><h3><strong>~String</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destroys the string, disposes the memory.
+     </p>
+<A NAME="getObject"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="empty"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>empty</strong> ()
+<br></td><td align="right"><h3><strong>empty</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ A static null String
+</p>
+<p><b>Returns</b>: Reference to a static empty String
+     </p>
+<A NAME="boolText"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  const char* &nbsp;<strong>boolText</strong> (bool value)
+<br></td><td align="right"><h3><strong>boolText</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ A standard text representation of boolean values
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Boolean value to convert
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to a text representation of the value
+     </p>
+<A NAME="c_str"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>c_str</strong> ()
+<br></td><td align="right"><h3><strong>c_str</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the value of the stored string.
+</p>
+<p><b>Returns</b>: The stored C string which may be NULL.
+     </p>
+<A NAME="safe"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>safe</strong> ()
+<br></td><td align="right"><h3><strong>safe</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get a valid non-NULL C string.
+</p>
+<p><b>Returns</b>: The stored C string or a static "".
+     </p>
+<A NAME="safe"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>safe</strong> (const char* defStr)
+<br></td><td align="right"><h3><strong>safe</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get a valid non-NULL C string with a provided default.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>defStr</i></TD><TD align="left" valign="top">Default C string to return if stored is NULL
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The stored C string, the default or a static "".
+     </p>
+<A NAME="length"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>length</strong> ()
+<br></td><td align="right"><h3><strong>length</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the length of the stored string.
+</p>
+<p><b>Returns</b>: The length of the stored string, zero for NULL.
+     </p>
+<A NAME="null"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>null</strong> ()
+<br></td><td align="right"><h3><strong>null</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Checks if the string holds a NULL pointer.
+</p>
+<p><b>Returns</b>: True if the string holds NULL, false otherwise.
+     </p>
+<A NAME="lenUtf8"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>lenUtf8</strong> (const char* value, <A HREF="#uint32_t">uint32_t</A> maxChar = 0x10ffff, bool overlong = false)
+<br></td><td align="right"><h3><strong>lenUtf8</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the number of characters in a string assuming UTF-8 encoding
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">C string to compute Unicode length
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxChar</i></TD><TD align="left" valign="top">Maximum accepted Unicode character code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>overlong</i></TD><TD align="left" valign="top">Accept overlong UTF-8 sequences (dangerous!)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Count of Unicode characters, -1 if not valid UTF-8
+     </p>
+<A NAME="lenUtf8"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>lenUtf8</strong> (<A HREF="#uint32_t">uint32_t</A> maxChar = 0x10ffff, bool overlong = false)
+<br></td><td align="right"><h3><strong>lenUtf8</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of characters in the string assuming UTF-8 encoding
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>maxChar</i></TD><TD align="left" valign="top">Maximum accepted Unicode character code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>overlong</i></TD><TD align="left" valign="top">Accept overlong UTF-8 sequences (dangerous!)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Count of Unicode characters, -1 if not valid UTF-8
+     </p>
+<A NAME="fixUtf8"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>fixUtf8</strong> (const char* replace = 0, <A HREF="#uint32_t">uint32_t</A> maxChar = 0x10ffff, bool overlong = false)
+<br></td><td align="right"><h3><strong>fixUtf8</strong></h3></td></tr></table><p></p><p>
+ Fix an UTF-8 encoded string by replacing invalid sequences
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>replace</i></TD><TD align="left" valign="top">String to replace invalid sequences, use U+FFFD if null
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxChar</i></TD><TD align="left" valign="top">Maximum accepted Unicode character code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>overlong</i></TD><TD align="left" valign="top">Accept overlong UTF-8 sequences (dangerous!)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Count of invalid UTF-8 sequences that were replaced
+     </p>
+<A NAME="checkBOM"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  bool &nbsp;<strong>checkBOM</strong> (const char* str)
+<br></td><td align="right"><h3><strong>checkBOM</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if a string starts with UTF-8 Byte Order Mark
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to check for BOM
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the string starts with UTF-8 BOM
+     </p>
+<A NAME="checkBOM"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>checkBOM</strong> ()
+<br></td><td align="right"><h3><strong>checkBOM</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this string starts with UTF-8 Byte Order Mark
+</p>
+<p><b>Returns</b>: True if the string starts with UTF-8 BOM
+     </p>
+<A NAME="stripBOM"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  bool &nbsp;<strong>stripBOM</strong> (const char*& str)
+<br></td><td align="right"><h3><strong>stripBOM</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Advance a const string past an UTF-8 Byte Order Mark
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to check for and strip BOM
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the string started with UTF-8 BOM
+     </p>
+<A NAME="stripBOM"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  bool &nbsp;<strong>stripBOM</strong> (char*& str)
+<br></td><td align="right"><h3><strong>stripBOM</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Advance a string past an UTF-8 Byte Order Mark
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to check for and strip BOM
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the string started with UTF-8 BOM
+     </p>
+<A NAME="stripBOM"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>stripBOM</strong> ()
+<br></td><td align="right"><h3><strong>stripBOM</strong></h3></td></tr></table><p></p><p>
+ Strip an UTF-8 Byte Order Mark from the start of this string
+</p>
+<p><b>Returns</b>: True if the string started with UTF-8 BOM
+     </p>
+<A NAME="hash"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>hash</strong> ()
+<br></td><td align="right"><h3><strong>hash</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the hash of the contained string.
+</p>
+<p><b>Returns</b>: The hash of the string.
+     </p>
+<A NAME="hash"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>hash</strong> (const char* value, unsigned int h = 0)
+<br></td><td align="right"><h3><strong>hash</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the hash of an arbitrary string.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">C string to hash
+</TD></TR>
+<TR><TD align="left" valign="top"><i>h</i></TD><TD align="left" valign="top">Old hash value for incremental hashing
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The hash of the string.
+     </p>
+<A NAME="clear"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clear</strong> ()
+<br></td><td align="right"><h3><strong>clear</strong></h3></td></tr></table><p></p><p>
+ Clear the string and free the memory
+     </p>
+<A NAME="at"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>char &nbsp;<strong>at</strong> (int index)
+<br></td><td align="right"><h3><strong>at</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Extract the caracter at a given index
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of character in string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Character at given index or 0 if out of range
+     </p>
+<A NAME="substr"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String &nbsp;<strong>substr</strong> (int offs, int len = -1)
+<br></td><td align="right"><h3><strong>substr</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Substring extraction
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>offs</i></TD><TD align="left" valign="top">Offset of the substring, negative to count from end
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the substring, -1 for everything possible
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A copy of the requested substring
+     </p>
+<A NAME="trimBlanks"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>trimBlanks</strong> ()
+<br></td><td align="right"><h3><strong>trimBlanks</strong></h3></td></tr></table><p></p><p>
+ Strip off leading and trailing blank characters
+     </p>
+<A NAME="trimSpaces"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>trimSpaces</strong> ()
+<br></td><td align="right"><h3><strong>trimSpaces</strong></h3></td></tr></table><p></p><p>
+ Strip off leading and trailing whitespace characters
+  (blank, tabs, form-feed, newlines)
+     </p>
+<A NAME="toString"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>toString</strong> ()
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Override GenObject's method to return this String
+</p>
+<p><b>Returns</b>: A reference to this String
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="toInteger"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>toInteger</strong> (int defvalue = 0, int base = 0, int minvalue = INT_MIN,
+	int maxvalue = INT_MAX, bool clamp = true)
+<br></td><td align="right"><h3><strong>toInteger</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Convert the string to an integer value.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default to return if the string is not a number
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base</i></TD><TD align="left" valign="top">Numeration base, 0 to autodetect
+</TD></TR>
+<TR><TD align="left" valign="top"><i>minvalue</i></TD><TD align="left" valign="top">Minimum value allowed
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxvalue</i></TD><TD align="left" valign="top">Maximum value allowed
+</TD></TR>
+<TR><TD align="left" valign="top"><i>clamp</i></TD><TD align="left" valign="top">Control the out of bound values: true to adjust to the nearest
+  bound, false to return the default value
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The integer interpretation or defvalue.
+     </p>
+<A NAME="toInteger"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>toInteger</strong> (const TokenDict* tokens, int defvalue = 0, int base = 0)
+<br></td><td align="right"><h3><strong>toInteger</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Convert the string to an integer value looking up first a token table.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>tokens</i></TD><TD align="left" valign="top">Pointer to an array of tokens to lookup first
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default to return if the string is not a token or number
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base</i></TD><TD align="left" valign="top">Numeration base, 0 to autodetect
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The integer interpretation or defvalue.
+     </p>
+<A NAME="toLong"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td>long int &nbsp;<strong>toLong</strong> (long int defvalue = 0, int base = 0, long int minvalue = LONG_MIN,
+	long int maxvalue = LONG_MAX, bool clamp = true)
+<br></td><td align="right"><h3><strong>toLong</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Convert the string to an long integer value.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default to return if the string is not a number
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base</i></TD><TD align="left" valign="top">Numeration base, 0 to autodetect
+</TD></TR>
+<TR><TD align="left" valign="top"><i>minvalue</i></TD><TD align="left" valign="top">Minimum value allowed
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxvalue</i></TD><TD align="left" valign="top">Maximum value allowed
+</TD></TR>
+<TR><TD align="left" valign="top"><i>clamp</i></TD><TD align="left" valign="top">Control the out of bound values: true to adjust to the nearest
+  bound, false to return the default value
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The long integer interpretation or defvalue.
+     </p>
+<A NAME="toInt64"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#int64_t">int64_t</A> &nbsp;<strong>toInt64</strong> (<A HREF="#int64_t">int64_t</A> defvalue = 0, int base = 0, <A HREF="#int64_t">int64_t</A> minvalue = LLONG_MIN,
+	<A HREF="#int64_t">int64_t</A> maxvalue = LLONG_MAX, bool clamp = true)
+<br></td><td align="right"><h3><strong>toInt64</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Convert the string to an 64 bit integer value.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default to return if the string is not a number
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base</i></TD><TD align="left" valign="top">Numeration base, 0 to autodetect
+</TD></TR>
+<TR><TD align="left" valign="top"><i>minvalue</i></TD><TD align="left" valign="top">Minimum value allowed
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxvalue</i></TD><TD align="left" valign="top">Maximum value allowed
+</TD></TR>
+<TR><TD align="left" valign="top"><i>clamp</i></TD><TD align="left" valign="top">Control the out of bound values: true to adjust to the nearest
+  bound, false to return the default value
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The 64 bit integer interpretation or defvalue.
+     </p>
+<A NAME="toDouble"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td>double &nbsp;<strong>toDouble</strong> (double defvalue = 0.0)
+<br></td><td align="right"><h3><strong>toDouble</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Convert the string to a floating point value.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default to return if the string is not a number
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The floating-point interpretation or defvalue.
+     </p>
+<A NAME="toBoolean"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>toBoolean</strong> (bool defvalue = false)
+<br></td><td align="right"><h3><strong>toBoolean</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Convert the string to a boolean value.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default to return if the string is not a bool
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The boolean interpretation or defvalue.
+     </p>
+<A NAME="isBoolean"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>isBoolean</strong> ()
+<br></td><td align="right"><h3><strong>isBoolean</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the string can be converted to a boolean value.
+</p>
+<p><b>Returns</b>: True if the string is a valid boolean.
+     </p>
+<A NAME="toUpper"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>toUpper</strong> ()
+<br></td><td align="right"><h3><strong>toUpper</strong></h3></td></tr></table><p></p><p>
+ Turn the string to an all-uppercase string
+</p>
+<p><b>Returns</b>: A reference to this String
+     </p>
+<A NAME="toLower"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>toLower</strong> ()
+<br></td><td align="right"><h3><strong>toLower</strong></h3></td></tr></table><p></p><p>
+ Turn the string to an all-lowercase string
+</p>
+<p><b>Returns</b>: A reference to this String
+     </p>
+<A NAME="operator[]"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline char &nbsp;<strong>operator[]</strong> (signed int index)
+<br></td><td align="right"><h3><strong>operator[]</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Indexing operator with signed int
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of character in string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Character at given index or 0 if out of range
+     </p>
+<A NAME="operator[]"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline char &nbsp;<strong>operator[]</strong> (unsigned int index)
+<br></td><td align="right"><h3><strong>operator[]</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Indexing operator with unsigned int
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of character in string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Character at given index or 0 if out of range
+     </p>
+<A NAME="operator%20const%20char*"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>operator const char*</strong> ()
+<br></td><td align="right"><h3><strong>operator const char*</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Conversion to "const char *" operator.
+</p>
+<p><b>Returns</b>: Pointer to the internally stored string
+     </p>
+<A NAME="assign"></A><A NAME="ref50"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>assign</strong> (const char* value, int len = -1)
+<br></td><td align="right"><h3><strong>assign</strong></h3></td></tr></table><p></p><p>
+ Assigns a new value to the string from a character block.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">New value of the string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data to copy, -1 for full string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Reference to the String
+     </p>
+<A NAME="assign"></A><A NAME="ref51"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>assign</strong> (char value, unsigned int repeat = 1)
+<br></td><td align="right"><h3><strong>assign</strong></h3></td></tr></table><p></p><p>
+ Assigns a new value by filling with a repeated character
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Character to fill the string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>repeat</i></TD><TD align="left" valign="top">How many copies of the character to use
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Reference to the String
+     </p>
+<A NAME="hexify"></A><A NAME="ref52"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>hexify</strong> (void* data, unsigned int len, char sep = 0, bool upCase = false)
+<br></td><td align="right"><h3><strong>hexify</strong></h3></td></tr></table><p></p><p>
+ Build a hexadecimal representation of a buffer of data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to data to dump
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">Separator character to use between octets
+</TD></TR>
+<TR><TD align="left" valign="top"><i>upCase</i></TD><TD align="left" valign="top">Set to true to use upper case characters in hexa
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Reference to the String
+     </p>
+<A NAME="operator="></A><A NAME="ref53"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String& &nbsp;<strong>operator=</strong> (const String& value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to assign to the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator="></A><A NAME="ref54"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String& &nbsp;<strong>operator=</strong> (const String* value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment from String* operator.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to assign to the string
+</TD></TR>
+</TABLE></P>
+<p><b>See also</b>: <A HREF="TelEngine.html#strcpy">strcpy</A></p>
+<A NAME="operator="></A><A NAME="ref55"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator=</strong> (const char* value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment from char* operator.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to assign to the string
+</TD></TR>
+</TABLE></P>
+<p><b>See also</b>: <A HREF="TelEngine.html#strcpy">strcpy</A></p>
+<A NAME="operator="></A><A NAME="ref56"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator=</strong> (char value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator for single characters.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to assign to the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator="></A><A NAME="ref57"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator=</strong> (<A HREF="#int32_t">int32_t</A> value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator for 32 bit integers.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to assign to the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator="></A><A NAME="ref58"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator=</strong> (<A HREF="#uint32_t">uint32_t</A> value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator for 32 bit unsigned integers.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to assign to the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator="></A><A NAME="ref59"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator=</strong> (<A HREF="#int64_t">int64_t</A> value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator for 64 bit integers.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to assign to the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator="></A><A NAME="ref60"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator=</strong> (<A HREF="#uint64_t">uint64_t</A> value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator for 64 bit unsigned integers.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to assign to the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator="></A><A NAME="ref61"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String& &nbsp;<strong>operator=</strong> (bool value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator for booleans.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to assign to the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator="></A><A NAME="ref62"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator=</strong> (double value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator for double.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to assign to the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator+="></A><A NAME="ref63"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String& &nbsp;<strong>operator+=</strong> (const char* value)
+<br></td><td align="right"><h3><strong>operator+=</strong></h3></td></tr></table><p></p><p>
+ Appending operator for strings.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to assign to the string
+</TD></TR>
+</TABLE></P>
+<p><b>See also</b>: <A HREF="TelEngine.html#strcat">strcat</A></p>
+<A NAME="operator+="></A><A NAME="ref64"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator+=</strong> (char value)
+<br></td><td align="right"><h3><strong>operator+=</strong></h3></td></tr></table><p></p><p>
+ Appending operator for single characters.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to append to the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator+="></A><A NAME="ref65"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator+=</strong> (<A HREF="#int32_t">int32_t</A> value)
+<br></td><td align="right"><h3><strong>operator+=</strong></h3></td></tr></table><p></p><p>
+ Appending operator for 32 bit integers.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to append to the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator+="></A><A NAME="ref66"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator+=</strong> (<A HREF="#uint32_t">uint32_t</A> value)
+<br></td><td align="right"><h3><strong>operator+=</strong></h3></td></tr></table><p></p><p>
+ Appending operator for 32 bit unsigned integers.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to append to the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator+="></A><A NAME="ref67"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator+=</strong> (<A HREF="#int64_t">int64_t</A> value)
+<br></td><td align="right"><h3><strong>operator+=</strong></h3></td></tr></table><p></p><p>
+ Appending operator for 64 bit integers.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to append to the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator+="></A><A NAME="ref68"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator+=</strong> (<A HREF="#uint64_t">uint64_t</A> value)
+<br></td><td align="right"><h3><strong>operator+=</strong></h3></td></tr></table><p></p><p>
+ Appending operator for 64 bit unsigned integers.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to append to the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator+="></A><A NAME="ref69"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String& &nbsp;<strong>operator+=</strong> (bool value)
+<br></td><td align="right"><h3><strong>operator+=</strong></h3></td></tr></table><p></p><p>
+ Appending operator for booleans.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to append to the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator+="></A><A NAME="ref70"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator+=</strong> (double value)
+<br></td><td align="right"><h3><strong>operator+=</strong></h3></td></tr></table><p></p><p>
+ Appending operator for double.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to append to the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator=="></A><A NAME="ref71"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>operator==</strong> (const char* value)
+<br></td><td align="right"><h3><strong>operator==</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Equality operator.
+     </p>
+<A NAME="operator!="></A><A NAME="ref72"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>operator!=</strong> (const char* value)
+<br></td><td align="right"><h3><strong>operator!=</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Inequality operator.
+     </p>
+<A NAME="operator=="></A><A NAME="ref73"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>operator==</strong> (const String& value)
+<br></td><td align="right"><h3><strong>operator==</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Fast equality operator.
+     </p>
+<A NAME="operator!="></A><A NAME="ref74"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>operator!=</strong> (const String& value)
+<br></td><td align="right"><h3><strong>operator!=</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Fast inequality operator.
+     </p>
+<A NAME="operator&="></A><A NAME="ref75"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>operator&=</strong> (const char* value)
+<br></td><td align="right"><h3><strong>operator&=</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Case-insensitive equality operator.
+     </p>
+<A NAME="operator|="></A><A NAME="ref76"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>operator|=</strong> (const char* value)
+<br></td><td align="right"><h3><strong>operator|=</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Case-insensitive inequality operator.
+     </p>
+<A NAME="operator%3C%3C"></A><A NAME="ref77"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String& &nbsp;<strong>operator<<</strong> (const char* value)
+<br></td><td align="right"><h3><strong>operator<<</strong></h3></td></tr></table><p></p><p>
+ Stream style appending operator for C strings
+     </p>
+<A NAME="operator%3C%3C"></A><A NAME="ref78"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String& &nbsp;<strong>operator<<</strong> (char value)
+<br></td><td align="right"><h3><strong>operator<<</strong></h3></td></tr></table><p></p><p>
+ Stream style appending operator for single characters
+     </p>
+<A NAME="operator%3C%3C"></A><A NAME="ref79"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String& &nbsp;<strong>operator<<</strong> (<A HREF="#int32_t">int32_t</A> value)
+<br></td><td align="right"><h3><strong>operator<<</strong></h3></td></tr></table><p></p><p>
+ Stream style appending operator for 32 bit integers
+     </p>
+<A NAME="operator%3C%3C"></A><A NAME="ref80"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String& &nbsp;<strong>operator<<</strong> (<A HREF="#uint32_t">uint32_t</A> value)
+<br></td><td align="right"><h3><strong>operator<<</strong></h3></td></tr></table><p></p><p>
+ Stream style appending operator for 32 bit unsigned integers
+     </p>
+<A NAME="operator%3C%3C"></A><A NAME="ref81"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String& &nbsp;<strong>operator<<</strong> (<A HREF="#int64_t">int64_t</A> value)
+<br></td><td align="right"><h3><strong>operator<<</strong></h3></td></tr></table><p></p><p>
+ Stream style appending operator for 64 bit integers
+     </p>
+<A NAME="operator%3C%3C"></A><A NAME="ref82"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String& &nbsp;<strong>operator<<</strong> (<A HREF="#uint64_t">uint64_t</A> value)
+<br></td><td align="right"><h3><strong>operator<<</strong></h3></td></tr></table><p></p><p>
+ Stream style appending operator for 64 bit unsigned integers
+     </p>
+<A NAME="operator%3C%3C"></A><A NAME="ref83"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String& &nbsp;<strong>operator<<</strong> (bool value)
+<br></td><td align="right"><h3><strong>operator<<</strong></h3></td></tr></table><p></p><p>
+ Stream style appending operator for booleans
+     </p>
+<A NAME="operator%3C%3C"></A><A NAME="ref84"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String& &nbsp;<strong>operator<<</strong> (double value)
+<br></td><td align="right"><h3><strong>operator<<</strong></h3></td></tr></table><p></p><p>
+ Stream style appending operator for double
+     </p>
+<A NAME="operator%3E%3E"></A><A NAME="ref85"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator>></strong> (const char* skip)
+<br></td><td align="right"><h3><strong>operator>></strong></h3></td></tr></table><p></p><p>
+ Stream style substring skipping operator.
+ It eats all characters up to and including the skip string
+     </p>
+<A NAME="operator%3E%3E"></A><A NAME="ref86"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator>></strong> (char& store)
+<br></td><td align="right"><h3><strong>operator>></strong></h3></td></tr></table><p></p><p>
+ Stream style extraction operator for single characters
+     </p>
+<A NAME="operator%3E%3E"></A><A NAME="ref87"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator>></strong> (UChar& store)
+<br></td><td align="right"><h3><strong>operator>></strong></h3></td></tr></table><p></p><p>
+ Stream style extraction operator for single Unicode characters
+     </p>
+<A NAME="operator%3E%3E"></A><A NAME="ref88"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator>></strong> (int& store)
+<br></td><td align="right"><h3><strong>operator>></strong></h3></td></tr></table><p></p><p>
+ Stream style extraction operator for integers
+     </p>
+<A NAME="operator%3E%3E"></A><A NAME="ref89"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator>></strong> (unsigned int& store)
+<br></td><td align="right"><h3><strong>operator>></strong></h3></td></tr></table><p></p><p>
+ Stream style extraction operator for unsigned integers
+     </p>
+<A NAME="operator%3E%3E"></A><A NAME="ref90"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>operator>></strong> (bool& store)
+<br></td><td align="right"><h3><strong>operator>></strong></h3></td></tr></table><p></p><p>
+ Stream style extraction operator for booleans
+     </p>
+<A NAME="append"></A><A NAME="ref91"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>append</strong> (const char* value, int len)
+<br></td><td align="right"><h3><strong>append</strong></h3></td></tr></table><p></p><p>
+ Append a string to the current string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">String from which to append
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data to copy, -1 for full string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Reference to the String
+     </p>
+<A NAME="append"></A><A NAME="ref92"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>append</strong> (const char* value, const char* separator = 0, bool force = false)
+<br></td><td align="right"><h3><strong>append</strong></h3></td></tr></table><p></p><p>
+ Conditional appending with a separator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">String to append
+</TD></TR>
+<TR><TD align="left" valign="top"><i>separator</i></TD><TD align="left" valign="top">Separator to insert before the value
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to allow appending empty strings
+     </TD></TR>
+</TABLE></P>
+<A NAME="append"></A><A NAME="ref93"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>append</strong> (const ObjList* list, const char* separator = 0, bool force = false)
+<br></td><td align="right"><h3><strong>append</strong></h3></td></tr></table><p></p><p>
+ List members appending with a separator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">Pointer to ObjList whose <A HREF="TelEngine__GenObject.html#toString">GenObject::toString</A>() of the items will be appended
+</TD></TR>
+<TR><TD align="left" valign="top"><i>separator</i></TD><TD align="left" valign="top">Separator to insert before each item in list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to allow appending empty strings
+     </TD></TR>
+</TABLE></P>
+<A NAME="append"></A><A NAME="ref94"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String& &nbsp;<strong>append</strong> (const ObjList& list, const char* separator = 0, bool force = false)
+<br></td><td align="right"><h3><strong>append</strong></h3></td></tr></table><p></p><p>
+ List members appending with a separator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">Reference of ObjList whose <A HREF="TelEngine__GenObject.html#toString">GenObject::toString</A>() of the items will be appended
+</TD></TR>
+<TR><TD align="left" valign="top"><i>separator</i></TD><TD align="left" valign="top">Separator to insert before each item in list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to allow appending empty strings
+     </TD></TR>
+</TABLE></P>
+<A NAME="append"></A><A NAME="ref95"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>append</strong> (double value, unsigned int decimals = 3)
+<br></td><td align="right"><h3><strong>append</strong></h3></td></tr></table><p></p><p>
+ Explicit double append
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to append
+</TD></TR>
+<TR><TD align="left" valign="top"><i>decimals</i></TD><TD align="left" valign="top">Number of decimals
+     </TD></TR>
+</TABLE></P>
+<A NAME="printf"></A><A NAME="ref96"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>printf</strong> (const char* format, ...)
+<br></td><td align="right"><h3><strong>printf</strong></h3></td></tr></table><p></p><p>
+ Build a String in a printf style.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">The output format.
+ NOTE: The length of the resulting string will be at most 128 + length of format
+     </TD></TR>
+</TABLE></P>
+<A NAME="printf"></A><A NAME="ref97"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>printf</strong> (unsigned int length, const char* format,  ...)
+<br></td><td align="right"><h3><strong>printf</strong></h3></td></tr></table><p></p><p>
+ Build a String in a printf style.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>length</i></TD><TD align="left" valign="top">maximum length of the resulting string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">The output format.
+     </TD></TR>
+</TABLE></P>
+<A NAME="appendFixed"></A><A NAME="ref98"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>appendFixed</strong> (unsigned int fixedLength, const char* str, unsigned int len = -1, char fill = ' ', int align = Left)
+<br></td><td align="right"><h3><strong>appendFixed</strong></h3></td></tr></table><p></p><p>
+ Build a fixed aligned string from str and append it.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>fixedLength</i></TD><TD align="left" valign="top">The fixed length in which the 'str' will be aligned.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">The string to align
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">The number of characters to use from str.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>fill</i></TD><TD align="left" valign="top">Character to fill the empty space.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>align</i></TD><TD align="left" valign="top">The alignment mode.
+     </TD></TR>
+</TABLE></P>
+<A NAME="appendFixed"></A><A NAME="ref99"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String& &nbsp;<strong>appendFixed</strong> (unsigned int fixedLength, const String& str, char fill = ' ', int align = Left)
+<br></td><td align="right"><h3><strong>appendFixed</strong></h3></td></tr></table><p></p><p>
+ Build a fixed aligned string from str and append it.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>fixedLength</i></TD><TD align="left" valign="top">The fixed length in which the 'str' will be aligned.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">The string to align
+</TD></TR>
+<TR><TD align="left" valign="top"><i>fill</i></TD><TD align="left" valign="top">Character to fill the empty space.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>align</i></TD><TD align="left" valign="top">The alignment mode.
+     </TD></TR>
+</TABLE></P>
+<A NAME="find"></A><A NAME="ref100"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>find</strong> (char what, unsigned int offs = 0)
+<br></td><td align="right"><h3><strong>find</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Locate the first instance of a character in the string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>what</i></TD><TD align="left" valign="top">Character to search for
+</TD></TR>
+<TR><TD align="left" valign="top"><i>offs</i></TD><TD align="left" valign="top">Offset in string to start searching from
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Offset of character or -1 if not found
+     </p>
+<A NAME="find"></A><A NAME="ref101"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>find</strong> (const char* what, unsigned int offs = 0)
+<br></td><td align="right"><h3><strong>find</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Locate the first instance of a substring in the string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>what</i></TD><TD align="left" valign="top">Substring to search for
+</TD></TR>
+<TR><TD align="left" valign="top"><i>offs</i></TD><TD align="left" valign="top">Offset in string to start searching from
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Offset of substring or -1 if not found
+     </p>
+<A NAME="rfind"></A><A NAME="ref102"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>rfind</strong> (char what)
+<br></td><td align="right"><h3><strong>rfind</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Locate the last instance of a character in the string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>what</i></TD><TD align="left" valign="top">Character to search for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Offset of character or -1 if not found
+     </p>
+<A NAME="rfind"></A><A NAME="ref103"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>rfind</strong> (const char* what)
+<br></td><td align="right"><h3><strong>rfind</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Locate the last instance of a substring in the string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>what</i></TD><TD align="left" valign="top">Substring to search for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Offset of substring or -1 if not found
+     </p>
+<A NAME="startsWith"></A><A NAME="ref104"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>startsWith</strong> (const char* what, bool wordBreak = false, bool caseInsensitive = false)
+<br></td><td align="right"><h3><strong>startsWith</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Checks if the string starts with a substring
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>what</i></TD><TD align="left" valign="top">Substring to search for
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wordBreak</i></TD><TD align="left" valign="top">Check if a word boundary follows the substring
+</TD></TR>
+<TR><TD align="left" valign="top"><i>caseInsensitive</i></TD><TD align="left" valign="top">Compare case-insensitive if set
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the substring occurs at the beginning of the string
+     </p>
+<A NAME="endsWith"></A><A NAME="ref105"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>endsWith</strong> (const char* what, bool wordBreak = false, bool caseInsensitive = false)
+<br></td><td align="right"><h3><strong>endsWith</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Checks if the string ends with a substring
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>what</i></TD><TD align="left" valign="top">Substring to search for
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wordBreak</i></TD><TD align="left" valign="top">Check if a word boundary precedes the substring
+</TD></TR>
+<TR><TD align="left" valign="top"><i>caseInsensitive</i></TD><TD align="left" valign="top">Compare case-insensitive if set
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the substring occurs at the end of the string
+     </p>
+<A NAME="startSkip"></A><A NAME="ref106"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>startSkip</strong> (const char* what, bool wordBreak = true, bool caseInsensitive = false)
+<br></td><td align="right"><h3><strong>startSkip</strong></h3></td></tr></table><p></p><p>
+ Checks if the string starts with a substring and removes it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>what</i></TD><TD align="left" valign="top">Substring to search for
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wordBreak</i></TD><TD align="left" valign="top">Check if a word boundary follows the substring;
+  this parameter defaults to True because the intended use of this
+  method is to separate commands from their parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>caseInsensitive</i></TD><TD align="left" valign="top">Compare case-insensitive if set
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the substring occurs at the beginning of the string
+  and also removes the substring; if wordBreak is True any word
+  breaking characters are also removed
+     </p>
+<A NAME="extractTo"></A><A NAME="ref107"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>extractTo</strong> (const char* sep, String& store)
+<br></td><td align="right"><h3><strong>extractTo</strong></h3></td></tr></table><p></p><p>
+ Extract a substring up to a separator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">Separator string to match after extracted fragment
+</TD></TR>
+<TR><TD align="left" valign="top"><i>store</i></TD><TD align="left" valign="top">Reference to String variable to store extracted fragment
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Reference to this string
+     </p>
+<A NAME="extractTo"></A><A NAME="ref108"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>extractTo</strong> (const char* sep, bool& store)
+<br></td><td align="right"><h3><strong>extractTo</strong></h3></td></tr></table><p></p><p>
+ Extract a boolean substring up to a separator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">Separator string to match after extracted fragment
+</TD></TR>
+<TR><TD align="left" valign="top"><i>store</i></TD><TD align="left" valign="top">Reference to boolean variable to store extracted fragment
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Reference to this string
+     </p>
+<A NAME="extractTo"></A><A NAME="ref109"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>extractTo</strong> (const char* sep, int& store, int base = 0)
+<br></td><td align="right"><h3><strong>extractTo</strong></h3></td></tr></table><p></p><p>
+ Extract an integer value substring up to a separator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">Separator string to match after extracted fragment
+</TD></TR>
+<TR><TD align="left" valign="top"><i>store</i></TD><TD align="left" valign="top">Reference to integer variable to store extracted fragment
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base</i></TD><TD align="left" valign="top">Numeration base, 0 to autodetect
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Reference to this string
+     </p>
+<A NAME="extractTo"></A><A NAME="ref110"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>extractTo</strong> (const char* sep, int& store, const TokenDict* tokens, int base = 0)
+<br></td><td align="right"><h3><strong>extractTo</strong></h3></td></tr></table><p></p><p>
+ Extract an integer or token value substring up to a separator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">Separator string to match after extracted fragment
+</TD></TR>
+<TR><TD align="left" valign="top"><i>store</i></TD><TD align="left" valign="top">Reference to integer variable to store extracted fragment
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tokens</i></TD><TD align="left" valign="top">Pointer to an array of tokens to lookup first
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base</i></TD><TD align="left" valign="top">Numeration base, 0 to autodetect
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Reference to this string
+     </p>
+<A NAME="extractTo"></A><A NAME="ref111"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String& &nbsp;<strong>extractTo</strong> (const char* sep, double& store)
+<br></td><td align="right"><h3><strong>extractTo</strong></h3></td></tr></table><p></p><p>
+ Extract a double value substring up to a separator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">Separator string to match after extracted fragment
+</TD></TR>
+<TR><TD align="left" valign="top"><i>store</i></TD><TD align="left" valign="top">Reference to double variable to store extracted fragment
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Reference to this string
+     </p>
+<A NAME="matches"></A><A NAME="ref112"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>matches</strong> (const String& value)
+<br></td><td align="right"><h3><strong>matches</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Checks if matches another string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">String to check for match
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if matches, false otherwise
+     </p>
+<A NAME="matches"></A><A NAME="ref113"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>matches</strong> (const Regexp& rexp)
+<br></td><td align="right"><h3><strong>matches</strong></h3></td></tr></table><p></p><p>
+ Checks if matches a regular expression and fill the match substrings
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>rexp</i></TD><TD align="left" valign="top">Regular expression to check for match
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if matches, false otherwise
+     </p>
+<A NAME="matchOffset"></A><A NAME="ref114"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>matchOffset</strong> (int index = 0)
+<br></td><td align="right"><h3><strong>matchOffset</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the offset of the last match
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of the submatch to return, 0 for full match
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Offset of the last match, -1 if no match or not in range
+     </p>
+<A NAME="matchLength"></A><A NAME="ref115"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>matchLength</strong> (int index = 0)
+<br></td><td align="right"><h3><strong>matchLength</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the length of the last match
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of the submatch to return, 0 for full match
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Length of the last match, 0 if no match or out of range
+     </p>
+<A NAME="matchString"></A><A NAME="ref116"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String &nbsp;<strong>matchString</strong> (int index = 0)
+<br></td><td align="right"><h3><strong>matchString</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get a copy of a matched (sub)string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of the submatch to return, 0 for full match
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Copy of the matched substring
+     </p>
+<A NAME="replaceMatches"></A><A NAME="ref117"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String &nbsp;<strong>replaceMatches</strong> (const String& templ)
+<br></td><td align="right"><h3><strong>replaceMatches</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Create a string by replacing matched strings in a template
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>templ</i></TD><TD align="left" valign="top">Template of the string to generate
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Copy of template with "\0" - "\9" replaced with submatches
+     </p>
+<A NAME="matchCount"></A><A NAME="ref118"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>matchCount</strong> ()
+<br></td><td align="right"><h3><strong>matchCount</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the total number of submatches from the last match, 0 if no match
+</p>
+<p><b>Returns</b>: Number of matching subexpressions
+     </p>
+<A NAME="split"></A><A NAME="ref119"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList* &nbsp;<strong>split</strong> (char separator, bool emptyOK = true)
+<br></td><td align="right"><h3><strong>split</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Splits the string at a delimiter character
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>separator</i></TD><TD align="left" valign="top">Character where to split the string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>emptyOK</i></TD><TD align="left" valign="top">True if empty strings should be inserted in list
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A newly allocated list of strings, must be deleted after use
+     </p>
+<A NAME="msgEscape"></A><A NAME="ref120"></A><table width="100%"><tr bgcolor="#eeeeee"><td> String &nbsp;<strong>msgEscape</strong> (const char* str, char extraEsc = 0)
+<br></td><td align="right"><h3><strong>msgEscape</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create an escaped string suitable for use in messages
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to convert to escaped format
+</TD></TR>
+<TR><TD align="left" valign="top"><i>extraEsc</i></TD><TD align="left" valign="top">Character to escape other than the default ones
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The string with special characters escaped
+     </p>
+<A NAME="msgEscape"></A><A NAME="ref121"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String &nbsp;<strong>msgEscape</strong> (char extraEsc = 0)
+<br></td><td align="right"><h3><strong>msgEscape</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Create an escaped string suitable for use in messages
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>extraEsc</i></TD><TD align="left" valign="top">Character to escape other than the default ones
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The string with special characters escaped
+     </p>
+<A NAME="msgUnescape"></A><A NAME="ref122"></A><table width="100%"><tr bgcolor="#eeeeee"><td> String &nbsp;<strong>msgUnescape</strong> (const char* str, int* errptr = 0, char extraEsc = 0)
+<br></td><td align="right"><h3><strong>msgUnescape</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Decode an escaped string back to its raw form
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to convert to unescaped format
+</TD></TR>
+<TR><TD align="left" valign="top"><i>errptr</i></TD><TD align="left" valign="top">Pointer to an integer to receive the place of 1st error
+</TD></TR>
+<TR><TD align="left" valign="top"><i>extraEsc</i></TD><TD align="left" valign="top">Character to unescape other than the default ones
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The string with special characters unescaped
+     </p>
+<A NAME="msgUnescape"></A><A NAME="ref123"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String &nbsp;<strong>msgUnescape</strong> (int* errptr = 0, char extraEsc = 0)
+<br></td><td align="right"><h3><strong>msgUnescape</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Decode an escaped string back to its raw form
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>errptr</i></TD><TD align="left" valign="top">Pointer to an integer to receive the place of 1st error
+</TD></TR>
+<TR><TD align="left" valign="top"><i>extraEsc</i></TD><TD align="left" valign="top">Character to unescape other than the default ones
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The string with special characters unescaped
+     </p>
+<A NAME="sqlEscape"></A><A NAME="ref124"></A><table width="100%"><tr bgcolor="#eeeeee"><td> String &nbsp;<strong>sqlEscape</strong> (const char* str, char extraEsc = 0)
+<br></td><td align="right"><h3><strong>sqlEscape</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create an escaped string suitable for use in SQL queries
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to convert to escaped format
+</TD></TR>
+<TR><TD align="left" valign="top"><i>extraEsc</i></TD><TD align="left" valign="top">Character to escape other than the default ones
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The string with special characters escaped
+     </p>
+<A NAME="sqlEscape"></A><A NAME="ref125"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String &nbsp;<strong>sqlEscape</strong> (char extraEsc = 0)
+<br></td><td align="right"><h3><strong>sqlEscape</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Create an escaped string suitable for use in SQL queries
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>extraEsc</i></TD><TD align="left" valign="top">Character to escape other than the default ones
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The string with special characters escaped
+     </p>
+<A NAME="uriEscape"></A><A NAME="ref126"></A><table width="100%"><tr bgcolor="#eeeeee"><td> String &nbsp;<strong>uriEscape</strong> (const char* str, char extraEsc = 0, const char* noEsc = 0)
+<br></td><td align="right"><h3><strong>uriEscape</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create an escaped string suitable for use in URIs
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to convert to escaped format
+</TD></TR>
+<TR><TD align="left" valign="top"><i>extraEsc</i></TD><TD align="left" valign="top">Character to escape other than the default ones
+</TD></TR>
+<TR><TD align="left" valign="top"><i>noEsc</i></TD><TD align="left" valign="top">Optional pointer to string of characters that shouldn't be escaped
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The string with special characters escaped
+     </p>
+<A NAME="uriEscape"></A><A NAME="ref127"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String &nbsp;<strong>uriEscape</strong> (char extraEsc = 0, const char* noEsc = 0)
+<br></td><td align="right"><h3><strong>uriEscape</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Create an escaped string suitable for use in URI
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>extraEsc</i></TD><TD align="left" valign="top">Character to escape other than the default ones
+</TD></TR>
+<TR><TD align="left" valign="top"><i>noEsc</i></TD><TD align="left" valign="top">Optional pointer to string of characters that shouldn't be escaped
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The string with special characters escaped
+     </p>
+<A NAME="uriUnescape"></A><A NAME="ref128"></A><table width="100%"><tr bgcolor="#eeeeee"><td> String &nbsp;<strong>uriUnescape</strong> (const char* str, int* errptr = 0)
+<br></td><td align="right"><h3><strong>uriUnescape</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Decode an URI escaped string back to its raw form
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to convert to unescaped format
+</TD></TR>
+<TR><TD align="left" valign="top"><i>errptr</i></TD><TD align="left" valign="top">Pointer to an integer to receive the place of 1st error
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The string with special characters unescaped
+     </p>
+<A NAME="uriUnescape"></A><A NAME="ref129"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String &nbsp;<strong>uriUnescape</strong> (int* errptr = 0)
+<br></td><td align="right"><h3><strong>uriUnescape</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Decode an URI escaped string back to its raw form
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>errptr</i></TD><TD align="left" valign="top">Pointer to an integer to receive the place of 1st error
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The string with special characters unescaped
+     </p>
+<A NAME="atom"></A><A NAME="ref130"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String* &nbsp;<strong>atom</strong> (const String*& str, const char* val)
+<br></td><td align="right"><h3><strong>atom</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Atom string support helper
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">Reference to variable to hold the atom string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>val</i></TD><TD align="left" valign="top">String value to allocate to the atom
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to shared atom string
+     </p>
+<A NAME="changed"></A><A NAME="ref131"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>changed</strong> ()
+<br></td><td align="right"><h3><strong>changed</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Called whenever the value changed (except in constructors).
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

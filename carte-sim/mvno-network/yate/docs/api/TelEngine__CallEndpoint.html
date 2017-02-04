@@ -1,0 +1,367 @@
+<HTML>
+<HEAD>
+<TITLE>class CallEndpoint</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class CallEndpoint</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An abstract call endpoint. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::CallEndpoint</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatephone_h.html">yatephone.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__Channel.html">Channel</A>, <A HREF="TelEngine__ClientChannel.html">ClientChannel</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__CallEndpoint.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref9">destroyed</A></b> () 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref10">getObject</A></b> (const String& name)  const
+</LI>
+<LI>virtual  const String& &nbsp;<b><A HREF="#ref11">toString</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref12">id</A></b> ()  const
+</LI>
+<LI>inline CallEndpoint* &nbsp;<b><A HREF="#ref13">getPeer</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref14">getPeerId</A></b> (String& id)  const
+</LI>
+<LI>String &nbsp;<b><A HREF="#ref15">getPeerId</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref16">getLastPeerId</A></b> (String& id)  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref17">setLastPeerId</A></b> () 
+</LI>
+<LI>inline Mutex* &nbsp;<b><A HREF="#ref18">mutex</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref20">connect</A></b> (CallEndpoint* peer, const char* reason = 0, bool notify = true) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref21">disconnect</A></b> (const char* reason = 0, bool notify = true, const NamedList* params = 0) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref22">disconnect</A></b> (const char* reason, const NamedList& params) 
+</LI>
+<LI>DataEndpoint* &nbsp;<b><A HREF="#ref23">getEndpoint</A></b> (const String& type = CallEndpoint::audioType())  const
+</LI>
+<LI>DataEndpoint* &nbsp;<b><A HREF="#ref24">setEndpoint</A></b> (const String& type = CallEndpoint::audioType()) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref25">clearEndpoint</A></b> (const String& type = String::empty()) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref26">setSource</A></b> (DataSource* source = 0, const String& type = CallEndpoint::audioType()) 
+</LI>
+<LI>DataSource* &nbsp;<b><A HREF="#ref27">getSource</A></b> (const String& type = CallEndpoint::audioType())  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref28">setConsumer</A></b> (DataConsumer* consumer = 0, const String& type = CallEndpoint::audioType()) 
+</LI>
+<LI>DataConsumer* &nbsp;<b><A HREF="#ref29">getConsumer</A></b> (const String& type = CallEndpoint::audioType())  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref30">clearData</A></b> (DataNode* node, const String& type = CallEndpoint::audioType()) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  Mutex& &nbsp;<b><A HREF="#ref19">commonMutex</A></b> () 
+</LI>
+<LI>static  const String& &nbsp;<b><A HREF="#ref31">audioType</A></b> () 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref32">CallEndpoint</A></b> (const char* id = 0) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref33">connected</A></b> (const char* reason) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref34">disconnected</A></b> (bool final, const char* reason) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref35">setDisconnect</A></b> (const NamedList* params) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref36">setPeer</A></b> (CallEndpoint* peer, const char* reason = 0, bool notify = true, const NamedList* params = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref37">setEndpoint</A></b> (DataEndpoint* endPoint) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref38">setId</A></b> (const char* newId) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>ObjList <b><A HREF="#ref7">m_data</A></b></LI>
+<LI>Mutex* <b><A HREF="#ref8">m_mutex</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A class that holds common call control and data related features
+</p>
+<A NAME="m_data"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>m_data</strong>
+</td><td align="right"><h3><strong>m_data</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_mutex"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Mutex*  <strong>m_mutex</strong>
+</td><td align="right"><h3><strong>m_mutex</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="destroyed"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destroyed</strong> ()
+<br></td><td align="right"><h3><strong>destroyed</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destruct notification, performs cleanups
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__RefObject.html#destroyed">RefObject</A>.</p>
+<A NAME="getObject"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__RefObject.html#getObject">RefObject</A>.</p>
+<A NAME="toString"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>toString</strong> ()
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a string representation of this channel
+</p>
+<p><b>Returns</b>: A reference to the name of this object
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="id"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>id</strong> ()
+<br></td><td align="right"><h3><strong>id</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the unique channel identifier
+</p>
+<p><b>Returns</b>: A String holding the unique channel id
+     </p>
+<A NAME="getPeer"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline CallEndpoint* &nbsp;<strong>getPeer</strong> ()
+<br></td><td align="right"><h3><strong>getPeer</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the connected peer call
+</p>
+<p><b>Returns</b>: Pointer to connected peer call or NULL
+     </p>
+<A NAME="getPeerId"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getPeerId</strong> (String& id)
+<br></td><td align="right"><h3><strong>getPeerId</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the connected peer call id in a caller supplied String
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">String to fill in
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the call endpoint has a peer
+     </p>
+<A NAME="getPeerId"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String &nbsp;<strong>getPeerId</strong> ()
+<br></td><td align="right"><h3><strong>getPeerId</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the connected peer call id
+</p>
+<p><b>Returns</b>: Connected peer call id or empty string
+     </p>
+<A NAME="getLastPeerId"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getLastPeerId</strong> (String& id)
+<br></td><td align="right"><h3><strong>getLastPeerId</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the last connected peer call id in a caller supplied String
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">String to fill in
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the call endpoint ever had a peer
+     </p>
+<A NAME="setLastPeerId"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setLastPeerId</strong> ()
+<br></td><td align="right"><h3><strong>setLastPeerId</strong></h3></td></tr></table><p></p><p>
+ Copy the current peer ID as the last connected peer ID, does nothing if not connected
+     </p>
+<A NAME="mutex"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Mutex* &nbsp;<strong>mutex</strong> ()
+<br></td><td align="right"><h3><strong>mutex</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the mutex that serializes access to this call endpoint, if any
+</p>
+<p><b>Returns</b>: Pointer to the call's mutex object or NULL
+     </p>
+<A NAME="commonMutex"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Mutex& &nbsp;<strong>commonMutex</strong> ()
+<br></td><td align="right"><h3><strong>commonMutex</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the big mutex that serializes access to all call endpoints
+</p>
+<p><b>Returns</b>: A reference to the mutex
+     </p>
+<A NAME="connect"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>connect</strong> (CallEndpoint* peer, const char* reason = 0, bool notify = true)
+<br></td><td align="right"><h3><strong>connect</strong></h3></td></tr></table><p></p><p>
+ Connect the call endpoint to a peer.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>peer</i></TD><TD align="left" valign="top">Pointer to the peer call endpoint.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Text that describes connect reason.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>notify</i></TD><TD align="left" valign="top">Call disconnected() notification method on old peer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if connected, false if an error occured.
+     </p>
+<A NAME="disconnect"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>disconnect</strong> (const char* reason = 0, bool notify = true, const NamedList* params = 0)
+<br></td><td align="right"><h3><strong>disconnect</strong></h3></td></tr></table><p></p><p>
+ Disconnect from the connected peer call endpoint.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Text that describes disconnect reason.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>notify</i></TD><TD align="left" valign="top">Call disconnected() notification method on old peer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional pointer to extra parameters for disconnect cause
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the object was deleted, false if it still exists
+     </p>
+<A NAME="disconnect"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>disconnect</strong> (const char* reason, const NamedList& params)
+<br></td><td align="right"><h3><strong>disconnect</strong></h3></td></tr></table><p></p><p>
+ Disconnect from the connected peer call endpoint and notify old peer.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Text that describes disconnect reason.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Extra parameters for disconnect cause
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the object was deleted, false if it still exists
+     </p>
+<A NAME="getEndpoint"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>DataEndpoint* &nbsp;<strong>getEndpoint</strong> (const String& type = CallEndpoint::audioType())
+<br></td><td align="right"><h3><strong>getEndpoint</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get a data endpoint of this object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of data endpoint: "audio", "video", "text"
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the DataEndpoint object or NULL if not found
+     </p>
+<A NAME="setEndpoint"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>DataEndpoint* &nbsp;<strong>setEndpoint</strong> (const String& type = CallEndpoint::audioType())
+<br></td><td align="right"><h3><strong>setEndpoint</strong></h3></td></tr></table><p></p><p>
+ Get a data endpoint of this object, create if required
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of data endpoint: "audio", "video", "text"
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the DataEndpoint object or NULL if an error occured
+     </p>
+<A NAME="clearEndpoint"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clearEndpoint</strong> (const String& type = String::empty())
+<br></td><td align="right"><h3><strong>clearEndpoint</strong></h3></td></tr></table><p></p><p>
+ Clear one or all data endpoints of this object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of data endpoint: "audio", "video", "text", NULL to clear all
+     </TD></TR>
+</TABLE></P>
+<A NAME="setSource"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setSource</strong> (DataSource* source = 0, const String& type = CallEndpoint::audioType())
+<br></td><td align="right"><h3><strong>setSource</strong></h3></td></tr></table><p></p><p>
+ Set a data source of this object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>source</i></TD><TD align="left" valign="top">A pointer to the new source or NULL
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of data node: "audio", "video", "text"
+     </TD></TR>
+</TABLE></P>
+<A NAME="getSource"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>DataSource* &nbsp;<strong>getSource</strong> (const String& type = CallEndpoint::audioType())
+<br></td><td align="right"><h3><strong>getSource</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get a data source of this object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of data node: "audio", "video", "text"
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the DataSource object or NULL
+     </p>
+<A NAME="setConsumer"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setConsumer</strong> (DataConsumer* consumer = 0, const String& type = CallEndpoint::audioType())
+<br></td><td align="right"><h3><strong>setConsumer</strong></h3></td></tr></table><p></p><p>
+ Set the data consumer of this object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>consumer</i></TD><TD align="left" valign="top">A pointer to the new consumer or NULL
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of data node: "audio", "video", "text"
+     </TD></TR>
+</TABLE></P>
+<A NAME="getConsumer"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>DataConsumer* &nbsp;<strong>getConsumer</strong> (const String& type = CallEndpoint::audioType())
+<br></td><td align="right"><h3><strong>getConsumer</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the data consumer of this object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of data node: "audio", "video", "text"
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the DataConsumer object or NULL
+     </p>
+<A NAME="clearData"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>clearData</strong> (DataNode* node, const String& type = CallEndpoint::audioType())
+<br></td><td align="right"><h3><strong>clearData</strong></h3></td></tr></table><p></p><p>
+ Clear a data node from any slot of a DataEndpoint of this object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>node</i></TD><TD align="left" valign="top">Pointer to DataSource or DataConsumer to clear
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of data node: "audio", "video", "text"
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the node was removed from at least one slot
+     </p>
+<A NAME="audioType"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>audioType</strong> ()
+<br></td><td align="right"><h3><strong>audioType</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Return the defaul audio type "audio"
+</p>
+<p><b>Returns</b>: Return a string naming the "audio" type
+     </p>
+<A NAME="CallEndpoint"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>CallEndpoint</strong> (const char* id = 0)
+<br></td><td align="right"><h3><strong>CallEndpoint</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor
+     </p>
+<A NAME="connected"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>connected</strong> (const char* reason)
+<br></td><td align="right"><h3><strong>connected</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Connect notification method.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Text that describes connect reason.
+     </TD></TR>
+</TABLE></P>
+<A NAME="disconnected"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>disconnected</strong> (bool final, const char* reason)
+<br></td><td align="right"><h3><strong>disconnected</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Disconnect notification method.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>final</i></TD><TD align="left" valign="top">True if this disconnect was called from the destructor.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Text that describes disconnect reason.
+     </TD></TR>
+</TABLE></P>
+<A NAME="setDisconnect"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setDisconnect</strong> (const NamedList* params)
+<br></td><td align="right"><h3><strong>setDisconnect</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Set disconnect parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Pointer to disconnect cause parameters, NULL to reset them
+     </TD></TR>
+</TABLE></P>
+<A NAME="setPeer"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setPeer</strong> (CallEndpoint* peer, const char* reason = 0, bool notify = true, const NamedList* params = 0)
+<br></td><td align="right"><h3><strong>setPeer</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set the peer call endpoint pointer.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>peer</i></TD><TD align="left" valign="top">A pointer to the new peer or NULL.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Text describing the reason in case of disconnect.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>notify</i></TD><TD align="left" valign="top">Call notification methods - connected() or disconnected()
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional pointer to extra parameters for disconnect cause
+     </TD></TR>
+</TABLE></P>
+<A NAME="setEndpoint"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setEndpoint</strong> (DataEndpoint* endPoint)
+<br></td><td align="right"><h3><strong>setEndpoint</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set a foreign data endpoint in this object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>endPoint</i></TD><TD align="left" valign="top">Data endpoint to set, will replace one with same type
+     </TD></TR>
+</TABLE></P>
+<A NAME="setId"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setId</strong> (const char* newId)
+<br></td><td align="right"><h3><strong>setId</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Set a new ID for this call endpoint
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newId</i></TD><TD align="left" valign="top">New ID to set to this call
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

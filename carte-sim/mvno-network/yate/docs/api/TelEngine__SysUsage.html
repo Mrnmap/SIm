@@ -1,0 +1,113 @@
+<HTML>
+<HEAD>
+<TITLE>class SysUsage</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SysUsage</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A class exposing system resources usage. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SysUsage</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SysUsage.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Type</A> {	WallTime,
+	UserTime,
+	KernelTime
+    }
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  void &nbsp;<b><A HREF="#ref2">init</A></b> () 
+</LI>
+<LI>static  <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<b><A HREF="#ref3">startTime</A></b> () 
+</LI>
+<LI>static  <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<b><A HREF="#ref4">usecRunTime</A></b> (Type type = WallTime) 
+</LI>
+<LI>static  <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<b><A HREF="#ref5">msecRunTime</A></b> (Type type = WallTime) 
+</LI>
+<LI>static  <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref6">secRunTime</A></b> (Type type = WallTime) 
+</LI>
+<LI>static  double &nbsp;<b><A HREF="#ref7">runTime</A></b> (Type type = WallTime) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ The SysUsage class allows collecting some statistics about engine's usage
+  of system resources
+</p>
+<A NAME="Type"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	WallTime,
+	UserTime,
+	KernelTime
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ Type of time usage requested
+     </p>
+<A NAME="init"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>init</strong> ()
+<br></td><td align="right"><h3><strong>init</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Initialize the system start variable
+     </p>
+<A NAME="startTime"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<strong>startTime</strong> ()
+<br></td><td align="right"><h3><strong>startTime</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the wall time used as start for the usage time
+</p>
+<p><b>Returns</b>: Time of the first direct or implicit call of <A HREF="TelEngine__SysUsage.html#init">init</A>()
+     </p>
+<A NAME="usecRunTime"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<strong>usecRunTime</strong> (Type type = WallTime)
+<br></td><td align="right"><h3><strong>usecRunTime</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the program's running time in microseconds
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of running time requested
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Time in microseconds since the start of the program
+     </p>
+<A NAME="msecRunTime"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<strong>msecRunTime</strong> (Type type = WallTime)
+<br></td><td align="right"><h3><strong>msecRunTime</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the program's running time in milliseconds
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of running time requested
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Time in milliseconds since the start of the program
+     </p>
+<A NAME="secRunTime"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>secRunTime</strong> (Type type = WallTime)
+<br></td><td align="right"><h3><strong>secRunTime</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the program's running time in seconds
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of running time requested
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Time in seconds since the start of the program
+     </p>
+<A NAME="runTime"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> double &nbsp;<strong>runTime</strong> (Type type = WallTime)
+<br></td><td align="right"><h3><strong>runTime</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the program's running time in seconds
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of running time requested
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Time in seconds since the start of the program
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

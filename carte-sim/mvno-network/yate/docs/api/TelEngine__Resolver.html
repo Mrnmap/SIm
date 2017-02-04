@@ -1,0 +1,183 @@
+<HTML>
+<HEAD>
+<TITLE>class Resolver</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Resolver</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">DNS services. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Resolver</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Resolver.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Type</A> {	Unknown,
+	Srv,                             
+	Naptr,                           
+	A4,                              
+	A6,                              
+	Txt,                             
+    }
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  bool &nbsp;<b><A HREF="#ref2">available</A></b> (Type type = Unknown) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref3">init</A></b> (int timeout = -1, int retries = -1) 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref4">query</A></b> (Type type, const char* dname, ObjList& result, String* error = 0) 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref5">srvQuery</A></b> (const char* dname, ObjList& result, String* error = 0) 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref6">naptrQuery</A></b> (const char* dname, ObjList& result, String* error = 0) 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref7">a4Query</A></b> (const char* dname, ObjList& result, String* error = 0) 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref8">a6Query</A></b> (const char* dname, ObjList& result, String* error = 0) 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref9">txtQuery</A></b> (const char* dname, ObjList& result, String* error = 0) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static const TokenDict <b><A HREF="#ref10">s_types[]</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class offers DNS query services
+</p>
+<A NAME="Type"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	Unknown,
+	Srv,                             
+	Naptr,                           
+	A4,                              
+	A6,                              
+	Txt,                             
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ Resolver handled types
+     </p>
+<A NAME="available"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>available</strong> (Type type = Unknown)
+<br></td><td align="right"><h3><strong>available</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Runtime check for resolver availability
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Optional type to check. Set it to Unknown (default) to check
+  general resolver availability
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the resolver is available on current platform
+     </p>
+<A NAME="init"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>init</strong> (int timeout = -1, int retries = -1)
+<br></td><td align="right"><h3><strong>init</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Initialize the resolver in the current thread
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>timeout</i></TD><TD align="left" valign="top">Query timeout. Negative to use default
+</TD></TR>
+<TR><TD align="left" valign="top"><i>retries</i></TD><TD align="left" valign="top">The number of query retries. Negative to use default
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="query"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>query</strong> (Type type, const char* dname, ObjList& result, String* error = 0)
+<br></td><td align="right"><h3><strong>query</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Make a query
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Query type as enumeration
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dname</i></TD><TD align="left" valign="top">Domain to query
+</TD></TR>
+<TR><TD align="left" valign="top"><i>result</i></TD><TD align="left" valign="top">List of resulting record items
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Optional string to be filled with error string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: 0 on success, error code otherwise (h_errno value on Linux)
+     </p>
+<A NAME="srvQuery"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>srvQuery</strong> (const char* dname, ObjList& result, String* error = 0)
+<br></td><td align="right"><h3><strong>srvQuery</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Make a SRV (Service Location) query
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dname</i></TD><TD align="left" valign="top">Domain to query
+</TD></TR>
+<TR><TD align="left" valign="top"><i>result</i></TD><TD align="left" valign="top">List of resulting SrvRecord items
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Optional string to be filled with error string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: 0 on success, error code otherwise (h_errno value on Linux)
+     </p>
+<A NAME="naptrQuery"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>naptrQuery</strong> (const char* dname, ObjList& result, String* error = 0)
+<br></td><td align="right"><h3><strong>naptrQuery</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Make a NAPTR (Naming Authority Pointer) query
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dname</i></TD><TD align="left" valign="top">Domain to query
+</TD></TR>
+<TR><TD align="left" valign="top"><i>result</i></TD><TD align="left" valign="top">List of resulting NaptrRecord items
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Optional string to be filled with error string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: 0 on success, error code otherwise (h_errno value on Linux)
+     </p>
+<A NAME="a4Query"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>a4Query</strong> (const char* dname, ObjList& result, String* error = 0)
+<br></td><td align="right"><h3><strong>a4Query</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Make an A (IPv4 Address) query
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dname</i></TD><TD align="left" valign="top">Domain to query
+</TD></TR>
+<TR><TD align="left" valign="top"><i>result</i></TD><TD align="left" valign="top">List of resulting TxtRecord items
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Optional string to be filled with error string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: 0 on success, error code otherwise (h_errno value on Linux)
+     </p>
+<A NAME="a6Query"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>a6Query</strong> (const char* dname, ObjList& result, String* error = 0)
+<br></td><td align="right"><h3><strong>a6Query</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Make an AAAA (IPv6 Address) query
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dname</i></TD><TD align="left" valign="top">Domain to query
+</TD></TR>
+<TR><TD align="left" valign="top"><i>result</i></TD><TD align="left" valign="top">List of resulting TxtRecord items
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Optional string to be filled with error string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: 0 on success, error code otherwise (h_errno value on Linux)
+     </p>
+<A NAME="txtQuery"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>txtQuery</strong> (const char* dname, ObjList& result, String* error = 0)
+<br></td><td align="right"><h3><strong>txtQuery</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Make a TXT (Text) query
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dname</i></TD><TD align="left" valign="top">Domain to query
+</TD></TR>
+<TR><TD align="left" valign="top"><i>result</i></TD><TD align="left" valign="top">List of resulting TxtRecord items
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Optional string to be filled with error string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: 0 on success, error code otherwise (h_errno value on Linux)
+     </p>
+<A NAME="s_types[]"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static const TokenDict  <strong>s_types[]</strong>
+</td><td align="right"><h3><strong>s_types[]</strong></h3></td></tr></table><p></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

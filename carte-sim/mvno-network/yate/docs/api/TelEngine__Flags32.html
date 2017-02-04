@@ -1,0 +1,144 @@
+<HTML>
+<HEAD>
+<TITLE>class Flags32</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Flags32</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A 32 bit length list of flags. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Flags32</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatecbase_h.html">yatecbase.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Flags32.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref1">Flags32</A></b> () 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref2">Flags32</A></b> (<A HREF="#u_int32_t">u_int32_t</A> value) 
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref3">flags</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref4">set</A></b> (<A HREF="#u_int32_t">u_int32_t</A> mask) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref5">reset</A></b> (<A HREF="#u_int32_t">u_int32_t</A> mask) 
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref6">flag</A></b> (<A HREF="#u_int32_t">u_int32_t</A> mask)  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref7">changeFlag</A></b> (<A HREF="#u_int32_t">u_int32_t</A> mask, bool on) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref8">changeFlagCheck</A></b> (<A HREF="#u_int32_t">u_int32_t</A> mask, bool ok) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref9">change</A></b> (<A HREF="#u_int32_t">u_int32_t</A> value) 
+</LI>
+<LI>inline operator &nbsp;<b><A HREF="#ref10">u_int32_t</A></b> ()  const
+</LI>
+<LI>inline const Flags32& &nbsp;<b><A HREF="#ref11">operator=</A></b> (int value) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>u_int32_t <b><A HREF="#ref12">m_flags</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class keeps a 32bit length flag mask
+</p>
+<A NAME="Flags32"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>Flags32</strong> ()
+<br></td><td align="right"><h3><strong>Flags32</strong></h3></td></tr></table><p></p><p>
+ Constructor
+     </p>
+<A NAME="Flags32"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>Flags32</strong> (<A HREF="#u_int32_t">u_int32_t</A> value)
+<br></td><td align="right"><h3><strong>Flags32</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Flags value
+     </TD></TR>
+</TABLE></P>
+<A NAME="flags"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>flags</strong> ()
+<br></td><td align="right"><h3><strong>flags</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve flags value
+</p>
+<p><b>Returns</b>: The flags
+     </p>
+<A NAME="set"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>set</strong> (<A HREF="#u_int32_t">u_int32_t</A> mask)
+<br></td><td align="right"><h3><strong>set</strong></h3></td></tr></table><p></p><p>
+ Set flags
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>mask</i></TD><TD align="left" valign="top">Flag(s) to set
+     </TD></TR>
+</TABLE></P>
+<A NAME="reset"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>reset</strong> (<A HREF="#u_int32_t">u_int32_t</A> mask)
+<br></td><td align="right"><h3><strong>reset</strong></h3></td></tr></table><p></p><p>
+ Reset flags
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>mask</i></TD><TD align="left" valign="top">Flag(s) to reset
+     </TD></TR>
+</TABLE></P>
+<A NAME="flag"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>flag</strong> (<A HREF="#u_int32_t">u_int32_t</A> mask)
+<br></td><td align="right"><h3><strong>flag</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if a mask of flags is set
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>mask</i></TD><TD align="left" valign="top">Flag(s) to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The flags of mask which are set, 0 if no mask flag is set
+     </p>
+<A NAME="changeFlag"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>changeFlag</strong> (<A HREF="#u_int32_t">u_int32_t</A> mask, bool on)
+<br></td><td align="right"><h3><strong>changeFlag</strong></h3></td></tr></table><p></p><p>
+ Set or reset flags
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>mask</i></TD><TD align="left" valign="top">Flag(s)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>on</i></TD><TD align="left" valign="top">True to set, false to reset
+     </TD></TR>
+</TABLE></P>
+<A NAME="changeFlagCheck"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>changeFlagCheck</strong> (<A HREF="#u_int32_t">u_int32_t</A> mask, bool ok)
+<br></td><td align="right"><h3><strong>changeFlagCheck</strong></h3></td></tr></table><p></p><p>
+ Set or reset flags, check if changed
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>mask</i></TD><TD align="left" valign="top">Flag(s)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ok</i></TD><TD align="left" valign="top">True to set, false to reset
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if any flag contained in mask changed
+     </p>
+<A NAME="change"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>change</strong> (<A HREF="#u_int32_t">u_int32_t</A> value)
+<br></td><td align="right"><h3><strong>change</strong></h3></td></tr></table><p></p><p>
+ Change flags
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">New flags value
+     </TD></TR>
+</TABLE></P>
+<A NAME="u_int32_t"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline operator &nbsp;<strong>u_int32_t</strong> ()
+<br></td><td align="right"><h3><strong>u_int32_t</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Conversion to u_int32_t operator
+     </p>
+<A NAME="operator="></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const Flags32& &nbsp;<strong>operator=</strong> (int value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Asignement from int operator
+     </p>
+<A NAME="m_flags"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int32_t">u_int32_t</A>  <strong>m_flags</strong>
+</td><td align="right"><h3><strong>m_flags</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

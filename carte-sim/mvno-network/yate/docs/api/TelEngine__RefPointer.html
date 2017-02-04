@@ -1,0 +1,122 @@
+<HTML>
+<HEAD>
+<TITLE>class RefPointer</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class RefPointer</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Templated smart pointer class. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::RefPointer</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Template form</TH><TD>RefPointer&lt;class Obj = RefObject&gt; </code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefPointerBase.html">TelEngine::RefPointerBase</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__RefPointer.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref3">RefPointer</A></b> () 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref4">RefPointer</A></b> (const RefPointer<Obj>& value) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref5">RefPointer</A></b> (Obj* object) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref6">~RefPointer</A></b> () 
+</LI>
+<LI>inline RefPointer<Obj>& &nbsp;<b><A HREF="#ref7">operator=</A></b> (const RefPointer<Obj>& value) 
+</LI>
+<LI>inline RefPointer<Obj>& &nbsp;<b><A HREF="#ref8">operator=</A></b> (Obj* object) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref9">operator Obj*</A></b> ()  const
+</LI>
+<LI>inline Obj* &nbsp;<b><A HREF="#ref10">operator-></A></b> ()  const
+</LI>
+<LI>inline Obj& &nbsp;<b><A HREF="#ref11">operator*</A></b> ()  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>inline Obj* &nbsp;<b><A HREF="#ref1">pointer</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref2">assign</A></b> (Obj* object = 0) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+</p>
+<A NAME="pointer"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Obj* &nbsp;<strong>pointer</strong> ()
+<br></td><td align="right"><h3><strong>pointer</strong></h3></td></tr></table><p> <small>[protected const]</small></p><p>
+ Retrieve the stored pointer
+</p>
+<p><b>Returns</b>: A typed pointer
+     </p>
+<A NAME="assign"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>assign</strong> (Obj* object = 0)
+<br></td><td align="right"><h3><strong>assign</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set a new stored pointer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>object</i></TD><TD align="left" valign="top">Pointer to the new stored object
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__RefPointerBase.html#assign">RefPointerBase</A>.</p>
+<A NAME="RefPointer"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>RefPointer</strong> ()
+<br></td><td align="right"><h3><strong>RefPointer</strong></h3></td></tr></table><p></p><p>
+ Default constructor - creates a null smart pointer
+     </p>
+<A NAME="RefPointer"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>RefPointer</strong> (const RefPointer<Obj>& value)
+<br></td><td align="right"><h3><strong>RefPointer</strong></h3></td></tr></table><p></p><p>
+ Copy constructor, references the object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Original RefPointer
+     </TD></TR>
+</TABLE></P>
+<A NAME="RefPointer"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>RefPointer</strong> (Obj* object)
+<br></td><td align="right"><h3><strong>RefPointer</strong></h3></td></tr></table><p></p><p>
+ Constructs an initialized smart pointer, references the object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>object</i></TD><TD align="left" valign="top">Pointer to object
+     </TD></TR>
+</TABLE></P>
+<A NAME="~RefPointer"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>~RefPointer</strong> ()
+<br></td><td align="right"><h3><strong>~RefPointer</strong></h3></td></tr></table><p></p><p>
+ Destructs the pointer and dereferences the object
+     </p>
+<A NAME="operator="></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline RefPointer<Obj>& &nbsp;<strong>operator=</strong> (const RefPointer<Obj>& value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment from smart pointer
+     </p>
+<A NAME="operator="></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline RefPointer<Obj>& &nbsp;<strong>operator=</strong> (Obj* object)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment from regular pointer
+     </p>
+<A NAME="operator%20Obj*"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>operator Obj*</strong> ()
+<br></td><td align="right"><h3><strong>operator Obj*</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Conversion to regular pointer operator
+</p>
+<p><b>Returns</b>: The stored pointer
+     </p>
+<A NAME="operator-%3E"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Obj* &nbsp;<strong>operator-></strong> ()
+<br></td><td align="right"><h3><strong>operator-></strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Member access operator
+     </p>
+<A NAME="operator*"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Obj& &nbsp;<strong>operator*</strong> ()
+<br></td><td align="right"><h3><strong>operator*</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Dereferencing operator
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

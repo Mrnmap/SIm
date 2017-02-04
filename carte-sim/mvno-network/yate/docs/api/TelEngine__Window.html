@@ -1,0 +1,809 @@
+<HTML>
+<HEAD>
+<TITLE>class Window</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Window</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An abstract user interface window. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Window</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatecbase_h.html">yatecbase.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Window.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>explicit &nbsp;<b><A HREF="#ref3">Window</A></b> (const char* id = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref4">~Window</A></b> () 
+</LI>
+<LI>virtual  const String& &nbsp;<b><A HREF="#ref5">toString</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref6">title</A></b> (const String& text) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref7">context</A></b> (const String& text) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref8">setParams</A></b> (const NamedList& params) 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref9">setOver</A></i></b> (const Window* parent) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref10">hasElement</A></i></b> (const String& name) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref11">setActive</A></i></b> (const String& name, bool active) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref12">setFocus</A></i></b> (const String& name, bool select = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref13">setShow</A></i></b> (const String& name, bool visible) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref14">setText</A></i></b> (const String& name, const String& text,
+	bool richText = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref15">setCheck</A></i></b> (const String& name, bool checked) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref16">setSelect</A></i></b> (const String& name, const String& item) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref17">setUrgent</A></i></b> (const String& name, bool urgent) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref18">hasOption</A></i></b> (const String& name, const String& item) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref19">addOption</A></i></b> (const String& name, const String& item, bool atStart = false,
+	const String& text = String::empty()) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref20">getOptions</A></i></b> (const String& name, NamedList* items) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref21">delOption</A></i></b> (const String& name, const String& item) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref22">addLines</A></b> (const String& name, const NamedList* lines, unsigned int max,
+	bool atStart = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref23">addTableRow</A></b> (const String& name, const String& item,
+	const NamedList* data = 0, bool atStart = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref24">setMultipleRows</A></b> (const String& name, const NamedList& data, const String& prefix = String::empty()) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref25">insertTableRow</A></b> (const String& name, const String& item,
+	const String& before, const NamedList* data = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref26">delTableRow</A></b> (const String& name, const String& item) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref27">setTableRow</A></b> (const String& name, const String& item, const NamedList* data) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref28">updateTableRow</A></b> (const String& name, const String& item,
+	const NamedList* data = 0, bool atStart = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref29">updateTableRows</A></b> (const String& name, const NamedList* data,
+	bool atStart = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref30">getTableRow</A></b> (const String& name, const String& item, NamedList* data = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref31">clearTable</A></b> (const String& name) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref32">setBusy</A></i></b> (const String& name, bool on) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref33">getText</A></i></b> (const String& name, String& text, bool richText = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref34">getCheck</A></i></b> (const String& name, bool& checked) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref35">getSelect</A></i></b> (const String& name, String& item) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref36">getSelect</A></i></b> (const String& name, NamedList& items) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref37">buildMenu</A></i></b> (const NamedList& params) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref38">removeMenu</A></i></b> (const NamedList& params) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref39">setImage</A></i></b> (const String& name, const String& image, bool fit = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref40">setProperty</A></b> (const String& name, const String& item, const String& value) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref41">getProperty</A></b> (const String& name, const String& item, String& value) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref42">populate</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref43">init</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref44">show</A></i></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref45">hide</A></i></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref46">size</A></i></b> (int width, int height) 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref47">move</A></i></b> (int x, int y) 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref48">moveRel</A></i></b> (int dx, int dy) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref49">related</A></b> (const Window* wnd)  const
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref50">menu</A></i></b> (int x, int y) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref51">canClose</A></b> () 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref52">id</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref53">title</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref54">context</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref55">visible</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref56">visible</A></b> (bool yes) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref57">active</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref58">master</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref59">popup</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref60">createDialog</A></i></b> (const String& name, const String& title,
+	const String& alias = String::empty(), const NamedList* params = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref61">closeDialog</A></i></b> (const String& name) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  bool &nbsp;<b><A HREF="#ref62">isValidParamPrefix</A></b> (const String& prefix) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><i><A HREF="#ref63">doPopulate</A></i></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref64">doInit</A></i></b> () 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>String <b><A HREF="#ref65">m_id</A></b></LI>
+<LI>String <b><A HREF="#ref66">m_title</A></b></LI>
+<LI>String <b><A HREF="#ref67">m_context</A></b></LI>
+<LI>bool <b><A HREF="#ref68">m_visible</A></b></LI>
+<LI>bool <b><A HREF="#ref69">m_active</A></b></LI>
+<LI>bool <b><A HREF="#ref70">m_master</A></b></LI>
+<LI>bool <b><A HREF="#ref71">m_popup</A></b></LI>
+<LI>bool <b><A HREF="#ref72">m_saveOnClose</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A window is the basic user interface element.
+ Everything inside is implementation specific functionality.
+</p>
+<A NAME="Window"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>Window</strong> (const char* id = 0)
+<br></td><td align="right"><h3><strong>Window</strong></h3></td></tr></table><p></p><p>
+ Constructor, creates a new windows with an ID
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">String identifier of the new window
+     </TD></TR>
+</TABLE></P>
+<A NAME="~Window"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~Window</strong> ()
+<br></td><td align="right"><h3><strong>~Window</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="toString"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>toString</strong> ()
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Retrieve the standard name of this Window, used to search in lists
+</p>
+<p><b>Returns</b>: Identifier of this window
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="title"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>title</strong> (const String& text)
+<br></td><td align="right"><h3><strong>title</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="context"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>context</strong> (const String& text)
+<br></td><td align="right"><h3><strong>context</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the contextual information previously associated with this window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">New contextual information
+     </TD></TR>
+</TABLE></P>
+<A NAME="setParams"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setParams</strong> (const NamedList& params)
+<br></td><td align="right"><h3><strong>setParams</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set window parameters or widget contents
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">List of parameters to set in the window and its widgets
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if all parameters could be set
+     </p>
+<A NAME="setOver"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>setOver</strong></i> (const Window* parent)
+<br></td><td align="right"><h3><i><strong>setOver</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Force this window on top of another one which becomes its parent
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>parent</i></TD><TD align="left" valign="top">Window to force as parent of this one
+     </TD></TR>
+</TABLE></P>
+<A NAME="hasElement"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>hasElement</strong></i> (const String& name)
+<br></td><td align="right"><h3><i><strong>hasElement</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Check if this window has an element by name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element to search for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if one element with the given name exists
+     </p>
+<A NAME="setActive"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>setActive</strong></i> (const String& name, bool active)
+<br></td><td align="right"><h3><i><strong>setActive</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Set an element as interactive in the window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>active</i></TD><TD align="left" valign="top">True to make interactive, false to disallow interaction
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="setFocus"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>setFocus</strong></i> (const String& name, bool select = false)
+<br></td><td align="right"><h3><i><strong>setFocus</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Set an element as receiving input in the window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>select</i></TD><TD align="left" valign="top">Also select the content of the focused element
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="setShow"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>setShow</strong></i> (const String& name, bool visible)
+<br></td><td align="right"><h3><i><strong>setShow</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Set the visibility of an element in the window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>visible</i></TD><TD align="left" valign="top">True to make element visible, false to hide it
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="setText"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>setText</strong></i> (const String& name, const String& text,
+	bool richText = false)
+<br></td><td align="right"><h3><i><strong>setText</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Set the displayed text of an element in the window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Text value to set in the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>richText</i></TD><TD align="left" valign="top">True if the text contains format data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="setCheck"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>setCheck</strong></i> (const String& name, bool checked)
+<br></td><td align="right"><h3><i><strong>setCheck</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Set the checked or toggled status of an element in the window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>checked</i></TD><TD align="left" valign="top">True to make element checked or toggled
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="setSelect"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>setSelect</strong></i> (const String& name, const String& item)
+<br></td><td align="right"><h3><i><strong>setSelect</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Set the selection of an item in an element in the window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Name of the item that should be selected
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="setUrgent"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>setUrgent</strong></i> (const String& name, bool urgent)
+<br></td><td align="right"><h3><i><strong>setUrgent</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Flag an element as requiring immediate attention
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>urgent</i></TD><TD align="left" valign="top">True if the element requires immediate attention
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="hasOption"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>hasOption</strong></i> (const String& name, const String& item)
+<br></td><td align="right"><h3><i><strong>hasOption</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Check if an element has an item by its name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element to search for
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Name of the item that should be searched
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if one item with the given name exists in the element
+     </p>
+<A NAME="addOption"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>addOption</strong></i> (const String& name, const String& item, bool atStart = false,
+	const String& text = String::empty())
+<br></td><td align="right"><h3><i><strong>addOption</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Add an item to an element that supports such an operation (list)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Name of the item to add
+</TD></TR>
+<TR><TD align="left" valign="top"><i>atStart</i></TD><TD align="left" valign="top">True to insert item on the first position, false to append
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Displayed text to associate with the item (not all lists support it)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="getOptions"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>getOptions</strong></i> (const String& name, NamedList* items)
+<br></td><td align="right"><h3><i><strong>getOptions</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Get an element's items
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element to search for
+</TD></TR>
+<TR><TD align="left" valign="top"><i>items</i></TD><TD align="left" valign="top">List to fill with element's items
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the element exists
+     </p>
+<A NAME="delOption"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>delOption</strong></i> (const String& name, const String& item)
+<br></td><td align="right"><h3><i><strong>delOption</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Remove an item from an element (list)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Name of the item to remove
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="addLines"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>addLines</strong> (const String& name, const NamedList* lines, unsigned int max,
+	bool atStart = false)
+<br></td><td align="right"><h3><strong>addLines</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Append or insert text lines to a widget
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of the widget
+</TD></TR>
+<TR><TD align="left" valign="top"><i>lines</i></TD><TD align="left" valign="top">List containing the lines
+</TD></TR>
+<TR><TD align="left" valign="top"><i>max</i></TD><TD align="left" valign="top">The maximum number of lines allowed to be displayed. Set to 0 to ignore
+</TD></TR>
+<TR><TD align="left" valign="top"><i>atStart</i></TD><TD align="left" valign="top">True to insert, false to append
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="addTableRow"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>addTableRow</strong> (const String& name, const String& item,
+	const NamedList* data = 0, bool atStart = false)
+<br></td><td align="right"><h3><strong>addTableRow</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Add a row to a table owned by this window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Name of the item to add
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Table's columns to set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>atStart</i></TD><TD align="left" valign="top">True to insert, false to append
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="setMultipleRows"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setMultipleRows</strong> (const String& name, const NamedList& data, const String& prefix = String::empty())
+<br></td><td align="right"><h3><strong>setMultipleRows</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Append or update several table rows at once
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Parameters to initialize the rows with
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prefix</i></TD><TD align="left" valign="top">Prefix to match (and remove) in parameter names
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if all the operations were successfull
+     </p>
+<A NAME="insertTableRow"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>insertTableRow</strong> (const String& name, const String& item,
+	const String& before, const NamedList* data = 0)
+<br></td><td align="right"><h3><strong>insertTableRow</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Insert a row into a table owned by this window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Name of the item to insert
+</TD></TR>
+<TR><TD align="left" valign="top"><i>before</i></TD><TD align="left" valign="top">Name of the item to insert before
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Table's columns to set
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="delTableRow"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>delTableRow</strong> (const String& name, const String& item)
+<br></td><td align="right"><h3><strong>delTableRow</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Delete a row from a table owned by this window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Name of the item to remove
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="setTableRow"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setTableRow</strong> (const String& name, const String& item, const NamedList* data)
+<br></td><td align="right"><h3><strong>setTableRow</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Update a row from a table owned by this window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Name of the item to update
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Data to update
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="updateTableRow"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>updateTableRow</strong> (const String& name, const String& item,
+	const NamedList* data = 0, bool atStart = false)
+<br></td><td align="right"><h3><strong>updateTableRow</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set a table row or add a new one if not found
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Table item to set/add
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Optional list of parameters used to set row data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>atStart</i></TD><TD align="left" valign="top">True to add item at start, false to add them to the end
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="updateTableRows"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>updateTableRows</strong> (const String& name, const NamedList* data,
+	bool atStart = false)
+<br></td><td align="right"><h3><strong>updateTableRows</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Add or set one or more table row(s). Screen update is locked while changing the table.
+ Each data list element is a NamedPointer carrying a NamedList with item parameters.
+ The name of an element is the item to update.
+ Set element's value to boolean value 'true' to add a new item if not found
+  or 'false' to set an existing one. Set it to empty string to delete the item
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the table
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">The list of items to add/set/delete
+</TD></TR>
+<TR><TD align="left" valign="top"><i>atStart</i></TD><TD align="left" valign="top">True to add new items at start, false to add them to the end
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="getTableRow"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>getTableRow</strong> (const String& name, const String& item, NamedList* data = 0)
+<br></td><td align="right"><h3><strong>getTableRow</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Retrieve a row from a table owned by this window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Name of the item to retrieve
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">List to fill with table's columns contents
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="clearTable"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>clearTable</strong> (const String& name)
+<br></td><td align="right"><h3><strong>clearTable</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Clear (delete all rows) a table owned by this window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="setBusy"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>setBusy</strong></i> (const String& name, bool on)
+<br></td><td align="right"><h3><i><strong>setBusy</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Show or hide control busy state
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>on</i></TD><TD align="left" valign="top">True to show, false to hide
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if all the operations were successfull
+     </p>
+<A NAME="getText"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>getText</strong></i> (const String& name, String& text, bool richText = false)
+<br></td><td align="right"><h3><i><strong>getText</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Get an element's text
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">The destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>richText</i></TD><TD align="left" valign="top">True to get the element's roch text if supported.
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="getCheck"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>getCheck</strong></i> (const String& name, bool& checked)
+<br></td><td align="right"><h3><i><strong>getCheck</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Get the checked state of a checkable control
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>checked</i></TD><TD align="left" valign="top">The checked state of the control
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="getSelect"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>getSelect</strong></i> (const String& name, String& item)
+<br></td><td align="right"><h3><i><strong>getSelect</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Retrieve an element's selection
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">String to fill with selection's contents
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="getSelect"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>getSelect</strong></i> (const String& name, NamedList& items)
+<br></td><td align="right"><h3><i><strong>getSelect</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Retrieve an element's multiple selection
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>items</i></TD><TD align="left" valign="top">List to be to filled with selection's contents
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation was successfull
+     </p>
+<A NAME="buildMenu"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>buildMenu</strong></i> (const NamedList& params)
+<br></td><td align="right"><h3><i><strong>buildMenu</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Build a menu from a list of parameters.
+ See Client::buildMenu() for more info
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Menu build parameters
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="removeMenu"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>removeMenu</strong></i> (const NamedList& params)
+<br></td><td align="right"><h3><i><strong>removeMenu</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Remove a menu (from UI and memory)
+ See Client::removeMenu() for more info
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Menu remove parameters
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="setImage"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>setImage</strong></i> (const String& name, const String& image, bool fit = false)
+<br></td><td align="right"><h3><i><strong>setImage</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Set an element's image
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>image</i></TD><TD align="left" valign="top">Image to set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>fit</i></TD><TD align="left" valign="top">Fit image in element (defaults to false)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="setProperty"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setProperty</strong> (const String& name, const String& item, const String& value)
+<br></td><td align="right"><h3><strong>setProperty</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set a property for this window or for a widget owned by it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Property's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Property's value
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="getProperty"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>getProperty</strong> (const String& name, const String& item, String& value)
+<br></td><td align="right"><h3><strong>getProperty</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get a property from this window or from a widget owned by it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Property's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Property's value
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="populate"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>populate</strong> ()
+<br></td><td align="right"><h3><strong>populate</strong></h3></td></tr></table><p></p><p>
+ Populate the window if not already done
+     </p>
+<A NAME="init"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>init</strong> ()
+<br></td><td align="right"><h3><strong>init</strong></h3></td></tr></table><p></p><p>
+ Initialize the window if not already done
+     </p>
+<A NAME="show"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>show</strong></i> ()
+<br></td><td align="right"><h3><i><strong>show</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Show this window
+     </p>
+<A NAME="hide"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>hide</strong></i> ()
+<br></td><td align="right"><h3><i><strong>hide</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Hide this window
+     </p>
+<A NAME="size"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>size</strong></i> (int width, int height)
+<br></td><td align="right"><h3><i><strong>size</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Resize this window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>width</i></TD><TD align="left" valign="top">The new width
+</TD></TR>
+<TR><TD align="left" valign="top"><i>height</i></TD><TD align="left" valign="top">The new width
+     </TD></TR>
+</TABLE></P>
+<A NAME="move"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>move</strong></i> (int x, int y)
+<br></td><td align="right"><h3><i><strong>move</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Move this window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>x</i></TD><TD align="left" valign="top">The x coordinate of the upper left corner
+</TD></TR>
+<TR><TD align="left" valign="top"><i>y</i></TD><TD align="left" valign="top">The y coordinate of the upper left corner
+     </TD></TR>
+</TABLE></P>
+<A NAME="moveRel"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>moveRel</strong></i> (int dx, int dy)
+<br></td><td align="right"><h3><i><strong>moveRel</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Move this window related to its current position
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dx</i></TD><TD align="left" valign="top">The value to be added to the current x coordinate of the upper left corner
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dy</i></TD><TD align="left" valign="top">The value to be added to the current y coordinate of the upper left corner
+     </TD></TR>
+</TABLE></P>
+<A NAME="related"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>related</strong> (const Window* wnd)
+<br></td><td align="right"><h3><strong>related</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Checkes if this window is related to the given window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">The window to check for any relation
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if wnd is this window or a master one
+     </p>
+<A NAME="menu"></A><A NAME="ref50"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>menu</strong></i> (int x, int y)
+<br></td><td align="right"><h3><i><strong>menu</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><A NAME="canClose"></A><A NAME="ref51"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>canClose</strong> ()
+<br></td><td align="right"><h3><strong>canClose</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Check if this window can be closed
+</p>
+<p><b>Returns</b>: True if this window can be closed, false to prevent hiding it
+     </p>
+<A NAME="id"></A><A NAME="ref52"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>id</strong> ()
+<br></td><td align="right"><h3><strong>id</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the standard name of this Window
+</p>
+<p><b>Returns</b>: Identifier of this window
+     </p>
+<A NAME="title"></A><A NAME="ref53"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>title</strong> ()
+<br></td><td align="right"><h3><strong>title</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="context"></A><A NAME="ref54"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>context</strong> ()
+<br></td><td align="right"><h3><strong>context</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the contextual information previously associated with this window
+</p>
+<p><b>Returns</b>: String contextual information
+     </p>
+<A NAME="visible"></A><A NAME="ref55"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>visible</strong> ()
+<br></td><td align="right"><h3><strong>visible</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the visibility status of this window
+</p>
+<p><b>Returns</b>: True if window is visible, false if it's hidden
+     </p>
+<A NAME="visible"></A><A NAME="ref56"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>visible</strong> (bool yes)
+<br></td><td align="right"><h3><strong>visible</strong></h3></td></tr></table><p></p><p>
+ Set the visibility status of this window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>yes</i></TD><TD align="left" valign="top">True if window should be visible
+     </TD></TR>
+</TABLE></P>
+<A NAME="active"></A><A NAME="ref57"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>active</strong> ()
+<br></td><td align="right"><h3><strong>active</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this window is the active one
+</p>
+<p><b>Returns</b>: True if window is active
+     </p>
+<A NAME="master"></A><A NAME="ref58"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>master</strong> ()
+<br></td><td align="right"><h3><strong>master</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this window is a master (topmost) window
+</p>
+<p><b>Returns</b>: True if this window is topmost
+     </p>
+<A NAME="popup"></A><A NAME="ref59"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>popup</strong> ()
+<br></td><td align="right"><h3><strong>popup</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this window is a popup window
+</p>
+<p><b>Returns</b>: True if this window is initially hidden
+     </p>
+<A NAME="createDialog"></A><A NAME="ref60"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>createDialog</strong></i> (const String& name, const String& title,
+	const String& alias = String::empty(), const NamedList* params = 0)
+<br></td><td align="right"><h3><i><strong>createDialog</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Create a modal dialog
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Dialog name (resource config section)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>title</i></TD><TD align="left" valign="top">Dialog title
+</TD></TR>
+<TR><TD align="left" valign="top"><i>alias</i></TD><TD align="left" valign="top">Optional dialog alias (used as dialog object name)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional dialog parameters
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="closeDialog"></A><A NAME="ref61"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>closeDialog</strong></i> (const String& name)
+<br></td><td align="right"><h3><i><strong>closeDialog</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Destroy a modal dialog
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Dialog name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="isValidParamPrefix"></A><A NAME="ref62"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>isValidParamPrefix</strong> (const String& prefix)
+<br></td><td align="right"><h3><strong>isValidParamPrefix</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if a string is a parameter prefix handled by setParams().
+ Exact prefix match is not a valid one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>prefix</i></TD><TD align="left" valign="top">String to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the given prefix is a valid one
+     </p>
+<A NAME="doPopulate"></A><A NAME="ref63"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>doPopulate</strong></i> ()
+<br></td><td align="right"><h3><i><strong>doPopulate</strong></i></h3></td></tr></table><p> <small>[protected pure virtual]</small></p><A NAME="doInit"></A><A NAME="ref64"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>doInit</strong></i> ()
+<br></td><td align="right"><h3><i><strong>doInit</strong></i></h3></td></tr></table><p> <small>[protected pure virtual]</small></p><A NAME="m_id"></A><A NAME="ref65"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_id</strong>
+</td><td align="right"><h3><strong>m_id</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_title"></A><A NAME="ref66"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_title</strong>
+</td><td align="right"><h3><strong>m_title</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_context"></A><A NAME="ref67"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_context</strong>
+</td><td align="right"><h3><strong>m_context</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_visible"></A><A NAME="ref68"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_visible</strong>
+</td><td align="right"><h3><strong>m_visible</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_active"></A><A NAME="ref69"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_active</strong>
+</td><td align="right"><h3><strong>m_active</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_master"></A><A NAME="ref70"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_master</strong>
+</td><td align="right"><h3><strong>m_master</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_popup"></A><A NAME="ref71"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_popup</strong>
+</td><td align="right"><h3><strong>m_popup</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_saveOnClose"></A><A NAME="ref72"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_saveOnClose</strong>
+</td><td align="right"><h3><strong>m_saveOnClose</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

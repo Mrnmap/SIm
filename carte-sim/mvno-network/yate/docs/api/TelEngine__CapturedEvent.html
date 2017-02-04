@@ -1,0 +1,116 @@
+<HTML>
+<HEAD>
+<TITLE>class CapturedEvent</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class CapturedEvent</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A captured event string with a debug level. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::CapturedEvent</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__String.html">TelEngine::String</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__CapturedEvent.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">CapturedEvent</A></b> (int level, const char* text) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref3">CapturedEvent</A></b> (const CapturedEvent& original) 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref4">level</A></b> ()  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static inline  bool &nbsp;<b><A HREF="#ref5">capturing</A></b> () 
+</LI>
+<LI>static inline  const ObjList& &nbsp;<b><A HREF="#ref6">events</A></b> () 
+</LI>
+<LI>static inline  void &nbsp;<b><A HREF="#ref7">append</A></b> (int level, const char* text) 
+</LI>
+</ul><h4>Protected Static Methods</h4><ul><LI>static inline  ObjList& &nbsp;<b><A HREF="#ref8">eventsRw</A></b> () 
+</LI>
+<LI>static inline  void &nbsp;<b><A HREF="#ref9">capturing</A></b> (bool capture) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Holder for an event (output, debug or alarm) message
+</p>
+<A NAME="CapturedEvent"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>CapturedEvent</strong> (int level, const char* text)
+<br></td><td align="right"><h3><strong>CapturedEvent</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">Debugging level associated with the event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Text description of the event
+     </TD></TR>
+</TABLE></P>
+<A NAME="CapturedEvent"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>CapturedEvent</strong> (const CapturedEvent& original)
+<br></td><td align="right"><h3><strong>CapturedEvent</strong></h3></td></tr></table><p></p><p>
+ Copy constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Captured event to copy
+     </TD></TR>
+</TABLE></P>
+<A NAME="level"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>level</strong> ()
+<br></td><td align="right"><h3><strong>level</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the debugging level of the event
+</p>
+<p><b>Returns</b>: Debugging level associated with the event
+     </p>
+<A NAME="capturing"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  bool &nbsp;<strong>capturing</strong> ()
+<br></td><td align="right"><h3><strong>capturing</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the capturing state of the output and debug messages
+</p>
+<p><b>Returns</b>: True if output and debug messages are being captured
+     </p>
+<A NAME="events"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  const ObjList& &nbsp;<strong>events</strong> ()
+<br></td><td align="right"><h3><strong>events</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the list of captured events
+</p>
+<p><b>Returns</b>: List of events captured from output and debugging
+     </p>
+<A NAME="append"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  void &nbsp;<strong>append</strong> (int level, const char* text)
+<br></td><td align="right"><h3><strong>append</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Add an event to the captured events list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">Debugging level associated with the event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Text description of the event, must not be empty
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__String.html#append">String</A>.</p>
+<A NAME="eventsRw"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  ObjList& &nbsp;<strong>eventsRw</strong> ()
+<br></td><td align="right"><h3><strong>eventsRw</strong></h3></td></tr></table><p> <small>[protected static]</small></p><p>
+ Get a writable list of captured events
+</p>
+<p><b>Returns</b>: List of events captured from output and debugging
+     </p>
+<A NAME="capturing"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  void &nbsp;<strong>capturing</strong> (bool capture)
+<br></td><td align="right"><h3><strong>capturing</strong></h3></td></tr></table><p> <small>[protected static]</small></p><p>
+ Enable or disable capturing of output and debug messages
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>capture</i></TD><TD align="left" valign="top">True to capture internally the debugging messages
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

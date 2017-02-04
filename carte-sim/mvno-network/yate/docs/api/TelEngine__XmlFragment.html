@@ -1,0 +1,187 @@
+<HTML>
+<HEAD>
+<TITLE>class XmlFragment</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class XmlFragment</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Xml Fragment. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::XmlFragment</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatexml_h.html">yatexml.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__XmlParent.html">TelEngine::XmlParent</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__XmlFragment.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">XmlFragment</A></b> () 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">XmlFragment</A></b> (const XmlFragment& orig) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~XmlFragment</A></b> () 
+</LI>
+<LI>virtual  XmlFragment* &nbsp;<b><A HREF="#ref4">fragment</A></b> () 
+</LI>
+<LI>virtual  const ObjList& &nbsp;<b><A HREF="#ref5">getChildren</A></b> ()  const
+</LI>
+<LI>virtual  XmlSaxParser::Error &nbsp;<b><A HREF="#ref6">addChild</A></b> (XmlChild* child) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref7">reset</A></b> () 
+</LI>
+<LI>inline XmlChild* &nbsp;<b><A HREF="#ref8">pop</A></b> () 
+</LI>
+<LI>XmlElement* &nbsp;<b><A HREF="#ref9">popElement</A></b> () 
+</LI>
+<LI>virtual  XmlChild* &nbsp;<b><A HREF="#ref10">removeChild</A></b> (XmlChild* child, bool delObj = true) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref11">clearChildren</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref12">toString</A></b> (String& dump, bool escape = true, const String& indent = String::empty(),
+	const String& origIndent = String::empty(), bool completeOnly = true,
+	const String* auth = 0, const XmlElement* parent = 0)  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  XmlElement* &nbsp;<b><A HREF="#ref13">findElement</A></b> (ObjList* list, const String* name, const String* ns,
+	bool noPrefix = true) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Xml Fragment a fragment from a Xml document
+</p>
+<A NAME="XmlFragment"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XmlFragment</strong> ()
+<br></td><td align="right"><h3><strong>XmlFragment</strong></h3></td></tr></table><p></p><p>
+ Constructor
+     </p>
+<A NAME="XmlFragment"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XmlFragment</strong> (const XmlFragment& orig)
+<br></td><td align="right"><h3><strong>XmlFragment</strong></h3></td></tr></table><p></p><p>
+ Copy constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>orig</i></TD><TD align="left" valign="top">Original XmlFragment
+     </TD></TR>
+</TABLE></P>
+<A NAME="~XmlFragment"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~XmlFragment</strong> ()
+<br></td><td align="right"><h3><strong>~XmlFragment</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="fragment"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlFragment* &nbsp;<strong>fragment</strong> ()
+<br></td><td align="right"><h3><strong>fragment</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get an Xml Fragment
+</p>
+<p><b>Returns</b>: This
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlParent.html#fragment">XmlParent</A>.</p>
+<A NAME="getChildren"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const ObjList& &nbsp;<strong>getChildren</strong> ()
+<br></td><td align="right"><h3><strong>getChildren</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get the list of children
+</p>
+<p><b>Returns</b>: The children list
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlParent.html#getChildren">XmlParent</A>.</p>
+<A NAME="addChild"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlSaxParser::Error &nbsp;<strong>addChild</strong> (XmlChild* child)
+<br></td><td align="right"><h3><strong>addChild</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Append a new xml child to this fragment
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>child</i></TD><TD align="left" valign="top">the child to append
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: An error code if an error was detected
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlParent.html#addChild">XmlParent</A>.</p>
+<A NAME="reset"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>reset</strong> ()
+<br></td><td align="right"><h3><strong>reset</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Reset this Xml Fragment
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlParent.html#reset">XmlParent</A>.</p>
+<A NAME="pop"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XmlChild* &nbsp;<strong>pop</strong> ()
+<br></td><td align="right"><h3><strong>pop</strong></h3></td></tr></table><p></p><p>
+ Remove the first child from list and returns it
+</p>
+<p><b>Returns</b>: XmlChild pointer or 0
+     </p>
+<A NAME="popElement"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XmlElement* &nbsp;<strong>popElement</strong> ()
+<br></td><td align="right"><h3><strong>popElement</strong></h3></td></tr></table><p></p><p>
+ Remove the first XmlElement from list and returns it if completed
+</p>
+<p><b>Returns</b>: XmlElement pointer or 0 if no XmlElement is found or the first one is not completed
+     </p>
+<A NAME="removeChild"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlChild* &nbsp;<strong>removeChild</strong> (XmlChild* child, bool delObj = true)
+<br></td><td align="right"><h3><strong>removeChild</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove a child. Reset the parent of not deleted xml element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>child</i></TD><TD align="left" valign="top">The child to remove
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delObj</i></TD><TD align="left" valign="top">True to delete the object
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: XmlChild pointer if found and not deleted
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlParent.html#removeChild">XmlParent</A>.</p>
+<A NAME="clearChildren"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>clearChildren</strong> ()
+<br></td><td align="right"><h3><strong>clearChildren</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Clear the list of children
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlParent.html#clearChildren">XmlParent</A>.</p>
+<A NAME="toString"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>toString</strong> (String& dump, bool escape = true, const String& indent = String::empty(),
+	const String& origIndent = String::empty(), bool completeOnly = true,
+	const String* auth = 0, const XmlElement* parent = 0)
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Build a String from this XmlFragment
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dump</i></TD><TD align="left" valign="top">The string where to append representation
+</TD></TR>
+<TR><TD align="left" valign="top"><i>escape</i></TD><TD align="left" valign="top">True if the attributes values need to be escaped
+</TD></TR>
+<TR><TD align="left" valign="top"><i>indent</i></TD><TD align="left" valign="top">Spaces for output
+</TD></TR>
+<TR><TD align="left" valign="top"><i>origIndent</i></TD><TD align="left" valign="top">Original indent
+</TD></TR>
+<TR><TD align="left" valign="top"><i>completeOnly</i></TD><TD align="left" valign="top">True to build only if complete
+</TD></TR>
+<TR><TD align="left" valign="top"><i>auth</i></TD><TD align="left" valign="top">Optional list of tag and attribute names to be replaced with '***'. This
+  parameter can be used when the result will be printed to output to avoid printing
+  authentication data to output. The array must end with an empty string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>parent</i></TD><TD align="left" valign="top">Optional parent element whose tag will be searched in the auth list
+     </TD></TR>
+</TABLE></P>
+<A NAME="findElement"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlElement* &nbsp;<strong>findElement</strong> (ObjList* list, const String* name, const String* ns,
+	bool noPrefix = true)
+<br></td><td align="right"><h3><strong>findElement</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Find a completed xml element in a list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">The list to search for the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Optional element tag to match
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ns</i></TD><TD align="left" valign="top">Optional element namespace to match
+</TD></TR>
+<TR><TD align="left" valign="top"><i>noPrefix</i></TD><TD align="left" valign="top">True to compare the tag without namespace prefix, false to
+  include namespace prefix when comparing the given tag.
+  This parameter is ignored if name is 0 or ns is not 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: XmlElement pointer or 0 if not found
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>
