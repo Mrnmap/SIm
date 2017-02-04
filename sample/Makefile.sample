@@ -1,0 +1,11 @@
+all : sample
+
+sample : sample1.o 
+	gcc -o sample1.o 
+
+sample1.o : sample1.c 
+	gcc -c sample1.c
+
+clean :
+	rm -rf *.o sample 
+
