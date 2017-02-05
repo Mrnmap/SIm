@@ -1,0 +1,190 @@
+<HTML>
+<HEAD>
+<TITLE>class MimeMultipartBody</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class MimeMultipartBody</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">MIME multipart container. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::MimeMultipartBody</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatemime_h.html">yatemime.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__MimeBody.html">TelEngine::MimeBody</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__MimeMultipartBody.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>explicit &nbsp;<b><A HREF="#ref1">MimeMultipartBody</A></b> (const char* subtype = "mixed", const char* boundary = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">MimeMultipartBody</A></b> (const String& type, const char* buf, int len) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">MimeMultipartBody</A></b> (const MimeHeaderLine& type, const char* buf, int len) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref4">~MimeMultipartBody</A></b> () 
+</LI>
+<LI>inline const ObjList& &nbsp;<b><A HREF="#ref5">bodies</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref6">appendBody</A></b> (MimeBody* body) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref7">removeBody</A></b> (MimeBody* body, bool delobj = true) 
+</LI>
+<LI>MimeBody* &nbsp;<b><A HREF="#ref8">findBody</A></b> (const String& content, MimeBody** start = 0)  const
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref9">getObject</A></b> (const String& name)  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref10">isMultipart</A></b> ()  const
+</LI>
+<LI>virtual  MimeBody* &nbsp;<b><A HREF="#ref11">clone</A></b> ()  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref12">MimeMultipartBody</A></b> (const MimeMultipartBody& original) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref13">buildBody</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref14">parse</A></b> (const char* buf, int len) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ An object holding the bodies of a multipart MIME
+</p>
+<A NAME="MimeMultipartBody"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>MimeMultipartBody</strong> (const char* subtype = "mixed", const char* boundary = 0)
+<br></td><td align="right"><h3><strong>MimeMultipartBody</strong></h3></td></tr></table><p></p><p>
+ Constructor to build an empty multipart body
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>subtype</i></TD><TD align="left" valign="top">The multipart subtype
+</TD></TR>
+<TR><TD align="left" valign="top"><i>boundary</i></TD><TD align="left" valign="top">The string used as separator for enclosed bodies.
+  A random one will be created if missing. The length will be truncated
+  to 70 if this value is exceeded
+     </TD></TR>
+</TABLE></P>
+<A NAME="MimeMultipartBody"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MimeMultipartBody</strong> (const String& type, const char* buf, int len)
+<br></td><td align="right"><h3><strong>MimeMultipartBody</strong></h3></td></tr></table><p></p><p>
+ Constructor from block of data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The value of the Content-Type header line
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Pointer to buffer of data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data in buffer
+     </TD></TR>
+</TABLE></P>
+<A NAME="MimeMultipartBody"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MimeMultipartBody</strong> (const MimeHeaderLine& type, const char* buf, int len)
+<br></td><td align="right"><h3><strong>MimeMultipartBody</strong></h3></td></tr></table><p></p><p>
+ Constructor from block of data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The content type header line
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Pointer to buffer of data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data in buffer
+     </TD></TR>
+</TABLE></P>
+<A NAME="~MimeMultipartBody"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~MimeMultipartBody</strong> ()
+<br></td><td align="right"><h3><strong>~MimeMultipartBody</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="bodies"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const ObjList& &nbsp;<strong>bodies</strong> ()
+<br></td><td align="right"><h3><strong>bodies</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the list of bodies enclosed contained in this multipart
+</p>
+<p><b>Returns</b>: The list of bodies enclosed contained in this multipart
+     </p>
+<A NAME="appendBody"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>appendBody</strong> (MimeBody* body)
+<br></td><td align="right"><h3><strong>appendBody</strong></h3></td></tr></table><p></p><p>
+ Append a body to this multipart
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>body</i></TD><TD align="left" valign="top">The body to append
+     </TD></TR>
+</TABLE></P>
+<A NAME="removeBody"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>removeBody</strong> (MimeBody* body, bool delobj = true)
+<br></td><td align="right"><h3><strong>removeBody</strong></h3></td></tr></table><p></p><p>
+ Remove a body from this multipart
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>body</i></TD><TD align="left" valign="top">The body to remove
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delobj</i></TD><TD align="left" valign="top">True to delete the body, false to remove from list without deleting it
+     </TD></TR>
+</TABLE></P>
+<A NAME="findBody"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>MimeBody* &nbsp;<strong>findBody</strong> (const String& content, MimeBody** start = 0)
+<br></td><td align="right"><h3><strong>findBody</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Find a body. Enclosed multiparts are also searched for the requested body
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>content</i></TD><TD align="left" valign="top">The value of the body to find. Must be lower case
+</TD></TR>
+<TR><TD align="left" valign="top"><i>start</i></TD><TD align="left" valign="top">The starting point in the list. 0 to start from the beginning.
+  Be aware that this parameter is used internally to search within enclosed
+  multipart bodies and set to 0 when the starting point is found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to MimeBody or 0 if not found
+     </p>
+<A NAME="getObject"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ RTTI method, get a pointer to a derived class given the class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__MimeBody.html#getObject">MimeBody</A>.</p>
+<A NAME="isMultipart"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>isMultipart</strong> ()
+<br></td><td align="right"><h3><strong>isMultipart</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if this body is multipart (can hold other MIME bodies)
+</p>
+<p><b>Returns</b>: True if this body is multipart
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__MimeBody.html#isMultipart">MimeBody</A>.</p>
+<A NAME="clone"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> MimeBody* &nbsp;<strong>clone</strong> ()
+<br></td><td align="right"><h3><strong>clone</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Duplicate this MIME body
+</p>
+<p><b>Returns</b>: Copy of this MIME body
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__MimeBody.html#clone">MimeBody</A>.</p>
+<A NAME="MimeMultipartBody"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MimeMultipartBody</strong> (const MimeMultipartBody& original)
+<br></td><td align="right"><h3><strong>MimeMultipartBody</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Copy constructor
+     </p>
+<A NAME="buildBody"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>buildBody</strong> ()
+<br></td><td align="right"><h3><strong>buildBody</strong></h3></td></tr></table><p> <small>[protected const virtual]</small></p><p>
+ Method that is called internally to build the binary encoded body
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__MimeBody.html#buildBody">MimeBody</A>.</p>
+<A NAME="parse"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>parse</strong> (const char* buf, int len)
+<br></td><td align="right"><h3><strong>parse</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Parse a data buffer and append any valid body to this multipart
+ Ignore prolog, epilog and invalid bodies
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Pointer to buffer of data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data in buffer
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

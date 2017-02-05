@@ -1,0 +1,8 @@
+<JavaCardProject name="wallet">
+<USER>
+<PKG name="com.sun.javacard.samples.wallet" aid="D1 56 00 01 32 0A 64 65 6D 9F" major="1" minor="0">
+<APPLET aid="D1 56 00 01 32 0A 64 65 6D 9F 01" instanceaid="" parameter="" authority="" privileges="" index="-12048" name="Wallet"/>
+</PKG>
+<Libs/>
+</USER>
+</JavaCardProject>

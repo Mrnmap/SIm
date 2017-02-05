@@ -1,0 +1,146 @@
+<HTML>
+<HEAD>
+<TITLE>class TranslatorFactory</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class TranslatorFactory</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An unidirectional data translator (codec). <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::TranslatorFactory</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatephone_h.html">yatephone.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__TranslatorFactory.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref3">~TranslatorFactory</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref4">removed</A></b> (const TranslatorFactory* factory) 
+</LI>
+<LI>virtual  DataTranslator* &nbsp;<b><i><A HREF="#ref5">create</A></i></b> (const DataFormat& sFormat, const DataFormat& dFormat) 
+</LI>
+<LI>virtual  const TranslatorCaps* &nbsp;<b><i><A HREF="#ref6">getCapabilities</A></i></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref7">converts</A></b> (const DataFormat& sFormat, const DataFormat& dFormat)  const
+</LI>
+<LI>virtual  unsigned int &nbsp;<b><A HREF="#ref8">length</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref9">intermediate</A></b> (const FormatInfo* info)  const
+</LI>
+<LI>virtual  const FormatInfo* &nbsp;<b><A HREF="#ref10">intermediate</A></b> ()  const
+</LI>
+<LI>virtual  const char* &nbsp;<b><A HREF="#ref11">name</A></b> ()  const
+</LI>
+<LI>inline NamedCounter* &nbsp;<b><A HREF="#ref12">objectsCounter</A></b> ()  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>inline explicit &nbsp;<b><A HREF="#ref2">TranslatorFactory</A></b> (const char* name = 0) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A factory for constructing data translators by format name
+ conversion of data from one type to another
+</p>
+<A NAME="TranslatorFactory"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline explicit &nbsp;<strong>TranslatorFactory</strong> (const char* name = 0)
+<br></td><td align="right"><h3><strong>TranslatorFactory</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor - registers the factory in the global list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Static name of the factory, used for debugging
+     </TD></TR>
+</TABLE></P>
+<A NAME="~TranslatorFactory"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~TranslatorFactory</strong> ()
+<br></td><td align="right"><h3><strong>~TranslatorFactory</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor - unregisters from the global list
+     </p>
+<A NAME="removed"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>removed</strong> (const TranslatorFactory* factory)
+<br></td><td align="right"><h3><strong>removed</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification that another factory was removed from the list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>factory</i></TD><TD align="left" valign="top">Pointer to the factory that just got removed
+     </TD></TR>
+</TABLE></P>
+<A NAME="create"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> DataTranslator* &nbsp;<i><strong>create</strong></i> (const DataFormat& sFormat, const DataFormat& dFormat)
+<br></td><td align="right"><h3><i><strong>create</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Creates a translator given the source and destination format names
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sFormat</i></TD><TD align="left" valign="top">Name of the source format (data received from the consumer)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dFormat</i></TD><TD align="left" valign="top">Name of the destination format (data supplied to the source)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the end of a DataTranslator chain or NULL
+     </p>
+<A NAME="getCapabilities"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TranslatorCaps* &nbsp;<i><strong>getCapabilities</strong></i> ()
+<br></td><td align="right"><h3><i><strong>getCapabilities</strong></i></h3></td></tr></table><p> <small>[const pure virtual]</small></p><p>
+ Get the capabilities table of this translator
+</p>
+<p><b>Returns</b>: A pointer to the first element of the capabilities table
+     </p>
+<A NAME="converts"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>converts</strong> (const DataFormat& sFormat, const DataFormat& dFormat)
+<br></td><td align="right"><h3><strong>converts</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if this factory can build a translator for given data formats
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sFormat</i></TD><TD align="left" valign="top">Name of the source format
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dFormat</i></TD><TD align="left" valign="top">Name of the destination format
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if a conversion between formats is possible
+     </p>
+<A NAME="length"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>length</strong> ()
+<br></td><td align="right"><h3><strong>length</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get the length of the translator chain built by this factory
+</p>
+<p><b>Returns</b>: How many translators will build the factory
+     </p>
+<A NAME="intermediate"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>intermediate</strong> (const FormatInfo* info)
+<br></td><td align="right"><h3><strong>intermediate</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if a data format is used as intermediate in a translator chain
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>info</i></TD><TD align="left" valign="top">Format to check for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the format is used internally as intermediate
+     </p>
+<A NAME="intermediate"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const FormatInfo* &nbsp;<strong>intermediate</strong> ()
+<br></td><td align="right"><h3><strong>intermediate</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get the intermediate format used by a translator chain
+</p>
+<p><b>Returns</b>: Pointer to intermediate format or NULL
+     </p>
+<A NAME="name"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>name</strong> ()
+<br></td><td align="right"><h3><strong>name</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get the name of this factory, useful for debugging purposes
+</p>
+<p><b>Returns</b>: Name of the factory as specified in the constructor
+     </p>
+<A NAME="objectsCounter"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline NamedCounter* &nbsp;<strong>objectsCounter</strong> ()
+<br></td><td align="right"><h3><strong>objectsCounter</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the objects counter associated to this factory
+</p>
+<p><b>Returns</b>: Pointer to factory's objects counter or NULL
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

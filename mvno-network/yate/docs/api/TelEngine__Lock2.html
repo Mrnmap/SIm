@@ -1,0 +1,120 @@
+<HTML>
+<HEAD>
+<TITLE>class Lock2</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Lock2</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Ephemeral double mutex locking object. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Lock2</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Lock2.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">Lock2</A></b> (Mutex* mx1, Mutex* mx2, long maxwait = -1) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref3">Lock2</A></b> (Mutex& mx1, Mutex& mx2, long maxwait = -1) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref4">~Lock2</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref5">locked</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref6">lock</A></b> (Mutex* mx1, Mutex* mx2, long maxwait = -1) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref7">lock</A></b> (Mutex& mx1, Mutex& mx2, long maxwait = -1) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref8">drop</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A dual lock is a stack allocated (automatic) object that locks a pair
+  of mutexes on creation and unlocks them on destruction. The mutexes are
+  always locked in the same order to prevent trivial deadlocks
+</p>
+<A NAME="Lock2"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>Lock2</strong> (Mutex* mx1, Mutex* mx2, long maxwait = -1)
+<br></td><td align="right"><h3><strong>Lock2</strong></h3></td></tr></table><p></p><p>
+ Create the dual lock, try to lock each mutex
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>mx1</i></TD><TD align="left" valign="top">Pointer to the first mutex to lock
+</TD></TR>
+<TR><TD align="left" valign="top"><i>mx2</i></TD><TD align="left" valign="top">Pointer to the second mutex to lock
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxwait</i></TD><TD align="left" valign="top">Time in microseconds to wait for each mutex, -1 wait forever
+     </TD></TR>
+</TABLE></P>
+<A NAME="Lock2"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>Lock2</strong> (Mutex& mx1, Mutex& mx2, long maxwait = -1)
+<br></td><td align="right"><h3><strong>Lock2</strong></h3></td></tr></table><p></p><p>
+ Create the dual lock, try to lock each mutex
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>mx1</i></TD><TD align="left" valign="top">Reference to the first mutex to lock
+</TD></TR>
+<TR><TD align="left" valign="top"><i>mx2</i></TD><TD align="left" valign="top">Reference to the second mutex to lock
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxwait</i></TD><TD align="left" valign="top">Time in microseconds to wait for each mutex, -1 wait forever
+     </TD></TR>
+</TABLE></P>
+<A NAME="~Lock2"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>~Lock2</strong> ()
+<br></td><td align="right"><h3><strong>~Lock2</strong></h3></td></tr></table><p></p><p>
+ Destroy the lock, unlock the mutex if it was locked
+     </p>
+<A NAME="locked"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>locked</strong> ()
+<br></td><td align="right"><h3><strong>locked</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the locking succeeded
+</p>
+<p><b>Returns</b>: True if all mutexes were locked
+     </p>
+<A NAME="lock"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>lock</strong> (Mutex* mx1, Mutex* mx2, long maxwait = -1)
+<br></td><td align="right"><h3><strong>lock</strong></h3></td></tr></table><p></p><p>
+ Lock in a new pair of mutexes. Any existing locks are dropped
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>mx1</i></TD><TD align="left" valign="top">Pointer to the first mutex to lock
+</TD></TR>
+<TR><TD align="left" valign="top"><i>mx2</i></TD><TD align="left" valign="top">Pointer to the second mutex to lock
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxwait</i></TD><TD align="left" valign="top">Time in microseconds to wait for each mutex, -1 wait forever
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success - non-NULL mutexes locked
+     </p>
+<A NAME="lock"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>lock</strong> (Mutex& mx1, Mutex& mx2, long maxwait = -1)
+<br></td><td align="right"><h3><strong>lock</strong></h3></td></tr></table><p></p><p>
+ Lock in a new pair of mutexes
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>mx1</i></TD><TD align="left" valign="top">Reference to the first mutex to lock
+</TD></TR>
+<TR><TD align="left" valign="top"><i>mx2</i></TD><TD align="left" valign="top">Reference to the second mutex to lock
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxwait</i></TD><TD align="left" valign="top">Time in microseconds to wait for each mutex, -1 wait forever
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success - both locked
+     </p>
+<A NAME="drop"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>drop</strong> ()
+<br></td><td align="right"><h3><strong>drop</strong></h3></td></tr></table><p></p><p>
+ Unlock both mutexes if they were locked and drop the references
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

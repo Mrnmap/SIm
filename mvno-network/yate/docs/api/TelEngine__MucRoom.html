@@ -1,0 +1,513 @@
+<HTML>
+<HEAD>
+<TITLE>class MucRoom</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class MucRoom</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An account's MUC room contact. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::MucRoom</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatecbase_h.html">yatecbase.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__ClientContact.html">TelEngine::ClientContact</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__MucRoom.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>explicit &nbsp;<b><A HREF="#ref2">MucRoom</A></b> (ClientAccount* owner, const char* id, const char* name, const char* uri,
+	const char* nick = 0) 
+</LI>
+<LI>inline MucRoomMember& &nbsp;<b><A HREF="#ref3">resource</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref4">ownMember</A></b> (MucRoomMember* item)  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref5">ownMember</A></b> (const String& item)  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref6">available</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref7">canChat</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref8">canChatPrivate</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref9">canChangeSubject</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref10">canInvite</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref11">canKick</A></b> (MucRoomMember* member)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref12">canBan</A></b> (MucRoomMember* member)  const
+</LI>
+<LI>inline Message* &nbsp;<b><A HREF="#ref13">buildMucRoom</A></b> (const char* oper) 
+</LI>
+<LI>Message* &nbsp;<b><A HREF="#ref14">buildJoin</A></b> (bool join, bool history = true, unsigned int sNewer = 0) 
+</LI>
+<LI>virtual  MucRoom* &nbsp;<b><A HREF="#ref15">mucRoom</A></b> () 
+</LI>
+<LI>virtual  ClientResource* &nbsp;<b><A HREF="#ref16">status</A></b> (bool ref = false) 
+</LI>
+<LI>MucRoomMember* &nbsp;<b><A HREF="#ref17">findMember</A></b> (const String& nick) 
+</LI>
+<LI>MucRoomMember* &nbsp;<b><A HREF="#ref18">findMember</A></b> (const String& contact, const String& instance) 
+</LI>
+<LI>MucRoomMember* &nbsp;<b><A HREF="#ref19">findMemberById</A></b> (const String& id) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref20">hasChat</A></b> (const String& id) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref21">flashChat</A></b> (const String& id, bool on = true) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref22">getChatInput</A></b> (const String& id, String& text, const String& name = "message") 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref23">setChatInput</A></b> (const String& id, const String& text = String::empty(),
+	const String& name = "message") 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref24">getChatHistory</A></b> (const String& id, String& text, bool richText = false,
+	const String& name = "history") 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref25">setChatHistory</A></b> (const String& id, const String& text, bool richText = false,
+	const String& name = "history") 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref26">addChatHistory</A></b> (const String& id, const String& what, NamedList*& params,
+	const String& name = "history") 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref27">setChatProperty</A></b> (const String& id, const String& name, const String& prop,
+	const String& value) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref28">showChat</A></b> (const String& id, bool visible, bool active = false) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref29">createChatWindow</A></b> (const String& id, bool force = false, const char* name = 0) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref30">updateChatWindow</A></b> (const String& id, const NamedList& params) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref31">isChatActive</A></b> (const String& id) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref32">destroyChatWindow</A></b> (const String& id = String::empty()) 
+</LI>
+<LI>virtual  ClientResource* &nbsp;<b><A HREF="#ref33">findResource</A></b> (const String& id, bool ref = false) 
+</LI>
+<LI>virtual  ClientResource* &nbsp;<b><A HREF="#ref34">appendResource</A></b> (const String& nick) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref35">insertResource</A></b> (ClientResource* res) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref36">removeResource</A></b> (const String& nick, bool delChat = false) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>String <b><A HREF="#ref37">m_password</A></b></LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref38">destroyed</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds a client account's MUC room contact.
+ The list of resources contains MucRoomMember items.
+ Contact nick is held by own MucRoomMember name
+ The contact uri is the room uri
+ The contact name is the room name
+ The contact resource member uri is the account's uri
+</p>
+<A NAME="MucRoom"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>MucRoom</strong> (ClientAccount* owner, const char* id, const char* name, const char* uri,
+	const char* nick = 0)
+<br></td><td align="right"><h3><strong>MucRoom</strong></h3></td></tr></table><p></p><p>
+ Constructor. Append itself to the owner's list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>owner</i></TD><TD align="left" valign="top">The contact's owner
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The contact's id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Room name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>uri</i></TD><TD align="left" valign="top">Room uri
+</TD></TR>
+<TR><TD align="left" valign="top"><i>nick</i></TD><TD align="left" valign="top">Optional room nick
+     </TD></TR>
+</TABLE></P>
+<A NAME="resource"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline MucRoomMember& &nbsp;<strong>resource</strong> ()
+<br></td><td align="right"><h3><strong>resource</strong></h3></td></tr></table><p></p><p>
+ Retrieve room resource
+</p>
+<p><b>Returns</b>: Room resource
+     </p>
+<A NAME="ownMember"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>ownMember</strong> (MucRoomMember* item)
+<br></td><td align="right"><h3><strong>ownMember</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if a given resource is the contact's member
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Member pointer to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the given resource member is the contact itself
+     </p>
+<A NAME="ownMember"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>ownMember</strong> (const String& item)
+<br></td><td align="right"><h3><strong>ownMember</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if a given resource is the contact's member
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Member id to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the given resource member is the contact itself
+     </p>
+<A NAME="available"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>available</strong> ()
+<br></td><td align="right"><h3><strong>available</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the user has joined the room
+</p>
+<p><b>Returns</b>: True if the user is in the room
+     </p>
+<A NAME="canChat"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>canChat</strong> ()
+<br></td><td align="right"><h3><strong>canChat</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if room chat can be sent
+</p>
+<p><b>Returns</b>: True if the user is allowed to send chat to room
+     </p>
+<A NAME="canChatPrivate"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>canChatPrivate</strong> ()
+<br></td><td align="right"><h3><strong>canChatPrivate</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if private chat can be sent
+</p>
+<p><b>Returns</b>: True if the user is allowed to send private chat
+     </p>
+<A NAME="canChangeSubject"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>canChangeSubject</strong> ()
+<br></td><td align="right"><h3><strong>canChangeSubject</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the user can change room subject
+</p>
+<p><b>Returns</b>: True if the user can change room subject
+     </p>
+<A NAME="canInvite"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>canInvite</strong> ()
+<br></td><td align="right"><h3><strong>canInvite</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if join invitations can be sent
+</p>
+<p><b>Returns</b>: True if the user is allowed to invite contacts
+     </p>
+<A NAME="canKick"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>canKick</strong> (MucRoomMember* member)
+<br></td><td align="right"><h3><strong>canKick</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the user can kick a given room member
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>member</i></TD><TD align="left" valign="top">Room member
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the user can kick the member
+     </p>
+<A NAME="canBan"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>canBan</strong> (MucRoomMember* member)
+<br></td><td align="right"><h3><strong>canBan</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the user can ban a given room member
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>member</i></TD><TD align="left" valign="top">Room member
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the user can ban the member
+     </p>
+<A NAME="buildMucRoom"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Message* &nbsp;<strong>buildMucRoom</strong> (const char* oper)
+<br></td><td align="right"><h3><strong>buildMucRoom</strong></h3></td></tr></table><p></p><p>
+ Build a muc.room message. Add the room parameter
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>oper</i></TD><TD align="left" valign="top">Operation parameter
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Message pointer
+     </p>
+<A NAME="buildJoin"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Message* &nbsp;<strong>buildJoin</strong> (bool join, bool history = true, unsigned int sNewer = 0)
+<br></td><td align="right"><h3><strong>buildJoin</strong></h3></td></tr></table><p></p><p>
+ Build a muc.room message used to login/logoff
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>join</i></TD><TD align="left" valign="top">True to login, false to logoff
+</TD></TR>
+<TR><TD align="left" valign="top"><i>history</i></TD><TD align="left" valign="top">True to request room history. Ignored if join is false
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sNewer</i></TD><TD align="left" valign="top">Request history newer then given seconds. Ignored if 0 or history is false
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Message pointer
+     </p>
+<A NAME="mucRoom"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> MucRoom* &nbsp;<strong>mucRoom</strong> ()
+<br></td><td align="right"><h3><strong>mucRoom</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Return a MucRoom contact from this one
+</p>
+<p><b>Returns</b>: MucRoom pointer or 0
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#mucRoom">ClientContact</A>.</p>
+<A NAME="status"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientResource* &nbsp;<strong>status</strong> (bool ref = false)
+<br></td><td align="right"><h3><strong>status</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Find the resource with the lowest status (room resource)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ref</i></TD><TD align="left" valign="top">True to obtain a referenced pointer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientResource pointer or 0 if not found
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#status">ClientContact</A>.</p>
+<A NAME="findMember"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>MucRoomMember* &nbsp;<strong>findMember</strong> (const String& nick)
+<br></td><td align="right"><h3><strong>findMember</strong></h3></td></tr></table><p></p><p>
+ Retrieve a room member (or own member) by its nick
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>nick</i></TD><TD align="left" valign="top">Nick to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: MucRoomMember pointer or 0 if not found
+     </p>
+<A NAME="findMember"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>MucRoomMember* &nbsp;<strong>findMember</strong> (const String& contact, const String& instance)
+<br></td><td align="right"><h3><strong>findMember</strong></h3></td></tr></table><p></p><p>
+ Retrieve a room member (or own member) by its contact and instance
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>contact</i></TD><TD align="left" valign="top">Member's contact
+</TD></TR>
+<TR><TD align="left" valign="top"><i>instance</i></TD><TD align="left" valign="top">Member's instance
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: MucRoomMember pointer or 0 if not found
+     </p>
+<A NAME="findMemberById"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>MucRoomMember* &nbsp;<strong>findMemberById</strong> (const String& id)
+<br></td><td align="right"><h3><strong>findMemberById</strong></h3></td></tr></table><p></p><p>
+ Retrieve a room member (or own member) by its id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Member id to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: MucRoomMember pointer or 0 if not found
+     </p>
+<A NAME="hasChat"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>hasChat</strong> (const String& id)
+<br></td><td align="right"><h3><strong>hasChat</strong></h3></td></tr></table><p></p><p>
+ Check if a given member has chat displayed
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Member id
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the member has chat displayed
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#hasChat">ClientContact</A>.</p>
+<A NAME="flashChat"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>flashChat</strong> (const String& id, bool on = true)
+<br></td><td align="right"><h3><strong>flashChat</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Flash chat window/item to notify the user
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Member id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>on</i></TD><TD align="left" valign="top">True to start, false to stop flashing
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#flashChat">ClientContact</A>.</p>
+<A NAME="getChatInput"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>getChatInput</strong> (const String& id, String& text, const String& name = "message")
+<br></td><td align="right"><h3><strong>getChatInput</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Retrieve the contents of the chat input widget
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Member id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Chat input text
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Chat input widget name
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#getChatInput">ClientContact</A>.</p>
+<A NAME="setChatInput"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setChatInput</strong> (const String& id, const String& text = String::empty(),
+	const String& name = "message")
+<br></td><td align="right"><h3><strong>setChatInput</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the chat input widget text
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Member id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Chat input text
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Chat input widget name
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#setChatInput">ClientContact</A>.</p>
+<A NAME="getChatHistory"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>getChatHistory</strong> (const String& id, String& text, bool richText = false,
+	const String& name = "history")
+<br></td><td align="right"><h3><strong>getChatHistory</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Retrieve the contents of the chat history widget
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Member id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Chat history text
+</TD></TR>
+<TR><TD align="left" valign="top"><i>richText</i></TD><TD align="left" valign="top">Retrieve rich/plain text flag
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Chat history widget name
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#getChatHistory">ClientContact</A>.</p>
+<A NAME="setChatHistory"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setChatHistory</strong> (const String& id, const String& text, bool richText = false,
+	const String& name = "history")
+<br></td><td align="right"><h3><strong>setChatHistory</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the contents of the chat history widget
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Member id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Chat history text
+</TD></TR>
+<TR><TD align="left" valign="top"><i>richText</i></TD><TD align="left" valign="top">Set rich/plain text flag
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Chat history widget name
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#setChatHistory">ClientContact</A>.</p>
+<A NAME="addChatHistory"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>addChatHistory</strong> (const String& id, const String& what, NamedList*& params,
+	const String& name = "history")
+<br></td><td align="right"><h3><strong>addChatHistory</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Add an entry to chat history
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Member id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>what</i></TD><TD align="left" valign="top">Item to add (chat_in, chat_out, ...)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Chat history item parameters (it will be consumed and zeroed)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Chat history widget name
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#addChatHistory">ClientContact</A>.</p>
+<A NAME="setChatProperty"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setChatProperty</strong> (const String& id, const String& name, const String& prop,
+	const String& value)
+<br></td><td align="right"><h3><strong>setChatProperty</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set a chat widget' property
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Member id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Widget name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prop</i></TD><TD align="left" valign="top">Property name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Property value
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#setChatProperty">ClientContact</A>.</p>
+<A NAME="showChat"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>showChat</strong> (const String& id, bool visible, bool active = false)
+<br></td><td align="right"><h3><strong>showChat</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Show or hide a member's chat
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Member id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>visible</i></TD><TD align="left" valign="top">True to show, false to hide
+</TD></TR>
+<TR><TD align="left" valign="top"><i>active</i></TD><TD align="left" valign="top">True to activate the chat
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#showChat">ClientContact</A>.</p>
+<A NAME="createChatWindow"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>createChatWindow</strong> (const String& id, bool force = false, const char* name = 0)
+<br></td><td align="right"><h3><strong>createChatWindow</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Create a member's chat
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Member id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to destroy the current one if any
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The window's name. Defaults to global name if empty
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#createChatWindow">ClientContact</A>.</p>
+<A NAME="updateChatWindow"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>updateChatWindow</strong> (const String& id, const NamedList& params)
+<br></td><td align="right"><h3><strong>updateChatWindow</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Update member parameters in chat window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Member id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Parameters to set
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#updateChatWindow">ClientContact</A>.</p>
+<A NAME="isChatActive"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>isChatActive</strong> (const String& id)
+<br></td><td align="right"><h3><strong>isChatActive</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Check if a member's chat is active
+</p>
+<p><b>Returns</b>: True if the members's chat page is active
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#isChatActive">ClientContact</A>.</p>
+<A NAME="destroyChatWindow"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>destroyChatWindow</strong> (const String& id = String::empty())
+<br></td><td align="right"><h3><strong>destroyChatWindow</strong></h3></td></tr></table><p></p><p>
+ Close a member's chat or all chats
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Member id. Let it empty to clear all chats
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#destroyChatWindow">ClientContact</A>.</p>
+<A NAME="findResource"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientResource* &nbsp;<strong>findResource</strong> (const String& id, bool ref = false)
+<br></td><td align="right"><h3><strong>findResource</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Retrieve a room member (or own member) by its id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The id of the desired member
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ref</i></TD><TD align="left" valign="top">True to obtain a referenced pointer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientResource pointer or 0 if not found
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#findResource">ClientContact</A>.</p>
+<A NAME="appendResource"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientResource* &nbsp;<strong>appendResource</strong> (const String& nick)
+<br></td><td align="right"><h3><strong>appendResource</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Append a member having a given nick
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>nick</i></TD><TD align="left" valign="top">Member nick
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientResource pointer or 0 if a resource with the given name already exists
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#appendResource">ClientContact</A>.</p>
+<A NAME="insertResource"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>insertResource</strong> (ClientResource* res)
+<br></td><td align="right"><h3><strong>insertResource</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Insert a resource in the list by its priority.
+ If the resource is already there it will be extracted and re-inserted
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>res</i></TD><TD align="left" valign="top">The resource to insert
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, false a resource with the same name already exists
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#insertResource">ClientContact</A>.</p>
+<A NAME="removeResource"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>removeResource</strong> (const String& nick, bool delChat = false)
+<br></td><td align="right"><h3><strong>removeResource</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove a contact having a given nick
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>nick</i></TD><TD align="left" valign="top">The contact nick
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delChat</i></TD><TD align="left" valign="top">True to delete the chat
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the contact was removed
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#removeResource">ClientContact</A>.</p>
+<A NAME="m_password"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_password</strong>
+</td><td align="right"><h3><strong>m_password</strong></h3></td></tr></table><p></p><A NAME="destroyed"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destroyed</strong> ()
+<br></td><td align="right"><h3><strong>destroyed</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Room password
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientContact.html#destroyed">ClientContact</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

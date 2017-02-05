@@ -1,0 +1,8 @@
+<JavaCardProject name="GPSample">
+<USER>
+<PKG name="GPSample" aid="D1 56 00 01 32 0A 64 65 6D 8F" major="1" minor="0">
+<APPLET aid="D1 56 00 01 32 0A 64 65 6D 8F 01" instanceaid="" parameter="" authority="" privileges="" index="-8776" name="Sample"/>
+</PKG>
+<Libs/>
+</USER>
+</JavaCardProject>

@@ -1,0 +1,151 @@
+<HTML>
+<HEAD>
+<TITLE>class DebugEnabler</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class DebugEnabler</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A holder for a debug level. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::DebugEnabler</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__Channel.html">Channel</A>, <A HREF="TelEngine__ClientChannel.html">ClientChannel</A>, <i><A HREF="TelEngine__ClientDriver.html">ClientDriver</A></i>, <i><A HREF="TelEngine__Driver.html">Driver</A></i>, <A HREF="TelEngine__Module.html">Module</A>, <i><A HREF="TelEngine__Plugin.html">Plugin</A></i>, <A HREF="TelEngine__XmlDomParser.html">XmlDomParser</A>, <A HREF="TelEngine__XmlSaxParser.html">XmlSaxParser</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__DebugEnabler.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref1">DebugEnabler</A></b> (int level = <A HREF="TelEngine.html#debugLevel">TelEngine::debugLevel</A>(), bool enabled = true) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref2">~DebugEnabler</A></b> () 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref3">debugLevel</A></b> ()  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref4">debugLevel</A></b> (int level) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref5">debugEnabled</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref6">debugEnabled</A></b> (bool enable) 
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref7">debugName</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref8">debugAt</A></b> (int level)  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref9">debugChained</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref10">debugChain</A></b> (const DebugEnabler* chain = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref11">debugCopy</A></b> (const DebugEnabler* original = 0) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>inline void &nbsp;<b><A HREF="#ref12">debugName</A></b> (const char* name) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Holds a local debugging level that can be modified separately from the
+  global debugging
+</p>
+<A NAME="DebugEnabler"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>DebugEnabler</strong> (int level = <A HREF="TelEngine.html#debugLevel">TelEngine::debugLevel</A>(), bool enabled = true)
+<br></td><td align="right"><h3><strong>DebugEnabler</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">The initial local debug level
+</TD></TR>
+<TR><TD align="left" valign="top"><i>enabled</i></TD><TD align="left" valign="top">Enable debugging on this object
+     </TD></TR>
+</TABLE></P>
+<A NAME="~DebugEnabler"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>~DebugEnabler</strong> ()
+<br></td><td align="right"><h3><strong>~DebugEnabler</strong></h3></td></tr></table><p></p><A NAME="debugLevel"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>debugLevel</strong> ()
+<br></td><td align="right"><h3><strong>debugLevel</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the current local debug level
+</p>
+<p><b>Returns</b>: The current local debug level
+     </p>
+<A NAME="debugLevel"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>debugLevel</strong> (int level)
+<br></td><td align="right"><h3><strong>debugLevel</strong></h3></td></tr></table><p></p><p>
+ Set the current local debug level.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">The desired debug level
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The new debug level (may be different)
+     </p>
+<A NAME="debugEnabled"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>debugEnabled</strong> ()
+<br></td><td align="right"><h3><strong>debugEnabled</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the current debug activation status
+</p>
+<p><b>Returns</b>: True if local debugging is enabled
+     </p>
+<A NAME="debugEnabled"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>debugEnabled</strong> (bool enable)
+<br></td><td align="right"><h3><strong>debugEnabled</strong></h3></td></tr></table><p></p><p>
+ Set the current debug activation status
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>enable</i></TD><TD align="left" valign="top">The new debug activation status, true to enable
+     </TD></TR>
+</TABLE></P>
+<A NAME="debugName"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>debugName</strong> ()
+<br></td><td align="right"><h3><strong>debugName</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the current debug name
+</p>
+<p><b>Returns</b>: Name of the debug activation if set or NULL
+     </p>
+<A NAME="debugAt"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>debugAt</strong> (int level)
+<br></td><td align="right"><h3><strong>debugAt</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if debugging output should be generated
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">The debug level we are testing
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if messages should be output, false otherwise
+     </p>
+<A NAME="debugChained"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>debugChained</strong> ()
+<br></td><td align="right"><h3><strong>debugChained</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this enabler is chained to another one
+</p>
+<p><b>Returns</b>: True if local debugging is chained to other enabler
+     </p>
+<A NAME="debugChain"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>debugChain</strong> (const DebugEnabler* chain = 0)
+<br></td><td align="right"><h3><strong>debugChain</strong></h3></td></tr></table><p></p><p>
+ Chain this debug holder to a parent or detach from existing one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>chain</i></TD><TD align="left" valign="top">Pointer to parent debug level, NULL to detach
+     </TD></TR>
+</TABLE></P>
+<A NAME="debugCopy"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>debugCopy</strong> (const DebugEnabler* original = 0)
+<br></td><td align="right"><h3><strong>debugCopy</strong></h3></td></tr></table><p></p><p>
+ Copy debug settings from another object or from engine globals
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Pointer to a DebugEnabler to copy settings from
+     </TD></TR>
+</TABLE></P>
+<A NAME="debugName"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>debugName</strong> (const char* name)
+<br></td><td align="right"><h3><strong>debugName</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set the current debug name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Static debug name or NULL
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

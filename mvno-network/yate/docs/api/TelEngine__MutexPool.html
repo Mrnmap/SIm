@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<TITLE>class MutexPool</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class MutexPool</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Mutex pool. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::MutexPool</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__MutexPool.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">MutexPool</A></b> (unsigned int len = 13, bool recursive = false, const char* name = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">~MutexPool</A></b> () 
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref3">index</A></b> (void* ptr)  const
+</LI>
+<LI>inline Mutex* &nbsp;<b><A HREF="#ref4">mutex</A></b> (void* ptr)  const
+</LI>
+<LI>inline Mutex* &nbsp;<b><A HREF="#ref5">mutex</A></b> (unsigned int idx)  const
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds a Mutex array. Mutexes can be retrieved based on object pointers.
+ A mutex pool can be used to associate a smaller set of Mutex objects with a much
+  larger set of objects needing lock.
+</p>
+<A NAME="MutexPool"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MutexPool</strong> (unsigned int len = 13, bool recursive = false, const char* name = 0)
+<br></td><td align="right"><h3><strong>MutexPool</strong></h3></td></tr></table><p></p><p>
+ Build the mutex pool
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">The number of mutex objects to build. The length should be an
+  odd number to obtain an optimal distribution of pointer based mutexes
+  (usually pointers are aligned at even addresses): some mutexes might never
+  get used if the length is an even number
+</TD></TR>
+<TR><TD align="left" valign="top"><i>recursive</i></TD><TD align="left" valign="top">True if the mutex has to be recursive (reentrant),
+  false for a normal fast mutex
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Static name of the mutex (for debugging purpose only)
+     </TD></TR>
+</TABLE></P>
+<A NAME="~MutexPool"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>~MutexPool</strong> ()
+<br></td><td align="right"><h3><strong>~MutexPool</strong></h3></td></tr></table><p></p><p>
+ Destructor. Release data
+     </p>
+<A NAME="index"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>index</strong> (void* ptr)
+<br></td><td align="right"><h3><strong>index</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Build an index from object pointer (pointer value modulo array length).
+ Always cast the pointer to the same type when calling this method to
+  make sure the same index is returned for a given object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ptr</i></TD><TD align="left" valign="top">The pointer to object
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Valid array index
+     </p>
+<A NAME="mutex"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Mutex* &nbsp;<strong>mutex</strong> (void* ptr)
+<br></td><td align="right"><h3><strong>mutex</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the mutex associated with a given pointer.
+ Always cast the pointer to the same type when calling this method to
+  make sure the same mutex is returned for a given object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ptr</i></TD><TD align="left" valign="top">The pointer to object
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Valid Mutex pointer
+     </p>
+<A NAME="mutex"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Mutex* &nbsp;<strong>mutex</strong> (unsigned int idx)
+<br></td><td align="right"><h3><strong>mutex</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the mutex at a given index modulo array length
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>idx</i></TD><TD align="left" valign="top">The index
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Valid Mutex pointer
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

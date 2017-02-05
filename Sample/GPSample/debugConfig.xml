@@ -1,0 +1,9 @@
+<JavaCardProject name="GPSample">
+<USER>
+<PKG name="GPSample" aid="D1 56 00 01 32 0A 64 65 6D 8F" major="1" minor="0"/>
+<Libs/>
+</USER>
+<DebugInfo>
+<Protocol name="T1"/>
+</DebugInfo>
+</JavaCardProject>

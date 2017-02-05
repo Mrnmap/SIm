@@ -1,0 +1,14 @@
+SIM : Ludovic Rousseau <ludovic.rousseau@free.fr>
+
+v 3.0, december 2004
+=====
+    - use the new pcsc-perl Chipcard::PCSC::Card interface
+
+v 2.0
+=====
+	- now use the pcsc-perl smart card interface
+
+v 1.0
+=====
+	- first public release
+

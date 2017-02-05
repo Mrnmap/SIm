@@ -1,0 +1,139 @@
+<HTML>
+<HEAD>
+<TITLE>class NaptrRecord</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class NaptrRecord</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A NAPTR record. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::NaptrRecord</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__DnsRecord.html">TelEngine::DnsRecord</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__NaptrRecord.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">NaptrRecord</A></b> (int ttl, int ord, int pref, const char* flags, const char* serv,
+	const char* regexp, const char* next) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref3">replace</A></b> (String& str)  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref4">dump</A></b> (String& buf, const char* sep = " ") 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref5">flags</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref6">serv</A></b> ()  const
+</LI>
+<LI>inline const Regexp& &nbsp;<b><A HREF="#ref7">regexp</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref8">repTemplate</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref9">nextName</A></b> ()  const
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>String <b><A HREF="#ref10">m_flags</A></b></LI>
+<LI>String <b><A HREF="#ref11">m_service</A></b></LI>
+<LI>Regexp <b><A HREF="#ref12">m_regmatch</A></b></LI>
+<LI>String <b><A HREF="#ref13">m_template</A></b></LI>
+<LI>String <b><A HREF="#ref14">m_next</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds a NAPTR (Naming Authority Pointer) record
+</p>
+<A NAME="NaptrRecord"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>NaptrRecord</strong> (int ttl, int ord, int pref, const char* flags, const char* serv,
+	const char* regexp, const char* next)
+<br></td><td align="right"><h3><strong>NaptrRecord</strong></h3></td></tr></table><p></p><p>
+ Build a NAPTR record
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ttl</i></TD><TD align="left" valign="top">Record Time To Live
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ord</i></TD><TD align="left" valign="top">Record order
+</TD></TR>
+<TR><TD align="left" valign="top"><i>pref</i></TD><TD align="left" valign="top">Record preference
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">Interpretation flags
+</TD></TR>
+<TR><TD align="left" valign="top"><i>serv</i></TD><TD align="left" valign="top">Available services
+</TD></TR>
+<TR><TD align="left" valign="top"><i>regexp</i></TD><TD align="left" valign="top">Substitution expression
+</TD></TR>
+<TR><TD align="left" valign="top"><i>next</i></TD><TD align="left" valign="top">Next name to query
+     </TD></TR>
+</TABLE></P>
+<A NAME="replace"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>replace</strong> (String& str)
+<br></td><td align="right"><h3><strong>replace</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Replace the enclosed template in a given string if matching
+  the substitution expression
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to replace
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="dump"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>dump</strong> (String& buf, const char* sep = " ")
+<br></td><td align="right"><h3><strong>dump</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Dump this record for debug purposes
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Destination buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">Fields separator
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__DnsRecord.html#dump">DnsRecord</A>.</p>
+<A NAME="flags"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>flags</strong> ()
+<br></td><td align="right"><h3><strong>flags</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve record interpretation flags
+</p>
+<p><b>Returns</b>: Record interpretation flags
+     </p>
+<A NAME="serv"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>serv</strong> ()
+<br></td><td align="right"><h3><strong>serv</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve available services
+</p>
+<p><b>Returns</b>: Available services
+     </p>
+<A NAME="regexp"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const Regexp& &nbsp;<strong>regexp</strong> ()
+<br></td><td align="right"><h3><strong>regexp</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the regular expression match
+</p>
+<p><b>Returns</b>: Regular expression used in match
+     </p>
+<A NAME="repTemplate"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>repTemplate</strong> ()
+<br></td><td align="right"><h3><strong>repTemplate</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the template for replacing
+</p>
+<p><b>Returns</b>: Template used to replace the match
+     </p>
+<A NAME="nextName"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>nextName</strong> ()
+<br></td><td align="right"><h3><strong>nextName</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the next domain name to query
+</p>
+<p><b>Returns</b>: The next domain to query
+     </p>
+<A NAME="m_flags"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_flags</strong>
+</td><td align="right"><h3><strong>m_flags</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_service"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_service</strong>
+</td><td align="right"><h3><strong>m_service</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_regmatch"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Regexp  <strong>m_regmatch</strong>
+</td><td align="right"><h3><strong>m_regmatch</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_template"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_template</strong>
+</td><td align="right"><h3><strong>m_template</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_next"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_next</strong>
+</td><td align="right"><h3><strong>m_next</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,256 @@
+<HTML>
+<HEAD>
+<TITLE>class Compressor</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Compressor</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An abstract data (de)compressor. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Compressor</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__String.html">TelEngine::String</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Compressor.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">Compressor</A></b> (const char* format, const char* name = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~Compressor</A></b> () 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref4">format</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref5">init</A></b> (bool comp = true, bool decomp = true,
+	const NamedList& params = NamedList::empty()) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref6">finalize</A></b> (bool comp) 
+</LI>
+<LI>virtual  int &nbsp;<b><A HREF="#ref7">compress</A></b> (const void* buf, unsigned int len, DataBlock& dest) 
+</LI>
+<LI>virtual  int &nbsp;<b><A HREF="#ref8">decompress</A></b> (const void* buf, unsigned int len, DataBlock& dest) 
+</LI>
+<LI>virtual  int &nbsp;<b><i><A HREF="#ref9">writeComp</A></i></b> (const void* buf, unsigned int len, bool flush) 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref10">writeComp</A></b> (const DataBlock& data, bool flush) 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref11">writeComp</A></b> (const String& data, bool flush) 
+</LI>
+<LI>virtual  int &nbsp;<b><i><A HREF="#ref12">readComp</A></i></b> (DataBlock& buf, bool flush) 
+</LI>
+<LI>virtual  int &nbsp;<b><i><A HREF="#ref13">writeDecomp</A></i></b> (const void* buf, unsigned int len, bool flush) 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref14">writeDecomp</A></b> (const DataBlock& data, bool flush) 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref15">writeDecomp</A></b> (const String& data, bool flush) 
+</LI>
+<LI>virtual  int &nbsp;<b><i><A HREF="#ref16">readDecomp</A></i></b> (DataBlock& buf, bool flush) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>String <b><A HREF="#ref17">m_format</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ The Compressor class provides an abstraction for data (de)compressor classes.
+ The String component keeps an optional object name to be used for debug purposes
+</p>
+<A NAME="Compressor"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>Compressor</strong> (const char* format, const char* name = 0)
+<br></td><td align="right"><h3><strong>Compressor</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">Compression format
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Optional object name
+     </TD></TR>
+</TABLE></P>
+<A NAME="~Compressor"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~Compressor</strong> ()
+<br></td><td align="right"><h3><strong>~Compressor</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="format"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>format</strong> ()
+<br></td><td align="right"><h3><strong>format</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve (de)compressor format
+</p>
+<p><b>Returns</b>: The format of this (de)compressor
+     </p>
+<A NAME="init"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>init</strong> (bool comp = true, bool decomp = true,
+	const NamedList& params = NamedList::empty())
+<br></td><td align="right"><h3><strong>init</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Initialize
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>comp</i></TD><TD align="left" valign="top">True to initialize compressor
+</TD></TR>
+<TR><TD align="left" valign="top"><i>decomp</i></TD><TD align="left" valign="top">True to initialize decompressor
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional parameters
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="finalize"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>finalize</strong> (bool comp)
+<br></td><td align="right"><h3><strong>finalize</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Finalize the (de)compression
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>comp</i></TD><TD align="left" valign="top">True to finalize compression, false to finalize decompression
+     </TD></TR>
+</TABLE></P>
+<A NAME="compress"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>compress</strong> (const void* buf, unsigned int len, DataBlock& dest)
+<br></td><td align="right"><h3><strong>compress</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Compress the input buffer, flush all pending data,
+  append compressed data to the received data block
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Pointer to input data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of input in bytes
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination buffer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number of bytes wrote to compressor, negative on error
+     </p>
+<A NAME="decompress"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>decompress</strong> (const void* buf, unsigned int len, DataBlock& dest)
+<br></td><td align="right"><h3><strong>decompress</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Decompress the input buffer, flush all pending data,
+  append decompressed data to the received data block
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Pointer to input data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of input in bytes
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination buffer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number of bytes wrote to decompressor, negative on error
+     </p>
+<A NAME="writeComp"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<i><strong>writeComp</strong></i> (const void* buf, unsigned int len, bool flush)
+<br></td><td align="right"><h3><i><strong>writeComp</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Push data to compressor. Flush compressor input if input buffer is NULL
+  or the length is 0 and flush is true
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Pointer to input data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of input in bytes
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flush</i></TD><TD align="left" valign="top">True to compress all now, false to let the compressor accumulate
+  more data for better compression
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number of bytes written, negative on error. An incomplete write may occur
+  if the output buffer is full
+     </p>
+<A NAME="writeComp"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>writeComp</strong> (const DataBlock& data, bool flush)
+<br></td><td align="right"><h3><strong>writeComp</strong></h3></td></tr></table><p></p><p>
+ Push data to compressor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Input data block
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flush</i></TD><TD align="left" valign="top">True to compress all now, false to let the compressor accumulate
+  more data for better compression
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number of bytes written, negative on error. An incomplete write may occur
+  if the output buffer is full
+     </p>
+<A NAME="writeComp"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>writeComp</strong> (const String& data, bool flush)
+<br></td><td align="right"><h3><strong>writeComp</strong></h3></td></tr></table><p></p><p>
+ Push data to compressor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Input string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flush</i></TD><TD align="left" valign="top">True to compress all now, false to let the compressor accumulate
+  more data for better compression
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number of bytes written, negative on error. An incomplete write may occur
+  if the output buffer is full
+     </p>
+<A NAME="readComp"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<i><strong>readComp</strong></i> (DataBlock& buf, bool flush)
+<br></td><td align="right"><h3><i><strong>readComp</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Read data from compressor. Append it to 'buf'
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Destination data block
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flush</i></TD><TD align="left" valign="top">True to flush all compressor input data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number of bytes read, negative on error
+     </p>
+<A NAME="writeDecomp"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<i><strong>writeDecomp</strong></i> (const void* buf, unsigned int len, bool flush)
+<br></td><td align="right"><h3><i><strong>writeDecomp</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Push data to decompressor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Pointer to input data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of input in bytes
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flush</i></TD><TD align="left" valign="top">True to try to decompress all data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number of bytes written, negative on error. An incomplete write may occur
+  if the output buffer is full
+     </p>
+<A NAME="writeDecomp"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>writeDecomp</strong> (const DataBlock& data, bool flush)
+<br></td><td align="right"><h3><strong>writeDecomp</strong></h3></td></tr></table><p></p><p>
+ Push data to decompressor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Input data block
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flush</i></TD><TD align="left" valign="top">True to try to decompress all data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number of bytes written, negative on error. An incomplete write may occur
+  if the output buffer is full
+     </p>
+<A NAME="writeDecomp"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>writeDecomp</strong> (const String& data, bool flush)
+<br></td><td align="right"><h3><strong>writeDecomp</strong></h3></td></tr></table><p></p><p>
+ Push data to decompressor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Input string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flush</i></TD><TD align="left" valign="top">True to try to decompress all data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number of bytes written, negative on error. An incomplete write may occur
+  if the output buffer is full
+     </p>
+<A NAME="readDecomp"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<i><strong>readDecomp</strong></i> (DataBlock& buf, bool flush)
+<br></td><td align="right"><h3><i><strong>readDecomp</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Read data from decompressor. Append it to 'buf'
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Destination data block
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flush</i></TD><TD align="left" valign="top">True to flush all decompressor input data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number of bytes read, negative on error
+     </p>
+<A NAME="m_format"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_format</strong>
+</td><td align="right"><h3><strong>m_format</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

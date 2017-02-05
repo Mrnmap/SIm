@@ -1,0 +1,260 @@
+<HTML>
+<HEAD>
+<TITLE>class Cipher</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Cipher</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An abstract cipher. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Cipher</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Cipher.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Direction</A> {	Bidir,
+	Encrypt,
+	Decrypt,
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref4">~Cipher</A></b> () 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref5">getObject</A></b> (const String& name)  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">valid</A></b> (Direction dir = Bidir)  const
+</LI>
+<LI>virtual  unsigned int &nbsp;<b><i><A HREF="#ref7">blockSize</A></i></b> ()  const
+</LI>
+<LI>virtual  unsigned int &nbsp;<b><A HREF="#ref8">initVectorSize</A></b> ()  const
+</LI>
+<LI>unsigned int &nbsp;<b><A HREF="#ref9">bufferSize</A></b> (unsigned int len)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref10">bufferFull</A></b> (unsigned int len)  const
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref11">setKey</A></i></b> (const void* key, unsigned int len, Direction dir = Bidir) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref12">setKey</A></b> (const DataBlock& key, Direction dir = Bidir) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref13">initVector</A></b> (const void* vect, unsigned int len, Direction dir = Bidir) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref14">initVector</A></b> (const DataBlock& vect, Direction dir = Bidir) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref15">encrypt</A></i></b> (void* outData, unsigned int len, const void* inpData = 0) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref16">encrypt</A></b> (DataBlock& data) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref17">decrypt</A></i></b> (void* outData, unsigned int len, const void* inpData = 0) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref18">decrypt</A></b> (DataBlock& data) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static inline  const TokenDict* &nbsp;<b><A HREF="#ref2">directions</A></b> () 
+</LI>
+<LI>static inline  Direction &nbsp;<b><A HREF="#ref3">direction</A></b> (const char* name, Direction defdir = Bidir) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ The Cipher class provides an abstraction for data encryption classes
+</p>
+<A NAME="Direction"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Direction</strong> {	Bidir,
+	Encrypt,
+	Decrypt,
+    }
+</td><td align="right"><h3><strong>Direction</strong></h3></td></tr></table><p></p><p>
+ Cipher direction
+     </p>
+<A NAME="directions"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  const TokenDict* &nbsp;<strong>directions</strong> ()
+<br></td><td align="right"><h3><strong>directions</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the dictionary of cipher directions
+</p>
+<p><b>Returns</b>: Pointer to the dictionary of cipher directions
+     </p>
+<A NAME="direction"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  Direction &nbsp;<strong>direction</strong> (const char* name, Direction defdir = Bidir)
+<br></td><td align="right"><h3><strong>direction</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get a direction from the dictionary given the name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the direction
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defdir</i></TD><TD align="left" valign="top">Default direction to return if name is empty or unknown
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Direction associated with the given name
+     </p>
+<A NAME="~Cipher"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~Cipher</strong> ()
+<br></td><td align="right"><h3><strong>~Cipher</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="getObject"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="valid"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>valid</strong> (Direction dir = Bidir)
+<br></td><td align="right"><h3><strong>valid</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if the cipher instance is valid for a specific direction
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dir</i></TD><TD align="left" valign="top">Direction to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the cipher is able to perform operation on given direction
+     </p>
+<A NAME="blockSize"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<i><strong>blockSize</strong></i> ()
+<br></td><td align="right"><h3><i><strong>blockSize</strong></i></h3></td></tr></table><p> <small>[const pure virtual]</small></p><p>
+ Get the cipher block size
+</p>
+<p><b>Returns</b>: Cipher block size in bytes
+     </p>
+<A NAME="initVectorSize"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>initVectorSize</strong> ()
+<br></td><td align="right"><h3><strong>initVectorSize</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get the initialization vector size
+</p>
+<p><b>Returns</b>: Initialization vector size in bytes, 0 if not applicable
+     </p>
+<A NAME="bufferSize"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int &nbsp;<strong>bufferSize</strong> (unsigned int len)
+<br></td><td align="right"><h3><strong>bufferSize</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Round up a buffer length to a multiple of block size
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data to encrypt or decrypt in bytes
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Length of required buffer in bytes
+     </p>
+<A NAME="bufferFull"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>bufferFull</strong> (unsigned int len)
+<br></td><td align="right"><h3><strong>bufferFull</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if a buffer length is multiple of block size
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data to encrypt or decrypt in bytes
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if buffer length is multiple of block size
+     </p>
+<A NAME="setKey"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>setKey</strong></i> (const void* key, unsigned int len, Direction dir = Bidir)
+<br></td><td align="right"><h3><i><strong>setKey</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Set the key required to encrypt or decrypt data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Pointer to binary key data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of key in bytes
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dir</i></TD><TD align="left" valign="top">Direction to set key for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the key was set successfully
+     </p>
+<A NAME="setKey"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>setKey</strong> (const DataBlock& key, Direction dir = Bidir)
+<br></td><td align="right"><h3><strong>setKey</strong></h3></td></tr></table><p></p><p>
+ Set the key required to encrypt or decrypt data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Binary key data block
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dir</i></TD><TD align="left" valign="top">Direction to set key for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the key was set successfully
+     </p>
+<A NAME="initVector"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>initVector</strong> (const void* vect, unsigned int len, Direction dir = Bidir)
+<br></td><td align="right"><h3><strong>initVector</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the Initialization Vector if applicable
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>vect</i></TD><TD align="left" valign="top">Pointer to binary Initialization Vector data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of Initialization Vector in bytes
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dir</i></TD><TD align="left" valign="top">Direction to set the Initialization Vector for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the Initialization Vector was set successfully
+     </p>
+<A NAME="initVector"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>initVector</strong> (const DataBlock& vect, Direction dir = Bidir)
+<br></td><td align="right"><h3><strong>initVector</strong></h3></td></tr></table><p></p><p>
+ Set the Initialization Vector is applicable
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>vect</i></TD><TD align="left" valign="top">Binary Initialization Vector
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dir</i></TD><TD align="left" valign="top">Direction to set the Initialization Vector for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the Initialization Vector was set successfully
+     </p>
+<A NAME="encrypt"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>encrypt</strong></i> (void* outData, unsigned int len, const void* inpData = 0)
+<br></td><td align="right"><h3><i><strong>encrypt</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Encrypt data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>outData</i></TD><TD align="left" valign="top">Pointer to buffer for output (encrypted) and possibly input data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of output data, may not be multiple of block size
+</TD></TR>
+<TR><TD align="left" valign="top"><i>inpData</i></TD><TD align="left" valign="top">Pointer to buffer containing input (unencrypted) data, NULL to encrypt in place
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if data was successfully encrypted
+     </p>
+<A NAME="encrypt"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>encrypt</strong> (DataBlock& data)
+<br></td><td align="right"><h3><strong>encrypt</strong></h3></td></tr></table><p></p><p>
+ Encrypt a DataBlock in place
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Data block to encrypt
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if data was successfully encrypted
+     </p>
+<A NAME="decrypt"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>decrypt</strong></i> (void* outData, unsigned int len, const void* inpData = 0)
+<br></td><td align="right"><h3><i><strong>decrypt</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Decrypt data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>outData</i></TD><TD align="left" valign="top">Pointer to buffer for output (decrypted) and possibly input data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of output data, may not be multiple of block size
+</TD></TR>
+<TR><TD align="left" valign="top"><i>inpData</i></TD><TD align="left" valign="top">Pointer to buffer containing input (encrypted) data, NULL to decrypt in place
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if data was successfully decrypted
+     </p>
+<A NAME="decrypt"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>decrypt</strong> (DataBlock& data)
+<br></td><td align="right"><h3><strong>decrypt</strong></h3></td></tr></table><p></p><p>
+ Decrypt a DataBlock in place
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Data block to decrypt
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if data was successfully decrypted
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

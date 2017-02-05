@@ -1,0 +1,198 @@
+<HTML>
+<HEAD>
+<TITLE>class MessageDispatcher</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class MessageDispatcher</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A message dispatching hub. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::MessageDispatcher</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatengine_h.html">yatengine.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small>, <A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__MessageDispatcher.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref3">MessageDispatcher</A></b> (const char* trackParam = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">~MessageDispatcher</A></b> () 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref5">trackParam</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref6">install</A></b> (MessageHandler* handler) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref7">uninstall</A></b> (MessageHandler* handler) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref8">dispatch</A></b> (Message& msg) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref9">enqueue</A></b> (Message* msg) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref10">dequeue</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref11">dequeueOne</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref12">warnTime</A></b> (<A HREF="#u_int64_t">u_int64_t</A> usec) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref13">clear</A></b> () 
+</LI>
+<LI>unsigned int &nbsp;<b><A HREF="#ref14">messageCount</A></b> () 
+</LI>
+<LI>unsigned int &nbsp;<b><A HREF="#ref15">handlerCount</A></b> () 
+</LI>
+<LI>unsigned int &nbsp;<b><A HREF="#ref16">postHookCount</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref17">setHook</A></b> (MessagePostHook* hook, bool remove = false) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>inline void &nbsp;<b><A HREF="#ref18">trackParam</A></b> (const char* paramName) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ The dispatcher class is a hub that holds a list of handlers to be called
+  for the messages that pass trough the hub. It can also handle a queue of
+  messages that are typically dispatched by a separate thread.
+</p>
+<A NAME="MessageDispatcher"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MessageDispatcher</strong> (const char* trackParam = 0)
+<br></td><td align="right"><h3><strong>MessageDispatcher</strong></h3></td></tr></table><p></p><p>
+ Creates a new message dispatcher.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>trackParam</i></TD><TD align="left" valign="top">Name of the parameter used in tracking handlers
+     </TD></TR>
+</TABLE></P>
+<A NAME="~MessageDispatcher"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>~MessageDispatcher</strong> ()
+<br></td><td align="right"><h3><strong>~MessageDispatcher</strong></h3></td></tr></table><p></p><p>
+ Destroys the dispatcher and the installed handlers.
+     </p>
+<A NAME="trackParam"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>trackParam</strong> ()
+<br></td><td align="right"><h3><strong>trackParam</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the tracker parameter name
+</p>
+<p><b>Returns</b>: Name of the parameter used to track message dispatching
+     </p>
+<A NAME="install"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>install</strong> (MessageHandler* handler)
+<br></td><td align="right"><h3><strong>install</strong></h3></td></tr></table><p></p><p>
+ Installs a handler in the dispatcher.
+ The handlers are installed in ascending order of their priorities.
+ There is NO GUARANTEE on the order of handlers with equal priorities
+  although for avoiding uncertainity such handlers are sorted by address.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>handler</i></TD><TD align="left" valign="top">A pointer to the handler to install
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, false on failure
+     </p>
+<A NAME="uninstall"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>uninstall</strong> (MessageHandler* handler)
+<br></td><td align="right"><h3><strong>uninstall</strong></h3></td></tr></table><p></p><p>
+ Uninstalls a handler from the dispatcher.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>handler</i></TD><TD align="left" valign="top">A pointer to the handler to uninstall
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, false on failure
+     </p>
+<A NAME="dispatch"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>dispatch</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>dispatch</strong></h3></td></tr></table><p></p><p>
+ Synchronously dispatch a message to the installed handlers.
+ Handlers matching the message name and filter parameter are called in
+  their installed order (based on priority) until one returns true.
+ If the message has the broadcast flag set all matching handlers are
+  called and the return value is true if any handler returned true.
+ Note that in some cases when a handler is removed from the list
+  other handlers with equal priority may be called twice.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The message to dispatch
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if one handler accepted it, false if all ignored
+     </p>
+<A NAME="enqueue"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>enqueue</strong> (Message* msg)
+<br></td><td align="right"><h3><strong>enqueue</strong></h3></td></tr></table><p></p><p>
+ Put a message in the waiting queue for asynchronous dispatching
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The message to enqueue, will be destroyed after dispatching
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if successfully queued, false otherwise
+     </p>
+<A NAME="dequeue"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>dequeue</strong> ()
+<br></td><td align="right"><h3><strong>dequeue</strong></h3></td></tr></table><p></p><p>
+ Dispatch all messages from the waiting queue
+     </p>
+<A NAME="dequeueOne"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>dequeueOne</strong> ()
+<br></td><td align="right"><h3><strong>dequeueOne</strong></h3></td></tr></table><p></p><p>
+ Dispatch one message from the waiting queue
+</p>
+<p><b>Returns</b>: True if success, false if the queue is empty
+     </p>
+<A NAME="warnTime"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>warnTime</strong> (<A HREF="#u_int64_t">u_int64_t</A> usec)
+<br></td><td align="right"><h3><strong>warnTime</strong></h3></td></tr></table><p></p><p>
+ Set a limit to generate warning when a message took too long to dispatch
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>usec</i></TD><TD align="left" valign="top">Warning time limit in microseconds, zero to disable
+     </TD></TR>
+</TABLE></P>
+<A NAME="clear"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>clear</strong> ()
+<br></td><td align="right"><h3><strong>clear</strong></h3></td></tr></table><p></p><p>
+ Clear all the message handlers and post-dispatch hooks
+     </p>
+<A NAME="messageCount"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int &nbsp;<strong>messageCount</strong> ()
+<br></td><td align="right"><h3><strong>messageCount</strong></h3></td></tr></table><p></p><p>
+ Get the number of messages waiting in the queue
+</p>
+<p><b>Returns</b>: Count of messages in the queue
+     </p>
+<A NAME="handlerCount"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int &nbsp;<strong>handlerCount</strong> ()
+<br></td><td align="right"><h3><strong>handlerCount</strong></h3></td></tr></table><p></p><p>
+ Get the number of handlers in this dispatcher
+</p>
+<p><b>Returns</b>: Count of handlers
+     </p>
+<A NAME="postHookCount"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int &nbsp;<strong>postHookCount</strong> ()
+<br></td><td align="right"><h3><strong>postHookCount</strong></h3></td></tr></table><p></p><p>
+ Get the number of post-handling hooks in this dispatcher
+</p>
+<p><b>Returns</b>: Count of hooks
+     </p>
+<A NAME="setHook"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setHook</strong> (MessagePostHook* hook, bool remove = false)
+<br></td><td align="right"><h3><strong>setHook</strong></h3></td></tr></table><p></p><p>
+ Install or remove a hook to catch messages after being dispatched
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>hook</i></TD><TD align="left" valign="top">Pointer to a post-dispatching message hook
+</TD></TR>
+<TR><TD align="left" valign="top"><i>remove</i></TD><TD align="left" valign="top">Set to True to remove the hook instead of adding
+     </TD></TR>
+</TABLE></P>
+<A NAME="trackParam"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>trackParam</strong> (const char* paramName)
+<br></td><td align="right"><h3><strong>trackParam</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set the tracked parameter name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>paramName</i></TD><TD align="left" valign="top">Name of the parameter used in tracking handlers
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

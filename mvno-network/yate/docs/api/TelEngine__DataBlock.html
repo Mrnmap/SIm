@@ -1,0 +1,362 @@
+<HTML>
+<HEAD>
+<TITLE>class DataBlock</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class DataBlock</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A class that holds just a block of raw data. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::DataBlock</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__Base64.html">Base64</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__DataBlock.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">DataBlock</A></b> () 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">DataBlock</A></b> (const DataBlock& value) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">DataBlock</A></b> (void* value, unsigned int len, bool copyData = true) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref4">~DataBlock</A></b> () 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref5">getObject</A></b> (const String& name)  const
+</LI>
+<LI>inline void* &nbsp;<b><A HREF="#ref7">data</A></b> ()  const
+</LI>
+<LI>inline unsigned char* &nbsp;<b><A HREF="#ref8">data</A></b> (unsigned int offs, unsigned int len = 1)  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref9">at</A></b> (unsigned int offs, int defvalue = -1)  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref10">null</A></b> ()  const
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref11">length</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref12">clear</A></b> (bool deleteData = true) 
+</LI>
+<LI>DataBlock& &nbsp;<b><A HREF="#ref13">assign</A></b> (void* value, unsigned int len, bool copyData = true) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref14">append</A></b> (void* value, unsigned int len) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref15">append</A></b> (const DataBlock& value) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref16">append</A></b> (const String& value) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref17">insert</A></b> (const DataBlock& value) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref18">resize</A></b> (unsigned int len) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref19">truncate</A></b> (unsigned int len) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref20">cut</A></b> (int len) 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref21">operator[]</A></b> (signed int index)  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref22">operator[]</A></b> (unsigned int index)  const
+</LI>
+<LI>DataBlock& &nbsp;<b><A HREF="#ref23">operator=</A></b> (const DataBlock& value) 
+</LI>
+<LI>inline DataBlock& &nbsp;<b><A HREF="#ref24">operator+=</A></b> (const DataBlock& value) 
+</LI>
+<LI>inline DataBlock& &nbsp;<b><A HREF="#ref25">operator+=</A></b> (const String& value) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref26">convert</A></b> (const DataBlock& src, const String& sFormat,
+	const String& dFormat, unsigned maxlen = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref27">unHexify</A></b> (const char* data, unsigned int len, char sep) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref28">unHexify</A></b> (const char* data, unsigned int len) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref29">unHexify</A></b> (const String& data) 
+</LI>
+<LI>String &nbsp;<b><A HREF="#ref30">sqlEscape</A></b> (char extraEsc)  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  const DataBlock& &nbsp;<b><A HREF="#ref6">empty</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ The DataBlock holds a data buffer with no specific formatting.
+</p>
+<A NAME="DataBlock"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>DataBlock</strong> ()
+<br></td><td align="right"><h3><strong>DataBlock</strong></h3></td></tr></table><p></p><p>
+ Constructs an empty data block
+     </p>
+<A NAME="DataBlock"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>DataBlock</strong> (const DataBlock& value)
+<br></td><td align="right"><h3><strong>DataBlock</strong></h3></td></tr></table><p></p><p>
+ Copy constructor
+     </p>
+<A NAME="DataBlock"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>DataBlock</strong> (void* value, unsigned int len, bool copyData = true)
+<br></td><td align="right"><h3><strong>DataBlock</strong></h3></td></tr></table><p></p><p>
+ Constructs an initialized data block
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Data to assign, may be NULL to fill with zeros
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data, may be zero (then value is ignored)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>copyData</i></TD><TD align="left" valign="top">True to make a copy of the data, false to just insert the pointer
+     </TD></TR>
+</TABLE></P>
+<A NAME="~DataBlock"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~DataBlock</strong> ()
+<br></td><td align="right"><h3><strong>~DataBlock</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destroys the data, disposes the memory.
+     </p>
+<A NAME="getObject"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="empty"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const DataBlock& &nbsp;<strong>empty</strong> ()
+<br></td><td align="right"><h3><strong>empty</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ A static empty data block
+     </p>
+<A NAME="data"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void* &nbsp;<strong>data</strong> ()
+<br></td><td align="right"><h3><strong>data</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get a pointer to the stored data.
+</p>
+<p><b>Returns</b>: A pointer to the data or NULL.
+     </p>
+<A NAME="data"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned char* &nbsp;<strong>data</strong> (unsigned int offs, unsigned int len = 1)
+<br></td><td align="right"><h3><strong>data</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get a pointer to a byte range inside the stored data.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>offs</i></TD><TD align="left" valign="top">Byte offset inside the stored data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Number of bytes that must be valid starting at offset
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the data or NULL if the range is not available.
+     </p>
+<A NAME="at"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>at</strong> (unsigned int offs, int defvalue = -1)
+<br></td><td align="right"><h3><strong>at</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the value of a single byte inside the stored data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>offs</i></TD><TD align="left" valign="top">Byte offset inside the stored data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default value to return if offset is outside data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Byte value at offset (0-255) or defvalue if offset outside data
+     </p>
+<A NAME="null"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>null</strong> ()
+<br></td><td align="right"><h3><strong>null</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Checks if the block holds a NULL pointer.
+</p>
+<p><b>Returns</b>: True if the block holds NULL, false otherwise.
+     </p>
+<A NAME="length"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>length</strong> ()
+<br></td><td align="right"><h3><strong>length</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the length of the stored data.
+</p>
+<p><b>Returns</b>: The length of the stored data, zero for NULL.
+     </p>
+<A NAME="clear"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clear</strong> (bool deleteData = true)
+<br></td><td align="right"><h3><strong>clear</strong></h3></td></tr></table><p></p><p>
+ Clear the data and optionally free the memory
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>deleteData</i></TD><TD align="left" valign="top">True to free the deta block, false to just forget it
+     </TD></TR>
+</TABLE></P>
+<A NAME="assign"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>DataBlock& &nbsp;<strong>assign</strong> (void* value, unsigned int len, bool copyData = true)
+<br></td><td align="right"><h3><strong>assign</strong></h3></td></tr></table><p></p><p>
+ Assign data to the object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Data to assign, may be NULL to fill with zeros
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data, may be zero (then value is ignored)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>copyData</i></TD><TD align="left" valign="top">True to make a copy of the data, false to just insert the pointer
+     </TD></TR>
+</TABLE></P>
+<A NAME="append"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>append</strong> (void* value, unsigned int len)
+<br></td><td align="right"><h3><strong>append</strong></h3></td></tr></table><p></p><p>
+ Append data to the current block
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Data to append
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data
+     </TD></TR>
+</TABLE></P>
+<A NAME="append"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>append</strong> (const DataBlock& value)
+<br></td><td align="right"><h3><strong>append</strong></h3></td></tr></table><p></p><p>
+ Append data to the current block
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Data to append
+     </TD></TR>
+</TABLE></P>
+<A NAME="append"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>append</strong> (const String& value)
+<br></td><td align="right"><h3><strong>append</strong></h3></td></tr></table><p></p><p>
+ Append a String to the current block
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">String to append
+     </TD></TR>
+</TABLE></P>
+<A NAME="insert"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>insert</strong> (const DataBlock& value)
+<br></td><td align="right"><h3><strong>insert</strong></h3></td></tr></table><p></p><p>
+ Insert data before the current block
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Data to insert
+     </TD></TR>
+</TABLE></P>
+<A NAME="resize"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>resize</strong> (unsigned int len)
+<br></td><td align="right"><h3><strong>resize</strong></h3></td></tr></table><p></p><p>
+ Resize (re-alloc or free) this block if required size is not the same as the current one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Required block size
+     </TD></TR>
+</TABLE></P>
+<A NAME="truncate"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>truncate</strong> (unsigned int len)
+<br></td><td align="right"><h3><strong>truncate</strong></h3></td></tr></table><p></p><p>
+ Truncate the data block
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">The maximum length to keep
+     </TD></TR>
+</TABLE></P>
+<A NAME="cut"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>cut</strong> (int len)
+<br></td><td align="right"><h3><strong>cut</strong></h3></td></tr></table><p></p><p>
+ Cut off a number of bytes from the data block
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Amount to cut, positive to cut from end, negative to cut from start of block
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator[]"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>operator[]</strong> (signed int index)
+<br></td><td align="right"><h3><strong>operator[]</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Byte indexing operator with signed parameter
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of the byte to retrieve
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Byte value at offset (0-255) or -1 if index outside data
+     </p>
+<A NAME="operator[]"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>operator[]</strong> (unsigned int index)
+<br></td><td align="right"><h3><strong>operator[]</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Byte indexing operator with unsigned parameter
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of the byte to retrieve
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Byte value at offset (0-255) or -1 if index outside data
+     </p>
+<A NAME="operator="></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>DataBlock& &nbsp;<strong>operator=</strong> (const DataBlock& value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator.
+     </p>
+<A NAME="operator+="></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline DataBlock& &nbsp;<strong>operator+=</strong> (const DataBlock& value)
+<br></td><td align="right"><h3><strong>operator+=</strong></h3></td></tr></table><p></p><p>
+ Appending operator.
+     </p>
+<A NAME="operator+="></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline DataBlock& &nbsp;<strong>operator+=</strong> (const String& value)
+<br></td><td align="right"><h3><strong>operator+=</strong></h3></td></tr></table><p></p><p>
+ Appending operator for Strings.
+     </p>
+<A NAME="convert"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>convert</strong> (const DataBlock& src, const String& sFormat,
+	const String& dFormat, unsigned maxlen = 0)
+<br></td><td align="right"><h3><strong>convert</strong></h3></td></tr></table><p></p><p>
+ Convert data from a different format
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">Source data block
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sFormat</i></TD><TD align="left" valign="top">Name of the source format
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dFormat</i></TD><TD align="left" valign="top">Name of the destination format
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxlen</i></TD><TD align="left" valign="top">Maximum amount to convert, 0 to use source
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if converted successfully, false on failure
+     </p>
+<A NAME="unHexify"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>unHexify</strong> (const char* data, unsigned int len, char sep)
+<br></td><td align="right"><h3><strong>unHexify</strong></h3></td></tr></table><p></p><p>
+ Build this data block from a hexadecimal string representation.
+ Each octet must be represented in the input string with 2 hexadecimal characters.
+ If a separator is specified, the octets in input string must be separated using
+  exactly 1 separator. Only 1 leading or 1 trailing separators are allowed.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Input character string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the input string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">Separator character used between octets. 0 if no separator is expected
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the input string was succesfully parsed, false otherwise
+     </p>
+<A NAME="unHexify"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>unHexify</strong> (const char* data, unsigned int len)
+<br></td><td align="right"><h3><strong>unHexify</strong></h3></td></tr></table><p></p><p>
+ Build this data block from a hexadecimal string representation.
+ Each octet must be represented in the input string with 2 hexadecimal characters.
+ This method guesses if separators are used. If so the octets in input string must be
+  separated using exactly 1 separator. Only 1 leading or 1 trailing separators are allowed.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Input character string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the input string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the input string was succesfully parsed, false otherwise
+     </p>
+<A NAME="unHexify"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>unHexify</strong> (const String& data)
+<br></td><td align="right"><h3><strong>unHexify</strong></h3></td></tr></table><p></p><p>
+ Build this data block from a hexadecimal string representation.
+ This version parses a String and guesses separators presence.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Input character string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the input string was succesfully parsed, false otherwise
+     </p>
+<A NAME="sqlEscape"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String &nbsp;<strong>sqlEscape</strong> (char extraEsc)
+<br></td><td align="right"><h3><strong>sqlEscape</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Create an escaped string suitable for use in SQL queries
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>extraEsc</i></TD><TD align="left" valign="top">Character to escape other than the default ones
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A string with binary zeros and other special characters escaped
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,139 @@
+<HTML>
+<HEAD>
+<TITLE>class MemoryStream</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class MemoryStream</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Stream that operates on DataBlocks in memory. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::MemoryStream</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__Stream.html">TelEngine::Stream</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__MemoryStream.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">MemoryStream</A></b> () 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref3">MemoryStream</A></b> (const DataBlock& data) 
+</LI>
+<LI>inline const DataBlock& &nbsp;<b><A HREF="#ref4">data</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref5">terminate</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">valid</A></b> ()  const
+</LI>
+<LI>virtual  int &nbsp;<b><A HREF="#ref7">writeData</A></b> (const void* buffer, int len) 
+</LI>
+<LI>virtual  int &nbsp;<b><A HREF="#ref8">readData</A></b> (void* buffer, int len) 
+</LI>
+<LI>virtual  <A HREF="#int64_t">int64_t</A> &nbsp;<b><A HREF="#ref9">length</A></b> () 
+</LI>
+<LI>virtual  <A HREF="#int64_t">int64_t</A> &nbsp;<b><A HREF="#ref10">seek</A></b> (SeekPos pos, <A HREF="#int64_t">int64_t</A> offset = 0) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>DataBlock <b><A HREF="#ref11">m_data</A></b></LI>
+<LI>int64_t <b><A HREF="#ref12">m_offset</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ An implementation of a Stream that reads and writes data in a DataBlock
+</p>
+<A NAME="MemoryStream"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>MemoryStream</strong> ()
+<br></td><td align="right"><h3><strong>MemoryStream</strong></h3></td></tr></table><p></p><p>
+ Constructor of an empty stream
+     </p>
+<A NAME="MemoryStream"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>MemoryStream</strong> (const DataBlock& data)
+<br></td><td align="right"><h3><strong>MemoryStream</strong></h3></td></tr></table><p></p><p>
+ Constructor of aan initialized stream
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Initial data to be copied in the memory stream
+     </TD></TR>
+</TABLE></P>
+<A NAME="data"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const DataBlock& &nbsp;<strong>data</strong> ()
+<br></td><td align="right"><h3><strong>data</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get read-only access to the DataBlock held
+</p>
+<p><b>Returns</b>: Const reference to the DataBlock
+     </p>
+<A NAME="terminate"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>terminate</strong> ()
+<br></td><td align="right"><h3><strong>terminate</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Do-nothing termination handler
+</p>
+<p><b>Returns</b>: True to signal the stream was closed
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#terminate">Stream</A>.</p>
+<A NAME="valid"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>valid</strong> ()
+<br></td><td align="right"><h3><strong>valid</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Do-nothing validity check
+</p>
+<p><b>Returns</b>: True to indicate the stream is valid
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#valid">Stream</A>.</p>
+<A NAME="writeData"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>writeData</strong> (const void* buffer, int len)
+<br></td><td align="right"><h3><strong>writeData</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Write new data to the DataBlock at current position, advance pointer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Buffer of source data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data to be written
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of bytes written, negative on error
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#writeData">Stream</A>.</p>
+<A NAME="readData"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>readData</strong> (void* buffer, int len)
+<br></td><td align="right"><h3><strong>readData</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get data from internal DataBlock, advance pointer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Buffer for getting the data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the buffer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of bytes read, negative on error, zero on end of data
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#readData">Stream</A>.</p>
+<A NAME="length"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> <A HREF="#int64_t">int64_t</A> &nbsp;<strong>length</strong> ()
+<br></td><td align="right"><h3><strong>length</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get the length of the stream
+</p>
+<p><b>Returns</b>: Length of the DataBlock in memory
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#length">Stream</A>.</p>
+<A NAME="seek"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> <A HREF="#int64_t">int64_t</A> &nbsp;<strong>seek</strong> (SeekPos pos, <A HREF="#int64_t">int64_t</A> offset = 0)
+<br></td><td align="right"><h3><strong>seek</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the read/write pointer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>pos</i></TD><TD align="left" valign="top">The seek start as enumeration
+</TD></TR>
+<TR><TD align="left" valign="top"><i>offset</i></TD><TD align="left" valign="top">The number of bytes to move the pointer from starting position
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The new position of the stream read/write pointer. Negative on failure
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#seek">Stream</A>.</p>
+<A NAME="m_data"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>DataBlock  <strong>m_data</strong>
+</td><td align="right"><h3><strong>m_data</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_offset"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#int64_t">int64_t</A>  <strong>m_offset</strong>
+</td><td align="right"><h3><strong>m_offset</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

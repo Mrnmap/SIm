@@ -1,0 +1,108 @@
+<HTML>
+<HEAD>
+<TITLE>class XmlDeclaration</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class XmlDeclaration</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Xml Declaration. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::XmlDeclaration</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatexml_h.html">yatexml.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__XmlChild.html">TelEngine::XmlChild</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__XmlDeclaration.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">XmlDeclaration</A></b> (const char* version = "1.0", const char* enc = "utf-8") 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">XmlDeclaration</A></b> (const NamedList& decl) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">XmlDeclaration</A></b> (const XmlDeclaration& orig) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">~XmlDeclaration</A></b> () 
+</LI>
+<LI>inline const NamedList& &nbsp;<b><A HREF="#ref5">getDec</A></b> ()  const
+</LI>
+<LI>virtual  XmlDeclaration* &nbsp;<b><A HREF="#ref6">xmlDeclaration</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref7">toString</A></b> (String& dump, bool escape = true)  const
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Xml Declaration for Xml document
+</p>
+<A NAME="XmlDeclaration"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XmlDeclaration</strong> (const char* version = "1.0", const char* enc = "utf-8")
+<br></td><td align="right"><h3><strong>XmlDeclaration</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>version</i></TD><TD align="left" valign="top">XML version attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>enc</i></TD><TD align="left" valign="top">Encoding attribute
+     </TD></TR>
+</TABLE></P>
+<A NAME="XmlDeclaration"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XmlDeclaration</strong> (const NamedList& decl)
+<br></td><td align="right"><h3><strong>XmlDeclaration</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>decl</i></TD><TD align="left" valign="top">Declaration attributes
+     </TD></TR>
+</TABLE></P>
+<A NAME="XmlDeclaration"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XmlDeclaration</strong> (const XmlDeclaration& orig)
+<br></td><td align="right"><h3><strong>XmlDeclaration</strong></h3></td></tr></table><p></p><p>
+ Copy constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>orig</i></TD><TD align="left" valign="top">Original XmlDeclaration
+     </TD></TR>
+</TABLE></P>
+<A NAME="~XmlDeclaration"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>~XmlDeclaration</strong> ()
+<br></td><td align="right"><h3><strong>~XmlDeclaration</strong></h3></td></tr></table><p></p><p>
+ Destructor
+     </p>
+<A NAME="getDec"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const NamedList& &nbsp;<strong>getDec</strong> ()
+<br></td><td align="right"><h3><strong>getDec</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Obtain the tag name and attributes list
+</p>
+<p><b>Returns</b>: The declaration
+     </p>
+<A NAME="xmlDeclaration"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlDeclaration* &nbsp;<strong>xmlDeclaration</strong> ()
+<br></td><td align="right"><h3><strong>xmlDeclaration</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get the Xml declaration
+</p>
+<p><b>Returns</b>: This object
+ Reimplemented from XmlChild
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlChild.html#xmlDeclaration">XmlChild</A>.</p>
+<A NAME="toString"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>toString</strong> (String& dump, bool escape = true)
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Build a String from this XmlDeclaration
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dump</i></TD><TD align="left" valign="top">The string where to append representation
+</TD></TR>
+<TR><TD align="left" valign="top"><i>escape</i></TD><TD align="left" valign="top">True if the attributes values need to be escaped
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

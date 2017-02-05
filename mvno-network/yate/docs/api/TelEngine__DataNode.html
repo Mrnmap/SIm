@@ -1,0 +1,155 @@
+<HTML>
+<HEAD>
+<TITLE>class DataNode</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class DataNode</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">
+ A generic data handling object
+  <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::DataNode</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatephone_h.html">yatephone.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><i><A HREF="TelEngine__DataConsumer.html">DataConsumer</A></i>, <A HREF="TelEngine__DataSource.html">DataSource</A>, <A HREF="TelEngine__DataTranslator.html">DataTranslator</A>, <i><A HREF="TelEngine__ThreadedSource.html">ThreadedSource</A></i></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__DataNode.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref3">DataFlags</A> {	DataStart   = 0x0001,
+	DataEnd     = 0x0002,
+	DataMark    = 0x0004,
+	DataSilent  = 0x0008,
+	DataMissed  = 0x0010,
+	DataError   = 0x0020,
+	DataPrivate = 0x0100
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>inline explicit &nbsp;<b><A HREF="#ref4">DataNode</A></b> (const char* format = 0) 
+</LI>
+<LI>virtual  int &nbsp;<b><A HREF="#ref5">costFormat</A></b> (const DataFormat& format) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">setFormat</A></b> (const DataFormat& format) 
+</LI>
+<LI>inline const DataFormat& &nbsp;<b><A HREF="#ref7">getFormat</A></b> ()  const
+</LI>
+<LI>inline unsigned long &nbsp;<b><A HREF="#ref8">timeStamp</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref9">valid</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref10">control</A></b> (NamedList& params) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static inline  unsigned long &nbsp;<b><A HREF="#ref11">invalidStamp</A></b> () 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref12">attached</A></b> (bool added) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>DataFormat <b><A HREF="#ref13">m_format</A></b></LI>
+<LI>unsigned long <b><A HREF="#ref14">m_timestamp</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A generic data handling object
+ </p>
+<A NAME="DataFlags"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>DataFlags</strong> {	DataStart   = 0x0001,
+	DataEnd     = 0x0002,
+	DataMark    = 0x0004,
+	DataSilent  = 0x0008,
+	DataMissed  = 0x0010,
+	DataError   = 0x0020,
+	DataPrivate = 0x0100
+    }
+</td><td align="right"><h3><strong>DataFlags</strong></h3></td></tr></table><p></p><p>
+ Flags associated with the DataBlocks forwarded between nodes
+     </p>
+<A NAME="DataNode"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline explicit &nbsp;<strong>DataNode</strong> (const char* format = 0)
+<br></td><td align="right"><h3><strong>DataNode</strong></h3></td></tr></table><p></p><p>
+ Construct a DataNode
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">Description of the data format, default none
+     </TD></TR>
+</TABLE></P>
+<A NAME="costFormat"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>costFormat</strong> (const DataFormat& format)
+<br></td><td align="right"><h3><strong>costFormat</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get the computing cost of converting the data to the format asked
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">Name of the format to check for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: -1 if unsupported, 0 for native format else cost in KIPS
+     </p>
+<A NAME="setFormat"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setFormat</strong> (const DataFormat& format)
+<br></td><td align="right"><h3><strong>setFormat</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Change the format used to transfer data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">Name of the format to set for data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the format changed successfully, false if not changed
+     </p>
+<A NAME="getFormat"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const DataFormat& &nbsp;<strong>getFormat</strong> ()
+<br></td><td align="right"><h3><strong>getFormat</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the description of the format currently in use
+</p>
+<p><b>Returns</b>: Pointer to the data format
+     </p>
+<A NAME="timeStamp"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned long &nbsp;<strong>timeStamp</strong> ()
+<br></td><td align="right"><h3><strong>timeStamp</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the current position in the data stream
+</p>
+<p><b>Returns</b>: Timestamp of current data position
+     </p>
+<A NAME="valid"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>valid</strong> ()
+<br></td><td align="right"><h3><strong>valid</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if this data node is still valid
+</p>
+<p><b>Returns</b>: True if still valid, false if node should be removed
+     </p>
+<A NAME="control"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>control</strong> (NamedList& params)
+<br></td><td align="right"><h3><strong>control</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Modify node parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">The list of parameters to change
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if processed
+     </p>
+<A NAME="invalidStamp"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  unsigned long &nbsp;<strong>invalidStamp</strong> ()
+<br></td><td align="right"><h3><strong>invalidStamp</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the internal representation of an invalid or unknown timestamp
+</p>
+<p><b>Returns</b>: Invalid timestamp - unsigned long conversion of -1
+     </p>
+<A NAME="attached"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>attached</strong> (bool added)
+<br></td><td align="right"><h3><strong>attached</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Owner attach and detach notification.
+ This method is called with DataEndpoint::commonMutex() held
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>added</i></TD><TD align="left" valign="top">True if a new owner was added, false if it was removed
+     </TD></TR>
+</TABLE></P>
+<A NAME="m_format"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>DataFormat  <strong>m_format</strong>
+</td><td align="right"><h3><strong>m_format</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_timestamp"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned long  <strong>m_timestamp</strong>
+</td><td align="right"><h3><strong>m_timestamp</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

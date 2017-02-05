@@ -1,0 +1,913 @@
+<HTML>
+<HEAD>
+<TITLE>class Socket</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Socket</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A generic socket class. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Socket</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__Stream.html">TelEngine::Stream</A></i> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><i><A HREF="TelEngine__SctpSocket.html">SctpSocket</A></i></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Socket.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref2">TOS</A> {	Normal         = 0,
+	LowDelay       = IPTOS_LOWDELAY,
+	MaxThroughput  = IPTOS_THROUGHPUT,
+	MaxReliability = IPTOS_RELIABILITY,
+	MinCost        = IPTOS_MINCOST,
+    }
+</LI>
+<LI>enum <A HREF="#ref3">DSCP</A> {	DefaultPHB     = 0x00,
+	CS0            = 0x00,
+	CS1            = 0x20,
+	CS2            = 0x40,
+	CS3            = 0x60,
+	CS4            = 0x80,
+	CS5            = 0xa0,
+	CS6            = 0xc0,
+	CS7            = 0xe0,
+	AF11           = 0x28,
+	AF12           = 0x30,
+	AF13           = 0x38,
+	AF21           = 0x48,
+	AF22           = 0x50,
+	AF23           = 0x58,
+	AF31           = 0x68,
+	AF32           = 0x70,
+	AF33           = 0x78,
+	AF41           = 0x88,
+	AF42           = 0x90,
+	AF43           = 0x98,
+	ExpeditedFwd   = 0xb8,
+	VoiceAdmit     = 0xb0,
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref4">Socket</A></b> () 
+</LI>
+<LI>explicit &nbsp;<b><A HREF="#ref5">Socket</A></b> (<A HREF="#SOCKET">SOCKET</A> handle) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref6">Socket</A></b> (int domain, int type, int protocol = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref7">~Socket</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref8">create</A></b> (int domain, int type, int protocol = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref9">terminate</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref10">attach</A></b> (<A HREF="#SOCKET">SOCKET</A> handle) 
+</LI>
+<LI><A HREF="#SOCKET">SOCKET</A> &nbsp;<b><A HREF="#ref11">detach</A></b> () 
+</LI>
+<LI>inline <A HREF="#SOCKET">SOCKET</A> &nbsp;<b><A HREF="#ref12">handle</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref13">canRetry</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref14">inProgress</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref15">valid</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref19">setOption</A></b> (int level, int name, const void* value = 0, <A HREF="#socklen_t">socklen_t</A> length = 0) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref20">setIpv6OnlyOption</A></b> (bool on) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref21">getOption</A></b> (int level, int name, void* buffer, <A HREF="#socklen_t">socklen_t</A>* length) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref22">setParams</A></b> (const NamedList& params) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref23">getParams</A></b> (const String& params, NamedList& result) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref24">setTOS</A></b> (int tos) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref25">setTOS</A></b> (const char* tos, int defTos = Normal) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref26">setBlocking</A></b> (bool block = true) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref27">setReuse</A></b> (bool reuse = true, bool exclusive = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref28">setLinger</A></b> (int seconds = -1) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref29">bind</A></b> (struct sockaddr* addr, <A HREF="#socklen_t">socklen_t</A> addrlen) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref30">bind</A></b> (const SocketAddr& addr) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref31">listen</A></b> (unsigned int backlog = 0) 
+</LI>
+<LI>virtual  Socket* &nbsp;<b><A HREF="#ref32">accept</A></b> (struct sockaddr* addr = 0, <A HREF="#socklen_t">socklen_t</A>* addrlen = 0) 
+</LI>
+<LI>Socket* &nbsp;<b><A HREF="#ref33">accept</A></b> (SocketAddr& addr) 
+</LI>
+<LI><A HREF="#SOCKET">SOCKET</A> &nbsp;<b><A HREF="#ref34">acceptHandle</A></b> (struct sockaddr* addr = 0, <A HREF="#socklen_t">socklen_t</A>* addrlen = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref35">updateError</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref38">canSelect</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref39">connect</A></b> (struct sockaddr* addr, <A HREF="#socklen_t">socklen_t</A> addrlen) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref40">connect</A></b> (const SocketAddr& addr) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref41">connectAsync</A></b> (struct sockaddr* addr, <A HREF="#socklen_t">socklen_t</A> addrlen, unsigned int toutUs,
+	bool* timeout = 0) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref42">connectAsync</A></b> (const SocketAddr& addr, unsigned int toutUs,
+	bool* timeout = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref43">shutdown</A></b> (bool stopReads, bool stopWrites) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref44">getSockName</A></b> (struct sockaddr* addr, <A HREF="#socklen_t">socklen_t</A>* addrlen) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref45">getSockName</A></b> (SocketAddr& addr) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref46">getPeerName</A></b> (struct sockaddr* addr, <A HREF="#socklen_t">socklen_t</A>* addrlen) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref47">getPeerName</A></b> (SocketAddr& addr) 
+</LI>
+<LI>virtual  int &nbsp;<b><A HREF="#ref48">sendTo</A></b> (const void* buffer, int length, const struct sockaddr* addr, <A HREF="#socklen_t">socklen_t</A> adrlen, int flags = 0) 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref49">sendTo</A></b> (const void* buffer, int length, const SocketAddr& addr, int flags = 0) 
+</LI>
+<LI>virtual  int &nbsp;<b><A HREF="#ref50">send</A></b> (const void* buffer, int length, int flags = 0) 
+</LI>
+<LI>virtual  int &nbsp;<b><A HREF="#ref51">writeData</A></b> (const void* buffer, int length) 
+</LI>
+<LI>virtual  int &nbsp;<b><A HREF="#ref52">recvFrom</A></b> (void* buffer, int length, struct sockaddr* addr = 0, <A HREF="#socklen_t">socklen_t</A>* adrlen = 0, int flags = 0) 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref53">recvFrom</A></b> (void* buffer, int length, SocketAddr& addr, int flags = 0) 
+</LI>
+<LI>virtual  int &nbsp;<b><A HREF="#ref54">recv</A></b> (void* buffer, int length, int flags = 0) 
+</LI>
+<LI>virtual  int &nbsp;<b><A HREF="#ref55">readData</A></b> (void* buffer, int length) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref56">select</A></b> (bool* readok, bool* writeok, bool* except, struct timeval* timeout = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref57">select</A></b> (bool* readok, bool* writeok, bool* except, <A HREF="#int64_t">int64_t</A> timeout) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref58">installFilter</A></b> (SocketFilter* filter) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref59">removeFilter</A></b> (SocketFilter* filter, bool delobj = false) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref60">clearFilters</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref61">timerTick</A></b> (const Time& when) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  <A HREF="#SOCKET">SOCKET</A> &nbsp;<b><A HREF="#ref16">invalidHandle</A></b> () 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref17">socketError</A></b> () 
+</LI>
+<LI>static  const TokenDict* &nbsp;<b><A HREF="#ref18">tosValues</A></b> () 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref36">efficientSelect</A></b> () 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref37">canSelect</A></b> (<A HREF="#SOCKET">SOCKET</A> handle) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref62">createPair</A></b> (Socket& sock1, Socket& sock2, int domain = AF_UNIX) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>void &nbsp;<b><A HREF="#ref63">copyError</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref64">checkError</A></b> (int retcode, bool strict = false) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref65">applyFilters</A></b> (void* buffer, int length, int flags, const struct sockaddr* addr = 0, <A HREF="#socklen_t">socklen_t</A> adrlen = 0) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>SOCKET <b><A HREF="#ref66">m_handle</A></b></LI>
+<LI>ObjList <b><A HREF="#ref67">m_filters</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class encapsulates a system dependent socket in a system independent abstraction
+</p>
+<A NAME="TOS"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>TOS</strong> {	Normal         = 0,
+	LowDelay       = IPTOS_LOWDELAY,
+	MaxThroughput  = IPTOS_THROUGHPUT,
+	MaxReliability = IPTOS_RELIABILITY,
+	MinCost        = IPTOS_MINCOST,
+    }
+</td><td align="right"><h3><strong>TOS</strong></h3></td></tr></table><p></p><p>
+ Types of service
+     </p>
+<A NAME="DSCP"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>DSCP</strong> {	DefaultPHB     = 0x00,
+	CS0            = 0x00,
+	CS1            = 0x20,
+	CS2            = 0x40,
+	CS3            = 0x60,
+	CS4            = 0x80,
+	CS5            = 0xa0,
+	CS6            = 0xc0,
+	CS7            = 0xe0,
+	AF11           = 0x28,
+	AF12           = 0x30,
+	AF13           = 0x38,
+	AF21           = 0x48,
+	AF22           = 0x50,
+	AF23           = 0x58,
+	AF31           = 0x68,
+	AF32           = 0x70,
+	AF33           = 0x78,
+	AF41           = 0x88,
+	AF42           = 0x90,
+	AF43           = 0x98,
+	ExpeditedFwd   = 0xb8,
+	VoiceAdmit     = 0xb0,
+    }
+</td><td align="right"><h3><strong>DSCP</strong></h3></td></tr></table><p></p><p>
+ DiffServ bits
+     </p>
+<A NAME="Socket"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>Socket</strong> ()
+<br></td><td align="right"><h3><strong>Socket</strong></h3></td></tr></table><p></p><p>
+ Default constructor, creates an invalid socket
+     </p>
+<A NAME="Socket"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>Socket</strong> (<A HREF="#SOCKET">SOCKET</A> handle)
+<br></td><td align="right"><h3><strong>Socket</strong></h3></td></tr></table><p></p><p>
+ Constructor from an existing handle
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>handle</i></TD><TD align="left" valign="top">Operating system handle to an existing socket
+     </TD></TR>
+</TABLE></P>
+<A NAME="Socket"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>Socket</strong> (int domain, int type, int protocol = 0)
+<br></td><td align="right"><h3><strong>Socket</strong></h3></td></tr></table><p></p><p>
+ Constructor that also creates the socket handle
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>domain</i></TD><TD align="left" valign="top">Communication domain for the socket (protocol family)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type specification of the socket
+</TD></TR>
+<TR><TD align="left" valign="top"><i>protocol</i></TD><TD align="left" valign="top">Specific protocol for the domain, 0 to use default
+     </TD></TR>
+</TABLE></P>
+<A NAME="~Socket"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~Socket</strong> ()
+<br></td><td align="right"><h3><strong>~Socket</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor - closes the handle if still open
+     </p>
+<A NAME="create"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>create</strong> (int domain, int type, int protocol = 0)
+<br></td><td align="right"><h3><strong>create</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Creates a new socket handle,
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>domain</i></TD><TD align="left" valign="top">Communication domain for the socket (protocol family)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type specification of the socket
+</TD></TR>
+<TR><TD align="left" valign="top"><i>protocol</i></TD><TD align="left" valign="top">Specific protocol for the domain, 0 to use default
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if socket was created, false if an error occured
+     </p>
+<A NAME="terminate"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>terminate</strong> ()
+<br></td><td align="right"><h3><strong>terminate</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Closes the socket handle, terminates the connection
+</p>
+<p><b>Returns</b>: True if socket was (already) closed, false if an error occured
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#terminate">Stream</A>.</p>
+<A NAME="attach"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>attach</strong> (<A HREF="#SOCKET">SOCKET</A> handle)
+<br></td><td align="right"><h3><strong>attach</strong></h3></td></tr></table><p></p><p>
+ Attach an existing handle to the socket, closes any existing first
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>handle</i></TD><TD align="left" valign="top">Operating system handle to an existing socket
+     </TD></TR>
+</TABLE></P>
+<A NAME="detach"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#SOCKET">SOCKET</A> &nbsp;<strong>detach</strong> ()
+<br></td><td align="right"><h3><strong>detach</strong></h3></td></tr></table><p></p><p>
+ Detaches the object from the socket handle
+</p>
+<p><b>Returns</b>: The handle previously owned by this object
+     </p>
+<A NAME="handle"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#SOCKET">SOCKET</A> &nbsp;<strong>handle</strong> ()
+<br></td><td align="right"><h3><strong>handle</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the operating system handle to the socket
+</p>
+<p><b>Returns</b>: Socket handle
+     </p>
+<A NAME="canRetry"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>canRetry</strong> ()
+<br></td><td align="right"><h3><strong>canRetry</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if the last error code indicates a retryable condition
+</p>
+<p><b>Returns</b>: True if error was temporary and operation should be retried
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#canRetry">Stream</A>.</p>
+<A NAME="inProgress"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>inProgress</strong> ()
+<br></td><td align="right"><h3><strong>inProgress</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if the last error code indicates a non blocking operation in progress
+</p>
+<p><b>Returns</b>: True if a non blocking operation is in progress
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#inProgress">Stream</A>.</p>
+<A NAME="valid"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>valid</strong> ()
+<br></td><td align="right"><h3><strong>valid</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if this socket is valid
+</p>
+<p><b>Returns</b>: True if the handle is valid, false if it's invalid
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#valid">Stream</A>.</p>
+<A NAME="invalidHandle"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> <A HREF="#SOCKET">SOCKET</A> &nbsp;<strong>invalidHandle</strong> ()
+<br></td><td align="right"><h3><strong>invalidHandle</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the operating system specific handle value for an invalid socket
+</p>
+<p><b>Returns</b>: Handle value for an invalid socket
+     </p>
+<A NAME="socketError"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>socketError</strong> ()
+<br></td><td align="right"><h3><strong>socketError</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the operating system specific return value of a failed operation
+</p>
+<p><b>Returns</b>: Return value of a failed socket operation
+     </p>
+<A NAME="tosValues"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TokenDict* &nbsp;<strong>tosValues</strong> ()
+<br></td><td align="right"><h3><strong>tosValues</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Retrieve the keyword lookup table for TOS / DSCP values
+</p>
+<p><b>Returns</b>: Pointer to keyword dictionary for TOS and DSCP
+     </p>
+<A NAME="setOption"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setOption</strong> (int level, int name, const void* value = 0, <A HREF="#socklen_t">socklen_t</A> length = 0)
+<br></td><td align="right"><h3><strong>setOption</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set socket options
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">Level of the option to set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Socket option for which the value is to be set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Pointer to a buffer holding the value for the requested option
+</TD></TR>
+<TR><TD align="left" valign="top"><i>length</i></TD><TD align="left" valign="top">Size of the supplied buffer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="setIpv6OnlyOption"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>setIpv6OnlyOption</strong> (bool on)
+<br></td><td align="right"><h3><strong>setIpv6OnlyOption</strong></h3></td></tr></table><p></p><p>
+ Set or reset socket IPv6 only option.
+ This option will tell to an IPv6 socket to accept only IPv6 packets.
+ IPv4 packets will be accepted if disabled.
+ This method will fail for non PF_INET6 sockets
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>on</i></TD><TD align="left" valign="top">True to set, false to reset it
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="getOption"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>getOption</strong> (int level, int name, void* buffer, <A HREF="#socklen_t">socklen_t</A>* length)
+<br></td><td align="right"><h3><strong>getOption</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get socket options
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">Level of the option to set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Socket option for which the value is to be set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Pointer to a buffer to return the value for the requested option
+</TD></TR>
+<TR><TD align="left" valign="top"><i>length</i></TD><TD align="left" valign="top">Pointer to size of the supplied buffer, will be filled on return
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="setParams"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setParams</strong> (const NamedList& params)
+<br></td><td align="right"><h3><strong>setParams</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set specific socket parameters.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">List of parameters
+     </TD></TR>
+</TABLE></P>
+<A NAME="getParams"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>getParams</strong> (const String& params, NamedList& result)
+<br></td><td align="right"><h3><strong>getParams</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get specific socket parameters.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Coma separated list of parameters to obtain
+</TD></TR>
+<TR><TD align="left" valign="top"><i>result</i></TD><TD align="left" valign="top">List of parameters to fill
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successful, false if an error occurred
+     </p>
+<A NAME="setTOS"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setTOS</strong> (int tos)
+<br></td><td align="right"><h3><strong>setTOS</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the Type of Service or Differentiated Services Code Point on the IP level of this socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>tos</i></TD><TD align="left" valign="top">New TOS or DiffServ bits
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="setTOS"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>setTOS</strong> (const char* tos, int defTos = Normal)
+<br></td><td align="right"><h3><strong>setTOS</strong></h3></td></tr></table><p></p><p>
+ Set the Type of Service or Differentiated Services Code Point on the IP level of this socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>tos</i></TD><TD align="left" valign="top">Keyword describing new TOS or DSCP value
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defTos</i></TD><TD align="left" valign="top">Default TOS or DiffServ value to set if the keyword is not recognized
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="setBlocking"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setBlocking</strong> (bool block = true)
+<br></td><td align="right"><h3><strong>setBlocking</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the blocking or non-blocking operation mode of the socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>block</i></TD><TD align="left" valign="top">True if I/O operations should block, false for non-blocking
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#setBlocking">Stream</A>.</p>
+<A NAME="setReuse"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setReuse</strong> (bool reuse = true, bool exclusive = false)
+<br></td><td align="right"><h3><strong>setReuse</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the local address+port reuse flag of the socket.
+ This method should be called before bind() or it will have no effect.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reuse</i></TD><TD align="left" valign="top">True if other sockets may listen on same address+port
+</TD></TR>
+<TR><TD align="left" valign="top"><i>exclusive</i></TD><TD align="left" valign="top">Grant exclusive access to the address
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="setLinger"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setLinger</strong> (int seconds = -1)
+<br></td><td align="right"><h3><strong>setLinger</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the way closing a socket is handled
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>seconds</i></TD><TD align="left" valign="top">How much to block waiting for socket to close,
+  negative to no wait (close in background), zero to reset connection
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="bind"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>bind</strong> (struct sockaddr* addr, <A HREF="#socklen_t">socklen_t</A> addrlen)
+<br></td><td align="right"><h3><strong>bind</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Associates the socket with a local address
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to assign to this socket
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addrlen</i></TD><TD align="left" valign="top">Length of the address structure
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="bind"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>bind</strong> (const SocketAddr& addr)
+<br></td><td align="right"><h3><strong>bind</strong></h3></td></tr></table><p></p><p>
+ Associates the socket with a local address
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to assign to this socket
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="listen"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>listen</strong> (unsigned int backlog = 0)
+<br></td><td align="right"><h3><strong>listen</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Start listening for incoming connections on the socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>backlog</i></TD><TD align="left" valign="top">Maximum length of the queue of pending connections, 0 for system maximum
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="accept"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Socket* &nbsp;<strong>accept</strong> (struct sockaddr* addr = 0, <A HREF="#socklen_t">socklen_t</A>* addrlen = 0)
+<br></td><td align="right"><h3><strong>accept</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Create a new socket for an incoming connection attempt on a listening socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to fill in with the address of the incoming connection
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addrlen</i></TD><TD align="left" valign="top">Length of the address structure on input, length of address data on return
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Open socket to the new connection or NULL on failure
+     </p>
+<A NAME="accept"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Socket* &nbsp;<strong>accept</strong> (SocketAddr& addr)
+<br></td><td align="right"><h3><strong>accept</strong></h3></td></tr></table><p></p><p>
+ Create a new socket for an incoming connection attempt on a listening socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to fill in with the address of the incoming connection
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Open socket to the new connection or NULL on failure
+     </p>
+<A NAME="acceptHandle"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#SOCKET">SOCKET</A> &nbsp;<strong>acceptHandle</strong> (struct sockaddr* addr = 0, <A HREF="#socklen_t">socklen_t</A>* addrlen = 0)
+<br></td><td align="right"><h3><strong>acceptHandle</strong></h3></td></tr></table><p></p><p>
+ Create a new socket for an incoming connection attempt on a listening socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to fill in with the address of the incoming connection
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addrlen</i></TD><TD align="left" valign="top">Length of the address structure on input, length of address data on return
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Operating system handle to the new connection or <A HREF="TelEngine__Socket.html#invalidHandle">invalidHandle</A>() on failure
+     </p>
+<A NAME="updateError"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>updateError</strong> ()
+<br></td><td align="right"><h3><strong>updateError</strong></h3></td></tr></table><p></p><p>
+ Update socket error from socket options.
+ This method should be called when select() indicates a non blocking operation
+  completed.
+ Note: if false is returned, the socket error is the reason of getOption() failure
+</p>
+<p><b>Returns</b>: Return true on success
+     </p>
+<A NAME="efficientSelect"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>efficientSelect</strong> ()
+<br></td><td align="right"><h3><strong>efficientSelect</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if select() is efficient on this platform and worth using frequently
+</p>
+<p><b>Returns</b>: True if select() is efficiently implemented
+     </p>
+<A NAME="canSelect"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>canSelect</strong> (<A HREF="#SOCKET">SOCKET</A> handle)
+<br></td><td align="right"><h3><strong>canSelect</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if a socket handle can be used in select
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>handle</i></TD><TD align="left" valign="top">The socket handle to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the socket handle can be safely used in select
+     </p>
+<A NAME="canSelect"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>canSelect</strong> ()
+<br></td><td align="right"><h3><strong>canSelect</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if this socket object can be used in a select
+</p>
+<p><b>Returns</b>: True if this socket can be safely used in select
+     </p>
+<A NAME="connect"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>connect</strong> (struct sockaddr* addr, <A HREF="#socklen_t">socklen_t</A> addrlen)
+<br></td><td align="right"><h3><strong>connect</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Connects the socket to a remote address
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to connect to
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addrlen</i></TD><TD align="left" valign="top">Length of the address structure
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="connect"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>connect</strong> (const SocketAddr& addr)
+<br></td><td align="right"><h3><strong>connect</strong></h3></td></tr></table><p></p><p>
+ Connects the socket to a remote address
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Socket address to connect to
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="connectAsync"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>connectAsync</strong> (struct sockaddr* addr, <A HREF="#socklen_t">socklen_t</A> addrlen, unsigned int toutUs,
+	bool* timeout = 0)
+<br></td><td align="right"><h3><strong>connectAsync</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Asynchronously connects the socket to a remote address.
+ The socket must be selectable and in non-blocking operation mode
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to connect to
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addrlen</i></TD><TD align="left" valign="top">Length of the address structure
+</TD></TR>
+<TR><TD align="left" valign="top"><i>toutUs</i></TD><TD align="left" valign="top">Timeout interval in microseconds
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timeout</i></TD><TD align="left" valign="top">Optional boolean flag to signal timeout
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="connectAsync"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>connectAsync</strong> (const SocketAddr& addr, unsigned int toutUs,
+	bool* timeout = 0)
+<br></td><td align="right"><h3><strong>connectAsync</strong></h3></td></tr></table><p></p><p>
+ Asynchronously connects the socket to a remote address.
+ The socket must be selectable and in non-blocking operation mode
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Socket address to connect to
+</TD></TR>
+<TR><TD align="left" valign="top"><i>toutUs</i></TD><TD align="left" valign="top">Timeout interval in microseconds
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timeout</i></TD><TD align="left" valign="top">Optional boolean flag to signal timeout
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="shutdown"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>shutdown</strong> (bool stopReads, bool stopWrites)
+<br></td><td align="right"><h3><strong>shutdown</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Shut down one or both directions of a full-duplex socket.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>stopReads</i></TD><TD align="left" valign="top">Request to shut down the read side of the socket
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stopWrites</i></TD><TD align="left" valign="top">Request to shut down the write side of the socket
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="getSockName"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>getSockName</strong> (struct sockaddr* addr, <A HREF="#socklen_t">socklen_t</A>* addrlen)
+<br></td><td align="right"><h3><strong>getSockName</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Retrieve the address of the local socket of a connection
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to fill in with the address of the local socket
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addrlen</i></TD><TD align="left" valign="top">Length of the address structure on input, length of address data on return
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="getSockName"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getSockName</strong> (SocketAddr& addr)
+<br></td><td align="right"><h3><strong>getSockName</strong></h3></td></tr></table><p></p><p>
+ Retrieve the address of the local socket of a connection
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to fill in with the address of the local socket
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="getPeerName"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>getPeerName</strong> (struct sockaddr* addr, <A HREF="#socklen_t">socklen_t</A>* addrlen)
+<br></td><td align="right"><h3><strong>getPeerName</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Retrieve the address of the remote socket of a connection
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to fill in with the address of the remote socket
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addrlen</i></TD><TD align="left" valign="top">Length of the address structure on input, length of address data on return
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="getPeerName"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getPeerName</strong> (SocketAddr& addr)
+<br></td><td align="right"><h3><strong>getPeerName</strong></h3></td></tr></table><p></p><p>
+ Retrieve the address of the remote socket of a connection
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to fill in with the address of the remote socket
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="sendTo"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>sendTo</strong> (const void* buffer, int length, const struct sockaddr* addr, <A HREF="#socklen_t">socklen_t</A> adrlen, int flags = 0)
+<br></td><td align="right"><h3><strong>sendTo</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Send a message over a connected or unconnected socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Buffer for data transfer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>length</i></TD><TD align="left" valign="top">Length of the buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to send the message to, if NULL will behave like <A HREF="TelEngine__Socket.html#send">send</A>()
+</TD></TR>
+<TR><TD align="left" valign="top"><i>adrlen</i></TD><TD align="left" valign="top">Length of the address structure
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">Operating system specific bit flags that change the behaviour
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of bytes transferred, <A HREF="TelEngine__Socket.html#socketError">socketError</A>() if an error occurred
+     </p>
+<A NAME="sendTo"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>sendTo</strong> (const void* buffer, int length, const SocketAddr& addr, int flags = 0)
+<br></td><td align="right"><h3><strong>sendTo</strong></h3></td></tr></table><p></p><p>
+ Send a message over a connected or unconnected socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Buffer for data transfer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>length</i></TD><TD align="left" valign="top">Length of the buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to send the message to
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">Operating system specific bit flags that change the behaviour
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of bytes transferred, <A HREF="TelEngine__Socket.html#socketError">socketError</A>() if an error occurred
+     </p>
+<A NAME="send"></A><A NAME="ref50"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>send</strong> (const void* buffer, int length, int flags = 0)
+<br></td><td align="right"><h3><strong>send</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Send a message over a connected socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Buffer for data transfer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>length</i></TD><TD align="left" valign="top">Length of the buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">Operating system specific bit flags that change the behaviour
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of bytes transferred, <A HREF="TelEngine__Socket.html#socketError">socketError</A>() if an error occurred
+     </p>
+<A NAME="writeData"></A><A NAME="ref51"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>writeData</strong> (const void* buffer, int length)
+<br></td><td align="right"><h3><strong>writeData</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Write data to a connected stream socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Buffer for data transfer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>length</i></TD><TD align="left" valign="top">Length of the buffer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of bytes transferred, <A HREF="TelEngine__Socket.html#socketError">socketError</A>() if an error occurred
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#writeData">Stream</A>.</p>
+<A NAME="recvFrom"></A><A NAME="ref52"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>recvFrom</strong> (void* buffer, int length, struct sockaddr* addr = 0, <A HREF="#socklen_t">socklen_t</A>* adrlen = 0, int flags = 0)
+<br></td><td align="right"><h3><strong>recvFrom</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Receive a message from a connected or unconnected socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Buffer for data transfer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>length</i></TD><TD align="left" valign="top">Length of the buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to fill in with the address of the incoming data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>adrlen</i></TD><TD align="left" valign="top">Length of the address structure on input, length of address data on return
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">Operating system specific bit flags that change the behaviour
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of bytes transferred, <A HREF="TelEngine__Socket.html#socketError">socketError</A>() if an error occurred
+     </p>
+<A NAME="recvFrom"></A><A NAME="ref53"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>recvFrom</strong> (void* buffer, int length, SocketAddr& addr, int flags = 0)
+<br></td><td align="right"><h3><strong>recvFrom</strong></h3></td></tr></table><p></p><p>
+ Receive a message from a connected or unconnected socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Buffer for data transfer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>length</i></TD><TD align="left" valign="top">Length of the buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to fill in with the address of the incoming data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">Operating system specific bit flags that change the behaviour
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of bytes transferred, <A HREF="TelEngine__Socket.html#socketError">socketError</A>() if an error occurred
+     </p>
+<A NAME="recv"></A><A NAME="ref54"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>recv</strong> (void* buffer, int length, int flags = 0)
+<br></td><td align="right"><h3><strong>recv</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Receive a message from a connected socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Buffer for data transfer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>length</i></TD><TD align="left" valign="top">Length of the buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">Operating system specific bit flags that change the behaviour
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of bytes transferred, <A HREF="TelEngine__Socket.html#socketError">socketError</A>() if an error occurred
+     </p>
+<A NAME="readData"></A><A NAME="ref55"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>readData</strong> (void* buffer, int length)
+<br></td><td align="right"><h3><strong>readData</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Receive data from a connected stream socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Buffer for data transfer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>length</i></TD><TD align="left" valign="top">Length of the buffer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of bytes transferred, <A HREF="TelEngine__Socket.html#socketError">socketError</A>() if an error occurred
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#readData">Stream</A>.</p>
+<A NAME="select"></A><A NAME="ref56"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>select</strong> (bool* readok, bool* writeok, bool* except, struct timeval* timeout = 0)
+<br></td><td align="right"><h3><strong>select</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Determines the availability to perform synchronous I/O of the socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>readok</i></TD><TD align="left" valign="top">Address of a boolean variable to fill with readability status
+</TD></TR>
+<TR><TD align="left" valign="top"><i>writeok</i></TD><TD align="left" valign="top">Address of a boolean variable to fill with writeability status
+</TD></TR>
+<TR><TD align="left" valign="top"><i>except</i></TD><TD align="left" valign="top">Address of a boolean variable to fill with exceptions status
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timeout</i></TD><TD align="left" valign="top">Maximum time until the method returns, NULL for blocking
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="select"></A><A NAME="ref57"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>select</strong> (bool* readok, bool* writeok, bool* except, <A HREF="#int64_t">int64_t</A> timeout)
+<br></td><td align="right"><h3><strong>select</strong></h3></td></tr></table><p></p><p>
+ Determines the availability to perform synchronous I/O of the socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>readok</i></TD><TD align="left" valign="top">Address of a boolean variable to fill with readability status
+</TD></TR>
+<TR><TD align="left" valign="top"><i>writeok</i></TD><TD align="left" valign="top">Address of a boolean variable to fill with writeability status
+</TD></TR>
+<TR><TD align="left" valign="top"><i>except</i></TD><TD align="left" valign="top">Address of a boolean variable to fill with exceptions status
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timeout</i></TD><TD align="left" valign="top">Maximum time until the method returns, -1 for blocking
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="installFilter"></A><A NAME="ref58"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>installFilter</strong> (SocketFilter* filter)
+<br></td><td align="right"><h3><strong>installFilter</strong></h3></td></tr></table><p></p><p>
+ Install a new packet filter in the socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>filter</i></TD><TD align="left" valign="top">Pointer to the packet filter to install
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the filter was installed
+     </p>
+<A NAME="removeFilter"></A><A NAME="ref59"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>removeFilter</strong> (SocketFilter* filter, bool delobj = false)
+<br></td><td align="right"><h3><strong>removeFilter</strong></h3></td></tr></table><p></p><p>
+ Removes a packet filter and optionally destroys it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>filter</i></TD><TD align="left" valign="top">Pointer to the packet filter to remove from socket
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delobj</i></TD><TD align="left" valign="top">Set to true to also delete the filter
+     </TD></TR>
+</TABLE></P>
+<A NAME="clearFilters"></A><A NAME="ref60"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clearFilters</strong> ()
+<br></td><td align="right"><h3><strong>clearFilters</strong></h3></td></tr></table><p></p><p>
+ Removes and destroys all packet filters
+     </p>
+<A NAME="timerTick"></A><A NAME="ref61"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>timerTick</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>timerTick</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Run whatever actions required on idle thread runs.
+ The default implementation calls <A HREF="TelEngine__SocketFilter.html#timerTick">SocketFilter::timerTick</A>()
+  for all installed filters.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">Time when the idle run started
+     </TD></TR>
+</TABLE></P>
+<A NAME="createPair"></A><A NAME="ref62"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>createPair</strong> (Socket& sock1, Socket& sock2, int domain = AF_UNIX)
+<br></td><td align="right"><h3><strong>createPair</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create a pair of bidirectionally connected sockets
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sock1</i></TD><TD align="left" valign="top">Reference to first Socket to be paired
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sock2</i></TD><TD align="left" valign="top">Reference to second Socket to be paired
+</TD></TR>
+<TR><TD align="left" valign="top"><i>domain</i></TD><TD align="left" valign="top">Communication domain for the sockets (protocol family)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True is the stream pair was created successfully
+     </p>
+<A NAME="copyError"></A><A NAME="ref63"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>copyError</strong> ()
+<br></td><td align="right"><h3><strong>copyError</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Copy the last error code from the operating system
+     </p>
+<A NAME="checkError"></A><A NAME="ref64"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>checkError</strong> (int retcode, bool strict = false)
+<br></td><td align="right"><h3><strong>checkError</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Copy the last error code from the operating system if an error occured, clear if not
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>retcode</i></TD><TD align="left" valign="top">Operation return code to check, 0 for success
+</TD></TR>
+<TR><TD align="left" valign="top"><i>strict</i></TD><TD align="left" valign="top">True to consider errors only return codes of <A HREF="TelEngine__Socket.html#socketError">socketError</A>()
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation succeeded (retcode == 0), false otherwise
+     </p>
+<A NAME="applyFilters"></A><A NAME="ref65"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>applyFilters</strong> (void* buffer, int length, int flags, const struct sockaddr* addr = 0, <A HREF="#socklen_t">socklen_t</A> adrlen = 0)
+<br></td><td align="right"><h3><strong>applyFilters</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Apply installed filters to a received block of data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Buffer for received data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>length</i></TD><TD align="left" valign="top">Length of the data in buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">Operating system specific bit flags of the operation
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address of the incoming data, may be NULL
+</TD></TR>
+<TR><TD align="left" valign="top"><i>adrlen</i></TD><TD align="left" valign="top">Length of the valid data in address structure
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if one of the filters claimed the data
+     </p>
+<A NAME="m_handle"></A><A NAME="ref66"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#SOCKET">SOCKET</A>  <strong>m_handle</strong>
+</td><td align="right"><h3><strong>m_handle</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_filters"></A><A NAME="ref67"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>m_filters</strong>
+</td><td align="right"><h3><strong>m_filters</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,1392 @@
+<HTML>
+<HEAD>
+<TITLE>namespace TelEngine</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>namespace TelEngine</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">
+ Holds all Telephony Engine related classes. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH><A HREF="full-list-TelEngine.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref3">DebugLevel</A> {    DebugFail = 0,
+    DebugTest = 1,
+    DebugGoOn = 2,
+    DebugConf = 3,
+    DebugStub = 4,
+    DebugWarn = 5,
+    DebugMild = 6,
+    DebugCall = 7,
+    DebugNote = 8,
+    DebugInfo = 9,
+    DebugAll = 10
+}
+</LI>
+<LI>class <A HREF="TelEngine__DebugEnabler.html">DebugEnabler</A>
+</LI>
+<LI>class <A HREF="TelEngine__Debugger.html">Debugger</A>
+</LI>
+<LI>struct <A HREF="TelEngine__TokenDict.html">TokenDict</A>
+</LI>
+<LI>class <A HREF="TelEngine__String.html">String</A>
+</LI>
+<LI>class <A HREF="TelEngine__Mutex.html">Mutex</A>
+</LI>
+<LI>class <A HREF="TelEngine__ObjList.html">ObjList</A>
+</LI>
+<LI>class <A HREF="TelEngine__NamedCounter.html">NamedCounter</A>
+</LI>
+<LI>class <A HREF="TelEngine__GenObject.html">GenObject</A>
+</LI>
+<LI>class <A HREF="TelEngine__RefObject.html">RefObject</A>
+</LI>
+<LI>class <A HREF="TelEngine__RefPointerBase.html">RefPointerBase</A>
+</LI>
+<LI>class <A HREF="TelEngine__RefPointer.html">RefPointer</A>
+</LI>
+<LI>class <A HREF="TelEngine__GenPointer.html">GenPointer</A>
+</LI>
+<LI>class <A HREF="TelEngine__ObjVector.html">ObjVector</A>
+</LI>
+<LI>class <A HREF="TelEngine__Array.html">Array</A>
+</LI>
+<LI>class <A HREF="TelEngine__Regexp.html">Regexp</A>
+</LI>
+<LI>class <A HREF="TelEngine__UChar.html">UChar</A>
+</LI>
+<LI>class <A HREF="TelEngine__NamedList.html">NamedList</A>
+</LI>
+<LI>class <A HREF="TelEngine__Atom.html">Atom</A>
+</LI>
+<LI>class <A HREF="TelEngine__CapturedEvent.html">CapturedEvent</A>
+</LI>
+<LI>class <A HREF="TelEngine__NamedString.html">NamedString</A>
+</LI>
+<LI>class <A HREF="TelEngine__NamedPointer.html">NamedPointer</A>
+</LI>
+<LI>class <A HREF="TelEngine__HashList.html">HashList</A>
+</LI>
+<LI>class <A HREF="TelEngine__ListIterator.html">ListIterator</A>
+</LI>
+<LI>class <A HREF="TelEngine__Time.html">Time</A>
+</LI>
+<LI>class <A HREF="TelEngine__Random.html">Random</A>
+</LI>
+<LI>class <A HREF="TelEngine__DataBlock.html">DataBlock</A>
+</LI>
+<LI>class <i><A HREF="TelEngine__Hasher.html">Hasher</A></i>
+</LI>
+<LI>class <A HREF="TelEngine__MD5.html">MD5</A>
+</LI>
+<LI>class <A HREF="TelEngine__SHA1.html">SHA1</A>
+</LI>
+<LI>class <A HREF="TelEngine__SHA256.html">SHA256</A>
+</LI>
+<LI>class <A HREF="TelEngine__Base64.html">Base64</A>
+</LI>
+<LI>class <A HREF="TelEngine__NamedIterator.html">NamedIterator</A>
+</LI>
+<LI>class <A HREF="TelEngine__URI.html">URI</A>
+</LI>
+<LI>class <i><A HREF="TelEngine__Lockable.html">Lockable</A></i>
+</LI>
+<LI>class <A HREF="TelEngine__MutexPool.html">MutexPool</A>
+</LI>
+<LI>class <A HREF="TelEngine__Semaphore.html">Semaphore</A>
+</LI>
+<LI>class <A HREF="TelEngine__Lock.html">Lock</A>
+</LI>
+<LI>class <A HREF="TelEngine__Lock2.html">Lock2</A>
+</LI>
+<LI>class <i><A HREF="TelEngine__Runnable.html">Runnable</A></i>
+</LI>
+<LI>class <A HREF="TelEngine__Thread.html">Thread</A>
+</LI>
+<LI>class <A HREF="TelEngine__TempObjectCounter.html">TempObjectCounter</A>
+</LI>
+<LI>class <A HREF="TelEngine__Socket.html">Socket</A>
+</LI>
+<LI>class <A HREF="TelEngine__SocketAddr.html">SocketAddr</A>
+</LI>
+<LI>class <i><A HREF="TelEngine__SocketFilter.html">SocketFilter</A></i>
+</LI>
+<LI>class <i><A HREF="TelEngine__Stream.html">Stream</A></i>
+</LI>
+<LI>class <A HREF="TelEngine__MemoryStream.html">MemoryStream</A>
+</LI>
+<LI>class <A HREF="TelEngine__File.html">File</A>
+</LI>
+<LI>class <i><A HREF="TelEngine__SctpSocket.html">SctpSocket</A></i>
+</LI>
+<LI>class <A HREF="TelEngine__DnsRecord.html">DnsRecord</A>
+</LI>
+<LI>class <A HREF="TelEngine__TxtRecord.html">TxtRecord</A>
+</LI>
+<LI>class <A HREF="TelEngine__SrvRecord.html">SrvRecord</A>
+</LI>
+<LI>class <A HREF="TelEngine__NaptrRecord.html">NaptrRecord</A>
+</LI>
+<LI>class <A HREF="TelEngine__Resolver.html">Resolver</A>
+</LI>
+<LI>class <i><A HREF="TelEngine__Cipher.html">Cipher</A></i>
+</LI>
+<LI>class <i><A HREF="TelEngine__Compressor.html">Compressor</A></i>
+</LI>
+<LI>class <A HREF="TelEngine__SysUsage.html">SysUsage</A>
+</LI>
+<LI>class <A HREF="TelEngine__MimeHeaderLine.html">MimeHeaderLine</A>
+</LI>
+<LI>class <A HREF="TelEngine__MimeAuthLine.html">MimeAuthLine</A>
+</LI>
+<LI>class <i><A HREF="TelEngine__MimeBody.html">MimeBody</A></i>
+</LI>
+<LI>class <A HREF="TelEngine__MimeMultipartBody.html">MimeMultipartBody</A>
+</LI>
+<LI>class <A HREF="TelEngine__MimeSdpBody.html">MimeSdpBody</A>
+</LI>
+<LI>class <A HREF="TelEngine__MimeBinaryBody.html">MimeBinaryBody</A>
+</LI>
+<LI>class <A HREF="TelEngine__MimeStringBody.html">MimeStringBody</A>
+</LI>
+<LI>class <A HREF="TelEngine__MimeLinesBody.html">MimeLinesBody</A>
+</LI>
+<LI>class <A HREF="TelEngine__Configuration.html">Configuration</A>
+</LI>
+<LI>class <A HREF="TelEngine__SharedVars.html">SharedVars</A>
+</LI>
+<LI>class <A HREF="TelEngine__MessageDispatcher.html">MessageDispatcher</A>
+</LI>
+<LI>class <A HREF="TelEngine__MessageRelay.html">MessageRelay</A>
+</LI>
+<LI>class <A HREF="TelEngine__Engine.html">Engine</A>
+</LI>
+<LI>class <A HREF="TelEngine__Message.html">Message</A>
+</LI>
+<LI>class <i><A HREF="TelEngine__MessageHandler.html">MessageHandler</A></i>
+</LI>
+<LI>class <i><A HREF="TelEngine__MessageReceiver.html">MessageReceiver</A></i>
+</LI>
+<LI>class <i><A HREF="TelEngine__MessageNotifier.html">MessageNotifier</A></i>
+</LI>
+<LI>class <A HREF="TelEngine__MessagePostHook.html">MessagePostHook</A>
+</LI>
+<LI>class <i><A HREF="TelEngine__MessageHook.html">MessageHook</A></i>
+</LI>
+<LI>class <A HREF="TelEngine__MessageQueue.html">MessageQueue</A>
+</LI>
+<LI>class <i><A HREF="TelEngine__Plugin.html">Plugin</A></i>
+</LI>
+<LI>class <i><A HREF="TelEngine__EngineCheck.html">EngineCheck</A></i>
+</LI>
+<LI>struct <A HREF="TelEngine__ImageInfo.html">ImageInfo</A>
+</LI>
+<LI>struct <A HREF="TelEngine__FormatInfo.html">FormatInfo</A>
+</LI>
+<LI>class <A HREF="TelEngine__DataEndpoint.html">DataEndpoint</A>
+</LI>
+<LI>class <A HREF="TelEngine__CallEndpoint.html">CallEndpoint</A>
+</LI>
+<LI>class <i><A HREF="TelEngine__Driver.html">Driver</A></i>
+</LI>
+<LI>struct <A HREF="TelEngine__TranslatorCaps.html">TranslatorCaps</A>
+</LI>
+<LI>class <A HREF="TelEngine__FormatRepository.html">FormatRepository</A>
+</LI>
+<LI>class <A HREF="TelEngine__DataFormat.html">DataFormat</A>
+</LI>
+<LI>class <A HREF="TelEngine__DataNode.html">DataNode</A>
+</LI>
+<LI>class <A HREF="TelEngine__DataSource.html">DataSource</A>
+</LI>
+<LI>class <A HREF="TelEngine__DataTranslator.html">DataTranslator</A>
+</LI>
+<LI>class <i><A HREF="TelEngine__TranslatorFactory.html">TranslatorFactory</A></i>
+</LI>
+<LI>class <i><A HREF="TelEngine__DataConsumer.html">DataConsumer</A></i>
+</LI>
+<LI>class <i><A HREF="TelEngine__ThreadedSource.html">ThreadedSource</A></i>
+</LI>
+<LI>class <A HREF="TelEngine__Module.html">Module</A>
+</LI>
+<LI>class <A HREF="TelEngine__Channel.html">Channel</A>
+</LI>
+<LI>class <A HREF="TelEngine__Router.html">Router</A>
+</LI>
+<LI>class <A HREF="TelEngine__Flags32.html">Flags32</A>
+</LI>
+<LI>class <A HREF="TelEngine__NamedInt.html">NamedInt</A>
+</LI>
+<LI>class <i><A HREF="TelEngine__Window.html">Window</A></i>
+</LI>
+<LI>class <A HREF="TelEngine__UIWidget.html">UIWidget</A>
+</LI>
+<LI>class <i><A HREF="TelEngine__UIFactory.html">UIFactory</A></i>
+</LI>
+<LI>class <i><A HREF="TelEngine__Client.html">Client</A></i>
+</LI>
+<LI>class <A HREF="TelEngine__ClientChannel.html">ClientChannel</A>
+</LI>
+<LI>class <i><A HREF="TelEngine__ClientDriver.html">ClientDriver</A></i>
+</LI>
+<LI>class <A HREF="TelEngine__ClientLogic.html">ClientLogic</A>
+</LI>
+<LI>class <A HREF="TelEngine__DefaultLogic.html">DefaultLogic</A>
+</LI>
+<LI>class <A HREF="TelEngine__ClientAccount.html">ClientAccount</A>
+</LI>
+<LI>class <A HREF="TelEngine__ClientAccountList.html">ClientAccountList</A>
+</LI>
+<LI>class <A HREF="TelEngine__ClientContact.html">ClientContact</A>
+</LI>
+<LI>class <A HREF="TelEngine__ClientResource.html">ClientResource</A>
+</LI>
+<LI>class <A HREF="TelEngine__MucRoomMember.html">MucRoomMember</A>
+</LI>
+<LI>class <A HREF="TelEngine__MucRoom.html">MucRoom</A>
+</LI>
+<LI>class <A HREF="TelEngine__DurationUpdate.html">DurationUpdate</A>
+</LI>
+<LI>class <A HREF="TelEngine__ClientSound.html">ClientSound</A>
+</LI>
+<LI>class <A HREF="TelEngine__ClientFileItem.html">ClientFileItem</A>
+</LI>
+<LI>class <A HREF="TelEngine__ClientDir.html">ClientDir</A>
+</LI>
+<LI>class <A HREF="TelEngine__ClientFile.html">ClientFile</A>
+</LI>
+<LI>class <A HREF="TelEngine__XmlSaxParser.html">XmlSaxParser</A>
+</LI>
+<LI>class <A HREF="TelEngine__XmlDomParser.html">XmlDomParser</A>
+</LI>
+<LI>class <A HREF="TelEngine__XmlDeclaration.html">XmlDeclaration</A>
+</LI>
+<LI>class <A HREF="TelEngine__XmlFragment.html">XmlFragment</A>
+</LI>
+<LI>class <A HREF="TelEngine__XmlChild.html">XmlChild</A>
+</LI>
+<LI>class <i><A HREF="TelEngine__XmlParent.html">XmlParent</A></i>
+</LI>
+<LI>class <A HREF="TelEngine__XmlDocument.html">XmlDocument</A>
+</LI>
+<LI>class <A HREF="TelEngine__XmlElement.html">XmlElement</A>
+</LI>
+<LI>class <A HREF="TelEngine__XmlComment.html">XmlComment</A>
+</LI>
+<LI>class <A HREF="TelEngine__XmlCData.html">XmlCData</A>
+</LI>
+<LI>class <A HREF="TelEngine__XmlText.html">XmlText</A>
+</LI>
+<LI>class <A HREF="TelEngine__XmlDoctype.html">XmlDoctype</A>
+</LI>
+<LI>struct <A HREF="TelEngine__XmlEscape.html">XmlEscape</A>
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>void &nbsp;<b><A HREF="#ref1">abortOnBug</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref2">abortOnBug</A></b> (bool doAbort) 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref4">debugLevel</A></b> () 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref5">debugLevel</A></b> (int level) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref6">debugAt</A></b> (int level) 
+</LI>
+<LI>const char* &nbsp;<b><A HREF="#ref7">debugColor</A></b> (int level) 
+</LI>
+<LI>const char* &nbsp;<b><A HREF="#ref8">debugLevelName</A></b> (int level) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref10">DDebug</A></b> (int level, const char* format, ...) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref11">DDebug</A></b> (const char* facility, int level, const char* format, ...) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref12">DDebug</A></b> (const DebugEnabler* local, int level, const char* format, ...) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref13">XDebug</A></b> (int level, const char* format, ...) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref14">XDebug</A></b> (const char* facility, int level, const char* format, ...) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref15">XDebug</A></b> (const DebugEnabler* local, int level, const char* format, ...) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref16">NDebug</A></b> (int level, const char* format, ...) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref17">NDebug</A></b> (const char* facility, int level, const char* format, ...) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref18">NDebug</A></b> (const DebugEnabler* local, int level, const char* format, ...) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref19">Debug</A></b> (int level, const char* format, ...) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref20">Debug</A></b> (const char* facility, int level, const char* format, ...) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref21">Debug</A></b> (const DebugEnabler* local, int level, const char* format, ...) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref22">Alarm</A></b> (const char* component, int level, const char* format, ...) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref23">Alarm</A></b> (const DebugEnabler* component, int level, const char* format, ...) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref24">Alarm</A></b> (const char* component, const char* info, int level, const char* format, ...) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref25">Alarm</A></b> (const DebugEnabler* component, const char* info, int level, const char* format, ...) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref26">Output</A></b> (const char* format, ...) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref33">YIGNORE</A></b> (primitive value) 
+</LI>
+<LI>constant &nbsp;<b><A HREF="#ref34">YSTRING</A></b> (const char* string) 
+</LI>
+<LI>constant &nbsp;<b><A HREF="#ref35">YATOM</A></b> (const char* string) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref36">YCLASS</A></b> (class type,class base) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref37">YCLASS2</A></b> (class type,class base1,class base2) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref38">YCLASS3</A></b> (class type,class base1,class base2,class base3) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref39">YCLASSIMP</A></b> (class type,class base) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref40">YCLASSIMP2</A></b> (class type,class base1,class base2) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref41">YCLASSIMP3</A></b> (class type,class base1,class base2,class base3) 
+</LI>
+<LI>class* &nbsp;<b><A HREF="#ref42">YOBJECT</A></b> (class type,GenObject* pntr) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref43">YNOCOPY</A></b> (class type) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref45">destruct</A></b> (GenObject* obj) 
+</LI>
+<LI>template <class Obj> void &nbsp;<b><A HREF="#ref46">destruct</A></b> (Obj*& obj) 
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref56">c_str</A></b> (const String* str) 
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref57">c_safe</A></b> (const char* str) 
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref58">c_safe</A></b> (const String* str) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref59">null</A></b> (const char* str) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref60">null</A></b> (const String* str) 
+</LI>
+<LI>String &nbsp;<b><A HREF="#ref61">operator+</A></b> (const String& s1, const String& s2) 
+</LI>
+<LI>String &nbsp;<b><A HREF="#ref62">operator+</A></b> (const String& s1, const char* s2) 
+</LI>
+<LI>String &nbsp;<b><A HREF="#ref63">operator+</A></b> (const char* s1, const String& s2) 
+</LI>
+<LI>inline const char *&nbsp;<b><A HREF="#ref64">strcpy</A></b> (String& dest, const char* src) 
+</LI>
+<LI>inline const char *&nbsp;<b><A HREF="#ref65">strcat</A></b> (String& dest, const char* src) 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref66">lookup</A></b> (const char* str, const TokenDict* tokens, int defvalue = 0, int base = 0) 
+</LI>
+<LI>const char* &nbsp;<b><A HREF="#ref67">lookup</A></b> (int value, const TokenDict* tokens, const char* defvalue = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref69">controlReturn</A></b> (NamedList* params, bool ret, const char* retVal = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref133">INIT_PLUGIN</A></b> (class pclass) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref134">UNLOAD_PLUGIN</A></b> (bool unloadNow) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref155">isE164</A></b> (const char* str) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>Forward <A HREF="#ref54">StringMatchPrivate</A>
+</LI>
+<LI>Forward <A HREF="#ref86">MutexPrivate</A>
+</LI>
+<LI>Forward <A HREF="#ref87">SemaphorePrivate</A>
+</LI>
+<LI>Forward <A HREF="#ref88">ThreadPrivate</A>
+</LI>
+<LI>typedef int &nbsp;(*<b><A HREF="#ref136">EngineLoop</A></b>) () 
+</LI>
+<LI>Forward <A HREF="#ref149">ThreadedSourcePrivate</A>
+</LI>
+<LI>Forward <A HREF="#ref166">ClientWizard</A>
+</LI>
+<LI>Forward <A HREF="#ref178">FtManager</A>
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Holds all Telephony Engine related classes.
+ </p>
+<A NAME="abortOnBug"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>abortOnBug</strong> ()
+<br></td><td align="right"><h3><strong>abortOnBug</strong></h3></td></tr></table><p></p><p>
+ Abort execution (and coredump if allowed) if the abort flag is set.
+ This function may not return.
+ </p>
+<A NAME="abortOnBug"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>abortOnBug</strong> (bool doAbort)
+<br></td><td align="right"><h3><strong>abortOnBug</strong></h3></td></tr></table><p></p><p>
+ Set the abort on bug flag. The default flag state is false.
+</p>
+<p><b>Returns</b>: The old state of the flag.
+ </p>
+<A NAME="DebugLevel"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>DebugLevel</strong> {    DebugFail = 0,
+    DebugTest = 1,
+    DebugGoOn = 2,
+    DebugConf = 3,
+    DebugStub = 4,
+    DebugWarn = 5,
+    DebugMild = 6,
+    DebugCall = 7,
+    DebugNote = 8,
+    DebugInfo = 9,
+    DebugAll = 10
+}
+</td><td align="right"><h3><strong>DebugLevel</strong></h3></td></tr></table><p></p><p>
+ Standard debugging levels.
+ The DebugFail level is special - it is always displayed and may abort
+  the program if <A HREF="TelEngine.html#abortOnBug">abortOnBug</A>() is set.
+ </p>
+<A NAME="debugLevel"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>debugLevel</strong> ()
+<br></td><td align="right"><h3><strong>debugLevel</strong></h3></td></tr></table><p></p><p>
+ Retrieve the current global debug level
+</p>
+<p><b>Returns</b>: The current global debug level
+ </p>
+<A NAME="debugLevel"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>debugLevel</strong> (int level)
+<br></td><td align="right"><h3><strong>debugLevel</strong></h3></td></tr></table><p></p><p>
+ Set the current global debug level.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">The desired debug level
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The new global debug level (may be different)
+ </p>
+<A NAME="debugAt"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>debugAt</strong> (int level)
+<br></td><td align="right"><h3><strong>debugAt</strong></h3></td></tr></table><p></p><p>
+ Check if debugging output should be generated
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">The global debug level we are testing
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if messages should be output, false otherwise
+ </p>
+<A NAME="debugColor"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char* &nbsp;<strong>debugColor</strong> (int level)
+<br></td><td align="right"><h3><strong>debugColor</strong></h3></td></tr></table><p></p><p>
+ Get an ANSI string to colorize debugging output
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">The debug level who's color is requested.
+  Negative or out of range will reset to the default color
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ANSI string that sets color corresponding to level
+ </p>
+<A NAME="debugLevelName"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char* &nbsp;<strong>debugLevelName</strong> (int level)
+<br></td><td align="right"><h3><strong>debugLevelName</strong></h3></td></tr></table><p></p><p>
+ Get the name of a debugging or alarm level
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">The debug level
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Short C string describing the level
+ </p>
+<A NAME="TelEngine__DebugEnabler.html"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>DebugEnabler</strong> <small>(class)</small></td><td align="right"><h3><strong>DebugEnabler</strong></h3></td></tr></table><p></p><p>
+ Holds a local debugging level that can be modified separately from the
+  global debugging
+</p>
+<A NAME="DDebug"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>DDebug</strong> (int level, const char* format, ...)
+<br></td><td align="right"><h3><strong>DDebug</strong></h3></td></tr></table><p></p><p>
+ Convenience macro.
+ Does the same as <A HREF="TelEngine.html#Debug">Debug</A> if DEBUG is \#defined (compiling for debugging)
+  else it does not get compiled at all.
+ </p>
+<A NAME="DDebug"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>DDebug</strong> (const char* facility, int level, const char* format, ...)
+<br></td><td align="right"><h3><strong>DDebug</strong></h3></td></tr></table><p></p><p>
+ Convenience macro.
+ Does the same as <A HREF="TelEngine.html#Debug">Debug</A> if DEBUG is \#defined (compiling for debugging)
+  else it does not get compiled at all.
+ </p>
+<A NAME="DDebug"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>DDebug</strong> (const DebugEnabler* local, int level, const char* format, ...)
+<br></td><td align="right"><h3><strong>DDebug</strong></h3></td></tr></table><p></p><p>
+ Convenience macro.
+ Does the same as <A HREF="TelEngine.html#Debug">Debug</A> if DEBUG is \#defined (compiling for debugging)
+  else it does not get compiled at all.
+ </p>
+<A NAME="XDebug"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>XDebug</strong> (int level, const char* format, ...)
+<br></td><td align="right"><h3><strong>XDebug</strong></h3></td></tr></table><p></p><p>
+ Convenience macro.
+ Does the same as <A HREF="TelEngine.html#Debug">Debug</A> if XDEBUG is \#defined (compiling for extra
+ debugging) else it does not get compiled at all.
+ </p>
+<A NAME="XDebug"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>XDebug</strong> (const char* facility, int level, const char* format, ...)
+<br></td><td align="right"><h3><strong>XDebug</strong></h3></td></tr></table><p></p><p>
+ Convenience macro.
+ Does the same as <A HREF="TelEngine.html#Debug">Debug</A> if XDEBUG is \#defined (compiling for extra
+ debugging) else it does not get compiled at all.
+ </p>
+<A NAME="XDebug"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>XDebug</strong> (const DebugEnabler* local, int level, const char* format, ...)
+<br></td><td align="right"><h3><strong>XDebug</strong></h3></td></tr></table><p></p><p>
+ Convenience macro.
+ Does the same as <A HREF="TelEngine.html#Debug">Debug</A> if XDEBUG is \#defined (compiling for extra
+ debugging) else it does not get compiled at all.
+ </p>
+<A NAME="NDebug"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>NDebug</strong> (int level, const char* format, ...)
+<br></td><td align="right"><h3><strong>NDebug</strong></h3></td></tr></table><p></p><p>
+ Convenience macro.
+ Does the same as <A HREF="TelEngine.html#Debug">Debug</A> if NDEBUG is not \#defined
+  else it does not get compiled at all (compiling for mature release).
+ </p>
+<A NAME="NDebug"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>NDebug</strong> (const char* facility, int level, const char* format, ...)
+<br></td><td align="right"><h3><strong>NDebug</strong></h3></td></tr></table><p></p><p>
+ Convenience macro.
+ Does the same as <A HREF="TelEngine.html#Debug">Debug</A> if NDEBUG is not \#defined
+  else it does not get compiled at all (compiling for mature release).
+ </p>
+<A NAME="NDebug"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>NDebug</strong> (const DebugEnabler* local, int level, const char* format, ...)
+<br></td><td align="right"><h3><strong>NDebug</strong></h3></td></tr></table><p></p><p>
+ Convenience macro.
+ Does the same as <A HREF="TelEngine.html#Debug">Debug</A> if NDEBUG is not \#defined
+  else it does not get compiled at all (compiling for mature release).
+ </p>
+<A NAME="Debug"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>Debug</strong> (int level, const char* format, ...)
+<br></td><td align="right"><h3><strong>Debug</strong></h3></td></tr></table><p></p><p>
+ Outputs a debug string.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">The level of the message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">A printf() style format string
+ </TD></TR>
+</TABLE></P>
+<A NAME="Debug"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>Debug</strong> (const char* facility, int level, const char* format, ...)
+<br></td><td align="right"><h3><strong>Debug</strong></h3></td></tr></table><p></p><p>
+ Outputs a debug string for a specific facility.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>facility</i></TD><TD align="left" valign="top">Facility that outputs the message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">The level of the message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">A printf() style format string
+ </TD></TR>
+</TABLE></P>
+<A NAME="Debug"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>Debug</strong> (const DebugEnabler* local, int level, const char* format, ...)
+<br></td><td align="right"><h3><strong>Debug</strong></h3></td></tr></table><p></p><p>
+ Outputs a debug string for a specific facility.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>local</i></TD><TD align="left" valign="top">Pointer to a DebugEnabler holding current debugging settings
+</TD></TR>
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">The level of the message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">A printf() style format string
+ </TD></TR>
+</TABLE></P>
+<A NAME="Alarm"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>Alarm</strong> (const char* component, int level, const char* format, ...)
+<br></td><td align="right"><h3><strong>Alarm</strong></h3></td></tr></table><p></p><p>
+ Outputs a debug string and emits an alarm if a callback is installed
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>component</i></TD><TD align="left" valign="top">Component that emits the alarm
+</TD></TR>
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">The level of the alarm
+</TD></TR>
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">A printf() style format string
+ </TD></TR>
+</TABLE></P>
+<A NAME="Alarm"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>Alarm</strong> (const DebugEnabler* component, int level, const char* format, ...)
+<br></td><td align="right"><h3><strong>Alarm</strong></h3></td></tr></table><p></p><p>
+ Outputs a debug string and emits an alarm if a callback is installed
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>component</i></TD><TD align="left" valign="top">Pointer to a DebugEnabler holding component name and debugging settings
+</TD></TR>
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">The level of the alarm
+</TD></TR>
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">A printf() style format string
+ </TD></TR>
+</TABLE></P>
+<A NAME="Alarm"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>Alarm</strong> (const char* component, const char* info, int level, const char* format, ...)
+<br></td><td align="right"><h3><strong>Alarm</strong></h3></td></tr></table><p></p><p>
+ Outputs a debug string and emits an alarm if a callback is installed
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>component</i></TD><TD align="left" valign="top">Component that emits the alarm
+</TD></TR>
+<TR><TD align="left" valign="top"><i>info</i></TD><TD align="left" valign="top">Extra alarm information
+</TD></TR>
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">The level of the alarm
+</TD></TR>
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">A printf() style format string
+ </TD></TR>
+</TABLE></P>
+<A NAME="Alarm"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>Alarm</strong> (const DebugEnabler* component, const char* info, int level, const char* format, ...)
+<br></td><td align="right"><h3><strong>Alarm</strong></h3></td></tr></table><p></p><p>
+ Outputs a debug string and emits an alarm if a callback is installed
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>component</i></TD><TD align="left" valign="top">Pointer to a DebugEnabler holding component name and debugging settings
+</TD></TR>
+<TR><TD align="left" valign="top"><i>info</i></TD><TD align="left" valign="top">Extra alarm information
+</TD></TR>
+<TR><TD align="left" valign="top"><i>level</i></TD><TD align="left" valign="top">The level of the alarm
+</TD></TR>
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">A printf() style format string
+ </TD></TR>
+</TABLE></P>
+<A NAME="Output"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>Output</strong> (const char* format, ...)
+<br></td><td align="right"><h3><strong>Output</strong></h3></td></tr></table><p></p><p>
+ Outputs a string to the debug console with formatting
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">A printf() style format string
+ </TD></TR>
+</TABLE></P>
+<A NAME="TelEngine__Debugger.html"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Debugger</strong> <small>(class)</small></td><td align="right"><h3><strong>Debugger</strong></h3></td></tr></table><p></p><p>
+ This class is used as an automatic variable that logs messages on creation
+  and destruction (when the instruction block is left or function returns).
+ IMPORTANT: the name is not copied so it should best be static.
+</p>
+<A NAME="TelEngine__TokenDict.html"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>TokenDict</strong> <small>(struct)</small></td><td align="right"><h3><strong>TokenDict</strong></h3></td></tr></table><p></p><p>
+ A structure to build (mainly static) Token-to-ID translation tables.
+ A table of such structures must end with an entry with a null token
+ </p>
+<A NAME="TelEngine__String.html"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>String</strong> <small>(class)</small></td><td align="right"><h3><strong>String</strong></h3></td></tr></table><p></p><p>
+ A simple string handling class for C style (one byte) strings.
+ For simplicity and read speed no copy-on-write is performed.
+ Strings have hash capabilities and comparations are using the hash
+ for fast inequality check.
+</p>
+<A NAME="TelEngine__Mutex.html"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Mutex</strong> <small>(class)</small></td><td align="right"><h3><strong>Mutex</strong></h3></td></tr></table><p></p><p>
+ A simple mutual exclusion for locking access between threads
+</p>
+<A NAME="TelEngine__ObjList.html"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>ObjList</strong> <small>(class)</small></td><td align="right"><h3><strong>ObjList</strong></h3></td></tr></table><p></p><p>
+ A simple single-linked object list handling class
+</p>
+<A NAME="TelEngine__NamedCounter.html"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>NamedCounter</strong> <small>(class)</small></td><td align="right"><h3><strong>NamedCounter</strong></h3></td></tr></table><p></p><p>
+ An atomic counter with an associated name
+</p>
+<A NAME="YIGNORE"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>YIGNORE</strong> (primitive value)
+<br></td><td align="right"><h3><strong>YIGNORE</strong></h3></td></tr></table><p></p><p>
+ Macro to ignore the result of a function
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Returned value to be ignored, must be interpretable as boolean
+ </TD></TR>
+</TABLE></P>
+<A NAME="YSTRING"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td>constant &nbsp;<strong>YSTRING</strong> (const char* string)
+<br></td><td align="right"><h3><strong>YSTRING</strong></h3></td></tr></table><p></p><p>
+ Macro to create a local static String if supported by compiler, use with caution
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>string</i></TD><TD align="left" valign="top">Literal constant string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A const String& if supported, literal string if not supported
+ </p>
+<A NAME="YATOM"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td>constant &nbsp;<strong>YATOM</strong> (const char* string)
+<br></td><td align="right"><h3><strong>YATOM</strong></h3></td></tr></table><p></p><p>
+ Macro to create a shared static String if supported by compiler, use with caution
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>string</i></TD><TD align="left" valign="top">Literal constant string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A const String& if supported, literal string if not supported
+ </p>
+<A NAME="YCLASS"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>YCLASS</strong> (class type,class base)
+<br></td><td align="right"><h3><strong>YCLASS</strong></h3></td></tr></table><p></p><p>
+ Macro to create a GenObject class from a base class and implement <A HREF="TelEngine__GenObject.html#getObject">GenObject::getObject</A>
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Class that is declared
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base</i></TD><TD align="left" valign="top">Base class that is inherited
+ </TD></TR>
+</TABLE></P>
+<A NAME="YCLASS2"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>YCLASS2</strong> (class type,class base1,class base2)
+<br></td><td align="right"><h3><strong>YCLASS2</strong></h3></td></tr></table><p></p><p>
+ Macro to create a GenObject class from two base classes and implement <A HREF="TelEngine__GenObject.html#getObject">GenObject::getObject</A>
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Class that is declared
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base1</i></TD><TD align="left" valign="top">First base class that is inherited
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base2</i></TD><TD align="left" valign="top">Second base class that is inherited
+ </TD></TR>
+</TABLE></P>
+<A NAME="YCLASS3"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>YCLASS3</strong> (class type,class base1,class base2,class base3)
+<br></td><td align="right"><h3><strong>YCLASS3</strong></h3></td></tr></table><p></p><p>
+ Macro to create a GenObject class from three base classes and implement <A HREF="TelEngine__GenObject.html#getObject">GenObject::getObject</A>
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Class that is declared
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base1</i></TD><TD align="left" valign="top">First base class that is inherited
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base2</i></TD><TD align="left" valign="top">Second base class that is inherited
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base3</i></TD><TD align="left" valign="top">Third base class that is inherited
+ </TD></TR>
+</TABLE></P>
+<A NAME="YCLASSIMP"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>YCLASSIMP</strong> (class type,class base)
+<br></td><td align="right"><h3><strong>YCLASSIMP</strong></h3></td></tr></table><p></p><p>
+ Macro to implement <A HREF="TelEngine__GenObject.html#getObject">GenObject::getObject</A> in a derived class
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Class that is declared
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base</i></TD><TD align="left" valign="top">Base class that is inherited
+ </TD></TR>
+</TABLE></P>
+<A NAME="YCLASSIMP2"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>YCLASSIMP2</strong> (class type,class base1,class base2)
+<br></td><td align="right"><h3><strong>YCLASSIMP2</strong></h3></td></tr></table><p></p><p>
+ Macro to implement <A HREF="TelEngine__GenObject.html#getObject">GenObject::getObject</A> in a derived class
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Class that is declared
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base1</i></TD><TD align="left" valign="top">First base class that is inherited
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base2</i></TD><TD align="left" valign="top">Second base class that is inherited
+ </TD></TR>
+</TABLE></P>
+<A NAME="YCLASSIMP3"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>YCLASSIMP3</strong> (class type,class base1,class base2,class base3)
+<br></td><td align="right"><h3><strong>YCLASSIMP3</strong></h3></td></tr></table><p></p><p>
+ Macro to implement <A HREF="TelEngine__GenObject.html#getObject">GenObject::getObject</A> in a derived class
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Class that is declared
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base1</i></TD><TD align="left" valign="top">First base class that is inherited
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base2</i></TD><TD align="left" valign="top">Second base class that is inherited
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base3</i></TD><TD align="left" valign="top">Third base class that is inherited
+ </TD></TR>
+</TABLE></P>
+<A NAME="YOBJECT"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td>class* &nbsp;<strong>YOBJECT</strong> (class type,GenObject* pntr)
+<br></td><td align="right"><h3><strong>YOBJECT</strong></h3></td></tr></table><p></p><p>
+ Macro to retrieve a typed pointer to an interface from an object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Class we want to return
+</TD></TR>
+<TR><TD align="left" valign="top"><i>pntr</i></TD><TD align="left" valign="top">Pointer to the object we want to get the interface from
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the class we want or NULL
+ </p>
+<A NAME="YNOCOPY"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>YNOCOPY</strong> (class type)
+<br></td><td align="right"><h3><strong>YNOCOPY</strong></h3></td></tr></table><p></p><p>
+ Macro to disable automatic copy and assignment operators
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Class that is declared
+ </TD></TR>
+</TABLE></P>
+<A NAME="TelEngine__GenObject.html"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>GenObject</strong> <small>(class)</small></td><td align="right"><h3><strong>GenObject</strong></h3></td></tr></table><p></p><p>
+ An object with just a public virtual destructor
+ </p>
+<A NAME="destruct"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>destruct</strong> (GenObject* obj)
+<br></td><td align="right"><h3><strong>destruct</strong></h3></td></tr></table><p></p><p>
+ Helper function that destroys a GenObject only if the pointer is non-NULL.
+ Use it instead of the delete operator.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">Pointer (rvalue) to the object to destroy
+ </TD></TR>
+</TABLE></P>
+<A NAME="destruct"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td>template <class Obj> void &nbsp;<strong>destruct</strong> (Obj*& obj)
+<br></td><td align="right"><h3><strong>destruct</strong></h3></td></tr></table><p></p><p>
+ Helper template function that destroys a GenObject descendant if the pointer
+  is non-NULL and also zeros out the pointer.
+ Use it instead of the delete operator.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">Reference to pointer (lvalue) to the object to destroy
+ </TD></TR>
+</TABLE></P>
+<A NAME="TelEngine__RefObject.html"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>RefObject</strong> <small>(class)</small></td><td align="right"><h3><strong>RefObject</strong></h3></td></tr></table><p></p><p>
+ A reference counted object.
+ Whenever using multiple inheritance you should inherit this class virtually.
+ </p>
+<A NAME="TelEngine__RefPointerBase.html"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>RefPointerBase</strong> <small>(class)</small></td><td align="right"><h3><strong>RefPointerBase</strong></h3></td></tr></table><p></p><p>
+ Internal helper class providing a non-inline method to RefPointer.
+ Please don't use this class directly, use <A HREF="TelEngine__RefPointer.html">RefPointer</A> instead.
+</p>
+<A NAME="TelEngine__RefPointer.html"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>RefPointer</strong> <small>(class)</small></td><td align="right"><h3><strong>RefPointer</strong></h3></td></tr></table><p></p><p>
+</p>
+<A NAME="TelEngine__GenPointer.html"></A><A NAME="ref50"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>GenPointer</strong> <small>(class)</small></td><td align="right"><h3><strong>GenPointer</strong></h3></td></tr></table><p></p><p>
+</p>
+<A NAME="TelEngine__ObjVector.html"></A><A NAME="ref51"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>ObjVector</strong> <small>(class)</small></td><td align="right"><h3><strong>ObjVector</strong></h3></td></tr></table><p></p><p>
+ Simple vector class that holds objects derived from GenObject
+</p>
+<A NAME="TelEngine__Array.html"></A><A NAME="ref52"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Array</strong> <small>(class)</small></td><td align="right"><h3><strong>Array</strong></h3></td></tr></table><p></p><p>
+ A simple Array class derivated from RefObject
+ It uses one ObjList to keep the pointers to other ObjList's.
+ Data is organized in columns - the main ObjList holds pointers to one
+  ObjList for each column.
+ This class has been written by Diana
+</p>
+<A NAME="TelEngine__Regexp.html"></A><A NAME="ref53"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Regexp</strong> <small>(class)</small></td><td align="right"><h3><strong>Regexp</strong></h3></td></tr></table><p></p><p>
+ A regular expression matching class.
+</p>
+<A NAME="TelEngine__UChar.html"></A><A NAME="ref55"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>UChar</strong> <small>(class)</small></td><td align="right"><h3><strong>UChar</strong></h3></td></tr></table><p></p><p>
+ A simple class to hold a single Unicode character and convert it to / from UTF-8
+</p>
+<A NAME="c_str"></A><A NAME="ref56"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>c_str</strong> (const String* str)
+<br></td><td align="right"><h3><strong>c_str</strong></h3></td></tr></table><p></p><p>
+ Utility function to retrieve a C string from a possibly NULL String pointer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">Pointer to a String that may be NULL
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: String data pointer or NULL
+ </p>
+<A NAME="c_safe"></A><A NAME="ref57"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>c_safe</strong> (const char* str)
+<br></td><td align="right"><h3><strong>c_safe</strong></h3></td></tr></table><p></p><p>
+ Utility function to replace NULL C string pointers with an empty C string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">Pointer to a C string that may be NULL
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Original pointer or pointer to an empty C string
+ </p>
+<A NAME="c_safe"></A><A NAME="ref58"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>c_safe</strong> (const String* str)
+<br></td><td align="right"><h3><strong>c_safe</strong></h3></td></tr></table><p></p><p>
+ Utility function to replace NULL String pointers with an empty C string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">Pointer to a String that may be NULL
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: String data pointer or pointer to an empty C string
+ </p>
+<A NAME="null"></A><A NAME="ref59"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>null</strong> (const char* str)
+<br></td><td align="right"><h3><strong>null</strong></h3></td></tr></table><p></p><p>
+ Utility function to check if a C string is null or empty
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">Pointer to a C string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if str is NULL or starts with a NUL character
+ </p>
+<A NAME="null"></A><A NAME="ref60"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>null</strong> (const String* str)
+<br></td><td align="right"><h3><strong>null</strong></h3></td></tr></table><p></p><p>
+ Utility function to check if a String is null or empty
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">Pointer to a String
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if str is NULL or is empty
+ </p>
+<A NAME="operator+"></A><A NAME="ref61"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String &nbsp;<strong>operator+</strong> (const String& s1, const String& s2)
+<br></td><td align="right"><h3><strong>operator+</strong></h3></td></tr></table><p></p><p>
+ Concatenation operator for strings.
+ </p>
+<A NAME="operator+"></A><A NAME="ref62"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String &nbsp;<strong>operator+</strong> (const String& s1, const char* s2)
+<br></td><td align="right"><h3><strong>operator+</strong></h3></td></tr></table><p></p><p>
+ Concatenation operator for strings.
+ </p>
+<A NAME="operator+"></A><A NAME="ref63"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String &nbsp;<strong>operator+</strong> (const char* s1, const String& s2)
+<br></td><td align="right"><h3><strong>operator+</strong></h3></td></tr></table><p></p><p>
+ Concatenation operator for strings.
+ </p>
+<A NAME="strcpy"></A><A NAME="ref64"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char *&nbsp;<strong>strcpy</strong> (String& dest, const char* src)
+<br></td><td align="right"><h3><strong>strcpy</strong></h3></td></tr></table><p></p><p>
+ Prevent careless programmers from overwriting the string
+</p>
+<p><b>See also</b>: <A HREF="TelEngine__String.html#operator=">operator=</A></p>
+<A NAME="strcat"></A><A NAME="ref65"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char *&nbsp;<strong>strcat</strong> (String& dest, const char* src)
+<br></td><td align="right"><h3><strong>strcat</strong></h3></td></tr></table><p></p><p>
+ Prevent careless programmers from overwriting the string
+</p>
+<p><b>See also</b>: <A HREF="TelEngine__String.html#operator+=">operator+=</A></p>
+<A NAME="lookup"></A><A NAME="ref66"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>lookup</strong> (const char* str, const TokenDict* tokens, int defvalue = 0, int base = 0)
+<br></td><td align="right"><h3><strong>lookup</strong></h3></td></tr></table><p></p><p>
+ Utility function to look up a string in a token table,
+ interpret as number if it fails
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to look up
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tokens</i></TD><TD align="left" valign="top">Pointer to the token table
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Value to return if lookup and conversion fail
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base</i></TD><TD align="left" valign="top">Default base to use to convert to number
+ </TD></TR>
+</TABLE></P>
+<A NAME="lookup"></A><A NAME="ref67"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char* &nbsp;<strong>lookup</strong> (int value, const TokenDict* tokens, const char* defvalue = 0)
+<br></td><td align="right"><h3><strong>lookup</strong></h3></td></tr></table><p></p><p>
+ Utility function to look up a number in a token table
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to search for
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tokens</i></TD><TD align="left" valign="top">Pointer to the token table
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Value to return if lookup fails
+ </TD></TR>
+</TABLE></P>
+<A NAME="TelEngine__NamedList.html"></A><A NAME="ref68"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>NamedList</strong> <small>(class)</small></td><td align="right"><h3><strong>NamedList</strong></h3></td></tr></table><p></p><p>
+ This class holds a named list of named strings
+</p>
+<A NAME="controlReturn"></A><A NAME="ref69"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>controlReturn</strong> (NamedList* params, bool ret, const char* retVal = 0)
+<br></td><td align="right"><h3><strong>controlReturn</strong></h3></td></tr></table><p></p><p>
+ Utility method to return from a chan.control handler
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">The parameters list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ret</i></TD><TD align="left" valign="top">The return value
+</TD></TR>
+<TR><TD align="left" valign="top"><i>retVal</i></TD><TD align="left" valign="top">The error message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ret if the message was not generated from rmanager.
+ </p>
+<A NAME="TelEngine__Atom.html"></A><A NAME="ref70"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Atom</strong> <small>(class)</small></td><td align="right"><h3><strong>Atom</strong></h3></td></tr></table><p></p><p>
+ Indirected shared string offering access to atom strings
+</p>
+<A NAME="TelEngine__CapturedEvent.html"></A><A NAME="ref71"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>CapturedEvent</strong> <small>(class)</small></td><td align="right"><h3><strong>CapturedEvent</strong></h3></td></tr></table><p></p><p>
+ Holder for an event (output, debug or alarm) message
+</p>
+<A NAME="TelEngine__NamedString.html"></A><A NAME="ref72"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>NamedString</strong> <small>(class)</small></td><td align="right"><h3><strong>NamedString</strong></h3></td></tr></table><p></p><p>
+ A string class with a hashed string name
+</p>
+<A NAME="TelEngine__NamedPointer.html"></A><A NAME="ref73"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>NamedPointer</strong> <small>(class)</small></td><td align="right"><h3><strong>NamedPointer</strong></h3></td></tr></table><p></p><p>
+ A named string holding a pointer to arbitrary data.
+ The pointer is owned by the object: it will be released when the object is
+  destroyed or the string value changed
+</p>
+<A NAME="TelEngine__HashList.html"></A><A NAME="ref74"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>HashList</strong> <small>(class)</small></td><td align="right"><h3><strong>HashList</strong></h3></td></tr></table><p></p><p>
+ A hashed object list handling class. Objects placed in the list are
+  distributed according to their String hash resulting in faster searches.
+ On the other hand an object placed in a hashed list must never change
+  its String value or it becomes unfindable.
+</p>
+<A NAME="TelEngine__ListIterator.html"></A><A NAME="ref75"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>ListIterator</strong> <small>(class)</small></td><td align="right"><h3><strong>ListIterator</strong></h3></td></tr></table><p></p><p>
+ An ObjList or HashList iterator that can be used even when list elements
+ are changed while iterating. Note that it will not detect that an item was
+ removed and another with the same address was inserted back in list.
+</p>
+<A NAME="TelEngine__Time.html"></A><A NAME="ref76"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Time</strong> <small>(class)</small></td><td align="right"><h3><strong>Time</strong></h3></td></tr></table><p></p><p>
+ The Time class holds a time moment with microsecond accuracy
+</p>
+<A NAME="TelEngine__Random.html"></A><A NAME="ref77"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Random</strong> <small>(class)</small></td><td align="right"><h3><strong>Random</strong></h3></td></tr></table><p></p><p>
+ Implementation of a system independent pseudo random number generator
+</p>
+<A NAME="TelEngine__DataBlock.html"></A><A NAME="ref78"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>DataBlock</strong> <small>(class)</small></td><td align="right"><h3><strong>DataBlock</strong></h3></td></tr></table><p></p><p>
+ The DataBlock holds a data buffer with no specific formatting.
+</p>
+<A NAME="TelEngine__Hasher.html"></A><A NAME="ref79"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Hasher</strong> <small>(class)</small></td><td align="right"><h3><strong>Hasher</strong></h3></td></tr></table><p></p><p>
+ Abstract base class representing a hash calculator
+</p>
+<A NAME="TelEngine__MD5.html"></A><A NAME="ref80"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MD5</strong> <small>(class)</small></td><td align="right"><h3><strong>MD5</strong></h3></td></tr></table><p></p><p>
+ A class to compute and check MD5 digests
+</p>
+<A NAME="TelEngine__SHA1.html"></A><A NAME="ref81"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>SHA1</strong> <small>(class)</small></td><td align="right"><h3><strong>SHA1</strong></h3></td></tr></table><p></p><p>
+ A class to compute and check SHA1 digests
+</p>
+<A NAME="TelEngine__SHA256.html"></A><A NAME="ref82"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>SHA256</strong> <small>(class)</small></td><td align="right"><h3><strong>SHA256</strong></h3></td></tr></table><p></p><p>
+ A class to compute and check SHA256 digests
+</p>
+<A NAME="TelEngine__Base64.html"></A><A NAME="ref83"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Base64</strong> <small>(class)</small></td><td align="right"><h3><strong>Base64</strong></h3></td></tr></table><p></p><p>
+ Base64 encoder/decoder class
+</p>
+<A NAME="TelEngine__NamedIterator.html"></A><A NAME="ref84"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>NamedIterator</strong> <small>(class)</small></td><td align="right"><h3><strong>NamedIterator</strong></h3></td></tr></table><p></p><p>
+ An iterator for NamedString parameters of a NamedList.
+ Fast but unsafe, the list must not be modified during iteration.
+</p>
+<A NAME="TelEngine__URI.html"></A><A NAME="ref85"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>URI</strong> <small>(class)</small></td><td align="right"><h3><strong>URI</strong></h3></td></tr></table><p></p><p>
+ Uniform Resource Identifier encapsulation and parser.
+ For efficiency reason the parsing is delayed as long as possible
+</p>
+<A NAME="TelEngine__Lockable.html"></A><A NAME="ref89"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Lockable</strong> <small>(class)</small></td><td align="right"><h3><strong>Lockable</strong></h3></td></tr></table><p></p><p>
+ An abstract base class for implementing lockable objects
+</p>
+<A NAME="TelEngine__MutexPool.html"></A><A NAME="ref90"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MutexPool</strong> <small>(class)</small></td><td align="right"><h3><strong>MutexPool</strong></h3></td></tr></table><p></p><p>
+ This class holds a Mutex array. Mutexes can be retrieved based on object pointers.
+ A mutex pool can be used to associate a smaller set of Mutex objects with a much
+  larger set of objects needing lock.
+</p>
+<A NAME="TelEngine__Semaphore.html"></A><A NAME="ref91"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Semaphore</strong> <small>(class)</small></td><td align="right"><h3><strong>Semaphore</strong></h3></td></tr></table><p></p><p>
+ A semaphore object for synchronizing threads, can also be used as a token bucket
+</p>
+<A NAME="TelEngine__Lock.html"></A><A NAME="ref92"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Lock</strong> <small>(class)</small></td><td align="right"><h3><strong>Lock</strong></h3></td></tr></table><p></p><p>
+ A lock is a stack allocated (automatic) object that locks a lockable object
+  on creation and unlocks it on destruction - typically when exiting a block
+</p>
+<A NAME="TelEngine__Lock2.html"></A><A NAME="ref93"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Lock2</strong> <small>(class)</small></td><td align="right"><h3><strong>Lock2</strong></h3></td></tr></table><p></p><p>
+ A dual lock is a stack allocated (automatic) object that locks a pair
+  of mutexes on creation and unlocks them on destruction. The mutexes are
+  always locked in the same order to prevent trivial deadlocks
+</p>
+<A NAME="TelEngine__Runnable.html"></A><A NAME="ref94"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Runnable</strong> <small>(class)</small></td><td align="right"><h3><strong>Runnable</strong></h3></td></tr></table><p></p><p>
+ This class holds the action to execute a certain task, usually in a
+  different execution thread.
+</p>
+<A NAME="TelEngine__Thread.html"></A><A NAME="ref95"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Thread</strong> <small>(class)</small></td><td align="right"><h3><strong>Thread</strong></h3></td></tr></table><p></p><p>
+ A thread is a separate execution context that exists in the same address
+  space. Threads make better use of multiple processor machines and allow
+  blocking one execution thread while allowing other to run.
+</p>
+<A NAME="TelEngine__TempObjectCounter.html"></A><A NAME="ref96"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>TempObjectCounter</strong> <small>(class)</small></td><td align="right"><h3><strong>TempObjectCounter</strong></h3></td></tr></table><p></p><p>
+ This class changes the current thread's object counter for its lifetime
+</p>
+<A NAME="TelEngine__Socket.html"></A><A NAME="ref97"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Socket</strong> <small>(class)</small></td><td align="right"><h3><strong>Socket</strong></h3></td></tr></table><p></p><p>
+ This class encapsulates a system dependent socket in a system independent abstraction
+</p>
+<A NAME="TelEngine__SocketAddr.html"></A><A NAME="ref98"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>SocketAddr</strong> <small>(class)</small></td><td align="right"><h3><strong>SocketAddr</strong></h3></td></tr></table><p></p><p>
+ Wrapper class to keep a socket address
+</p>
+<A NAME="TelEngine__SocketFilter.html"></A><A NAME="ref99"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>SocketFilter</strong> <small>(class)</small></td><td align="right"><h3><strong>SocketFilter</strong></h3></td></tr></table><p></p><p>
+ Abstract interface for an object that filters socket received data packets
+</p>
+<A NAME="TelEngine__Stream.html"></A><A NAME="ref100"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Stream</strong> <small>(class)</small></td><td align="right"><h3><strong>Stream</strong></h3></td></tr></table><p></p><p>
+ Base class for encapsulating system dependent stream capable objects
+</p>
+<A NAME="TelEngine__MemoryStream.html"></A><A NAME="ref101"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MemoryStream</strong> <small>(class)</small></td><td align="right"><h3><strong>MemoryStream</strong></h3></td></tr></table><p></p><p>
+ An implementation of a Stream that reads and writes data in a DataBlock
+</p>
+<A NAME="TelEngine__File.html"></A><A NAME="ref102"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>File</strong> <small>(class)</small></td><td align="right"><h3><strong>File</strong></h3></td></tr></table><p></p><p>
+ Class to encapsulate a system dependent file in a system independent abstraction
+</p>
+<A NAME="TelEngine__SctpSocket.html"></A><A NAME="ref103"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>SctpSocket</strong> <small>(class)</small></td><td align="right"><h3><strong>SctpSocket</strong></h3></td></tr></table><p></p><p>
+ The SctpSocket interface provides access to SCTP specific functions
+</p>
+<A NAME="TelEngine__DnsRecord.html"></A><A NAME="ref104"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>DnsRecord</strong> <small>(class)</small></td><td align="right"><h3><strong>DnsRecord</strong></h3></td></tr></table><p></p><p>
+ This class holds a DNS (resolver) record
+</p>
+<A NAME="TelEngine__TxtRecord.html"></A><A NAME="ref105"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>TxtRecord</strong> <small>(class)</small></td><td align="right"><h3><strong>TxtRecord</strong></h3></td></tr></table><p></p><p>
+ This class holds a A, AAAA or TXT record from DNS
+</p>
+<A NAME="TelEngine__SrvRecord.html"></A><A NAME="ref106"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>SrvRecord</strong> <small>(class)</small></td><td align="right"><h3><strong>SrvRecord</strong></h3></td></tr></table><p></p><p>
+ This class holds a SRV (Service Location) record
+</p>
+<A NAME="TelEngine__NaptrRecord.html"></A><A NAME="ref107"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>NaptrRecord</strong> <small>(class)</small></td><td align="right"><h3><strong>NaptrRecord</strong></h3></td></tr></table><p></p><p>
+ This class holds a NAPTR (Naming Authority Pointer) record
+</p>
+<A NAME="TelEngine__Resolver.html"></A><A NAME="ref108"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Resolver</strong> <small>(class)</small></td><td align="right"><h3><strong>Resolver</strong></h3></td></tr></table><p></p><p>
+ This class offers DNS query services
+</p>
+<A NAME="TelEngine__Cipher.html"></A><A NAME="ref109"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Cipher</strong> <small>(class)</small></td><td align="right"><h3><strong>Cipher</strong></h3></td></tr></table><p></p><p>
+ The Cipher class provides an abstraction for data encryption classes
+</p>
+<A NAME="TelEngine__Compressor.html"></A><A NAME="ref110"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Compressor</strong> <small>(class)</small></td><td align="right"><h3><strong>Compressor</strong></h3></td></tr></table><p></p><p>
+ The Compressor class provides an abstraction for data (de)compressor classes.
+ The String component keeps an optional object name to be used for debug purposes
+</p>
+<A NAME="TelEngine__SysUsage.html"></A><A NAME="ref111"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>SysUsage</strong> <small>(class)</small></td><td align="right"><h3><strong>SysUsage</strong></h3></td></tr></table><p></p><p>
+ The SysUsage class allows collecting some statistics about engine's usage
+  of system resources
+</p>
+<A NAME="TelEngine__MimeHeaderLine.html"></A><A NAME="ref112"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MimeHeaderLine</strong> <small>(class)</small></td><td align="right"><h3><strong>MimeHeaderLine</strong></h3></td></tr></table><p></p><p>
+ A MIME header line.
+ The NamedString's value contain the first parameter after the header name
+</p>
+<A NAME="TelEngine__MimeAuthLine.html"></A><A NAME="ref113"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MimeAuthLine</strong> <small>(class)</small></td><td align="right"><h3><strong>MimeAuthLine</strong></h3></td></tr></table><p></p><p>
+ A MIME header line containing authentication data.
+</p>
+<A NAME="TelEngine__MimeBody.html"></A><A NAME="ref114"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MimeBody</strong> <small>(class)</small></td><td align="right"><h3><strong>MimeBody</strong></h3></td></tr></table><p></p><p>
+ Abstract base class for holding Multipurpose Internet Mail Extensions data.
+ Keeps a Content-Type header line with body type and parameters and
+  any additional header lines the body may have.
+ The body type contains lower case characters.
+</p>
+<A NAME="TelEngine__MimeMultipartBody.html"></A><A NAME="ref115"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MimeMultipartBody</strong> <small>(class)</small></td><td align="right"><h3><strong>MimeMultipartBody</strong></h3></td></tr></table><p></p><p>
+ An object holding the bodies of a multipart MIME
+</p>
+<A NAME="TelEngine__MimeSdpBody.html"></A><A NAME="ref116"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MimeSdpBody</strong> <small>(class)</small></td><td align="right"><h3><strong>MimeSdpBody</strong></h3></td></tr></table><p></p><p>
+ An object holding the lines of an application/sdp MIME type
+</p>
+<A NAME="TelEngine__MimeBinaryBody.html"></A><A NAME="ref117"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MimeBinaryBody</strong> <small>(class)</small></td><td align="right"><h3><strong>MimeBinaryBody</strong></h3></td></tr></table><p></p><p>
+ An object holding a binary block of MIME data
+</p>
+<A NAME="TelEngine__MimeStringBody.html"></A><A NAME="ref118"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MimeStringBody</strong> <small>(class)</small></td><td align="right"><h3><strong>MimeStringBody</strong></h3></td></tr></table><p></p><p>
+ An object holding MIME data as just one text string
+</p>
+<A NAME="TelEngine__MimeLinesBody.html"></A><A NAME="ref119"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MimeLinesBody</strong> <small>(class)</small></td><td align="right"><h3><strong>MimeLinesBody</strong></h3></td></tr></table><p></p><p>
+ An object holding MIME data as separate text lines
+</p>
+<A NAME="TelEngine__Configuration.html"></A><A NAME="ref120"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Configuration</strong> <small>(class)</small></td><td align="right"><h3><strong>Configuration</strong></h3></td></tr></table><p></p><p>
+ A class for parsing and quickly accessing INI style configuration files
+</p>
+<A NAME="TelEngine__SharedVars.html"></A><A NAME="ref121"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>SharedVars</strong> <small>(class)</small></td><td align="right"><h3><strong>SharedVars</strong></h3></td></tr></table><p></p><p>
+ Class that implements atomic / locked access and operations to its shared variables
+</p>
+<A NAME="TelEngine__MessageDispatcher.html"></A><A NAME="ref122"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MessageDispatcher</strong> <small>(class)</small></td><td align="right"><h3><strong>MessageDispatcher</strong></h3></td></tr></table><p></p><p>
+ The dispatcher class is a hub that holds a list of handlers to be called
+  for the messages that pass trough the hub. It can also handle a queue of
+  messages that are typically dispatched by a separate thread.
+</p>
+<A NAME="TelEngine__MessageRelay.html"></A><A NAME="ref123"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MessageRelay</strong> <small>(class)</small></td><td align="right"><h3><strong>MessageRelay</strong></h3></td></tr></table><p></p><p>
+ A message handler that allows to relay several messages to a single receiver
+</p>
+<A NAME="TelEngine__Engine.html"></A><A NAME="ref124"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Engine</strong> <small>(class)</small></td><td align="right"><h3><strong>Engine</strong></h3></td></tr></table><p></p><p>
+ This class holds global information about the engine.
+ Note: this is a singleton class.
+</p>
+<p></p>
+<A NAME="TelEngine__Message.html"></A><A NAME="ref125"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Message</strong> <small>(class)</small></td><td align="right"><h3><strong>Message</strong></h3></td></tr></table><p></p><p>
+ This class holds the messages that are moved around in the engine.
+</p>
+<A NAME="TelEngine__MessageHandler.html"></A><A NAME="ref126"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MessageHandler</strong> <small>(class)</small></td><td align="right"><h3><strong>MessageHandler</strong></h3></td></tr></table><p></p><p>
+ The purpose of this class is to hold a message received method that is
+  called for matching messages. It holds as well the matching criteria
+  and priority among other handlers.
+</p>
+<A NAME="TelEngine__MessageReceiver.html"></A><A NAME="ref127"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MessageReceiver</strong> <small>(class)</small></td><td align="right"><h3><strong>MessageReceiver</strong></h3></td></tr></table><p></p><p>
+ A multiple message receiver to be invoked by a message relay
+</p>
+<A NAME="TelEngine__MessageNotifier.html"></A><A NAME="ref128"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MessageNotifier</strong> <small>(class)</small></td><td align="right"><h3><strong>MessageNotifier</strong></h3></td></tr></table><p></p><p>
+ An abstract class to implement hook methods called after any message has
+  been dispatched. If an object implementing MessageNotifier is set as user
+  data in a <A HREF="TelEngine__Message.html">Message</A> then the dispatched() method will be called.
+</p>
+<A NAME="TelEngine__MessagePostHook.html"></A><A NAME="ref129"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MessagePostHook</strong> <small>(class)</small></td><td align="right"><h3><strong>MessagePostHook</strong></h3></td></tr></table><p></p><p>
+ An abstract message notifier that can be inserted in a <A HREF="TelEngine__MessageDispatcher.html">MessageDispatcher</A>
+  to implement hook methods called after any message has been dispatched.
+ No new methods are provided - we only need the multiple inheritance.
+</p>
+<A NAME="TelEngine__MessageHook.html"></A><A NAME="ref130"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MessageHook</strong> <small>(class)</small></td><td align="right"><h3><strong>MessageHook</strong></h3></td></tr></table><p></p><p>
+ Abstract class for message hook
+</p>
+<A NAME="TelEngine__MessageQueue.html"></A><A NAME="ref131"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MessageQueue</strong> <small>(class)</small></td><td align="right"><h3><strong>MessageQueue</strong></h3></td></tr></table><p></p><p>
+ MessageQueue class allows to create a private queue for a message who matches
+ the specified filters.
+</p>
+<A NAME="TelEngine__Plugin.html"></A><A NAME="ref132"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Plugin</strong> <small>(class)</small></td><td align="right"><h3><strong>Plugin</strong></h3></td></tr></table><p></p><p>
+ Initialization and information about plugins.
+ Plugins are located in <em>shared</em> libraries that are loaded at runtime.
+</p>
+<p></p><table border="0" width="100%">
+<tr>
+<td bgcolor="#BEEAE0">
+<pre>
+
+ // Create static <A HREF="TelEngine__Plugin.html">Plugin</A> object by using the provided macro
+ <A HREF="TelEngine.html#INIT_PLUGIN">INIT_PLUGIN</A>(<A HREF="TelEngine__Plugin.html">Plugin</A>);
+
+</pre>
+</td></tr>
+
+</table> <p>
+</p>
+<A NAME="INIT_PLUGIN"></A><A NAME="ref133"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>INIT_PLUGIN</strong> (class pclass)
+<br></td><td align="right"><h3><strong>INIT_PLUGIN</strong></h3></td></tr></table><p></p><p>
+ Macro to create static instance of the plugin
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>pclass</i></TD><TD align="left" valign="top">Class of the plugin to create
+ </TD></TR>
+</TABLE></P>
+<A NAME="UNLOAD_PLUGIN"></A><A NAME="ref134"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>UNLOAD_PLUGIN</strong> (bool unloadNow)
+<br></td><td align="right"><h3><strong>UNLOAD_PLUGIN</strong></h3></td></tr></table><p></p><p>
+ Macro to create the unloading function
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>unloadNow</i></TD><TD align="left" valign="top">True if asked to unload immediately, false if just checking
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the plugin can be unloaded, false if not
+ </p>
+<A NAME="TelEngine__EngineCheck.html"></A><A NAME="ref135"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>EngineCheck</strong> <small>(class)</small></td><td align="right"><h3><strong>EngineCheck</strong></h3></td></tr></table><p></p><p>
+ Base class for engine running stage checkers.
+ Descendants may check specific conditions and decide to stop the engine.
+ There should be only one (static) instance of an engine checker
+</p>
+<A NAME="EngineLoop"></A><A NAME="ref136"></A><table width="100%"><tr bgcolor="#eeeeee"><td>typedef int &nbsp;(*<strong>EngineLoop</strong>) ()
+</td><td align="right"><h3>(*<strong>EngineLoop</strong>)</h3></td></tr></table><p></p><p>
+ Prototype for engine main loop callback
+ </p>
+<A NAME="TelEngine__ImageInfo.html"></A><A NAME="ref137"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>ImageInfo</strong> <small>(struct)</small></td><td align="right"><h3><strong>ImageInfo</strong></h3></td></tr></table><p></p><p>
+ A structure to hold information about a static picture or video frame.
+ </p>
+<A NAME="TelEngine__FormatInfo.html"></A><A NAME="ref138"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>FormatInfo</strong> <small>(struct)</small></td><td align="right"><h3><strong>FormatInfo</strong></h3></td></tr></table><p></p><p>
+ A structure to hold information about a data format.
+ </p>
+<A NAME="TelEngine__DataEndpoint.html"></A><A NAME="ref139"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>DataEndpoint</strong> <small>(class)</small></td><td align="right"><h3><strong>DataEndpoint</strong></h3></td></tr></table><p></p><p>
+ The DataEndpoint holds an endpoint capable of performing unidirectional
+ or bidirectional data transfers
+</p>
+<A NAME="TelEngine__CallEndpoint.html"></A><A NAME="ref140"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>CallEndpoint</strong> <small>(class)</small></td><td align="right"><h3><strong>CallEndpoint</strong></h3></td></tr></table><p></p><p>
+ A class that holds common call control and data related features
+</p>
+<A NAME="TelEngine__Driver.html"></A><A NAME="ref141"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Driver</strong> <small>(class)</small></td><td align="right"><h3><strong>Driver</strong></h3></td></tr></table><p></p><p>
+ Driver is a module specialized for implementing channel drivers
+</p>
+<A NAME="TelEngine__TranslatorCaps.html"></A><A NAME="ref142"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>TranslatorCaps</strong> <small>(struct)</small></td><td align="right"><h3><strong>TranslatorCaps</strong></h3></td></tr></table><p></p><p>
+ A structure to build (mainly static) translator capability tables.
+ A table of such structures must end with an entry with null format names.
+ </p>
+<A NAME="TelEngine__FormatRepository.html"></A><A NAME="ref143"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>FormatRepository</strong> <small>(class)</small></td><td align="right"><h3><strong>FormatRepository</strong></h3></td></tr></table><p></p><p>
+ This is just a holder for the list of media formats supported by Yate
+</p>
+<A NAME="TelEngine__DataFormat.html"></A><A NAME="ref144"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>DataFormat</strong> <small>(class)</small></td><td align="right"><h3><strong>DataFormat</strong></h3></td></tr></table><p></p><p>
+ An extension of a String that can parse data formats
+</p>
+<A NAME="TelEngine__DataNode.html"></A><A NAME="ref145"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>DataNode</strong> <small>(class)</small></td><td align="right"><h3><strong>DataNode</strong></h3></td></tr></table><p></p><p>
+ A generic data handling object
+ </p>
+<A NAME="TelEngine__DataSource.html"></A><A NAME="ref146"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>DataSource</strong> <small>(class)</small></td><td align="right"><h3><strong>DataSource</strong></h3></td></tr></table><p></p><p>
+ A data source
+ </p>
+<A NAME="TelEngine__DataTranslator.html"></A><A NAME="ref147"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>DataTranslator</strong> <small>(class)</small></td><td align="right"><h3><strong>DataTranslator</strong></h3></td></tr></table><p></p><p>
+ The DataTranslator holds a translator (codec) capable of unidirectional
+ conversion of data from one type to another.
+</p>
+<A NAME="TelEngine__TranslatorFactory.html"></A><A NAME="ref148"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>TranslatorFactory</strong> <small>(class)</small></td><td align="right"><h3><strong>TranslatorFactory</strong></h3></td></tr></table><p></p><p>
+ A factory for constructing data translators by format name
+ conversion of data from one type to another
+</p>
+<A NAME="TelEngine__DataConsumer.html"></A><A NAME="ref150"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>DataConsumer</strong> <small>(class)</small></td><td align="right"><h3><strong>DataConsumer</strong></h3></td></tr></table><p></p><p>
+ A data consumer
+ </p>
+<A NAME="TelEngine__ThreadedSource.html"></A><A NAME="ref151"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>ThreadedSource</strong> <small>(class)</small></td><td align="right"><h3><strong>ThreadedSource</strong></h3></td></tr></table><p></p><p>
+ A data source with a thread of its own
+</p>
+<A NAME="TelEngine__Module.html"></A><A NAME="ref152"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Module</strong> <small>(class)</small></td><td align="right"><h3><strong>Module</strong></h3></td></tr></table><p></p><p>
+ Module is a descendent of Plugin specialized in implementing modules
+</p>
+<A NAME="TelEngine__Channel.html"></A><A NAME="ref153"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Channel</strong> <small>(class)</small></td><td align="right"><h3><strong>Channel</strong></h3></td></tr></table><p></p><p>
+ A class that holds common channel related features (a.k.a. call leg)
+</p>
+<A NAME="TelEngine__Router.html"></A><A NAME="ref154"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Router</strong> <small>(class)</small></td><td align="right"><h3><strong>Router</strong></h3></td></tr></table><p></p><p>
+ Asynchronous call routing thread
+</p>
+<A NAME="isE164"></A><A NAME="ref155"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>isE164</strong> (const char* str)
+<br></td><td align="right"><h3><strong>isE164</strong></h3></td></tr></table><p></p><p>
+ Find if a string appears to be an E164 phone number
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if str appears to be a valid E164 number
+ </p>
+<A NAME="TelEngine__Flags32.html"></A><A NAME="ref156"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Flags32</strong> <small>(class)</small></td><td align="right"><h3><strong>Flags32</strong></h3></td></tr></table><p></p><p>
+ This class keeps a 32bit length flag mask
+</p>
+<A NAME="TelEngine__NamedInt.html"></A><A NAME="ref157"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>NamedInt</strong> <small>(class)</small></td><td align="right"><h3><strong>NamedInt</strong></h3></td></tr></table><p></p><p>
+ This class holds a name integer value
+</p>
+<A NAME="TelEngine__Window.html"></A><A NAME="ref158"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Window</strong> <small>(class)</small></td><td align="right"><h3><strong>Window</strong></h3></td></tr></table><p></p><p>
+ A window is the basic user interface element.
+ Everything inside is implementation specific functionality.
+</p>
+<A NAME="TelEngine__UIWidget.html"></A><A NAME="ref159"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>UIWidget</strong> <small>(class)</small></td><td align="right"><h3><strong>UIWidget</strong></h3></td></tr></table><p></p><A NAME="TelEngine__UIFactory.html"></A><A NAME="ref160"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>UIFactory</strong> <small>(class)</small></td><td align="right"><h3><strong>UIFactory</strong></h3></td></tr></table><p></p><p>
+ Each instance of UIFactory creates special user interface elements by type.
+ Keeps a global list with all factories. The list doesn't own the facotries
+</p>
+<A NAME="TelEngine__Client.html"></A><A NAME="ref161"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>Client</strong> <small>(class)</small></td><td align="right"><h3><strong>Client</strong></h3></td></tr></table><p></p><p>
+ Singleton class that holds the User Interface's main  methods
+</p>
+<A NAME="TelEngine__ClientChannel.html"></A><A NAME="ref162"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>ClientChannel</strong> <small>(class)</small></td><td align="right"><h3><strong>ClientChannel</strong></h3></td></tr></table><p></p><p>
+ This class implements a Channel used by client programs
+</p>
+<A NAME="TelEngine__ClientDriver.html"></A><A NAME="ref163"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>ClientDriver</strong> <small>(class)</small></td><td align="right"><h3><strong>ClientDriver</strong></h3></td></tr></table><p></p><p>
+ Abstract client Driver that implements some of the specific functionality
+</p>
+<A NAME="TelEngine__ClientLogic.html"></A><A NAME="ref164"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>ClientLogic</strong> <small>(class)</small></td><td align="right"><h3><strong>ClientLogic</strong></h3></td></tr></table><p></p><p>
+ This class implements the logic behind different actions in the client.
+ It specifies the way the graphical interface of the client will behave
+  in different circumstances.
+</p>
+<A NAME="TelEngine__DefaultLogic.html"></A><A NAME="ref165"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>DefaultLogic</strong> <small>(class)</small></td><td align="right"><h3><strong>DefaultLogic</strong></h3></td></tr></table><p></p><p>
+ This class implements the default client behaviour.
+</p>
+<A NAME="TelEngine__ClientAccount.html"></A><A NAME="ref167"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>ClientAccount</strong> <small>(class)</small></td><td align="right"><h3><strong>ClientAccount</strong></h3></td></tr></table><p></p><p>
+ This class holds an account
+</p>
+<A NAME="TelEngine__ClientAccountList.html"></A><A NAME="ref168"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>ClientAccountList</strong> <small>(class)</small></td><td align="right"><h3><strong>ClientAccountList</strong></h3></td></tr></table><p></p><p>
+ This class holds an account list
+</p>
+<A NAME="TelEngine__ClientContact.html"></A><A NAME="ref169"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>ClientContact</strong> <small>(class)</small></td><td align="right"><h3><strong>ClientContact</strong></h3></td></tr></table><p></p><p>
+ A client contact
+ The contact is using the owner's mutex to lock it's operations
+</p>
+<A NAME="TelEngine__ClientResource.html"></A><A NAME="ref170"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>ClientResource</strong> <small>(class)</small></td><td align="right"><h3><strong>ClientResource</strong></h3></td></tr></table><p></p><p>
+ This class holds data about a client account/contact resource
+</p>
+<A NAME="TelEngine__MucRoomMember.html"></A><A NAME="ref171"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MucRoomMember</strong> <small>(class)</small></td><td align="right"><h3><strong>MucRoomMember</strong></h3></td></tr></table><p></p><p>
+ This class holds data about a MUC room member.
+ The resource name holds the nickname
+</p>
+<A NAME="TelEngine__MucRoom.html"></A><A NAME="ref172"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>MucRoom</strong> <small>(class)</small></td><td align="right"><h3><strong>MucRoom</strong></h3></td></tr></table><p></p><p>
+ This class holds a client account's MUC room contact.
+ The list of resources contains MucRoomMember items.
+ Contact nick is held by own MucRoomMember name
+ The contact uri is the room uri
+ The contact name is the room name
+ The contact resource member uri is the account's uri
+</p>
+<A NAME="TelEngine__DurationUpdate.html"></A><A NAME="ref173"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>DurationUpdate</strong> <small>(class)</small></td><td align="right"><h3><strong>DurationUpdate</strong></h3></td></tr></table><p></p><p>
+ Class used to update UI durations. The string keeps the object's id.
+ This object can be used to keep additional data associated with a client channel
+</p>
+<A NAME="TelEngine__ClientSound.html"></A><A NAME="ref174"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>ClientSound</strong> <small>(class)</small></td><td align="right"><h3><strong>ClientSound</strong></h3></td></tr></table><p></p><p>
+ This class holds a sound file along with an output device used to play it
+</p>
+<A NAME="TelEngine__ClientFileItem.html"></A><A NAME="ref175"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>ClientFileItem</strong> <small>(class)</small></td><td align="right"><h3><strong>ClientFileItem</strong></h3></td></tr></table><p></p><p>
+ Base class for file/dir items
+</p>
+<A NAME="TelEngine__ClientDir.html"></A><A NAME="ref176"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>ClientDir</strong> <small>(class)</small></td><td align="right"><h3><strong>ClientDir</strong></h3></td></tr></table><p></p><p>
+ This class holds directory info
+</p>
+<A NAME="TelEngine__ClientFile.html"></A><A NAME="ref177"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>ClientFile</strong> <small>(class)</small></td><td align="right"><h3><strong>ClientFile</strong></h3></td></tr></table><p></p><p>
+ This class holds file info
+</p>
+<A NAME="TelEngine__XmlSaxParser.html"></A><A NAME="ref179"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>XmlSaxParser</strong> <small>(class)</small></td><td align="right"><h3><strong>XmlSaxParser</strong></h3></td></tr></table><p></p><p>
+ A Serial Access Parser (SAX) for arbitrary XML data
+</p>
+<A NAME="TelEngine__XmlDomParser.html"></A><A NAME="ref180"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>XmlDomParser</strong> <small>(class)</small></td><td align="right"><h3><strong>XmlDomParser</strong></h3></td></tr></table><p></p><p>
+ A Document Object Model (DOM) parser for XML documents and fragments
+</p>
+<A NAME="TelEngine__XmlDeclaration.html"></A><A NAME="ref181"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>XmlDeclaration</strong> <small>(class)</small></td><td align="right"><h3><strong>XmlDeclaration</strong></h3></td></tr></table><p></p><p>
+ Xml Declaration for Xml document
+</p>
+<A NAME="TelEngine__XmlFragment.html"></A><A NAME="ref182"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>XmlFragment</strong> <small>(class)</small></td><td align="right"><h3><strong>XmlFragment</strong></h3></td></tr></table><p></p><p>
+ Xml Fragment a fragment from a Xml document
+</p>
+<A NAME="TelEngine__XmlChild.html"></A><A NAME="ref183"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>XmlChild</strong> <small>(class)</small></td><td align="right"><h3><strong>XmlChild</strong></h3></td></tr></table><p></p><p>
+ Xml Child for Xml document
+</p>
+<A NAME="TelEngine__XmlParent.html"></A><A NAME="ref184"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>XmlParent</strong> <small>(class)</small></td><td align="right"><h3><strong>XmlParent</strong></h3></td></tr></table><p></p><p>
+ Xml Parent for a Xml child
+</p>
+<A NAME="TelEngine__XmlDocument.html"></A><A NAME="ref185"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>XmlDocument</strong> <small>(class)</small></td><td align="right"><h3><strong>XmlDocument</strong></h3></td></tr></table><p></p><p>
+ Xml Document
+</p>
+<A NAME="TelEngine__XmlElement.html"></A><A NAME="ref186"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>XmlElement</strong> <small>(class)</small></td><td align="right"><h3><strong>XmlElement</strong></h3></td></tr></table><p></p><p>
+ Xml Element from a Xml document
+</p>
+<A NAME="TelEngine__XmlComment.html"></A><A NAME="ref187"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>XmlComment</strong> <small>(class)</small></td><td align="right"><h3><strong>XmlComment</strong></h3></td></tr></table><p></p><p>
+ A Xml Comment from Xml document
+</p>
+<A NAME="TelEngine__XmlCData.html"></A><A NAME="ref188"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>XmlCData</strong> <small>(class)</small></td><td align="right"><h3><strong>XmlCData</strong></h3></td></tr></table><p></p><p>
+ A Xml CData from Xml document
+</p>
+<A NAME="TelEngine__XmlText.html"></A><A NAME="ref189"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>XmlText</strong> <small>(class)</small></td><td align="right"><h3><strong>XmlText</strong></h3></td></tr></table><p></p><p>
+ A Xml Declaration for Xml document
+</p>
+<A NAME="TelEngine__XmlDoctype.html"></A><A NAME="ref190"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>XmlDoctype</strong> <small>(class)</small></td><td align="right"><h3><strong>XmlDoctype</strong></h3></td></tr></table><p></p><A NAME="TelEngine__XmlEscape.html"></A><A NAME="ref191"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>XmlEscape</strong> <small>(struct)</small></td><td align="right"><h3><strong>XmlEscape</strong></h3></td></tr></table><p></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,202 @@
+<HTML>
+<HEAD>
+<TITLE>class DurationUpdate</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class DurationUpdate</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An UI time updater. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::DurationUpdate</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatecbase_h.html">yatecbase.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__DurationUpdate.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">DurationUpdate</A></b> (ClientLogic* logic, bool owner, const char* id,
+	const char* name, unsigned int start = Time::secNow()) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~DurationUpdate</A></b> () 
+</LI>
+<LI>virtual  const String& &nbsp;<b><A HREF="#ref4">toString</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref5">setLogic</A></b> (ClientLogic* logic = 0, bool owner = true) 
+</LI>
+<LI>virtual  unsigned int &nbsp;<b><A HREF="#ref6">update</A></b> (unsigned int secNow, const String* table = 0,
+	Window* wnd = 0, Window* skip = 0, bool force = false) 
+</LI>
+<LI>virtual  unsigned int &nbsp;<b><A HREF="#ref7">buildTimeParam</A></b> (NamedList& dest, unsigned int secNow,
+	bool force = false) 
+</LI>
+<LI>virtual  unsigned int &nbsp;<b><A HREF="#ref8">buildTimeString</A></b> (String& dest, unsigned int secNow,
+	bool force = false) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  unsigned int &nbsp;<b><A HREF="#ref9">buildTimeParam</A></b> (NamedList& dest, const char* param, unsigned int secStart,
+	unsigned int secNow, bool force = false) 
+</LI>
+<LI>static  unsigned int &nbsp;<b><A HREF="#ref10">buildTimeString</A></b> (String& dest, unsigned int secStart, unsigned int secNow,
+	bool force = false) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref11">destroyed</A></b> () 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>String <b><A HREF="#ref12">m_id</A></b></LI>
+<LI>ClientLogic* <b><A HREF="#ref13">m_logic</A></b></LI>
+<LI>String <b><A HREF="#ref14">m_name</A></b></LI>
+<LI>unsigned int <b><A HREF="#ref15">m_startTime</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Class used to update UI durations. The string keeps the object's id.
+ This object can be used to keep additional data associated with a client channel
+</p>
+<A NAME="DurationUpdate"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>DurationUpdate</strong> (ClientLogic* logic, bool owner, const char* id,
+	const char* name, unsigned int start = Time::secNow())
+<br></td><td align="right"><h3><strong>DurationUpdate</strong></h3></td></tr></table><p></p><p>
+ Constructor. Add itself to logic's list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>logic</i></TD><TD align="left" valign="top">The client logic used to update this duration object
+</TD></TR>
+<TR><TD align="left" valign="top"><i>owner</i></TD><TD align="left" valign="top">True if the logic is owning this object
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Object id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Object name (widget or column name)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>start</i></TD><TD align="left" valign="top">Start time in seconds
+     </TD></TR>
+</TABLE></P>
+<A NAME="~DurationUpdate"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~DurationUpdate</strong> ()
+<br></td><td align="right"><h3><strong>~DurationUpdate</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="toString"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>toString</strong> ()
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a string representation of this object
+</p>
+<p><b>Returns</b>: This duration's id
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="setLogic"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setLogic</strong> (ClientLogic* logic = 0, bool owner = true)
+<br></td><td align="right"><h3><strong>setLogic</strong></h3></td></tr></table><p></p><p>
+ Set the logic used to update this duration object. Remove from the old one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>logic</i></TD><TD align="left" valign="top">The client logic used to update this duration object
+</TD></TR>
+<TR><TD align="left" valign="top"><i>owner</i></TD><TD align="left" valign="top">True if the logic is owning this object
+     </TD></TR>
+</TABLE></P>
+<A NAME="update"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>update</strong> (unsigned int secNow, const String* table = 0,
+	Window* wnd = 0, Window* skip = 0, bool force = false)
+<br></td><td align="right"><h3><strong>update</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Update UI if duration is non 0
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>secNow</i></TD><TD align="left" valign="top">Current time in seconds
+</TD></TR>
+<TR><TD align="left" valign="top"><i>table</i></TD><TD align="left" valign="top">The table to update. Set to 0 to update text widgets
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window to update
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skip</i></TD><TD align="left" valign="top">Optional window to skip if wnd is 0
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">Set to true to update even if duration is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The duration
+     </p>
+<A NAME="buildTimeParam"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>buildTimeParam</strong> (NamedList& dest, unsigned int secNow,
+	bool force = false)
+<br></td><td align="right"><h3><strong>buildTimeParam</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Build a duration string representation and add the parameter to a list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>secNow</i></TD><TD align="left" valign="top">Current time in seconds
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">Set to true to add the parameter even if duration is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The duration
+     </p>
+<A NAME="buildTimeString"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>buildTimeString</strong> (String& dest, unsigned int secNow,
+	bool force = false)
+<br></td><td align="right"><h3><strong>buildTimeString</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Build a duration string representation hh:mm:ss. The hours are added only if non 0
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>secNow</i></TD><TD align="left" valign="top">Current time in seconds
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">Set to true to build even if duration is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The duration
+     </p>
+<A NAME="buildTimeParam"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>buildTimeParam</strong> (NamedList& dest, const char* param, unsigned int secStart,
+	unsigned int secNow, bool force = false)
+<br></td><td align="right"><h3><strong>buildTimeParam</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build a duration string representation and add the parameter to a list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">Parameter to add
+</TD></TR>
+<TR><TD align="left" valign="top"><i>secStart</i></TD><TD align="left" valign="top">Starting time in seconds
+</TD></TR>
+<TR><TD align="left" valign="top"><i>secNow</i></TD><TD align="left" valign="top">Current time in seconds
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">Set to true to add the parameter even if duration is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The duration
+     </p>
+<A NAME="buildTimeString"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>buildTimeString</strong> (String& dest, unsigned int secStart, unsigned int secNow,
+	bool force = false)
+<br></td><td align="right"><h3><strong>buildTimeString</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build a duration string representation hh:mm:ss. The hours are added only if non 0
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>secStart</i></TD><TD align="left" valign="top">Starting time in seconds
+</TD></TR>
+<TR><TD align="left" valign="top"><i>secNow</i></TD><TD align="left" valign="top">Current time in seconds
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">Set to true to build even if duration is 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The duration
+     </p>
+<A NAME="destroyed"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destroyed</strong> ()
+<br></td><td align="right"><h3><strong>destroyed</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Release memory. Remove from updater
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__RefObject.html#destroyed">RefObject</A>.</p>
+<A NAME="m_id"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_id</strong>
+</td><td align="right"><h3><strong>m_id</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_logic"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ClientLogic*  <strong>m_logic</strong>
+</td><td align="right"><h3><strong>m_logic</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_name"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_name</strong>
+</td><td align="right"><h3><strong>m_name</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_startTime"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int  <strong>m_startTime</strong>
+</td><td align="right"><h3><strong>m_startTime</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

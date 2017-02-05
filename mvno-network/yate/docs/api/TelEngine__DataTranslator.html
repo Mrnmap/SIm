@@ -1,0 +1,305 @@
+<HTML>
+<HEAD>
+<TITLE>class DataTranslator</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class DataTranslator</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An unidirectional data translator (codec). <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::DataTranslator</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatephone_h.html">yatephone.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__DataConsumer.html">TelEngine::DataConsumer</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__DataTranslator.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">DataTranslator</A></b> (const char* sFormat, const char* dFormat) 
+</LI>
+<LI>explicit &nbsp;<b><A HREF="#ref3">DataTranslator</A></b> (const char* sFormat, DataSource* source = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">~DataTranslator</A></b> () 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref5">getObject</A></b> (const String& name)  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">valid</A></b> ()  const
+</LI>
+<LI>virtual  DataSource* &nbsp;<b><A HREF="#ref7">getTransSource</A></b> ()  const
+</LI>
+<LI>DataTranslator* &nbsp;<b><A HREF="#ref8">getFirstTranslator</A></b> () 
+</LI>
+<LI>const DataTranslator* &nbsp;<b><A HREF="#ref9">getFirstTranslator</A></b> ()  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  ObjList* &nbsp;<b><A HREF="#ref10">srcFormats</A></b> (const DataFormat& dFormat = "slin", int maxCost = -1, unsigned int maxLen = 0, ObjList* lst = 0) 
+</LI>
+<LI>static  ObjList* &nbsp;<b><A HREF="#ref11">destFormats</A></b> (const DataFormat& sFormat = "slin", int maxCost = -1, unsigned int maxLen = 0, ObjList* lst = 0) 
+</LI>
+<LI>static  ObjList* &nbsp;<b><A HREF="#ref12">allFormats</A></b> (const ObjList* formats, bool existing = true, bool sameRate = true, bool sameChans = true) 
+</LI>
+<LI>static  ObjList* &nbsp;<b><A HREF="#ref13">allFormats</A></b> (const String& formats, bool existing = true, bool sameRate = true, bool sameChans = true) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref14">canConvert</A></b> (const DataFormat& fmt1, const DataFormat& fmt2 = "slin") 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref15">cost</A></b> (const DataFormat& sFormat, const DataFormat& dFormat) 
+</LI>
+<LI>static  DataTranslator* &nbsp;<b><A HREF="#ref16">create</A></b> (const DataFormat& sFormat, const DataFormat& dFormat) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref17">attachChain</A></b> (DataSource* source, DataConsumer* consumer, bool override = false) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref18">detachChain</A></b> (DataSource* source, DataConsumer* consumer) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref19">setMaxChain</A></b> (unsigned int maxChain) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  bool &nbsp;<b><A HREF="#ref20">synchronize</A></b> (DataSource* source) 
+</LI>
+</ul><h4>Protected Static Methods</h4><ul><LI>static  void &nbsp;<b><A HREF="#ref21">install</A></b> (TranslatorFactory* factory) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref22">uninstall</A></b> (TranslatorFactory* factory) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ The DataTranslator holds a translator (codec) capable of unidirectional
+ conversion of data from one type to another.
+</p>
+<A NAME="DataTranslator"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>DataTranslator</strong> (const char* sFormat, const char* dFormat)
+<br></td><td align="right"><h3><strong>DataTranslator</strong></h3></td></tr></table><p></p><p>
+ Construct a data translator.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sFormat</i></TD><TD align="left" valign="top">Name of the source format (data received from the consumer)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dFormat</i></TD><TD align="left" valign="top">Name of the destination format (data supplied to the source)
+     </TD></TR>
+</TABLE></P>
+<A NAME="DataTranslator"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>DataTranslator</strong> (const char* sFormat, DataSource* source = 0)
+<br></td><td align="right"><h3><strong>DataTranslator</strong></h3></td></tr></table><p></p><p>
+ Creates a data translator from an existing source,
+  does not increment the source's reference counter.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sFormat</i></TD><TD align="left" valign="top">Name of the source format (data received from the consumer)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>source</i></TD><TD align="left" valign="top">Optional pointer to a DataSource object
+     </TD></TR>
+</TABLE></P>
+<A NAME="~DataTranslator"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>~DataTranslator</strong> ()
+<br></td><td align="right"><h3><strong>~DataTranslator</strong></h3></td></tr></table><p></p><p>
+ Destroys the translator and its source
+     </p>
+<A NAME="getObject"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__DataConsumer.html#getObject">DataConsumer</A>.</p>
+<A NAME="valid"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>valid</strong> ()
+<br></td><td align="right"><h3><strong>valid</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if the data translator has a valid source
+</p>
+<p><b>Returns</b>: True if still valid, false if node should be removed
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__DataNode.html#valid">DataNode</A>.</p>
+<A NAME="getTransSource"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> DataSource* &nbsp;<strong>getTransSource</strong> ()
+<br></td><td align="right"><h3><strong>getTransSource</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get the data source of a translator object
+</p>
+<p><b>Returns</b>: A pointer to the DataSource object or NULL
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__DataConsumer.html#getTransSource">DataConsumer</A>.</p>
+<A NAME="getFirstTranslator"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>DataTranslator* &nbsp;<strong>getFirstTranslator</strong> ()
+<br></td><td align="right"><h3><strong>getFirstTranslator</strong></h3></td></tr></table><p></p><p>
+ Get the first translator from a chain
+</p>
+<p><b>Returns</b>: Pointer to the first translator in a chain
+     </p>
+<A NAME="getFirstTranslator"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const DataTranslator* &nbsp;<strong>getFirstTranslator</strong> ()
+<br></td><td align="right"><h3><strong>getFirstTranslator</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Constant version to get the first translator from a chain
+</p>
+<p><b>Returns</b>: Pointer to the first translator in a chain
+     </p>
+<A NAME="srcFormats"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ObjList* &nbsp;<strong>srcFormats</strong> (const DataFormat& dFormat = "slin", int maxCost = -1, unsigned int maxLen = 0, ObjList* lst = 0)
+<br></td><td align="right"><h3><strong>srcFormats</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get a list of formats supported for a given output format.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dFormat</i></TD><TD align="left" valign="top">Name of destination format
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxCost</i></TD><TD align="left" valign="top">Maximum cost of candidates to consider, -1 to accept all
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxLen</i></TD><TD align="left" valign="top">Maximum length of codec chains to consider, 0 to accept all
+</TD></TR>
+<TR><TD align="left" valign="top"><i>lst</i></TD><TD align="left" valign="top">Initial list, will append to it if not empty
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: List of source format names, must be freed by the caller
+     </p>
+<A NAME="destFormats"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ObjList* &nbsp;<strong>destFormats</strong> (const DataFormat& sFormat = "slin", int maxCost = -1, unsigned int maxLen = 0, ObjList* lst = 0)
+<br></td><td align="right"><h3><strong>destFormats</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get a list of formats supported for a given input format
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sFormat</i></TD><TD align="left" valign="top">Name of source format
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxCost</i></TD><TD align="left" valign="top">Maximum cost of candidates to consider, -1 to accept all
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxLen</i></TD><TD align="left" valign="top">Maximum length of codec chains to consider, 0 to accept all
+</TD></TR>
+<TR><TD align="left" valign="top"><i>lst</i></TD><TD align="left" valign="top">Initial list, will append to it if not empty
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: List of destination format names, must be freed by the caller
+     </p>
+<A NAME="allFormats"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ObjList* &nbsp;<strong>allFormats</strong> (const ObjList* formats, bool existing = true, bool sameRate = true, bool sameChans = true)
+<br></td><td align="right"><h3><strong>allFormats</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get a list of formats supported by transcoding for a given format list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>formats</i></TD><TD align="left" valign="top">List of data format names
+</TD></TR>
+<TR><TD align="left" valign="top"><i>existing</i></TD><TD align="left" valign="top">Also return formats already existing in the initial list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sameRate</i></TD><TD align="left" valign="top">Only return formats with same sampling rate
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sameChans</i></TD><TD align="left" valign="top">Only return formats with same number of channels
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: List of format names, must be freed by the caller
+     </p>
+<A NAME="allFormats"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ObjList* &nbsp;<strong>allFormats</strong> (const String& formats, bool existing = true, bool sameRate = true, bool sameChans = true)
+<br></td><td align="right"><h3><strong>allFormats</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get a list of formats supported by transcoding for a given format list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>formats</i></TD><TD align="left" valign="top">Data format names as comma separated list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>existing</i></TD><TD align="left" valign="top">Also return formats already existing in the initial list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sameRate</i></TD><TD align="left" valign="top">Only return formats with same sampling rate
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sameChans</i></TD><TD align="left" valign="top">Only return formats with same number of channels
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: List of format names, must be freed by the caller
+     </p>
+<A NAME="canConvert"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>canConvert</strong> (const DataFormat& fmt1, const DataFormat& fmt2 = "slin")
+<br></td><td align="right"><h3><strong>canConvert</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if bidirectional conversion can be performed by installed translators
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>fmt1</i></TD><TD align="left" valign="top">Name of the first data format
+</TD></TR>
+<TR><TD align="left" valign="top"><i>fmt2</i></TD><TD align="left" valign="top">Name of the second data format
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if translators can be created for both directions
+     </p>
+<A NAME="cost"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>cost</strong> (const DataFormat& sFormat, const DataFormat& dFormat)
+<br></td><td align="right"><h3><strong>cost</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Finds the cost of a translator given the source and destination format names
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sFormat</i></TD><TD align="left" valign="top">Name of the source format (data received from the consumer)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dFormat</i></TD><TD align="left" valign="top">Name of the destination format (data supplied to the source)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Cost of best (cheapest) codec or -1 if no known codec exists
+     </p>
+<A NAME="create"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> DataTranslator* &nbsp;<strong>create</strong> (const DataFormat& sFormat, const DataFormat& dFormat)
+<br></td><td align="right"><h3><strong>create</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Creates a translator given the source and destination format names
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sFormat</i></TD><TD align="left" valign="top">Name of the source format (data received from the consumer)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dFormat</i></TD><TD align="left" valign="top">Name of the destination format (data supplied to the source)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to a DataTranslator object or NULL if no known codec exists
+     </p>
+<A NAME="attachChain"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>attachChain</strong> (DataSource* source, DataConsumer* consumer, bool override = false)
+<br></td><td align="right"><h3><strong>attachChain</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Attach a consumer to a source, possibly trough a chain of translators
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>source</i></TD><TD align="left" valign="top">Source to attach the chain to
+</TD></TR>
+<TR><TD align="left" valign="top"><i>consumer</i></TD><TD align="left" valign="top">Consumer where the chain ends
+</TD></TR>
+<TR><TD align="left" valign="top"><i>override</i></TD><TD align="left" valign="top">Attach chain for temporary source override
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if successfull, false if no translator chain could be built
+     </p>
+<A NAME="detachChain"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>detachChain</strong> (DataSource* source, DataConsumer* consumer)
+<br></td><td align="right"><h3><strong>detachChain</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Detach a consumer from a source, possibly trough a chain of translators
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>source</i></TD><TD align="left" valign="top">Source to dettach the chain from
+</TD></TR>
+<TR><TD align="left" valign="top"><i>consumer</i></TD><TD align="left" valign="top">Consumer where the chain ends
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if successfull, false if source and consumers were not attached
+     </p>
+<A NAME="setMaxChain"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setMaxChain</strong> (unsigned int maxChain)
+<br></td><td align="right"><h3><strong>setMaxChain</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set the length of the longest translator chain we are allowed to create
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>maxChain</i></TD><TD align="left" valign="top">Desired longest chain length
+     </TD></TR>
+</TABLE></P>
+<A NAME="synchronize"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>synchronize</strong> (DataSource* source)
+<br></td><td align="right"><h3><strong>synchronize</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Synchronize the consumer with a source
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>source</i></TD><TD align="left" valign="top">Data source to copy the timestamp from
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if we could synchronize with the source
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__DataConsumer.html#synchronize">DataConsumer</A>.</p>
+<A NAME="install"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>install</strong> (TranslatorFactory* factory)
+<br></td><td align="right"><h3><strong>install</strong></h3></td></tr></table><p> <small>[protected static]</small></p><p>
+ Install a Translator Factory in the list of known codecs
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>factory</i></TD><TD align="left" valign="top">A pointer to a TranslatorFactory instance
+     </TD></TR>
+</TABLE></P>
+<A NAME="uninstall"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>uninstall</strong> (TranslatorFactory* factory)
+<br></td><td align="right"><h3><strong>uninstall</strong></h3></td></tr></table><p> <small>[protected static]</small></p><p>
+ Remove a Translator Factory from the list of known codecs
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>factory</i></TD><TD align="left" valign="top">A pointer to a TranslatorFactory instance
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

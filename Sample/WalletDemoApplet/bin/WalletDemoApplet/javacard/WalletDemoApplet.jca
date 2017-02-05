@@ -1,0 +1,1885 @@
+// converted by version 1.3
+// on Mon Aug 25 17:55:55 CST 2014
+
+.package WalletDemoApplet {
+	.aid 0x11:0x22:0x33:0x44:0x55;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.3;		//javacard/framework
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x2 1.3;		//javacard/security
+		0xA0:0x0:0x0:0x0:0x62:0x2:0x1 1.3;		//javacardx/crypto
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+	}
+
+	.applet {
+		0x11:0x22:0x33:0x44:0x55:0x66 WalletDemoApplet;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef short WalletDemoApplet/test;
+		// 1
+		instanceFieldRef short WalletDemoApplet/balance;
+		// 2
+		instanceFieldRef short WalletDemoApplet/integral;
+		// 3
+		instanceFieldRef 1.10 WalletDemoApplet/Key;
+		// 4
+		instanceFieldRef 2.1 WalletDemoApplet/cipherDES_ECB_NOPAD;
+		// 5
+		instanceFieldRef 1.14 WalletDemoApplet/myRandomS;
+		// 6
+		instanceFieldRef 0.9 WalletDemoApplet/pin;
+		// 7
+		instanceFieldRef byte[] WalletDemoApplet/cardID;
+		// 8
+		instanceFieldRef byte[] WalletDemoApplet/output;
+		// 9
+		instanceFieldRef boolean WalletDemoApplet/bRand;
+		// 10
+		instanceFieldRef boolean WalletDemoApplet/ExternalMark;
+		// 11
+		instanceFieldRef boolean WalletDemoApplet/verifyMark;
+		// 12
+		staticMethodRef 0.9.0(BB)V;		// javacard/framework/OwnerPIN.<init>(BB)V
+		// 13
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 14
+		staticMethodRef 2.1.0(BZ)Ljavacardx/crypto/Cipher;;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+			.descriptor	Ljavacardx/crypto/Cipher;	2.1;
+
+		// 15
+		staticMethodRef 1.13.0(BSZ)Ljavacard/security/Key;;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 16
+		staticMethodRef 1.14.0(B)Ljavacard/security/RandomData;;		// javacard/security/RandomData.getInstance(B)Ljavacard/security/RandomData;
+			.descriptor	Ljavacard/security/RandomData;	1.14;
+
+		// 17
+		classRef 1.10;		// javacard/security/DESKey
+		// 18
+		classRef 0.9;		// javacard/framework/OwnerPIN
+		// 19
+		virtualMethodRef 0.9.8([BSB)V;		// update([BSB)V
+		// 20
+		staticMethodRef 0.16.1([BS[BSS)S;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+		// 21
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 22
+		classRef WalletDemoApplet;
+		// 23
+		staticMethodRef WalletDemoApplet/<init>([BSB)V;
+		// 24
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 25
+		virtualMethodRef 0.10.1()[B;		// getBuffer()[B
+		// 26
+		staticMethodRef WalletDemoApplet/credit_extend(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 27
+		staticMethodRef WalletDemoApplet/verify(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 28
+		staticMethodRef WalletDemoApplet/consume_extend(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 29
+		staticMethodRef WalletDemoApplet/getBalance1(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 30
+		staticMethodRef WalletDemoApplet/getintegal(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 31
+		staticMethodRef WalletDemoApplet/getcardid(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 32
+		staticMethodRef 0.7.1(S)V;		// javacard/framework/ISOException.throwIt(S)V
+		// 33
+		staticMethodRef 0.16.5(BB)S;		// javacard/framework/Util.makeShort(BB)S
+		// 34
+		staticFieldRef byte[] WalletDemoApplet/seed;
+		// 35
+		virtualMethodRef 1.14.2([BSS)V;		// setSeed([BSS)V
+		// 36
+		virtualMethodRef 1.14.1([BSS)V;		// generateData([BSS)V
+		// 37
+		staticFieldRef byte[] WalletDemoApplet/input;
+		// 38
+		virtualMethodRef 0.10.8(SS)V;		// setOutgoingAndSend(SS)V
+		// 39
+		virtualMethodRef 0.10.6()S;		// setIncomingAndReceive()S
+		// 40
+		staticMethodRef WalletDemoApplet/calculateCryptogram(Ljavacard/security/DESKey;[BSS[BS)S;
+			.descriptor	Ljavacard/security/DESKey;	1.10;
+
+		// 41
+		staticMethodRef 0.16.0([BS[BSS)B;		// javacard/framework/Util.arrayCompare([BS[BSS)B
+		// 42
+		staticFieldRef byte[] WalletDemoApplet/iv;
+		// 43
+		virtualMethodRef 2.1.4(Ljavacard/security/Key;B[BSS)V;		// init(Ljavacard/security/Key;B[BSS)V
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 44
+		virtualMethodRef 2.1.1([BSS[BS)S;		// doFinal([BSS[BS)S
+		// 45
+		virtualMethodRef 0.9.4()Z;		// isValidated()Z
+		// 46
+		staticMethodRef 0.16.4([BS)S;		// javacard/framework/Util.getShort([BS)S
+		// 47
+		virtualMethodRef 0.9.1([BSB)Z;		// check([BSB)Z
+		// 48
+		staticMethodRef WalletDemoApplet/calIntegral([BBS)V;
+		// 49
+		virtualMethodRef 0.10.7()S;		// setOutgoing()S
+		// 50
+		virtualMethodRef 0.10.9(S)V;		// setOutgoingLength(S)V
+		// 51
+		virtualMethodRef 0.10.4(SS)V;		// sendBytes(SS)V
+		// 52
+		staticFieldRef byte[] WalletDemoApplet/balance_new;
+		// 53
+		virtualMethodRef 0.10.5([BSS)V;		// sendBytesLong([BSS)V
+		// 54
+		staticFieldRef byte[] WalletDemoApplet/Integral_new;
+		// 55
+		staticFieldRef byte[] WalletDemoApplet/tempmux;
+		// 56
+		staticMethodRef 0.16.3([BSSB)S;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+		// 57
+		staticFieldRef byte[] WalletDemoApplet/balance_new1;
+		// 58
+		staticFieldRef byte[] WalletDemoApplet/tempmux1;
+		// 59
+		staticFieldRef byte[] WalletDemoApplet/MaxIntegral;
+	}
+
+	.class public WalletDemoApplet 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			 0.9 pin 0;		// Ljavacard/framework/OwnerPIN;
+			 1.10 Key 1;		// Ljavacard/security/DESKey;
+			 2.1 cipherDES_ECB_NOPAD 2;		// Ljavacardx/crypto/Cipher;
+			 1.14 myRandomS 3;		// Ljavacard/security/RandomData;
+			 byte[] cardID 4;		// [B
+			 byte[] output 5;		// [B
+			 short balance 6;		// S
+			 short integral 7;		// S
+			 boolean bRand 8;		// Z
+			 boolean ExternalMark 9;		// Z
+			 boolean verifyMark 10;		// Z
+			 short test 11;		// S
+			private static final byte Wallet_CLA = -128;		// B
+			static final byte VERIFY = 32;		// B
+			private static final byte CREDIT = 48;		// B
+			private static final byte CONSUME = 64;		// B
+			private static final byte GET_BALANCE = 80;		// B
+			private static final byte GET_INTEGRAL = 112;		// B
+			private static final byte GET_CARDID = 1;		// B
+			private static final byte MAX_NUM_CARDID = 8;		// B
+			private static final short MAX_BALANCE = 32767;		// S
+			static final short SW_EXCEED_MAXIMUM_BALANCE = 27268;		// S
+			static final short SW_NEGATIVE_BALANCE = 27269;		// S
+			static final short SW_EXCEED_MAXIMUM_INTEGRAL = 27267;		// S
+			static final short SW_EXTERAL_MARK = 27270;		// S
+			private static final byte[] tempmux = {-1,-1};		// [B
+			private static final byte[] balance_new = {0,0};		// [B
+			private static final byte[] tempmux1 = {-1,-1,-1,-1};		// [B
+			private static final byte[] balance_new1 = {0,0,0,0};		// [B
+			private static final byte[] MaxIntegral = {-1,-1,-1,-1};		// [B
+			private static final byte[] Integral_new = {0,0,0,0};		// [B
+			static final byte PIN_TRY_LIMIT = 3;		// B
+			static final byte MAX_PIN_SIZE = 8;		// B
+			static final short SW_VERIFICATION_FAILED = 25344;		// S
+			static final short SW_PIN_VERIFICATION_REQUIRED = 25345;		// S
+			static final byte[] seed = {88,73,114,21,62,-89,-80,-56};		// [B
+			static final byte[] input = {-56,-94,53,94,15,27,-122,-30};		// [B
+			static final byte[] iv = {0,0,0,0,0,0,0,0};		// [B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method private <init>([BSB)V {
+			.stack 5;
+			.locals 6;
+
+				L0:	aload_0;
+					invokespecial 13;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					bspush -2;
+					putfield_s 0;		// short WalletDemoApplet/WalletDemoApplet.test
+					aload_0;
+					sconst_0;
+					putfield_s 1;		// short WalletDemoApplet/WalletDemoApplet.balance
+					aload_0;
+					sconst_0;
+					putfield_s 2;		// short WalletDemoApplet/WalletDemoApplet.integral
+					aload_0;
+					sconst_3;
+					sspush 128;
+					sconst_0;
+					invokestatic 15;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 17;		// T_CLASSORINTERFACE javacard/security/DESKey
+					putfield_a 3;		// reference WalletDemoApplet/WalletDemoApplet.Key
+					aload_0;
+					sconst_2;
+					sconst_0;
+					invokestatic 14;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+					putfield_a 4;		// reference WalletDemoApplet/WalletDemoApplet.cipherDES_ECB_NOPAD
+					aload_0;
+					sconst_2;
+					invokestatic 16;		// javacard/security/RandomData.getInstance(B)Ljavacard/security/RandomData;
+					putfield_a 5;		// reference WalletDemoApplet/WalletDemoApplet.myRandomS
+					aload_0;
+					new 18;		// javacard/framework/OwnerPIN
+					dup;
+					sconst_3;
+					bspush 8;
+					invokespecial 12;		// javacard/framework/OwnerPIN.<init>(BB)V
+					putfield_a 6;		// reference WalletDemoApplet/WalletDemoApplet.pin
+					aload_0;
+					bspush 10;
+					newarray 11;
+					putfield_a 7;		// reference WalletDemoApplet/WalletDemoApplet.cardID
+					aload_0;
+					bspush 16;
+					newarray 11;
+					putfield_a 8;		// reference WalletDemoApplet/WalletDemoApplet.output
+					aload_0;
+					sconst_0;
+					putfield_b 9;		// boolean WalletDemoApplet/WalletDemoApplet.bRand
+					aload_0;
+					sconst_0;
+					putfield_b 10;		// boolean WalletDemoApplet/WalletDemoApplet.ExternalMark
+					aload_0;
+					sconst_0;
+					putfield_b 11;		// boolean WalletDemoApplet/WalletDemoApplet.verifyMark
+					aload_1;
+					sload_2;
+					baload;
+					sstore 4;
+				L1:	sload_2;
+					sload 4;
+					sadd;
+					sconst_1;
+					sadd;
+					sstore_2;
+					aload_1;
+					sload_2;
+					baload;
+					sstore 5;
+				L2:	sload_2;
+					sload 5;
+					sadd;
+					sconst_1;
+					sadd;
+					sstore_2;
+					aload_1;
+					sload_2;
+					baload;
+					sstore 6;
+				L3:	sinc 2 1;
+					aload_1;
+					sload_2;
+					baload;
+					sstore 7;
+				L4:	getfield_a_this 6;		// reference WalletDemoApplet/WalletDemoApplet.pin
+					aload_1;
+					sload_2;
+					sconst_1;
+					sadd;
+					sload 7;
+					invokevirtual 19;		// update([BSB)V
+					sload_2;
+					sload 7;
+					sadd;
+					sconst_1;
+					sadd;
+					sstore_2;
+					aload_1;
+					sload_2;
+					baload;
+					sstore 8;
+				L5:	getfield_a_this 3;		// reference WalletDemoApplet/WalletDemoApplet.Key
+					aload_1;
+					sload_2;
+					sconst_1;
+					sadd;
+					invokeinterface 3 17 5;		// javacard/security/DESKey
+					sload_2;
+					sload 8;
+					sadd;
+					sconst_1;
+					sadd;
+					sstore_2;
+					aload_1;
+					sload_2;
+					baload;
+					sstore 9;
+				L6:	aload_1;
+					sload_2;
+					sconst_1;
+					sadd;
+					getfield_a_this 7;		// reference WalletDemoApplet/WalletDemoApplet.cardID
+					sconst_0;
+					sload 9;
+					invokestatic 20;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_0;
+					invokevirtual 21;		// register()V
+					return;
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 5;
+			.locals 0;
+
+				L0:	new 22;		// WalletDemoApplet/WalletDemoApplet
+					dup;
+					aload_0;
+					sload_1;
+					sload_2;
+					invokespecial 23;		// WalletDemoApplet/WalletDemoApplet.<init>([BSB)V
+					pop;
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 7;
+			.locals 3;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 24;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 25;		// getBuffer()[B
+					astore_2;
+				L3:	aload_2;
+					sconst_0;
+					baload;
+					bspush -128;
+					if_scmpeq L5;
+				L4:	aload_2;
+					sconst_0;
+					baload;
+					ifne_w L35;
+				L5:	aload_2;
+					sconst_1;
+					baload;
+					slookupswitch L33 9 -126 L21 -124 L12 -120 L29 1 L11 32 L7 48 L6 64 L8 80 L9 112 L10;
+				L6:	aload_0;
+					aload_1;
+					invokespecial 26;		// WalletDemoApplet/WalletDemoApplet.credit_extend(Ljavacard/framework/APDU;)V
+					return;
+				L7:	aload_0;
+					aload_1;
+					invokespecial 27;		// WalletDemoApplet/WalletDemoApplet.verify(Ljavacard/framework/APDU;)V
+					return;
+				L8:	aload_0;
+					aload_1;
+					invokespecial 28;		// WalletDemoApplet/WalletDemoApplet.consume_extend(Ljavacard/framework/APDU;)V
+					return;
+				L9:	aload_0;
+					aload_1;
+					invokespecial 29;		// WalletDemoApplet/WalletDemoApplet.getBalance1(Ljavacard/framework/APDU;)V
+					return;
+				L10:	aload_0;
+					aload_1;
+					invokespecial 30;		// WalletDemoApplet/WalletDemoApplet.getintegal(Ljavacard/framework/APDU;)V
+					return;
+				L11:	aload_0;
+					aload_1;
+					invokespecial 31;		// WalletDemoApplet/WalletDemoApplet.getcardid(Ljavacard/framework/APDU;)V
+					return;
+				L12:	aload_2;
+					sconst_0;
+					baload;
+					ifeq L14;
+				L13:	sspush 28160;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L14:	aload_2;
+					sconst_2;
+					baload;
+					ifne L16;
+				L15:	aload_2;
+					sconst_3;
+					baload;
+					ifeq L17;
+				L16:	sspush 27270;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L17:	aload_2;
+					sconst_4;
+					baload;
+					bspush 8;
+					if_scmple L19;
+				L18:	bspush 108;
+					bspush 8;
+					invokestatic 33;		// javacard/framework/Util.makeShort(BB)S
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L19:	sconst_0;
+					aload_2;
+					sconst_4;
+					baload;
+					invokestatic 33;		// javacard/framework/Util.makeShort(BB)S
+					sstore_3;
+				L20:	getfield_a_this 5;		// reference WalletDemoApplet/WalletDemoApplet.myRandomS
+					getstatic_a 34;		// reference WalletDemoApplet/WalletDemoApplet.seed
+					sconst_0;
+					bspush 8;
+					invokevirtual 35;		// setSeed([BSS)V
+					getfield_a_this 5;		// reference WalletDemoApplet/WalletDemoApplet.myRandomS
+					aload_2;
+					sconst_5;
+					sload_3;
+					invokevirtual 36;		// generateData([BSS)V
+					aload_2;
+					sconst_5;
+					getstatic_a 37;		// reference WalletDemoApplet/WalletDemoApplet.input
+					sconst_0;
+					sload_3;
+					invokestatic 20;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_5;
+					sload_3;
+					invokevirtual 38;		// setOutgoingAndSend(SS)V
+					aload_0;
+					sconst_1;
+					putfield_b 9;		// boolean WalletDemoApplet/WalletDemoApplet.bRand
+					goto_w L34;
+				L21:	getfield_b_this 9;		// boolean WalletDemoApplet/WalletDemoApplet.bRand
+					ifne L23;
+				L22:	sspush 27013;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L23:	aload_0;
+					sconst_0;
+					putfield_b 9;		// boolean WalletDemoApplet/WalletDemoApplet.bRand
+					aload_2;
+					sconst_4;
+					baload;
+					bspush 8;
+					if_scmpeq L25;
+				L24:	sspush 26368;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L25:	aload_1;
+					invokevirtual 39;		// setIncomingAndReceive()S
+					pop;
+					aload_0;
+					getfield_a_this 3;		// reference WalletDemoApplet/WalletDemoApplet.Key
+					getstatic_a 37;		// reference WalletDemoApplet/WalletDemoApplet.input
+					sconst_0;
+					bspush 8;
+					getfield_a_this 8;		// reference WalletDemoApplet/WalletDemoApplet.output
+					sconst_0;
+					invokespecial 40;		// WalletDemoApplet/WalletDemoApplet.calculateCryptogram(Ljavacard/security/DESKey;[BSS[BS)S
+					sstore 4;
+				L26:	aload_2;
+					sconst_5;
+					getfield_a_this 8;		// reference WalletDemoApplet/WalletDemoApplet.output
+					sconst_0;
+					bspush 8;
+					invokestatic 41;		// javacard/framework/Util.arrayCompare([BS[BSS)B
+					ifeq L28;
+				L27:	sspush 27010;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L28:	aload_0;
+					sconst_1;
+					putfield_b 10;		// boolean WalletDemoApplet/WalletDemoApplet.ExternalMark
+					goto L34;
+				L29:	aload_0;
+					sconst_0;
+					putfield_b 9;		// boolean WalletDemoApplet/WalletDemoApplet.bRand
+					aload_2;
+					sconst_4;
+					baload;
+					bspush 8;
+					if_scmpeq L31;
+				L30:	sspush 26368;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L31:	aload_1;
+					invokevirtual 39;		// setIncomingAndReceive()S
+					pop;
+					aload_0;
+					getfield_a_this 3;		// reference WalletDemoApplet/WalletDemoApplet.Key
+					aload_2;
+					sconst_5;
+					bspush 8;
+					aload_2;
+					sconst_5;
+					invokespecial 40;		// WalletDemoApplet/WalletDemoApplet.calculateCryptogram(Ljavacard/security/DESKey;[BSS[BS)S
+					sstore 4;
+				L32:	aload_1;
+					sconst_5;
+					sload 4;
+					invokevirtual 38;		// setOutgoingAndSend(SS)V
+					goto L34;
+				L33:	aload_0;
+					sconst_0;
+					putfield_b 9;		// boolean WalletDemoApplet/WalletDemoApplet.bRand
+					sspush 27904;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L34:	goto L36;
+				L35:	sspush 27904;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L36:	return;
+		}
+
+		.method private calculateCryptogram(Ljavacard/security/DESKey;[BSS[BS)S {
+			.stack 6;
+			.locals 1;
+
+			.descriptor	Ljavacard/security/DESKey;	1.10;
+
+				L0:	getfield_a_this 4;		// reference WalletDemoApplet/WalletDemoApplet.cipherDES_ECB_NOPAD
+					aload_1;
+					sconst_2;
+					getstatic_a 42;		// reference WalletDemoApplet/WalletDemoApplet.iv
+					sconst_0;
+					bspush 8;
+					invokevirtual 43;		// init(Ljavacard/security/Key;B[BSS)V
+					getfield_a_this 4;		// reference WalletDemoApplet/WalletDemoApplet.cipherDES_ECB_NOPAD
+					aload_2;
+					sload_3;
+					sload 4;
+					aload 5;
+					sload 6;
+					invokevirtual 44;		// doFinal([BSS[BS)S
+					sstore 7;
+				L1:	sload 7;
+					sreturn;
+		}
+
+		.method private calculateCryptogram2(Ljavacard/security/DESKey;[BSS[BS)S {
+			.stack 6;
+			.locals 1;
+
+			.descriptor	Ljavacard/security/DESKey;	1.10;
+
+				L0:	getfield_a_this 4;		// reference WalletDemoApplet/WalletDemoApplet.cipherDES_ECB_NOPAD
+					aload_1;
+					sconst_1;
+					getstatic_a 42;		// reference WalletDemoApplet/WalletDemoApplet.iv
+					sconst_0;
+					bspush 8;
+					invokevirtual 43;		// init(Ljavacard/security/Key;B[BSS)V
+					getfield_a_this 4;		// reference WalletDemoApplet/WalletDemoApplet.cipherDES_ECB_NOPAD
+					aload_2;
+					sload_3;
+					sload 4;
+					aload 5;
+					sload 6;
+					invokevirtual 44;		// doFinal([BSS[BS)S
+					sstore 7;
+				L1:	sload 7;
+					sreturn;
+		}
+
+		.method private credit(Ljavacard/framework/APDU;)V {
+			.stack 3;
+			.locals 4;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	getfield_b_this 10;		// boolean WalletDemoApplet/WalletDemoApplet.ExternalMark
+					ifne L2;
+				L1:	sspush 27270;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	getfield_a_this 6;		// reference WalletDemoApplet/WalletDemoApplet.pin
+					invokevirtual 45;		// isValidated()Z
+					ifne L4;
+				L3:	sspush 25345;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	aload_1;
+					invokevirtual 25;		// getBuffer()[B
+					astore_2;
+				L5:	aload_2;
+					sconst_4;
+					baload;
+					sspush 255;
+					sand;
+					sstore_3;
+				L6:	aload_1;
+					invokevirtual 39;		// setIncomingAndReceive()S
+					sstore 4;
+				L7:	sload_3;
+					sload 4;
+					if_scmpeq L9;
+				L8:	sspush 26368;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L9:	sconst_0;
+					sstore 5;
+				L10:	sload_3;
+					sconst_1;
+					if_scmpne L12;
+				L11:	sconst_0;
+					aload_2;
+					sconst_5;
+					baload;
+					invokestatic 33;		// javacard/framework/Util.makeShort(BB)S
+					sstore 5;
+					goto L13;
+				L12:	aload_2;
+					sconst_5;
+					invokestatic 46;		// javacard/framework/Util.getShort([BS)S
+					sstore 5;
+				L13:	sload 5;
+					ifeq L15;
+				L14:	getfield_s_this 1;		// short WalletDemoApplet/WalletDemoApplet.balance
+					sload 5;
+					sadd;
+					sspush 32767;
+					if_scmple L16;
+				L15:	sspush 27269;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L16:	aload_0;
+					getfield_s_this 1;		// short WalletDemoApplet/WalletDemoApplet.balance
+					sload 5;
+					sadd;
+					putfield_s 1;		// short WalletDemoApplet/WalletDemoApplet.balance
+					return;
+		}
+
+		.method private verify(Ljavacard/framework/APDU;)V {
+			.stack 4;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_1;
+					invokevirtual 25;		// getBuffer()[B
+					astore_2;
+				L1:	aload_1;
+					invokevirtual 39;		// setIncomingAndReceive()S
+					s2b;
+					sstore_3;
+				L2:	getfield_a_this 6;		// reference WalletDemoApplet/WalletDemoApplet.pin
+					aload_2;
+					sconst_5;
+					sload_3;
+					invokevirtual 47;		// check([BSB)Z
+					ifne L4;
+				L3:	sspush 25344;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	return;
+		}
+
+		.method private consume(Ljavacard/framework/APDU;)V {
+			.stack 4;
+			.locals 4;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	getfield_a_this 6;		// reference WalletDemoApplet/WalletDemoApplet.pin
+					invokevirtual 45;		// isValidated()Z
+					ifne L2;
+				L1:	sspush 25345;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	aload_1;
+					invokevirtual 25;		// getBuffer()[B
+					astore_2;
+				L3:	aload_2;
+					sconst_4;
+					baload;
+					sstore_3;
+				L4:	aload_1;
+					invokevirtual 39;		// setIncomingAndReceive()S
+					sstore 4;
+				L5:	sload_3;
+					sload 4;
+					if_scmpeq L7;
+				L6:	sspush 26368;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L7:	sconst_0;
+					sstore 5;
+				L8:	sload_3;
+					sconst_1;
+					if_scmpne L10;
+				L9:	sconst_0;
+					aload_2;
+					sconst_5;
+					baload;
+					invokestatic 33;		// javacard/framework/Util.makeShort(BB)S
+					sstore 5;
+					goto L11;
+				L10:	aload_2;
+					sconst_5;
+					invokestatic 46;		// javacard/framework/Util.getShort([BS)S
+					sstore 5;
+				L11:	sload 5;
+					ifeq L13;
+				L12:	sload 5;
+					getfield_s_this 1;		// short WalletDemoApplet/WalletDemoApplet.balance
+					if_scmple L14;
+				L13:	sspush 27269;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L14:	aload_0;
+					aload_2;
+					sconst_5;
+					sload_3;
+					invokespecial 48;		// WalletDemoApplet/WalletDemoApplet.calIntegral([BBS)V
+					aload_0;
+					getfield_s_this 1;		// short WalletDemoApplet/WalletDemoApplet.balance
+					sload 5;
+					ssub;
+					putfield_s 1;		// short WalletDemoApplet/WalletDemoApplet.balance
+					return;
+		}
+
+		.method private getBalance(Ljavacard/framework/APDU;)V {
+			.stack 4;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_1;
+					invokevirtual 25;		// getBuffer()[B
+					astore_2;
+				L1:	aload_1;
+					invokevirtual 49;		// setOutgoing()S
+					sstore_3;
+				L2:	aload_1;
+					sconst_2;
+					invokevirtual 50;		// setOutgoingLength(S)V
+					aload_2;
+					sconst_0;
+					getfield_s_this 1;		// short WalletDemoApplet/WalletDemoApplet.balance
+					bspush 8;
+					sshr;
+					s2b;
+					bastore;
+					aload_2;
+					sconst_1;
+					getfield_s_this 1;		// short WalletDemoApplet/WalletDemoApplet.balance
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+					aload_1;
+					sconst_0;
+					sconst_2;
+					invokevirtual 51;		// sendBytes(SS)V
+					return;
+		}
+
+		.method private getBalance1(Ljavacard/framework/APDU;)V {
+			.stack 4;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_1;
+					invokevirtual 25;		// getBuffer()[B
+					astore_2;
+				L1:	aload_1;
+					invokevirtual 49;		// setOutgoing()S
+					sstore_3;
+				L2:	aload_1;
+					sconst_2;
+					invokevirtual 50;		// setOutgoingLength(S)V
+					aload_1;
+					getstatic_a 52;		// reference WalletDemoApplet/WalletDemoApplet.balance_new
+					sconst_0;
+					sconst_2;
+					invokevirtual 53;		// sendBytesLong([BSS)V
+					return;
+		}
+
+		.method private getintegal(Ljavacard/framework/APDU;)V {
+			.stack 4;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_1;
+					invokevirtual 25;		// getBuffer()[B
+					astore_2;
+				L1:	aload_1;
+					invokevirtual 49;		// setOutgoing()S
+					sstore_3;
+				L2:	aload_1;
+					sconst_4;
+					invokevirtual 50;		// setOutgoingLength(S)V
+					aload_1;
+					getstatic_a 54;		// reference WalletDemoApplet/WalletDemoApplet.Integral_new
+					sconst_0;
+					sconst_4;
+					invokevirtual 53;		// sendBytesLong([BSS)V
+					return;
+		}
+
+		.method private getcardid(Ljavacard/framework/APDU;)V {
+			.stack 4;
+			.locals 1;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_1;
+					invokevirtual 49;		// setOutgoing()S
+					sstore_2;
+				L1:	aload_1;
+					bspush 8;
+					invokevirtual 50;		// setOutgoingLength(S)V
+					aload_1;
+					getfield_a_this 7;		// reference WalletDemoApplet/WalletDemoApplet.cardID
+					sconst_0;
+					bspush 8;
+					invokevirtual 53;		// sendBytesLong([BSS)V
+					return;
+		}
+
+		.method private credit_extend(Ljavacard/framework/APDU;)V {
+			.stack 5;
+			.locals 7;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	getfield_b_this 10;		// boolean WalletDemoApplet/WalletDemoApplet.ExternalMark
+					ifne L2;
+				L1:	sspush 27270;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	getfield_a_this 6;		// reference WalletDemoApplet/WalletDemoApplet.pin
+					invokevirtual 45;		// isValidated()Z
+					ifne L4;
+				L3:	sspush 25345;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	aload_1;
+					invokevirtual 25;		// getBuffer()[B
+					astore_2;
+				L5:	aload_2;
+					sconst_4;
+					baload;
+					sstore_3;
+				L6:	aload_1;
+					invokevirtual 39;		// setIncomingAndReceive()S
+					sstore 4;
+				L7:	sload_3;
+					sload 4;
+					if_scmpeq L9;
+				L8:	sspush 26368;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L9:	sconst_0;
+					sstore 5;
+				L10:	sconst_0;
+					sstore 6;
+				L11:	sconst_2;
+					newarray 11;
+					dup;
+					sconst_0;
+					sconst_0;
+					bastore;
+					dup;
+					sconst_1;
+					sconst_0;
+					bastore;
+					astore 7;
+				L12:	aload_2;
+					sconst_5;
+					baload;
+					sspush 255;
+					sand;
+					ifne L15;
+				L13:	aload_2;
+					bspush 6;
+					baload;
+					sspush 255;
+					sand;
+					ifne L15;
+				L14:	sspush 27269;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L15:	getstatic_a 52;		// reference WalletDemoApplet/WalletDemoApplet.balance_new
+					sconst_0;
+					aload 7;
+					sconst_0;
+					sconst_2;
+					invokestatic 20;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_2;
+					bspush 6;
+					baload;
+					sspush 255;
+					sand;
+					sstore 5;
+					sload 5;
+					aload 7;
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					sadd;
+					sstore 5;
+					sload 5;
+					bspush 8;
+					sshr;
+					s2b;
+					sstore 8;
+				L16:	aload 7;
+					sconst_1;
+					sload 5;
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+					aload_2;
+					sconst_5;
+					baload;
+					sspush 255;
+					sand;
+					sstore 6;
+					sload 6;
+					sload 8;
+					sadd;
+					aload 7;
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					sadd;
+					sstore 6;
+					sload 6;
+					bspush 8;
+					sshr;
+					s2b;
+					sstore 8;
+					aload 7;
+					sconst_0;
+					sload 6;
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+					sload 8;
+					ifle L18;
+				L17:	sspush 26368;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L18:	getstatic_a 55;		// reference WalletDemoApplet/WalletDemoApplet.tempmux
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					aload 7;
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpge L20;
+				L19:	sspush 26368;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L20:	aload 7;
+					sconst_0;
+					getstatic_a 52;		// reference WalletDemoApplet/WalletDemoApplet.balance_new
+					sconst_0;
+					sconst_2;
+					invokestatic 20;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					return;
+		}
+
+		.method private consume_extend(Ljavacard/framework/APDU;)V {
+			.stack 5;
+			.locals 6;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	getfield_a_this 6;		// reference WalletDemoApplet/WalletDemoApplet.pin
+					invokevirtual 45;		// isValidated()Z
+					ifne L2;
+				L1:	sspush 25345;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	aload_1;
+					invokevirtual 25;		// getBuffer()[B
+					astore_2;
+				L3:	aload_2;
+					sconst_4;
+					baload;
+					sstore_3;
+				L4:	aload_1;
+					invokevirtual 39;		// setIncomingAndReceive()S
+					sstore 4;
+				L5:	sload_3;
+					sload 4;
+					if_scmpeq L7;
+				L6:	sspush 26368;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L7:	sconst_2;
+					newarray 11;
+					dup;
+					sconst_0;
+					sconst_0;
+					bastore;
+					dup;
+					sconst_1;
+					sconst_0;
+					bastore;
+					astore 5;
+				L8:	aload_2;
+					sconst_5;
+					aload 5;
+					sconst_0;
+					sconst_2;
+					invokestatic 20;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload 5;
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					ifne L11;
+				L9:	aload 5;
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					ifne L11;
+				L10:	sspush 26368;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L11:	getstatic_a 52;		// reference WalletDemoApplet/WalletDemoApplet.balance_new
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					aload 5;
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpge L13;
+				L12:	sspush 27269;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L13:	getstatic_a 52;		// reference WalletDemoApplet/WalletDemoApplet.balance_new
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					aload 5;
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpne L16;
+				L14:	getstatic_a 52;		// reference WalletDemoApplet/WalletDemoApplet.balance_new
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					aload 5;
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpge L16;
+				L15:	sspush 27269;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L16:	sconst_0;
+					sstore 6;
+				L17:	sconst_0;
+					sstore 7;
+				L18:	aload_2;
+					sconst_5;
+					aload 5;
+					sconst_0;
+					sconst_2;
+					invokestatic 20;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_0;
+					aload_2;
+					sconst_5;
+					sload_3;
+					invokespecial 48;		// WalletDemoApplet/WalletDemoApplet.calIntegral([BBS)V
+					getstatic_a 52;		// reference WalletDemoApplet/WalletDemoApplet.balance_new
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					sstore 6;
+					getstatic_a 52;		// reference WalletDemoApplet/WalletDemoApplet.balance_new
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					sstore 7;
+					sload 6;
+					aload 5;
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpge L20;
+				L19:	sinc 7 -1;
+					sload 6;
+					sspush 256;
+					sadd;
+					aload 5;
+					sconst_1;
+					baload;
+					ssub;
+					sspush 255;
+					sand;
+					sstore 6;
+					aload 5;
+					sconst_1;
+					sload 6;
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+					goto L21;
+				L20:	sload 6;
+					aload 5;
+					sconst_1;
+					baload;
+					ssub;
+					sspush 255;
+					sand;
+					sstore 6;
+					aload 5;
+					sconst_1;
+					sload 6;
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+				L21:	sload 7;
+					aload 5;
+					sconst_0;
+					baload;
+					ssub;
+					sstore 7;
+					aload 5;
+					sconst_0;
+					sload 7;
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+					aload 5;
+					sconst_0;
+					getstatic_a 52;		// reference WalletDemoApplet/WalletDemoApplet.balance_new
+					sconst_0;
+					sconst_2;
+					invokestatic 20;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					return;
+		}
+
+		.method private credit_extend2(Ljavacard/framework/APDU;)V {
+			.stack 5;
+			.locals 8;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	getfield_b_this 10;		// boolean WalletDemoApplet/WalletDemoApplet.ExternalMark
+					ifne L2;
+				L1:	sspush 27270;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	getfield_a_this 6;		// reference WalletDemoApplet/WalletDemoApplet.pin
+					invokevirtual 45;		// isValidated()Z
+					ifne L4;
+				L3:	sspush 25345;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	aload_1;
+					invokevirtual 25;		// getBuffer()[B
+					astore_2;
+				L5:	aload_2;
+					sconst_4;
+					baload;
+					sstore_3;
+				L6:	aload_1;
+					invokevirtual 39;		// setIncomingAndReceive()S
+					sstore 4;
+				L7:	sload_3;
+					sload 4;
+					if_scmpeq L9;
+				L8:	sspush 26368;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L9:	sconst_0;
+					sstore 5;
+				L10:	sconst_4;
+					newarray 11;
+					dup;
+					sconst_0;
+					sconst_0;
+					bastore;
+					dup;
+					sconst_1;
+					sconst_0;
+					bastore;
+					dup;
+					sconst_2;
+					sconst_0;
+					bastore;
+					dup;
+					sconst_3;
+					sconst_0;
+					bastore;
+					astore 6;
+				L11:	aload_2;
+					sconst_5;
+					aload 6;
+					sconst_0;
+					sload_3;
+					invokestatic 20;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload 6;
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					ifne L16;
+				L12:	aload 6;
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					ifne L16;
+				L13:	aload 6;
+					sconst_2;
+					baload;
+					sspush 255;
+					sand;
+					ifne L16;
+				L14:	aload 6;
+					sconst_3;
+					baload;
+					sspush 255;
+					sand;
+					ifne L16;
+				L15:	sspush 26368;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L16:	aload 6;
+					sconst_0;
+					sload_3;
+					sconst_0;
+					invokestatic 56;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+					getstatic_a 57;		// reference WalletDemoApplet/WalletDemoApplet.balance_new1
+					sconst_0;
+					aload 6;
+					sconst_0;
+					sload_3;
+					invokestatic 20;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					sconst_3;
+					sstore 7;
+				L17:	sconst_0;
+					sstore 8;
+				L18:	sconst_5;
+					sload_3;
+					sadd;
+					sconst_1;
+					ssub;
+					sstore 9;
+				L19:	sload 9;
+					sconst_5;
+					if_scmplt L21;
+				L20:	aload_2;
+					sload 9;
+					baload;
+					sspush 255;
+					sand;
+					sstore 5;
+					sload 5;
+					sload 8;
+					sadd;
+					aload 6;
+					sload 7;
+					baload;
+					sspush 255;
+					sand;
+					sadd;
+					sstore 5;
+					sload 5;
+					bspush 8;
+					sshr;
+					s2b;
+					sstore 8;
+					aload 6;
+					sload 7;
+					sload 5;
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+					sinc 7 -1;
+					sinc 9 -1;
+					goto L19;
+				L21:	sload 8;
+					ifle L23;
+				L22:	sspush 27269;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L23:	getstatic_a 58;		// reference WalletDemoApplet/WalletDemoApplet.tempmux1
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					aload 6;
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpge L25;
+				L24:	sspush 26368;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+					goto_w L34;
+				L25:	getstatic_a 58;		// reference WalletDemoApplet/WalletDemoApplet.tempmux1
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					aload 6;
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpne L34;
+				L26:	getstatic_a 58;		// reference WalletDemoApplet/WalletDemoApplet.tempmux1
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					aload 6;
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpge L28;
+				L27:	sspush 27269;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+					goto L34;
+				L28:	getstatic_a 58;		// reference WalletDemoApplet/WalletDemoApplet.tempmux1
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					aload 6;
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpne L34;
+				L29:	getstatic_a 58;		// reference WalletDemoApplet/WalletDemoApplet.tempmux1
+					sconst_2;
+					baload;
+					sspush 255;
+					sand;
+					aload 6;
+					sconst_2;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpge L31;
+				L30:	sspush 27269;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+					goto L34;
+				L31:	getstatic_a 58;		// reference WalletDemoApplet/WalletDemoApplet.tempmux1
+					sconst_2;
+					baload;
+					sspush 255;
+					sand;
+					aload 6;
+					sconst_2;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpne L34;
+				L32:	getstatic_a 58;		// reference WalletDemoApplet/WalletDemoApplet.tempmux1
+					sconst_3;
+					baload;
+					sspush 255;
+					sand;
+					aload 6;
+					sconst_3;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpge L34;
+				L33:	sspush 27269;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L34:	aload 6;
+					sconst_0;
+					getstatic_a 57;		// reference WalletDemoApplet/WalletDemoApplet.balance_new1
+					sconst_0;
+					sload_3;
+					invokestatic 20;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					return;
+		}
+
+		.method private consume_extend2(Ljavacard/framework/APDU;)V {
+			.stack 5;
+			.locals 7;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	getfield_a_this 6;		// reference WalletDemoApplet/WalletDemoApplet.pin
+					invokevirtual 45;		// isValidated()Z
+					ifne L2;
+				L1:	sspush 25345;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	aload_1;
+					invokevirtual 25;		// getBuffer()[B
+					astore_2;
+				L3:	aload_2;
+					sconst_4;
+					baload;
+					sstore_3;
+				L4:	aload_1;
+					invokevirtual 39;		// setIncomingAndReceive()S
+					sstore 4;
+				L5:	sload_3;
+					sload 4;
+					if_scmpeq L7;
+				L6:	sspush 26368;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L7:	sconst_4;
+					newarray 11;
+					dup;
+					sconst_0;
+					sconst_0;
+					bastore;
+					dup;
+					sconst_1;
+					sconst_0;
+					bastore;
+					dup;
+					sconst_2;
+					sconst_0;
+					bastore;
+					dup;
+					sconst_3;
+					sconst_0;
+					bastore;
+					astore 5;
+				L8:	aload_2;
+					sconst_5;
+					aload 5;
+					sconst_0;
+					sload_3;
+					invokestatic 20;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload 5;
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					ifne L13;
+				L9:	aload 5;
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					ifne L13;
+				L10:	aload 5;
+					sconst_2;
+					baload;
+					sspush 255;
+					sand;
+					ifne L13;
+				L11:	aload 5;
+					sconst_3;
+					baload;
+					sspush 255;
+					sand;
+					ifne L13;
+				L12:	sspush 26368;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L13:	getstatic_a 57;		// reference WalletDemoApplet/WalletDemoApplet.balance_new1
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					aload 5;
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpge L15;
+				L14:	sspush 27269;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+					goto_w L24;
+				L15:	getstatic_a 57;		// reference WalletDemoApplet/WalletDemoApplet.balance_new1
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					aload 5;
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpne L24;
+				L16:	getstatic_a 57;		// reference WalletDemoApplet/WalletDemoApplet.balance_new1
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					aload 5;
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpge L18;
+				L17:	sspush 27269;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+					goto L24;
+				L18:	getstatic_a 57;		// reference WalletDemoApplet/WalletDemoApplet.balance_new1
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					aload 5;
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpne L24;
+				L19:	getstatic_a 57;		// reference WalletDemoApplet/WalletDemoApplet.balance_new1
+					sconst_2;
+					baload;
+					sspush 255;
+					sand;
+					aload 5;
+					sconst_2;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpge L21;
+				L20:	sspush 27269;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+					goto L24;
+				L21:	getstatic_a 57;		// reference WalletDemoApplet/WalletDemoApplet.balance_new1
+					sconst_2;
+					baload;
+					sspush 255;
+					sand;
+					aload 5;
+					sconst_2;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpne L24;
+				L22:	getstatic_a 57;		// reference WalletDemoApplet/WalletDemoApplet.balance_new1
+					sconst_3;
+					baload;
+					sspush 255;
+					sand;
+					aload 5;
+					sconst_3;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpge L24;
+				L23:	sspush 27269;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L24:	aload_0;
+					aload_2;
+					sconst_5;
+					sload_3;
+					invokespecial 48;		// WalletDemoApplet/WalletDemoApplet.calIntegral([BBS)V
+					aload_2;
+					sconst_5;
+					aload 5;
+					sconst_0;
+					sconst_2;
+					invokestatic 20;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					sconst_0;
+					sstore 6;
+				L25:	sconst_0;
+					sstore 7;
+				L26:	sconst_3;
+					sstore 8;
+				L27:	sload 8;
+					iflt L32;
+				L28:	getstatic_a 57;		// reference WalletDemoApplet/WalletDemoApplet.balance_new1
+					sload 8;
+					baload;
+					sspush 255;
+					sload 7;
+					ssub;
+					sand;
+					sstore 6;
+					sload 6;
+					aload 5;
+					sload 8;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpge L30;
+				L29:	sconst_1;
+					sstore 7;
+					sload 6;
+					sspush 256;
+					sadd;
+					aload 5;
+					sload 8;
+					baload;
+					ssub;
+					sspush 255;
+					sand;
+					sstore 6;
+					aload 5;
+					sload 8;
+					sload 6;
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+					goto L31;
+				L30:	sconst_0;
+					sstore 7;
+					sload 6;
+					aload 5;
+					sload 8;
+					baload;
+					ssub;
+					sspush 255;
+					sand;
+					sstore 6;
+					aload 5;
+					sload 8;
+					sload 6;
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+				L31:	sinc 8 -1;
+					goto L27;
+				L32:	aload 5;
+					sconst_0;
+					getstatic_a 57;		// reference WalletDemoApplet/WalletDemoApplet.balance_new1
+					sconst_0;
+					sload_3;
+					invokestatic 20;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					return;
+		}
+
+		.method private getBalance2(Ljavacard/framework/APDU;)V {
+			.stack 4;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_1;
+					invokevirtual 25;		// getBuffer()[B
+					astore_2;
+				L1:	aload_1;
+					invokevirtual 49;		// setOutgoing()S
+					sstore_3;
+				L2:	aload_1;
+					sconst_4;
+					invokevirtual 50;		// setOutgoingLength(S)V
+					aload_1;
+					getstatic_a 57;		// reference WalletDemoApplet/WalletDemoApplet.balance_new1
+					sconst_0;
+					sconst_4;
+					invokevirtual 53;		// sendBytesLong([BSS)V
+					return;
+		}
+
+		.method private calIntegral([BBS)V {
+			.stack 5;
+			.locals 4;
+
+				L0:	sconst_4;
+					newarray 11;
+					dup;
+					sconst_0;
+					sconst_0;
+					bastore;
+					dup;
+					sconst_1;
+					sconst_0;
+					bastore;
+					dup;
+					sconst_2;
+					sconst_0;
+					bastore;
+					dup;
+					sconst_3;
+					sconst_0;
+					bastore;
+					astore 4;
+				L1:	sconst_0;
+					sstore 5;
+				L2:	sconst_0;
+					sstore 6;
+				L3:	sload_3;
+					sconst_2;
+					if_scmpne L5;
+				L4:	aload_1;
+					sload_2;
+					aload 4;
+					sconst_2;
+					sload_3;
+					invokestatic 20;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					goto L6;
+				L5:	aload_1;
+					sload_2;
+					aload 4;
+					sconst_0;
+					sload_3;
+					invokestatic 20;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+				L6:	sconst_3;
+					sstore 7;
+				L7:	sload 7;
+					iflt L9;
+				L8:	getstatic_a 54;		// reference WalletDemoApplet/WalletDemoApplet.Integral_new
+					sload 7;
+					baload;
+					sspush 255;
+					sand;
+					sstore 5;
+					sload 5;
+					sload 6;
+					sadd;
+					aload 4;
+					sload 7;
+					baload;
+					sspush 255;
+					sand;
+					sadd;
+					sstore 5;
+					sload 5;
+					bspush 8;
+					sshr;
+					s2b;
+					sstore 6;
+					aload 4;
+					sload 7;
+					sload 5;
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+					sinc 7 -1;
+					goto L7;
+				L9:	sload 6;
+					ifle L11;
+				L10:	sspush 27267;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L11:	getstatic_a 59;		// reference WalletDemoApplet/WalletDemoApplet.MaxIntegral
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					aload 4;
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpge L13;
+				L12:	sspush 27267;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+					goto_w L22;
+				L13:	getstatic_a 59;		// reference WalletDemoApplet/WalletDemoApplet.MaxIntegral
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					aload 4;
+					sconst_0;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpne L22;
+				L14:	getstatic_a 59;		// reference WalletDemoApplet/WalletDemoApplet.MaxIntegral
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					aload 4;
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpge L16;
+				L15:	sspush 27267;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+					goto L22;
+				L16:	getstatic_a 59;		// reference WalletDemoApplet/WalletDemoApplet.MaxIntegral
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					aload 4;
+					sconst_1;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpne L22;
+				L17:	getstatic_a 59;		// reference WalletDemoApplet/WalletDemoApplet.MaxIntegral
+					sconst_2;
+					baload;
+					sspush 255;
+					sand;
+					aload 4;
+					sconst_2;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpge L19;
+				L18:	sspush 27267;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+					goto L22;
+				L19:	getstatic_a 59;		// reference WalletDemoApplet/WalletDemoApplet.MaxIntegral
+					sconst_2;
+					baload;
+					sspush 255;
+					sand;
+					aload 4;
+					sconst_2;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpne L22;
+				L20:	getstatic_a 59;		// reference WalletDemoApplet/WalletDemoApplet.MaxIntegral
+					sconst_3;
+					baload;
+					sspush 255;
+					sand;
+					aload 4;
+					sconst_3;
+					baload;
+					sspush 255;
+					sand;
+					if_scmpge L22;
+				L21:	sspush 27267;
+					invokestatic 32;		// javacard/framework/ISOException.throwIt(S)V
+				L22:	aload 4;
+					sconst_0;
+					getstatic_a 54;		// reference WalletDemoApplet/WalletDemoApplet.Integral_new
+					sconst_0;
+					sconst_4;
+					invokestatic 20;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					return;
+		}
+
+	}
+
+}

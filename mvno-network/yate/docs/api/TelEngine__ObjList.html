@@ -1,0 +1,389 @@
+<HTML>
+<HEAD>
+<TITLE>class ObjList</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ObjList</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An object list class. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ObjList</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ObjList.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">ObjList</A></b> () 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~ObjList</A></b> () 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref4">getObject</A></b> (const String& name)  const
+</LI>
+<LI>unsigned int &nbsp;<b><A HREF="#ref5">length</A></b> ()  const
+</LI>
+<LI>unsigned int &nbsp;<b><A HREF="#ref6">count</A></b> ()  const
+</LI>
+<LI>inline GenObject* &nbsp;<b><A HREF="#ref7">get</A></b> ()  const
+</LI>
+<LI>GenObject* &nbsp;<b><A HREF="#ref8">set</A></b> (const GenObject* obj, bool delold = true) 
+</LI>
+<LI>inline ObjList* &nbsp;<b><A HREF="#ref9">next</A></b> ()  const
+</LI>
+<LI>ObjList* &nbsp;<b><A HREF="#ref10">last</A></b> ()  const
+</LI>
+<LI>ObjList* &nbsp;<b><A HREF="#ref11">skipNull</A></b> ()  const
+</LI>
+<LI>ObjList* &nbsp;<b><A HREF="#ref12">skipNext</A></b> ()  const
+</LI>
+<LI>GenObject* &nbsp;<b><A HREF="#ref13">at</A></b> (int index)  const
+</LI>
+<LI>ObjList* &nbsp;<b><A HREF="#ref14">operator+</A></b> (int index)  const
+</LI>
+<LI>inline GenObject* &nbsp;<b><A HREF="#ref15">operator[]</A></b> (signed int index)  const
+</LI>
+<LI>inline GenObject* &nbsp;<b><A HREF="#ref16">operator[]</A></b> (unsigned int index)  const
+</LI>
+<LI>GenObject* &nbsp;<b><A HREF="#ref17">operator[]</A></b> (const String& str)  const
+</LI>
+<LI>ObjList* &nbsp;<b><A HREF="#ref18">find</A></b> (const GenObject* obj)  const
+</LI>
+<LI>ObjList* &nbsp;<b><A HREF="#ref19">find</A></b> (const String& str)  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref20">index</A></b> (const GenObject* obj)  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref21">index</A></b> (const String& str)  const
+</LI>
+<LI>ObjList* &nbsp;<b><A HREF="#ref22">insert</A></b> (const GenObject* obj, bool compact = true) 
+</LI>
+<LI>ObjList* &nbsp;<b><A HREF="#ref23">append</A></b> (const GenObject* obj, bool compact = true) 
+</LI>
+<LI>ObjList* &nbsp;<b><A HREF="#ref24">setUnique</A></b> (const GenObject* obj, bool compact = true) 
+</LI>
+<LI>GenObject* &nbsp;<b><A HREF="#ref25">remove</A></b> (bool delobj = true) 
+</LI>
+<LI>GenObject* &nbsp;<b><A HREF="#ref26">remove</A></b> (GenObject* obj, bool delobj = true) 
+</LI>
+<LI>GenObject* &nbsp;<b><A HREF="#ref27">remove</A></b> (const String& str, bool delobj = true) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref28">clear</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref29">compact</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref30">autoDelete</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref31">setDelete</A></b> (bool autodelete) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref33">sort</A></b> (int (*callbackCompare)(GenObject* obj1, GenObject* obj2, void* context), void* context = 0) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  const ObjList& &nbsp;<b><A HREF="#ref32">empty</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A simple single-linked object list handling class
+</p>
+<A NAME="ObjList"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ObjList</strong> ()
+<br></td><td align="right"><h3><strong>ObjList</strong></h3></td></tr></table><p></p><p>
+ Creates a new, empty list.
+     </p>
+<A NAME="~ObjList"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~ObjList</strong> ()
+<br></td><td align="right"><h3><strong>~ObjList</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destroys the list and everything in it.
+     </p>
+<A NAME="getObject"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="length"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int &nbsp;<strong>length</strong> ()
+<br></td><td align="right"><h3><strong>length</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of elements in the list
+</p>
+<p><b>Returns</b>: Count of items
+     </p>
+<A NAME="count"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int &nbsp;<strong>count</strong> ()
+<br></td><td align="right"><h3><strong>count</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of non-null objects in the list
+</p>
+<p><b>Returns</b>: Count of items
+     </p>
+<A NAME="get"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline GenObject* &nbsp;<strong>get</strong> ()
+<br></td><td align="right"><h3><strong>get</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the object associated to this list item
+</p>
+<p><b>Returns</b>: Pointer to the object or NULL
+     </p>
+<A NAME="set"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>GenObject* &nbsp;<strong>set</strong> (const GenObject* obj, bool delold = true)
+<br></td><td align="right"><h3><strong>set</strong></h3></td></tr></table><p></p><p>
+ Set the object associated to this list item
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">Pointer to the new object to set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delold</i></TD><TD align="left" valign="top">True to delete the old object (default)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the old object if not destroyed
+     </p>
+<A NAME="next"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ObjList* &nbsp;<strong>next</strong> ()
+<br></td><td align="right"><h3><strong>next</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the next item in the list
+</p>
+<p><b>Returns</b>: Pointer to the next item in list or NULL
+     </p>
+<A NAME="last"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList* &nbsp;<strong>last</strong> ()
+<br></td><td align="right"><h3><strong>last</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the last item in the list
+</p>
+<p><b>Returns</b>: Pointer to the last item in list
+     </p>
+<A NAME="skipNull"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList* &nbsp;<strong>skipNull</strong> ()
+<br></td><td align="right"><h3><strong>skipNull</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Skip over NULL holding items in the list
+</p>
+<p><b>Returns</b>: Pointer to the first non NULL holding item in list or NULL
+     </p>
+<A NAME="skipNext"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList* &nbsp;<strong>skipNext</strong> ()
+<br></td><td align="right"><h3><strong>skipNext</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Advance in the list skipping over NULL holding items
+</p>
+<p><b>Returns</b>: Pointer to the next non NULL holding item in list or NULL
+     </p>
+<A NAME="at"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>GenObject* &nbsp;<strong>at</strong> (int index)
+<br></td><td align="right"><h3><strong>at</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the object at a specific index in list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of the object to retrieve
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the object or NULL
+     </p>
+<A NAME="operator+"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList* &nbsp;<strong>operator+</strong> (int index)
+<br></td><td align="right"><h3><strong>operator+</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Pointer-like indexing operator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of the list item to retrieve
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the list item or NULL
+     </p>
+<A NAME="operator[]"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline GenObject* &nbsp;<strong>operator[]</strong> (signed int index)
+<br></td><td align="right"><h3><strong>operator[]</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Array-like indexing operator with signed parameter
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of the object to retrieve
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the object or NULL
+     </p>
+<A NAME="operator[]"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline GenObject* &nbsp;<strong>operator[]</strong> (unsigned int index)
+<br></td><td align="right"><h3><strong>operator[]</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Array-like indexing operator with unsigned parameter
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of the object to retrieve
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the object or NULL
+     </p>
+<A NAME="operator[]"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>GenObject* &nbsp;<strong>operator[]</strong> (const String& str)
+<br></td><td align="right"><h3><strong>operator[]</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Array-like indexing operator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String value of the object to locate
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the object or NULL
+     </p>
+<A NAME="find"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList* &nbsp;<strong>find</strong> (const GenObject* obj)
+<br></td><td align="right"><h3><strong>find</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the item in the list that holds an object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">Pointer to the object to search for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the found item or NULL
+     </p>
+<A NAME="find"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList* &nbsp;<strong>find</strong> (const String& str)
+<br></td><td align="right"><h3><strong>find</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the item in the list that holds an object by String value
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String value (toString) of the object to search for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the found item or NULL
+     </p>
+<A NAME="index"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>index</strong> (const GenObject* obj)
+<br></td><td align="right"><h3><strong>index</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the position in list of a GenObject by a pointer to it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">Pointer to the object to search for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Index of object in list, -1 if not found
+     </p>
+<A NAME="index"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>index</strong> (const String& str)
+<br></td><td align="right"><h3><strong>index</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the position in list of the first GenObject with a given value
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String value (toString) of the object to search for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Index of object in list, -1 if not found
+     </p>
+<A NAME="insert"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList* &nbsp;<strong>insert</strong> (const GenObject* obj, bool compact = true)
+<br></td><td align="right"><h3><strong>insert</strong></h3></td></tr></table><p></p><p>
+ Insert an object at this point
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">Pointer to the object to insert
+</TD></TR>
+<TR><TD align="left" valign="top"><i>compact</i></TD><TD align="left" valign="top">True to replace NULL values in list if possible
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the inserted list item
+     </p>
+<A NAME="append"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList* &nbsp;<strong>append</strong> (const GenObject* obj, bool compact = true)
+<br></td><td align="right"><h3><strong>append</strong></h3></td></tr></table><p></p><p>
+ Append an object to the end of the list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">Pointer to the object to append
+</TD></TR>
+<TR><TD align="left" valign="top"><i>compact</i></TD><TD align="left" valign="top">True to replace NULL values in list if possible
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the inserted list item
+     </p>
+<A NAME="setUnique"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList* &nbsp;<strong>setUnique</strong> (const GenObject* obj, bool compact = true)
+<br></td><td align="right"><h3><strong>setUnique</strong></h3></td></tr></table><p></p><p>
+ Set unique entry in this list. If not found, append it to the list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">Pointer to the object to uniquely set in the list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>compact</i></TD><TD align="left" valign="top">True to replace NULL values in list if possible
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the set list item
+     </p>
+<A NAME="remove"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>GenObject* &nbsp;<strong>remove</strong> (bool delobj = true)
+<br></td><td align="right"><h3><strong>remove</strong></h3></td></tr></table><p></p><p>
+ Delete this list item
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>delobj</i></TD><TD align="left" valign="top">True to delete the object (default)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the object if not destroyed
+     </p>
+<A NAME="remove"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>GenObject* &nbsp;<strong>remove</strong> (GenObject* obj, bool delobj = true)
+<br></td><td align="right"><h3><strong>remove</strong></h3></td></tr></table><p></p><p>
+ Delete the list item that holds a given object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">Object to search in the list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delobj</i></TD><TD align="left" valign="top">True to delete the object (default)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the object if not destroyed
+     </p>
+<A NAME="remove"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>GenObject* &nbsp;<strong>remove</strong> (const String& str, bool delobj = true)
+<br></td><td align="right"><h3><strong>remove</strong></h3></td></tr></table><p></p><p>
+ Delete the first list item that holds an object with a iven value
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String value (toString) of the object to remove
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delobj</i></TD><TD align="left" valign="top">True to delete the object (default)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the object if not destroyed
+     </p>
+<A NAME="clear"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clear</strong> ()
+<br></td><td align="right"><h3><strong>clear</strong></h3></td></tr></table><p></p><p>
+ Clear the list and optionally delete all contained objects
+     </p>
+<A NAME="compact"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>compact</strong> ()
+<br></td><td align="right"><h3><strong>compact</strong></h3></td></tr></table><p></p><p>
+ Remove all empty objects in the list
+     </p>
+<A NAME="autoDelete"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>autoDelete</strong> ()
+<br></td><td align="right"><h3><strong>autoDelete</strong></h3></td></tr></table><p></p><p>
+ Get the automatic delete flag
+</p>
+<p><b>Returns</b>: True if will delete on destruct, false otherwise
+     </p>
+<A NAME="setDelete"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setDelete</strong> (bool autodelete)
+<br></td><td align="right"><h3><strong>setDelete</strong></h3></td></tr></table><p></p><p>
+ Set the automatic delete flag
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>autodelete</i></TD><TD align="left" valign="top">True to delete on destruct, false otherwise
+     </TD></TR>
+</TABLE></P>
+<A NAME="empty"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const ObjList& &nbsp;<strong>empty</strong> ()
+<br></td><td align="right"><h3><strong>empty</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ A static empty object list
+</p>
+<p><b>Returns</b>: Reference to a static empty list
+     </p>
+<A NAME="sort"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>sort</strong> (int (*callbackCompare)(GenObject* obj1, GenObject* obj2, void* context), void* context = 0)
+<br></td><td align="right"><h3><strong>sort</strong></h3></td></tr></table><p></p><p>
+ Sort this list
+</p><table border="0" width="100%">
+<tr>
+<td bgcolor="#BEEAE0">
+<pre>
+
+     obj1 First object of the comparation
+     obj2 Second object of the comparation
+     context Data context
+     return 0 if the objects are equal; positive value if obj2 > obj1; negative value if obj1 > obj2
+     Note: the function should expect receiving <A HREF="TelEngine.html#null">null</A> pointers
+
+</pre>
+</td></tr>
+
+</table> <p>
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>callbackCompare</i></TD><TD align="left" valign="top">pointer to a callback function that should compare two objects.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>context</i></TD><TD align="left" valign="top">Context data.
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

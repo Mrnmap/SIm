@@ -1,0 +1,204 @@
+<HTML>
+<HEAD>
+<TITLE>class URI</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class URI</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Encapsulation for an URI. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::URI</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__String.html">TelEngine::String</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__URI.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">URI</A></b> () 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">URI</A></b> (const URI& uri) 
+</LI>
+<LI>explicit &nbsp;<b><A HREF="#ref3">URI</A></b> (const String& uri) 
+</LI>
+<LI>explicit &nbsp;<b><A HREF="#ref4">URI</A></b> (const char* uri) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref5">URI</A></b> (const char* proto, const char* user, const char* host, int port = 0, const char* desc = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref6">parse</A></b> ()  const
+</LI>
+<LI>inline URI& &nbsp;<b><A HREF="#ref7">operator=</A></b> (const URI& value) 
+</LI>
+<LI>inline URI& &nbsp;<b><A HREF="#ref8">operator=</A></b> (const String& value) 
+</LI>
+<LI>inline URI& &nbsp;<b><A HREF="#ref9">operator=</A></b> (const char* value) 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref10">getDescription</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref11">getProtocol</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref12">getUser</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref13">getHost</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref14">getPort</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref15">getExtra</A></b> ()  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref16">changed</A></b> () 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>mutable bool <b><A HREF="#ref17">m_parsed</A></b></LI>
+<LI>mutable String <b><A HREF="#ref18">m_desc</A></b></LI>
+<LI>mutable String <b><A HREF="#ref19">m_proto</A></b></LI>
+<LI>mutable String <b><A HREF="#ref20">m_user</A></b></LI>
+<LI>mutable String <b><A HREF="#ref21">m_host</A></b></LI>
+<LI>mutable String <b><A HREF="#ref22">m_extra</A></b></LI>
+<LI>mutable int <b><A HREF="#ref23">m_port</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Uniform Resource Identifier encapsulation and parser.
+ For efficiency reason the parsing is delayed as long as possible
+</p>
+<A NAME="URI"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>URI</strong> ()
+<br></td><td align="right"><h3><strong>URI</strong></h3></td></tr></table><p></p><p>
+ Empty URI constructor
+     </p>
+<A NAME="URI"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>URI</strong> (const URI& uri)
+<br></td><td align="right"><h3><strong>URI</strong></h3></td></tr></table><p></p><p>
+ Copy constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>uri</i></TD><TD align="left" valign="top">Original URI to copy
+     </TD></TR>
+</TABLE></P>
+<A NAME="URI"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>URI</strong> (const String& uri)
+<br></td><td align="right"><h3><strong>URI</strong></h3></td></tr></table><p></p><p>
+ Constructor from a String that gets parsed later
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>uri</i></TD><TD align="left" valign="top">String form of the URI
+     </TD></TR>
+</TABLE></P>
+<A NAME="URI"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>URI</strong> (const char* uri)
+<br></td><td align="right"><h3><strong>URI</strong></h3></td></tr></table><p></p><p>
+ Constructor from a C string that gets parsed later
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>uri</i></TD><TD align="left" valign="top">String form of the URI
+     </TD></TR>
+</TABLE></P>
+<A NAME="URI"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>URI</strong> (const char* proto, const char* user, const char* host, int port = 0, const char* desc = 0)
+<br></td><td align="right"><h3><strong>URI</strong></h3></td></tr></table><p></p><p>
+ Constructor from URI components
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>proto</i></TD><TD align="left" valign="top">Protocol - something like "http", "sip", etc.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>user</i></TD><TD align="left" valign="top">User component of the URI
+</TD></TR>
+<TR><TD align="left" valign="top"><i>host</i></TD><TD align="left" valign="top">Hostname component of the URI
+</TD></TR>
+<TR><TD align="left" valign="top"><i>port</i></TD><TD align="left" valign="top">Port part of the URI (optional)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>desc</i></TD><TD align="left" valign="top">Description part in front of the URI (optional)
+     </TD></TR>
+</TABLE></P>
+<A NAME="parse"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>parse</strong> ()
+<br></td><td align="right"><h3><strong>parse</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Calling this method ensures the string URI is parsed into components
+     </p>
+<A NAME="operator="></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline URI& &nbsp;<strong>operator=</strong> (const URI& value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator from URI
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">New URI value to assign
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__String.html#operator=">String</A>.</p>
+<A NAME="operator="></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline URI& &nbsp;<strong>operator=</strong> (const String& value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator from String
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">New URI value to assign
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__String.html#operator=">String</A>.</p>
+<A NAME="operator="></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline URI& &nbsp;<strong>operator=</strong> (const char* value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator from C string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">New URI value to assign
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__String.html#operator=">String</A>.</p>
+<A NAME="getDescription"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getDescription</strong> ()
+<br></td><td align="right"><h3><strong>getDescription</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Access method to the description part of the URI
+</p>
+<p><b>Returns</b>: Description part of the URI
+     </p>
+<A NAME="getProtocol"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getProtocol</strong> ()
+<br></td><td align="right"><h3><strong>getProtocol</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Access method to the protocol part of the URI
+</p>
+<p><b>Returns</b>: Protocol part of the URI
+     </p>
+<A NAME="getUser"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getUser</strong> ()
+<br></td><td align="right"><h3><strong>getUser</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Access method to the user part of the URI
+</p>
+<p><b>Returns</b>: User component of the URI
+     </p>
+<A NAME="getHost"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getHost</strong> ()
+<br></td><td align="right"><h3><strong>getHost</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Access method to the host part of the URI
+</p>
+<p><b>Returns</b>: Hostname part of the URI
+     </p>
+<A NAME="getPort"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>getPort</strong> ()
+<br></td><td align="right"><h3><strong>getPort</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Access method to the port part of the URI
+</p>
+<p><b>Returns</b>: Port of the URI, zero if not set
+     </p>
+<A NAME="getExtra"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getExtra</strong> ()
+<br></td><td align="right"><h3><strong>getExtra</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Access method to the additional text part of the URI
+</p>
+<p><b>Returns</b>: Additional text of the URI including the separator
+     </p>
+<A NAME="changed"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>changed</strong> ()
+<br></td><td align="right"><h3><strong>changed</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Notification method called whenever the string URI has changed.
+ The default behaviour is to invalidate the parsed flag and cal the
+  method inherited from <A HREF="TelEngine__String.html">String</A>.
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__String.html#changed">String</A>.</p>
+<A NAME="m_parsed"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>mutable bool  <strong>m_parsed</strong>
+</td><td align="right"><h3><strong>m_parsed</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_desc"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>mutable String  <strong>m_desc</strong>
+</td><td align="right"><h3><strong>m_desc</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_proto"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>mutable String  <strong>m_proto</strong>
+</td><td align="right"><h3><strong>m_proto</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_user"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>mutable String  <strong>m_user</strong>
+</td><td align="right"><h3><strong>m_user</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_host"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>mutable String  <strong>m_host</strong>
+</td><td align="right"><h3><strong>m_host</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_extra"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>mutable String  <strong>m_extra</strong>
+</td><td align="right"><h3><strong>m_extra</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_port"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>mutable int  <strong>m_port</strong>
+</td><td align="right"><h3><strong>m_port</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

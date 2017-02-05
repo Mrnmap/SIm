@@ -1,0 +1,1047 @@
+<HTML>
+<HEAD>
+<TITLE>class DefaultLogic</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class DefaultLogic</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">The client's default logic. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::DefaultLogic</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatecbase_h.html">yatecbase.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__ClientLogic.html">TelEngine::ClientLogic</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__DefaultLogic.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>explicit &nbsp;<b><A HREF="#ref2">DefaultLogic</A></b> (const char* name = "default", int prio = -100) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">~DefaultLogic</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref4">action</A></b> (Window* wnd, const String& name, NamedList* params = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref5">toggle</A></b> (Window* wnd, const String& name, bool active) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">select</A></b> (Window* wnd, const String& name, const String& item,
+	const String& text = String::empty()) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref7">select</A></b> (Window* wnd, const String& name, const NamedList& items) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref8">setClientParam</A></b> (const String& param, const String& value,
+	bool save, bool update) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref9">imIncoming</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref10">callIncoming</A></b> (Message& msg, const String& dest) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref11">validateCall</A></b> (NamedList& params, Window* wnd = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref12">callStart</A></b> (NamedList& params, Window* wnd = 0,
+	const String& cmd = String::empty()) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref13">digitPressed</A></b> (NamedList& params, Window* wnd = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref14">editAccount</A></b> (bool newAcc, NamedList* params, Window* wnd = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref15">acceptAccount</A></b> (NamedList* params, Window* wnd = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref16">delAccount</A></b> (const String& account, Window* wnd = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref17">updateAccount</A></b> (const NamedList& account, bool login, bool save) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref18">loginAccount</A></b> (const NamedList& account, bool login) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref19">updateContact</A></b> (const NamedList& contact, bool save, bool update) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref20">acceptContact</A></b> (NamedList* params, Window* wnd = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref21">editContact</A></b> (bool newCont, NamedList* params = 0, Window* wnd = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref22">delContact</A></b> (const String& contact, Window* wnd = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref23">callContact</A></b> (NamedList* params = 0, Window* wnd = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref24">updateProviders</A></b> (const NamedList& provider, bool save, bool update) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref25">callLogUpdate</A></b> (const NamedList& params, bool save, bool update) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref26">callLogDelete</A></b> (const String& billid) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref27">callLogClear</A></b> (const String& table, const String& direction) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref28">callLogCall</A></b> (const String& billid, Window* wnd = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref29">callLogCreateContact</A></b> (const String& billid) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref30">help</A></b> (const String& action, Window* wnd) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref31">calltoLoaded</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref32">loadedWindows</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref33">initializedWindows</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref34">initializedClient</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref35">exitingClient</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref36">handleUiAction</A></b> (Message& msg, bool& stopLogic) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref37">handleCallCdr</A></b> (Message& msg, bool& stopLogic) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref38">handleUserLogin</A></b> (Message& msg, bool& stopLogic) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref39">handleUserNotify</A></b> (Message& msg, bool& stopLogic) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref40">handleUserRoster</A></b> (Message& msg, bool& stopLogic) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref41">handleResourceNotify</A></b> (Message& msg, bool& stopLogic) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref42">handleResourceSubscribe</A></b> (Message& msg, bool& stopLogic) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref43">handleClientChanUpdate</A></b> (Message& msg, bool& stopLogic) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref44">handleContactInfo</A></b> (Message& msg, bool& stopLogic) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref45">defaultMsgHandler</A></b> (Message& msg, int id, bool& stopLogic) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref46">updateSelectedChannel</A></b> (const String* item = 0) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref47">engineStart</A></b> (Message& msg) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref48">showInCallNotification</A></b> (ClientChannel* chan) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref49">closeInCallNotification</A></b> (const String& id) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  inline String& &nbsp;<b><A HREF="#ref50">buildAccountId</A></b> (String& accId, const String& proto,
+	const String& user, const String& host) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref51">idleTimerTick</A></b> (Time& time) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref52">enableCallActions</A></b> (const String& id) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref53">fillCallStart</A></b> (NamedList& p, Window* wnd = 0) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref54">channelSelectionChanged</A></b> (const String& old) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref55">fillContactEditActive</A></b> (NamedList& list, bool active, const String* item = 0,
+	bool del = true) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref56">fillLogContactActive</A></b> (NamedList& list, bool active, const String* item = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref57">clearList</A></b> (const String& action, Window* wnd) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref58">deleteItem</A></b> (const String& list, const String& item, Window* wnd,
+	bool confirm) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref59">deleteCheckedItems</A></b> (const String& list, Window* wnd, bool confirm) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref60">deleteSelectedItem</A></b> (const String& action, Window* wnd, bool checked = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref61">handleTextChanged</A></b> (NamedList* params, Window* wnd) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref62">handleFileTransferAction</A></b> (const String& name, Window* wnd, NamedList* params = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref63">handleFileTransferNotify</A></b> (Message& msg, bool& stopLogic) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref64">handleUserData</A></b> (Message& msg, bool& stopLogic) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref65">handleFileInfo</A></b> (Message& msg, bool& stopLogic) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref66">notifyGenericError</A></b> (const String& text,
+	const String& account = String::empty(),
+	const String& contact = String::empty(),
+	const char* title = "Error") 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref67">notifyNoAudio</A></b> (bool show, bool micOk = false, bool speakerOk = false,
+	ClientChannel* chan = 0) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref68">updateChatRoomsContactList</A></b> (bool load, ClientAccount* acc,
+	MucRoom* room = 0) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref69">joinRoom</A></b> (MucRoom* room, bool force = false) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>String <b><A HREF="#ref70">m_selectedChannel</A></b></LI>
+<LI>String <b><A HREF="#ref71">m_transferInitiated</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class implements the default client behaviour.
+</p>
+<A NAME="DefaultLogic"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>DefaultLogic</strong> (const char* name = "default", int prio = -100)
+<br></td><td align="right"><h3><strong>DefaultLogic</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of this logic
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">The priority of this logic
+     </TD></TR>
+</TABLE></P>
+<A NAME="~DefaultLogic"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>~DefaultLogic</strong> ()
+<br></td><td align="right"><h3><strong>~DefaultLogic</strong></h3></td></tr></table><p></p><p>
+ Destructor
+     </p>
+<A NAME="action"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>action</strong> (Window* wnd, const String& name, NamedList* params = 0)
+<br></td><td align="right"><h3><strong>action</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Handle actions from user interface
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">The window in which the user did something
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The action's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional action parameters
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the action was handled
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#action">ClientLogic</A>.</p>
+<A NAME="toggle"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>toggle</strong> (Window* wnd, const String& name, bool active)
+<br></td><td align="right"><h3><strong>toggle</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Handle actions from checkable widgets
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">The window in which the user did something
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The object's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>active</i></TD><TD align="left" valign="top">Object's state
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the action was handled by a client logic
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#toggle">ClientLogic</A>.</p>
+<A NAME="select"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>select</strong> (Window* wnd, const String& name, const String& item,
+	const String& text = String::empty())
+<br></td><td align="right"><h3><strong>select</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Handle 'select' actions from user interface
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">The window in which the user did something
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The object's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Item identifying the selection
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Selection's text
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the action was handled
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#select">ClientLogic</A>.</p>
+<A NAME="select"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>select</strong> (Window* wnd, const String& name, const NamedList& items)
+<br></td><td align="right"><h3><strong>select</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Handle 'select' with multiple items actions from user interface
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">The window in which the user did something
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The object's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>items</i></TD><TD align="left" valign="top">List of selected items
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the action was handled
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#select">ClientLogic</A>.</p>
+<A NAME="setClientParam"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setClientParam</strong> (const String& param, const String& value,
+	bool save, bool update)
+<br></td><td align="right"><h3><strong>setClientParam</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set a client's parameter. Save the settings file and/or update interface
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">Parameter's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">The value of the parameter
+</TD></TR>
+<TR><TD align="left" valign="top"><i>save</i></TD><TD align="left" valign="top">True to save the configuration file
+</TD></TR>
+<TR><TD align="left" valign="top"><i>update</i></TD><TD align="left" valign="top">True to update the interface
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#setClientParam">ClientLogic</A>.</p>
+<A NAME="imIncoming"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>imIncoming</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>imIncoming</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process an IM message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The im.execute of chan.text message
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#imIncoming">ClientLogic</A>.</p>
+<A NAME="callIncoming"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>callIncoming</strong> (Message& msg, const String& dest)
+<br></td><td align="right"><h3><strong>callIncoming</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Call execute handler called by the client.
+ The default logic ask the client to build an incoming channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The call.execute message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">The destination (target)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if a channel was created and connected
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#callIncoming">ClientLogic</A>.</p>
+<A NAME="validateCall"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>validateCall</strong> (NamedList& params, Window* wnd = 0)
+<br></td><td align="right"><h3><strong>validateCall</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Check presence of all necessary data to make a call
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">List of call parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window containing the widget that triggered the action
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#validateCall">ClientLogic</A>.</p>
+<A NAME="callStart"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>callStart</strong> (NamedList& params, Window* wnd = 0,
+	const String& cmd = String::empty())
+<br></td><td align="right"><h3><strong>callStart</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Called when the user trigger a call start action
+ The default logic fill the parameter list and ask the client to create an outgoing channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">List of call parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window containing the widget that triggered the action
+</TD></TR>
+<TR><TD align="left" valign="top"><i>cmd</i></TD><TD align="left" valign="top">Optional command (widget name)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#callStart">ClientLogic</A>.</p>
+<A NAME="digitPressed"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>digitPressed</strong> (NamedList& params, Window* wnd = 0)
+<br></td><td align="right"><h3><strong>digitPressed</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Called when a digit is pressed. The default logic will send the digit(s)
+  as DTMFs on the active channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">List of parameters. It should contain a 'digits' parameter
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window containing the widget that triggered the action
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="editAccount"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>editAccount</strong> (bool newAcc, NamedList* params, Window* wnd = 0)
+<br></td><td align="right"><h3><strong>editAccount</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Called when the user wants to add a new account or edit an existing one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newAcc</i></TD><TD align="left" valign="top">True to add a new account, false to edit an exisiting one
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Initial parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window containing the widget that triggered the action
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#editAccount">ClientLogic</A>.</p>
+<A NAME="acceptAccount"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>acceptAccount</strong> (NamedList* params, Window* wnd = 0)
+<br></td><td align="right"><h3><strong>acceptAccount</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Called when the user wants to save account data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Initial parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window containing the widget that triggered the action
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#acceptAccount">ClientLogic</A>.</p>
+<A NAME="delAccount"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>delAccount</strong> (const String& account, Window* wnd = 0)
+<br></td><td align="right"><h3><strong>delAccount</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Called when the user wants to delete an existing account
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>account</i></TD><TD align="left" valign="top">The account's name. Set to empty to delete the current selection
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window containing the widget that triggered the action
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#delAccount">ClientLogic</A>.</p>
+<A NAME="updateAccount"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>updateAccount</strong> (const NamedList& account, bool login, bool save)
+<br></td><td align="right"><h3><strong>updateAccount</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Add/set an account
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>account</i></TD><TD align="left" valign="top">The account's parameters. The name of the list must be the account's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>login</i></TD><TD align="left" valign="top">True to login the account
+</TD></TR>
+<TR><TD align="left" valign="top"><i>save</i></TD><TD align="left" valign="top">True to save the accounts file. If true and file save fails the method will fail
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#updateAccount">ClientLogic</A>.</p>
+<A NAME="loginAccount"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>loginAccount</strong> (const NamedList& account, bool login)
+<br></td><td align="right"><h3><strong>loginAccount</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Login/logout an account
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>account</i></TD><TD align="left" valign="top">The account's parameters. The name of the list must be the account's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>login</i></TD><TD align="left" valign="top">True to login the account, false to logout
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#loginAccount">ClientLogic</A>.</p>
+<A NAME="updateContact"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>updateContact</strong> (const NamedList& contact, bool save, bool update)
+<br></td><td align="right"><h3><strong>updateContact</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Add/set a contact
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>contact</i></TD><TD align="left" valign="top">The contact's parameters. The name of the list must be the contacts's id (name).
+  If it starts with 'client/' this is a contact updated from server: it can't be changed
+</TD></TR>
+<TR><TD align="left" valign="top"><i>save</i></TD><TD align="left" valign="top">True to save data to contacts file
+</TD></TR>
+<TR><TD align="left" valign="top"><i>update</i></TD><TD align="left" valign="top">True to update the interface
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#updateContact">ClientLogic</A>.</p>
+<A NAME="acceptContact"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>acceptContact</strong> (NamedList* params, Window* wnd = 0)
+<br></td><td align="right"><h3><strong>acceptContact</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Called when the user wants to save account data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Initial parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window containing the widget that triggered the action
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#acceptContact">ClientLogic</A>.</p>
+<A NAME="editContact"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>editContact</strong> (bool newCont, NamedList* params = 0, Window* wnd = 0)
+<br></td><td align="right"><h3><strong>editContact</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Called when the user wants to add a new contact or edit an existing one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newCont</i></TD><TD align="left" valign="top">True to add a new contact, false to edit an existing one
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional initial parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window containing the widget that triggered the action
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#editContact">ClientLogic</A>.</p>
+<A NAME="delContact"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>delContact</strong> (const String& contact, Window* wnd = 0)
+<br></td><td align="right"><h3><strong>delContact</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Called when the user wants to delete an existing contact
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>contact</i></TD><TD align="left" valign="top">The contact's id. Set to empty to delete the current selection
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window containing the widget that triggered the action
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#delContact">ClientLogic</A>.</p>
+<A NAME="callContact"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>callContact</strong> (NamedList* params = 0, Window* wnd = 0)
+<br></td><td align="right"><h3><strong>callContact</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Called when the user wants to call an existing contact
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window containing the widget that triggered the action
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#callContact">ClientLogic</A>.</p>
+<A NAME="updateProviders"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>updateProviders</strong> (const NamedList& provider, bool save, bool update)
+<br></td><td align="right"><h3><strong>updateProviders</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Add/set account providers data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>provider</i></TD><TD align="left" valign="top">The provider's parameters. The name of the list must be the provider's id (name)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>save</i></TD><TD align="left" valign="top">True to save data to providers file
+</TD></TR>
+<TR><TD align="left" valign="top"><i>update</i></TD><TD align="left" valign="top">True to update the interface
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#updateProviders">ClientLogic</A>.</p>
+<A NAME="callLogUpdate"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>callLogUpdate</strong> (const NamedList& params, bool save, bool update)
+<br></td><td align="right"><h3><strong>callLogUpdate</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Update the call log history
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Call log data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>save</i></TD><TD align="left" valign="top">True to save data to history file
+</TD></TR>
+<TR><TD align="left" valign="top"><i>update</i></TD><TD align="left" valign="top">True to update the interface
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True
+    </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#callLogUpdate">ClientLogic</A>.</p>
+<A NAME="callLogDelete"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>callLogDelete</strong> (const String& billid)
+<br></td><td align="right"><h3><strong>callLogDelete</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove a call log item
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>billid</i></TD><TD align="left" valign="top">The bill id of the call
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+    </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#callLogDelete">ClientLogic</A>.</p>
+<A NAME="callLogClear"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>callLogClear</strong> (const String& table, const String& direction)
+<br></td><td align="right"><h3><strong>callLogClear</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Clear the specified log and the entries from the history file and save the history file
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>table</i></TD><TD align="left" valign="top">Tebale to clear
+</TD></TR>
+<TR><TD align="left" valign="top"><i>direction</i></TD><TD align="left" valign="top">The call direction to clear (incoming,outgoing).
+  Note that the direction is the value saved from call.cdr messages.
+  If empty, all log entries will be cleared
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True
+    </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#callLogClear">ClientLogic</A>.</p>
+<A NAME="callLogCall"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>callLogCall</strong> (const String& billid, Window* wnd = 0)
+<br></td><td align="right"><h3><strong>callLogCall</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Make an outgoing call to a target picked from the call log
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>billid</i></TD><TD align="left" valign="top">The bill id of the call
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window starting the action
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success (call initiated)
+    </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#callLogCall">ClientLogic</A>.</p>
+<A NAME="callLogCreateContact"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>callLogCreateContact</strong> (const String& billid)
+<br></td><td align="right"><h3><strong>callLogCreateContact</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Create a contact from a call log entry
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>billid</i></TD><TD align="left" valign="top">The bill id of the call
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success (address book popup window was displayed)
+    </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#callLogCreateContact">ClientLogic</A>.</p>
+<A NAME="help"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>help</strong> (const String& action, Window* wnd)
+<br></td><td align="right"><h3><strong>help</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process help related actions
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>action</i></TD><TD align="left" valign="top">The action's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">The window owning the control
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#help">ClientLogic</A>.</p>
+<A NAME="calltoLoaded"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>calltoLoaded</strong> ()
+<br></td><td align="right"><h3><strong>calltoLoaded</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Called by the client after loaded the callto history file
+</p>
+<p><b>Returns</b>: True to tell the client to stop notifying other logics
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#calltoLoaded">ClientLogic</A>.</p>
+<A NAME="loadedWindows"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>loadedWindows</strong> ()
+<br></td><td align="right"><h3><strong>loadedWindows</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Called by the client after loaded the windows
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#loadedWindows">ClientLogic</A>.</p>
+<A NAME="initializedWindows"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>initializedWindows</strong> ()
+<br></td><td align="right"><h3><strong>initializedWindows</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Called by the client after loaded and intialized the windows
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#initializedWindows">ClientLogic</A>.</p>
+<A NAME="initializedClient"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>initializedClient</strong> ()
+<br></td><td align="right"><h3><strong>initializedClient</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Called by the client after loaded and intialized the windows and
+  loaded configuration files.
+ The default logic update client settings
+</p>
+<p><b>Returns</b>: True to stop processing this notification
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#initializedClient">ClientLogic</A>.</p>
+<A NAME="exitingClient"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>exitingClient</strong> ()
+<br></td><td align="right"><h3><strong>exitingClient</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Called by the client before exiting.
+ The default logic save client settings
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#exitingClient">ClientLogic</A>.</p>
+<A NAME="handleUiAction"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>handleUiAction</strong> (Message& msg, bool& stopLogic)
+<br></td><td align="right"><h3><strong>handleUiAction</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process ui.action message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Received message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stopLogic</i></TD><TD align="left" valign="top">Set to true on exit to tell the client to stop asking other logics
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop further processing by the engine
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#handleUiAction">ClientLogic</A>.</p>
+<A NAME="handleCallCdr"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>handleCallCdr</strong> (Message& msg, bool& stopLogic)
+<br></td><td align="right"><h3><strong>handleCallCdr</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process call.cdr message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Received message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stopLogic</i></TD><TD align="left" valign="top">Set to true on exit to tell the client to stop asking other logics
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop further processing by the engine
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#handleCallCdr">ClientLogic</A>.</p>
+<A NAME="handleUserLogin"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>handleUserLogin</strong> (Message& msg, bool& stopLogic)
+<br></td><td align="right"><h3><strong>handleUserLogin</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process user.login message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Received message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stopLogic</i></TD><TD align="left" valign="top">Set to true on exit to tell the client to stop asking other logics
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop further processing by the engine
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#handleUserLogin">ClientLogic</A>.</p>
+<A NAME="handleUserNotify"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>handleUserNotify</strong> (Message& msg, bool& stopLogic)
+<br></td><td align="right"><h3><strong>handleUserNotify</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process user.notify message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Received message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stopLogic</i></TD><TD align="left" valign="top">Set to true on exit to tell the client to stop asking other logics
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop further processing by the engine
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#handleUserNotify">ClientLogic</A>.</p>
+<A NAME="handleUserRoster"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>handleUserRoster</strong> (Message& msg, bool& stopLogic)
+<br></td><td align="right"><h3><strong>handleUserRoster</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process user.roster message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Received message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stopLogic</i></TD><TD align="left" valign="top">Set to true on exit to tell the client to stop asking other logics
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop further processing by the engine
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#handleUserRoster">ClientLogic</A>.</p>
+<A NAME="handleResourceNotify"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>handleResourceNotify</strong> (Message& msg, bool& stopLogic)
+<br></td><td align="right"><h3><strong>handleResourceNotify</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process resource.notify message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Received message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stopLogic</i></TD><TD align="left" valign="top">Set to true on exit to tell the client to stop asking other logics
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop further processing by the engine
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#handleResourceNotify">ClientLogic</A>.</p>
+<A NAME="handleResourceSubscribe"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>handleResourceSubscribe</strong> (Message& msg, bool& stopLogic)
+<br></td><td align="right"><h3><strong>handleResourceSubscribe</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process resource.subscribe message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Received message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stopLogic</i></TD><TD align="left" valign="top">Set to true on exit to tell the client to stop asking other logics
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop further processing by the engine
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#handleResourceSubscribe">ClientLogic</A>.</p>
+<A NAME="handleClientChanUpdate"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>handleClientChanUpdate</strong> (Message& msg, bool& stopLogic)
+<br></td><td align="right"><h3><strong>handleClientChanUpdate</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process clientchan.update message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Received message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stopLogic</i></TD><TD align="left" valign="top">Set to true on exit to tell the client to stop asking other logics
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop further processing by the engine
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#handleClientChanUpdate">ClientLogic</A>.</p>
+<A NAME="handleContactInfo"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>handleContactInfo</strong> (Message& msg, bool& stopLogic)
+<br></td><td align="right"><h3><strong>handleContactInfo</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process contact.info message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Received message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stopLogic</i></TD><TD align="left" valign="top">Set to true on exit to tell the client to stop asking other logics
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop further processing by the engine
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#handleContactInfo">ClientLogic</A>.</p>
+<A NAME="defaultMsgHandler"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>defaultMsgHandler</strong> (Message& msg, int id, bool& stopLogic)
+<br></td><td align="right"><h3><strong>defaultMsgHandler</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Default message processor called for id's not defined in client.
+ Descendants may override it to process custom messages installed by
+  them and relayed through the client
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Received message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Message id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stopLogic</i></TD><TD align="left" valign="top">Set to true on exit to tell the client to stop asking other logics
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop further processing by the engine
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#defaultMsgHandler">ClientLogic</A>.</p>
+<A NAME="updateSelectedChannel"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>updateSelectedChannel</strong> (const String* item = 0)
+<br></td><td align="right"><h3><strong>updateSelectedChannel</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Update from UI or from a given value the selected item in channels list.
+ The selected channel may not be the active one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Optional new value for current selection. Set to 0 to upadte from UI
+     </TD></TR>
+</TABLE></P>
+<A NAME="engineStart"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>engineStart</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>engineStart</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Engine start notification. Connect startup accounts
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The engine.start message
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#engineStart">ClientLogic</A>.</p>
+<A NAME="showInCallNotification"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>showInCallNotification</strong> (ClientChannel* chan)
+<br></td><td align="right"><h3><strong>showInCallNotification</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Show incoming call notification for a given channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>chan</i></TD><TD align="left" valign="top">The channel
+     </TD></TR>
+</TABLE></P>
+<A NAME="closeInCallNotification"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>closeInCallNotification</strong> (const String& id)
+<br></td><td align="right"><h3><strong>closeInCallNotification</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Close incoming call notification for a given id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The notification id to close
+     </TD></TR>
+</TABLE></P>
+<A NAME="buildAccountId"></A><A NAME="ref50"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline String& &nbsp;<strong>buildAccountId</strong> (String& accId, const String& proto,
+	const String& user, const String& host)
+<br></td><td align="right"><h3><strong>buildAccountId</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build an account id from protocol, username, host
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>accId</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>proto</i></TD><TD align="left" valign="top">Account protocol
+</TD></TR>
+<TR><TD align="left" valign="top"><i>user</i></TD><TD align="left" valign="top">Account username
+</TD></TR>
+<TR><TD align="left" valign="top"><i>host</i></TD><TD align="left" valign="top">Account host
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Destination string address
+     </p>
+<A NAME="idleTimerTick"></A><A NAME="ref51"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>idleTimerTick</strong> (Time& time)
+<br></td><td align="right"><h3><strong>idleTimerTick</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Method called by the client when idle.
+ This method is called in the UI's thread
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>time</i></TD><TD align="left" valign="top">The current time
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ClientLogic.html#idleTimerTick">ClientLogic</A>.</p>
+<A NAME="enableCallActions"></A><A NAME="ref52"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>enableCallActions</strong> (const String& id)
+<br></td><td align="right"><h3><strong>enableCallActions</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Enable call actions for a selected channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Channel id
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="fillCallStart"></A><A NAME="ref53"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>fillCallStart</strong> (NamedList& p, Window* wnd = 0)
+<br></td><td align="right"><h3><strong>fillCallStart</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Fill call start parameter list from UI
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>p</i></TD><TD align="left" valign="top">The list of parameters to fill
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Optional window owning the widget triggering the action
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="channelSelectionChanged"></A><A NAME="ref54"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>channelSelectionChanged</strong> (const String& old)
+<br></td><td align="right"><h3><strong>channelSelectionChanged</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Notification on selection changes in channels list.
+ Enable call actions for currently selected channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>old</i></TD><TD align="left" valign="top">The old selection
+     </TD></TR>
+</TABLE></P>
+<A NAME="fillContactEditActive"></A><A NAME="ref55"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>fillContactEditActive</strong> (NamedList& list, bool active, const String* item = 0,
+	bool del = true)
+<br></td><td align="right"><h3><strong>fillContactEditActive</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Fill contact edit/delete active parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">Destination list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>active</i></TD><TD align="left" valign="top">True to activate, false to deactivate
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Optional selected item to check in contacts list if active
+</TD></TR>
+<TR><TD align="left" valign="top"><i>del</i></TD><TD align="left" valign="top">True to fill delete active parameter
+     </TD></TR>
+</TABLE></P>
+<A NAME="fillLogContactActive"></A><A NAME="ref56"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>fillLogContactActive</strong> (NamedList& list, bool active, const String* item = 0)
+<br></td><td align="right"><h3><strong>fillLogContactActive</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Fill log contact active parameter
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">Destination list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>active</i></TD><TD align="left" valign="top">True to activate, false to deactivate
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Optional selected item to check in calls log list if active
+     </TD></TR>
+</TABLE></P>
+<A NAME="clearList"></A><A NAME="ref57"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>clearList</strong> (const String& action, Window* wnd)
+<br></td><td align="right"><h3><strong>clearList</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Clear a list/table. Handle specific lists like CDR, accounts, contacts
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>action</i></TD><TD align="left" valign="top">The list. May contain an optional confirmation text to display.
+  Format: 'list_name[:confirmation_text]'
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Window owning the list/table
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="deleteItem"></A><A NAME="ref58"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>deleteItem</strong> (const String& list, const String& item, Window* wnd,
+	bool confirm)
+<br></td><td align="right"><h3><strong>deleteItem</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Delete a list/table item. Handle specific lists like CDR, accounts, contacts, mucs
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">The list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Item to delete
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Window owning the list/table
+</TD></TR>
+<TR><TD align="left" valign="top"><i>confirm</i></TD><TD align="left" valign="top">Request confirmation for known list
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="deleteCheckedItems"></A><A NAME="ref59"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>deleteCheckedItems</strong> (const String& list, Window* wnd, bool confirm)
+<br></td><td align="right"><h3><strong>deleteCheckedItems</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Handle list/table checked items deletion.
+ Handle specific lists like CDR, accounts, contacts
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">The list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Window owning the list/table
+</TD></TR>
+<TR><TD align="left" valign="top"><i>confirm</i></TD><TD align="left" valign="top">Request confirmation for known list
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="deleteSelectedItem"></A><A NAME="ref60"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>deleteSelectedItem</strong> (const String& action, Window* wnd, bool checked = false)
+<br></td><td align="right"><h3><strong>deleteSelectedItem</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Handle list/table selection or checked items deletion.
+ Handle specific lists like CDR, accounts, contacts
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>action</i></TD><TD align="left" valign="top">Action to handle. May contain an optional confirmation text to display.
+  Format: 'list_name[:confirmation_text]'
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Window owning the list/table
+</TD></TR>
+<TR><TD align="left" valign="top"><i>checked</i></TD><TD align="left" valign="top">Set it to true to handle checked items deletion
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="handleTextChanged"></A><A NAME="ref61"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>handleTextChanged</strong> (NamedList* params, Window* wnd)
+<br></td><td align="right"><h3><strong>handleTextChanged</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Handle text changed notification
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Notification parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Window notifying the event
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if handled
+     </p>
+<A NAME="handleFileTransferAction"></A><A NAME="ref62"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>handleFileTransferAction</strong> (const String& name, Window* wnd, NamedList* params = 0)
+<br></td><td align="right"><h3><strong>handleFileTransferAction</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Handle file transfer actions
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Action name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">Window notifying the event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional action parameters
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if handled
+     </p>
+<A NAME="handleFileTransferNotify"></A><A NAME="ref63"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>handleFileTransferNotify</strong> (Message& msg, bool& stopLogic)
+<br></td><td align="right"><h3><strong>handleFileTransferNotify</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Handle file transfer notifications.
+ This method is called from logic message handler
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Notification message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stopLogic</i></TD><TD align="left" valign="top">Stop notifying other logics if set to true on return
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if handled
+     </p>
+<A NAME="handleUserData"></A><A NAME="ref64"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>handleUserData</strong> (Message& msg, bool& stopLogic)
+<br></td><td align="right"><h3><strong>handleUserData</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Handle user.data messages.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stopLogic</i></TD><TD align="left" valign="top">Stop notifying other logics if set to true on return
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if handled
+     </p>
+<A NAME="handleFileInfo"></A><A NAME="ref65"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>handleFileInfo</strong> (Message& msg, bool& stopLogic)
+<br></td><td align="right"><h3><strong>handleFileInfo</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Handle file.info messages.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stopLogic</i></TD><TD align="left" valign="top">Stop notifying other logics if set to true on return
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if handled
+     </p>
+<A NAME="notifyGenericError"></A><A NAME="ref66"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>notifyGenericError</strong> (const String& text,
+	const String& account = String::empty(),
+	const String& contact = String::empty(),
+	const char* title = "Error")
+<br></td><td align="right"><h3><strong>notifyGenericError</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Show a generic notification
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Notification text
+</TD></TR>
+<TR><TD align="left" valign="top"><i>account</i></TD><TD align="left" valign="top">Optional concerned account
+</TD></TR>
+<TR><TD align="left" valign="top"><i>contact</i></TD><TD align="left" valign="top">Optional concerned contact
+</TD></TR>
+<TR><TD align="left" valign="top"><i>title</i></TD><TD align="left" valign="top">Notification title
+     </TD></TR>
+</TABLE></P>
+<A NAME="notifyNoAudio"></A><A NAME="ref67"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>notifyNoAudio</strong> (bool show, bool micOk = false, bool speakerOk = false,
+	ClientChannel* chan = 0)
+<br></td><td align="right"><h3><strong>notifyNoAudio</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Show/hide no audio notification
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>show</i></TD><TD align="left" valign="top">Show or hide notification
+</TD></TR>
+<TR><TD align="left" valign="top"><i>micOk</i></TD><TD align="left" valign="top">False if microphone open failed
+</TD></TR>
+<TR><TD align="left" valign="top"><i>speakerOk</i></TD><TD align="left" valign="top">False if speaker open failed
+</TD></TR>
+<TR><TD align="left" valign="top"><i>chan</i></TD><TD align="left" valign="top">Optional failed channel
+     </TD></TR>
+</TABLE></P>
+<A NAME="updateChatRoomsContactList"></A><A NAME="ref68"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>updateChatRoomsContactList</strong> (bool load, ClientAccount* acc,
+	MucRoom* room = 0)
+<br></td><td align="right"><h3><strong>updateChatRoomsContactList</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ (Un)Load account's saved chat rooms or a specific room in contact list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>load</i></TD><TD align="left" valign="top">True to load, false to unload
+</TD></TR>
+<TR><TD align="left" valign="top"><i>acc</i></TD><TD align="left" valign="top">The account owning the chat rooms
+</TD></TR>
+<TR><TD align="left" valign="top"><i>room</i></TD><TD align="left" valign="top">The room to update, ignored if acc is not 0
+     </TD></TR>
+</TABLE></P>
+<A NAME="joinRoom"></A><A NAME="ref69"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>joinRoom</strong> (MucRoom* room, bool force = false)
+<br></td><td align="right"><h3><strong>joinRoom</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Join a MUC room. Create/show chat. Update its status
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>room</i></TD><TD align="left" valign="top">The room
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to disconnect if connecting or online and re-connect
+     </TD></TR>
+</TABLE></P>
+<A NAME="m_selectedChannel"></A><A NAME="ref70"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_selectedChannel</strong>
+</td><td align="right"><h3><strong>m_selectedChannel</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_transferInitiated"></A><A NAME="ref71"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_transferInitiated</strong>
+</td><td align="right"><h3><strong>m_transferInitiated</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

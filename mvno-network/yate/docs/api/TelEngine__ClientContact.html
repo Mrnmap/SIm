@@ -1,0 +1,900 @@
+<HTML>
+<HEAD>
+<TITLE>class ClientContact</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ClientContact</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A client contact. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ClientContact</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatecbase_h.html">yatecbase.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__MucRoom.html">MucRoom</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ClientContact.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref3">Subscription</A> {	SubFrom = 0x01,
+	SubTo = 0x02,
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>explicit &nbsp;<b><A HREF="#ref4">ClientContact</A></b> (ClientAccount* owner, const char* id, const char* name = 0,
+	const char* uri = 0) 
+</LI>
+<LI>explicit &nbsp;<b><A HREF="#ref5">ClientContact</A></b> (ClientAccount* owner, const NamedList& params, const char* id = 0,
+	const char* uri = 0) 
+</LI>
+<LI>inline ClientAccount* &nbsp;<b><A HREF="#ref6">account</A></b> () 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref7">accountName</A></b> ()  const
+</LI>
+<LI>inline const URI& &nbsp;<b><A HREF="#ref8">uri</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref9">setUri</A></b> (const char* u) 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref10">subscriptionStr</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref11">subscriptionFrom</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref12">subscriptionTo</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref13">setSubscription</A></b> (const String& value) 
+</LI>
+<LI>inline ObjList& &nbsp;<b><A HREF="#ref14">resources</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref15">online</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref16">setOnline</A></b> (bool on) 
+</LI>
+<LI>inline ObjList& &nbsp;<b><A HREF="#ref17">groups</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref18">local</A></b> (bool defVal = false)  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref19">setLocal</A></b> (bool on) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref20">remote</A></b> (bool defVal = false)  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref21">setRemote</A></b> (bool on) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref22">setDockedChat</A></b> (bool on) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref23">getContactSection</A></b> (String& buf) 
+</LI>
+<LI>virtual  const String& &nbsp;<b><A HREF="#ref24">toString</A></b> ()  const
+</LI>
+<LI>virtual  MucRoom* &nbsp;<b><A HREF="#ref25">mucRoom</A></b> () 
+</LI>
+<LI>inline String& &nbsp;<b><A HREF="#ref26">buildInstanceId</A></b> (String& dest, const String& inst = String::empty()) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref27">buildIdHash</A></b> (String& buf, const String& prefix = String::empty()) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref28">isChatWnd</A></b> (Window* wnd) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref29">hasChat</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref30">flashChat</A></b> (bool on = true) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref31">sendChat</A></b> (const char* body, const String& res = String::empty(),
+	const String& type = String::empty(), const char* state = "active") 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref32">getChatInput</A></b> (String& text, const String& name = "message") 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref33">setChatInput</A></b> (const String& text = String::empty(),
+	const String& name = "message") 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref34">getChatHistory</A></b> (String& text, bool richText = false,
+	const String& name = "history") 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref35">setChatHistory</A></b> (const String& text, bool richText = false,
+	const String& name = "history") 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref36">addChatHistory</A></b> (const String& what, NamedList*& params,
+	const String& name = "history") 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref37">getChatProperty</A></b> (const String& name, const String& prop, String& value) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref38">setChatProperty</A></b> (const String& name, const String& prop, const String& value) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref39">isChatVisible</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref40">showChat</A></b> (bool visible, bool active = false) 
+</LI>
+<LI>Window* &nbsp;<b><A HREF="#ref41">getChatWnd</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref42">createChatWindow</A></b> (bool force = false, const char* name = 0) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref43">updateChatWindow</A></b> (const NamedList& params, const char* title = 0,
+	const char* icon = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref44">isChatActive</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref45">destroyChatWindow</A></b> () 
+</LI>
+<LI>virtual  String* &nbsp;<b><A HREF="#ref46">findGroup</A></b> (const String& group) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref47">appendGroup</A></b> (const String& group) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref48">removeGroup</A></b> (const String& group) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref49">setGroups</A></b> (const NamedList& list, const String& param) 
+</LI>
+<LI>virtual  ClientResource* &nbsp;<b><A HREF="#ref50">status</A></b> (bool ref = false) 
+</LI>
+<LI>virtual  ClientResource* &nbsp;<b><A HREF="#ref51">findResource</A></b> (const String& id, bool ref = false) 
+</LI>
+<LI>virtual  ClientResource* &nbsp;<b><A HREF="#ref52">findAudioResource</A></b> (bool ref = false) 
+</LI>
+<LI>virtual  ClientResource* &nbsp;<b><A HREF="#ref53">findFileTransferResource</A></b> (bool ref = false) 
+</LI>
+<LI>virtual  ClientResource* &nbsp;<b><A HREF="#ref54">appendResource</A></b> (const String& id) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref55">insertResource</A></b> (ClientResource* res) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref56">removeResource</A></b> (const String& id) 
+</LI>
+<LI>inline NamedList& &nbsp;<b><A HREF="#ref57">share</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref58">haveShare</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref59">updateShare</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref60">saveShare</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref61">clearShare</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref62">setShareDir</A></b> (const String& name, const String& path, bool save = true) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref63">removeShare</A></b> (const String& name, bool save = true) 
+</LI>
+<LI>inline ObjList& &nbsp;<b><A HREF="#ref64">shared</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref65">haveShared</A></b> ()  const
+</LI>
+<LI>virtual  ClientDir* &nbsp;<b><A HREF="#ref66">getShared</A></b> (const String& name, bool create = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref67">removeShared</A></b> (const String& name = String::empty(), ClientDir** removed = 0) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  inline String& &nbsp;<b><A HREF="#ref68">buildContactId</A></b> (String& dest, const String& account,
+	const String& contact) 
+</LI>
+<LI>static  inline void &nbsp;<b><A HREF="#ref69">splitContactId</A></b> (const String& src, String& account) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref70">splitContactInstanceId</A></b> (const String& src, String& account,
+	String& contact, String* instance = 0) 
+</LI>
+<LI>static  inline String& &nbsp;<b><A HREF="#ref71">buildContactInstanceId</A></b> (String& dest, const String& cId,
+	const String& inst = String::empty()) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static String <b><A HREF="#ref72">s_chatPrefix</A></b></LI>
+<LI>static String <b><A HREF="#ref73">s_dockedChatWnd</A></b></LI>
+<LI>static String <b><A HREF="#ref74">s_dockedChatWidget</A></b></LI>
+<LI>static String <b><A HREF="#ref75">s_mucsWnd</A></b></LI>
+<LI>static String <b><A HREF="#ref76">s_chatInput</A></b></LI>
+<LI>String <b><A HREF="#ref77">m_name</A></b></LI>
+<LI>NamedList <b><A HREF="#ref78">m_params</A></b></LI>
+</ul><h4>Protected Methods</h4><ul><LI>explicit &nbsp;<b><A HREF="#ref79">ClientContact</A></b> (ClientAccount* owner, const char* id, bool mucRoom) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref80">removeFromOwner</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref81">destroyed</A></b> () 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>ClientAccount* <b><A HREF="#ref82">m_owner</A></b></LI>
+<LI>bool <b><A HREF="#ref83">m_online</A></b></LI>
+<LI>String <b><A HREF="#ref84">m_id</A></b></LI>
+<LI>String <b><A HREF="#ref85">m_subscription</A></b></LI>
+<LI>Flags32 <b><A HREF="#ref86">m_sub</A></b></LI>
+<LI>URI <b><A HREF="#ref87">m_uri</A></b></LI>
+<LI>ObjList <b><A HREF="#ref88">m_resources</A></b></LI>
+<LI>ObjList <b><A HREF="#ref89">m_groups</A></b></LI>
+<LI>bool <b><A HREF="#ref90">m_dockedChat</A></b></LI>
+<LI>String <b><A HREF="#ref91">m_chatWndName</A></b></LI>
+<LI>NamedList <b><A HREF="#ref92">m_share</A></b></LI>
+<LI>ObjList <b><A HREF="#ref93">m_shared</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A client contact
+ The contact is using the owner's mutex to lock it's operations
+</p>
+<A NAME="Subscription"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Subscription</strong> {	SubFrom = 0x01,
+	SubTo = 0x02,
+    }
+</td><td align="right"><h3><strong>Subscription</strong></h3></td></tr></table><p></p><p>
+ Subscription flags
+     </p>
+<A NAME="ClientContact"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>ClientContact</strong> (ClientAccount* owner, const char* id, const char* name = 0,
+	const char* uri = 0)
+<br></td><td align="right"><h3><strong>ClientContact</strong></h3></td></tr></table><p></p><p>
+ Constructor. Append itself to the owner's list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>owner</i></TD><TD align="left" valign="top">The contact's owner
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The contact's id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Optional display name. Defaults to the id's value if 0
+</TD></TR>
+<TR><TD align="left" valign="top"><i>uri</i></TD><TD align="left" valign="top">Optional contact URI
+     </TD></TR>
+</TABLE></P>
+<A NAME="ClientContact"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>ClientContact</strong> (ClientAccount* owner, const NamedList& params, const char* id = 0,
+	const char* uri = 0)
+<br></td><td align="right"><h3><strong>ClientContact</strong></h3></td></tr></table><p></p><p>
+ Constructor. Build a contact from a list of parameters.
+ Append itself to the owner's list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>owner</i></TD><TD align="left" valign="top">The contact's owner
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">The list of parameters used to build this contact
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Optional contact id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>uri</i></TD><TD align="left" valign="top">Optional contact URI
+     </TD></TR>
+</TABLE></P>
+<A NAME="account"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ClientAccount* &nbsp;<strong>account</strong> ()
+<br></td><td align="right"><h3><strong>account</strong></h3></td></tr></table><p></p><p>
+ Get this contact's account
+</p>
+<p><b>Returns</b>: This contact's account
+     </p>
+<A NAME="accountName"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>accountName</strong> ()
+<br></td><td align="right"><h3><strong>accountName</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get this contact account's name (id)
+</p>
+<p><b>Returns</b>: This contact account name (id) or an empty string if none
+     </p>
+<A NAME="uri"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const URI& &nbsp;<strong>uri</strong> ()
+<br></td><td align="right"><h3><strong>uri</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get this contact's URI
+</p>
+<p><b>Returns</b>: This contact's URI
+     </p>
+<A NAME="setUri"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setUri</strong> (const char* u)
+<br></td><td align="right"><h3><strong>setUri</strong></h3></td></tr></table><p></p><p>
+ Set this contact's URI
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>u</i></TD><TD align="left" valign="top">New contact URI
+     </TD></TR>
+</TABLE></P>
+<A NAME="subscriptionStr"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>subscriptionStr</strong> ()
+<br></td><td align="right"><h3><strong>subscriptionStr</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve contact subscription
+</p>
+<p><b>Returns</b>: Contact subscription string
+     </p>
+<A NAME="subscriptionFrom"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>subscriptionFrom</strong> ()
+<br></td><td align="right"><h3><strong>subscriptionFrom</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if contact is subscribed to our presence
+</p>
+<p><b>Returns</b>: True if contact is subscribed to our presence
+     </p>
+<A NAME="subscriptionTo"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>subscriptionTo</strong> ()
+<br></td><td align="right"><h3><strong>subscriptionTo</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check we are subscribed to contact's presence
+</p>
+<p><b>Returns</b>: True if we are subscribed to contact's presence
+     </p>
+<A NAME="setSubscription"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setSubscription</strong> (const String& value)
+<br></td><td align="right"><h3><strong>setSubscription</strong></h3></td></tr></table><p></p><p>
+ Set contact's subscription
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Subscription value
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if changed
+     </p>
+<A NAME="resources"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ObjList& &nbsp;<strong>resources</strong> ()
+<br></td><td align="right"><h3><strong>resources</strong></h3></td></tr></table><p></p><p>
+ Get the resource list of this contact
+</p>
+<p><b>Returns</b>: The resource list of this contact
+     </p>
+<A NAME="online"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>online</strong> ()
+<br></td><td align="right"><h3><strong>online</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the contact is online (the online flag is set or has at least 1 resource in list)
+</p>
+<p><b>Returns</b>: True if the contact is online
+     </p>
+<A NAME="setOnline"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setOnline</strong> (bool on)
+<br></td><td align="right"><h3><strong>setOnline</strong></h3></td></tr></table><p></p><p>
+ Set the online flag
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>on</i></TD><TD align="left" valign="top">The new value for online flag
+     </TD></TR>
+</TABLE></P>
+<A NAME="groups"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ObjList& &nbsp;<strong>groups</strong> ()
+<br></td><td align="right"><h3><strong>groups</strong></h3></td></tr></table><p></p><p>
+ Get the group list of this contact
+</p>
+<p><b>Returns</b>: The group list of this contact
+     </p>
+<A NAME="local"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>local</strong> (bool defVal = false)
+<br></td><td align="right"><h3><strong>local</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the contact is locally saved
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>defVal</i></TD><TD align="left" valign="top">Default value to return if parameter is invalid
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the contact is locally saved
+     </p>
+<A NAME="setLocal"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setLocal</strong> (bool on)
+<br></td><td align="right"><h3><strong>setLocal</strong></h3></td></tr></table><p></p><p>
+ Set contact locally saved flag
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>on</i></TD><TD align="left" valign="top">The new value for locally saved flag
+     </TD></TR>
+</TABLE></P>
+<A NAME="remote"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>remote</strong> (bool defVal = false)
+<br></td><td align="right"><h3><strong>remote</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the contact is saved on server
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>defVal</i></TD><TD align="left" valign="top">Default value to return if parameter is invalid
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the contact is saved on server
+     </p>
+<A NAME="setRemote"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setRemote</strong> (bool on)
+<br></td><td align="right"><h3><strong>setRemote</strong></h3></td></tr></table><p></p><p>
+ Set contact server saved flag
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>on</i></TD><TD align="left" valign="top">The new value for server saved flag
+     </TD></TR>
+</TABLE></P>
+<A NAME="setDockedChat"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setDockedChat</strong> (bool on)
+<br></td><td align="right"><h3><strong>setDockedChat</strong></h3></td></tr></table><p></p><p>
+ Set/reset the docked chat flag for non MucRoom contact
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>on</i></TD><TD align="left" valign="top">The new value for docked chat flag
+     </TD></TR>
+</TABLE></P>
+<A NAME="getContactSection"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>getContactSection</strong> (String& buf)
+<br></td><td align="right"><h3><strong>getContactSection</strong></h3></td></tr></table><p></p><p>
+ Remove account prefix from contact id and URI unescape the result
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Destination buffer
+     </TD></TR>
+</TABLE></P>
+<A NAME="toString"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>toString</strong> ()
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a string representation of this object
+</p>
+<p><b>Returns</b>: The contact's id
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="mucRoom"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td> MucRoom* &nbsp;<strong>mucRoom</strong> ()
+<br></td><td align="right"><h3><strong>mucRoom</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Return a MucRoom contact from this one
+</p>
+<p><b>Returns</b>: MucRoom pointer or 0
+     </p>
+<A NAME="buildInstanceId"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String& &nbsp;<strong>buildInstanceId</strong> (String& dest, const String& inst = String::empty())
+<br></td><td align="right"><h3><strong>buildInstanceId</strong></h3></td></tr></table><p></p><p>
+ Build a contact instance id to be used in UI
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>inst</i></TD><TD align="left" valign="top">Instance name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Destination string
+     </p>
+<A NAME="buildIdHash"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>buildIdHash</strong> (String& buf, const String& prefix = String::empty())
+<br></td><td align="right"><h3><strong>buildIdHash</strong></h3></td></tr></table><p></p><p>
+ Build a string from prefix and contact id hash
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prefix</i></TD><TD align="left" valign="top">Optional prefix
+     </TD></TR>
+</TABLE></P>
+<A NAME="isChatWnd"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isChatWnd</strong> (Window* wnd)
+<br></td><td align="right"><h3><strong>isChatWnd</strong></h3></td></tr></table><p></p><p>
+ Check if a window is this contact's chat
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">The window to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the given window is this contact's chat
+     </p>
+<A NAME="hasChat"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>hasChat</strong> ()
+<br></td><td align="right"><h3><strong>hasChat</strong></h3></td></tr></table><p></p><p>
+ Check if this contact has a chat widget (window or docked item)
+</p>
+<p><b>Returns</b>: True if this contact has a chat window or docked item
+     </p>
+<A NAME="flashChat"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>flashChat</strong> (bool on = true)
+<br></td><td align="right"><h3><strong>flashChat</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Flash chat window/item to notify the user
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>on</i></TD><TD align="left" valign="top">True to start, false to stop flashing
+     </TD></TR>
+</TABLE></P>
+<A NAME="sendChat"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>sendChat</strong> (const char* body, const String& res = String::empty(),
+	const String& type = String::empty(), const char* state = "active")
+<br></td><td align="right"><h3><strong>sendChat</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Send chat to contact (enqueue a msg.execute message)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>body</i></TD><TD align="left" valign="top">Chat body
+</TD></TR>
+<TR><TD align="left" valign="top"><i>res</i></TD><TD align="left" valign="top">Optional target instance
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Optional message type parameter
+</TD></TR>
+<TR><TD align="left" valign="top"><i>state</i></TD><TD align="left" valign="top">Optional chat state
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="getChatInput"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>getChatInput</strong> (String& text, const String& name = "message")
+<br></td><td align="right"><h3><strong>getChatInput</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Retrieve the contents of the chat input widget
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Chat input text
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Chat input widget name
+     </TD></TR>
+</TABLE></P>
+<A NAME="setChatInput"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setChatInput</strong> (const String& text = String::empty(),
+	const String& name = "message")
+<br></td><td align="right"><h3><strong>setChatInput</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the chat input widget text
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Chat input text
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Chat input widget name
+     </TD></TR>
+</TABLE></P>
+<A NAME="getChatHistory"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>getChatHistory</strong> (String& text, bool richText = false,
+	const String& name = "history")
+<br></td><td align="right"><h3><strong>getChatHistory</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Retrieve the contents of the chat history widget
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Chat history text
+</TD></TR>
+<TR><TD align="left" valign="top"><i>richText</i></TD><TD align="left" valign="top">Retrieve rich/plain text flag
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Chat history widget name
+     </TD></TR>
+</TABLE></P>
+<A NAME="setChatHistory"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setChatHistory</strong> (const String& text, bool richText = false,
+	const String& name = "history")
+<br></td><td align="right"><h3><strong>setChatHistory</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the contents of the chat history widget
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Chat history text
+</TD></TR>
+<TR><TD align="left" valign="top"><i>richText</i></TD><TD align="left" valign="top">Set rich/plain text flag
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Chat history widget name
+     </TD></TR>
+</TABLE></P>
+<A NAME="addChatHistory"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>addChatHistory</strong> (const String& what, NamedList*& params,
+	const String& name = "history")
+<br></td><td align="right"><h3><strong>addChatHistory</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Add an entry to chat history
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>what</i></TD><TD align="left" valign="top">Item to add (chat_in, chat_out, ...)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Chat history item parameters (it will be consumed and zeroed)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Chat history widget name
+     </TD></TR>
+</TABLE></P>
+<A NAME="getChatProperty"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>getChatProperty</strong> (const String& name, const String& prop, String& value)
+<br></td><td align="right"><h3><strong>getChatProperty</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Retrieve a chat widget' property
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Widget name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prop</i></TD><TD align="left" valign="top">Property name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Destination buffer
+     </TD></TR>
+</TABLE></P>
+<A NAME="setChatProperty"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setChatProperty</strong> (const String& name, const String& prop, const String& value)
+<br></td><td align="right"><h3><strong>setChatProperty</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set a chat widget' property
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Widget name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prop</i></TD><TD align="left" valign="top">Property name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Property value
+     </TD></TR>
+</TABLE></P>
+<A NAME="isChatVisible"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isChatVisible</strong> ()
+<br></td><td align="right"><h3><strong>isChatVisible</strong></h3></td></tr></table><p></p><p>
+ Check if this contact's chat window is visible
+</p>
+<p><b>Returns</b>: True if this contact's chat window is visible
+     </p>
+<A NAME="showChat"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>showChat</strong> (bool visible, bool active = false)
+<br></td><td align="right"><h3><strong>showChat</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Show or hide this contact's chat window or docked item
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>visible</i></TD><TD align="left" valign="top">True to show, false to hide the window or destroy the docked item
+</TD></TR>
+<TR><TD align="left" valign="top"><i>active</i></TD><TD align="left" valign="top">True to activate the window or select the docked item if shown
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="getChatWnd"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Window* &nbsp;<strong>getChatWnd</strong> ()
+<br></td><td align="right"><h3><strong>getChatWnd</strong></h3></td></tr></table><p></p><p>
+ Get the chat window
+</p>
+<p><b>Returns</b>: Valid Window pointer or 0
+     </p>
+<A NAME="createChatWindow"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>createChatWindow</strong> (bool force = false, const char* name = 0)
+<br></td><td align="right"><h3><strong>createChatWindow</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Create the chat window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to destroy the current one if any
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The window's name. Defaults to global name if empty
+     </TD></TR>
+</TABLE></P>
+<A NAME="updateChatWindow"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>updateChatWindow</strong> (const NamedList& params, const char* title = 0,
+	const char* icon = 0)
+<br></td><td align="right"><h3><strong>updateChatWindow</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Update contact parameters in chat window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Parameters to set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>title</i></TD><TD align="left" valign="top">Optional window title to set (ignored if docked)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>icon</i></TD><TD align="left" valign="top">Optional window icon to set (ignored if docked)
+     </TD></TR>
+</TABLE></P>
+<A NAME="isChatActive"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>isChatActive</strong> ()
+<br></td><td align="right"><h3><strong>isChatActive</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Check if the contact chat is active
+</p>
+<p><b>Returns</b>: True if the contact's chat window/page is active
+     </p>
+<A NAME="destroyChatWindow"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>destroyChatWindow</strong> ()
+<br></td><td align="right"><h3><strong>destroyChatWindow</strong></h3></td></tr></table><p></p><p>
+ Close the chat window or destroy docked chat item
+     </p>
+<A NAME="findGroup"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td> String* &nbsp;<strong>findGroup</strong> (const String& group)
+<br></td><td align="right"><h3><strong>findGroup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Find a group this contact might belong to
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>group</i></TD><TD align="left" valign="top">The name of the group to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: String pointer or 0 if not found
+     </p>
+<A NAME="appendGroup"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>appendGroup</strong> (const String& group)
+<br></td><td align="right"><h3><strong>appendGroup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Append a group to this contact
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>group</i></TD><TD align="left" valign="top">Group's name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the group already exists
+     </p>
+<A NAME="removeGroup"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>removeGroup</strong> (const String& group)
+<br></td><td align="right"><h3><strong>removeGroup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove a contact's group
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>group</i></TD><TD align="left" valign="top">Group's name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the group was not found
+     </p>
+<A NAME="setGroups"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setGroups</strong> (const NamedList& list, const String& param)
+<br></td><td align="right"><h3><strong>setGroups</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Replace contact's groups from a list of parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">The list of parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">The parameter name to handle
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the list changed
+     </p>
+<A NAME="status"></A><A NAME="ref50"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientResource* &nbsp;<strong>status</strong> (bool ref = false)
+<br></td><td align="right"><h3><strong>status</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Find the resource with the lowest status
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ref</i></TD><TD align="left" valign="top">True to obtain a referenced pointer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientResource pointer or 0 if not found
+     </p>
+<A NAME="findResource"></A><A NAME="ref51"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientResource* &nbsp;<strong>findResource</strong> (const String& id, bool ref = false)
+<br></td><td align="right"><h3><strong>findResource</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Find a resource having a given id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The id of the desired resource
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ref</i></TD><TD align="left" valign="top">True to obtain a referenced pointer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientResource pointer or 0 if not found
+     </p>
+<A NAME="findAudioResource"></A><A NAME="ref52"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientResource* &nbsp;<strong>findAudioResource</strong> (bool ref = false)
+<br></td><td align="right"><h3><strong>findAudioResource</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get the first resource with audio capability
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ref</i></TD><TD align="left" valign="top">True to obtain a referenced pointer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientResource pointer or 0 if not found
+     </p>
+<A NAME="findFileTransferResource"></A><A NAME="ref53"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientResource* &nbsp;<strong>findFileTransferResource</strong> (bool ref = false)
+<br></td><td align="right"><h3><strong>findFileTransferResource</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get the first resource with file transfer capability capability
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ref</i></TD><TD align="left" valign="top">True to obtain a referenced pointer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientResource pointer or 0 if not found
+     </p>
+<A NAME="appendResource"></A><A NAME="ref54"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientResource* &nbsp;<strong>appendResource</strong> (const String& id)
+<br></td><td align="right"><h3><strong>appendResource</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Append a resource having a given id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The id of the desired resource
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientResource pointer or 0 if a resource with the given name already exists
+     </p>
+<A NAME="insertResource"></A><A NAME="ref55"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>insertResource</strong> (ClientResource* res)
+<br></td><td align="right"><h3><strong>insertResource</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Insert a resource in the list by its priority.
+ If the resource is already there it will be extracted and re-inserted
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>res</i></TD><TD align="left" valign="top">The resource to insert
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, false a resource with the same name already exists
+     </p>
+<A NAME="removeResource"></A><A NAME="ref56"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>removeResource</strong> (const String& id)
+<br></td><td align="right"><h3><strong>removeResource</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove a resource having a given id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The id of the desired resource
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the resource was removed
+     </p>
+<A NAME="share"></A><A NAME="ref57"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline NamedList& &nbsp;<strong>share</strong> ()
+<br></td><td align="right"><h3><strong>share</strong></h3></td></tr></table><p></p><p>
+ Retrieve files and folders we share with this contact
+</p>
+<p><b>Returns</b>: List of files and folders we share with this contact
+     </p>
+<A NAME="haveShare"></A><A NAME="ref58"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>haveShare</strong> ()
+<br></td><td align="right"><h3><strong>haveShare</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the list of share contains something
+</p>
+<p><b>Returns</b>: True if share list is not empty
+     </p>
+<A NAME="updateShare"></A><A NAME="ref59"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>updateShare</strong> ()
+<br></td><td align="right"><h3><strong>updateShare</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ (re)load share list
+     </p>
+<A NAME="saveShare"></A><A NAME="ref60"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>saveShare</strong> ()
+<br></td><td align="right"><h3><strong>saveShare</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Save share list
+     </p>
+<A NAME="clearShare"></A><A NAME="ref61"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>clearShare</strong> ()
+<br></td><td align="right"><h3><strong>clearShare</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Clear share list
+     </p>
+<A NAME="setShareDir"></A><A NAME="ref62"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setShareDir</strong> (const String& name, const String& path, bool save = true)
+<br></td><td align="right"><h3><strong>setShareDir</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set a directory we share with this contact
+ If share name is not empty it must be unique. Fails if another share has the same name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Share name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>path</i></TD><TD align="left" valign="top">Directory path
+</TD></TR>
+<TR><TD align="left" valign="top"><i>save</i></TD><TD align="left" valign="top">True to save now if changed
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if changed
+     </p>
+<A NAME="removeShare"></A><A NAME="ref63"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>removeShare</strong> (const String& name, bool save = true)
+<br></td><td align="right"><h3><strong>removeShare</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove a share item
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Share name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>save</i></TD><TD align="left" valign="top">True to save now if changed
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if changed
+     </p>
+<A NAME="shared"></A><A NAME="ref64"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ObjList& &nbsp;<strong>shared</strong> ()
+<br></td><td align="right"><h3><strong>shared</strong></h3></td></tr></table><p></p><p>
+ Retrieve shared data
+</p>
+<p><b>Returns</b>: Shared data list
+     </p>
+<A NAME="haveShared"></A><A NAME="ref65"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>haveShared</strong> ()
+<br></td><td align="right"><h3><strong>haveShared</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the list of shared contains something
+</p>
+<p><b>Returns</b>: True if shared list is not empty
+     </p>
+<A NAME="getShared"></A><A NAME="ref66"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientDir* &nbsp;<strong>getShared</strong> (const String& name, bool create = false)
+<br></td><td align="right"><h3><strong>getShared</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Retrieve shared data for a given resource
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Resource name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>create</i></TD><TD align="left" valign="top">True to create if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if changed
+     </p>
+<A NAME="removeShared"></A><A NAME="ref67"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>removeShared</strong> (const String& name = String::empty(), ClientDir** removed = 0)
+<br></td><td align="right"><h3><strong>removeShared</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove shared data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Resource name to remove, empty to remove all
+</TD></TR>
+<TR><TD align="left" valign="top"><i>removed</i></TD><TD align="left" valign="top">Optional pointer to removed directory
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if changed
+     </p>
+<A NAME="buildContactId"></A><A NAME="ref68"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline String& &nbsp;<strong>buildContactId</strong> (String& dest, const String& account,
+	const String& contact)
+<br></td><td align="right"><h3><strong>buildContactId</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build a contact id to be used in UI (all strings are URI escaped using extra '|' character)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>account</i></TD><TD align="left" valign="top">Account owning the contact
+</TD></TR>
+<TR><TD align="left" valign="top"><i>contact</i></TD><TD align="left" valign="top">The contact's id
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Destination string
+     </p>
+<A NAME="splitContactId"></A><A NAME="ref69"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline void &nbsp;<strong>splitContactId</strong> (const String& src, String& account)
+<br></td><td align="right"><h3><strong>splitContactId</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Retrieve the account part of a contact id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">Source string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>account</i></TD><TD align="left" valign="top">Account id (URI unescaped)
+     </TD></TR>
+</TABLE></P>
+<A NAME="splitContactInstanceId"></A><A NAME="ref70"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>splitContactInstanceId</strong> (const String& src, String& account,
+	String& contact, String* instance = 0)
+<br></td><td align="right"><h3><strong>splitContactInstanceId</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Split a contact instance id in account/contact/instance parts
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">Source string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>account</i></TD><TD align="left" valign="top">Account id (URI unescaped)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>contact</i></TD><TD align="left" valign="top">Contact id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>instance</i></TD><TD align="left" valign="top">Optional pointer to a String to be filled with instance id (URI unescaped)
+     </TD></TR>
+</TABLE></P>
+<A NAME="buildContactInstanceId"></A><A NAME="ref71"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline String& &nbsp;<strong>buildContactInstanceId</strong> (String& dest, const String& cId,
+	const String& inst = String::empty())
+<br></td><td align="right"><h3><strong>buildContactInstanceId</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build a contact instance id to be used in UI
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>cId</i></TD><TD align="left" valign="top">Contact id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>inst</i></TD><TD align="left" valign="top">Instance name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Destination string
+     </p>
+<A NAME="s_chatPrefix"></A><A NAME="ref72"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_chatPrefix</strong>
+</td><td align="right"><h3><strong>s_chatPrefix</strong></h3></td></tr></table><p></p><A NAME="s_dockedChatWnd"></A><A NAME="ref73"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_dockedChatWnd</strong>
+</td><td align="right"><h3><strong>s_dockedChatWnd</strong></h3></td></tr></table><p></p><A NAME="s_dockedChatWidget"></A><A NAME="ref74"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_dockedChatWidget</strong>
+</td><td align="right"><h3><strong>s_dockedChatWidget</strong></h3></td></tr></table><p></p><A NAME="s_mucsWnd"></A><A NAME="ref75"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_mucsWnd</strong>
+</td><td align="right"><h3><strong>s_mucsWnd</strong></h3></td></tr></table><p></p><A NAME="s_chatInput"></A><A NAME="ref76"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_chatInput</strong>
+</td><td align="right"><h3><strong>s_chatInput</strong></h3></td></tr></table><p></p><A NAME="m_name"></A><A NAME="ref77"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_name</strong>
+</td><td align="right"><h3><strong>m_name</strong></h3></td></tr></table><p></p><A NAME="m_params"></A><A NAME="ref78"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedList  <strong>m_params</strong>
+</td><td align="right"><h3><strong>m_params</strong></h3></td></tr></table><p></p><A NAME="ClientContact"></A><A NAME="ref79"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>ClientContact</strong> (ClientAccount* owner, const char* id, bool mucRoom)
+<br></td><td align="right"><h3><strong>ClientContact</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor. Append itself to the owner's list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>owner</i></TD><TD align="left" valign="top">The contact's owner
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The contact's id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>mucRoom</i></TD><TD align="left" valign="top">True if this contact is a MUC room
+     </TD></TR>
+</TABLE></P>
+<A NAME="removeFromOwner"></A><A NAME="ref80"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>removeFromOwner</strong> ()
+<br></td><td align="right"><h3><strong>removeFromOwner</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Remove from owner
+     </p>
+<A NAME="destroyed"></A><A NAME="ref81"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destroyed</strong> ()
+<br></td><td align="right"><h3><strong>destroyed</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Remove from owner. Destroy the chat window. Release data
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__RefObject.html#destroyed">RefObject</A>.</p>
+<A NAME="m_owner"></A><A NAME="ref82"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ClientAccount*  <strong>m_owner</strong>
+</td><td align="right"><h3><strong>m_owner</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_online"></A><A NAME="ref83"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_online</strong>
+</td><td align="right"><h3><strong>m_online</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_id"></A><A NAME="ref84"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_id</strong>
+</td><td align="right"><h3><strong>m_id</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_subscription"></A><A NAME="ref85"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_subscription</strong>
+</td><td align="right"><h3><strong>m_subscription</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_sub"></A><A NAME="ref86"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Flags32  <strong>m_sub</strong>
+</td><td align="right"><h3><strong>m_sub</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_uri"></A><A NAME="ref87"></A><table width="100%"><tr bgcolor="#eeeeee"><td>URI  <strong>m_uri</strong>
+</td><td align="right"><h3><strong>m_uri</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_resources"></A><A NAME="ref88"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>m_resources</strong>
+</td><td align="right"><h3><strong>m_resources</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_groups"></A><A NAME="ref89"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>m_groups</strong>
+</td><td align="right"><h3><strong>m_groups</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_dockedChat"></A><A NAME="ref90"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_dockedChat</strong>
+</td><td align="right"><h3><strong>m_dockedChat</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_chatWndName"></A><A NAME="ref91"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_chatWndName</strong>
+</td><td align="right"><h3><strong>m_chatWndName</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_share"></A><A NAME="ref92"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedList  <strong>m_share</strong>
+</td><td align="right"><h3><strong>m_share</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_shared"></A><A NAME="ref93"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>m_shared</strong>
+</td><td align="right"><h3><strong>m_shared</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

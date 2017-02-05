@@ -1,0 +1,259 @@
+<HTML>
+<HEAD>
+<TITLE>class ClientAccountList</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ClientAccountList</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A client account list. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ClientAccountList</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatecbase_h.html">yatecbase.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small>, <A HREF="TelEngine__String.html">TelEngine::String</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ClientAccountList.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline explicit &nbsp;<b><A HREF="#ref2">ClientAccountList</A></b> (const char* name, ClientAccount* localContacts = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">~ClientAccountList</A></b> () 
+</LI>
+<LI>inline ObjList& &nbsp;<b><A HREF="#ref4">accounts</A></b> () 
+</LI>
+<LI>inline ClientAccount* &nbsp;<b><A HREF="#ref5">localContacts</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref6">isLocalContact</A></b> (ClientContact* c)  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref7">isLocalContact</A></b> (const String& id)  const
+</LI>
+<LI>virtual  ClientAccount* &nbsp;<b><A HREF="#ref8">findAccount</A></b> (const String& id, bool ref = false) 
+</LI>
+<LI>virtual  ClientContact* &nbsp;<b><A HREF="#ref9">findContactByUri</A></b> (const String& account, const String& uri,
+	bool ref = false) 
+</LI>
+<LI>virtual  ClientContact* &nbsp;<b><A HREF="#ref10">findContact</A></b> (const String& account, const String& id, bool ref = false) 
+</LI>
+<LI>virtual  ClientContact* &nbsp;<b><A HREF="#ref11">findContact</A></b> (const String& builtId, bool ref = false) 
+</LI>
+<LI>virtual  ClientContact* &nbsp;<b><A HREF="#ref12">findContactByInstance</A></b> (const String& id, String* instance = 0,
+	bool ref = false) 
+</LI>
+<LI>virtual  MucRoom* &nbsp;<b><A HREF="#ref13">findRoom</A></b> (const String& id, bool ref = false) 
+</LI>
+<LI>virtual  MucRoom* &nbsp;<b><A HREF="#ref14">findRoomByMember</A></b> (const String& id, bool ref = false) 
+</LI>
+<LI>virtual  ClientContact* &nbsp;<b><A HREF="#ref15">findAnyContact</A></b> (const String& id, bool ref = false) 
+</LI>
+<LI>virtual  ClientAccount* &nbsp;<b><A HREF="#ref16">findSingleRegAccount</A></b> (const String* skipProto = 0,
+	bool ref = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref17">appendAccount</A></b> (ClientAccount* account) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref18">removeAccount</A></b> (const String& id) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>ObjList <b><A HREF="#ref19">m_accounts</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds an account list
+</p>
+<A NAME="ClientAccountList"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline explicit &nbsp;<strong>ClientAccountList</strong> (const char* name, ClientAccount* localContacts = 0)
+<br></td><td align="right"><h3><strong>ClientAccountList</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">List's name used for debug purposes
+</TD></TR>
+<TR><TD align="left" valign="top"><i>localContacts</i></TD><TD align="left" valign="top">Optional account owning locally stored contacts
+     </TD></TR>
+</TABLE></P>
+<A NAME="~ClientAccountList"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>~ClientAccountList</strong> ()
+<br></td><td align="right"><h3><strong>~ClientAccountList</strong></h3></td></tr></table><p></p><p>
+ Destructor
+     </p>
+<A NAME="accounts"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ObjList& &nbsp;<strong>accounts</strong> ()
+<br></td><td align="right"><h3><strong>accounts</strong></h3></td></tr></table><p></p><p>
+ Get the accounts list
+</p>
+<p><b>Returns</b>: The accounts list
+     </p>
+<A NAME="localContacts"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ClientAccount* &nbsp;<strong>localContacts</strong> ()
+<br></td><td align="right"><h3><strong>localContacts</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the account owning locally stored contacts
+</p>
+<p><b>Returns</b>: ClientAccount pointer or 0
+     </p>
+<A NAME="isLocalContact"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>isLocalContact</strong> (ClientContact* c)
+<br></td><td align="right"><h3><strong>isLocalContact</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if a contact is locally stored
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>c</i></TD><TD align="left" valign="top">The contact to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the contact owner is the account owning locally stored contacts
+     </p>
+<A NAME="isLocalContact"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isLocalContact</strong> (const String& id)
+<br></td><td align="right"><h3><strong>isLocalContact</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if a contact is locally stored
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Contact id to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the contact owner is the account owning locally stored contacts
+     </p>
+<A NAME="findAccount"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientAccount* &nbsp;<strong>findAccount</strong> (const String& id, bool ref = false)
+<br></td><td align="right"><h3><strong>findAccount</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Find an account
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The account's id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ref</i></TD><TD align="left" valign="top">True to get a referenced pointer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientAccount pointer or 0 if not found
+     </p>
+<A NAME="findContactByUri"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientContact* &nbsp;<strong>findContactByUri</strong> (const String& account, const String& uri,
+	bool ref = false)
+<br></td><td align="right"><h3><strong>findContactByUri</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Find an account's contact by its URI (build an id from account and uri)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>account</i></TD><TD align="left" valign="top">The account's id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>uri</i></TD><TD align="left" valign="top">The contact's uri
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ref</i></TD><TD align="left" valign="top">True to get a referenced pointer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientContact pointer or 0 if not found
+     </p>
+<A NAME="findContact"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientContact* &nbsp;<strong>findContact</strong> (const String& account, const String& id, bool ref = false)
+<br></td><td align="right"><h3><strong>findContact</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Find an account's contact
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>account</i></TD><TD align="left" valign="top">The account's id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The contact's id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ref</i></TD><TD align="left" valign="top">True to get a referenced pointer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientContact pointer or 0 if not found
+     </p>
+<A NAME="findContact"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientContact* &nbsp;<strong>findContact</strong> (const String& builtId, bool ref = false)
+<br></td><td align="right"><h3><strong>findContact</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Find an account's contact from a built id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>builtId</i></TD><TD align="left" valign="top">The string containign the account and the contact
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ref</i></TD><TD align="left" valign="top">True to get a referenced pointer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientContact pointer or 0 if not found
+     </p>
+<A NAME="findContactByInstance"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientContact* &nbsp;<strong>findContactByInstance</strong> (const String& id, String* instance = 0,
+	bool ref = false)
+<br></td><td align="right"><h3><strong>findContactByInstance</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Find a contact an instance id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>instance</i></TD><TD align="left" valign="top">Optional pointer to String to be filled with instance id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ref</i></TD><TD align="left" valign="top">True to get a referenced pointer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientContact pointer or 0 if not found
+     </p>
+<A NAME="findRoom"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> MucRoom* &nbsp;<strong>findRoom</strong> (const String& id, bool ref = false)
+<br></td><td align="right"><h3><strong>findRoom</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Find a MUC room by its id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Room id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ref</i></TD><TD align="left" valign="top">True to obtain a referenced pointer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: MucRoom pointer or 0 if not found
+     </p>
+<A NAME="findRoomByMember"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> MucRoom* &nbsp;<strong>findRoomByMember</strong> (const String& id, bool ref = false)
+<br></td><td align="right"><h3><strong>findRoomByMember</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Find a MUC room by member id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Room member id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ref</i></TD><TD align="left" valign="top">True to obtain a referenced pointer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: MucRoom pointer or 0 if not found
+     </p>
+<A NAME="findAnyContact"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientContact* &nbsp;<strong>findAnyContact</strong> (const String& id, bool ref = false)
+<br></td><td align="right"><h3><strong>findAnyContact</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Find any contact (regular or MUC room) by its id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The id of the desired contact
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ref</i></TD><TD align="left" valign="top">True to obtain a referenced pointer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientContact pointer (may be account's own contact) or 0 if not found
+     </p>
+<A NAME="findSingleRegAccount"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientAccount* &nbsp;<strong>findSingleRegAccount</strong> (const String* skipProto = 0,
+	bool ref = false)
+<br></td><td align="right"><h3><strong>findSingleRegAccount</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Check if there is a single registered account and return it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>skipProto</i></TD><TD align="left" valign="top">Optional account protocol to skip
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ref</i></TD><TD align="left" valign="top">True to get a referenced pointer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientAccount pointer or 0 if not found
+     </p>
+<A NAME="appendAccount"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>appendAccount</strong> (ClientAccount* account)
+<br></td><td align="right"><h3><strong>appendAccount</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Append a new account. The account's reference counter is increased before
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>account</i></TD><TD align="left" valign="top">The account to append
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on succes, false if an account with the same id already exists
+     </p>
+<A NAME="removeAccount"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>removeAccount</strong> (const String& id)
+<br></td><td align="right"><h3><strong>removeAccount</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove an account
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The account's id
+     </TD></TR>
+</TABLE></P>
+<A NAME="m_accounts"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>m_accounts</strong>
+</td><td align="right"><h3><strong>m_accounts</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

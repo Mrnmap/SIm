@@ -1,0 +1,200 @@
+<HTML>
+<HEAD>
+<TITLE>class Array</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Array</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A list based Array. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Array</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Array.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>explicit &nbsp;<b><A HREF="#ref1">Array</A></b> (int columns = 0, int rows = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref2">~Array</A></b> () 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref3">getObject</A></b> (const String& name)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref4">addRow</A></b> (ObjList* row = 0, int index = -1) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref5">addColumn</A></b> (ObjList* column = 0, int index = -1) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref6">delRow</A></b> (int index) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref7">delColumn</A></b> (int index) 
+</LI>
+<LI>GenObject* &nbsp;<b><A HREF="#ref8">get</A></b> (int column, int row)  const
+</LI>
+<LI>GenObject* &nbsp;<b><A HREF="#ref9">take</A></b> (int column, int row) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref10">set</A></b> (GenObject* obj, int column, int row) 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref11">getRows</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref12">getColumns</A></b> ()  const
+</LI>
+<LI>inline ObjList* &nbsp;<b><A HREF="#ref13">getColumn</A></b> (int column)  const
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A simple Array class derivated from RefObject
+ It uses one ObjList to keep the pointers to other ObjList's.
+ Data is organized in columns - the main ObjList holds pointers to one
+  ObjList for each column.
+ This class has been written by Diana
+</p>
+<A NAME="Array"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>Array</strong> (int columns = 0, int rows = 0)
+<br></td><td align="right"><h3><strong>Array</strong></h3></td></tr></table><p></p><p>
+ Creates a new empty array.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>columns</i></TD><TD align="left" valign="top">Initial number of columns
+</TD></TR>
+<TR><TD align="left" valign="top"><i>rows</i></TD><TD align="left" valign="top">Initial number of rows
+     </TD></TR>
+</TABLE></P>
+<A NAME="~Array"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~Array</strong> ()
+<br></td><td align="right"><h3><strong>~Array</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor. Destructs all objects in the array
+     </p>
+<A NAME="getObject"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__RefObject.html#getObject">RefObject</A>.</p>
+<A NAME="addRow"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>addRow</strong> (ObjList* row = 0, int index = -1)
+<br></td><td align="right"><h3><strong>addRow</strong></h3></td></tr></table><p></p><p>
+ Insert a row of objects
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>row</i></TD><TD align="left" valign="top">List of objects to insert or NULL
+</TD></TR>
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Number of the row to insert before, negative to append
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True for success, false if index was larger than the array
+     </p>
+<A NAME="addColumn"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>addColumn</strong> (ObjList* column = 0, int index = -1)
+<br></td><td align="right"><h3><strong>addColumn</strong></h3></td></tr></table><p></p><p>
+ Insert a column of objects
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>column</i></TD><TD align="left" valign="top">List of objects to insert or NULL
+</TD></TR>
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Number of the column to insert before, negative to append
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True for success, false if index was larger than the array
+     </p>
+<A NAME="delRow"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>delRow</strong> (int index)
+<br></td><td align="right"><h3><strong>delRow</strong></h3></td></tr></table><p></p><p>
+ Delete an entire row of objects
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Number of the row to delete
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True for success, false if index was out of bounds
+     </p>
+<A NAME="delColumn"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>delColumn</strong> (int index)
+<br></td><td align="right"><h3><strong>delColumn</strong></h3></td></tr></table><p></p><p>
+ Delete an entire column of objects
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Number of the column to delete
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True for success, false if index was out of bounds
+     </p>
+<A NAME="get"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>GenObject* &nbsp;<strong>get</strong> (int column, int row)
+<br></td><td align="right"><h3><strong>get</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve an object from the array
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>column</i></TD><TD align="left" valign="top">Number of the column in the array
+</TD></TR>
+<TR><TD align="left" valign="top"><i>row</i></TD><TD align="left" valign="top">Number of the row in the array
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the stored object, NULL for out of bound indexes
+     </p>
+<A NAME="take"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>GenObject* &nbsp;<strong>take</strong> (int column, int row)
+<br></td><td align="right"><h3><strong>take</strong></h3></td></tr></table><p></p><p>
+ Retrieve and remove an object from the array
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>column</i></TD><TD align="left" valign="top">Number of the column in the array
+</TD></TR>
+<TR><TD align="left" valign="top"><i>row</i></TD><TD align="left" valign="top">Number of the row in the array
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the stored object, NULL for out of bound indexes
+     </p>
+<A NAME="set"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>set</strong> (GenObject* obj, int column, int row)
+<br></td><td align="right"><h3><strong>set</strong></h3></td></tr></table><p></p><p>
+ Store an object in the array
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">Object to store in the array
+</TD></TR>
+<TR><TD align="left" valign="top"><i>column</i></TD><TD align="left" valign="top">Number of the column in the array
+</TD></TR>
+<TR><TD align="left" valign="top"><i>row</i></TD><TD align="left" valign="top">Number of the row in the array
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True for success, false if indexes were out of bounds
+     </p>
+<A NAME="getRows"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>getRows</strong> ()
+<br></td><td align="right"><h3><strong>getRows</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of rows in the array
+</p>
+<p><b>Returns</b>: Total number of rows
+     </p>
+<A NAME="getColumns"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>getColumns</strong> ()
+<br></td><td align="right"><h3><strong>getColumns</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of columns in the array
+</p>
+<p><b>Returns</b>: Total number of columns
+     </p>
+<A NAME="getColumn"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ObjList* &nbsp;<strong>getColumn</strong> (int column)
+<br></td><td align="right"><h3><strong>getColumn</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve a column.
+ Note: Use the returned list only to get or set data.
+  List items must not be removed or appended
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>column</i></TD><TD align="left" valign="top">Column to retrieve
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to column list, NULL for out of bound indexes
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

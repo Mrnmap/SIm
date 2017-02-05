@@ -1,0 +1,181 @@
+<HTML>
+<HEAD>
+<TITLE>class MimeSdpBody</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class MimeSdpBody</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">MIME for application/sdp. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::MimeSdpBody</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatemime_h.html">yatemime.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__MimeBody.html">TelEngine::MimeBody</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__MimeSdpBody.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">MimeSdpBody</A></b> (bool hashing = false) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">MimeSdpBody</A></b> (const String& type, const char* buf, int len) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">MimeSdpBody</A></b> (const MimeHeaderLine& type, const char* buf, int len) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref4">~MimeSdpBody</A></b> () 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref5">getObject</A></b> (const String& name)  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">isSDP</A></b> ()  const
+</LI>
+<LI>virtual  MimeBody* &nbsp;<b><A HREF="#ref7">clone</A></b> ()  const
+</LI>
+<LI>inline const ObjList& &nbsp;<b><A HREF="#ref8">lines</A></b> ()  const
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref9">hash</A></b> ()  const
+</LI>
+<LI>NamedString* &nbsp;<b><A HREF="#ref10">addLine</A></b> (const char* name, const char* value = 0) 
+</LI>
+<LI>const NamedString* &nbsp;<b><A HREF="#ref11">getLine</A></b> (const char* name)  const
+</LI>
+<LI>const NamedString* &nbsp;<b><A HREF="#ref12">getNextLine</A></b> (const NamedString* line)  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref13">MimeSdpBody</A></b> (const MimeSdpBody& original) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref14">buildBody</A></b> ()  const
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ An object holding the lines of an application/sdp MIME type
+</p>
+<A NAME="MimeSdpBody"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MimeSdpBody</strong> (bool hashing = false)
+<br></td><td align="right"><h3><strong>MimeSdpBody</strong></h3></td></tr></table><p></p><p>
+ Default constructor, builds an empty application/sdp
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>hashing</i></TD><TD align="left" valign="top">Enable hashing the content lines
+     </TD></TR>
+</TABLE></P>
+<A NAME="MimeSdpBody"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MimeSdpBody</strong> (const String& type, const char* buf, int len)
+<br></td><td align="right"><h3><strong>MimeSdpBody</strong></h3></td></tr></table><p></p><p>
+ Constructor from block of data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The value of the Content-Type header line
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Pointer to buffer of data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data in buffer
+     </TD></TR>
+</TABLE></P>
+<A NAME="MimeSdpBody"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MimeSdpBody</strong> (const MimeHeaderLine& type, const char* buf, int len)
+<br></td><td align="right"><h3><strong>MimeSdpBody</strong></h3></td></tr></table><p></p><p>
+ Constructor from block of data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The content type header line
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Pointer to buffer of data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data in buffer
+     </TD></TR>
+</TABLE></P>
+<A NAME="~MimeSdpBody"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~MimeSdpBody</strong> ()
+<br></td><td align="right"><h3><strong>~MimeSdpBody</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="getObject"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ RTTI method, get a pointer to a derived class given the class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__MimeBody.html#getObject">MimeBody</A>.</p>
+<A NAME="isSDP"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>isSDP</strong> ()
+<br></td><td align="right"><h3><strong>isSDP</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Override that checks if this body is an Session Description Protocol
+</p>
+<p><b>Returns</b>: True, since this body holds a SDP
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__MimeBody.html#isSDP">MimeBody</A>.</p>
+<A NAME="clone"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> MimeBody* &nbsp;<strong>clone</strong> ()
+<br></td><td align="right"><h3><strong>clone</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Duplicate this MIME body
+</p>
+<p><b>Returns</b>: Copy of this MIME body - a new MimeSdpBody
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__MimeBody.html#clone">MimeBody</A>.</p>
+<A NAME="lines"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const ObjList& &nbsp;<strong>lines</strong> ()
+<br></td><td align="right"><h3><strong>lines</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the lines hold in data
+</p>
+<p><b>Returns</b>: List of NamedStrings
+     </p>
+<A NAME="hash"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>hash</strong> ()
+<br></td><td align="right"><h3><strong>hash</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the hash of body lines
+</p>
+<p><b>Returns</b>: Hash of body, zero if hashing not enabled
+     </p>
+<A NAME="addLine"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedString* &nbsp;<strong>addLine</strong> (const char* name, const char* value = 0)
+<br></td><td align="right"><h3><strong>addLine</strong></h3></td></tr></table><p></p><p>
+ Append a new name=value line of SDP data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the line, should be one character
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Text of the line
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to new added line
+     </p>
+<A NAME="getLine"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const NamedString* &nbsp;<strong>getLine</strong> (const char* name)
+<br></td><td align="right"><h3><strong>getLine</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the first line matching a name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the line to search
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: First instance of the searched name or NULL if none present
+     </p>
+<A NAME="getNextLine"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const NamedString* &nbsp;<strong>getNextLine</strong> (const NamedString* line)
+<br></td><td align="right"><h3><strong>getNextLine</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the next line of the same type as the current
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>line</i></TD><TD align="left" valign="top">Current line
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Next instance of same name or NULL if no more
+     </p>
+<A NAME="MimeSdpBody"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MimeSdpBody</strong> (const MimeSdpBody& original)
+<br></td><td align="right"><h3><strong>MimeSdpBody</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Copy constructor
+     </p>
+<A NAME="buildBody"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>buildBody</strong> ()
+<br></td><td align="right"><h3><strong>buildBody</strong></h3></td></tr></table><p> <small>[protected const virtual]</small></p><p>
+ Override that is called internally to build the binary encoded body
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__MimeBody.html#buildBody">MimeBody</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

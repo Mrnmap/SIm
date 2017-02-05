@@ -1,0 +1,410 @@
+<HTML>
+<HEAD>
+<TITLE>class Driver</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Driver</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Channel driver module. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Driver</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatephone_h.html">yatephone.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__Module.html">TelEngine::Module</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><i><A HREF="TelEngine__ClientDriver.html">ClientDriver</A></i></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Driver.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>virtual  void* &nbsp;<b><A HREF="#ref16">getObject</A></b> (const String& name)  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref17">prefix</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref18">varchan</A></b> ()  const
+</LI>
+<LI>inline ObjList& &nbsp;<b><A HREF="#ref19">channels</A></b> () 
+</LI>
+<LI>virtual  Channel* &nbsp;<b><A HREF="#ref20">find</A></b> (const String& id)  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref21">isBusy</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref22">dropAll</A></b> (Message &msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref23">canAccept</A></b> (bool routers = true) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref24">canRoute</A></b> () 
+</LI>
+<LI>unsigned int &nbsp;<b><A HREF="#ref25">nextid</A></b> () 
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref26">lastid</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref27">timeout</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref28">routing</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref29">routed</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref30">total</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref31">chanCount</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref32">maxChans</A></b> ()  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref33">Driver</A></b> (const char* name, const char* type = 0) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref34">initialize</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref35">setup</A></b> (const char* prefix = 0, bool minimal = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref36">received</A></b> (Message &msg, int id) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref37">genUpdate</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref38">hasLine</A></b> (const String& line)  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref39">msgRoute</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref40">msgExecute</A></i></b> (Message& msg, String& dest) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref41">commandComplete</A></b> (Message& msg, const String& partLine, const String& partWord) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref42">statusModule</A></b> (String& str) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref43">statusParams</A></b> (String& str) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref44">statusDetail</A></b> (String& str) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref45">setDebug</A></b> (Message& msg, const String& target) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref46">loadLimits</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref47">varchan</A></b> (bool variable) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref48">timeout</A></b> (int tout) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref49">maxRoute</A></b> (int ncalls) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref50">maxChans</A></b> (int ncalls) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref51">dtmfDups</A></b> (bool duplicates) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Driver is a module specialized for implementing channel drivers
+</p>
+<A NAME="getObject"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Module.html#getObject">Module</A>.</p>
+<A NAME="prefix"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>prefix</strong> ()
+<br></td><td align="right"><h3><strong>prefix</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the prefix that is used as base for all channels
+</p>
+<p><b>Returns</b>: The driver's prefix
+     </p>
+<A NAME="varchan"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>varchan</strong> ()
+<br></td><td align="right"><h3><strong>varchan</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this driver is for dynamic (variable number) channels
+</p>
+<p><b>Returns</b>: True if the channels are dynamic, false for fixed
+     </p>
+<A NAME="channels"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ObjList& &nbsp;<strong>channels</strong> ()
+<br></td><td align="right"><h3><strong>channels</strong></h3></td></tr></table><p></p><p>
+ Get the list of channels of this driver
+</p>
+<p><b>Returns</b>: A reference to the channel list
+     </p>
+<A NAME="find"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Channel* &nbsp;<strong>find</strong> (const String& id)
+<br></td><td align="right"><h3><strong>find</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Find a channel by id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Unique identifier of the channel to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the channel or NULL if not found
+     </p>
+<A NAME="isBusy"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>isBusy</strong> ()
+<br></td><td align="right"><h3><strong>isBusy</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if the driver is actively used.
+</p>
+<p><b>Returns</b>: True if the driver is in use, false if should be ok to restart
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Plugin.html#isBusy">Plugin</A>.</p>
+<A NAME="dropAll"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>dropAll</strong> (Message &msg)
+<br></td><td align="right"><h3><strong>dropAll</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Drop all current channels
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Notification message
+     </TD></TR>
+</TABLE></P>
+<A NAME="canAccept"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>canAccept</strong> (bool routers = true)
+<br></td><td align="right"><h3><strong>canAccept</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Check if new connections can be accepted
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>routers</i></TD><TD align="left" valign="top">Set to true to check routing threads for incoming connections
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if at least one new connection can be accepted, false if not
+     </p>
+<A NAME="canRoute"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>canRoute</strong> ()
+<br></td><td align="right"><h3><strong>canRoute</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Check if new incoming connections can be routed
+</p>
+<p><b>Returns</b>: True if at least one new connection can be routed, false if not
+     </p>
+<A NAME="nextid"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int &nbsp;<strong>nextid</strong> ()
+<br></td><td align="right"><h3><strong>nextid</strong></h3></td></tr></table><p></p><p>
+ Get the next unique numeric id from a sequence
+</p>
+<p><b>Returns</b>: A driver unique number that increments by 1 at each call
+     </p>
+<A NAME="lastid"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>lastid</strong> ()
+<br></td><td align="right"><h3><strong>lastid</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the current (last used) unique numeric id from a sequence
+</p>
+<p><b>Returns</b>: The driver unique number
+     </p>
+<A NAME="timeout"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>timeout</strong> ()
+<br></td><td align="right"><h3><strong>timeout</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the default driver timeout
+</p>
+<p><b>Returns</b>: Timeout value in milliseconds
+     </p>
+<A NAME="routing"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>routing</strong> ()
+<br></td><td align="right"><h3><strong>routing</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of calls currently in the routing stage
+</p>
+<p><b>Returns</b>: Number of router threads currently running
+     </p>
+<A NAME="routed"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>routed</strong> ()
+<br></td><td align="right"><h3><strong>routed</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of calls successfully routed
+</p>
+<p><b>Returns</b>: Number of calls that have gone past the routing stage
+     </p>
+<A NAME="total"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>total</strong> ()
+<br></td><td align="right"><h3><strong>total</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the total number of calls ever created
+</p>
+<p><b>Returns</b>: Number of channels ever created for this driver
+     </p>
+<A NAME="chanCount"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>chanCount</strong> ()
+<br></td><td align="right"><h3><strong>chanCount</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of running channels
+</p>
+<p><b>Returns</b>: Number of channels running at this time
+     </p>
+<A NAME="maxChans"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>maxChans</strong> ()
+<br></td><td align="right"><h3><strong>maxChans</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the maximum number of running channels for this driver
+</p>
+<p><b>Returns</b>: Maximum number of calls to run simultaneously, zero to accept all
+     </p>
+<A NAME="Driver"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>Driver</strong> (const char* name, const char* type = 0)
+<br></td><td align="right"><h3><strong>Driver</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Plugin name of this driver
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of the driver: "fixchans", "varchans", etc.
+     </TD></TR>
+</TABLE></P>
+<A NAME="initialize"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>initialize</strong> ()
+<br></td><td align="right"><h3><strong>initialize</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ This method is called to initialize the loaded module
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Module.html#initialize">Module</A>.</p>
+<A NAME="setup"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setup</strong> (const char* prefix = 0, bool minimal = false)
+<br></td><td align="right"><h3><strong>setup</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Install standard message relays and set up the prefix
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>prefix</i></TD><TD align="left" valign="top">Prefix to use with channels of this driver
+</TD></TR>
+<TR><TD align="left" valign="top"><i>minimal</i></TD><TD align="left" valign="top">Install just a minimal set of message relays
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__Module.html#setup">Module</A>.</p>
+<A NAME="received"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>received</strong> (Message &msg, int id)
+<br></td><td align="right"><h3><strong>received</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Message receiver handler
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The received message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The identifier with which the relay was created
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing, false to try other handlers
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Module.html#received">Module</A>.</p>
+<A NAME="genUpdate"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>genUpdate</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>genUpdate</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Opportunity to modify the update message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Status update message
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__Module.html#genUpdate">Module</A>.</p>
+<A NAME="hasLine"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>hasLine</strong> (const String& line)
+<br></td><td align="right"><h3><strong>hasLine</strong></h3></td></tr></table><p> <small>[protected const virtual]</small></p><p>
+ Check if driver owns a client line (registered to an external server)
+</p>
+<p>     </p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>line</i></TD><TD align="left" valign="top">Name of the line to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if this driver owns  line with the specified name
+</p>
+<A NAME="msgRoute"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgRoute</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgRoute</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Routing message handler. The default implementation routes to this
+  driver if it owns a line named in the "account" or "line" parameter.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Call routing message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing the message, false to try other handlers
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Module.html#msgRoute">Module</A>.</p>
+<A NAME="msgExecute"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>msgExecute</strong></i> (Message& msg, String& dest)
+<br></td><td align="right"><h3><i><strong>msgExecute</strong></i></h3></td></tr></table><p> <small>[protected pure virtual]</small></p><p>
+ Create an outgoing calling channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Call execute message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination of the new call
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if outgoing call was created
+     </p>
+<A NAME="commandComplete"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>commandComplete</strong> (Message& msg, const String& partLine, const String& partWord)
+<br></td><td align="right"><h3><strong>commandComplete</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Complete a command line
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Message to return completion into
+</TD></TR>
+<TR><TD align="left" valign="top"><i>partLine</i></TD><TD align="left" valign="top">Partial line to complete, excluding the last word
+</TD></TR>
+<TR><TD align="left" valign="top"><i>partWord</i></TD><TD align="left" valign="top">Partial word to complete
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing the message, false to try other handlers
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Module.html#commandComplete">Module</A>.</p>
+<A NAME="statusModule"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>statusModule</strong> (String& str)
+<br></td><td align="right"><h3><strong>statusModule</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Build the module identification part of the status answer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String variable to fill up
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__Module.html#statusModule">Module</A>.</p>
+<A NAME="statusParams"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>statusParams</strong> (String& str)
+<br></td><td align="right"><h3><strong>statusParams</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Build the parameter reporting part of the status answer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String variable to fill up
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__Module.html#statusParams">Module</A>.</p>
+<A NAME="statusDetail"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>statusDetail</strong> (String& str)
+<br></td><td align="right"><h3><strong>statusDetail</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Build the channel list part of the status answer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String variable to fill up
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__Module.html#statusDetail">Module</A>.</p>
+<A NAME="setDebug"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setDebug</strong> (Message& msg, const String& target)
+<br></td><td align="right"><h3><strong>setDebug</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Set the local debugging level
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Debug setting message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>target</i></TD><TD align="left" valign="top">String to match for local settings
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__Module.html#setDebug">Module</A>.</p>
+<A NAME="loadLimits"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>loadLimits</strong> ()
+<br></td><td align="right"><h3><strong>loadLimits</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Load the global limits from the main config file
+     </p>
+<A NAME="varchan"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>varchan</strong> (bool variable)
+<br></td><td align="right"><h3><strong>varchan</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set if this driver is for dynamic (variable number) channels
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>variable</i></TD><TD align="left" valign="top">True if the channels are dynamic, false for fixed
+     </TD></TR>
+</TABLE></P>
+<A NAME="timeout"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>timeout</strong> (int tout)
+<br></td><td align="right"><h3><strong>timeout</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set the default driver timeout
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>tout</i></TD><TD align="left" valign="top">New timeout in milliseconds or zero to disable
+     </TD></TR>
+</TABLE></P>
+<A NAME="maxRoute"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>maxRoute</strong> (int ncalls)
+<br></td><td align="right"><h3><strong>maxRoute</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set the maximum number of routing messages for this driver
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ncalls</i></TD><TD align="left" valign="top">Number of calls to route simultaneously, zero to accept all
+     </TD></TR>
+</TABLE></P>
+<A NAME="maxChans"></A><A NAME="ref50"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>maxChans</strong> (int ncalls)
+<br></td><td align="right"><h3><strong>maxChans</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set the maximum number of running channels for this driver
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ncalls</i></TD><TD align="left" valign="top">Number of calls to run simultaneously, zero to accept all
+     </TD></TR>
+</TABLE></P>
+<A NAME="dtmfDups"></A><A NAME="ref51"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>dtmfDups</strong> (bool duplicates)
+<br></td><td align="right"><h3><strong>dtmfDups</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set the DTMF duplicates allowed flag
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>duplicates</i></TD><TD align="left" valign="top">True to allow DTMF duplicate messages
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

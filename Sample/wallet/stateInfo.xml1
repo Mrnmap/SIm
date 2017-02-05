@@ -1,0 +1,13 @@
+<StateInfo>
+<ExpandNodes>
+<PkgNodes>
+<Node>com.sun.javacard.samples.wallet</Node>
+</PkgNodes>
+</ExpandNodes>
+<FileNodes>
+<ActiveFile>
+<fileName>src\com\sun\javacard\samples\wallet\Wallet.java</fileName>
+<line>6</line>
+</ActiveFile>
+</FileNodes>
+</StateInfo>

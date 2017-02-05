@@ -1,0 +1,15 @@
+<Local_Env_Config>
+<JCKit_Option>
+<ClassPaths/>
+<localJcHomePath>C:\JavaCardKit\JCDK</localJcHomePath>
+<_OutPutRootDir>F:\workspace\dk_install_tool\打包工具\打包工具分类\打包工具_Feitian\ThreePackages\FTJAVACARD\SDK\SampleCode\AlgorithmDemo\AlgDemoApplet\bin</_OutPutRootDir>
+<OutType>EXP JCA CAP</OutType>
+<_InheritClassPath>1</_InheritClassPath>
+<_verbos>0</_verbos>
+<_nowarn>0</_nowarn>
+<_debug>1</_debug>
+<_nobanner>0</_nobanner>
+<_noverify>0</_noverify>
+<_mask>0</_mask>
+</JCKit_Option>
+</Local_Env_Config>

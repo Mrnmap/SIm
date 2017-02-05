@@ -1,0 +1,203 @@
+<HTML>
+<HEAD>
+<TITLE>class XmlDomParser</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class XmlDomParser</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Document Object Model XML Parser. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::XmlDomParser</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatexml_h.html">yatexml.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__XmlSaxParser.html">TelEngine::XmlSaxParser</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__XmlDomParser.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">XmlDomParser</A></b> (const char* name = "XmlDomParser", bool fragment = false) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">XmlDomParser</A></b> (XmlParent* fragment, bool takeOwnership) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref4">~XmlDomParser</A></b> () 
+</LI>
+<LI>XmlDocument* &nbsp;<b><A HREF="#ref5">document</A></b> () 
+</LI>
+<LI>XmlFragment* &nbsp;<b><A HREF="#ref6">fragment</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref7">reset</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref8">isCurrent</A></b> (const XmlElement* el)  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref9">gotComment</A></b> (const String& text) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref10">gotProcessing</A></b> (const NamedString& instr) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref11">gotDeclaration</A></b> (const NamedList& decl) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref12">gotText</A></b> (const String& text) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref13">gotCdata</A></b> (const String& data) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref14">gotElement</A></b> (const NamedList& element, bool empty) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref15">endElement</A></b> (const String& name) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref16">gotDoctype</A></b> (const String& doc) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref17">completed</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A Document Object Model (DOM) parser for XML documents and fragments
+</p>
+<A NAME="XmlDomParser"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XmlDomParser</strong> (const char* name = "XmlDomParser", bool fragment = false)
+<br></td><td align="right"><h3><strong>XmlDomParser</strong></h3></td></tr></table><p></p><p>
+ XmlDomParser constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Debug name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>fragment</i></TD><TD align="left" valign="top">True if this parser needs to parse a piece of a xml document
+     </TD></TR>
+</TABLE></P>
+<A NAME="XmlDomParser"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XmlDomParser</strong> (XmlParent* fragment, bool takeOwnership)
+<br></td><td align="right"><h3><strong>XmlDomParser</strong></h3></td></tr></table><p></p><p>
+ XmlDomParser constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>fragment</i></TD><TD align="left" valign="top">The fragment who should keep the parsed data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>takeOwnership</i></TD><TD align="left" valign="top">True to take ownership of the fragment
+     </TD></TR>
+</TABLE></P>
+<A NAME="~XmlDomParser"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~XmlDomParser</strong> ()
+<br></td><td align="right"><h3><strong>~XmlDomParser</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="document"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XmlDocument* &nbsp;<strong>document</strong> ()
+<br></td><td align="right"><h3><strong>document</strong></h3></td></tr></table><p></p><p>
+ Obtain an XmlDocument from the parsed data
+</p>
+<p><b>Returns</b>: The XmlDocument or 0
+     </p>
+<A NAME="fragment"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XmlFragment* &nbsp;<strong>fragment</strong> ()
+<br></td><td align="right"><h3><strong>fragment</strong></h3></td></tr></table><p></p><p>
+ Obtain an XmlFragment from the parsed data
+</p>
+<p><b>Returns</b>: The XmlFragment or 0
+     </p>
+<A NAME="reset"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>reset</strong> ()
+<br></td><td align="right"><h3><strong>reset</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Reset parser
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlSaxParser.html#reset">XmlSaxParser</A>.</p>
+<A NAME="isCurrent"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isCurrent</strong> (const XmlElement* el)
+<br></td><td align="right"><h3><strong>isCurrent</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the current element is the given one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>el</i></TD><TD align="left" valign="top">The element to compare with
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if they are equal
+     </p>
+<A NAME="gotComment"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>gotComment</strong> (const String& text)
+<br></td><td align="right"><h3><strong>gotComment</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Append a xml comment in the xml tree
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">The comment content
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__XmlSaxParser.html#gotComment">XmlSaxParser</A>.</p>
+<A NAME="gotProcessing"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>gotProcessing</strong> (const NamedString& instr)
+<br></td><td align="right"><h3><strong>gotProcessing</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Append a xml instruction in the xml tree
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>instr</i></TD><TD align="left" valign="top">The instruction content
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__XmlSaxParser.html#gotProcessing">XmlSaxParser</A>.</p>
+<A NAME="gotDeclaration"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>gotDeclaration</strong> (const NamedList& decl)
+<br></td><td align="right"><h3><strong>gotDeclaration</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Append a xml declaration in the xml tree
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>decl</i></TD><TD align="left" valign="top">The declaration content
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__XmlSaxParser.html#gotDeclaration">XmlSaxParser</A>.</p>
+<A NAME="gotText"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>gotText</strong> (const String& text)
+<br></td><td align="right"><h3><strong>gotText</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Append a xml text in the xml tree
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">The text content
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__XmlSaxParser.html#gotText">XmlSaxParser</A>.</p>
+<A NAME="gotCdata"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>gotCdata</strong> (const String& data)
+<br></td><td align="right"><h3><strong>gotCdata</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Append a xml CData in the xml tree
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">The CData content
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__XmlSaxParser.html#gotCdata">XmlSaxParser</A>.</p>
+<A NAME="gotElement"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>gotElement</strong> (const NamedList& element, bool empty)
+<br></td><td align="right"><h3><strong>gotElement</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Append a xml element in the xml tree
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">The element content
+</TD></TR>
+<TR><TD align="left" valign="top"><i>empty</i></TD><TD align="left" valign="top">True if the element does not have attributes
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__XmlSaxParser.html#gotElement">XmlSaxParser</A>.</p>
+<A NAME="endElement"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>endElement</strong> (const String& name)
+<br></td><td align="right"><h3><strong>endElement</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Complete current element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The end tag name
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__XmlSaxParser.html#endElement">XmlSaxParser</A>.</p>
+<A NAME="gotDoctype"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>gotDoctype</strong> (const String& doc)
+<br></td><td align="right"><h3><strong>gotDoctype</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Append a xml doctype in the xml tree
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>doc</i></TD><TD align="left" valign="top">The doctype content
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__XmlSaxParser.html#gotDoctype">XmlSaxParser</A>.</p>
+<A NAME="completed"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>completed</strong> ()
+<br></td><td align="right"><h3><strong>completed</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Callback method. Is called to check if we have an incomplete element
+</p>
+<p><b>Returns</b>: True if current element is not 0
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlSaxParser.html#completed">XmlSaxParser</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,685 @@
+<HTML>
+<HEAD>
+<TITLE>class Engine</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Engine</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Engine globals. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Engine</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatengine_h.html">yatengine.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Engine.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref4">RunMode</A> {	Stopped = 0,
+	Console = 1,
+	Server = 2,
+	Client = 3,
+	ClientProxy = 4,
+    }
+</LI>
+<LI>enum <A HREF="#ref5">CallAccept</A> {	Accept = 0,
+	Partial = 1,
+	Congestion = 2,
+	Reject = 3,
+    }
+</LI>
+<LI>enum <A HREF="#ref6">PluginMode</A> {	LoadFail = 0,
+	LoadLate,
+	LoadEarly
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>int &nbsp;<b><A HREF="#ref9">engineInit</A></b> () 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref10">engineCleanup</A></b> () 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref11">run</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref46">setHook</A></b> (MessagePostHook* hook, bool remove = false) 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref50">usedPlugins</A></b> () 
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref51">messageCount</A></b> () 
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref52">handlerCount</A></b> () 
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref53">postHookCount</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref54">loadPluginDir</A></b> (const String& relPath) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  int &nbsp;<b><A HREF="#ref7">main</A></b> (int argc, const char** argv, const char** env,
+	RunMode mode = Console, EngineLoop loop = 0, bool fail = false) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref8">help</A></b> (bool client, bool errout = false) 
+</LI>
+<LI>static  Engine* &nbsp;<b><A HREF="#ref12">self</A></b> () 
+</LI>
+<LI>static  RunMode &nbsp;<b><A HREF="#ref13">mode</A></b> () 
+</LI>
+<LI>static inline  CallAccept &nbsp;<b><A HREF="#ref14">accept</A></b> () 
+</LI>
+<LI>static inline  void &nbsp;<b><A HREF="#ref15">setAccept</A></b> (CallAccept ca) 
+</LI>
+<LI>static inline  const TokenDict* &nbsp;<b><A HREF="#ref16">getCallAcceptStates</A></b> () 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref17">setCongestion</A></b> (const char* reason = 0) 
+</LI>
+<LI>static  unsigned int &nbsp;<b><A HREF="#ref18">getCongestion</A></b> () 
+</LI>
+<LI>static inline  bool &nbsp;<b><A HREF="#ref19">clientMode</A></b> () 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref20">Register</A></b> (const Plugin* plugin, bool reg = true) 
+</LI>
+<LI>static inline  const String& &nbsp;<b><A HREF="#ref21">nodeName</A></b> () 
+</LI>
+<LI>static inline  const String& &nbsp;<b><A HREF="#ref22">sharedPath</A></b> () 
+</LI>
+<LI>static  String &nbsp;<b><A HREF="#ref23">configFile</A></b> (const char* name, bool user = false) 
+</LI>
+<LI>static  const String& &nbsp;<b><A HREF="#ref24">configPath</A></b> (bool user = false) 
+</LI>
+<LI>static inline  const String& &nbsp;<b><A HREF="#ref25">configSuffix</A></b> () 
+</LI>
+<LI>static inline  const String& &nbsp;<b><A HREF="#ref26">modulePath</A></b> () 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref27">extraPath</A></b> (const String& path) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref28">userPath</A></b> (const String& path) 
+</LI>
+<LI>static inline  const String& &nbsp;<b><A HREF="#ref29">moduleSuffix</A></b> () 
+</LI>
+<LI>static  const char* &nbsp;<b><A HREF="#ref30">pathSeparator</A></b> () 
+</LI>
+<LI>static  const Configuration& &nbsp;<b><A HREF="#ref31">config</A></b> () 
+</LI>
+<LI>static  unsigned int &nbsp;<b><A HREF="#ref32">runId</A></b> () 
+</LI>
+<LI>static inline  const NamedList& &nbsp;<b><A HREF="#ref33">runParams</A></b> () 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref34">init</A></b> () 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref35">init</A></b> (const String& name) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref36">halt</A></b> (unsigned int code) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref37">restart</A></b> (unsigned int code, bool gracefull = false) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref38">exiting</A></b> () 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref39">install</A></b> (MessageHandler* handler) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref40">uninstall</A></b> (MessageHandler* handler) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref41">enqueue</A></b> (Message* msg, bool skipHooks = false) 
+</LI>
+<LI>static inline  bool &nbsp;<b><A HREF="#ref42">enqueue</A></b> (const char* name, bool broadcast = false) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref43">dispatch</A></b> (Message* msg) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref44">dispatch</A></b> (Message& msg) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref45">dispatch</A></b> (const char* name, bool broadcast = false) 
+</LI>
+<LI>static inline  const String& &nbsp;<b><A HREF="#ref47">trackParam</A></b> () 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref48">installHook</A></b> (MessageHook* hook) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref49">uninstallHook</A></b> (MessageHook* hook) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref55">pluginMode</A></b> (PluginMode mode) 
+</LI>
+<LI>static  const ObjList* &nbsp;<b><A HREF="#ref56">events</A></b> (const String& type) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref57">clearEvents</A></b> (const String& type) 
+</LI>
+<LI>static  SharedVars& &nbsp;<b><A HREF="#ref58">sharedVars</A></b> () 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref59">buildCmdLine</A></b> (String& line) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref60">initLibrary</A></b> (const String& line, String* output = 0) 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref61">cleanupLibrary</A></b> () 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref62">~Engine</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref63">loadPlugin</A></b> (const char* file, bool local = false, bool nounload = false) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref64">loadPlugins</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref65">initPlugins</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds global information about the engine.
+ Note: this is a singleton class.
+</p>
+<p></p>
+<A NAME="RunMode"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>RunMode</strong> {	Stopped = 0,
+	Console = 1,
+	Server = 2,
+	Client = 3,
+	ClientProxy = 4,
+    }
+</td><td align="right"><h3><strong>RunMode</strong></h3></td></tr></table><p></p><p>
+ Running modes - run the engine as Console, Client or Server.
+     </p>
+<A NAME="CallAccept"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>CallAccept</strong> {	Accept = 0,
+	Partial = 1,
+	Congestion = 2,
+	Reject = 3,
+    }
+</td><td align="right"><h3><strong>CallAccept</strong></h3></td></tr></table><p></p><A NAME="PluginMode"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>PluginMode</strong> {	LoadFail = 0,
+	LoadLate,
+	LoadEarly
+    }
+</td><td align="right"><h3><strong>PluginMode</strong></h3></td></tr></table><p></p><p>
+ Plugin load and initialization modes.
+ Default is LoadLate that initailizes the plugin after others.
+ LoadEarly will move the plugin to the front of the init order.
+ LoadFail causes the plugin to be unloaded.
+     </p>
+<A NAME="main"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>main</strong> (int argc, const char** argv, const char** env,
+	RunMode mode = Console, EngineLoop loop = 0, bool fail = false)
+<br></td><td align="right"><h3><strong>main</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Main entry point to be called directly from a wrapper program
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>argc</i></TD><TD align="left" valign="top">Argument count
+</TD></TR>
+<TR><TD align="left" valign="top"><i>argv</i></TD><TD align="left" valign="top">Argument array
+</TD></TR>
+<TR><TD align="left" valign="top"><i>env</i></TD><TD align="left" valign="top">Environment variables
+</TD></TR>
+<TR><TD align="left" valign="top"><i>mode</i></TD><TD align="left" valign="top">Mode the engine must run as - Console, Client or Server
+</TD></TR>
+<TR><TD align="left" valign="top"><i>loop</i></TD><TD align="left" valign="top">Callback function to the main thread's loop
+</TD></TR>
+<TR><TD align="left" valign="top"><i>fail</i></TD><TD align="left" valign="top">Fail and return after parsing command line arguments
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Program exit code
+     </p>
+<A NAME="help"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>help</strong> (bool client, bool errout = false)
+<br></td><td align="right"><h3><strong>help</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Display the help information on console
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>client</i></TD><TD align="left" valign="top">Display help for client running mode
+</TD></TR>
+<TR><TD align="left" valign="top"><i>errout</i></TD><TD align="left" valign="top">Display on stderr intead of stdout
+     </TD></TR>
+</TABLE></P>
+<A NAME="engineInit"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>engineInit</strong> ()
+<br></td><td align="right"><h3><strong>engineInit</strong></h3></td></tr></table><p></p><p>
+ Initialize the engine
+</p>
+<p><b>Returns</b>: Error code, 0 for success
+     </p>
+<A NAME="engineCleanup"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>engineCleanup</strong> ()
+<br></td><td align="right"><h3><strong>engineCleanup</strong></h3></td></tr></table><p></p><p>
+ Do engine cleanup
+</p>
+<p><b>Returns</b>: Error code, 0 for success
+     </p>
+<A NAME="run"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>run</strong> ()
+<br></td><td align="right"><h3><strong>run</strong></h3></td></tr></table><p></p><p>
+ Run the engine.
+</p>
+<p><b>Returns</b>: Error code, 0 for success
+     </p>
+<A NAME="self"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Engine* &nbsp;<strong>self</strong> ()
+<br></td><td align="right"><h3><strong>self</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get a pointer to the unique instance.
+</p>
+<p><b>Returns</b>: A pointer to the singleton instance of the engine
+     </p>
+<A NAME="mode"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> RunMode &nbsp;<strong>mode</strong> ()
+<br></td><td align="right"><h3><strong>mode</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the running mode of the engine
+</p>
+<p><b>Returns</b>: Engine's run mode as enumerated value
+     </p>
+<A NAME="accept"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  CallAccept &nbsp;<strong>accept</strong> ()
+<br></td><td align="right"><h3><strong>accept</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get call accept status
+</p>
+<p><b>Returns</b>: Engine's call accept status as enumerated value
+     </p>
+<A NAME="setAccept"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  void &nbsp;<strong>setAccept</strong> (CallAccept ca)
+<br></td><td align="right"><h3><strong>setAccept</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set call accept status
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ca</i></TD><TD align="left" valign="top">New call accept status as enumerated value
+     </TD></TR>
+</TABLE></P>
+<A NAME="getCallAcceptStates"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  const TokenDict* &nbsp;<strong>getCallAcceptStates</strong> ()
+<br></td><td align="right"><h3><strong>getCallAcceptStates</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get call accept states
+</p>
+<p><b>Returns</b>: states Pointer to the call accept states TokenDict
+     </p>
+<A NAME="setCongestion"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setCongestion</strong> (const char* reason = 0)
+<br></td><td align="right"><h3><strong>setCongestion</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Alter the congestion state counter.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Reason to enter congested state, NULL to leave congestion
+     </TD></TR>
+</TABLE></P>
+<A NAME="getCongestion"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>getCongestion</strong> ()
+<br></td><td align="right"><h3><strong>getCongestion</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the congestion state counter
+</p>
+<p><b>Returns</b>: Zero if not congested else the number of congested components
+     </p>
+<A NAME="clientMode"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  bool &nbsp;<strong>clientMode</strong> ()
+<br></td><td align="right"><h3><strong>clientMode</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if the engine is running as telephony client
+</p>
+<p><b>Returns</b>: True if the engine is running in client mode
+     </p>
+<A NAME="Register"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>Register</strong> (const Plugin* plugin, bool reg = true)
+<br></td><td align="right"><h3><strong>Register</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Register or unregister a plugin to the engine.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>plugin</i></TD><TD align="left" valign="top">A pointer to the plugin to (un)register
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reg</i></TD><TD align="left" valign="top">True to register (default), false to unregister
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, false on failure
+     </p>
+<A NAME="nodeName"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  const String& &nbsp;<strong>nodeName</strong> ()
+<br></td><td align="right"><h3><strong>nodeName</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the server node name, should be unique in a cluster
+</p>
+<p><b>Returns</b>: Node identifier string, defaults to host name
+     </p>
+<A NAME="sharedPath"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  const String& &nbsp;<strong>sharedPath</strong> ()
+<br></td><td align="right"><h3><strong>sharedPath</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the application's shared directory path
+</p>
+<p><b>Returns</b>: The base path for shared files and directories
+     </p>
+<A NAME="configFile"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> String &nbsp;<strong>configFile</strong> (const char* name, bool user = false)
+<br></td><td align="right"><h3><strong>configFile</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the filename for a specific configuration
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the configuration requested
+</TD></TR>
+<TR><TD align="left" valign="top"><i>user</i></TD><TD align="left" valign="top">True to build a user settings path
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A full path configuration file name
+     </p>
+<A NAME="configPath"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>configPath</strong> (bool user = false)
+<br></td><td align="right"><h3><strong>configPath</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the system or user configuration directory path
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>user</i></TD><TD align="left" valign="top">True to get the user settings path
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The directory path for system or user configuration files
+     </p>
+<A NAME="configSuffix"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  const String& &nbsp;<strong>configSuffix</strong> ()
+<br></td><td align="right"><h3><strong>configSuffix</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the configuration file suffix
+</p>
+<p><b>Returns</b>: The suffix for configuration files
+     </p>
+<A NAME="modulePath"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  const String& &nbsp;<strong>modulePath</strong> ()
+<br></td><td align="right"><h3><strong>modulePath</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ The module loading path
+     </p>
+<A NAME="extraPath"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>extraPath</strong> (const String& path)
+<br></td><td align="right"><h3><strong>extraPath</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Add a relative extra module loading path. The list is empty by default
+  but can be filled by a main program before calling <A HREF="TelEngine__Engine.html#main">main</A>()
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>path</i></TD><TD align="left" valign="top">Relative path to extra modules to be loaded
+     </TD></TR>
+</TABLE></P>
+<A NAME="userPath"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>userPath</strong> (const String& path)
+<br></td><td align="right"><h3><strong>userPath</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set the per user application data path. This method must be called
+  by a main program before calling <A HREF="TelEngine__Engine.html#main">main</A>() or <A HREF="TelEngine__Engine.html#help">help</A>()
+ Path separators are not allowed. The default is taken from CFG_DIR.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>path</i></TD><TD align="left" valign="top">Single relative path component to write user specific data
+     </TD></TR>
+</TABLE></P>
+<A NAME="moduleSuffix"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  const String& &nbsp;<strong>moduleSuffix</strong> ()
+<br></td><td align="right"><h3><strong>moduleSuffix</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the module filename suffix
+</p>
+<p><b>Returns</b>: The suffix for module files
+     </p>
+<A NAME="pathSeparator"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>pathSeparator</strong> ()
+<br></td><td align="right"><h3><strong>pathSeparator</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the canonical path element separator for the operating system
+</p>
+<p><b>Returns</b>: The operating system specific path element separator
+     </p>
+<A NAME="config"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const Configuration& &nbsp;<strong>config</strong> ()
+<br></td><td align="right"><h3><strong>config</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ The global configuration of the engine.
+ You must use this resource with caution.
+ Note that sections [general], [modules], [preload] and [postload] are
+  reserved by the engine. Also [telephony] is reserved by the drivers.
+</p>
+<p><b>Returns</b>: A reference to the read-only engine configuration
+     </p>
+<A NAME="runId"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>runId</strong> ()
+<br></td><td align="right"><h3><strong>runId</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get a - supposedly unique - instance ID
+</p>
+<p><b>Returns</b>: Unique ID of the current running instance
+     </p>
+<A NAME="runParams"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  const NamedList& &nbsp;<strong>runParams</strong> ()
+<br></td><td align="right"><h3><strong>runParams</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the engine parameters specific to this run.
+</p>
+<p><b>Returns</b>: A reference to the list of run specific parameters
+     </p>
+<A NAME="init"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>init</strong> ()
+<br></td><td align="right"><h3><strong>init</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Reinitialize the plugins
+     </p>
+<A NAME="init"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>init</strong> (const String& name)
+<br></td><td align="right"><h3><strong>init</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Reinitialize one plugin
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the plugin to initialize, emplty, "*" or "all" to initialize all
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if plugin(s) were reinitialized
+     </p>
+<A NAME="halt"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>halt</strong> (unsigned int code)
+<br></td><td align="right"><h3><strong>halt</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Stop the engine and the entire program
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">Return code of the program
+     </TD></TR>
+</TABLE></P>
+<A NAME="restart"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>restart</strong> (unsigned int code, bool gracefull = false)
+<br></td><td align="right"><h3><strong>restart</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Stop and restart the engine and the entire program
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">Return code of the program
+</TD></TR>
+<TR><TD align="left" valign="top"><i>gracefull</i></TD><TD align="left" valign="top">Attempt to wait until no plugin is busy
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if restart was initiated, false if exiting or no supervisor
+     </p>
+<A NAME="exiting"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>exiting</strong> ()
+<br></td><td align="right"><h3><strong>exiting</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if the engine is currently exiting
+</p>
+<p><b>Returns</b>: True if exiting, false in normal operation
+     </p>
+<A NAME="install"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>install</strong> (MessageHandler* handler)
+<br></td><td align="right"><h3><strong>install</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Installs a handler in the dispatcher.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>handler</i></TD><TD align="left" valign="top">A pointer to the handler to install
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, false on failure
+     </p>
+<A NAME="uninstall"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>uninstall</strong> (MessageHandler* handler)
+<br></td><td align="right"><h3><strong>uninstall</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Uninstalls a handler drom the dispatcher.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>handler</i></TD><TD align="left" valign="top">A pointer to the handler to uninstall
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, false on failure
+     </p>
+<A NAME="enqueue"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>enqueue</strong> (Message* msg, bool skipHooks = false)
+<br></td><td align="right"><h3><strong>enqueue</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Enqueue a message in the message queue for asynchronous dispatching
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The message to enqueue, will be destroyed after dispatching
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skipHooks</i></TD><TD align="left" valign="top">True to append the message directly into the main queue
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if enqueued, false on error (already queued)
+     </p>
+<A NAME="enqueue"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  bool &nbsp;<strong>enqueue</strong> (const char* name, bool broadcast = false)
+<br></td><td align="right"><h3><strong>enqueue</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Convenience function.
+ Enqueue a new parameterless message in the message queue
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the parameterless message to put in queue
+</TD></TR>
+<TR><TD align="left" valign="top"><i>broadcast</i></TD><TD align="left" valign="top">Broadcast flag, true if handling the mesage must not stop it
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if enqueued, false on error (already queued)
+     </p>
+<A NAME="dispatch"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>dispatch</strong> (Message* msg)
+<br></td><td align="right"><h3><strong>dispatch</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Synchronously dispatch a message to the registered handlers
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Pointer to the message to dispatch
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if one handler accepted it, false if all ignored
+     </p>
+<A NAME="dispatch"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>dispatch</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>dispatch</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Synchronously dispatch a message to the registered handlers
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The message to dispatch
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if one handler accepted it, false if all ignored
+     </p>
+<A NAME="dispatch"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>dispatch</strong> (const char* name, bool broadcast = false)
+<br></td><td align="right"><h3><strong>dispatch</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Convenience function.
+ Dispatch a parameterless message to the registered handlers
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of the message to create and dispatch
+</TD></TR>
+<TR><TD align="left" valign="top"><i>broadcast</i></TD><TD align="left" valign="top">Broadcast flag, true if handling the mesage must not stop it
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if one handler accepted it, false if all ignored
+     </p>
+<A NAME="setHook"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setHook</strong> (MessagePostHook* hook, bool remove = false)
+<br></td><td align="right"><h3><strong>setHook</strong></h3></td></tr></table><p></p><p>
+ Install or remove a hook to catch messages after being dispatched
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>hook</i></TD><TD align="left" valign="top">Pointer to a post-dispatching message hook
+</TD></TR>
+<TR><TD align="left" valign="top"><i>remove</i></TD><TD align="left" valign="top">Set to True to remove the hook instead of adding
+     </TD></TR>
+</TABLE></P>
+<A NAME="trackParam"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  const String& &nbsp;<strong>trackParam</strong> ()
+<br></td><td align="right"><h3><strong>trackParam</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Retrieve the tracker parameter name
+</p>
+<p><b>Returns</b>: Name of the parameter used to track message dispatching
+     </p>
+<A NAME="installHook"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>installHook</strong> (MessageHook* hook)
+<br></td><td align="right"><h3><strong>installHook</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Appends a new message hook to the hooks list.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>hook</i></TD><TD align="left" valign="top">The message hook to append.
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the message hook was successfully appended to the hooks list
+     </p>
+<A NAME="uninstallHook"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>uninstallHook</strong> (MessageHook* hook)
+<br></td><td align="right"><h3><strong>uninstallHook</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Remove a message hook from the hooks list.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>hook</i></TD><TD align="left" valign="top">The hook to remove.
+     </TD></TR>
+</TABLE></P>
+<A NAME="usedPlugins"></A><A NAME="ref50"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>usedPlugins</strong> ()
+<br></td><td align="right"><h3><strong>usedPlugins</strong></h3></td></tr></table><p></p><p>
+ Get a count of plugins that are actively in use
+</p>
+<p><b>Returns</b>: Count of plugins in use
+     </p>
+<A NAME="messageCount"></A><A NAME="ref51"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>messageCount</strong> ()
+<br></td><td align="right"><h3><strong>messageCount</strong></h3></td></tr></table><p></p><p>
+ Get the number of messages waiting in the queue
+</p>
+<p><b>Returns</b>: Count of messages in the queue
+     </p>
+<A NAME="handlerCount"></A><A NAME="ref52"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>handlerCount</strong> ()
+<br></td><td align="right"><h3><strong>handlerCount</strong></h3></td></tr></table><p></p><p>
+ Get the number of handlers in the dispatcher
+</p>
+<p><b>Returns</b>: Count of handlers
+     </p>
+<A NAME="postHookCount"></A><A NAME="ref53"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>postHookCount</strong> ()
+<br></td><td align="right"><h3><strong>postHookCount</strong></h3></td></tr></table><p></p><p>
+ Get the number of post-handling hooks in the dispatcher
+</p>
+<p><b>Returns</b>: Count of hooks
+     </p>
+<A NAME="loadPluginDir"></A><A NAME="ref54"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>loadPluginDir</strong> (const String& relPath)
+<br></td><td align="right"><h3><strong>loadPluginDir</strong></h3></td></tr></table><p></p><p>
+ Loads the plugins from an extra plugins directory or just an extra plugin
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>relPath</i></TD><TD align="left" valign="top">Path to the extra directory, relative to the main modules
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the plugin was loaded or the directory could at least be opened
+     </p>
+<A NAME="pluginMode"></A><A NAME="ref55"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>pluginMode</strong> (PluginMode mode)
+<br></td><td align="right"><h3><strong>pluginMode</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set the load and init mode of the currently loading <A HREF="TelEngine__Plugin.html">Plugin</A>
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>mode</i></TD><TD align="left" valign="top">Load and init mode, default LoadLate
+     </TD></TR>
+</TABLE></P>
+<A NAME="events"></A><A NAME="ref56"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const ObjList* &nbsp;<strong>events</strong> (const String& type)
+<br></td><td align="right"><h3><strong>events</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Retrive the list of captured events of a specific type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of captured events, an empty name returns engine events
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: List containing captured events of specified type, NULL if not found
+     </p>
+<A NAME="clearEvents"></A><A NAME="ref57"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>clearEvents</strong> (const String& type)
+<br></td><td align="right"><h3><strong>clearEvents</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Clear the list of captured events of a specific type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of captured events, an empty name clear engine events
+     </TD></TR>
+</TABLE></P>
+<A NAME="sharedVars"></A><A NAME="ref58"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SharedVars& &nbsp;<strong>sharedVars</strong> ()
+<br></td><td align="right"><h3><strong>sharedVars</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Access the engine's shared variables
+</p>
+<p><b>Returns</b>: Reference to the static variables shared between modules
+     </p>
+<A NAME="buildCmdLine"></A><A NAME="ref59"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>buildCmdLine</strong> (String& line)
+<br></td><td align="right"><h3><strong>buildCmdLine</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Append command line arguments form current config.
+ The following parameters are added: -Dads, -v, -q, Debugger timestamp.
+ This method should be used when starting another libyate based application
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>line</i></TD><TD align="left" valign="top">Destination string
+     </TD></TR>
+</TABLE></P>
+<A NAME="initLibrary"></A><A NAME="ref60"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>initLibrary</strong> (const String& line, String* output = 0)
+<br></td><td align="right"><h3><strong>initLibrary</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Initialize library from command line arguments.
+ Enable debugger output.
+ This method should be used in initialization stage of libyate based applications
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>line</i></TD><TD align="left" valign="top">Command line arguments string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>output</i></TD><TD align="left" valign="top">Optional string to be filled with invalid argument errors
+  or any output to be displyed later
+     </TD></TR>
+</TABLE></P>
+<A NAME="cleanupLibrary"></A><A NAME="ref61"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>cleanupLibrary</strong> ()
+<br></td><td align="right"><h3><strong>cleanupLibrary</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Cleanup library. Set late abort, kill all threads.
+ This method should be used in cleanup stage of libyate based applications
+</p>
+<p><b>Returns</b>: Halt code
+     </p>
+<A NAME="~Engine"></A><A NAME="ref62"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>~Engine</strong> ()
+<br></td><td align="right"><h3><strong>~Engine</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Destroys the engine and everything. You must not call it directly,
+ <A HREF="TelEngine__Engine.html#run">run</A>() will do it for you.
+     </p>
+<A NAME="loadPlugin"></A><A NAME="ref63"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>loadPlugin</strong> (const char* file, bool local = false, bool nounload = false)
+<br></td><td align="right"><h3><strong>loadPlugin</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Loads one plugin from a shared object file
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>file</i></TD><TD align="left" valign="top">Name of the plugin file to load
+</TD></TR>
+<TR><TD align="left" valign="top"><i>local</i></TD><TD align="left" valign="top">Attempt to keep symbols local if supported by the system
+</TD></TR>
+<TR><TD align="left" valign="top"><i>nounload</i></TD><TD align="left" valign="top">Never unload the module from memory, finalize if possible
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if success, false on failure
+     </p>
+<A NAME="loadPlugins"></A><A NAME="ref64"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>loadPlugins</strong> ()
+<br></td><td align="right"><h3><strong>loadPlugins</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Loads the plugins from the plugins directory
+     </p>
+<A NAME="initPlugins"></A><A NAME="ref65"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>initPlugins</strong> ()
+<br></td><td align="right"><h3><strong>initPlugins</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Initialize all registered plugins
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

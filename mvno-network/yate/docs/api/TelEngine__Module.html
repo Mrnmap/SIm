@@ -1,0 +1,475 @@
+<HTML>
+<HEAD>
+<TITLE>class Module</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Module</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Plugin that implements a module. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Module</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatephone_h.html">yatephone.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__MessageReceiver.html">TelEngine::MessageReceiver</A></i> <small>[public ]</small>, <A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small>, <i><A HREF="TelEngine__Plugin.html">TelEngine::Plugin</A></i> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><i><A HREF="TelEngine__ClientDriver.html">ClientDriver</A></i>, <i><A HREF="TelEngine__Driver.html">Driver</A></i></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Module.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>virtual  void* &nbsp;<b><A HREF="#ref8">getObject</A></b> (const String& name)  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref9">type</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref10">changed</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref13">filterInstalled</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref14">filterDebug</A></b> (const String& item)  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static inline  unsigned int &nbsp;<b><A HREF="#ref11">updateDelay</A></b> () 
+</LI>
+<LI>static inline  void &nbsp;<b><A HREF="#ref12">updateDelay</A></b> (unsigned int delay) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref15">itemComplete</A></b> (String& itemList, const String& item, const String& partWord) 
+</LI>
+</ul><h4>Protected Types</h4><ul><LI>enum <A HREF="#ref16"></A> {	Status     = 0x00000001,
+	Timer      = 0x00000002,
+	Level      = 0x00000004,
+	Command    = 0x00000008,
+	Help       = 0x00000010,
+	Halt       = 0x00000020,
+	Route	   = 0x00000040,
+	Execute    = 0x00000100,
+	Drop       = 0x00000200,
+	Locate     = 0x00000400,
+	Masquerade = 0x00000800,
+	Ringing    = 0x00001000,
+	Answered   = 0x00002000,
+	Tone       = 0x00004000,
+	Text       = 0x00008000,
+	Progress   = 0x00010000,
+	Update     = 0x00020000,
+	Transfer   = 0x00040000,
+	Control	   = 0x00080000,
+	MsgExecute = 0x00100000,
+	PubLast    = 0x0fffffff,
+	Private    = 0x10000000
+    }
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref19">Module</A></b> (const char* name, const char* type = 0, bool earlyInit = false) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref20">~Module</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref21">initialize</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref22">setup</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref23">relayInstalled</A></b> (int id)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref24">installRelay</A></b> (int id, unsigned priority = 100) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref25">installRelay</A></b> (const char* name, unsigned priority = 100) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref26">installRelay</A></b> (int id, const char* name, unsigned priority = 100) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref27">installRelay</A></b> (MessageRelay* relay) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref28">uninstallRelay</A></b> (MessageRelay* relay, bool delRelay = true) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref29">uninstallRelay</A></b> (int id, bool delRelay = true) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref30">uninstallRelays</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref31">received</A></b> (Message &msg, int id) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref32">genUpdate</A></b> (Message& msg) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref33">msgTimer</A></b> (Message& msg) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref34">msgStatus</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref35">msgRoute</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref36">msgCommand</A></b> (Message& msg) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref37">statusModule</A></b> (String& str) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref38">statusParams</A></b> (String& str) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref39">statusDetail</A></b> (String& str) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref40">commandExecute</A></b> (String& retVal, const String& line) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref41">commandComplete</A></b> (Message& msg, const String& partLine, const String& partWord) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref42">setDebug</A></b> (Message& msg, const String& target) 
+</LI>
+</ul><h4>Protected Static Methods</h4><ul><LI>static  const char* &nbsp;<b><A HREF="#ref17">messageName</A></b> (int id) 
+</LI>
+<LI>static  inline int &nbsp;<b><A HREF="#ref18">relayId</A></b> (const char* name) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Module is a descendent of Plugin specialized in implementing modules
+</p>
+<A NAME="getObject"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Plugin.html#getObject">Plugin</A>.</p>
+<A NAME="type"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>type</strong> ()
+<br></td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the type of the module
+</p>
+<p><b>Returns</b>: The module's type as String
+     </p>
+<A NAME="changed"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>changed</strong> ()
+<br></td><td align="right"><h3><strong>changed</strong></h3></td></tr></table><p></p><p>
+ Mark the driver statistics "dirty" therefore triggring a delayed
+  status update.
+     </p>
+<A NAME="updateDelay"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  unsigned int &nbsp;<strong>updateDelay</strong> ()
+<br></td><td align="right"><h3><strong>updateDelay</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Retrieve the global update notification delay
+</p>
+<p><b>Returns</b>: Update delay value in seconds
+     </p>
+<A NAME="updateDelay"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  void &nbsp;<strong>updateDelay</strong> (unsigned int delay)
+<br></td><td align="right"><h3><strong>updateDelay</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set the global update notification delay
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>delay</i></TD><TD align="left" valign="top">New update delay value in seconds, 0 to disable
+     </TD></TR>
+</TABLE></P>
+<A NAME="filterInstalled"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>filterInstalled</strong> ()
+<br></td><td align="right"><h3><strong>filterInstalled</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if a debug filter is installed
+</p>
+<p><b>Returns</b>: True if debugging should be filtered
+     </p>
+<A NAME="filterDebug"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>filterDebug</strong> (const String& item)
+<br></td><td align="right"><h3><strong>filterDebug</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check by filter rule if debugging should be active
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Value of the item to match
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if debugging should be activated
+     </p>
+<A NAME="itemComplete"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>itemComplete</strong> (String& itemList, const String& item, const String& partWord)
+<br></td><td align="right"><h3><strong>itemComplete</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Helper function to complete just one item on a command line
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>itemList</i></TD><TD align="left" valign="top">Tab separated list of possible values to complete
+</TD></TR>
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Item to possibly insert in the list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>partWord</i></TD><TD align="left" valign="top">Partial word to complete, may be empty
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the item was added to list, false if it didn't match
+     </p>
+<A NAME=""></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong></strong> {	Status     = 0x00000001,
+	Timer      = 0x00000002,
+	Level      = 0x00000004,
+	Command    = 0x00000008,
+	Help       = 0x00000010,
+	Halt       = 0x00000020,
+	Route	   = 0x00000040,
+	Execute    = 0x00000100,
+	Drop       = 0x00000200,
+	Locate     = 0x00000400,
+	Masquerade = 0x00000800,
+	Ringing    = 0x00001000,
+	Answered   = 0x00002000,
+	Tone       = 0x00004000,
+	Text       = 0x00008000,
+	Progress   = 0x00010000,
+	Update     = 0x00020000,
+	Transfer   = 0x00040000,
+	Control	   = 0x00080000,
+	MsgExecute = 0x00100000,
+	PubLast    = 0x0fffffff,
+	Private    = 0x10000000
+    }
+</td><td align="right"><h3><strong></strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ IDs of the installed relays
+     </p>
+<A NAME="messageName"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>messageName</strong> (int id)
+<br></td><td align="right"><h3><strong>messageName</strong></h3></td></tr></table><p> <small>[protected static]</small></p><p>
+ Find the name of a specific Relay ID
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">RelayID of the message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to name of the message or NULL if not found
+     </p>
+<A NAME="relayId"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline int &nbsp;<strong>relayId</strong> (const char* name)
+<br></td><td align="right"><h3><strong>relayId</strong></h3></td></tr></table><p> <small>[protected static]</small></p><p>
+ Find the ID or a specific Relay name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the Relay to search for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ID of the Relay, zero if not found
+     </p>
+<A NAME="Module"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>Module</strong> (const char* name, const char* type = 0, bool earlyInit = false)
+<br></td><td align="right"><h3><strong>Module</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Plugin name of this driver
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of the driver: "misc", "route", etc.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>earlyInit</i></TD><TD align="left" valign="top">True to attempt to initialize module before others
+     </TD></TR>
+</TABLE></P>
+<A NAME="~Module"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~Module</strong> ()
+<br></td><td align="right"><h3><strong>~Module</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="initialize"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>initialize</strong> ()
+<br></td><td align="right"><h3><strong>initialize</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ This method is called to initialize the loaded module
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Plugin.html#initialize">Plugin</A>.</p>
+<A NAME="setup"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setup</strong> ()
+<br></td><td align="right"><h3><strong>setup</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Install standard message relays
+     </p>
+<A NAME="relayInstalled"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>relayInstalled</strong> (int id)
+<br></td><td align="right"><h3><strong>relayInstalled</strong></h3></td></tr></table><p> <small>[protected const]</small></p><p>
+ Check if a specific relay ID is installed
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">RelayID to test for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if such a relay is installed
+     </p>
+<A NAME="installRelay"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>installRelay</strong> (int id, unsigned priority = 100)
+<br></td><td align="right"><h3><strong>installRelay</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Install a standard message relay
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">RelayID of the new relay to create
+</TD></TR>
+<TR><TD align="left" valign="top"><i>priority</i></TD><TD align="left" valign="top">Priority of the handler, 0 = top
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if installed or already was one installed
+     </p>
+<A NAME="installRelay"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>installRelay</strong> (const char* name, unsigned priority = 100)
+<br></td><td align="right"><h3><strong>installRelay</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Install a standard message relay
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the relay to create, must match a RelayID
+</TD></TR>
+<TR><TD align="left" valign="top"><i>priority</i></TD><TD align="left" valign="top">Priority of the handler, 0 = top
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if installed or already was one installed
+     </p>
+<A NAME="installRelay"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>installRelay</strong> (int id, const char* name, unsigned priority = 100)
+<br></td><td align="right"><h3><strong>installRelay</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Install a custom message relay
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">RelayID of the new relay to create
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the custom relay to create
+</TD></TR>
+<TR><TD align="left" valign="top"><i>priority</i></TD><TD align="left" valign="top">Priority of the handler, 0 = top
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if installed or already was one installed
+     </p>
+<A NAME="installRelay"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>installRelay</strong> (MessageRelay* relay)
+<br></td><td align="right"><h3><strong>installRelay</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Install a custom message relay
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>relay</i></TD><TD align="left" valign="top">Custom message relay
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if installed, false if there was already one with same ID
+     </p>
+<A NAME="uninstallRelay"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>uninstallRelay</strong> (MessageRelay* relay, bool delRelay = true)
+<br></td><td align="right"><h3><strong>uninstallRelay</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Uninstall a message relay
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>relay</i></TD><TD align="left" valign="top">Pointer to message relay
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delRelay</i></TD><TD align="left" valign="top">True to delete the relay after removing it
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if uninstalled, false if if was not present
+     </p>
+<A NAME="uninstallRelay"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>uninstallRelay</strong> (int id, bool delRelay = true)
+<br></td><td align="right"><h3><strong>uninstallRelay</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Uninstall a message relay
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">RelayID to uninstall, relay will be deleted
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delRelay</i></TD><TD align="left" valign="top">True to delete the relay after removing it
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if uninstalled, false if if was not present
+     </p>
+<A NAME="uninstallRelays"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>uninstallRelays</strong> ()
+<br></td><td align="right"><h3><strong>uninstallRelays</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Uninstall all installed relays in preparation for unloading
+</p>
+<p><b>Returns</b>: True if all relays were uninstalled, false if something wrong
+     </p>
+<A NAME="received"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>received</strong> (Message &msg, int id)
+<br></td><td align="right"><h3><strong>received</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Message receiver handler
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The received message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The identifier with which the relay was created
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing, false to try other handlers
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__MessageReceiver.html#received">MessageReceiver</A>.</p>
+<A NAME="genUpdate"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>genUpdate</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>genUpdate</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Opportunity to modify the update message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Status update message
+     </TD></TR>
+</TABLE></P>
+<A NAME="msgTimer"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>msgTimer</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgTimer</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Timer message handler.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Time message
+     </TD></TR>
+</TABLE></P>
+<A NAME="msgStatus"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>msgStatus</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgStatus</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Status message handler that is invoked only for matching messages.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Status message
+     </TD></TR>
+</TABLE></P>
+<A NAME="msgRoute"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgRoute</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgRoute</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Routing message handler that is invoked for all call.route messages.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Call routing message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing the message, false to try other handlers
+     </p>
+<A NAME="msgCommand"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgCommand</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgCommand</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Handler for special commands and line completion requests.
+ By default it calls <A HREF="TelEngine__Module.html#commandExecute">commandExecute</A>() or <A HREF="TelEngine__Module.html#commandComplete">commandComplete</A>().
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Command message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing the message, false to try other handlers
+     </p>
+<A NAME="statusModule"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>statusModule</strong> (String& str)
+<br></td><td align="right"><h3><strong>statusModule</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Build the module identification part of the status answer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String variable to fill up
+     </TD></TR>
+</TABLE></P>
+<A NAME="statusParams"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>statusParams</strong> (String& str)
+<br></td><td align="right"><h3><strong>statusParams</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Build the parameter reporting part of the status answer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String variable to fill up
+     </TD></TR>
+</TABLE></P>
+<A NAME="statusDetail"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>statusDetail</strong> (String& str)
+<br></td><td align="right"><h3><strong>statusDetail</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Build the details reporting part of the status answer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String variable to fill up
+     </TD></TR>
+</TABLE></P>
+<A NAME="commandExecute"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>commandExecute</strong> (String& retVal, const String& line)
+<br></td><td align="right"><h3><strong>commandExecute</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Execute a specific command
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>retVal</i></TD><TD align="left" valign="top">String to append the textual command output to
+</TD></TR>
+<TR><TD align="left" valign="top"><i>line</i></TD><TD align="left" valign="top">Command line to attempt to execute
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing the message, false to try other handlers
+     </p>
+<A NAME="commandComplete"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>commandComplete</strong> (Message& msg, const String& partLine, const String& partWord)
+<br></td><td align="right"><h3><strong>commandComplete</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Complete a command line
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Message to return completion into
+</TD></TR>
+<TR><TD align="left" valign="top"><i>partLine</i></TD><TD align="left" valign="top">Partial line to complete, excluding the last word
+</TD></TR>
+<TR><TD align="left" valign="top"><i>partWord</i></TD><TD align="left" valign="top">Partial word to complete
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing the message, false to try other handlers
+     </p>
+<A NAME="setDebug"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setDebug</strong> (Message& msg, const String& target)
+<br></td><td align="right"><h3><strong>setDebug</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Set the local debugging level
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Debug setting message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>target</i></TD><TD align="left" valign="top">String to match for local settings
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

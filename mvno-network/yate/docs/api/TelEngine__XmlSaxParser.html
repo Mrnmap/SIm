@@ -1,0 +1,604 @@
+<HTML>
+<HEAD>
+<TITLE>class XmlSaxParser</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class XmlSaxParser</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Serial Access XML Parser. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::XmlSaxParser</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatexml_h.html">yatexml.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__DebugEnabler.html">TelEngine::DebugEnabler</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__XmlDomParser.html">XmlDomParser</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__XmlSaxParser.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Error</A> {	NoError = 0,
+	NotWellFormed,
+	Unknown,
+	IOError,
+	ElementParse,
+	ReadElementName,
+	InvalidElementName,
+	ReadingAttributes,
+	CommentParse,
+	DeclarationParse,
+	DefinitionParse,
+	CDataParse,
+	ReadingEndTag,
+	Incomplete,
+	InvalidEncoding,
+	UnsupportedEncoding,
+	UnsupportedVersion,
+    }
+</LI>
+<LI>enum <A HREF="#ref2">Type</A> {	None           = 0,
+	Text           = 1,
+	CData          = 2,
+	Element        = 3,
+	Doctype        = 4,
+	Comment        = 5,
+	Declaration    = 6,
+	Instruction    = 7,
+	EndTag         = 8,
+	Special        = 9
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref3">~XmlSaxParser</A></b> () 
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref4">offset</A></b> ()  const
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref5">row</A></b> ()  const
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref6">column</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref7">buffer</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref8">parse</A></b> (const char* data) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref9">completeText</A></b> () 
+</LI>
+<LI>inline Error &nbsp;<b><A HREF="#ref10">error</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref11">setError</A></b> (Error error, XmlChild* child = 0) 
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref12">getError</A></b> (const char* defVal = "Xml error") 
+</LI>
+<LI>inline Type &nbsp;<b><A HREF="#ref13">unparsed</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref14">setUnparsed</A></b> (Type id) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref15">reset</A></b> () 
+</LI>
+<LI>const String& &nbsp;<b><A HREF="#ref16">getBuffer</A></b> ()  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  inline const char* &nbsp;<b><A HREF="#ref17">getError</A></b> (int code, const char* defVal = "Xml error") 
+</LI>
+<LI>static  inline bool &nbsp;<b><A HREF="#ref18">blank</A></b> (char c) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref19">checkFirstNameCharacter</A></b> (unsigned char ch) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref20">checkDataChar</A></b> (unsigned char c) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref21">checkNameCharacter</A></b> (unsigned char ch) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref22">validTag</A></b> (const String& buf) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref23">escape</A></b> (String& buf, const String& text) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static const TokenDict <b><A HREF="#ref24">s_errorString[]</A></b></LI>
+<LI>static const XmlEscape <b><A HREF="#ref25">s_escape[]</A></b></LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref26">XmlSaxParser</A></b> (const char* name = "XmlSaxParser") 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref27">parseInstruction</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref28">parseCData</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref29">parseComment</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref30">parseElement</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref31">parseDeclaration</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref32">parseSpecial</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref33">parseEndTag</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref34">parseDoctype</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref35">auxParse</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref36">unEscape</A></b> (String& text) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref37">skipBlanks</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref38">badCharacter</A></b> (char c) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref39">resetError</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref40">resetParsed</A></b> () 
+</LI>
+<LI>String* &nbsp;<b><A HREF="#ref41">extractName</A></b> (bool& empty) 
+</LI>
+<LI>NamedString* &nbsp;<b><A HREF="#ref42">getAttribute</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref43">gotComment</A></b> (const String& text) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref44">gotProcessing</A></b> (const NamedString& instr) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref45">gotDeclaration</A></b> (const NamedList& decl) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref46">gotText</A></b> (const String& text) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref47">gotCdata</A></b> (const String& data) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref48">gotElement</A></b> (const NamedList& element, bool empty) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref49">endElement</A></b> (const String& name) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref50">gotDoctype</A></b> (const String& doc) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref51">completed</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref52">processElement</A></b> (NamedList& list, bool empty) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref53">processText</A></b> (String& text) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>unsigned int <b><A HREF="#ref54">m_offset</A></b></LI>
+<LI>unsigned int <b><A HREF="#ref55">m_row</A></b></LI>
+<LI>unsigned int <b><A HREF="#ref56">m_column</A></b></LI>
+<LI>Error <b><A HREF="#ref57">m_error</A></b></LI>
+<LI>String <b><A HREF="#ref58">m_buf</A></b></LI>
+<LI>NamedList <b><A HREF="#ref59">m_parsed</A></b></LI>
+<LI>Type <b><A HREF="#ref60">m_unparsed</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A Serial Access Parser (SAX) for arbitrary XML data
+</p>
+<A NAME="Error"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Error</strong> {	NoError = 0,
+	NotWellFormed,
+	Unknown,
+	IOError,
+	ElementParse,
+	ReadElementName,
+	InvalidElementName,
+	ReadingAttributes,
+	CommentParse,
+	DeclarationParse,
+	DefinitionParse,
+	CDataParse,
+	ReadingEndTag,
+	Incomplete,
+	InvalidEncoding,
+	UnsupportedEncoding,
+	UnsupportedVersion,
+    }
+</td><td align="right"><h3><strong>Error</strong></h3></td></tr></table><p></p><A NAME="Type"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	None           = 0,
+	Text           = 1,
+	CData          = 2,
+	Element        = 3,
+	Doctype        = 4,
+	Comment        = 5,
+	Declaration    = 6,
+	Instruction    = 7,
+	EndTag         = 8,
+	Special        = 9
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><A NAME="~XmlSaxParser"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~XmlSaxParser</strong> ()
+<br></td><td align="right"><h3><strong>~XmlSaxParser</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="offset"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>offset</strong> ()
+<br></td><td align="right"><h3><strong>offset</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of bytes successfully parsed
+</p>
+<p><b>Returns</b>: The number of bytes successfully parsed
+     </p>
+<A NAME="row"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>row</strong> ()
+<br></td><td align="right"><h3><strong>row</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the row where the parser has found an error
+</p>
+<p><b>Returns</b>: The row number
+     </p>
+<A NAME="column"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>column</strong> ()
+<br></td><td align="right"><h3><strong>column</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the column where the parser has found an error
+</p>
+<p><b>Returns</b>: The column number
+     </p>
+<A NAME="buffer"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>buffer</strong> ()
+<br></td><td align="right"><h3><strong>buffer</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the parser's buffer
+</p>
+<p><b>Returns</b>: The parser's buffer
+     </p>
+<A NAME="parse"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>parse</strong> (const char* data)
+<br></td><td align="right"><h3><strong>parse</strong></h3></td></tr></table><p></p><p>
+ Parse a given string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">The data to parse
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if all data was successfully parsed
+     </p>
+<A NAME="completeText"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>completeText</strong> ()
+<br></td><td align="right"><h3><strong>completeText</strong></h3></td></tr></table><p></p><p>
+ Process incomplete text if the parser is completed.
+ This method should be called to complete text after
+  all data was pushed into the parser
+</p>
+<p><b>Returns</b>: True if all data was successfully parsed
+     </p>
+<A NAME="error"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Error &nbsp;<strong>error</strong> ()
+<br></td><td align="right"><h3><strong>error</strong></h3></td></tr></table><p></p><p>
+ Get the error code found while parsing
+</p>
+<p><b>Returns</b>: Error code
+     </p>
+<A NAME="setError"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setError</strong> (Error error, XmlChild* child = 0)
+<br></td><td align="right"><h3><strong>setError</strong></h3></td></tr></table><p></p><p>
+ Set the error code and destroys a child if error code is not NoError
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">The error found
+</TD></TR>
+<TR><TD align="left" valign="top"><i>child</i></TD><TD align="left" valign="top">Child to destroy
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False on error
+     </p>
+<A NAME="getError"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>getError</strong> (const char* defVal = "Xml error")
+<br></td><td align="right"><h3><strong>getError</strong></h3></td></tr></table><p></p><p>
+ Retrieve the error string associated with current error status
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>defVal</i></TD><TD align="left" valign="top">Value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The error string
+     </p>
+<A NAME="unparsed"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Type &nbsp;<strong>unparsed</strong> ()
+<br></td><td align="right"><h3><strong>unparsed</strong></h3></td></tr></table><p></p><p>
+</p>
+<p><b>Returns</b>: The last xml type that we were parsing, but we have not finished
+     </p>
+<A NAME="setUnparsed"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setUnparsed</strong> (Type id)
+<br></td><td align="right"><h3><strong>setUnparsed</strong></h3></td></tr></table><p></p><p>
+ Set the last xml type that we were parsing, but we have not finished
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The xml type that we haven't finish to parse
+     </TD></TR>
+</TABLE></P>
+<A NAME="reset"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>reset</strong> ()
+<br></td><td align="right"><h3><strong>reset</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Reset error flag
+     </p>
+<A NAME="getBuffer"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const String& &nbsp;<strong>getBuffer</strong> ()
+<br></td><td align="right"><h3><strong>getBuffer</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+</p>
+<p><b>Returns</b>: The internal buffer
+     </p>
+<A NAME="getError"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>getError</strong> (int code, const char* defVal = "Xml error")
+<br></td><td align="right"><h3><strong>getError</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Retrieve the error string associated with a given error code
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">Code of the error to look up
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defVal</i></TD><TD align="left" valign="top">Value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The error string
+     </p>
+<A NAME="blank"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline bool &nbsp;<strong>blank</strong> (char c)
+<br></td><td align="right"><h3><strong>blank</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if the given character is blank
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>c</i></TD><TD align="left" valign="top">The character to verify
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if c is blank
+     </p>
+<A NAME="checkFirstNameCharacter"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>checkFirstNameCharacter</strong> (unsigned char ch)
+<br></td><td align="right"><h3><strong>checkFirstNameCharacter</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Verify if the given character is in the range allowed
+ to be first character from a xml tag
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ch</i></TD><TD align="left" valign="top">The character to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the character is in range
+     </p>
+<A NAME="checkDataChar"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>checkDataChar</strong> (unsigned char c)
+<br></td><td align="right"><h3><strong>checkDataChar</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if the given character is in the range allowed for an xml char
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>c</i></TD><TD align="left" valign="top">The character to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the character is in range
+     </p>
+<A NAME="checkNameCharacter"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>checkNameCharacter</strong> (unsigned char ch)
+<br></td><td align="right"><h3><strong>checkNameCharacter</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Verify if the given character is in the range allowed for a xml name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ch</i></TD><TD align="left" valign="top">The character to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the character is in range
+     </p>
+<A NAME="validTag"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>validTag</strong> (const String& buf)
+<br></td><td align="right"><h3><strong>validTag</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if a given string is a valid xml tag name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">The string to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the string is a valid xml tag name
+     </p>
+<A NAME="escape"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>escape</strong> (String& buf, const String& text)
+<br></td><td align="right"><h3><strong>escape</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ XmlEscape the given text
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Destination buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">The text to escape
+     </TD></TR>
+</TABLE></P>
+<A NAME="s_errorString[]"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static const TokenDict  <strong>s_errorString[]</strong>
+</td><td align="right"><h3><strong>s_errorString[]</strong></h3></td></tr></table><p></p><A NAME="s_escape[]"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static const XmlEscape  <strong>s_escape[]</strong>
+</td><td align="right"><h3><strong>s_escape[]</strong></h3></td></tr></table><p></p><A NAME="XmlSaxParser"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XmlSaxParser</strong> (const char* name = "XmlSaxParser")
+<br></td><td align="right"><h3><strong>XmlSaxParser</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Debug name
+     </TD></TR>
+</TABLE></P>
+<A NAME="parseInstruction"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>parseInstruction</strong> ()
+<br></td><td align="right"><h3><strong>parseInstruction</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Parse an instruction form the main buffer.
+ Extracts the parsed string from buffer if returns true
+</p>
+<p><b>Returns</b>: True if the instruction was parsed successfully
+     </p>
+<A NAME="parseCData"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>parseCData</strong> ()
+<br></td><td align="right"><h3><strong>parseCData</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Parse a CData section form the main buffer.
+ Extracts the parsed string from buffer if returns true
+</p>
+<p><b>Returns</b>: True if the CData section was parsed successfully
+     </p>
+<A NAME="parseComment"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>parseComment</strong> ()
+<br></td><td align="right"><h3><strong>parseComment</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Parse a comment form the main buffer.
+ Extracts the parsed string from buffer if returns true
+</p>
+<p><b>Returns</b>: True if the comment was parsed successfully
+     </p>
+<A NAME="parseElement"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>parseElement</strong> ()
+<br></td><td align="right"><h3><strong>parseElement</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Parse an element form the main buffer.
+ Extracts the parsed string from buffer if returns true
+</p>
+<p><b>Returns</b>: True if the element was parsed successfully
+     </p>
+<A NAME="parseDeclaration"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>parseDeclaration</strong> ()
+<br></td><td align="right"><h3><strong>parseDeclaration</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Parse a declaration form the main buffer.
+ Extracts the parsed string from buffer if returns true
+</p>
+<p><b>Returns</b>: True if the declaration was parsed successfully
+     </p>
+<A NAME="parseSpecial"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>parseSpecial</strong> ()
+<br></td><td align="right"><h3><strong>parseSpecial</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Helper method to classify the Xml objects starting with "<!" sequence.
+ Extracts the parsed string from buffer if returns true
+</p>
+<p><b>Returns</b>: True if a corresponding xml object was found and parsed successfully
+     </p>
+<A NAME="parseEndTag"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>parseEndTag</strong> ()
+<br></td><td align="right"><h3><strong>parseEndTag</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Parse an endtag form the main buffer.
+ Extracts the parsed string from buffer if returns true
+</p>
+<p><b>Returns</b>: True if the endtag was parsed successfully
+     </p>
+<A NAME="parseDoctype"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>parseDoctype</strong> ()
+<br></td><td align="right"><h3><strong>parseDoctype</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Parse a doctype form the main buffer.
+ Extracts the parsed string from buffer if returns true.
+ Warning: This is a stub implementation
+</p>
+<p><b>Returns</b>: True if the doctype was parsed successfully
+     </p>
+<A NAME="auxParse"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>auxParse</strong> ()
+<br></td><td align="right"><h3><strong>auxParse</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Parse an unfinished xml object.
+ Extracts the parsed string from buffer if returns true
+</p>
+<p><b>Returns</b>: True if the object was parsed successfully
+     </p>
+<A NAME="unEscape"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>unEscape</strong> (String& text)
+<br></td><td align="right"><h3><strong>unEscape</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Unescape the given text.
+ Handled: &amp;lt; &amp;gt; &amp;apos; &amp;quot; &amp;amp;
+  &amp;\#DecimalNumber; &amp;\#xHexNumber;
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">The requested text to unescape
+     </TD></TR>
+</TABLE></P>
+<A NAME="skipBlanks"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>skipBlanks</strong> ()
+<br></td><td align="right"><h3><strong>skipBlanks</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Remove blank characters from the begining of the buffer
+     </p>
+<A NAME="badCharacter"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>badCharacter</strong> (char c)
+<br></td><td align="right"><h3><strong>badCharacter</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Check if a character is an angle bracket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>c</i></TD><TD align="left" valign="top">The character to verify
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if c is an angle bracket
+     </p>
+<A NAME="resetError"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>resetError</strong> ()
+<br></td><td align="right"><h3><strong>resetError</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Reset the error
+     </p>
+<A NAME="resetParsed"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>resetParsed</strong> ()
+<br></td><td align="right"><h3><strong>resetParsed</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Reset parsed value and parameters
+     </p>
+<A NAME="extractName"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String* &nbsp;<strong>extractName</strong> (bool& empty)
+<br></td><td align="right"><h3><strong>extractName</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Extract the name of an element or instruction
+</p>
+<p><b>Returns</b>: The extracted string or 0
+     </p>
+<A NAME="getAttribute"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedString* &nbsp;<strong>getAttribute</strong> ()
+<br></td><td align="right"><h3><strong>getAttribute</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Extract an attribute
+</p>
+<p><b>Returns</b>: The attribute value or 0
+     </p>
+<A NAME="gotComment"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>gotComment</strong> (const String& text)
+<br></td><td align="right"><h3><strong>gotComment</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Callback method. Is called when a comment was successfully parsed.
+ Default implementation does nothing
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">The comment content
+     </TD></TR>
+</TABLE></P>
+<A NAME="gotProcessing"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>gotProcessing</strong> (const NamedString& instr)
+<br></td><td align="right"><h3><strong>gotProcessing</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Callback method. Is called when an instruction was successfully parsed.
+ Default implementation does nothing
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>instr</i></TD><TD align="left" valign="top">The instruction content
+     </TD></TR>
+</TABLE></P>
+<A NAME="gotDeclaration"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>gotDeclaration</strong> (const NamedList& decl)
+<br></td><td align="right"><h3><strong>gotDeclaration</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Callback method. Is called when a declaration was successfully parsed.
+ Default implementation does nothing
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>decl</i></TD><TD align="left" valign="top">The declaration content
+     </TD></TR>
+</TABLE></P>
+<A NAME="gotText"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>gotText</strong> (const String& text)
+<br></td><td align="right"><h3><strong>gotText</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Callback method. Is called when a text was successfully parsed.
+ Default implementation does nothing
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">The text content
+     </TD></TR>
+</TABLE></P>
+<A NAME="gotCdata"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>gotCdata</strong> (const String& data)
+<br></td><td align="right"><h3><strong>gotCdata</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Callback method. Is called when a CData section was successfully parsed.
+ Default implementation does nothing
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">The CData content
+     </TD></TR>
+</TABLE></P>
+<A NAME="gotElement"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>gotElement</strong> (const NamedList& element, bool empty)
+<br></td><td align="right"><h3><strong>gotElement</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Callback method. Is called when an element was successfully parsed.
+ Default implementation does nothing
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">The element content
+</TD></TR>
+<TR><TD align="left" valign="top"><i>empty</i></TD><TD align="left" valign="top">True if the element does not have attributes
+     </TD></TR>
+</TABLE></P>
+<A NAME="endElement"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>endElement</strong> (const String& name)
+<br></td><td align="right"><h3><strong>endElement</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Callback method. Is called when a end tag was successfully parsed.
+ Default implementation does nothing
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The end tag name
+     </TD></TR>
+</TABLE></P>
+<A NAME="gotDoctype"></A><A NAME="ref50"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>gotDoctype</strong> (const String& doc)
+<br></td><td align="right"><h3><strong>gotDoctype</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Callback method. Is called when a doctype was successfully parsed.
+ Default implementation does nothing
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>doc</i></TD><TD align="left" valign="top">The doctype content
+     </TD></TR>
+</TABLE></P>
+<A NAME="completed"></A><A NAME="ref51"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>completed</strong> ()
+<br></td><td align="right"><h3><strong>completed</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Callback method. Is called to check if we have an incomplete element.
+ Default implementation returns always true
+</p>
+<p><b>Returns</b>: True
+     </p>
+<A NAME="processElement"></A><A NAME="ref52"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>processElement</strong> (NamedList& list, bool empty)
+<br></td><td align="right"><h3><strong>processElement</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Calls gotElement() and eset parsed on success
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">The list element and its attributes
+</TD></TR>
+<TR><TD align="left" valign="top"><i>empty</i></TD><TD align="left" valign="top">True if the element does not have attributes
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if there is no error
+     </p>
+<A NAME="processText"></A><A NAME="ref53"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>processText</strong> (String& text)
+<br></td><td align="right"><h3><strong>processText</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Unescape text, call gotText() and reset parsed on success
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">The text to process
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if there is no error
+     </p>
+<A NAME="m_offset"></A><A NAME="ref54"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int  <strong>m_offset</strong>
+</td><td align="right"><h3><strong>m_offset</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_row"></A><A NAME="ref55"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int  <strong>m_row</strong>
+</td><td align="right"><h3><strong>m_row</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_column"></A><A NAME="ref56"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int  <strong>m_column</strong>
+</td><td align="right"><h3><strong>m_column</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_error"></A><A NAME="ref57"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Error  <strong>m_error</strong>
+</td><td align="right"><h3><strong>m_error</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_buf"></A><A NAME="ref58"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_buf</strong>
+</td><td align="right"><h3><strong>m_buf</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_parsed"></A><A NAME="ref59"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedList  <strong>m_parsed</strong>
+</td><td align="right"><h3><strong>m_parsed</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_unparsed"></A><A NAME="ref60"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Type  <strong>m_unparsed</strong>
+</td><td align="right"><h3><strong>m_unparsed</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

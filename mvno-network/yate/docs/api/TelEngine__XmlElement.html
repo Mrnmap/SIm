@@ -1,0 +1,705 @@
+<HTML>
+<HEAD>
+<TITLE>class XmlElement</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class XmlElement</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Xml Element. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::XmlElement</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatexml_h.html">yatexml.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__XmlChild.html">TelEngine::XmlChild</A> <small>[public ]</small>, <i><A HREF="TelEngine__XmlParent.html">TelEngine::XmlParent</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__XmlElement.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">XmlElement</A></b> (const NamedList& element, bool empty, XmlParent* parent = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">XmlElement</A></b> (const char* name, bool complete = true) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">XmlElement</A></b> (const char* name, const char* value, bool complete = true) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">XmlElement</A></b> (const XmlElement& orig) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref5">~XmlElement</A></b> () 
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref6">tag</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref7">isDefaultNs</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref8">unprefixedTag</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref9">setUnprefixedTag</A></b> (const String& s) 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref10">getTag</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref11">getTag</A></b> (const String*& tag, const String*& ns)  const
+</LI>
+<LI>virtual  XmlElement* &nbsp;<b><A HREF="#ref12">xmlElement</A></b> () 
+</LI>
+<LI>virtual  XmlElement* &nbsp;<b><A HREF="#ref13">element</A></b> () 
+</LI>
+<LI>virtual  XmlSaxParser::Error &nbsp;<b><A HREF="#ref14">addChild</A></b> (XmlChild* child) 
+</LI>
+<LI>virtual  XmlChild* &nbsp;<b><A HREF="#ref15">removeChild</A></b> (XmlChild* child, bool delObj = true) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref16">setCompleted</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref17">completed</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref18">empty</A></b> ()  const
+</LI>
+<LI>inline XmlElement* &nbsp;<b><A HREF="#ref19">parent</A></b> ()  const
+</LI>
+<LI>virtual  XmlParent* &nbsp;<b><A HREF="#ref20">getParent</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref21">setParent</A></b> (XmlParent* parent) 
+</LI>
+<LI>virtual  const String& &nbsp;<b><A HREF="#ref22">getName</A></b> ()  const
+</LI>
+<LI>virtual  const NamedList& &nbsp;<b><A HREF="#ref23">getElement</A></b> ()  const
+</LI>
+<LI>inline const ObjList& &nbsp;<b><A HREF="#ref24">getChildren</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref25">clearChildren</A></b> () 
+</LI>
+<LI>inline const NamedList* &nbsp;<b><A HREF="#ref26">inheritedNs</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref27">setInheritedNs</A></b> (const XmlElement* xml = 0, bool inherit = true) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref28">addInheritedNs</A></b> (const NamedList& list) 
+</LI>
+<LI>inline XmlElement* &nbsp;<b><A HREF="#ref29">pop</A></b> () 
+</LI>
+<LI>virtual  const String& &nbsp;<b><A HREF="#ref30">toString</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref31">toString</A></b> (String& dump, bool escape = true, const String& indent = String::empty(),
+	const String& origIndent = String::empty(), bool completeOnly = true,
+	const String* auth = 0)  const
+</LI>
+<LI>inline XmlElement* &nbsp;<b><A HREF="#ref32">findFirstChild</A></b> (const String* name = 0, const String* ns = 0,
+	bool noPrefix = true)  const
+</LI>
+<LI>inline XmlElement* &nbsp;<b><A HREF="#ref33">findFirstChild</A></b> (const String& name, const String* ns = 0,
+	bool noPrefix = true)  const
+</LI>
+<LI>inline XmlElement* &nbsp;<b><A HREF="#ref34">findNextChild</A></b> (const XmlElement* prev = 0, const String* name = 0,
+	const String* ns = 0, bool noPrefix = true)  const
+</LI>
+<LI>inline const String* &nbsp;<b><A HREF="#ref35">childText</A></b> (const String& name, const String* ns = 0,
+	bool noPrefix = true)  const
+</LI>
+<LI>XmlChild* &nbsp;<b><A HREF="#ref36">getFirstChild</A></b> () 
+</LI>
+<LI>const String& &nbsp;<b><A HREF="#ref37">getText</A></b> ()  const
+</LI>
+<LI>XmlText* &nbsp;<b><A HREF="#ref38">setText</A></b> (const char* text) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref39">addText</A></b> (const char* text) 
+</LI>
+<LI>inline const NamedList& &nbsp;<b><A HREF="#ref40">attributes</A></b> ()  const
+</LI>
+<LI>unsigned int &nbsp;<b><A HREF="#ref41">copyAttributes</A></b> (NamedList& list, const String& prefix)  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref42">setAttributes</A></b> (NamedList& list, const String& prefix, bool skipPrefix = true) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref43">setAttribute</A></b> (const String& name, const char* value) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref44">setAttributeValid</A></b> (const String& name, const char* value) 
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref45">attribute</A></b> (const String& name)  const
+</LI>
+<LI>inline String* &nbsp;<b><A HREF="#ref46">getAttribute</A></b> (const String& name)  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref47">hasAttribute</A></b> (const String& name, const String& value)  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref48">removeAttribute</A></b> (const String& name) 
+</LI>
+<LI>inline String* &nbsp;<b><A HREF="#ref49">xmlns</A></b> ()  const
+</LI>
+<LI>String* &nbsp;<b><A HREF="#ref50">xmlnsAttribute</A></b> (const String& name)  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref51">hasXmlns</A></b> (const String& ns)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref52">setXmlns</A></b> (const String& name = String::empty(), bool addAttr = false,
+	const String& value = String::empty()) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  inline bool &nbsp;<b><A HREF="#ref53">isXmlns</A></b> (const String& str) 
+</LI>
+<LI>static  XmlElement* &nbsp;<b><A HREF="#ref54">param2xml</A></b> (NamedString* param, const String& tag,
+	bool copyXml = false) 
+</LI>
+<LI>static  NamedString* &nbsp;<b><A HREF="#ref55">xml2param</A></b> (XmlElement* xml, const String* tag,
+	bool copyXml = false) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref56">xml2param</A></b> (NamedList& list, XmlElement* parent, const String* tag,
+	bool copyXml = false) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static const String <b><A HREF="#ref57">s_ns</A></b></LI>
+<LI>static const String <b><A HREF="#ref58">s_nsPrefix</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Xml Element from a Xml document
+</p>
+<A NAME="XmlElement"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XmlElement</strong> (const NamedList& element, bool empty, XmlParent* parent = 0)
+<br></td><td align="right"><h3><strong>XmlElement</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">The NamedList name represent the element name and the param the attributes
+</TD></TR>
+<TR><TD align="left" valign="top"><i>empty</i></TD><TD align="left" valign="top">False if has children
+</TD></TR>
+<TR><TD align="left" valign="top"><i>parent</i></TD><TD align="left" valign="top">The parent of this element
+     </TD></TR>
+</TABLE></P>
+<A NAME="XmlElement"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XmlElement</strong> (const char* name, bool complete = true)
+<br></td><td align="right"><h3><strong>XmlElement</strong></h3></td></tr></table><p></p><p>
+ Constructor. Creates a new complete and empty element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>complete</i></TD><TD align="left" valign="top">False to build an incomplete element
+     </TD></TR>
+</TABLE></P>
+<A NAME="XmlElement"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XmlElement</strong> (const char* name, const char* value, bool complete = true)
+<br></td><td align="right"><h3><strong>XmlElement</strong></h3></td></tr></table><p></p><p>
+ Constructor. Create a new element with a text child
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Element text child value
+</TD></TR>
+<TR><TD align="left" valign="top"><i>complete</i></TD><TD align="left" valign="top">False to build an incomplete element
+     </TD></TR>
+</TABLE></P>
+<A NAME="XmlElement"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XmlElement</strong> (const XmlElement& orig)
+<br></td><td align="right"><h3><strong>XmlElement</strong></h3></td></tr></table><p></p><p>
+ Copy constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>orig</i></TD><TD align="left" valign="top">Original XmlElement
+     </TD></TR>
+</TABLE></P>
+<A NAME="~XmlElement"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~XmlElement</strong> ()
+<br></td><td align="right"><h3><strong>~XmlElement</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="tag"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>tag</strong> ()
+<br></td><td align="right"><h3><strong>tag</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the element's tag
+</p>
+<p><b>Returns</b>: The element's tag
+     </p>
+<A NAME="isDefaultNs"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isDefaultNs</strong> ()
+<br></td><td align="right"><h3><strong>isDefaultNs</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this element must be processed in the default namespace (its tag is not prefixed)
+</p>
+<p><b>Returns</b>: True if this element must be processed in the default namespace
+     </p>
+<A NAME="unprefixedTag"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>unprefixedTag</strong> ()
+<br></td><td align="right"><h3><strong>unprefixedTag</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the element's tag unprefixed (namespace prefix removed)
+</p>
+<p><b>Returns</b>: The element's tag unprefixed
+     </p>
+<A NAME="setUnprefixedTag"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setUnprefixedTag</strong> (const String& s)
+<br></td><td align="right"><h3><strong>setUnprefixedTag</strong></h3></td></tr></table><p></p><p>
+ Set element's unprefixed tag, don't change namespace prefix
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>s</i></TD><TD align="left" valign="top">New element's tag
+     </TD></TR>
+</TABLE></P>
+<A NAME="getTag"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getTag</strong> ()
+<br></td><td align="right"><h3><strong>getTag</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the element's tag (without prefix)
+</p>
+<p><b>Returns</b>: Element tag
+     </p>
+<A NAME="getTag"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getTag</strong> (const String*& tag, const String*& ns)
+<br></td><td align="right"><h3><strong>getTag</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the element's tag (without prefix) and namespace
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>tag</i></TD><TD align="left" valign="top">Pointer to element tag
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ns</i></TD><TD align="left" valign="top">Pointer to element's namespace (may be 0 for unprefixed tags)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if a namespace was found for the element tag or the tag is not prefixed
+     </p>
+<A NAME="xmlElement"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlElement* &nbsp;<strong>xmlElement</strong> ()
+<br></td><td align="right"><h3><strong>xmlElement</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get an XmlElement from this XmlChild
+</p>
+<p><b>Returns</b>: This object
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlChild.html#xmlElement">XmlChild</A>.</p>
+<A NAME="element"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlElement* &nbsp;<strong>element</strong> ()
+<br></td><td align="right"><h3><strong>element</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get an XmlElement from this XmlParent
+</p>
+<p><b>Returns</b>: This object
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlParent.html#element">XmlParent</A>.</p>
+<A NAME="addChild"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlSaxParser::Error &nbsp;<strong>addChild</strong> (XmlChild* child)
+<br></td><td align="right"><h3><strong>addChild</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Append a new child of this element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>child</i></TD><TD align="left" valign="top">The child to append
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__XmlParent.html#addChild">XmlParent</A>.</p>
+<A NAME="removeChild"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlChild* &nbsp;<strong>removeChild</strong> (XmlChild* child, bool delObj = true)
+<br></td><td align="right"><h3><strong>removeChild</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove a child
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>child</i></TD><TD align="left" valign="top">The child to remove
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delObj</i></TD><TD align="left" valign="top">True to delete the object
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: XmlChild pointer if found and not deleted
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlParent.html#removeChild">XmlParent</A>.</p>
+<A NAME="setCompleted"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setCompleted</strong> ()
+<br></td><td align="right"><h3><strong>setCompleted</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification for this element that is complete
+     </p>
+<A NAME="completed"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>completed</strong> ()
+<br></td><td align="right"><h3><strong>completed</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+</p>
+<p><b>Returns</b>: True if this element is completed
+     </p>
+<A NAME="empty"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>empty</strong> ()
+<br></td><td align="right"><h3><strong>empty</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+</p>
+<p><b>Returns</b>: True if this element is empty
+     </p>
+<A NAME="parent"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XmlElement* &nbsp;<strong>parent</strong> ()
+<br></td><td align="right"><h3><strong>parent</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve an XmlElement parent of this one
+</p>
+<p><b>Returns</b>: XmlElement pointer or 0
+     </p>
+<A NAME="getParent"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlParent* &nbsp;<strong>getParent</strong> ()
+<br></td><td align="right"><h3><strong>getParent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+</p>
+<p><b>Returns</b>: The parent of this element
+     </p>
+<A NAME="setParent"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setParent</strong> (XmlParent* parent)
+<br></td><td align="right"><h3><strong>setParent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set this element's parent. Update inherited namespaces
+</p>
+<p><b>Returns</b>: The parent of this element
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlChild.html#setParent">XmlChild</A>.</p>
+<A NAME="getName"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>getName</strong> ()
+<br></td><td align="right"><h3><strong>getName</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+</p>
+<p><b>Returns</b>: The name of this element
+     </p>
+<A NAME="getElement"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const NamedList& &nbsp;<strong>getElement</strong> ()
+<br></td><td align="right"><h3><strong>getElement</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+</p>
+<p><b>Returns</b>: The held element
+     </p>
+<A NAME="getChildren"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const ObjList& &nbsp;<strong>getChildren</strong> ()
+<br></td><td align="right"><h3><strong>getChildren</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Helper method to obtain the children list
+</p>
+<p><b>Returns</b>: The children list
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlParent.html#getChildren">XmlParent</A>.</p>
+<A NAME="clearChildren"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>clearChildren</strong> ()
+<br></td><td align="right"><h3><strong>clearChildren</strong></h3></td></tr></table><p></p><p>
+ Helper method to clear the children list
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__XmlParent.html#clearChildren">XmlParent</A>.</p>
+<A NAME="inheritedNs"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const NamedList* &nbsp;<strong>inheritedNs</strong> ()
+<br></td><td align="right"><h3><strong>inheritedNs</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the list of inherited namespaces
+</p>
+<p><b>Returns</b>: The list of inherited namespaces (or 0)
+     </p>
+<A NAME="setInheritedNs"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setInheritedNs</strong> (const XmlElement* xml = 0, bool inherit = true)
+<br></td><td align="right"><h3><strong>setInheritedNs</strong></h3></td></tr></table><p></p><p>
+ Set inherited namespaces from a given element. Reset them anyway
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>xml</i></TD><TD align="left" valign="top">The source element used to set inherited namespaces
+</TD></TR>
+<TR><TD align="left" valign="top"><i>inherit</i></TD><TD align="left" valign="top">Copy element's inherited namespaces if it doesn't have a parent
+     </TD></TR>
+</TABLE></P>
+<A NAME="addInheritedNs"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>addInheritedNs</strong> (const NamedList& list)
+<br></td><td align="right"><h3><strong>addInheritedNs</strong></h3></td></tr></table><p></p><p>
+ Add inherited namespaces from a list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">The list of namespaces
+     </TD></TR>
+</TABLE></P>
+<A NAME="pop"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XmlElement* &nbsp;<strong>pop</strong> ()
+<br></td><td align="right"><h3><strong>pop</strong></h3></td></tr></table><p></p><p>
+ Extract the first child element
+</p>
+<p><b>Returns</b>: XmlElement pointer or 0
+     </p>
+<A NAME="toString"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>toString</strong> ()
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Retrieve the element tag
+</p>
+<p><b>Returns</b>: The element tag
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="toString"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>toString</strong> (String& dump, bool escape = true, const String& indent = String::empty(),
+	const String& origIndent = String::empty(), bool completeOnly = true,
+	const String* auth = 0)
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Build (append to) a String from this XmlElement
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dump</i></TD><TD align="left" valign="top">The destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>escape</i></TD><TD align="left" valign="top">True if the attributes values need to be escaped
+</TD></TR>
+<TR><TD align="left" valign="top"><i>indent</i></TD><TD align="left" valign="top">Spaces for output
+</TD></TR>
+<TR><TD align="left" valign="top"><i>origIndent</i></TD><TD align="left" valign="top">Original indent
+</TD></TR>
+<TR><TD align="left" valign="top"><i>completeOnly</i></TD><TD align="left" valign="top">True to build only if complete
+</TD></TR>
+<TR><TD align="left" valign="top"><i>auth</i></TD><TD align="left" valign="top">Optional list of tag and attribute names to be replaced with '***'. This
+  parameter can be used when the result will be printed to output to avoid printing
+  authentication data to output. The array must end with an empty string
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="findFirstChild"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XmlElement* &nbsp;<strong>findFirstChild</strong> (const String* name = 0, const String* ns = 0,
+	bool noPrefix = true)
+<br></td><td align="right"><h3><strong>findFirstChild</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Find the first XmlElement child of this XmlElement
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Optional name of the child
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ns</i></TD><TD align="left" valign="top">Optional child namespace
+</TD></TR>
+<TR><TD align="left" valign="top"><i>noPrefix</i></TD><TD align="left" valign="top">True to compare the tag without namespace prefix, false to
+  include namespace prefix when comparing the given tag.
+  This parameter is ignored if name is 0 or ns is not 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The first child element meeting the requested conditions
+     </p>
+<A NAME="findFirstChild"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XmlElement* &nbsp;<strong>findFirstChild</strong> (const String& name, const String* ns = 0,
+	bool noPrefix = true)
+<br></td><td align="right"><h3><strong>findFirstChild</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Find the first XmlElement child of this XmlElement
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the child
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ns</i></TD><TD align="left" valign="top">Optional child namespace
+</TD></TR>
+<TR><TD align="left" valign="top"><i>noPrefix</i></TD><TD align="left" valign="top">True to compare the tag without namespace prefix, false to
+  include namespace prefix when comparing the given tag.
+  This parameter is ignored if name is 0 or ns is not 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The first child element meeting the requested conditions
+     </p>
+<A NAME="findNextChild"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XmlElement* &nbsp;<strong>findNextChild</strong> (const XmlElement* prev = 0, const String* name = 0,
+	const String* ns = 0, bool noPrefix = true)
+<br></td><td align="right"><h3><strong>findNextChild</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Finds next XmlElement child of this XmlElement
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>prev</i></TD><TD align="left" valign="top">Previous child
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Optional name of the child
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ns</i></TD><TD align="left" valign="top">Optional child namespace
+</TD></TR>
+<TR><TD align="left" valign="top"><i>noPrefix</i></TD><TD align="left" valign="top">True to compare the tag without namespace prefix, false to
+  include namespace prefix when comparing the given tag.
+  This parameter is ignored if name is 0 or ns is not 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The next found child if prev exists else the first
+     </p>
+<A NAME="childText"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String* &nbsp;<strong>childText</strong> (const String& name, const String* ns = 0,
+	bool noPrefix = true)
+<br></td><td align="right"><h3><strong>childText</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve a child's text
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name (tag) of the child
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ns</i></TD><TD align="left" valign="top">Optional child namespace
+</TD></TR>
+<TR><TD align="left" valign="top"><i>noPrefix</i></TD><TD align="left" valign="top">True to compare the tag without namespace prefix, false to
+  include namespace prefix when comparing the given tag.
+  This parameter is ignored ns is not 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to child's text, 0 if the child was not found
+     </p>
+<A NAME="getFirstChild"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XmlChild* &nbsp;<strong>getFirstChild</strong> ()
+<br></td><td align="right"><h3><strong>getFirstChild</strong></h3></td></tr></table><p></p><p>
+ Get first XmlChild of this XmlElement
+</p>
+<p><b>Returns</b>: The first XmlChild found.
+     </p>
+<A NAME="getText"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const String& &nbsp;<strong>getText</strong> ()
+<br></td><td align="right"><h3><strong>getText</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+</p>
+<p><b>Returns</b>: The first XmlText found in this XmlElement children
+     </p>
+<A NAME="setText"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XmlText* &nbsp;<strong>setText</strong> (const char* text)
+<br></td><td align="right"><h3><strong>setText</strong></h3></td></tr></table><p></p><p>
+ Set text for first XmlText element found in this XmlElement's children
+ If child text element does not exist, create it and append it to the element's children.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Text to set to the XmlElement. If null, the first found XmlText element
+  will be deleted.
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The set XmlText if text was set, null if an XmlText was deleted
+     </p>
+<A NAME="addText"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>addText</strong> (const char* text)
+<br></td><td align="right"><h3><strong>addText</strong></h3></td></tr></table><p></p><p>
+ Add a text child
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Non empty text to add
+     </TD></TR>
+</TABLE></P>
+<A NAME="attributes"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const NamedList& &nbsp;<strong>attributes</strong> ()
+<br></td><td align="right"><h3><strong>attributes</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the list of attributes
+</p>
+<p><b>Returns</b>: Element attributes
+     </p>
+<A NAME="copyAttributes"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int &nbsp;<strong>copyAttributes</strong> (NamedList& list, const String& prefix)
+<br></td><td align="right"><h3><strong>copyAttributes</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Copy element attributes to a list of parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">Destination list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prefix</i></TD><TD align="left" valign="top">Prefix to be added to each attribute name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number of attributes added to the destination list
+     </p>
+<A NAME="setAttributes"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setAttributes</strong> (NamedList& list, const String& prefix, bool skipPrefix = true)
+<br></td><td align="right"><h3><strong>setAttributes</strong></h3></td></tr></table><p></p><p>
+ Set element attributes from a list of parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">List of attributes
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prefix</i></TD><TD align="left" valign="top">Add only the attributes that start with this prefix. =
+  If NULL, it will set as attributes the whole parameter list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>skipPrefix</i></TD><TD align="left" valign="top">Skip over the prefix when building attribute name
+     </TD></TR>
+</TABLE></P>
+<A NAME="setAttribute"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setAttribute</strong> (const String& name, const char* value)
+<br></td><td align="right"><h3><strong>setAttribute</strong></h3></td></tr></table><p></p><p>
+ Add or replace an attribute
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Attribute name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Attribute value
+     </TD></TR>
+</TABLE></P>
+<A NAME="setAttributeValid"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setAttributeValid</strong> (const String& name, const char* value)
+<br></td><td align="right"><h3><strong>setAttributeValid</strong></h3></td></tr></table><p></p><p>
+ Add or replace an attribute. Clears it if value is empty
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Attribute name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Attribute value
+     </TD></TR>
+</TABLE></P>
+<A NAME="attribute"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>attribute</strong> (const String& name)
+<br></td><td align="right"><h3><strong>attribute</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Obtain an attribute value for the given name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of the attribute
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Attribute value
+     </p>
+<A NAME="getAttribute"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String* &nbsp;<strong>getAttribute</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getAttribute</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Obtain an attribute value for the given name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of the attribute
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: String pointer or 0 if not found
+     </p>
+<A NAME="hasAttribute"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>hasAttribute</strong> (const String& name, const String& value)
+<br></td><td align="right"><h3><strong>hasAttribute</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the element has an attribute with a requested value
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of the attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">The value to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the element has an attribute with the requested value
+     </p>
+<A NAME="removeAttribute"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>removeAttribute</strong> (const String& name)
+<br></td><td align="right"><h3><strong>removeAttribute</strong></h3></td></tr></table><p></p><p>
+ Remove an attribute
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Attribute name
+     </TD></TR>
+</TABLE></P>
+<A NAME="xmlns"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String* &nbsp;<strong>xmlns</strong> ()
+<br></td><td align="right"><h3><strong>xmlns</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the element's namespace
+</p>
+<p><b>Returns</b>: Element's namespace or 0 if not found
+     </p>
+<A NAME="xmlnsAttribute"></A><A NAME="ref50"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String* &nbsp;<strong>xmlnsAttribute</strong> (const String& name)
+<br></td><td align="right"><h3><strong>xmlnsAttribute</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve a namespace attribute. Search in parent or inherited for it
+</p>
+<p><b>Returns</b>: String pointer or 0 if not found
+     </p>
+<A NAME="hasXmlns"></A><A NAME="ref51"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>hasXmlns</strong> (const String& ns)
+<br></td><td align="right"><h3><strong>hasXmlns</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Verify if this element belongs to the given namespace
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ns</i></TD><TD align="left" valign="top">The namespace to compare with
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if this element belongs to the given namespace
+     </p>
+<A NAME="setXmlns"></A><A NAME="ref52"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setXmlns</strong> (const String& name = String::empty(), bool addAttr = false,
+	const String& value = String::empty())
+<br></td><td align="right"><h3><strong>setXmlns</strong></h3></td></tr></table><p></p><p>
+ Set the element's namespace
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The namespace name (element prefix). Can be the default
+  namespace attribute name (empty means the default one)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addAttr</i></TD><TD align="left" valign="top">True to add a non empty, not repeating, namespace attribute to the list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Namespace value (ignored if addAttr is false)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, false if another namespace exists with the same value
+     </p>
+<A NAME="isXmlns"></A><A NAME="ref53"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline bool &nbsp;<strong>isXmlns</strong> (const String& str)
+<br></td><td align="right"><h3><strong>isXmlns</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if a string represents a namespace attribute name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">The string to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the given string is the default namespace attribute name or
+  a namespace attribute name prefix
+     </p>
+<A NAME="param2xml"></A><A NAME="ref54"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XmlElement* &nbsp;<strong>param2xml</strong> (NamedString* param, const String& tag,
+	bool copyXml = false)
+<br></td><td align="right"><h3><strong>param2xml</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build an XML element from a list parameter.
+ Parameter name will be set in a 'name' attribute.
+ Parameter value will be set in a 'value' attribute
+ Handle NamedPointer parameters carrying DataBlock, NamedList and
+  XmlElement objects (a 'type' attribute is added to the created element).
+  DataBlock: Encode using BASE64 and add it as element text
+  NamedList: The name is added as element text. The function is called
+   again for each list parameter
+  XmlElement: Added as child to newly created element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">The parameter to convert
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tag</i></TD><TD align="left" valign="top">XmlElement tag
+</TD></TR>
+<TR><TD align="left" valign="top"><i>copyXml</i></TD><TD align="left" valign="top">True to copy XmlElement objects instead of just remove
+  them from the parameter
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: XmlElement pointer or 0 on failure
+     </p>
+<A NAME="xml2param"></A><A NAME="ref55"></A><table width="100%"><tr bgcolor="#eeeeee"><td> NamedString* &nbsp;<strong>xml2param</strong> (XmlElement* xml, const String* tag,
+	bool copyXml = false)
+<br></td><td align="right"><h3><strong>xml2param</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build a list parameter from xml element
+ See <A HREF="TelEngine__XmlElement.html#param2xml">param2xml</A> for more info
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>xml</i></TD><TD align="left" valign="top">The XML element to process
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tag</i></TD><TD align="left" valign="top">Child XmlElement tag to handle
+</TD></TR>
+<TR><TD align="left" valign="top"><i>copyXml</i></TD><TD align="left" valign="top">True to copy XmlElement objects instead of just remove
+  them from parent
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: NamedString pointer or 0 on failure
+     </p>
+<A NAME="xml2param"></A><A NAME="ref56"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>xml2param</strong> (NamedList& list, XmlElement* parent, const String* tag,
+	bool copyXml = false)
+<br></td><td align="right"><h3><strong>xml2param</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build and add list parameters from XML element children.
+ Each parameter will be taken from 'name' and 'value' attributes.
+ See <A HREF="TelEngine__XmlElement.html#param2xml">param2xml</A> for more info
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">Destination list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>parent</i></TD><TD align="left" valign="top">The XML element to process
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tag</i></TD><TD align="left" valign="top">Child XmlElement tag to handle
+</TD></TR>
+<TR><TD align="left" valign="top"><i>copyXml</i></TD><TD align="left" valign="top">True to copy XmlElement objects instead of just remove
+  them from parent
+     </TD></TR>
+</TABLE></P>
+<A NAME="s_ns"></A><A NAME="ref57"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static const String  <strong>s_ns</strong>
+</td><td align="right"><h3><strong>s_ns</strong></h3></td></tr></table><p></p><A NAME="s_nsPrefix"></A><A NAME="ref58"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static const String  <strong>s_nsPrefix</strong>
+</td><td align="right"><h3><strong>s_nsPrefix</strong></h3></td></tr></table><p></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

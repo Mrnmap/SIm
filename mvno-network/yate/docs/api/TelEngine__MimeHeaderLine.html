@@ -1,0 +1,259 @@
+<HTML>
+<HEAD>
+<TITLE>class MimeHeaderLine</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class MimeHeaderLine</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">MIME header line. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::MimeHeaderLine</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatemime_h.html">yatemime.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__NamedString.html">TelEngine::NamedString</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__MimeAuthLine.html">MimeAuthLine</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__MimeHeaderLine.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">MimeHeaderLine</A></b> (const char* name, const String& value, char sep = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">MimeHeaderLine</A></b> (const MimeHeaderLine& original, const char* newName = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~MimeHeaderLine</A></b> () 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref4">getObject</A></b> (const String& name)  const
+</LI>
+<LI>virtual  MimeHeaderLine* &nbsp;<b><A HREF="#ref5">clone</A></b> (const char* newName = 0)  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref6">buildLine</A></b> (String& line, bool header = true)  const
+</LI>
+<LI>inline MimeHeaderLine& &nbsp;<b><A HREF="#ref7">operator=</A></b> (const char* value) 
+</LI>
+<LI>inline const ObjList& &nbsp;<b><A HREF="#ref8">params</A></b> ()  const
+</LI>
+<LI>inline char &nbsp;<b><A HREF="#ref9">separator</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref10">setParam</A></b> (const char* name, const char* value = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref11">delParam</A></b> (const char* name) 
+</LI>
+<LI>const NamedString* &nbsp;<b><A HREF="#ref12">getParam</A></b> (const char* name)  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  void &nbsp;<b><A HREF="#ref13">addQuotes</A></b> (String& str, bool force = false) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref14">delQuotes</A></b> (String& str, bool force = false) 
+</LI>
+<LI>static  String &nbsp;<b><A HREF="#ref15">quote</A></b> (const String& str, bool force = false) 
+</LI>
+<LI>static  String &nbsp;<b><A HREF="#ref16">unquote</A></b> (const String& str, bool force = false) 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref17">findSep</A></b> (const char* str, char sep, int offs = 0) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref18">buildHeaders</A></b> (String& buf, const ObjList& headers) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>ObjList <b><A HREF="#ref19">m_params</A></b></LI>
+<LI>char <b><A HREF="#ref20">m_separator</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A MIME header line.
+ The NamedString's value contain the first parameter after the header name
+</p>
+<A NAME="MimeHeaderLine"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MimeHeaderLine</strong> (const char* name, const String& value, char sep = 0)
+<br></td><td align="right"><h3><strong>MimeHeaderLine</strong></h3></td></tr></table><p></p><p>
+ Constructor.
+ Builds a MIME header line from a string buffer.
+ Splits the value into header parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The header name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">The header value
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">Optional parameter separator. If 0, the default ';' will be used
+     </TD></TR>
+</TABLE></P>
+<A NAME="MimeHeaderLine"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MimeHeaderLine</strong> (const MimeHeaderLine& original, const char* newName = 0)
+<br></td><td align="right"><h3><strong>MimeHeaderLine</strong></h3></td></tr></table><p></p><p>
+ Constructor.
+ Builds this MIME header line from another one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Original header line to build from.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>newName</i></TD><TD align="left" valign="top">Optional new header name. If 0, the original name will be used
+     </TD></TR>
+</TABLE></P>
+<A NAME="~MimeHeaderLine"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~MimeHeaderLine</strong> ()
+<br></td><td align="right"><h3><strong>~MimeHeaderLine</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor.
+     </p>
+<A NAME="getObject"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ RTTI method, get a pointer to a derived class given the class name.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__NamedString.html#getObject">NamedString</A>.</p>
+<A NAME="clone"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> MimeHeaderLine* &nbsp;<strong>clone</strong> (const char* newName = 0)
+<br></td><td align="right"><h3><strong>clone</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Duplicate this MIME header line.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newName</i></TD><TD align="left" valign="top">Optional new header name. If 0, this header's name will be used
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Copy of this MIME header line
+     </p>
+<A NAME="buildLine"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>buildLine</strong> (String& line, bool header = true)
+<br></td><td align="right"><h3><strong>buildLine</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Build a string line from this MIME header without adding a line separator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>line</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>header</i></TD><TD align="left" valign="top">True to add the header in front of line text
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator="></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline MimeHeaderLine& &nbsp;<strong>operator=</strong> (const char* value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignement operator. Set the header's value
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">The new headr value
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__NamedString.html#operator=">NamedString</A>.</p>
+<A NAME="params"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const ObjList& &nbsp;<strong>params</strong> ()
+<br></td><td align="right"><h3><strong>params</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the header's parameters
+</p>
+<p><b>Returns</b>: This header's list of parameters
+     </p>
+<A NAME="separator"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline char &nbsp;<strong>separator</strong> ()
+<br></td><td align="right"><h3><strong>separator</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the character used as separator in header line
+</p>
+<p><b>Returns</b>: This header's separator
+     </p>
+<A NAME="setParam"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setParam</strong> (const char* name, const char* value = 0)
+<br></td><td align="right"><h3><strong>setParam</strong></h3></td></tr></table><p></p><p>
+ Replace the value of an existing parameter or add a new one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Parameter's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Parameter's value
+     </TD></TR>
+</TABLE></P>
+<A NAME="delParam"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>delParam</strong> (const char* name)
+<br></td><td align="right"><h3><strong>delParam</strong></h3></td></tr></table><p></p><p>
+ Remove a parameter from list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Parameter's name
+     </TD></TR>
+</TABLE></P>
+<A NAME="getParam"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const NamedString* &nbsp;<strong>getParam</strong> (const char* name)
+<br></td><td align="right"><h3><strong>getParam</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get a header parameter
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Parameter's name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the desired parameter or 0 if not found
+     </p>
+<A NAME="addQuotes"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>addQuotes</strong> (String& str, bool force = false)
+<br></td><td align="right"><h3><strong>addQuotes</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Utility function, puts quotes around a string.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to put quotes around.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to force quoting even if was already quoted
+     </TD></TR>
+</TABLE></P>
+<A NAME="delQuotes"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>delQuotes</strong> (String& str, bool force = false)
+<br></td><td align="right"><h3><strong>delQuotes</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Utility function, removes quotes around a string.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to remove quotes.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to force unquoting even if wasn't properly quoted
+     </TD></TR>
+</TABLE></P>
+<A NAME="quote"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> String &nbsp;<strong>quote</strong> (const String& str, bool force = false)
+<br></td><td align="right"><h3><strong>quote</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Utility function, puts quotes around a string.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to put quotes around.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to force quoting even if was already quoted
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The input string enclosed in quotes.
+     </p>
+<A NAME="unquote"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> String &nbsp;<strong>unquote</strong> (const String& str, bool force = false)
+<br></td><td align="right"><h3><strong>unquote</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Utility function, removes quotes around a string.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to remove quotes around.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to force unquoting even if wasn't properly quoted
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The input string with enclosing quotes removed.
+     </p>
+<A NAME="findSep"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>findSep</strong> (const char* str, char sep, int offs = 0)
+<br></td><td align="right"><h3><strong>findSep</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Utility function to find a separator not in "quotes" or inside \<uri\>.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">Input string used to find the separator.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">The separator to find.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>offs</i></TD><TD align="left" valign="top">Starting offset in input string.
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The position of the separator in input string or -1 if not found.
+     </p>
+<A NAME="buildHeaders"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>buildHeaders</strong> (String& buf, const ObjList& headers)
+<br></td><td align="right"><h3><strong>buildHeaders</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build a string from a list of MIME header lines.
+ Add a CR/LF terminator after each line
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>headers</i></TD><TD align="left" valign="top">The list with the header lines
+     </TD></TR>
+</TABLE></P>
+<A NAME="m_params"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>m_params</strong>
+</td><td align="right"><h3><strong>m_params</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_separator"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>char  <strong>m_separator</strong>
+</td><td align="right"><h3><strong>m_separator</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

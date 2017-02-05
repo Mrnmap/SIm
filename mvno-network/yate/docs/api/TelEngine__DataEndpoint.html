@@ -1,0 +1,298 @@
+<HTML>
+<HEAD>
+<TITLE>class DataEndpoint</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class DataEndpoint</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A data transfer endpoint capable of sending and/or receiving data. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::DataEndpoint</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatephone_h.html">yatephone.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__DataEndpoint.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>explicit &nbsp;<b><A HREF="#ref2">DataEndpoint</A></b> (CallEndpoint* call = 0, const char* name = "audio") 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref3">destroyed</A></b> () 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref4">getObject</A></b> (const String& name)  const
+</LI>
+<LI>virtual  const String& &nbsp;<b><A HREF="#ref5">toString</A></b> ()  const
+</LI>
+<LI>Mutex* &nbsp;<b><A HREF="#ref6">mutex</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref8">connect</A></b> (DataEndpoint* peer) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref9">disconnect</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref10">setSource</A></b> (DataSource* source = 0) 
+</LI>
+<LI>inline DataSource* &nbsp;<b><A HREF="#ref11">getSource</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref12">setConsumer</A></b> (DataConsumer* consumer = 0) 
+</LI>
+<LI>inline DataConsumer* &nbsp;<b><A HREF="#ref13">getConsumer</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref14">setPeerRecord</A></b> (DataConsumer* consumer = 0) 
+</LI>
+<LI>inline DataConsumer* &nbsp;<b><A HREF="#ref15">getPeerRecord</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref16">setCallRecord</A></b> (DataConsumer* consumer = 0) 
+</LI>
+<LI>inline DataConsumer* &nbsp;<b><A HREF="#ref17">getCallRecord</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref18">clearData</A></b> (DataNode* node) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref19">addSniffer</A></b> (DataConsumer* sniffer) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref20">delSniffer</A></b> (DataConsumer* sniffer) 
+</LI>
+<LI>inline DataConsumer* &nbsp;<b><A HREF="#ref21">getSniffer</A></b> (const String& name) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref22">clearSniffers</A></b> () 
+</LI>
+<LI>inline DataEndpoint* &nbsp;<b><A HREF="#ref23">getPeer</A></b> ()  const
+</LI>
+<LI>inline CallEndpoint* &nbsp;<b><A HREF="#ref24">getCall</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref25">name</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref26">clearCall</A></b> (const CallEndpoint* call) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref27">control</A></b> (NamedList& params) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  Mutex& &nbsp;<b><A HREF="#ref7">commonMutex</A></b> () 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  bool &nbsp;<b><A HREF="#ref28">nativeConnect</A></b> (DataEndpoint* peer) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ The DataEndpoint holds an endpoint capable of performing unidirectional
+ or bidirectional data transfers
+</p>
+<A NAME="DataEndpoint"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>DataEndpoint</strong> (CallEndpoint* call = 0, const char* name = "audio")
+<br></td><td align="right"><h3><strong>DataEndpoint</strong></h3></td></tr></table><p></p><p>
+ Creates an empty data endpoint
+     </p>
+<A NAME="destroyed"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destroyed</strong> ()
+<br></td><td align="right"><h3><strong>destroyed</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Endpoint destruct notification, clears source and consumer
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__RefObject.html#destroyed">RefObject</A>.</p>
+<A NAME="getObject"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__RefObject.html#getObject">RefObject</A>.</p>
+<A NAME="toString"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>toString</strong> ()
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a string identification of the endpoint
+</p>
+<p><b>Returns</b>: A reference to this endpoint's name
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="mutex"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Mutex* &nbsp;<strong>mutex</strong> ()
+<br></td><td align="right"><h3><strong>mutex</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the mutex that serializes access to this data endpoint, if any
+</p>
+<p><b>Returns</b>: Pointer to the call's mutex object or NULL
+     </p>
+<A NAME="commonMutex"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Mutex& &nbsp;<strong>commonMutex</strong> ()
+<br></td><td align="right"><h3><strong>commonMutex</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the big mutex that serializes access to all data endpoints
+</p>
+<p><b>Returns</b>: A reference to the mutex
+     </p>
+<A NAME="connect"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>connect</strong> (DataEndpoint* peer)
+<br></td><td align="right"><h3><strong>connect</strong></h3></td></tr></table><p></p><p>
+ Connect the source and consumer of the endpoint to a peer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>peer</i></TD><TD align="left" valign="top">Pointer to the peer data endpoint
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if connected, false if incompatible source/consumer
+     </p>
+<A NAME="disconnect"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>disconnect</strong> ()
+<br></td><td align="right"><h3><strong>disconnect</strong></h3></td></tr></table><p></p><p>
+ Disconnect from the connected endpoint
+</p>
+<p><b>Returns</b>: True if the object was deleted, false if it still exists
+     </p>
+<A NAME="setSource"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setSource</strong> (DataSource* source = 0)
+<br></td><td align="right"><h3><strong>setSource</strong></h3></td></tr></table><p></p><p>
+ Set the data source of this object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>source</i></TD><TD align="left" valign="top">A pointer to the new source or NULL
+     </TD></TR>
+</TABLE></P>
+<A NAME="getSource"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline DataSource* &nbsp;<strong>getSource</strong> ()
+<br></td><td align="right"><h3><strong>getSource</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the data source of this object
+</p>
+<p><b>Returns</b>: A pointer to the DataSource object or NULL
+     </p>
+<A NAME="setConsumer"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setConsumer</strong> (DataConsumer* consumer = 0)
+<br></td><td align="right"><h3><strong>setConsumer</strong></h3></td></tr></table><p></p><p>
+ Set the data consumer of this object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>consumer</i></TD><TD align="left" valign="top">A pointer to the new consumer or NULL
+     </TD></TR>
+</TABLE></P>
+<A NAME="getConsumer"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline DataConsumer* &nbsp;<strong>getConsumer</strong> ()
+<br></td><td align="right"><h3><strong>getConsumer</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the data consumer of this object
+</p>
+<p><b>Returns</b>: A pointer to the DataConsumer object or NULL
+     </p>
+<A NAME="setPeerRecord"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setPeerRecord</strong> (DataConsumer* consumer = 0)
+<br></td><td align="right"><h3><strong>setPeerRecord</strong></h3></td></tr></table><p></p><p>
+ Set the data consumer for recording peer generated data.
+ This will be connected to the peer data source.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>consumer</i></TD><TD align="left" valign="top">A pointer to the new consumer or NULL
+     </TD></TR>
+</TABLE></P>
+<A NAME="getPeerRecord"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline DataConsumer* &nbsp;<strong>getPeerRecord</strong> ()
+<br></td><td align="right"><h3><strong>getPeerRecord</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the data consumer used for recording peer generated data.
+</p>
+<p><b>Returns</b>: A pointer to the DataConsumer object or NULL
+     </p>
+<A NAME="setCallRecord"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setCallRecord</strong> (DataConsumer* consumer = 0)
+<br></td><td align="right"><h3><strong>setCallRecord</strong></h3></td></tr></table><p></p><p>
+ Set the data consumer for recording local call generated data
+ This will be connected to the local data source.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>consumer</i></TD><TD align="left" valign="top">A pointer to the new consumer or NULL
+     </TD></TR>
+</TABLE></P>
+<A NAME="getCallRecord"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline DataConsumer* &nbsp;<strong>getCallRecord</strong> ()
+<br></td><td align="right"><h3><strong>getCallRecord</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the data consumer used for recording local call generated data.
+</p>
+<p><b>Returns</b>: A pointer to the DataConsumer object or NULL
+     </p>
+<A NAME="clearData"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>clearData</strong> (DataNode* node)
+<br></td><td align="right"><h3><strong>clearData</strong></h3></td></tr></table><p></p><p>
+ Clear a data node from any slot of this object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>node</i></TD><TD align="left" valign="top">Pointer to DataSource or DataConsumer to clear
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the node was removed from at least one slot
+     </p>
+<A NAME="addSniffer"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>addSniffer</strong> (DataConsumer* sniffer)
+<br></td><td align="right"><h3><strong>addSniffer</strong></h3></td></tr></table><p></p><p>
+ Adds a data consumer to the list of sniffers of the local call data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sniffer</i></TD><TD align="left" valign="top">Pointer to the DataConsumer to add to sniffer list
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the sniffer was added to list, false if NULL or already added
+     </p>
+<A NAME="delSniffer"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>delSniffer</strong> (DataConsumer* sniffer)
+<br></td><td align="right"><h3><strong>delSniffer</strong></h3></td></tr></table><p></p><p>
+ Remove a data consumer from the list of sniffers of the local call data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sniffer</i></TD><TD align="left" valign="top">Pointer to the DataConsumer to remove from sniffer list
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the sniffer was removed from list
+     </p>
+<A NAME="getSniffer"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline DataConsumer* &nbsp;<strong>getSniffer</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getSniffer</strong></h3></td></tr></table><p></p><p>
+ Find a sniffer by name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the sniffer to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to DataConsumer or NULL if not found
+     </p>
+<A NAME="clearSniffers"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clearSniffers</strong> ()
+<br></td><td align="right"><h3><strong>clearSniffers</strong></h3></td></tr></table><p></p><p>
+ Removes all sniffers from the list and dereferences them
+     </p>
+<A NAME="getPeer"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline DataEndpoint* &nbsp;<strong>getPeer</strong> ()
+<br></td><td align="right"><h3><strong>getPeer</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get a pointer to the peer endpoint
+</p>
+<p><b>Returns</b>: A pointer to the peer endpoint or NULL
+     </p>
+<A NAME="getCall"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline CallEndpoint* &nbsp;<strong>getCall</strong> ()
+<br></td><td align="right"><h3><strong>getCall</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get a pointer to the owner call
+</p>
+<p><b>Returns</b>: A pointer to the owner call or NULL
+     </p>
+<A NAME="name"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>name</strong> ()
+<br></td><td align="right"><h3><strong>name</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the name set in constructor
+</p>
+<p><b>Returns</b>: A reference to the name as hashed string
+     </p>
+<A NAME="clearCall"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>clearCall</strong> (const CallEndpoint* call)
+<br></td><td align="right"><h3><strong>clearCall</strong></h3></td></tr></table><p></p><p>
+ Clear the owner call endpoint.
+ Works only if the caller provides the correct owner pointer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>call</i></TD><TD align="left" valign="top">Pointer to the call endpoint that is to be cleared
+     </TD></TR>
+</TABLE></P>
+<A NAME="control"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>control</strong> (NamedList& params)
+<br></td><td align="right"><h3><strong>control</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Modify data parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">The list of parameters to change
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if processed
+     </p>
+<A NAME="nativeConnect"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>nativeConnect</strong> (DataEndpoint* peer)
+<br></td><td align="right"><h3><strong>nativeConnect</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Attempt to connect the endpoint to a peer of the same type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>peer</i></TD><TD align="left" valign="top">Pointer to the endpoint data driver
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if connected, false if failed native connection
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

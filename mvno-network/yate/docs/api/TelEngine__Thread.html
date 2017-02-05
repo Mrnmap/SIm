@@ -1,0 +1,412 @@
+<HTML>
+<HEAD>
+<TITLE>class Thread</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Thread</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Thread support class. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Thread</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__Runnable.html">TelEngine::Runnable</A></i> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__Router.html">Router</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Thread.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref5">Priority</A> {	Lowest,
+	Low,
+	Normal,
+	High,
+	Highest
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref6">cleanup</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref7">startup</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref8">error</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref9">running</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref10">locks</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref11">locked</A></b> ()  const
+</LI>
+<LI>const char* &nbsp;<b><A HREF="#ref12">name</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref26">cancel</A></b> (bool hard = false) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref27">isCurrent</A></b> ()  const
+</LI>
+<LI>NamedCounter* &nbsp;<b><A HREF="#ref28">getObjCounter</A></b> ()  const
+</LI>
+<LI>NamedCounter* &nbsp;<b><A HREF="#ref29">setObjCounter</A></b> (NamedCounter* counter) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  const char* &nbsp;<b><A HREF="#ref13">currentName</A></b> () 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref14">yield</A></b> (bool exitCheck = false) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref15">idle</A></b> (bool exitCheck = false) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref16">sleep</A></b> (unsigned int sec, bool exitCheck = false) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref17">msleep</A></b> (unsigned long msec, bool exitCheck = false) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref18">usleep</A></b> (unsigned long usec, bool exitCheck = false) 
+</LI>
+<LI>static  unsigned long &nbsp;<b><A HREF="#ref19">idleUsec</A></b> () 
+</LI>
+<LI>static  unsigned long &nbsp;<b><A HREF="#ref20">idleMsec</A></b> () 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref21">idleMsec</A></b> (unsigned long msec) 
+</LI>
+<LI>static  Thread* &nbsp;<b><A HREF="#ref22">current</A></b> () 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref23">count</A></b> () 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref24">check</A></b> (bool exitNow = true) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref25">exit</A></b> () 
+</LI>
+<LI>static  NamedCounter* &nbsp;<b><A HREF="#ref30">getCurrentObjCounter</A></b> (bool always = false) 
+</LI>
+<LI>static  NamedCounter* &nbsp;<b><A HREF="#ref31">setCurrentObjCounter</A></b> (NamedCounter* counter) 
+</LI>
+<LI>static  Priority &nbsp;<b><A HREF="#ref32">priority</A></b> (const char* name, Priority defvalue = Normal) 
+</LI>
+<LI>static  const char* &nbsp;<b><A HREF="#ref33">priority</A></b> (Priority prio) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref34">killall</A></b> () 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref35">preExec</A></b> () 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref36">lastError</A></b> () 
+</LI>
+<LI>static  inline bool &nbsp;<b><A HREF="#ref37">errorString</A></b> (String& buffer) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref38">errorString</A></b> (String& buffer, int code) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref39">Thread</A></b> (const char *name = 0, Priority prio = Normal) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref40">Thread</A></b> (const char *name, const char* prio) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref41">~Thread</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A thread is a separate execution context that exists in the same address
+  space. Threads make better use of multiple processor machines and allow
+  blocking one execution thread while allowing other to run.
+</p>
+<A NAME="Priority"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Priority</strong> {	Lowest,
+	Low,
+	Normal,
+	High,
+	Highest
+    }
+</td><td align="right"><h3><strong>Priority</strong></h3></td></tr></table><p></p><p>
+ Running priorities, their mapping is operating system dependent
+     </p>
+<A NAME="cleanup"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>cleanup</strong> ()
+<br></td><td align="right"><h3><strong>cleanup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ This method is called when the current thread terminates.
+     </p>
+<A NAME="startup"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>startup</strong> ()
+<br></td><td align="right"><h3><strong>startup</strong></h3></td></tr></table><p></p><p>
+ Actually starts running the new thread which lingers after creation
+</p>
+<p><b>Returns</b>: False if an error occured, true if started ok
+     </p>
+<A NAME="error"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>error</strong> ()
+<br></td><td align="right"><h3><strong>error</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the thread creation failed
+</p>
+<p><b>Returns</b>: True if an error occured, false if created ok
+     </p>
+<A NAME="running"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>running</strong> ()
+<br></td><td align="right"><h3><strong>running</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the thread is running or not
+</p>
+<p><b>Returns</b>: True if running, false if it has terminated or no startup called
+     </p>
+<A NAME="locks"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>locks</strong> ()
+<br></td><td align="right"><h3><strong>locks</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Count how many Yate mutexes are kept locked by this thread
+</p>
+<p><b>Returns</b>: Number of Mutex locks held by this thread
+     </p>
+<A NAME="locked"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>locked</strong> ()
+<br></td><td align="right"><h3><strong>locked</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the thread is currently helding or attempting to lock a mutex
+</p>
+<p><b>Returns</b>: True if the current thread is in an unsafe to cancel state
+     </p>
+<A NAME="name"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char* &nbsp;<strong>name</strong> ()
+<br></td><td align="right"><h3><strong>name</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the name of this thread
+</p>
+<p><b>Returns</b>: The pointer that was passed in the constructor
+     </p>
+<A NAME="currentName"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>currentName</strong> ()
+<br></td><td align="right"><h3><strong>currentName</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the name of the currently running thread
+</p>
+<p><b>Returns</b>: The pointer that was passed in the thread's constructor
+     </p>
+<A NAME="yield"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>yield</strong> (bool exitCheck = false)
+<br></td><td align="right"><h3><strong>yield</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Give up the currently running timeslice. Note that on some platforms
+  it also sleeps for the operating system's scheduler resolution
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>exitCheck</i></TD><TD align="left" valign="top">Terminate the thread if asked so
+     </TD></TR>
+</TABLE></P>
+<A NAME="idle"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>idle</strong> (bool exitCheck = false)
+<br></td><td align="right"><h3><strong>idle</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Sleep for a system dependent period adequate for an idle thread.
+ On most operating systems this is a 5 msec sleep.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>exitCheck</i></TD><TD align="left" valign="top">Terminate the thread if asked so
+     </TD></TR>
+</TABLE></P>
+<A NAME="sleep"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>sleep</strong> (unsigned int sec, bool exitCheck = false)
+<br></td><td align="right"><h3><strong>sleep</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Sleep for a number of seconds
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sec</i></TD><TD align="left" valign="top">Number of seconds to sleep
+</TD></TR>
+<TR><TD align="left" valign="top"><i>exitCheck</i></TD><TD align="left" valign="top">Terminate the thread if asked so
+     </TD></TR>
+</TABLE></P>
+<A NAME="msleep"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>msleep</strong> (unsigned long msec, bool exitCheck = false)
+<br></td><td align="right"><h3><strong>msleep</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Sleep for a number of milliseconds
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msec</i></TD><TD align="left" valign="top">Number of milliseconds to sleep
+</TD></TR>
+<TR><TD align="left" valign="top"><i>exitCheck</i></TD><TD align="left" valign="top">Terminate the thread if asked so
+     </TD></TR>
+</TABLE></P>
+<A NAME="usleep"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>usleep</strong> (unsigned long usec, bool exitCheck = false)
+<br></td><td align="right"><h3><strong>usleep</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Sleep for a number of microseconds
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>usec</i></TD><TD align="left" valign="top">Number of microseconds to sleep, may be rounded to
+  milliseconds on some platforms
+</TD></TR>
+<TR><TD align="left" valign="top"><i>exitCheck</i></TD><TD align="left" valign="top">Terminate the thread if asked so
+     </TD></TR>
+</TABLE></P>
+<A NAME="idleUsec"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned long &nbsp;<strong>idleUsec</strong> ()
+<br></td><td align="right"><h3><strong>idleUsec</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the platform dependent idle sleep interval in microseconds
+</p>
+<p><b>Returns</b>: Number of microseconds each call to idle() will sleep
+     </p>
+<A NAME="idleMsec"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned long &nbsp;<strong>idleMsec</strong> ()
+<br></td><td align="right"><h3><strong>idleMsec</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the platform dependent idle sleep interval in milliseconds
+</p>
+<p><b>Returns</b>: Number of milliseconds each call to idle() will sleep
+     </p>
+<A NAME="idleMsec"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>idleMsec</strong> (unsigned long msec)
+<br></td><td align="right"><h3><strong>idleMsec</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set the idle sleep interval or reset to platform default
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msec</i></TD><TD align="left" valign="top">Sleep interval in milliseconds, platform default if zero
+     </TD></TR>
+</TABLE></P>
+<A NAME="current"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Thread* &nbsp;<strong>current</strong> ()
+<br></td><td align="right"><h3><strong>current</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get a pointer to the currently running thread
+</p>
+<p><b>Returns</b>: A pointer to the current thread or NULL for the main thread
+  or threads created by other libraries
+     </p>
+<A NAME="count"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>count</strong> ()
+<br></td><td align="right"><h3><strong>count</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the number of Yate created threads
+</p>
+<p><b>Returns</b>: Count of current Thread objects
+     </p>
+<A NAME="check"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>check</strong> (bool exitNow = true)
+<br></td><td align="right"><h3><strong>check</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if the current thread was asked to terminate.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>exitNow</i></TD><TD align="left" valign="top">If thread is marked as cancelled then terminate immediately
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if thread should continue running, true if it should stop
+     </p>
+<A NAME="exit"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>exit</strong> ()
+<br></td><td align="right"><h3><strong>exit</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Terminates the current thread.
+     </p>
+<A NAME="cancel"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>cancel</strong> (bool hard = false)
+<br></td><td align="right"><h3><strong>cancel</strong></h3></td></tr></table><p></p><p>
+ Terminates the specified thread.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>hard</i></TD><TD align="left" valign="top">Kill the thread the hard way rather than just setting an exit check marker
+     </TD></TR>
+</TABLE></P>
+<A NAME="isCurrent"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isCurrent</strong> ()
+<br></td><td align="right"><h3><strong>isCurrent</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this thread is the currently running thread
+</p>
+<p><b>Returns</b>: True if this is the current thread
+     </p>
+<A NAME="getObjCounter"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedCounter* &nbsp;<strong>getObjCounter</strong> ()
+<br></td><td align="right"><h3><strong>getObjCounter</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the object counter of this thread
+</p>
+<p><b>Returns</b>: Pointer to thread's counter for new objects
+     </p>
+<A NAME="setObjCounter"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedCounter* &nbsp;<strong>setObjCounter</strong> (NamedCounter* counter)
+<br></td><td align="right"><h3><strong>setObjCounter</strong></h3></td></tr></table><p></p><p>
+ Set the object counter of this thread
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>counter</i></TD><TD align="left" valign="top">New counter object or NULL
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to old counter object
+     </p>
+<A NAME="getCurrentObjCounter"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td> NamedCounter* &nbsp;<strong>getCurrentObjCounter</strong> (bool always = false)
+<br></td><td align="right"><h3><strong>getCurrentObjCounter</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the object counter of the current thread
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>always</i></TD><TD align="left" valign="top">Return the object even if counting is disabled
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to current counter for new objects
+     </p>
+<A NAME="setCurrentObjCounter"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td> NamedCounter* &nbsp;<strong>setCurrentObjCounter</strong> (NamedCounter* counter)
+<br></td><td align="right"><h3><strong>setCurrentObjCounter</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set the object counter of the current thread
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>counter</i></TD><TD align="left" valign="top">New counter object or NULL
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to old counter object
+     </p>
+<A NAME="priority"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Priority &nbsp;<strong>priority</strong> (const char* name, Priority defvalue = Normal)
+<br></td><td align="right"><h3><strong>priority</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Convert a priority name to a thread priority level
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the requested level
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Priority to return in case of an invalid name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A thread priority level
+     </p>
+<A NAME="priority"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>priority</strong> (Priority prio)
+<br></td><td align="right"><h3><strong>priority</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Convert a priority level to a textual name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">Priority level to convert
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Name of the level or NULL if an invalid argument was provided
+     </p>
+<A NAME="killall"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>killall</strong> ()
+<br></td><td align="right"><h3><strong>killall</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Kills all other running threads. Ouch!
+ Must be called from the main thread or it does nothing.
+     </p>
+<A NAME="preExec"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>preExec</strong> ()
+<br></td><td align="right"><h3><strong>preExec</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ On some platforms this method kills all other running threads.
+ Must be called after fork() but before any exec*() call.
+     </p>
+<A NAME="lastError"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>lastError</strong> ()
+<br></td><td align="right"><h3><strong>lastError</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the last thread error
+</p>
+<p><b>Returns</b>: The value returned by GetLastError() (on Windows) or
+  the value of C library 'errno' variable otherwise
+     </p>
+<A NAME="errorString"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline bool &nbsp;<strong>errorString</strong> (String& buffer)
+<br></td><td align="right"><h3><strong>errorString</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the last thread error's string from system.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">The destination string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if an error string was retrieved. If false is returned, the buffer
+  is filled with a generic string indicating an unknown error and its code
+     </p>
+<A NAME="errorString"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>errorString</strong> (String& buffer, int code)
+<br></td><td align="right"><h3><strong>errorString</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get an error string from system.
+ On Windows the code parameter must be a code returned by GetLastError().
+ Otherwise, the error code should be a valid value for the C library 'errno'
+  variable
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">The destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">The error code
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if an error string was retrieved. If false is returned, the buffer
+  is filled with a generic string indicating an unknown error and its code
+     </p>
+<A NAME="Thread"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>Thread</strong> (const char *name = 0, Priority prio = Normal)
+<br></td><td align="right"><h3><strong>Thread</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Creates and starts a new thread
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Static name of the thread (for debugging purpose only)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">Thread priority
+     </TD></TR>
+</TABLE></P>
+<A NAME="Thread"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>Thread</strong> (const char *name, const char* prio)
+<br></td><td align="right"><h3><strong>Thread</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Creates and starts a new thread
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Static name of the thread (for debugging purpose only)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">Thread priority level name
+     </TD></TR>
+</TABLE></P>
+<A NAME="~Thread"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~Thread</strong> ()
+<br></td><td align="right"><h3><strong>~Thread</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ The destructor is called when the thread terminates
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

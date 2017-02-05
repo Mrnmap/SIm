@@ -1,0 +1,245 @@
+<HTML>
+<HEAD>
+<TITLE>class HashList</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class HashList</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A hashed object list class. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::HashList</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__HashList.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>explicit &nbsp;<b><A HREF="#ref2">HashList</A></b> (unsigned int size = 17) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~HashList</A></b> () 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref4">getObject</A></b> (const String& name)  const
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref5">length</A></b> ()  const
+</LI>
+<LI>unsigned int &nbsp;<b><A HREF="#ref6">count</A></b> ()  const
+</LI>
+<LI>inline ObjList* &nbsp;<b><A HREF="#ref7">getList</A></b> (unsigned int index)  const
+</LI>
+<LI>inline ObjList* &nbsp;<b><A HREF="#ref8">getHashList</A></b> (unsigned int hash)  const
+</LI>
+<LI>inline ObjList* &nbsp;<b><A HREF="#ref9">getHashList</A></b> (const String& str)  const
+</LI>
+<LI>GenObject* &nbsp;<b><A HREF="#ref10">operator[]</A></b> (const String& str)  const
+</LI>
+<LI>ObjList* &nbsp;<b><A HREF="#ref11">find</A></b> (const GenObject* obj)  const
+</LI>
+<LI>ObjList* &nbsp;<b><A HREF="#ref12">find</A></b> (const GenObject* obj, unsigned int hash)  const
+</LI>
+<LI>ObjList* &nbsp;<b><A HREF="#ref13">find</A></b> (const String& str)  const
+</LI>
+<LI>ObjList* &nbsp;<b><A HREF="#ref14">append</A></b> (const GenObject* obj) 
+</LI>
+<LI>GenObject* &nbsp;<b><A HREF="#ref15">remove</A></b> (GenObject* obj, bool delobj = true, bool useHash = false) 
+</LI>
+<LI>inline GenObject* &nbsp;<b><A HREF="#ref16">remove</A></b> (const String& str, bool delobj = true) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref17">clear</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref18">resync</A></b> (GenObject* obj) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref19">resync</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A hashed object list handling class. Objects placed in the list are
+  distributed according to their String hash resulting in faster searches.
+ On the other hand an object placed in a hashed list must never change
+  its String value or it becomes unfindable.
+</p>
+<A NAME="HashList"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>HashList</strong> (unsigned int size = 17)
+<br></td><td align="right"><h3><strong>HashList</strong></h3></td></tr></table><p></p><p>
+ Creates a new, empty list.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>size</i></TD><TD align="left" valign="top">Number of classes to divide the objects
+     </TD></TR>
+</TABLE></P>
+<A NAME="~HashList"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~HashList</strong> ()
+<br></td><td align="right"><h3><strong>~HashList</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destroys the list and everything in it.
+     </p>
+<A NAME="getObject"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="length"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>length</strong> ()
+<br></td><td align="right"><h3><strong>length</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of hash entries
+</p>
+<p><b>Returns</b>: Count of hash entries
+     </p>
+<A NAME="count"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int &nbsp;<strong>count</strong> ()
+<br></td><td align="right"><h3><strong>count</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of non-null objects in the list
+</p>
+<p><b>Returns</b>: Count of items
+     </p>
+<A NAME="getList"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ObjList* &nbsp;<strong>getList</strong> (unsigned int index)
+<br></td><td align="right"><h3><strong>getList</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve one of the internal object lists. This method should be used
+  only to iterate all objects in the list.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of the internal list to retrieve
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the list or NULL
+     </p>
+<A NAME="getHashList"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ObjList* &nbsp;<strong>getHashList</strong> (unsigned int hash)
+<br></td><td align="right"><h3><strong>getHashList</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve one of the internal object lists knowing the hash value.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>hash</i></TD><TD align="left" valign="top">Hash of the internal list to retrieve
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the list or NULL if never filled
+     </p>
+<A NAME="getHashList"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ObjList* &nbsp;<strong>getHashList</strong> (const String& str)
+<br></td><td align="right"><h3><strong>getHashList</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve one of the internal object lists knowing the String value.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String whose hash internal list is to retrieve
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the list or NULL if never filled
+     </p>
+<A NAME="operator[]"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>GenObject* &nbsp;<strong>operator[]</strong> (const String& str)
+<br></td><td align="right"><h3><strong>operator[]</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Array-like indexing operator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String value of the object to locate
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the first object or NULL
+     </p>
+<A NAME="find"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList* &nbsp;<strong>find</strong> (const GenObject* obj)
+<br></td><td align="right"><h3><strong>find</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the item in the list that holds an object.
+ The item is searched sequentially in the lists, not using it's String hash
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">Pointer to the object to search for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the found item or NULL
+     </p>
+<A NAME="find"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList* &nbsp;<strong>find</strong> (const GenObject* obj, unsigned int hash)
+<br></td><td align="right"><h3><strong>find</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the item in the list that holds an object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">Pointer to the object to search for
+</TD></TR>
+<TR><TD align="left" valign="top"><i>hash</i></TD><TD align="left" valign="top">Object hash used to identify the list it belongs to
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the found item or NULL
+     </p>
+<A NAME="find"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList* &nbsp;<strong>find</strong> (const String& str)
+<br></td><td align="right"><h3><strong>find</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the item in the list that holds an object by String value
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String value (toString) of the object to search for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the first found item or NULL
+     </p>
+<A NAME="append"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList* &nbsp;<strong>append</strong> (const GenObject* obj)
+<br></td><td align="right"><h3><strong>append</strong></h3></td></tr></table><p></p><p>
+ Appends an object to the hashed list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">Pointer to the object to append
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the inserted list item
+     </p>
+<A NAME="remove"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>GenObject* &nbsp;<strong>remove</strong> (GenObject* obj, bool delobj = true, bool useHash = false)
+<br></td><td align="right"><h3><strong>remove</strong></h3></td></tr></table><p></p><p>
+ Delete the list item that holds a given object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">Object to search in the list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delobj</i></TD><TD align="left" valign="top">True to delete the object (default)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>useHash</i></TD><TD align="left" valign="top">True to use object hash to identify the list it belongs to
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the object if not destroyed
+     </p>
+<A NAME="remove"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline GenObject* &nbsp;<strong>remove</strong> (const String& str, bool delobj = true)
+<br></td><td align="right"><h3><strong>remove</strong></h3></td></tr></table><p></p><p>
+ Delete the item in the list that holds an object by String value
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String value (toString) of the object to remove
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delobj</i></TD><TD align="left" valign="top">True to delete the object (default)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the object if not destroyed
+     </p>
+<A NAME="clear"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clear</strong> ()
+<br></td><td align="right"><h3><strong>clear</strong></h3></td></tr></table><p></p><p>
+ Clear the list and optionally delete all contained objects
+     </p>
+<A NAME="resync"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>resync</strong> (GenObject* obj)
+<br></td><td align="right"><h3><strong>resync</strong></h3></td></tr></table><p></p><p>
+ Resync the list by checking if a stored object belongs to the list
+  according to its hash
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">Object to resync in the list
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if object was in the wrong list and had to be moved
+     </p>
+<A NAME="resync"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>resync</strong> ()
+<br></td><td align="right"><h3><strong>resync</strong></h3></td></tr></table><p></p><p>
+ Resync the list by checking if all stored objects belong to the list
+  according to their hash
+</p>
+<p><b>Returns</b>: True if at least one object had to be moved
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

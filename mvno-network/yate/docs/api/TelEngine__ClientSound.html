@@ -1,0 +1,289 @@
+<HTML>
+<HEAD>
+<TITLE>class ClientSound</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ClientSound</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A sound file. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ClientSound</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatecbase_h.html">yatecbase.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__String.html">TelEngine::String</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ClientSound.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">ClientSound</A></b> (const char* name, const char* file, const char* device = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~ClientSound</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref4">destruct</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref5">native</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref6">started</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref7">device</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref8">device</A></b> (const char* dev) 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref9">file</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref10">file</A></b> (const char* filename, bool stereo) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref11">setRepeat</A></b> (unsigned int count) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref12">stereo</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref13">start</A></b> (bool force = true) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref14">stop</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref15">setChannel</A></b> (const String& chan, bool ok) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref16">attachSource</A></b> (ClientChannel* chan) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  bool &nbsp;<b><A HREF="#ref17">build</A></b> (const String& id, const char* file, const char* device = 0,
+	unsigned int repeat = 0, bool resetExisting = true, bool stereo = false) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref18">started</A></b> (const String& name) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref19">start</A></b> (const String& name, bool force = true) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref20">stop</A></b> (const String& name) 
+</LI>
+<LI>static  ClientSound* &nbsp;<b><A HREF="#ref21">find</A></b> (const String& token, bool byName = true) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static ObjList <b><A HREF="#ref22">s_sounds</A></b></LI>
+<LI>static Mutex <b><A HREF="#ref23">s_soundsMutex</A></b></LI>
+<LI>static String <b><A HREF="#ref24">s_calltoPrefix</A></b></LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  bool &nbsp;<b><A HREF="#ref25">doStart</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref26">doStop</A></b> () 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>bool <b><A HREF="#ref27">m_native</A></b></LI>
+<LI>String <b><A HREF="#ref28">m_file</A></b></LI>
+<LI>String <b><A HREF="#ref29">m_device</A></b></LI>
+<LI>unsigned int <b><A HREF="#ref30">m_repeat</A></b></LI>
+<LI>bool <b><A HREF="#ref31">m_started</A></b></LI>
+<LI>bool <b><A HREF="#ref32">m_stereo</A></b></LI>
+<LI>String <b><A HREF="#ref33">m_channel</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds a sound file along with an output device used to play it
+</p>
+<A NAME="ClientSound"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>ClientSound</strong> (const char* name, const char* file, const char* device = 0)
+<br></td><td align="right"><h3><strong>ClientSound</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of this object
+</TD></TR>
+<TR><TD align="left" valign="top"><i>file</i></TD><TD align="left" valign="top">The file to play (should contain the whole path and the file name)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>device</i></TD><TD align="left" valign="top">Optional device used to play the file. Set to 0 to use the default one
+     </TD></TR>
+</TABLE></P>
+<A NAME="~ClientSound"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~ClientSound</strong> ()
+<br></td><td align="right"><h3><strong>~ClientSound</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor. Stop playing the file
+     </p>
+<A NAME="destruct"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destruct</strong> ()
+<br></td><td align="right"><h3><strong>destruct</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Stop playing. Release memory
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#destruct">GenObject</A>.</p>
+<A NAME="native"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>native</strong> ()
+<br></td><td align="right"><h3><strong>native</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this sound is a system dependent one
+</p>
+<p><b>Returns</b>: True if the sound is played using a system dependent method,
+  false if played using a yate module (like wavefile)
+     </p>
+<A NAME="started"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>started</strong> ()
+<br></td><td align="right"><h3><strong>started</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this sound is started
+</p>
+<p><b>Returns</b>: True if this sound is started
+     </p>
+<A NAME="device"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>device</strong> ()
+<br></td><td align="right"><h3><strong>device</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the device used to play this sound
+</p>
+<p><b>Returns</b>: The device used to play sound
+     </p>
+<A NAME="device"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>device</strong> (const char* dev)
+<br></td><td align="right"><h3><strong>device</strong></h3></td></tr></table><p></p><p>
+ Set the device used to play this sound
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dev</i></TD><TD align="left" valign="top">The device used to play sound
+     </TD></TR>
+</TABLE></P>
+<A NAME="file"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>file</strong> ()
+<br></td><td align="right"><h3><strong>file</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the file played by this sound
+</p>
+<p><b>Returns</b>: The file played by this sound
+     </p>
+<A NAME="file"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>file</strong> (const char* filename, bool stereo)
+<br></td><td align="right"><h3><strong>file</strong></h3></td></tr></table><p></p><p>
+ Set the file played by this sound.
+ The new file will not be used until the next time the sound is started
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>filename</i></TD><TD align="left" valign="top">The new file played by this sound
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stereo</i></TD><TD align="left" valign="top">True if the file contains 2 channel audio
+     </TD></TR>
+</TABLE></P>
+<A NAME="setRepeat"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setRepeat</strong> (unsigned int count)
+<br></td><td align="right"><h3><strong>setRepeat</strong></h3></td></tr></table><p></p><p>
+ Set the repeat counter.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>count</i></TD><TD align="left" valign="top">The number of times to play the sound,
+  0 to repeat until explicitely stopped
+     </TD></TR>
+</TABLE></P>
+<A NAME="stereo"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>stereo</strong> ()
+<br></td><td align="right"><h3><strong>stereo</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this sound's file contains 2 channel audio
+</p>
+<p><b>Returns</b>: True if the sound file contains 2 channel audio
+     </p>
+<A NAME="start"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>start</strong> (bool force = true)
+<br></td><td align="right"><h3><strong>start</strong></h3></td></tr></table><p></p><p>
+ Start playing the file
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to start playing the file even if already started
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="stop"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>stop</strong> ()
+<br></td><td align="right"><h3><strong>stop</strong></h3></td></tr></table><p></p><p>
+ Stop playing the file
+     </p>
+<A NAME="setChannel"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setChannel</strong> (const String& chan, bool ok)
+<br></td><td align="right"><h3><strong>setChannel</strong></h3></td></tr></table><p></p><p>
+ Set/reset channel on sound start/stop
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>chan</i></TD><TD align="left" valign="top">The channel id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ok</i></TD><TD align="left" valign="top">Operation: true to start, false to stop
+     </TD></TR>
+</TABLE></P>
+<A NAME="attachSource"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>attachSource</strong> (ClientChannel* chan)
+<br></td><td align="right"><h3><strong>attachSource</strong></h3></td></tr></table><p></p><p>
+ Attach this sound to a channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>chan</i></TD><TD align="left" valign="top">The channel to attach to
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="build"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>build</strong> (const String& id, const char* file, const char* device = 0,
+	unsigned int repeat = 0, bool resetExisting = true, bool stereo = false)
+<br></td><td align="right"><h3><strong>build</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build a client sound
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The name of the object
+</TD></TR>
+<TR><TD align="left" valign="top"><i>file</i></TD><TD align="left" valign="top">The file to play (should contain the whole path and the file name)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>device</i></TD><TD align="left" valign="top">Optional device used to play the file. Set to 0 to use the default one
+</TD></TR>
+<TR><TD align="left" valign="top"><i>repeat</i></TD><TD align="left" valign="top">The number of times to play the sound,
+  0 to repeat until explicitely stopped
+</TD></TR>
+<TR><TD align="left" valign="top"><i>resetExisting</i></TD><TD align="left" valign="top">True to reset the file of an already created sound
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stereo</i></TD><TD align="left" valign="top">True if the sound file contains 2 channel audio
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, false if the sound already exists
+     </p>
+<A NAME="started"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>started</strong> (const String& name)
+<br></td><td align="right"><h3><strong>started</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if a sound is started
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of the sound to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the given sound is started
+     </p>
+<A NAME="start"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>start</strong> (const String& name, bool force = true)
+<br></td><td align="right"><h3><strong>start</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Start playing a given sound
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of the sound to play
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to start playing the file even if already started
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="stop"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>stop</strong> (const String& name)
+<br></td><td align="right"><h3><strong>stop</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Stop playing a given sound
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of the sound to stop
+     </TD></TR>
+</TABLE></P>
+<A NAME="find"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientSound* &nbsp;<strong>find</strong> (const String& token, bool byName = true)
+<br></td><td align="right"><h3><strong>find</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Find a sound object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>token</i></TD><TD align="left" valign="top">The token used to match the sound
+</TD></TR>
+<TR><TD align="left" valign="top"><i>byName</i></TD><TD align="left" valign="top">True to match the sound's name, false to match its file
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientSound pointer or 0 if not found
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__String.html#find">String</A>.</p>
+<A NAME="s_sounds"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static ObjList  <strong>s_sounds</strong>
+</td><td align="right"><h3><strong>s_sounds</strong></h3></td></tr></table><p></p><A NAME="s_soundsMutex"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static Mutex  <strong>s_soundsMutex</strong>
+</td><td align="right"><h3><strong>s_soundsMutex</strong></h3></td></tr></table><p></p><A NAME="s_calltoPrefix"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_calltoPrefix</strong>
+</td><td align="right"><h3><strong>s_calltoPrefix</strong></h3></td></tr></table><p></p><A NAME="doStart"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>doStart</strong> ()
+<br></td><td align="right"><h3><strong>doStart</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ The prefix to be added to the file when an utility channel is started
+  or a sound is played in a regular client channel
+     </p>
+<A NAME="doStop"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>doStop</strong> ()
+<br></td><td align="right"><h3><strong>doStop</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><A NAME="m_native"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_native</strong>
+</td><td align="right"><h3><strong>m_native</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_file"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_file</strong>
+</td><td align="right"><h3><strong>m_file</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_device"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_device</strong>
+</td><td align="right"><h3><strong>m_device</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_repeat"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int  <strong>m_repeat</strong>
+</td><td align="right"><h3><strong>m_repeat</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_started"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_started</strong>
+</td><td align="right"><h3><strong>m_started</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_stereo"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_stereo</strong>
+</td><td align="right"><h3><strong>m_stereo</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_channel"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_channel</strong>
+</td><td align="right"><h3><strong>m_channel</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

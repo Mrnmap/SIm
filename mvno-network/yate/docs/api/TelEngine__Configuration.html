@@ -1,0 +1,344 @@
+<HTML>
+<HEAD>
+<TITLE>class Configuration</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Configuration</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Configuration file handling. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Configuration</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatengine_h.html">yatengine.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__String.html">TelEngine::String</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Configuration.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">Configuration</A></b> () 
+</LI>
+<LI>explicit &nbsp;<b><A HREF="#ref3">Configuration</A></b> (const char* filename, bool warn = true) 
+</LI>
+<LI>inline Configuration& &nbsp;<b><A HREF="#ref4">operator=</A></b> (const String& value) 
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref5">sections</A></b> ()  const
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref6">count</A></b> ()  const
+</LI>
+<LI>NamedList* &nbsp;<b><A HREF="#ref7">getSection</A></b> (unsigned int index)  const
+</LI>
+<LI>NamedList* &nbsp;<b><A HREF="#ref8">getSection</A></b> (const String& sect)  const
+</LI>
+<LI>NamedString* &nbsp;<b><A HREF="#ref9">getKey</A></b> (const String& sect, const String& key)  const
+</LI>
+<LI>const char* &nbsp;<b><A HREF="#ref10">getValue</A></b> (const String& sect, const String& key, const char* defvalue = 0)  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref11">getIntValue</A></b> (const String& sect, const String& key, int defvalue = 0,
+	int minvalue = INT_MIN, int maxvalue = INT_MAX, bool clamp = true)  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref12">getIntValue</A></b> (const String& sect, const String& key, const TokenDict* tokens, int defvalue = 0)  const
+</LI>
+<LI><A HREF="#int64_t">int64_t</A> &nbsp;<b><A HREF="#ref13">getInt64Value</A></b> (const String& sect, const String& key, <A HREF="#int64_t">int64_t</A> defvalue = 0,
+	<A HREF="#int64_t">int64_t</A> minvalue = LLONG_MIN, <A HREF="#int64_t">int64_t</A> maxvalue = LLONG_MAX, bool clamp = true)  const
+</LI>
+<LI>double &nbsp;<b><A HREF="#ref14">getDoubleValue</A></b> (const String& sect, const String& key, double defvalue = 0.0)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref15">getBoolValue</A></b> (const String& sect, const String& key, bool defvalue = false)  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref16">clearSection</A></b> (const char* sect = 0) 
+</LI>
+<LI>NamedList* &nbsp;<b><A HREF="#ref17">createSection</A></b> (const String& sect) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref18">clearKey</A></b> (const String& sect, const String& key) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref19">addValue</A></b> (const String& sect, const char* key, const char* value = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref20">setValue</A></b> (const String& sect, const char* key, const char* value = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref21">setValue</A></b> (const String& sect, const char* key, int value) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref22">setValue</A></b> (const String& sect, const char* key, bool value) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref23">load</A></b> (bool warn = true) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref24">save</A></b> ()  const
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A class for parsing and quickly accessing INI style configuration files
+</p>
+<A NAME="Configuration"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>Configuration</strong> ()
+<br></td><td align="right"><h3><strong>Configuration</strong></h3></td></tr></table><p></p><p>
+ Create an empty configuration
+     </p>
+<A NAME="Configuration"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>Configuration</strong> (const char* filename, bool warn = true)
+<br></td><td align="right"><h3><strong>Configuration</strong></h3></td></tr></table><p></p><p>
+ Create a configuration from a file
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>filename</i></TD><TD align="left" valign="top">Name of file to initialize from
+</TD></TR>
+<TR><TD align="left" valign="top"><i>warn</i></TD><TD align="left" valign="top">True to warn if the configuration could not be loaded
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator="></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Configuration& &nbsp;<strong>operator=</strong> (const String& value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment from string operator
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__String.html#operator=">String</A>.</p>
+<A NAME="sections"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>sections</strong> ()
+<br></td><td align="right"><h3><strong>sections</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of sections
+</p>
+<p><b>Returns</b>: Count of sections
+     </p>
+<A NAME="count"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>count</strong> ()
+<br></td><td align="right"><h3><strong>count</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of non null sections
+</p>
+<p><b>Returns</b>: Count of sections
+     </p>
+<A NAME="getSection"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedList* &nbsp;<strong>getSection</strong> (unsigned int index)
+<br></td><td align="right"><h3><strong>getSection</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve an entire section
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of the section
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The section's content or NULL if no such section
+     </p>
+<A NAME="getSection"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedList* &nbsp;<strong>getSection</strong> (const String& sect)
+<br></td><td align="right"><h3><strong>getSection</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve an entire section
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sect</i></TD><TD align="left" valign="top">Name of the section
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The section's content or NULL if no such section
+     </p>
+<A NAME="getKey"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedString* &nbsp;<strong>getKey</strong> (const String& sect, const String& key)
+<br></td><td align="right"><h3><strong>getKey</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Locate a key/value pair in the section.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sect</i></TD><TD align="left" valign="top">Name of the section
+</TD></TR>
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Name of the key in section
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the key/value pair or NULL.
+     </p>
+<A NAME="getValue"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char* &nbsp;<strong>getValue</strong> (const String& sect, const String& key, const char* defvalue = 0)
+<br></td><td align="right"><h3><strong>getValue</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the value of a key in a section.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sect</i></TD><TD align="left" valign="top">Name of the section
+</TD></TR>
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Name of the key in section
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The string contained in the key or the default
+     </p>
+<A NAME="getIntValue"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>getIntValue</strong> (const String& sect, const String& key, int defvalue = 0,
+	int minvalue = INT_MIN, int maxvalue = INT_MAX, bool clamp = true)
+<br></td><td align="right"><h3><strong>getIntValue</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the numeric value of a key in a section.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sect</i></TD><TD align="left" valign="top">Name of the section
+</TD></TR>
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Name of the key in section
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default value to return if not found
+</TD></TR>
+<TR><TD align="left" valign="top"><i>minvalue</i></TD><TD align="left" valign="top">Minimum value allowed for the parameter
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxvalue</i></TD><TD align="left" valign="top">Maximum value allowed for the parameter
+</TD></TR>
+<TR><TD align="left" valign="top"><i>clamp</i></TD><TD align="left" valign="top">Control the out of bound values: true to adjust to the nearest
+  bound, false to return the default value
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number contained in the key or the default
+     </p>
+<A NAME="getIntValue"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>getIntValue</strong> (const String& sect, const String& key, const TokenDict* tokens, int defvalue = 0)
+<br></td><td align="right"><h3><strong>getIntValue</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the numeric value of a key in a section trying first a table lookup.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sect</i></TD><TD align="left" valign="top">Name of the section
+</TD></TR>
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Name of the key in section
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tokens</i></TD><TD align="left" valign="top">A pointer to an array of tokens to try to lookup
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number contained in the key or the default
+     </p>
+<A NAME="getInt64Value"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#int64_t">int64_t</A> &nbsp;<strong>getInt64Value</strong> (const String& sect, const String& key, <A HREF="#int64_t">int64_t</A> defvalue = 0,
+	<A HREF="#int64_t">int64_t</A> minvalue = LLONG_MIN, <A HREF="#int64_t">int64_t</A> maxvalue = LLONG_MAX, bool clamp = true)
+<br></td><td align="right"><h3><strong>getInt64Value</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the 64-bit numeric value of a key in a section.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sect</i></TD><TD align="left" valign="top">Name of the section
+</TD></TR>
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Name of the key in section
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default value to return if not found
+</TD></TR>
+<TR><TD align="left" valign="top"><i>minvalue</i></TD><TD align="left" valign="top">Minimum value allowed for the parameter
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxvalue</i></TD><TD align="left" valign="top">Maximum value allowed for the parameter
+</TD></TR>
+<TR><TD align="left" valign="top"><i>clamp</i></TD><TD align="left" valign="top">Control the out of bound values: true to adjust to the nearest
+  bound, false to return the default value
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number contained in the key or the default
+     </p>
+<A NAME="getDoubleValue"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>double &nbsp;<strong>getDoubleValue</strong> (const String& sect, const String& key, double defvalue = 0.0)
+<br></td><td align="right"><h3><strong>getDoubleValue</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the floating point value of a key in a section.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sect</i></TD><TD align="left" valign="top">Name of the section
+</TD></TR>
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Name of the key in section
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The numeric value contained in the key or the default
+     </p>
+<A NAME="getBoolValue"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getBoolValue</strong> (const String& sect, const String& key, bool defvalue = false)
+<br></td><td align="right"><h3><strong>getBoolValue</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the boolean value of a key in a section.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sect</i></TD><TD align="left" valign="top">Name of the section
+</TD></TR>
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Name of the key in section
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The boolean value contained in the key or the default
+     </p>
+<A NAME="clearSection"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clearSection</strong> (const char* sect = 0)
+<br></td><td align="right"><h3><strong>clearSection</strong></h3></td></tr></table><p></p><p>
+ Deletes an entire section
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sect</i></TD><TD align="left" valign="top">Name of section to delete, NULL to delete all
+     </TD></TR>
+</TABLE></P>
+<A NAME="createSection"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedList* &nbsp;<strong>createSection</strong> (const String& sect)
+<br></td><td align="right"><h3><strong>createSection</strong></h3></td></tr></table><p></p><p>
+ Makes sure a section with a given name exists, creates if required
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sect</i></TD><TD align="left" valign="top">Name of section to check or create
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The section's content or NULL if no such section
+     </p>
+<A NAME="clearKey"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clearKey</strong> (const String& sect, const String& key)
+<br></td><td align="right"><h3><strong>clearKey</strong></h3></td></tr></table><p></p><p>
+ Deletes a key/value pair
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sect</i></TD><TD align="left" valign="top">Name of section
+</TD></TR>
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Name of the key to delete
+     </TD></TR>
+</TABLE></P>
+<A NAME="addValue"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>addValue</strong> (const String& sect, const char* key, const char* value = 0)
+<br></td><td align="right"><h3><strong>addValue</strong></h3></td></tr></table><p></p><p>
+ Add the value of a key in a section.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sect</i></TD><TD align="left" valign="top">Name of the section, will be created if missing
+</TD></TR>
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Name of the key to add in the section
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to set in the key
+     </TD></TR>
+</TABLE></P>
+<A NAME="setValue"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setValue</strong> (const String& sect, const char* key, const char* value = 0)
+<br></td><td align="right"><h3><strong>setValue</strong></h3></td></tr></table><p></p><p>
+ Set the value of a key in a section.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sect</i></TD><TD align="left" valign="top">Name of the section, will be created if missing
+</TD></TR>
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Name of the key in section, will be created if missing
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to set in the key
+     </TD></TR>
+</TABLE></P>
+<A NAME="setValue"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setValue</strong> (const String& sect, const char* key, int value)
+<br></td><td align="right"><h3><strong>setValue</strong></h3></td></tr></table><p></p><p>
+ Set the numeric value of a key in a section.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sect</i></TD><TD align="left" valign="top">Name of the section, will be created if missing
+</TD></TR>
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Name of the key in section, will be created if missing
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to set in the key
+     </TD></TR>
+</TABLE></P>
+<A NAME="setValue"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setValue</strong> (const String& sect, const char* key, bool value)
+<br></td><td align="right"><h3><strong>setValue</strong></h3></td></tr></table><p></p><p>
+ Set the boolean value of a key in a section.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sect</i></TD><TD align="left" valign="top">Name of the section, will be created if missing
+</TD></TR>
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Name of the key in section, will be created if missing
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to set in the key
+     </TD></TR>
+</TABLE></P>
+<A NAME="load"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>load</strong> (bool warn = true)
+<br></td><td align="right"><h3><strong>load</strong></h3></td></tr></table><p></p><p>
+ Load the configuration from file
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>warn</i></TD><TD align="left" valign="top">True to also warn if the configuration could not be loaded
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if successfull, false for failure
+     </p>
+<A NAME="save"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>save</strong> ()
+<br></td><td align="right"><h3><strong>save</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Save the configuration to file
+</p>
+<p><b>Returns</b>: True if successfull, false for failure
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,142 @@
+<HTML>
+<HEAD>
+<TITLE>class UChar</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class UChar</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A single Unicode character. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::UChar</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__UChar.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline explicit &nbsp;<b><A HREF="#ref1">UChar</A></b> (<A HREF="#uint32_t">uint32_t</A> code = 0) 
+</LI>
+<LI>inline explicit &nbsp;<b><A HREF="#ref2">UChar</A></b> (<A HREF="#int32_t">int32_t</A> code) 
+</LI>
+<LI>inline explicit &nbsp;<b><A HREF="#ref3">UChar</A></b> (signed char code) 
+</LI>
+<LI>inline explicit &nbsp;<b><A HREF="#ref4">UChar</A></b> (unsigned char code) 
+</LI>
+<LI>inline UChar& &nbsp;<b><A HREF="#ref5">operator=</A></b> (<A HREF="#uint32_t">uint32_t</A> code) 
+</LI>
+<LI>inline UChar& &nbsp;<b><A HREF="#ref6">operator=</A></b> (char code) 
+</LI>
+<LI>inline <A HREF="#uint32_t">uint32_t</A> &nbsp;<b><A HREF="#ref7">code</A></b> ()  const
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref8">c_str</A></b> ()  const
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref9">operator const char*</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref10">decode</A></b> (const char*& str, <A HREF="#uint32_t">uint32_t</A> maxChar = 0x10ffff, bool overlong = false) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A simple class to hold a single Unicode character and convert it to / from UTF-8
+</p>
+<A NAME="UChar"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline explicit &nbsp;<strong>UChar</strong> (<A HREF="#uint32_t">uint32_t</A> code = 0)
+<br></td><td align="right"><h3><strong>UChar</strong></h3></td></tr></table><p></p><p>
+ Constructor from unsigned numeric code
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">Code of the Unicode character
+     </TD></TR>
+</TABLE></P>
+<A NAME="UChar"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline explicit &nbsp;<strong>UChar</strong> (<A HREF="#int32_t">int32_t</A> code)
+<br></td><td align="right"><h3><strong>UChar</strong></h3></td></tr></table><p></p><p>
+ Constructor from signed numeric code
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">Code of the Unicode character
+     </TD></TR>
+</TABLE></P>
+<A NAME="UChar"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline explicit &nbsp;<strong>UChar</strong> (signed char code)
+<br></td><td align="right"><h3><strong>UChar</strong></h3></td></tr></table><p></p><p>
+ Constructor from signed character
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">Character to construct from
+     </TD></TR>
+</TABLE></P>
+<A NAME="UChar"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline explicit &nbsp;<strong>UChar</strong> (unsigned char code)
+<br></td><td align="right"><h3><strong>UChar</strong></h3></td></tr></table><p></p><p>
+ Constructor from unsigned character
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">Character to construct from
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator="></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline UChar& &nbsp;<strong>operator=</strong> (<A HREF="#uint32_t">uint32_t</A> code)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator from a character code
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">Character code to assign
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Reference to this object
+     </p>
+<A NAME="operator="></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline UChar& &nbsp;<strong>operator=</strong> (char code)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator from a character
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">Character to assign
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Reference to this object
+     </p>
+<A NAME="code"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#uint32_t">uint32_t</A> &nbsp;<strong>code</strong> ()
+<br></td><td align="right"><h3><strong>code</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the Unicode value of the character
+</p>
+<p><b>Returns</b>: Code of the character as defined by Unicode
+     </p>
+<A NAME="c_str"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>c_str</strong> ()
+<br></td><td align="right"><h3><strong>c_str</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the value of the character as UTF-8 string.
+</p>
+<p><b>Returns</b>: The character as UTF-8 C string
+     </p>
+<A NAME="operator%20const%20char*"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>operator const char*</strong> ()
+<br></td><td align="right"><h3><strong>operator const char*</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Conversion to "const char *" operator.
+</p>
+<p><b>Returns</b>: Pointer to the internally stored UTF-8 string
+     </p>
+<A NAME="decode"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>decode</strong> (const char*& str, <A HREF="#uint32_t">uint32_t</A> maxChar = 0x10ffff, bool overlong = false)
+<br></td><td align="right"><h3><strong>decode</strong></h3></td></tr></table><p></p><p>
+ Decode the first Unicode character from an UTF-8 C string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to extract from, will be advanced past the character
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxChar</i></TD><TD align="left" valign="top">Maximum accepted Unicode character code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>overlong</i></TD><TD align="left" valign="top">Accept overlong UTF-8 sequences (dangerous!)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if an Unicode character was decoded from string
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

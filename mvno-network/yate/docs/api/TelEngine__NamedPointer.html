@@ -1,0 +1,129 @@
+<HTML>
+<HEAD>
+<TITLE>class NamedPointer</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class NamedPointer</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A named pointer class.
+  <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::NamedPointer</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__NamedString.html">TelEngine::NamedString</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__NamedPointer.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>explicit &nbsp;<b><A HREF="#ref1">NamedPointer</A></b> (const char* name, GenObject* data = 0, const char* value = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref2">~NamedPointer</A></b> () 
+</LI>
+<LI>inline GenObject* &nbsp;<b><A HREF="#ref3">userData</A></b> ()  const
+</LI>
+<LI>GenObject* &nbsp;<b><A HREF="#ref4">takeData</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref5">userData</A></b> (GenObject* data) 
+</LI>
+<LI>inline void* &nbsp;<b><A HREF="#ref6">userObject</A></b> (const String& name)  const
+</LI>
+<LI>inline NamedPointer& &nbsp;<b><A HREF="#ref7">operator=</A></b> (const char* value) 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref8">getObject</A></b> (const String& name)  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref9">changed</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A named string holding a pointer to arbitrary data.
+ The pointer is owned by the object: it will be released when the object is
+  destroyed or the string value changed
+</p>
+<A NAME="NamedPointer"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>NamedPointer</strong> (const char* name, GenObject* data = 0, const char* value = 0)
+<br></td><td align="right"><h3><strong>NamedPointer</strong></h3></td></tr></table><p></p><p>
+ Creates a new named pointer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of this pointer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Initial pointer value. The pointer will be owned by this object
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Initial string value
+     </TD></TR>
+</TABLE></P>
+<A NAME="~NamedPointer"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~NamedPointer</strong> ()
+<br></td><td align="right"><h3><strong>~NamedPointer</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor. Release the pointer
+     </p>
+<A NAME="userData"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline GenObject* &nbsp;<strong>userData</strong> ()
+<br></td><td align="right"><h3><strong>userData</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the pointer carried by this object
+</p>
+<p><b>Returns</b>: Pointer to arbitrary user GenObject
+     </p>
+<A NAME="takeData"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>GenObject* &nbsp;<strong>takeData</strong> ()
+<br></td><td align="right"><h3><strong>takeData</strong></h3></td></tr></table><p></p><p>
+ Retrieve the pointer carried by this object and release ownership.
+ The caller will own the returned pointer
+</p>
+<p><b>Returns</b>: Pointer to arbitrary user GenObject
+     </p>
+<A NAME="userData"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>userData</strong> (GenObject* data)
+<br></td><td align="right"><h3><strong>userData</strong></h3></td></tr></table><p></p><p>
+ Set obscure data carried by this object.
+ Note that a RefObject's reference counter should be increased before adding it to this named pointer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to arbitrary user data
+     </TD></TR>
+</TABLE></P>
+<A NAME="userObject"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void* &nbsp;<strong>userObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>userObject</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get a pointer to a derived class of user data given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if user object id NULL or doesn't implement it
+     </p>
+<A NAME="operator="></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline NamedPointer& &nbsp;<strong>operator=</strong> (const char* value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ String value assignment operator
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__NamedString.html#operator=">NamedString</A>.</p>
+<A NAME="getObject"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__NamedString.html#getObject">NamedString</A>.</p>
+<A NAME="changed"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>changed</strong> ()
+<br></td><td align="right"><h3><strong>changed</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Called whenever the string value changed. Release the pointer
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__String.html#changed">String</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

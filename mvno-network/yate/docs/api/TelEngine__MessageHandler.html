@@ -1,0 +1,162 @@
+<HTML>
+<HEAD>
+<TITLE>class MessageHandler</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class MessageHandler</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A message handler. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::MessageHandler</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatengine_h.html">yatengine.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__String.html">TelEngine::String</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__MessageRelay.html">MessageRelay</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__MessageHandler.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>explicit &nbsp;<b><A HREF="#ref4">MessageHandler</A></b> (const char* name, unsigned priority = 100,
+	const char* trackName = 0, bool addPriority = true) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref5">~MessageHandler</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref6">destruct</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref7">received</A></i></b> (Message& msg) 
+</LI>
+<LI>inline unsigned &nbsp;<b><A HREF="#ref8">priority</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref9">trackName</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref10">trackName</A></b> (const char* name) 
+</LI>
+<LI>inline NamedCounter* &nbsp;<b><A HREF="#ref11">objectsCounter</A></b> ()  const
+</LI>
+<LI>inline const NamedString* &nbsp;<b><A HREF="#ref12">filter</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref13">setFilter</A></b> (NamedString* filter) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref14">setFilter</A></b> (const char* name, const char* value) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref15">clearFilter</A></b> () 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>void &nbsp;<b><A HREF="#ref16">cleanup</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ The purpose of this class is to hold a message received method that is
+  called for matching messages. It holds as well the matching criteria
+  and priority among other handlers.
+</p>
+<A NAME="MessageHandler"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>MessageHandler</strong> (const char* name, unsigned priority = 100,
+	const char* trackName = 0, bool addPriority = true)
+<br></td><td align="right"><h3><strong>MessageHandler</strong></h3></td></tr></table><p></p><p>
+ Creates a new message handler.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the handled message - may be NULL
+</TD></TR>
+<TR><TD align="left" valign="top"><i>priority</i></TD><TD align="left" valign="top">Priority of the handler, 0 = top
+</TD></TR>
+<TR><TD align="left" valign="top"><i>trackName</i></TD><TD align="left" valign="top">Name to be used in handler tracking
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addPriority</i></TD><TD align="left" valign="top">True to append :priority to trackName
+     </TD></TR>
+</TABLE></P>
+<A NAME="~MessageHandler"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~MessageHandler</strong> ()
+<br></td><td align="right"><h3><strong>~MessageHandler</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Handler destructor.
+     </p>
+<A NAME="destruct"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destruct</strong> ()
+<br></td><td align="right"><h3><strong>destruct</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destroys the object, performs cleanup first
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#destruct">GenObject</A>.</p>
+<A NAME="received"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>received</strong></i> (Message& msg)
+<br></td><td align="right"><h3><i><strong>received</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ This method is called whenever the registered name matches the message.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The received message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing, false to try other handlers
+     </p>
+<A NAME="priority"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned &nbsp;<strong>priority</strong> ()
+<br></td><td align="right"><h3><strong>priority</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Find out the priority of the handler
+</p>
+<p><b>Returns</b>: Stored priority of the handler, 0 = top
+     </p>
+<A NAME="trackName"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>trackName</strong> ()
+<br></td><td align="right"><h3><strong>trackName</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the tracking name of this handler
+</p>
+<p><b>Returns</b>: Name that is to be used in tracking operation
+     </p>
+<A NAME="trackName"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>trackName</strong> (const char* name)
+<br></td><td align="right"><h3><strong>trackName</strong></h3></td></tr></table><p></p><p>
+ Set a new tracking name for this handler.
+ Works only if the handler was not yet inserted into a dispatcher
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name that is to be used in tracking operation
+     </TD></TR>
+</TABLE></P>
+<A NAME="objectsCounter"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline NamedCounter* &nbsp;<strong>objectsCounter</strong> ()
+<br></td><td align="right"><h3><strong>objectsCounter</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the objects counter associated to this handler
+</p>
+<p><b>Returns</b>: Pointer to handler's objects counter or NULL
+     </p>
+<A NAME="filter"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const NamedString* &nbsp;<strong>filter</strong> ()
+<br></td><td align="right"><h3><strong>filter</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the filter (if installed) associated to this handler
+     </p>
+<A NAME="setFilter"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setFilter</strong> (NamedString* filter)
+<br></td><td align="right"><h3><strong>setFilter</strong></h3></td></tr></table><p></p><p>
+ Set a filter for this handler
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>filter</i></TD><TD align="left" valign="top">Pointer to the filter to install, will be owned and
+  destroyed by the handler
+     </TD></TR>
+</TABLE></P>
+<A NAME="setFilter"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setFilter</strong> (const char* name, const char* value)
+<br></td><td align="right"><h3><strong>setFilter</strong></h3></td></tr></table><p></p><p>
+ Set a filter for this handler
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the parameter to filter
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value of the parameter to filter
+     </TD></TR>
+</TABLE></P>
+<A NAME="clearFilter"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clearFilter</strong> ()
+<br></td><td align="right"><h3><strong>clearFilter</strong></h3></td></tr></table><p></p><p>
+ Remove and destroy any filter associated to this handler
+     </p>
+<A NAME="cleanup"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>cleanup</strong> ()
+<br></td><td align="right"><h3><strong>cleanup</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Remove the handler from its dispatcher, remove any installed filter.
+ This method is called internally from destruct and the destructor
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

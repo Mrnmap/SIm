@@ -1,0 +1,144 @@
+<HTML>
+<HEAD>
+<TITLE>class Lockable</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Lockable</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Abstract interface for lockable objects. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Lockable</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__ClientAccount.html">ClientAccount</A>, <A HREF="TelEngine__ClientAccountList.html">ClientAccountList</A>, <i><A HREF="TelEngine__ClientDriver.html">ClientDriver</A></i>, <A HREF="TelEngine__DataSource.html">DataSource</A>, <i><A HREF="TelEngine__Driver.html">Driver</A></i>, <A HREF="TelEngine__MessageDispatcher.html">MessageDispatcher</A>, <A HREF="TelEngine__MessageQueue.html">MessageQueue</A>, <A HREF="TelEngine__Module.html">Module</A>, <A HREF="TelEngine__Mutex.html">Mutex</A>, <A HREF="TelEngine__Semaphore.html">Semaphore</A>, <A HREF="TelEngine__SharedVars.html">SharedVars</A>, <i><A HREF="TelEngine__ThreadedSource.html">ThreadedSource</A></i></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Lockable.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref1">~Lockable</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref2">lock</A></i></b> (long maxwait = -1) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref3">unlock</A></i></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref4">locked</A></i></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref5">check</A></b> (long maxwait = -1) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">unlockAll</A></b> () 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  void &nbsp;<b><A HREF="#ref7">wait</A></b> (unsigned long maxwait) 
+</LI>
+<LI>static  unsigned long &nbsp;<b><A HREF="#ref8">wait</A></b> () 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref9">startUsingNow</A></b> () 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref10">enableSafety</A></b> (bool safe = true) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref11">safety</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ An abstract base class for implementing lockable objects
+</p>
+<A NAME="~Lockable"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~Lockable</strong> ()
+<br></td><td align="right"><h3><strong>~Lockable</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="lock"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>lock</strong></i> (long maxwait = -1)
+<br></td><td align="right"><h3><i><strong>lock</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Attempt to lock the object and eventually wait for it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>maxwait</i></TD><TD align="left" valign="top">Time in microseconds to wait, -1 wait forever
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if successfully locked, false on failure
+     </p>
+<A NAME="unlock"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>unlock</strong></i> ()
+<br></td><td align="right"><h3><i><strong>unlock</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Unlock the object, does never wait
+</p>
+<p><b>Returns</b>: True if successfully unlocked the object
+     </p>
+<A NAME="locked"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>locked</strong></i> ()
+<br></td><td align="right"><h3><i><strong>locked</strong></i></h3></td></tr></table><p> <small>[const pure virtual]</small></p><p>
+ Check if the object is currently locked - as it's asynchronous it
+  guarantees nothing if other thread changes the status
+</p>
+<p><b>Returns</b>: True if the object was locked when the function was called
+     </p>
+<A NAME="check"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>check</strong> (long maxwait = -1)
+<br></td><td align="right"><h3><strong>check</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Check if the object is unlocked (try to lock and unlock it)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>maxwait</i></TD><TD align="left" valign="top">Time in microseconds to wait, -1 to wait forever
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if successfully locked and unlocked, false on failure
+     </p>
+<A NAME="unlockAll"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>unlockAll</strong> ()
+<br></td><td align="right"><h3><strong>unlockAll</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Fully unlock the object, even if it was previously multiple locked.
+ There is no guarantee about the object status after the function returns.
+ This function should be used only if you understand it very well
+</p>
+<p><b>Returns</b>: True if the object was fully unlocked
+     </p>
+<A NAME="wait"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>wait</strong> (unsigned long maxwait)
+<br></td><td align="right"><h3><strong>wait</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set a maximum wait time for debugging purposes
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>maxwait</i></TD><TD align="left" valign="top">Maximum time in microseconds to wait for any lockable
+  object when no time limit was requested, zero to disable limit
+     </TD></TR>
+</TABLE></P>
+<A NAME="wait"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned long &nbsp;<strong>wait</strong> ()
+<br></td><td align="right"><h3><strong>wait</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the maximum wait time used for debugging purposes
+</p>
+<p><b>Returns</b>: Maximum time in microseconds, zero if no maximum is set
+     </p>
+<A NAME="startUsingNow"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>startUsingNow</strong> ()
+<br></td><td align="right"><h3><strong>startUsingNow</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Start actually using lockables, for platforms where these objects are not
+  usable in global object constructors.
+ This method must be called at least once somewhere from main() but
+  before creating any threads and without holding any object locked.
+     </p>
+<A NAME="enableSafety"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>enableSafety</strong> (bool safe = true)
+<br></td><td align="right"><h3><strong>enableSafety</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Enable some safety and sanity check features.
+ This provides a safer code and easier locking debugging at the price of performance penalty.
+ This method must be called early and not changed after initialization
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>safe</i></TD><TD align="left" valign="top">True to enable locking safety measures, false to disable
+     </TD></TR>
+</TABLE></P>
+<A NAME="safety"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>safety</strong> ()
+<br></td><td align="right"><h3><strong>safety</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Retrieve safety and sanity check features flag value
+</p>
+<p><b>Returns</b>: Locking safety measures flag value
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

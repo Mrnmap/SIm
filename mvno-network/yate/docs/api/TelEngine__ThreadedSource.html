@@ -1,0 +1,117 @@
+<HTML>
+<HEAD>
+<TITLE>class ThreadedSource</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ThreadedSource</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Data source with own thread. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ThreadedSource</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatephone_h.html">yatephone.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__DataSource.html">TelEngine::DataSource</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ThreadedSource.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref2">destroyed</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref3">start</A></b> (const char* name = "ThreadedSource", Thread::Priority prio = Thread::Normal) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref4">stop</A></b> () 
+</LI>
+<LI>Thread* &nbsp;<b><A HREF="#ref5">thread</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref6">running</A></b> ()  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>inline explicit &nbsp;<b><A HREF="#ref7">ThreadedSource</A></b> (const char* format = "slin") 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref8">run</A></i></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref9">cleanup</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref10">looping</A></b> (bool runConsumers = false)  const
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A data source with a thread of its own
+</p>
+<A NAME="destroyed"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destroyed</strong> ()
+<br></td><td align="right"><h3><strong>destroyed</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ The destruction notification, checks that the thread is gone
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__DataSource.html#destroyed">DataSource</A>.</p>
+<A NAME="start"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>start</strong> (const char* name = "ThreadedSource", Thread::Priority prio = Thread::Normal)
+<br></td><td align="right"><h3><strong>start</strong></h3></td></tr></table><p></p><p>
+ Starts the worker thread
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Static name of this thread
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">Thread's priority
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if started, false if an error occured
+     </p>
+<A NAME="stop"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>stop</strong> ()
+<br></td><td align="right"><h3><strong>stop</strong></h3></td></tr></table><p></p><p>
+ Stops and destroys the worker thread if running
+     </p>
+<A NAME="thread"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Thread* &nbsp;<strong>thread</strong> ()
+<br></td><td align="right"><h3><strong>thread</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Return a pointer to the worker thread
+</p>
+<p><b>Returns</b>: Pointer to running worker thread or NULL
+     </p>
+<A NAME="running"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>running</strong> ()
+<br></td><td align="right"><h3><strong>running</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the data thread is running
+</p>
+<p><b>Returns</b>: True if the data thread was started and is running
+     </p>
+<A NAME="ThreadedSource"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline explicit &nbsp;<strong>ThreadedSource</strong> (const char* format = "slin")
+<br></td><td align="right"><h3><strong>ThreadedSource</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Threaded Source constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">Name of the data format, default "slin" (Signed Linear)
+     </TD></TR>
+</TABLE></P>
+<A NAME="run"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>run</strong></i> ()
+<br></td><td align="right"><h3><i><strong>run</strong></i></h3></td></tr></table><p> <small>[protected pure virtual]</small></p><p>
+ The worker method. You have to reimplement it as you need
+     </p>
+<A NAME="cleanup"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>cleanup</strong> ()
+<br></td><td align="right"><h3><strong>cleanup</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ The cleanup after thread method, deletes the source if already
+  dereferenced and set for asynchronous deletion
+     </p>
+<A NAME="looping"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>looping</strong> (bool runConsumers = false)
+<br></td><td align="right"><h3><strong>looping</strong></h3></td></tr></table><p> <small>[protected const]</small></p><p>
+ Check if the calling thread should keep looping the worker method
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>runConsumers</i></TD><TD align="left" valign="top">True to keep running as long consumers are attached
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the calling thread should remain in the run() method
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

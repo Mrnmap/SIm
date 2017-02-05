@@ -1,0 +1,290 @@
+<HTML>
+<HEAD>
+<TITLE>class MimeBody</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class MimeBody</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Abstract MIME data holder. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::MimeBody</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatemime_h.html">yatemime.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__MimeBinaryBody.html">MimeBinaryBody</A>, <A HREF="TelEngine__MimeLinesBody.html">MimeLinesBody</A>, <A HREF="TelEngine__MimeMultipartBody.html">MimeMultipartBody</A>, <A HREF="TelEngine__MimeSdpBody.html">MimeSdpBody</A>, <A HREF="TelEngine__MimeStringBody.html">MimeStringBody</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__MimeBody.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref2">~MimeBody</A></b> () 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref3">getObject</A></b> (const String& name)  const
+</LI>
+<LI>inline const MimeHeaderLine& &nbsp;<b><A HREF="#ref4">getType</A></b> ()  const
+</LI>
+<LI>MimeBody* &nbsp;<b><A HREF="#ref5">getFirst</A></b> (const String& type)  const
+</LI>
+<LI>inline const ObjList& &nbsp;<b><A HREF="#ref6">headers</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref7">appendHdr</A></b> (MimeHeaderLine* hdr) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref8">removeHdr</A></b> (MimeHeaderLine* hdr, bool delobj = true) 
+</LI>
+<LI>MimeHeaderLine* &nbsp;<b><A HREF="#ref9">findHdr</A></b> (const String& name, const MimeHeaderLine* start = 0)  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref10">buildHeaders</A></b> (String& buf) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref11">setParam</A></b> (const char* name, const char* value = 0, const char* header = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref12">delParam</A></b> (const char* name, const char* header = 0) 
+</LI>
+<LI>const NamedString* &nbsp;<b><A HREF="#ref13">getParam</A></b> (const char* name, const char* header = 0)  const
+</LI>
+<LI>const DataBlock& &nbsp;<b><A HREF="#ref14">getBody</A></b> ()  const
+</LI>
+<LI>inline const DataBlock& &nbsp;<b><A HREF="#ref15">body</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref16">isSDP</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref17">isMultipart</A></b> ()  const
+</LI>
+<LI>virtual  MimeBody* &nbsp;<b><i><A HREF="#ref18">clone</A></i></b> ()  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  MimeBody* &nbsp;<b><A HREF="#ref19">build</A></b> (const char* buf, int len, const MimeHeaderLine& type) 
+</LI>
+<LI>static  String* &nbsp;<b><A HREF="#ref20">getUnfoldedLine</A></b> (const char*& buf, int& len) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref21">MimeBody</A></b> (const String& type) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref22">MimeBody</A></b> (const MimeHeaderLine& type) 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref23">buildBody</A></i></b> ()  const
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>mutable DataBlock <b><A HREF="#ref24">m_body</A></b></LI>
+<LI>ObjList <b><A HREF="#ref25">m_headers</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Abstract base class for holding Multipurpose Internet Mail Extensions data.
+ Keeps a Content-Type header line with body type and parameters and
+  any additional header lines the body may have.
+ The body type contains lower case characters.
+</p>
+<A NAME="~MimeBody"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~MimeBody</strong> ()
+<br></td><td align="right"><h3><strong>~MimeBody</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="getObject"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ RTTI method, get a pointer to a derived class given the class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="getType"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const MimeHeaderLine& &nbsp;<strong>getType</strong> ()
+<br></td><td align="right"><h3><strong>getType</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the MIME type of this body
+</p>
+<p><b>Returns</b>: Name of the MIME type/subtype
+     </p>
+<A NAME="getFirst"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>MimeBody* &nbsp;<strong>getFirst</strong> (const String& type)
+<br></td><td align="right"><h3><strong>getFirst</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the first body that matches a requested type, descends into multiparts
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Name of the MIME type to search for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to requested body or NULL if not found
+     </p>
+<A NAME="headers"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const ObjList& &nbsp;<strong>headers</strong> ()
+<br></td><td align="right"><h3><strong>headers</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the additional headers of this MIME body (other then Content-Type)
+</p>
+<p><b>Returns</b>: The list of header lines of this MIME body
+     </p>
+<A NAME="appendHdr"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>appendHdr</strong> (MimeHeaderLine* hdr)
+<br></td><td align="right"><h3><strong>appendHdr</strong></h3></td></tr></table><p></p><p>
+ Append an additional header line to this body
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>hdr</i></TD><TD align="left" valign="top">The header line to append
+     </TD></TR>
+</TABLE></P>
+<A NAME="removeHdr"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>removeHdr</strong> (MimeHeaderLine* hdr, bool delobj = true)
+<br></td><td align="right"><h3><strong>removeHdr</strong></h3></td></tr></table><p></p><p>
+ Remove an additional header line from this body
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>hdr</i></TD><TD align="left" valign="top">The header line to remove
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delobj</i></TD><TD align="left" valign="top">True to delete the header, false to remove from list without deleting it
+     </TD></TR>
+</TABLE></P>
+<A NAME="findHdr"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>MimeHeaderLine* &nbsp;<strong>findHdr</strong> (const String& name, const MimeHeaderLine* start = 0)
+<br></td><td align="right"><h3><strong>findHdr</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Find an additional header line by its name. The names are compared case insensitive
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of the header to find
+</TD></TR>
+<TR><TD align="left" valign="top"><i>start</i></TD><TD align="left" valign="top">The starting point in the list. 0 to start from the beginning
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to MimeHeaderLine or 0 if not found
+     </p>
+<A NAME="buildHeaders"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>buildHeaders</strong> (String& buf)
+<br></td><td align="right"><h3><strong>buildHeaders</strong></h3></td></tr></table><p></p><p>
+ Build a string with this body's header lines
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Destination string
+     </TD></TR>
+</TABLE></P>
+<A NAME="setParam"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setParam</strong> (const char* name, const char* value = 0, const char* header = 0)
+<br></td><td align="right"><h3><strong>setParam</strong></h3></td></tr></table><p></p><p>
+ Replace the value of an existing parameter or add a new one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Parameter's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Parameter's value
+</TD></TR>
+<TR><TD align="left" valign="top"><i>header</i></TD><TD align="left" valign="top">Header whose parameter will be changed.
+  Set to 0 to use the body's content type header
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the header doesn't exist
+     </p>
+<A NAME="delParam"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>delParam</strong> (const char* name, const char* header = 0)
+<br></td><td align="right"><h3><strong>delParam</strong></h3></td></tr></table><p></p><p>
+ Remove a header parameter
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Parameter's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>header</i></TD><TD align="left" valign="top">Header whose parameter will be removed.
+  Set to 0 to use the body's content type header
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the header doesn't exist
+     </p>
+<A NAME="getParam"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const NamedString* &nbsp;<strong>getParam</strong> (const char* name, const char* header = 0)
+<br></td><td align="right"><h3><strong>getParam</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get a header parameter
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Parameter's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>header</i></TD><TD align="left" valign="top">Header whose parameter will be retrieved.
+  Set to 0 to use the body's content type header
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the desired parameter or 0 if not found
+     </p>
+<A NAME="getBody"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const DataBlock& &nbsp;<strong>getBody</strong> ()
+<br></td><td align="right"><h3><strong>getBody</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve the binary encoding of this MIME body. Build the body if empty.
+ The body doesn't contain the Content-Type header or the additional headers
+</p>
+<p><b>Returns</b>: Block of binary data
+     </p>
+<A NAME="body"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const DataBlock& &nbsp;<strong>body</strong> ()
+<br></td><td align="right"><h3><strong>body</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the binary data of this MIME body without building it.
+</p>
+<p><b>Returns</b>: Block of binary data
+     </p>
+<A NAME="isSDP"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>isSDP</strong> ()
+<br></td><td align="right"><h3><strong>isSDP</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if this body is a Session Description Protocol
+</p>
+<p><b>Returns</b>: True if this body holds a SDP
+     </p>
+<A NAME="isMultipart"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>isMultipart</strong> ()
+<br></td><td align="right"><h3><strong>isMultipart</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if this body is multipart (can hold other MIME bodies)
+</p>
+<p><b>Returns</b>: True if this body is multipart
+     </p>
+<A NAME="clone"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> MimeBody* &nbsp;<i><strong>clone</strong></i> ()
+<br></td><td align="right"><h3><i><strong>clone</strong></i></h3></td></tr></table><p> <small>[const pure virtual]</small></p><p>
+ Duplicate this MIME body
+</p>
+<p><b>Returns</b>: Copy of this MIME body
+     </p>
+<A NAME="build"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> MimeBody* &nbsp;<strong>build</strong> (const char* buf, int len, const MimeHeaderLine& type)
+<br></td><td align="right"><h3><strong>build</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Method to build a MIME body from a type and data buffer.
+ Unknown body types are built into a binary body. Exactly 1 leading CRLF
+ is removed from the beginning of the buffer if found before building it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Pointer to buffer of data just after the body headers
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data in buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The header line declaring the body's content.
+  Usually this is a Content-Type header line
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Newly allocated MIME body or NULL if the buffer is empty
+     </p>
+<A NAME="getUnfoldedLine"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> String* &nbsp;<strong>getUnfoldedLine</strong> (const char*& buf, int& len)
+<br></td><td align="right"><h3><strong>getUnfoldedLine</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Utility method, returns an unfolded line and advances the pointer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Reference to pointer to start of buffer data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Reference to variable holding buffer length
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Newly allocated String holding the line of text
+     </p>
+<A NAME="MimeBody"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MimeBody</strong> (const String& type)
+<br></td><td align="right"><h3><strong>MimeBody</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor to be used only by derived classes.
+ Converts the MIME type string to lower case
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The value of the Content-Type header line
+     </TD></TR>
+</TABLE></P>
+<A NAME="MimeBody"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MimeBody</strong> (const MimeHeaderLine& type)
+<br></td><td align="right"><h3><strong>MimeBody</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor to be used only by derived classes.
+ Builds this body from a header line.
+ Converts the MIME type string to lower case
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The content type header line
+     </TD></TR>
+</TABLE></P>
+<A NAME="buildBody"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>buildBody</strong></i> ()
+<br></td><td align="right"><h3><i><strong>buildBody</strong></i></h3></td></tr></table><p> <small>[protected const pure virtual]</small></p><p>
+ Method that is called internally to build the binary encoded body
+     </p>
+<A NAME="m_body"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>mutable DataBlock  <strong>m_body</strong>
+</td><td align="right"><h3><strong>m_body</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_headers"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>m_headers</strong>
+</td><td align="right"><h3><strong>m_headers</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

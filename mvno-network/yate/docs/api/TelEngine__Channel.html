@@ -1,0 +1,782 @@
+<HTML>
+<HEAD>
+<TITLE>class Channel</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Channel</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An abstract communication channel. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Channel</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatephone_h.html">yatephone.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__CallEndpoint.html">TelEngine::CallEndpoint</A> <small>[public ]</small>, <A HREF="TelEngine__DebugEnabler.html">TelEngine::DebugEnabler</A> <small>[public ]</small>, <i><A HREF="TelEngine__MessageNotifier.html">TelEngine::MessageNotifier</A></i> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__ClientChannel.html">ClientChannel</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Channel.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref20">~Channel</A></b> () 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref21">getObject</A></b> (const String& name)  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref23">complete</A></b> (Message& msg, bool minimal = false)  const
+</LI>
+<LI>Message* &nbsp;<b><A HREF="#ref24">message</A></b> (const char* name, bool minimal = false, bool data = false) 
+</LI>
+<LI>Message* &nbsp;<b><A HREF="#ref25">message</A></b> (const char* name, const NamedList* original, const char* params = 0, bool minimal = false, bool data = false) 
+</LI>
+<LI>inline Message* &nbsp;<b><A HREF="#ref26">message</A></b> (const char* name, const NamedList& original, const char* params = 0, bool minimal = false, bool data = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref27">msgProgress</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref28">msgRinging</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref29">msgAnswered</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref30">msgTone</A></b> (Message& msg, const char* tone) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref31">msgText</A></b> (Message& msg, const char* text) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref32">msgDrop</A></b> (Message& msg, const char* reason) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref33">msgTransfer</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref34">msgUpdate</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref35">msgMasquerade</A></b> (Message& msg) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref36">msgStatus</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref37">msgControl</A></b> (Message& msg) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref38">checkTimers</A></b> (Message& msg, const Time& tmr) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref39">callPrerouted</A></b> (Message& msg, bool handled) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref40">callRouted</A></b> (Message& msg) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref41">callAccept</A></b> (Message& msg) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref42">callRejected</A></b> (const char* error, const char* reason = 0, const Message* msg = 0) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref43">callConnect</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref44">setDebug</A></b> (Message& msg) 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref45">status</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref46">address</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref47">isOutgoing</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref48">isIncoming</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref49">isAnswered</A></b> ()  const
+</LI>
+<LI>const char* &nbsp;<b><A HREF="#ref50">direction</A></b> ()  const
+</LI>
+<LI>inline Driver* &nbsp;<b><A HREF="#ref51">driver</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<b><A HREF="#ref52">timeout</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref53">timeout</A></b> (<A HREF="#u_int64_t">u_int64_t</A> tout) 
+</LI>
+<LI>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<b><A HREF="#ref54">maxcall</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref55">maxcall</A></b> (<A HREF="#u_int64_t">u_int64_t</A> tout) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref56">setMaxcall</A></b> (const Message& msg, int defTout = -1) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref57">setMaxcall</A></b> (const Message* msg, int defTout = -1) 
+</LI>
+<LI>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<b><A HREF="#ref58">maxPDD</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref59">maxPDD</A></b> (<A HREF="#u_int64_t">u_int64_t</A> tout) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref60">setMaxPDD</A></b> (const Message& msg) 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref61">targetid</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref62">billid</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref63">initChan</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref64">startRouter</A></b> (Message* msg) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref66">filterDebug</A></b> (const String& item) 
+</LI>
+<LI>inline const NamedList& &nbsp;<b><A HREF="#ref67">parameters</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref68">dispatched</A></b> (const Message& msg, bool handled) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  Mutex& &nbsp;<b><A HREF="#ref22">paramMutex</A></b> () 
+</LI>
+<LI>static  unsigned int &nbsp;<b><A HREF="#ref65">allocId</A></b> () 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref69">Channel</A></b> (Driver* driver, const char* id = 0, bool outgoing = false) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref70">Channel</A></b> (Driver& driver, const char* id = 0, bool outgoing = false) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref71">cleanup</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref72">dropChan</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref73">zeroRefs</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref74">connected</A></b> (const char* reason) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref75">disconnected</A></b> (bool final, const char* reason) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref76">setDisconnect</A></b> (const NamedList* params) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref77">endDisconnect</A></b> (const Message& msg, bool handled) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref78">setId</A></b> (const char* newId) 
+</LI>
+<LI>virtual  Message* &nbsp;<b><A HREF="#ref79">getDisconnect</A></b> (const char* reason) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref80">status</A></b> (const char* newstat) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref81">statusParams</A></b> (String& str) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref82">setOutgoing</A></b> (bool outgoing = true) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref83">dtmfSequence</A></b> (Message& msg) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref84">dtmfEnqueue</A></b> (Message* msg) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref85">dtmfInband</A></b> (const char* tone) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref86">toneDetect</A></b> (const char* sniffer = 0) 
+</LI>
+<LI>inline NamedList& &nbsp;<b><A HREF="#ref87">parameters</A></b> () 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>String <b><A HREF="#ref15">m_status</A></b></LI>
+<LI>String <b><A HREF="#ref16">m_address</A></b></LI>
+<LI>String <b><A HREF="#ref17">m_targetid</A></b></LI>
+<LI>String <b><A HREF="#ref18">m_billid</A></b></LI>
+<LI>bool <b><A HREF="#ref19">m_answered</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A class that holds common channel related features (a.k.a. call leg)
+</p>
+<A NAME="m_status"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_status</strong>
+</td><td align="right"><h3><strong>m_status</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_address"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_address</strong>
+</td><td align="right"><h3><strong>m_address</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_targetid"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_targetid</strong>
+</td><td align="right"><h3><strong>m_targetid</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_billid"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_billid</strong>
+</td><td align="right"><h3><strong>m_billid</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_answered"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_answered</strong>
+</td><td align="right"><h3><strong>m_answered</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="~Channel"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~Channel</strong> ()
+<br></td><td align="right"><h3><strong>~Channel</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="getObject"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__CallEndpoint.html#getObject">CallEndpoint</A>.</p>
+<A NAME="paramMutex"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Mutex& &nbsp;<strong>paramMutex</strong> ()
+<br></td><td align="right"><h3><strong>paramMutex</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the big mutex that serializes access to all disconnect parameter lists
+</p>
+<p><b>Returns</b>: A reference to the mutex
+     </p>
+<A NAME="complete"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>complete</strong> (Message& msg, bool minimal = false)
+<br></td><td align="right"><h3><strong>complete</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Put channel variables into a message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Message to fill in
+</TD></TR>
+<TR><TD align="left" valign="top"><i>minimal</i></TD><TD align="left" valign="top">True to fill in only a minimum of parameters
+     </TD></TR>
+</TABLE></P>
+<A NAME="message"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Message* &nbsp;<strong>message</strong> (const char* name, bool minimal = false, bool data = false)
+<br></td><td align="right"><h3><strong>message</strong></h3></td></tr></table><p></p><p>
+ Create a filled notification message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the message to create
+</TD></TR>
+<TR><TD align="left" valign="top"><i>minimal</i></TD><TD align="left" valign="top">Set to true to fill in only a minimum of parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Set the channel as message data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A new allocated and parameter filled message
+     </p>
+<A NAME="message"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Message* &nbsp;<strong>message</strong> (const char* name, const NamedList* original, const char* params = 0, bool minimal = false, bool data = false)
+<br></td><td align="right"><h3><strong>message</strong></h3></td></tr></table><p></p><p>
+ Create a filled notification message, copy some parameters from another message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the message to create
+</TD></TR>
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Parameters to copy from, can be NULL
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Comma separated list of parameters to copy,
+  if NULL will be taken from the "copyparams" parameter of original
+</TD></TR>
+<TR><TD align="left" valign="top"><i>minimal</i></TD><TD align="left" valign="top">Set to true to fill in only a minimum of parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Set the channel as message data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A new allocated and parameter filled message
+     </p>
+<A NAME="message"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Message* &nbsp;<strong>message</strong> (const char* name, const NamedList& original, const char* params = 0, bool minimal = false, bool data = false)
+<br></td><td align="right"><h3><strong>message</strong></h3></td></tr></table><p></p><p>
+ Create a filled notification message, copy some parameters from another message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the message to create
+</TD></TR>
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Parameters to copy from
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Comma separated list of parameters to copy,
+  if NULL will be taken from the "copyparams" parameter of original
+</TD></TR>
+<TR><TD align="left" valign="top"><i>minimal</i></TD><TD align="left" valign="top">Set to true to fill in only a minimum of parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Set the channel as message data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A new allocated and parameter filled message
+     </p>
+<A NAME="msgProgress"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgProgress</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgProgress</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification on remote call making some progress, not enabled by default
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Notification message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing the message, false to let it flow
+     </p>
+<A NAME="msgRinging"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgRinging</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgRinging</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification on remote ringing
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Notification message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing the message, false to let it flow
+     </p>
+<A NAME="msgAnswered"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgAnswered</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgAnswered</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification on remote answered. Note that the answered flag will be set
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Notification message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing the message, false to let it flow
+     </p>
+<A NAME="msgTone"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgTone</strong> (Message& msg, const char* tone)
+<br></td><td align="right"><h3><strong>msgTone</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification on remote tone(s)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Notification message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tone</i></TD><TD align="left" valign="top">Pointer to the received tone(s)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing the message, false to let it flow
+     </p>
+<A NAME="msgText"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgText</strong> (Message& msg, const char* text)
+<br></td><td align="right"><h3><strong>msgText</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification on remote text messaging (sms)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Notification message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Pointer to the received text
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing the message, false to let it flow
+     </p>
+<A NAME="msgDrop"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgDrop</strong> (Message& msg, const char* reason)
+<br></td><td align="right"><h3><strong>msgDrop</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification on current call drop request
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Notification message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Pointer to drop reason text or NULL if none provided
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if initiated call drop, false if failed
+     </p>
+<A NAME="msgTransfer"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgTransfer</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgTransfer</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification on native transfer request
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Notification message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing the message, false to let it flow
+     </p>
+<A NAME="msgUpdate"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgUpdate</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgUpdate</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification on call parameters update request
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Notification message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing the message, false to let it flow
+     </p>
+<A NAME="msgMasquerade"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgMasquerade</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgMasquerade</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification on message masquerade as channel request
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Message already modified to masquerade as this channel
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing the message, false to masquerade it
+     </p>
+<A NAME="msgStatus"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>msgStatus</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgStatus</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Status message handler that is invoked only for messages to this channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Status message
+     </TD></TR>
+</TABLE></P>
+<A NAME="msgControl"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgControl</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgControl</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Control message handler that is invoked only for messages to this channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Control message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to stop processing the message, false to let it flow
+     </p>
+<A NAME="checkTimers"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>checkTimers</strong> (Message& msg, const Time& tmr)
+<br></td><td align="right"><h3><strong>checkTimers</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Timer check method, by default handles channel timeouts
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Timer message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tmr</i></TD><TD align="left" valign="top">Current time against which timers are compared
+     </TD></TR>
+</TABLE></P>
+<A NAME="callPrerouted"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>callPrerouted</strong> (Message& msg, bool handled)
+<br></td><td align="right"><h3><strong>callPrerouted</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification on progress of prerouting incoming call
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Notification call.preroute message just after being dispatched
+</TD></TR>
+<TR><TD align="left" valign="top"><i>handled</i></TD><TD align="left" valign="top">True if a handler claimed having handled prerouting
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to continue with the call, false to abort the route
+     </p>
+<A NAME="callRouted"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>callRouted</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>callRouted</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification on progress of routing incoming call
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Notification call.route message just after being dispatched
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to continue with the call, false to abort the route
+     </p>
+<A NAME="callAccept"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>callAccept</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>callAccept</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification on success of incoming call
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Notification call.execute message just after being dispatched
+     </TD></TR>
+</TABLE></P>
+<A NAME="callRejected"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>callRejected</strong> (const char* error, const char* reason = 0, const Message* msg = 0)
+<br></td><td align="right"><h3><strong>callRejected</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification on failure of incoming call
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Standard error keyword
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Textual failure reason
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Pointer to message causing the rejection, if any
+     </TD></TR>
+</TABLE></P>
+<A NAME="callConnect"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>callConnect</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>callConnect</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Common processing after connecting the outgoing call, should be called
+  from Driver's msgExecute()
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Notification call.execute message while being dispatched
+     </TD></TR>
+</TABLE></P>
+<A NAME="setDebug"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setDebug</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>setDebug</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the local debugging level
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Debug setting message
+     </TD></TR>
+</TABLE></P>
+<A NAME="status"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>status</strong> ()
+<br></td><td align="right"><h3><strong>status</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the current status of the channel
+</p>
+<p><b>Returns</b>: The current status as String
+     </p>
+<A NAME="address"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>address</strong> ()
+<br></td><td align="right"><h3><strong>address</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the current link address of the channel
+</p>
+<p><b>Returns</b>: The protocol dependent address as String
+     </p>
+<A NAME="isOutgoing"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isOutgoing</strong> ()
+<br></td><td align="right"><h3><strong>isOutgoing</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the direction of the channel
+</p>
+<p><b>Returns</b>: True if the channel is an outgoing call (generated locally)
+     </p>
+<A NAME="isIncoming"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isIncoming</strong> ()
+<br></td><td align="right"><h3><strong>isIncoming</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the direction of the channel
+</p>
+<p><b>Returns</b>: True if the channel is an incoming call (generated remotely)
+     </p>
+<A NAME="isAnswered"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isAnswered</strong> ()
+<br></td><td align="right"><h3><strong>isAnswered</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the call was answered or not
+</p>
+<p><b>Returns</b>: True if the call was answered
+     </p>
+<A NAME="direction"></A><A NAME="ref50"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char* &nbsp;<strong>direction</strong> ()
+<br></td><td align="right"><h3><strong>direction</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the direction of the channel as string
+</p>
+<p><b>Returns</b>: "incoming" or "outgoing" according to the direction
+     </p>
+<A NAME="driver"></A><A NAME="ref51"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Driver* &nbsp;<strong>driver</strong> ()
+<br></td><td align="right"><h3><strong>driver</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the driver of this channel
+</p>
+<p><b>Returns</b>: Pointer to this channel's driver
+     </p>
+<A NAME="timeout"></A><A NAME="ref52"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<strong>timeout</strong> ()
+<br></td><td align="right"><h3><strong>timeout</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the time this channel will time out
+</p>
+<p><b>Returns</b>: Timeout time or zero if no timeout
+     </p>
+<A NAME="timeout"></A><A NAME="ref53"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>timeout</strong> (<A HREF="#u_int64_t">u_int64_t</A> tout)
+<br></td><td align="right"><h3><strong>timeout</strong></h3></td></tr></table><p></p><p>
+ Set the time this channel will time out
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>tout</i></TD><TD align="left" valign="top">New timeout time or zero to disable
+     </TD></TR>
+</TABLE></P>
+<A NAME="maxcall"></A><A NAME="ref54"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<strong>maxcall</strong> ()
+<br></td><td align="right"><h3><strong>maxcall</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the time this channel will time out on outgoing calls
+</p>
+<p><b>Returns</b>: Timeout time or zero if no timeout
+     </p>
+<A NAME="maxcall"></A><A NAME="ref55"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>maxcall</strong> (<A HREF="#u_int64_t">u_int64_t</A> tout)
+<br></td><td align="right"><h3><strong>maxcall</strong></h3></td></tr></table><p></p><p>
+ Set the time this channel will time out on outgoing calls
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>tout</i></TD><TD align="left" valign="top">New timeout time or zero to disable
+     </TD></TR>
+</TABLE></P>
+<A NAME="setMaxcall"></A><A NAME="ref56"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setMaxcall</strong> (const Message& msg, int defTout = -1)
+<br></td><td align="right"><h3><strong>setMaxcall</strong></h3></td></tr></table><p></p><p>
+ Set the time this channel will time out on outgoing calls
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Reference of message possibly holding "maxcall" parameter
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defTout</i></TD><TD align="left" valign="top">Default timeout to apply, negative to not alter
+     </TD></TR>
+</TABLE></P>
+<A NAME="setMaxcall"></A><A NAME="ref57"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setMaxcall</strong> (const Message* msg, int defTout = -1)
+<br></td><td align="right"><h3><strong>setMaxcall</strong></h3></td></tr></table><p></p><p>
+ Set the time this channel will time out on outgoing calls
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Pointer to message possibly holding "maxcall" parameter
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defTout</i></TD><TD align="left" valign="top">Default timeout to apply, negative to not alter
+     </TD></TR>
+</TABLE></P>
+<A NAME="maxPDD"></A><A NAME="ref58"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<strong>maxPDD</strong> ()
+<br></td><td align="right"><h3><strong>maxPDD</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the time this channel will time out while waiting for some progress
+  on outgoing calls
+</p>
+<p><b>Returns</b>: Timeout time or zero if no timeout
+     </p>
+<A NAME="maxPDD"></A><A NAME="ref59"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>maxPDD</strong> (<A HREF="#u_int64_t">u_int64_t</A> tout)
+<br></td><td align="right"><h3><strong>maxPDD</strong></h3></td></tr></table><p></p><p>
+ Set the time this channel will time out while waiting for some progress
+  on outgoing calls
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>tout</i></TD><TD align="left" valign="top">New timeout time or zero to disable
+     </TD></TR>
+</TABLE></P>
+<A NAME="setMaxPDD"></A><A NAME="ref60"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setMaxPDD</strong> (const Message& msg)
+<br></td><td align="right"><h3><strong>setMaxPDD</strong></h3></td></tr></table><p></p><p>
+ Set the time this channel will time out while waiting for some progress
+  on outgoing calls
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Reference of message possibly holding "maxpdd" parameter
+     </TD></TR>
+</TABLE></P>
+<A NAME="targetid"></A><A NAME="ref61"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>targetid</strong> ()
+<br></td><td align="right"><h3><strong>targetid</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the connected channel identifier.
+</p>
+<p><b>Returns</b>: A String holding the unique channel id of the target or an empty
+  string if this channel is not connected to a target.
+     </p>
+<A NAME="billid"></A><A NAME="ref62"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>billid</strong> ()
+<br></td><td align="right"><h3><strong>billid</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the billing identifier.
+</p>
+<p><b>Returns</b>: An identifier of the call or account that will be billed for
+  calls made by this channel.
+     </p>
+<A NAME="initChan"></A><A NAME="ref63"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>initChan</strong> ()
+<br></td><td align="right"><h3><strong>initChan</strong></h3></td></tr></table><p></p><p>
+ Add the channel to the parent driver list
+ This method must be called exactly once after the object is fully constructed
+     </p>
+<A NAME="startRouter"></A><A NAME="ref64"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>startRouter</strong> (Message* msg)
+<br></td><td align="right"><h3><strong>startRouter</strong></h3></td></tr></table><p></p><p>
+ Start a routing thread for this channel, dereference dynamic channels
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Pointer to message to route, typically a "call.route", will be
+  destroyed after routing fails or completes
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if routing thread started successfully, false if failed
+     </p>
+<A NAME="allocId"></A><A NAME="ref65"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>allocId</strong> ()
+<br></td><td align="right"><h3><strong>allocId</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Allocate an unique (per engine run) call ID
+</p>
+<p><b>Returns</b>: Unique call ID number
+     </p>
+<A NAME="filterDebug"></A><A NAME="ref66"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>filterDebug</strong> (const String& item)
+<br></td><td align="right"><h3><strong>filterDebug</strong></h3></td></tr></table><p></p><p>
+ Enable or disable debugging according to driver's filter rules
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>item</i></TD><TD align="left" valign="top">Value of the item to match
+     </TD></TR>
+</TABLE></P>
+<A NAME="parameters"></A><A NAME="ref67"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const NamedList& &nbsp;<strong>parameters</strong> ()
+<br></td><td align="right"><h3><strong>parameters</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the disconnect parameters list
+</p>
+<p><b>Returns</b>: Constant reference to disconnect parameters
+     </p>
+<A NAME="dispatched"></A><A NAME="ref68"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>dispatched</strong> (const Message& msg, bool handled)
+<br></td><td align="right"><h3><strong>dispatched</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification for dispatched messages
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Message that was dispatched
+</TD></TR>
+<TR><TD align="left" valign="top"><i>handled</i></TD><TD align="left" valign="top">Result of handling the message
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__MessageNotifier.html#dispatched">MessageNotifier</A>.</p>
+<A NAME="Channel"></A><A NAME="ref69"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>Channel</strong> (Driver* driver, const char* id = 0, bool outgoing = false)
+<br></td><td align="right"><h3><strong>Channel</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor
+     </p>
+<A NAME="Channel"></A><A NAME="ref70"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>Channel</strong> (Driver& driver, const char* id = 0, bool outgoing = false)
+<br></td><td align="right"><h3><strong>Channel</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Alternate constructor provided for convenience
+     </p>
+<A NAME="cleanup"></A><A NAME="ref71"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>cleanup</strong> ()
+<br></td><td align="right"><h3><strong>cleanup</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Perform destruction time cleanup. You can call this method earlier
+  if destruction is to be postponed.
+     </p>
+<A NAME="dropChan"></A><A NAME="ref72"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>dropChan</strong> ()
+<br></td><td align="right"><h3><strong>dropChan</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Remove the channel from the parent driver list
+     </p>
+<A NAME="zeroRefs"></A><A NAME="ref73"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>zeroRefs</strong> ()
+<br></td><td align="right"><h3><strong>zeroRefs</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ This method is overriden to safely remove the channel from the parent
+  driver list before actually destroying the channel.
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__RefObject.html#zeroRefs">RefObject</A>.</p>
+<A NAME="connected"></A><A NAME="ref74"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>connected</strong> (const char* reason)
+<br></td><td align="right"><h3><strong>connected</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Connect notification method.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Text that describes connect reason.
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__CallEndpoint.html#connected">CallEndpoint</A>.</p>
+<A NAME="disconnected"></A><A NAME="ref75"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>disconnected</strong> (bool final, const char* reason)
+<br></td><td align="right"><h3><strong>disconnected</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Disconnect notification method.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>final</i></TD><TD align="left" valign="top">True if this disconnect was called from the destructor.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Text that describes disconnect reason.
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__CallEndpoint.html#disconnected">CallEndpoint</A>.</p>
+<A NAME="setDisconnect"></A><A NAME="ref76"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setDisconnect</strong> (const NamedList* params)
+<br></td><td align="right"><h3><strong>setDisconnect</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Set disconnect parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Pointer to disconnect cause parameters, NULL to reset them
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__CallEndpoint.html#setDisconnect">CallEndpoint</A>.</p>
+<A NAME="endDisconnect"></A><A NAME="ref77"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>endDisconnect</strong> (const Message& msg, bool handled)
+<br></td><td align="right"><h3><strong>endDisconnect</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Notification after chan.disconnected handling
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The chan.disconnected message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>handled</i></TD><TD align="left" valign="top">True if the message was handled
+     </TD></TR>
+</TABLE></P>
+<A NAME="setId"></A><A NAME="ref78"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setId</strong> (const char* newId)
+<br></td><td align="right"><h3><strong>setId</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Set a new ID for this channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newId</i></TD><TD align="left" valign="top">New ID to set to this channel
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__CallEndpoint.html#setId">CallEndpoint</A>.</p>
+<A NAME="getDisconnect"></A><A NAME="ref79"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Message* &nbsp;<strong>getDisconnect</strong> (const char* reason)
+<br></td><td align="right"><h3><strong>getDisconnect</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Create a properly populated chan.disconnect message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Channel disconnect reason if available
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A new allocated and parameter filled chan.disconnected message
+     </p>
+<A NAME="status"></A><A NAME="ref80"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>status</strong> (const char* newstat)
+<br></td><td align="right"><h3><strong>status</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set the current status of the channel.
+ Note that a value of "answered" will set the answered flag
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newstat</i></TD><TD align="left" valign="top">The new status as String
+     </TD></TR>
+</TABLE></P>
+<A NAME="statusParams"></A><A NAME="ref81"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>statusParams</strong> (String& str)
+<br></td><td align="right"><h3><strong>statusParams</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Build the parameter reporting part of the status answer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String variable to fill up
+     </TD></TR>
+</TABLE></P>
+<A NAME="setOutgoing"></A><A NAME="ref82"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setOutgoing</strong> (bool outgoing = true)
+<br></td><td align="right"><h3><strong>setOutgoing</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set the current direction of the channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>outgoing</i></TD><TD align="left" valign="top">True if this is an outgoing call channel
+     </TD></TR>
+</TABLE></P>
+<A NAME="dtmfSequence"></A><A NAME="ref83"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>dtmfSequence</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>dtmfSequence</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Add sequence number to chan.dtmf message, check for duplicates
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">chan.dtmf message to apply sequence number
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the message is a duplicate (same tone, different method)
+     </p>
+<A NAME="dtmfEnqueue"></A><A NAME="ref84"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>dtmfEnqueue</strong> (Message* msg)
+<br></td><td align="right"><h3><strong>dtmfEnqueue</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Add sequence number to chan.dtmf and enqueue it, delete if duplicate
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">chan.dtmf message to sequence and enqueue
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the message was enqueued, false if was a duplicate
+     </p>
+<A NAME="dtmfInband"></A><A NAME="ref85"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>dtmfInband</strong> (const char* tone)
+<br></td><td align="right"><h3><strong>dtmfInband</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Attempt to install an override data source to send DTMF inband.
+ Needs a tone generator module capable to override with "tone/dtmfstr/xyz"
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>tone</i></TD><TD align="left" valign="top">Pointer to the tone sequence to send
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="toneDetect"></A><A NAME="ref86"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>toneDetect</strong> (const char* sniffer = 0)
+<br></td><td align="right"><h3><strong>toneDetect</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Attempt to install a data sniffer to detect inband tones
+ Needs a tone detector module capable of attaching sniffer consumers.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sniffer</i></TD><TD align="left" valign="top">Name of the sniffer to install, default will detect all tones
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="parameters"></A><A NAME="ref87"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline NamedList& &nbsp;<strong>parameters</strong> ()
+<br></td><td align="right"><h3><strong>parameters</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Get the disconnect parameters list
+</p>
+<p><b>Returns</b>: Reference to disconnect parameters
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

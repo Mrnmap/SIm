@@ -1,0 +1,162 @@
+<HTML>
+<HEAD>
+<TITLE>class SHA1</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SHA1</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A standard SHA1 digest calculator. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SHA1</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__Hasher.html">TelEngine::Hasher</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SHA1.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">SHA1</A></b> () 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">SHA1</A></b> (const SHA1& original) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">SHA1</A></b> (const void* buf, unsigned int len) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">SHA1</A></b> (const DataBlock& data) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref5">SHA1</A></b> (const String& str) 
+</LI>
+<LI>SHA1& &nbsp;<b><A HREF="#ref6">operator=</A></b> (const SHA1& original) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref7">~SHA1</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref8">clear</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref9">finalize</A></b> () 
+</LI>
+<LI>virtual  const unsigned char* &nbsp;<b><A HREF="#ref10">rawDigest</A></b> () 
+</LI>
+<LI>virtual  unsigned int &nbsp;<b><A HREF="#ref12">hashLength</A></b> ()  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static inline  unsigned int &nbsp;<b><A HREF="#ref11">rawLength</A></b> () 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref13">fips186prf</A></b> (DataBlock& out, const DataBlock& seed, unsigned int len) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>bool &nbsp;<b><A HREF="#ref14">updateInternal</A></b> (const void* buf, unsigned int len) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A class to compute and check SHA1 digests
+</p>
+<A NAME="SHA1"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SHA1</strong> ()
+<br></td><td align="right"><h3><strong>SHA1</strong></h3></td></tr></table><p></p><p>
+ Construct a fresh initialized instance
+     </p>
+<A NAME="SHA1"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SHA1</strong> (const SHA1& original)
+<br></td><td align="right"><h3><strong>SHA1</strong></h3></td></tr></table><p></p><p>
+ Copy constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">SHA1 instance to copy
+     </TD></TR>
+</TABLE></P>
+<A NAME="SHA1"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SHA1</strong> (const void* buf, unsigned int len)
+<br></td><td align="right"><h3><strong>SHA1</strong></h3></td></tr></table><p></p><p>
+ Construct a digest from a buffer of data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Pointer to the data to be included in digest
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data in the buffer
+     </TD></TR>
+</TABLE></P>
+<A NAME="SHA1"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SHA1</strong> (const DataBlock& data)
+<br></td><td align="right"><h3><strong>SHA1</strong></h3></td></tr></table><p></p><p>
+ Construct a digest from a binary DataBlock
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Binary data to be included in digest
+     </TD></TR>
+</TABLE></P>
+<A NAME="SHA1"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SHA1</strong> (const String& str)
+<br></td><td align="right"><h3><strong>SHA1</strong></h3></td></tr></table><p></p><p>
+ Construct a digest from a String
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String to be included in digest
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator="></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SHA1& &nbsp;<strong>operator=</strong> (const SHA1& original)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator.
+     </p>
+<A NAME="~SHA1"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SHA1</strong> ()
+<br></td><td align="right"><h3><strong>~SHA1</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destroy the instance, free allocated memory
+     </p>
+<A NAME="clear"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>clear</strong> ()
+<br></td><td align="right"><h3><strong>clear</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Clear the digest and prepare for reuse
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Hasher.html#clear">Hasher</A>.</p>
+<A NAME="finalize"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>finalize</strong> ()
+<br></td><td align="right"><h3><strong>finalize</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Finalize the digest computation, make result ready.
+ Subsequent calls to update() will fail
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Hasher.html#finalize">Hasher</A>.</p>
+<A NAME="rawDigest"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const unsigned char* &nbsp;<strong>rawDigest</strong> ()
+<br></td><td align="right"><h3><strong>rawDigest</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Returns a pointer to the raw 20-byte binary value of the message digest.
+ The digest is finalized if if wasn't already
+</p>
+<p><b>Returns</b>: Pointer to the raw digest data or NULL if some error occured
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Hasher.html#rawDigest">Hasher</A>.</p>
+<A NAME="rawLength"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  unsigned int &nbsp;<strong>rawLength</strong> ()
+<br></td><td align="right"><h3><strong>rawLength</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Return the length of the raw binary digest
+</p>
+<p><b>Returns</b>: Constant value of 20
+     </p>
+<A NAME="hashLength"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>hashLength</strong> ()
+<br></td><td align="right"><h3><strong>hashLength</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Return the length of the raw binary digest
+</p>
+<p><b>Returns</b>: Length of the digest in octets
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Hasher.html#hashLength">Hasher</A>.</p>
+<A NAME="fips186prf"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>fips186prf</strong> (DataBlock& out, const DataBlock& seed, unsigned int len)
+<br></td><td align="right"><h3><strong>fips186prf</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ NIST FIPS 186-2 change notice 1 Pseudo Random Function.
+ Uses a b=160 bits SHA1 based G(t,c) function with no XSEEDj
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>out</i></TD><TD align="left" valign="top">Block to fill with pseudo-random data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>seed</i></TD><TD align="left" valign="top">Data to use as RNG seed, must be 1 to 64 octets long
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Desired output length in octets, must be 1 to 512
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, false on invalid lengths
+     </p>
+<A NAME="updateInternal"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>updateInternal</strong> (const void* buf, unsigned int len)
+<br></td><td align="right"><h3><strong>updateInternal</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>Reimplemented from <A HREF="TelEngine__Hasher.html#updateInternal">Hasher</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

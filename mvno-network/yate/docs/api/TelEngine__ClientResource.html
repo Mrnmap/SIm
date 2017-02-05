@@ -1,0 +1,229 @@
+<HTML>
+<HEAD>
+<TITLE>class ClientResource</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ClientResource</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A client contact's resource. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ClientResource</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatecbase_h.html">yatecbase.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__MucRoomMember.html">MucRoomMember</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ClientResource.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref2">Status</A> {	Unknown = 0,
+	Offline = 1,
+	Connecting = 2,
+	Online = 3,
+	Busy = 4,
+	Dnd = 5,
+	Away = 6,
+	Xa = 7,
+    }
+</LI>
+<LI>enum <A HREF="#ref3">Capability</A> {	CapAudio = 0x00000001,           
+	CapFileTransfer = 0x00000002,    
+	CapFileInfo = 0x00000004,        
+	CapRsm = 0x00000008,             
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>inline explicit &nbsp;<b><A HREF="#ref4">ClientResource</A></b> (const char* id, const char* name = 0, bool audio = true) 
+</LI>
+<LI>virtual  const String& &nbsp;<b><A HREF="#ref5">toString</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref6">online</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref7">offline</A></b> ()  const
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref8">statusName</A></b> ()  const
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref9">text</A></b> ()  const
+</LI>
+<LI>inline Flags32& &nbsp;<b><A HREF="#ref10">caps</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref11">setAudio</A></b> (bool ok) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref12">setFileTransfer</A></b> (bool ok) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref13">setPriority</A></b> (int prio) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref14">setStatus</A></b> (int stat) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref15">setStatusText</A></b> (const String& text = String::empty()) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  inline const char* &nbsp;<b><A HREF="#ref16">statusDisplayText</A></b> (int status, const char* defVal = 0) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static const TokenDict <b><A HREF="#ref17">s_statusName[]</A></b></LI>
+<LI>static const TokenDict <b><A HREF="#ref18">s_resNotifyCaps[]</A></b></LI>
+<LI>String <b><A HREF="#ref19">m_id</A></b></LI>
+<LI>String <b><A HREF="#ref20">m_name</A></b></LI>
+<LI>Flags32 <b><A HREF="#ref21">m_caps</A></b></LI>
+<LI>int <b><A HREF="#ref22">m_priority</A></b></LI>
+<LI>int <b><A HREF="#ref23">m_status</A></b></LI>
+<LI>String <b><A HREF="#ref24">m_text</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds data about a client account/contact resource
+</p>
+<A NAME="Status"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Status</strong> {	Unknown = 0,
+	Offline = 1,
+	Connecting = 2,
+	Online = 3,
+	Busy = 4,
+	Dnd = 5,
+	Away = 6,
+	Xa = 7,
+    }
+</td><td align="right"><h3><strong>Status</strong></h3></td></tr></table><p></p><p>
+ Resource status
+     </p>
+<A NAME="Capability"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Capability</strong> {	CapAudio = 0x00000001,           
+	CapFileTransfer = 0x00000002,    
+	CapFileInfo = 0x00000004,        
+	CapRsm = 0x00000008,             
+    }
+</td><td align="right"><h3><strong>Capability</strong></h3></td></tr></table><p></p><p>
+ Resource capabilities
+     </p>
+<A NAME="ClientResource"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline explicit &nbsp;<strong>ClientResource</strong> (const char* id, const char* name = 0, bool audio = true)
+<br></td><td align="right"><h3><strong>ClientResource</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The resource's id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Optional display name. Defaults to the id's value if 0
+</TD></TR>
+<TR><TD align="left" valign="top"><i>audio</i></TD><TD align="left" valign="top">True (default) if the resource has audio capability
+     </TD></TR>
+</TABLE></P>
+<A NAME="toString"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>toString</strong> ()
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a string representation of this object
+</p>
+<p><b>Returns</b>: The resource id
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="online"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>online</strong> ()
+<br></td><td align="right"><h3><strong>online</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the resource is online
+</p>
+<p><b>Returns</b>: True if the resource is online
+     </p>
+<A NAME="offline"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>offline</strong> ()
+<br></td><td align="right"><h3><strong>offline</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the resource is offline
+</p>
+<p><b>Returns</b>: True if the resource is offline
+     </p>
+<A NAME="statusName"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>statusName</strong> ()
+<br></td><td align="right"><h3><strong>statusName</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve resource status name
+</p>
+<p><b>Returns</b>: Resource status name
+     </p>
+<A NAME="text"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>text</strong> ()
+<br></td><td align="right"><h3><strong>text</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrieve resource status text or associated status display text
+</p>
+<p><b>Returns</b>: Resource status text
+     </p>
+<A NAME="caps"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Flags32& &nbsp;<strong>caps</strong> ()
+<br></td><td align="right"><h3><strong>caps</strong></h3></td></tr></table><p></p><p>
+ Retrieve resource capabilities
+</p>
+<p><b>Returns</b>: Resource capabilities flags
+     </p>
+<A NAME="setAudio"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>setAudio</strong> (bool ok)
+<br></td><td align="right"><h3><strong>setAudio</strong></h3></td></tr></table><p></p><p>
+ Update resource audio capability
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ok</i></TD><TD align="left" valign="top">The new audio capability value
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if changed
+     </p>
+<A NAME="setFileTransfer"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>setFileTransfer</strong> (bool ok)
+<br></td><td align="right"><h3><strong>setFileTransfer</strong></h3></td></tr></table><p></p><p>
+ Update resource file transfer capability
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ok</i></TD><TD align="left" valign="top">The new file transfer value
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if changed
+     </p>
+<A NAME="setPriority"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>setPriority</strong> (int prio)
+<br></td><td align="right"><h3><strong>setPriority</strong></h3></td></tr></table><p></p><p>
+ Update resource priority
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">Resource priority
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if changed
+     </p>
+<A NAME="setStatus"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>setStatus</strong> (int stat)
+<br></td><td align="right"><h3><strong>setStatus</strong></h3></td></tr></table><p></p><p>
+ Update resource status
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>stat</i></TD><TD align="left" valign="top">Resource status
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if changed
+     </p>
+<A NAME="setStatusText"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>setStatusText</strong> (const String& text = String::empty())
+<br></td><td align="right"><h3><strong>setStatusText</strong></h3></td></tr></table><p></p><p>
+ Update resource status text
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Resource status text
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if changed
+     </p>
+<A NAME="statusDisplayText"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>statusDisplayText</strong> (int status, const char* defVal = 0)
+<br></td><td align="right"><h3><strong>statusDisplayText</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Retrieve the status display text associated with a given resource status
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>status</i></TD><TD align="left" valign="top">The status to find
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defVal</i></TD><TD align="left" valign="top">Text to return if none found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Status display text or the default value if not found
+     </p>
+<A NAME="s_statusName[]"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static const TokenDict  <strong>s_statusName[]</strong>
+</td><td align="right"><h3><strong>s_statusName[]</strong></h3></td></tr></table><p></p><A NAME="s_resNotifyCaps[]"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static const TokenDict  <strong>s_resNotifyCaps[]</strong>
+</td><td align="right"><h3><strong>s_resNotifyCaps[]</strong></h3></td></tr></table><p></p><A NAME="m_id"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_id</strong>
+</td><td align="right"><h3><strong>m_id</strong></h3></td></tr></table><p></p><A NAME="m_name"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_name</strong>
+</td><td align="right"><h3><strong>m_name</strong></h3></td></tr></table><p></p><A NAME="m_caps"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Flags32  <strong>m_caps</strong>
+</td><td align="right"><h3><strong>m_caps</strong></h3></td></tr></table><p></p><A NAME="m_priority"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_priority</strong>
+</td><td align="right"><h3><strong>m_priority</strong></h3></td></tr></table><p></p><A NAME="m_status"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_status</strong>
+</td><td align="right"><h3><strong>m_status</strong></h3></td></tr></table><p></p><A NAME="m_text"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_text</strong>
+</td><td align="right"><h3><strong>m_text</strong></h3></td></tr></table><p></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

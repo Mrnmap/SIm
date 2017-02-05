@@ -1,0 +1,409 @@
+<HTML>
+<HEAD>
+<TITLE>class File</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class File</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A stream file class. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::File</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__Stream.html">TelEngine::Stream</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__File.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">File</A></b> () 
+</LI>
+<LI>explicit &nbsp;<b><A HREF="#ref3">File</A></b> (<A HREF="#HANDLE">HANDLE</A> handle) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref4">~File</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref5">openPath</A></b> (const char* name, bool canWrite = false, bool canRead = true,
+	bool create = false, bool append = false, bool binary = false,
+	bool pubReadable = false, bool pubWritable = false) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">terminate</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref7">attach</A></b> (<A HREF="#HANDLE">HANDLE</A> handle) 
+</LI>
+<LI><A HREF="#HANDLE">HANDLE</A> &nbsp;<b><A HREF="#ref8">detach</A></b> () 
+</LI>
+<LI>inline <A HREF="#HANDLE">HANDLE</A> &nbsp;<b><A HREF="#ref9">handle</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref10">canRetry</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref11">valid</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref13">setBlocking</A></b> (bool block = true) 
+</LI>
+<LI>virtual  <A HREF="#int64_t">int64_t</A> &nbsp;<b><A HREF="#ref14">length</A></b> () 
+</LI>
+<LI>virtual  <A HREF="#int64_t">int64_t</A> &nbsp;<b><A HREF="#ref15">seek</A></b> (SeekPos pos, <A HREF="#int64_t">int64_t</A> offset = 0) 
+</LI>
+<LI>virtual  int &nbsp;<b><A HREF="#ref16">writeData</A></b> (const void* buffer, int length) 
+</LI>
+<LI>virtual  int &nbsp;<b><A HREF="#ref17">readData</A></b> (void* buffer, int length) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref18">getFileTime</A></b> (unsigned int& secEpoch) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref19">md5</A></b> (String& buffer) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  <A HREF="#HANDLE">HANDLE</A> &nbsp;<b><A HREF="#ref12">invalidHandle</A></b> () 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref20">setFileTime</A></b> (const char* name, unsigned int secEpoch, int* error = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref21">getFileTime</A></b> (const char* name, unsigned int& secEpoch, int* error = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref22">exists</A></b> (const char* name, int* error = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref23">rename</A></b> (const char* oldFile, const char* newFile, int* error = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref24">remove</A></b> (const char* name, int* error = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref25">md5</A></b> (const char* name, String& buffer, int* error = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref26">mkDir</A></b> (const char* path, int* error = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref27">rmDir</A></b> (const char* path, int* error = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref28">listDirectory</A></b> (const char* path, ObjList* dirs, ObjList* files,
+	int* error = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref29">createPipe</A></b> (File& reader, File& writer) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>void &nbsp;<b><A HREF="#ref30">copyError</A></b> () 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>HANDLE <b><A HREF="#ref31">m_handle</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Class to encapsulate a system dependent file in a system independent abstraction
+</p>
+<A NAME="File"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>File</strong> ()
+<br></td><td align="right"><h3><strong>File</strong></h3></td></tr></table><p></p><p>
+ Default constructor, creates a closed file
+     </p>
+<A NAME="File"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>explicit &nbsp;<strong>File</strong> (<A HREF="#HANDLE">HANDLE</A> handle)
+<br></td><td align="right"><h3><strong>File</strong></h3></td></tr></table><p></p><p>
+ Constructor from an existing handle
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>handle</i></TD><TD align="left" valign="top">Operating system handle to an open file
+     </TD></TR>
+</TABLE></P>
+<A NAME="~File"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~File</strong> ()
+<br></td><td align="right"><h3><strong>~File</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor, closes the file
+     </p>
+<A NAME="openPath"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>openPath</strong> (const char* name, bool canWrite = false, bool canRead = true,
+	bool create = false, bool append = false, bool binary = false,
+	bool pubReadable = false, bool pubWritable = false)
+<br></td><td align="right"><h3><strong>openPath</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Opens a file from the filesystem pathname
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the file according to the operating system's conventions
+</TD></TR>
+<TR><TD align="left" valign="top"><i>canWrite</i></TD><TD align="left" valign="top">Open the file for writing
+</TD></TR>
+<TR><TD align="left" valign="top"><i>canRead</i></TD><TD align="left" valign="top">Open the file for reading
+</TD></TR>
+<TR><TD align="left" valign="top"><i>create</i></TD><TD align="left" valign="top">Create the file if it doesn't exist
+</TD></TR>
+<TR><TD align="left" valign="top"><i>append</i></TD><TD align="left" valign="top">Set the write pointer at the end of an existing file
+</TD></TR>
+<TR><TD align="left" valign="top"><i>binary</i></TD><TD align="left" valign="top">Open the file in binary mode if applicable
+</TD></TR>
+<TR><TD align="left" valign="top"><i>pubReadable</i></TD><TD align="left" valign="top">If the file is created make it public readable
+</TD></TR>
+<TR><TD align="left" valign="top"><i>pubWritable</i></TD><TD align="left" valign="top">If the file is created make it public writable
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the file was successfully opened
+     </p>
+<A NAME="terminate"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>terminate</strong> ()
+<br></td><td align="right"><h3><strong>terminate</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Closes the file handle
+</p>
+<p><b>Returns</b>: True if the file was (already) closed, false if an error occured
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#terminate">Stream</A>.</p>
+<A NAME="attach"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>attach</strong> (<A HREF="#HANDLE">HANDLE</A> handle)
+<br></td><td align="right"><h3><strong>attach</strong></h3></td></tr></table><p></p><p>
+ Attach an existing handle to the file, closes any existing first
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>handle</i></TD><TD align="left" valign="top">Operating system handle to an open file
+     </TD></TR>
+</TABLE></P>
+<A NAME="detach"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#HANDLE">HANDLE</A> &nbsp;<strong>detach</strong> ()
+<br></td><td align="right"><h3><strong>detach</strong></h3></td></tr></table><p></p><p>
+ Detaches the object from the file handle
+</p>
+<p><b>Returns</b>: The handle previously owned by this object
+     </p>
+<A NAME="handle"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#HANDLE">HANDLE</A> &nbsp;<strong>handle</strong> ()
+<br></td><td align="right"><h3><strong>handle</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the operating system handle to the file
+</p>
+<p><b>Returns</b>: File handle
+     </p>
+<A NAME="canRetry"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>canRetry</strong> ()
+<br></td><td align="right"><h3><strong>canRetry</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if the last error code indicates a retryable condition
+</p>
+<p><b>Returns</b>: True if error was temporary and operation should be retried
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#canRetry">Stream</A>.</p>
+<A NAME="valid"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>valid</strong> ()
+<br></td><td align="right"><h3><strong>valid</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if this file is valid
+</p>
+<p><b>Returns</b>: True if the file is valid, false if it's invalid or closed
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#valid">Stream</A>.</p>
+<A NAME="invalidHandle"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> <A HREF="#HANDLE">HANDLE</A> &nbsp;<strong>invalidHandle</strong> ()
+<br></td><td align="right"><h3><strong>invalidHandle</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the operating system specific handle value for an invalid file
+</p>
+<p><b>Returns</b>: Handle value for an invalid file
+     </p>
+<A NAME="setBlocking"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setBlocking</strong> (bool block = true)
+<br></td><td align="right"><h3><strong>setBlocking</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the blocking or non-blocking operation mode of the file
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>block</i></TD><TD align="left" valign="top">True if I/O operations should block, false for non-blocking
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#setBlocking">Stream</A>.</p>
+<A NAME="length"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> <A HREF="#int64_t">int64_t</A> &nbsp;<strong>length</strong> ()
+<br></td><td align="right"><h3><strong>length</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Find the length of the file if it has one
+</p>
+<p><b>Returns</b>: Length of the file or zero if length is not defined
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#length">Stream</A>.</p>
+<A NAME="seek"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> <A HREF="#int64_t">int64_t</A> &nbsp;<strong>seek</strong> (SeekPos pos, <A HREF="#int64_t">int64_t</A> offset = 0)
+<br></td><td align="right"><h3><strong>seek</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the file read/write pointer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>pos</i></TD><TD align="left" valign="top">The seek start as enumeration
+</TD></TR>
+<TR><TD align="left" valign="top"><i>offset</i></TD><TD align="left" valign="top">The number of bytes to move the pointer from starting position
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The new position of the file read/write pointer. Negative on failure
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#seek">Stream</A>.</p>
+<A NAME="writeData"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>writeData</strong> (const void* buffer, int length)
+<br></td><td align="right"><h3><strong>writeData</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Write data to an open file
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Buffer for data transfer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>length</i></TD><TD align="left" valign="top">Length of the buffer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of bytes transferred, negative if an error occurred
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#writeData">Stream</A>.</p>
+<A NAME="readData"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>readData</strong> (void* buffer, int length)
+<br></td><td align="right"><h3><strong>readData</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Read data from an open file
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Buffer for data transfer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>length</i></TD><TD align="left" valign="top">Length of the buffer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of bytes transferred, negative if an error occurred
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Stream.html#readData">Stream</A>.</p>
+<A NAME="getFileTime"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getFileTime</strong> (unsigned int& secEpoch)
+<br></td><td align="right"><h3><strong>getFileTime</strong></h3></td></tr></table><p></p><p>
+ Retrieve the file's modification time (the file must be already opened)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>secEpoch</i></TD><TD align="left" valign="top">File creation time (seconds since Epoch)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="md5"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>md5</strong> (String& buffer)
+<br></td><td align="right"><h3><strong>md5</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Build the MD5 hex digest of a file. The file must be opened for read access.
+ This method will move the file pointer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Destination buffer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="setFileTime"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setFileTime</strong> (const char* name, unsigned int secEpoch, int* error = 0)
+<br></td><td align="right"><h3><strong>setFileTime</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set a file's modification time.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Path and name of the file
+</TD></TR>
+<TR><TD align="left" valign="top"><i>secEpoch</i></TD><TD align="left" valign="top">File modification time (seconds since Epoch)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Optional pointer to error code to be filled on failure
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="getFileTime"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>getFileTime</strong> (const char* name, unsigned int& secEpoch, int* error = 0)
+<br></td><td align="right"><h3><strong>getFileTime</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Retrieve a file's modification time
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Path and name of the file
+</TD></TR>
+<TR><TD align="left" valign="top"><i>secEpoch</i></TD><TD align="left" valign="top">File modification time (seconds since Epoch)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Optional pointer to error code to be filled on failure
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="exists"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>exists</strong> (const char* name, int* error = 0)
+<br></td><td align="right"><h3><strong>exists</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if a file exists
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The file to check
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Optional pointer to error code to be filled on failure
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the file exists
+     </p>
+<A NAME="rename"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>rename</strong> (const char* oldFile, const char* newFile, int* error = 0)
+<br></td><td align="right"><h3><strong>rename</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Rename (move) a file (or directory) entry from the filesystem
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>oldFile</i></TD><TD align="left" valign="top">Path and name of the file to rename
+</TD></TR>
+<TR><TD align="left" valign="top"><i>newFile</i></TD><TD align="left" valign="top">The new path and name of the file
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Optional pointer to error code to be filled on failure
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the file was successfully renamed (moved)
+     </p>
+<A NAME="remove"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>remove</strong> (const char* name, int* error = 0)
+<br></td><td align="right"><h3><strong>remove</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Deletes a file entry from the filesystem
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Absolute path and name of the file to delete
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Optional pointer to error code to be filled on failure
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the file was successfully deleted
+     </p>
+<A NAME="md5"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>md5</strong> (const char* name, String& buffer, int* error = 0)
+<br></td><td align="right"><h3><strong>md5</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build the MD5 hex digest of a file.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The file to build MD5 from
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Destination buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Optional pointer to error code to be filled on failure
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="mkDir"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>mkDir</strong> (const char* path, int* error = 0)
+<br></td><td align="right"><h3><strong>mkDir</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create a folder (directory). It only creates the last directory in the path
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>path</i></TD><TD align="left" valign="top">The folder path
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Optional pointer to error code to be filled on failure
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="rmDir"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>rmDir</strong> (const char* path, int* error = 0)
+<br></td><td align="right"><h3><strong>rmDir</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Remove an empty folder (directory)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>path</i></TD><TD align="left" valign="top">The folder path
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Optional pointer to error code to be filled on failure
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="listDirectory"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>listDirectory</strong> (const char* path, ObjList* dirs, ObjList* files,
+	int* error = 0)
+<br></td><td align="right"><h3><strong>listDirectory</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Enumerate a folder (directory) content.
+ Fill the given lists with children item names
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>path</i></TD><TD align="left" valign="top">The folder path
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dirs</i></TD><TD align="left" valign="top">List to be filled with child directories.
+  It can be NULL if not requested
+</TD></TR>
+<TR><TD align="left" valign="top"><i>files</i></TD><TD align="left" valign="top">List to be filled with child files.
+  It can be NULL if not requested
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">Optional pointer to error code to be filled on failure
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="createPipe"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>createPipe</strong> (File& reader, File& writer)
+<br></td><td align="right"><h3><strong>createPipe</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create a pair of unidirectionally pipe connected streams
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reader</i></TD><TD align="left" valign="top">Reference to a File that becomes the reading side of the pipe
+</TD></TR>
+<TR><TD align="left" valign="top"><i>writer</i></TD><TD align="left" valign="top">Reference to a File that becomes the writing side of the pipe
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True is the pipe was created successfully
+     </p>
+<A NAME="copyError"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>copyError</strong> ()
+<br></td><td align="right"><h3><strong>copyError</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Copy the last error code from the operating system
+     </p>
+<A NAME="m_handle"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#HANDLE">HANDLE</A>  <strong>m_handle</strong>
+</td><td align="right"><h3><strong>m_handle</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

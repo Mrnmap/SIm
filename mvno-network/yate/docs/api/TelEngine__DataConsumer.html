@@ -1,0 +1,126 @@
+<HTML>
+<HEAD>
+<TITLE>class DataConsumer</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class DataConsumer</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">
+ A data consumer
+  <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::DataConsumer</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatephone_h.html">yatephone.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__DataNode.html">TelEngine::DataNode</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__DataTranslator.html">DataTranslator</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__DataConsumer.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline explicit &nbsp;<b><A HREF="#ref2">DataConsumer</A></b> (const char* format = "slin") 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref3">destroyed</A></b> () 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref4">getObject</A></b> (const String& name)  const
+</LI>
+<LI>virtual  unsigned long &nbsp;<b><i><A HREF="#ref5">Consume</A></i></b> (const DataBlock& data, unsigned long tStamp, unsigned long flags) 
+</LI>
+<LI>inline DataSource* &nbsp;<b><A HREF="#ref6">getConnSource</A></b> ()  const
+</LI>
+<LI>inline DataSource* &nbsp;<b><A HREF="#ref7">getOverSource</A></b> ()  const
+</LI>
+<LI>virtual  DataSource* &nbsp;<b><A HREF="#ref8">getTransSource</A></b> ()  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  bool &nbsp;<b><A HREF="#ref9">synchronize</A></b> (DataSource* source) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A data consumer
+ </p>
+<A NAME="DataConsumer"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline explicit &nbsp;<strong>DataConsumer</strong> (const char* format = "slin")
+<br></td><td align="right"><h3><strong>DataConsumer</strong></h3></td></tr></table><p></p><p>
+ Consumer constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">Name of the data format, default "slin" (Signed Linear)
+     </TD></TR>
+</TABLE></P>
+<A NAME="destroyed"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destroyed</strong> ()
+<br></td><td align="right"><h3><strong>destroyed</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destruct notification - complains loudly if still attached to a source
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__RefObject.html#destroyed">RefObject</A>.</p>
+<A NAME="getObject"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__RefObject.html#getObject">RefObject</A>.</p>
+<A NAME="Consume"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned long &nbsp;<i><strong>Consume</strong></i> (const DataBlock& data, unsigned long tStamp, unsigned long flags)
+<br></td><td align="right"><h3><i><strong>Consume</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Consumes the data sent to it from a source
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">The raw data block to process
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tStamp</i></TD><TD align="left" valign="top">Timestamp of data - typically samples
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">Indicator flags associated with the data block
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of samples actually consumed,
+  use invalidStamp() to indicate that all data was consumed,
+  return zero for consumers that become invalid
+     </p>
+<A NAME="getConnSource"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline DataSource* &nbsp;<strong>getConnSource</strong> ()
+<br></td><td align="right"><h3><strong>getConnSource</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the data source of this object if it's connected
+</p>
+<p><b>Returns</b>: A pointer to the DataSource object or NULL
+     </p>
+<A NAME="getOverSource"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline DataSource* &nbsp;<strong>getOverSource</strong> ()
+<br></td><td align="right"><h3><strong>getOverSource</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the override data source of this object if it's connected
+</p>
+<p><b>Returns</b>: A pointer to the DataSource object or NULL
+     </p>
+<A NAME="getTransSource"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> DataSource* &nbsp;<strong>getTransSource</strong> ()
+<br></td><td align="right"><h3><strong>getTransSource</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get the data source of a translator object
+</p>
+<p><b>Returns</b>: A pointer to the DataSource object or NULL
+     </p>
+<A NAME="synchronize"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>synchronize</strong> (DataSource* source)
+<br></td><td align="right"><h3><strong>synchronize</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Synchronize the consumer with a source
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>source</i></TD><TD align="left" valign="top">Data source to copy the timestamp from
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if we could synchronize with the source
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: paulc on bussard on Fri May  8 12:37:22 2015, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

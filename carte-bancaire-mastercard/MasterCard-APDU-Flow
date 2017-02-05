@@ -1,0 +1,392 @@
+PCD     Select File
+            CLA: 00
+            INS: A4
+            P1: 04
+            P2: 00
+            Lc: 0E
+            Data: 32 50 41 59 2E 53 59 53 2E 44 44 46 30 31 // Select PPSE (2PAY.SYS.DDF01)
+            Le: 00
+PICC    Successful
+            Data (37 bytes)
+                Tag 6F:FCI Template
+                Length:23
+                Value :84 0E 32 50 41 59 2E 53 59 53 2E 44 44 46 30 31 
+                       A5 11 BF 0C 0E 61 0C 4F 07 A0 00 00 00 04 10 10 
+                       87 01 01
+                    Tag 84:Dedicated File (DF) Name
+                    Length:0E
+                    Value :32 50 41 59 2E 53 59 53 2E 44 44 46 30 31
+                    Tag A5:FCI Proprietary Template
+                    Length:11
+                    Value :BF 0C 0E 61 0C 4F 07 A0 00 00 00 04 10 10 87 01 
+                           01
+                        Tag BF0C:FCI Discretionary Data
+                        Length:0E
+                        Value :61 0C 4F 07 A0 00 00 00 04 10 10 87 01 01
+                            Tag 61:Application Template
+                            Length:0C
+                            Value :4F 07 A0 00 00 00 04 10 10 87 01 01
+                                Tag 4F:Application Identifier
+                                Length:07
+                                Value :A0 00 00 00 04 10 10
+                                Tag 87:Application Priority Indicator
+                                Length:01
+                                Value :01
+                SW1 SW2: 90 00
+PCD     Select File
+               CLA: 00
+               INS: A4
+               P1: 04
+               P2: 00
+               Lc: 07
+               Data: A0 00 00 00 04 10 10
+               Le: 00
+PICC    Successful
+            Data (76 bytes)
+                Tag 6F:FCI Template
+                Length:4A
+                Value :84 07 A0 00 00 00 04 10 10 A5 3F 50 0F 50 50 43 
+                       20 4D 43 44 20 30 32 20 76 32 20 32 9F 38 03 9F 
+                       1D 08 BF 0C 25 5F 50 22 46 69 6D 65 20 5C 2A 2F 
+                       20 53 38 20 50 50 43 20 4D 43 44 20 30 32 20 76 
+                       32 20 32 20 5C 2A 2F 20 76 31
+                    Tag 84:Dedicated File (DF) Name
+                    Length:07
+                    Value :A0 00 00 00 04 10 10
+                    Tag A5:FCI Proprietary Template
+                    Length:3F
+                    Value :50 0F 50 50 43 20 4D 43 44 20 30 32 20 76 32 20 
+                           32 9F 38 03 9F 1D 08 BF 0C 25 5F 50 22 46 69 6D 
+                           65 20 5C 2A 2F 20 53 38 20 50 50 43 20 4D 43 44 
+                           20 30 32 20 76 32 20 32 20 5C 2A 2F 20 76 31
+                        Tag 50:Application Label
+                        Length:0F
+                        Value :50 50 43 20 4D 43 44 20 30 32 20 76 32 20 32
+                        ASCII Value:PPC MCD 02 v2 2
+                        Tag 9F38:Processing Options Data Object List (PDOL)
+                        Length:03
+                        Value :9F 1D 08
+                            Tag 9F1D:Terminal Risk Management Data
+                            Length:08
+                        Tag BF0C:FCI Discretionary Data
+                        Length:25
+                        Value :5F 50 22 46 69 6D 65 20 5C 2A 2F 20 53 38 20 50 
+                               50 43 20 4D 43 44 20 30 32 20 76 32 20 32 20 5C 
+                               2A 2F 20 76 31
+                            Tag 5F50:Issuer URL
+                            Length:22
+                            Value :46 69 6D 65 20 5C 2A 2F 20 53 38 20 50 50 43 20
+                                   4D 43 44 20 30 32 20 76 32 20 32 20 5C 2A 2F 20
+                                   76 31
+                SW1 SW2: 90 00
+PCD     Get Processing Options
+               CLA: 80
+               INS: A8
+               P1: 00
+               P2: 00
+               Lc: 0A
+               Data: 83 08 00 00 00 00 00 00 00 00
+               Le: 00
+PICC    Successful
+            Data (24 bytes)
+                Tag 77:Response Message Template Format 2
+                Length:16
+                Value :82 02 59 80 94 10 08 01 01 00 10 01 01 01 18 01 
+                       02 00 20 01 02 00
+                    Tag 82:Application Interchange Profile
+                    Length:02
+                    Value :59 80
+                    Tag 94:Application File Locator (AFL)
+                    Length:10
+                    Value :08 01 01 00 10 01 01 01 18 01 02 00 20 01 02 00
+                SW1 SW2: 90 00
+PCD     Read Record
+               CLA: 00
+               INS: B2
+               P1: 01
+               P2: 14
+               Le: 00
+PICC    Successful
+            Data (184 bytes)
+                Tag 70:Application Elementary File (AEF) Data Template
+                Length:B5
+                Value :57 11 54 13 33 00 89 60 00 28 D2 51 22 01 01 23 
+                       40 91 72 5A 08 54 13 33 00 89 60 00 28 5F 20 0C 
+                       45 54 45 43 2F 50 41 59 50 41 53 53 5F 24 03 25 
+                       12 31 5F 25 03 04 01 01 5F 28 02 00 56 5F 34 01 
+                       01 8C 21 9F 02 06 9F 03 06 9F 1A 02 95 05 5F 2A 
+                       02 9A 03 9C 01 9F 37 04 9F 35 01 9F 45 02 9F 4C 
+                       08 9F 34 03 8D 0C 91 0A 8A 02 95 05 9F 37 04 9F 
+                       4C 08 8E 0E 00 00 00 00 00 00 00 00 42 03 5E 03 
+                       1F 03 9F 07 02 FF 00 9F 08 02 00 02 9F 0D 05 00 
+                       00 00 00 00 9F 0E 05 00 00 00 00 00 9F 0F 05 00 
+                       00 00 00 00 9F 42 02 09 78 9F 4A 01 82 9F 20 05 
+                       99 99 99 99 9F
+                    Tag 57:Track 2 Equivalent Data
+                    Length:11
+                    Value :54 13 33 00 89 60 00 28 D2 51 22 01 01 23 40 91 
+                           72
+                    Tag 5A:Application Primary Account Number (PAN)
+                    Length:08
+                    Value :54 13 33 00 89 60 00 28
+                    Tag 5F20:Cardholder Name
+                    Length:0C
+                    Value :45 54 45 43 2F 50 41 59 50 41 53 53
+                    ASCII Value:ETEC/PAYPASS
+                    Tag 5F24:Application Expiration Date
+                    Length:03
+                    Value :25 12 31
+                    Tag 5F25:Application Effective Date
+                    Length:03
+                    Value :04 01 01
+                    Tag 5F28:Issuer Country Code
+                    Length:02
+                    Value :00 56
+                    Tag 5F34:Application PAN Sequence Number
+                    Length:01
+                    Value :01
+                    Tag 8C:Card Risk Management Data 1 (CDOL1)
+                    Length:21
+                    Value :9F 02 06 9F 03 06 9F 1A 02 95 05 5F 2A 02 9A 03 
+                           9C 01 9F 37 04 9F 35 01 9F 45 02 9F 4C 08 9F 34 
+                           03
+                        Tag 9F02:Amount, Authorized (Numeric)
+                        Length:06
+                        Tag 9F03:Amount, Other (Numeric)
+                        Length:06
+                        Tag 9F1A:Terminal Country Code
+                        Length:02
+                        Tag 95:Terminal Verification Results
+                        Length:05
+                        Tag 5F2A:Transaction Currency Code
+                        Length:02
+                        Tag 9A:Transaction Date
+                        Length:03
+                        Tag 9C:Transaction Type
+                        Length:01
+                        Tag 9F37:Unpredictable Number
+                        Length:04
+                        Tag 9F35:Terminal Type
+                        Length:01
+                        Tag 9F45:Data Authentication Code
+                        Length:02
+                        Tag 9F4C:ICC Dynamic Number
+                        Length:08
+                        Tag 9F34:Cardholder Verification Method (CVM) Results
+                        Length:03
+                    Tag 8D:Card Risk Management Data 2 (CDOL2)
+                    Length:0C
+                    Value :91 0A 8A 02 95 05 9F 37 04 9F 4C 08
+                        Tag 91:Issuer Authentication Data
+                        Length:0A
+                        Tag 8A:Authorisation Response Code
+                        Length:02
+                        Tag 95:Terminal Verification Results
+                        Length:05
+                        Tag 9F37:Unpredictable Number
+                        Length:04
+                        Tag 9F4C:ICC Dynamic Number
+                        Length:08
+                    Tag 8E:Cardholder Verification Method (CVM) List
+                    Length:0E
+                    Value :00 00 00 00 00 00 00 00 42 03 5E 03 1F 03
+                        code = 00:RFU
+                        condition = 00:Always
+                        code = 00:RFU
+                        condition = 00:Always
+                        code = 00:RFU
+                        condition = 00:Always
+                        code = 00:RFU
+                        condition = 00:Always
+                        code = 42:Apply succeeding CVM Rule if this CVM is unsuccessful, Enciphered PIN verification online
+                        condition = 03:If terminal supports the CVM
+                        code = 5E:Apply succeeding CVM Rule if this CVM is unsuccessful, Signature (paper)
+                        condition = 03:If terminal supports the CVM
+                        code = 1F:Fail cardholder verification if this CVM is unsuccessful, No CVM required
+                        condition = 03:If terminal supports the CVM
+                    Tag 9F07:Application Usage Control
+                    Length:02
+                    Value :FF 00
+                    Tag 9F08:Application Version Number
+                    Length:02
+                    Value :00 02
+                    Tag 9F0D:Issuer Action Code - Default
+                    Length:05
+                    Value :00 00 00 00 00
+                    Tag 9F0E:Issuer Action Code - Denial
+                    Length:05
+                    Value :00 00 00 00 00
+                    Tag 9F0F:Issuer Action Code - Online
+                    Length:05
+                    Value :00 00 00 00 00
+                    Tag 9F42:Application Currency Code
+                    Length:02
+                    Value :09 78
+                    Tag 9F4A:Static Data Authentication Tag List
+                    Length:01
+                    Value :82
+                Tag 9F20:Track 2 Discretion Data
+            Length:05
+            Value :99 99 99 99 9F
+          SW1 SW2: 90 00
+PCD     Read Record
+         CLA: 00
+         INS: B2
+         P1: 01
+         P2: 1C
+         Le: 00
+PICC    Successful
+        Data (163 bytes)
+          Tag 70:Application Elementary File (AEF) Data Template
+          Length:A0
+          Value :8F 01 FA 9F 32 01 03 92 04 D3 52 41 07 90 81 90 
+                 18 89 B9 97 E6 FC E8 4B 4A E7 AB 87 43 1C BD B3 
+                 DF 8C 1D 5A 55 A7 F6 0D 29 59 AF 3A 51 04 E7 58 
+                 83 17 ED 74 08 66 68 CF 1A 05 47 84 F7 49 3C 6D 
+                 74 7F A7 96 EC 14 D3 33 A6 8E C7 E0 08 62 95 9A 
+                 0B D0 F0 48 20 80 B7 1A C1 B7 62 5B 1B 8B 1F 35 
+                 A6 69 19 99 BA 78 F5 92 E2 3F 95 E9 96 09 D1 08 
+                 CF 1C 0E 30 8A 8B F6 4F BD E8 37 D3 CE 13 8A 50 
+                 DC 50 AF 4B 41 EE 53 D9 8A 11 B6 A8 1D DD 44 CC 
+                 43 0C 1E F3 BB 9D 1D 75 A0 2F AA 9C 81 4A FC 58
+            Tag 8F:Certification Authority Public Key Index
+            Length:01
+            Value :FA
+            Tag 9F32:Issuer Public Key Exponent
+            Length:01
+            Value :03
+            Tag 92:Issuer Public Key Remainderer
+            Length:04
+            Value :D3 52 41 07
+            Tag 90:Issuer Public Key Certificate
+            Length:90
+            Value :18 89 B9 97 E6 FC E8 4B 4A E7 AB 87 43 1C BD B3 
+                   DF 8C 1D 5A 55 A7 F6 0D 29 59 AF 3A 51 04 E7 58 
+                   83 17 ED 74 08 66 68 CF 1A 05 47 84 F7 49 3C 6D 
+                   74 7F A7 96 EC 14 D3 33 A6 8E C7 E0 08 62 95 9A 
+                   0B D0 F0 48 20 80 B7 1A C1 B7 62 5B 1B 8B 1F 35 
+                   A6 69 19 99 BA 78 F5 92 E2 3F 95 E9 96 09 D1 08 
+                   CF 1C 0E 30 8A 8B F6 4F BD E8 37 D3 CE 13 8A 50 
+                   DC 50 AF 4B 41 EE 53 D9 8A 11 B6 A8 1D DD 44 CC 
+                   43 0C 1E F3 BB 9D 1D 75 A0 2F AA 9C 81 4A FC 58
+          SW1 SW2: 90 00
+PCD     Read Record
+         CLA: 00
+         INS: B2
+         P1: 02
+         P2: 1C
+         Le: 00
+PICC    Successful
+        Data (116 bytes)
+          Tag 70:Application Elementary File (AEF) Data Template
+          Length:72
+          Value :93 70 44 0D F0 8D 3B 67 A5 BB 81 B8 E3 9C 1D 0D 
+                 62 D2 7B 88 02 46 15 AC 14 65 2C 78 F4 E3 B2 80 
+                 DC BD 4B 18 05 9D 66 9F 81 BA 48 09 A6 E5 8C 26 
+                 51 64 52 12 2E 52 5C 07 3F 15 0A 1A 80 62 9F D7 
+                 64 6D 18 74 73 F0 03 61 5D 84 D2 EA 7D C3 E9 BC 
+                 BD C9 3D 09 88 29 4E CA 15 01 17 33 0D A2 FC 39 
+                 9A 97 7F AD D6 B7 BE 36 53 5E A4 F1 98 DB 6B 32 
+                 F1 33
+            Tag 93:Signed Application Data
+            Length:70
+            Value :44 0D F0 8D 3B 67 A5 BB 81 B8 E3 9C 1D 0D 62 D2 
+                   7B 88 02 46 15 AC 14 65 2C 78 F4 E3 B2 80 DC BD 
+                   4B 18 05 9D 66 9F 81 BA 48 09 A6 E5 8C 26 51 64 
+                   52 12 2E 52 5C 07 3F 15 0A 1A 80 62 9F D7 64 6D 
+                   18 74 73 F0 03 61 5D 84 D2 EA 7D C3 E9 BC BD C9 
+                   3D 09 88 29 4E CA 15 01 17 33 0D A2 FC 39 9A 97 
+                   7F AD D6 B7 BE 36 53 5E A4 F1 98 DB 6B 32 F1 33
+          SW1 SW2: 90 00
+PCD     Read Record
+         CLA: 00
+         INS: B2
+         P1: 01
+         P2: 24
+         Le: 00
+PICC    Successful
+        Data (35 bytes)
+          Tag 70:Application Elementary File (AEF) Data Template
+          Length:21
+          Value :9F 47 01 03 9F 48 1A 00 00 00 00 00 00 00 06 60 
+                 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+                 55
+            Tag 9F47:ICC Public Key Exponent
+            Length:01
+            Value :03
+            Tag 9F48:ICC Public Key Remainder
+            Length:1A
+            Value :00 00 00 00 00 00 00 06 60 00 00 00 00 00 00 00 
+                   00 00 00 00 00 00 00 00 00 55
+          SW1 SW2: 90 00
+PCD     Read Record
+         CLA: 00
+         INS: B2
+         P1: 02
+         P2: 24
+         Le: 00
+PICC    Successful
+        Data (117 bytes)
+          Tag 70:Application Elementary File (AEF) Data Template
+          Length:73
+          Value :9F 46 70 38 7C 7E 87 02 F3 42 8D 6B 82 FC 70 FE 
+                 EB 29 96 F7 21 78 7B DD 79 CA EF 7A 65 0E 7D 00 
+                 CF E5 2C C5 09 6B 58 DB F2 7B 07 9D 8E 82 FC F4 
+                 57 FC C3 46 FF 49 F6 F7 19 F5 BE 80 FD 50 A6 52 
+                 51 2C DB 03 32 5E FA 59 BC 00 A5 5F AE F4 A3 D7 
+                 FD 92 F0 5F 67 B7 92 B6 FB 51 5B F1 92 82 CF D1 
+                 89 B7 4B 91 1F 9D 0E 76 CD E0 BD E6 87 FA B9 FC 
+                 23 9B DA
+            Tag 9F46:ICC Public Key Certificate
+            Length:70
+            Value :38 7C 7E 87 02 F3 42 8D 6B 82 FC 70 FE EB 29 96 
+                   F7 21 78 7B DD 79 CA EF 7A 65 0E 7D 00 CF E5 2C 
+                   C5 09 6B 58 DB F2 7B 07 9D 8E 82 FC F4 57 FC C3 
+                   46 FF 49 F6 F7 19 F5 BE 80 FD 50 A6 52 51 2C DB 
+                   03 32 5E FA 59 BC 00 A5 5F AE F4 A3 D7 FD 92 F0 
+                   5F 67 B7 92 B6 FB 51 5B F1 92 82 CF D1 89 B7 4B 
+                   91 1F 9D 0E 76 CD E0 BD E6 87 FA B9 FC 23 9B DA
+          SW1 SW2: 90 00
+PCD     Generate Application Cryptogram
+         CLA: 80
+         INS: AE
+         P1: 50 // PayPass Spec - Table 5.7: TC (offline authorization allowed), CDA requested
+         P2: 00
+         Lc: 2B
+         Data: 00 00 00 00 01 00 00 00 00 00 00 00 01 24 00 00 
+               00 00 00 01 24 14 02 25 00 ED 03 F6 3B 22 00 00 
+               00 00 00 00 00 00 00 00 1F 03 02
+         Le: 00
+PICC    Successful
+        Data (146 bytes)
+          Tag 77:Response Message Template Format 2
+          Length:8F
+          Value :9F 27 01 80 9F 36 02 00 13 9F 4B 60 08 B8 6F F7 
+                 0E 14 CE 20 03 AC 31 5B B6 91 C5 13 11 C5 82 10 
+                 D5 2C CF 32 CC 76 D3 9F 6C A9 E2 71 9D DD 8B 41 
+                 83 97 A1 B2 CD 59 FC 00 58 F4 E6 B9 2A 4A 2C 93 
+                 5E 85 69 DD 10 1C 9A 5D FB F0 17 63 C0 20 09 66 
+                 C5 B4 FD FE 45 A9 C4 C6 6E 6A 39 01 7C F5 ED F8 
+                 F0 9F AC B2 C2 DC 6A 9B CE 3C B4 B9 9F 10 20 01 
+                 10 A0 40 09 24 80 00 00 00 00 00 00 00 00 00 00 
+                 FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+            Tag 9F27:Cryptogram Information Data (CID)
+            Length:01
+            Value :80 // ARQC = online authorization (EMV 4.3 Book 3, table 14)
+            Tag 9F36:Application Transaction Counter (ATC)
+            Length:02
+            Value :00 13
+            Tag 9F4B:Signed Dynamic Application Data
+            Length:60
+            Value :08 B8 6F F7 0E 14 CE 20 03 AC 31 5B B6 91 C5 13 
+                   11 C5 82 10 D5 2C CF 32 CC 76 D3 9F 6C A9 E2 71 
+                   9D DD 8B 41 83 97 A1 B2 CD 59 FC 00 58 F4 E6 B9 
+                   2A 4A 2C 93 5E 85 69 DD 10 1C 9A 5D FB F0 17 63 
+                   C0 20 09 66 C5 B4 FD FE 45 A9 C4 C6 6E 6A 39 01 
+                   7C F5 ED F8 F0 9F AC B2 C2 DC 6A 9B CE 3C B4 B9
+            Tag 9F10:Issuer Application Data
+            Length:20
+            Value :01 10 A0 40 09 24 80 00 00 00 00 00 00 00 00 00 
+                   00 FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+          SW1 SW2: 90 00
+PCD      RESET 

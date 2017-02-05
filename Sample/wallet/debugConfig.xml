@@ -1,0 +1,9 @@
+<JavaCardProject name="wallet">
+<USER>
+<PKG name="com.sun.javacard.samples.wallet" aid="D1 56 00 01 32 0A 64 65 6D 9F" major="1" minor="0"/>
+<Libs/>
+</USER>
+<DebugInfo>
+<Protocol name="T1"/>
+</DebugInfo>
+</JavaCardProject>
