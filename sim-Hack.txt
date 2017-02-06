@@ -1,5 +1,38 @@
 http://hack74.skyrock.com/316698121-Clonez-une-carte-sim.html
 http://simhacks.github.io/
+
+on pure globalplatform cards ISD is the default app on pre-personalized cards.
+all apps are loaded and authorized by issuer security domain, it means that you can't load apps onto a card you did not issue yourself.
+loading apps requires authorization.
+the only way to talk to the SIM's ISD it through the over-the-air update mechanism.
+i.e:SMS packets.
+
+We need to generate commands to the card with sms packets (GSM 03.48)
+
+Load :
+     shadysim.py \
+     --pcsc\
+    -l CryptoChallenge.cap
+
+install:
+   shadysim.py \
+   --pcsc\
+   -i CryptoChallenge.cap \
+   --module-aid d07002ca4490cc01\
+   --instance-aid d07002ca4490cc0101\
+   --enable-sim-toolkit\
+   --max-menu-entries 1\
+   --max-menu-entry-text 10\
+   --nonvolatile-memory-required 0100\
+   --volatile-memory-for-install 0100
+
+list apps (not instances)
+  shadysim.py \
+  --pcsc\
+  -t
+
+author : karl kosden, Eric Butler
+
 simscan
 woron_scan 1.07
 sim-emu 6.01
