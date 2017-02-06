@@ -32,7 +32,11 @@ list apps (not instances)
   -t
 
 author : karl kosden, Eric Butler
+from youtube: "DEFCON21 The secret Life of sim cards"
 
+===============
+
+sim alliance loader
 simscan
 woron_scan 1.07
 sim-emu 6.01
