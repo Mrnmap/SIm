@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="JCDK2.2.2"/>
+	<classpathentry kind="lib" path="/root/java_card_kit-2_2_2/lib/sim.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

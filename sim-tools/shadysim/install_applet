@@ -1,0 +1,1 @@
+shadysim.py --pcsc -i Test.cap --module-aid d07002ca4490cc01 --instance-aid d07002ca4490cc0101 --enable-sim-toolkit --max-menu-entries 1 --max-menu-entry-text 10 --nonvolatile-memory-required 0100 --volatile-memory-for-install 0100
