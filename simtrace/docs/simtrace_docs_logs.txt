@@ -1,0 +1,321 @@
+[root@localhost docs]# make
+XMLLINT ./usermanual.xml
+DOCBOOK2 pdf ./usermanual.xml
+Using catalogs: /etc/sgml/xml-docbook-4.2.cat
+Using stylesheet: /usr/share/sgml/docbook/utils-0.6.14/docbook-utils.dsl#print
+Working on: /root/SIM-TOOLS/simtrace/docs/./usermanual.xml
+jade:/usr/share/sgml/docbook/dsssl-stylesheets-1.79/print/dbgraph.dsl:101:2:E: MediaObjectCO is not supported yet.
+jade:/usr/share/sgml/docbook/dsssl-stylesheets-1.79/print/dbgraph.dsl:104:2:E: ImageObjectCO is not supported yet.
+
+kpathsea: Running mktexfmt pdfjadetex.fmt
+fmtutil: running `pdftex -ini   -jobname=pdfjadetex -progname=pdfjadetex *pdfjadetex.ini' ...
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (INITEX)
+ restricted \write18 enabled.
+entering extended mode
+(/usr/share/texlive/texmf-dist/tex/jadetex/base/pdfjadetex.ini
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/pdflatex.ini
+(/usr/share/texlive/texmf/tex/generic/config/pdftexconfig.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/base/latex.ltx
+(/usr/share/texlive/texmf-dist/tex/latex/base/texsys.cfg)
+./texsys.aux found
+
+
+\@currdir set to: ./.
+
+
+Assuming \openin and \input 
+have the same search path.
+
+
+Defining UNIX/DOS style filename parser.
+
+catcodes, registers, compatibility for TeX 2,  parameters,
+LaTeX2e <2011/06/27>
+hacks, control, par, spacing, files, font encodings, lengths,
+====================================
+
+Local config file fonttext.cfg used
+
+====================================
+(/usr/share/texlive/texmf-dist/tex/latex/base/fonttext.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/base/fonttext.ltx
+=== Don't modify this file, use a .cfg file instead ===
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1cmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1cmss.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1cmtt.fd)))
+====================================
+
+Local config file fontmath.cfg used
+
+====================================
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontmath.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontmath.ltx
+=== Don't modify this file, use a .cfg file instead ===
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmsy.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omxcmex.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ucmr.fd)))
+====================================
+
+Local config file preload.cfg used
+
+=====================================
+(/usr/share/texlive/texmf-dist/tex/latex/base/preload.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/base/preload.ltx)) page nos., x-ref,
+environments, center, verbatim, math definitions, boxes, title, sectioning,
+contents, floats, footnotes, index, bibliography, output,
+===========================================
+Local configuration file hyphen.cfg used
+===========================================
+(/usr/share/texlive/texmf-dist/tex/generic/babel/hyphen.cfg
+(/usr/share/texlive/texmf/tex/generic/hyphen/hyphen.tex)
+(/usr/share/texlive/texmf/tex/generic/hyphen/dumyhyph.tex)
+(/usr/share/texlive/texmf/tex/generic/hyphen/zerohyph.tex))
+=================================
+Applying patch file ltpatch.ltx
+=================================
+(/usr/share/texlive/texmf-dist/tex/latex/base/ltpatch.ltx)
+)) (/usr/share/texlive/texmf-dist/tex/jadetex/base/jadetex.ltx
+(/usr/share/texlive/texmf-dist/tex/latex/base/minimal.cls
+Document Class: minimal 2001/05/25 Standard LaTeX minimal class
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/marvosym/marvosym.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/jadetex/base/dsssl.def))
+(/usr/share/texlive/texmf-dist/tex/xmltex/passivetex/mlnames.sty)
+(/usr/share/texlive/texmf-dist/tex/xmltex/passivetex/unicode.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tipa/t3enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2aenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def)
+kpathsea: Running mktextfm ecrm1000
+/usr/share/texlive/texmf/web2c/mktexnam: Could not map source abbreviation  for ecrm1000.
+/usr/share/texlive/texmf/web2c/mktexnam: Need to update ?
+mktextfm: Running mf-nowin -progname=mf \mode:=ljfour; mag:=1; nonstopmode; input ecrm1000
+This is METAFONT, Version 2.718281 (TeX Live 2013)
+
+
+kpathsea: Running mktexmf ecrm1000
+! I can't find file `ecrm1000'.
+<*> ...ljfour; mag:=1; nonstopmode; input ecrm1000
+                                                  
+Please type another input file name
+! Emergency stop.
+<*> ...ljfour; mag:=1; nonstopmode; input ecrm1000
+                                                  
+Transcript written on mfput.log.
+grep: ecrm1000.log: No such file or directory
+mktextfm: `mf-nowin -progname=mf \mode:=ljfour; mag:=1; nonstopmode; input ecrm1000' failed to make ecrm1000.tfm.
+kpathsea: Appending font creation commands to missfont.log.
+
+! Font T1/cmr/m/n/10=ecrm1000 at 10.0pt not loadable: Metric (TFM) file not fou
+nd.
+<to be read again> 
+                   relax 
+l.100 \fontencoding\encodingdefault\selectfont
+                                              
+? 
+! Emergency stop.
+<to be read again> 
+                   relax 
+l.100 \fontencoding\encodingdefault\selectfont
+                                              
+!  ==> Fatal error occurred, no output PDF file produced!
+Transcript written on pdfjadetex.log.
+
+kpathsea: Running mktextfm ecrm1000
+/usr/share/texlive/texmf/web2c/mktexnam: Could not map source abbreviation  for ecrm1000.
+/usr/share/texlive/texmf/web2c/mktexnam: Need to update ?
+mktextfm: Running mf-nowin -progname=mf \mode:=ljfour; mag:=1; nonstopmode; input ecrm1000
+This is METAFONT, Version 2.718281 (TeX Live 2013)
+
+
+kpathsea: Running mktexmf ecrm1000
+! I can't find file `ecrm1000'.
+<*> ...ljfour; mag:=1; nonstopmode; input ecrm1000
+                                                  
+Please type another input file name
+! Emergency stop.
+<*> ...ljfour; mag:=1; nonstopmode; input ecrm1000
+                                                  
+Transcript written on mfput.log.
+grep: ecrm1000.log: No such file or directory
+mktextfm: `mf-nowin -progname=mf \mode:=ljfour; mag:=1; nonstopmode; input ecrm1000' failed to make ecrm1000.tfm.
+kpathsea: Appending font creation commands to missfont.log.
+Error: `pdftex -ini  -jobname=pdfjadetex -progname=pdfjadetex *pdfjadetex.ini' failed
+
+###############################################################################
+fmtutil: Error! Not all formats have been built successfully.
+Visit the log files in directory
+  /root/.texlive2012/texmf-var/web2c
+for details.
+###############################################################################
+
+This is a summary of all `failed' messages:
+`pdftex -ini  -jobname=pdfjadetex -progname=pdfjadetex *pdfjadetex.ini' failed
+warning: kpathsea: mktexfmt output `This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (INITEX)
+ restricted \write18 enabled.
+entering extended mode
+(/usr/share/texlive/texmf-dist/tex/jadetex/base/pdfjadetex.ini
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/pdflatex.ini
+(/usr/share/texlive/texmf/tex/generic/config/pdftexconfig.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/base/latex.ltx
+(/usr/share/texlive/texmf-dist/tex/latex/base/texsys.cfg)
+./texsys.aux found
+
+
+\@currdir set to: ./.
+
+
+Assuming \openin and \input 
+have the same search path.
+
+
+Defining UNIX/DOS style filename parser.
+
+catcodes, registers, compatibility for TeX 2,  parameters,
+LaTeX2e <2011/06/27>
+hacks, control, par, spacing, files, font encodings, lengths,
+====================================
+
+Local config file fonttext.cfg used
+
+====================================
+(/usr/share/texlive/texmf-dist/tex/latex/base/fonttext.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/base/fonttext.ltx
+=== Don't modify this file, use a .cfg file instead ===
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1cmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1cmss.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1cmtt.fd)))
+====================================
+
+Local config file fontmath.cfg used
+
+====================================
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontmath.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontmath.ltx
+=== Don't modify this file, use a .cfg file instead ===
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmsy.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omxcmex.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ucmr.fd)))
+====================================
+
+Local config file preload.cfg used
+
+=====================================
+(/usr/share/texlive/texmf-dist/tex/latex/base/preload.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/base/preload.ltx)) page nos., x-ref,
+environments, center, verbatim, math definitions, boxes, title, sectioning,
+contents, floats, footnotes, index, bibliography, output,
+===========================================
+Local configuration file hyphen.cfg used
+====/usr/share/texlive/texmf-dist/tex/generic/babel/hyphen.cfg
+(/usr/share/texlive/texmf/tex/generic/hyphen/hyphen.tex)
+(/usr/share/texlive/texmf/tex/generic/hyphen/dumyhyph.tex)
+(/usr/share/texlive/texmf/tex/generic/hyphen/zerohyph.tex))
+=================================
+Applying patch file ltpatch.ltx
+=================================
+(/usr/share/texlive/texmf-dist/tex/latex/base/ltpatch.ltx)
+)) (/usr/share/texlive/texmf-dist/tex/jadetex/base/jadetex.ltx
+(/usr/share/texlive/texmf-dist/tex/latex/base/minimal.cls
+Document Class: minimal 2001/05/25 Standard LaTeX minimal class
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/marvosym/marvosym.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/jadetex/base/dsssl.def))
+(/usr/share/texlive/texmf-dist/tex/xmltex/passivetex/mlnames.sty)
+(/usr/share/texlive/texmf-dist/tex/xmltex/passivetex/unicode.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tipa/t3enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2aenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def)
+! Font T1/cmr/m/n/10=ecrm1000 at 10.0pt not loadable: Metric (TFM) file not fou
+nd.
+<to be read again> 
+                   relax 
+l.100 \fontencoding\encodingdefault\selectfont
+                                              
+? 
+! Emergency stop.
+<to be read again> 
+        ' instead of a filename.
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013)
+ restricted \write18 enabled.
+I can't find the format file `pdfjadetex.fmt'!
+make: *** [pdf] Error 9
+[root@localhost docs]# 
+

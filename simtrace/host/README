@@ -1,0 +1,5 @@
+how-to-compile simtrace
+======================
+
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+make
