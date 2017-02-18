@@ -1,9 +1,0 @@
-*.pyc
-mim_tmp.py
-sim_backup*.xml
-pyscard_rpc.log
-sim_soft.log
-apdu.log
-*.pyproj
-/tests/result
-\#*
