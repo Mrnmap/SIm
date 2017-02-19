@@ -2,3 +2,8 @@ https://opensource.srlabs.de/projects/a51-decrypt
 https://opensource.srlabs.de/projects/simtester
 
 java -Dsun.security.smartcardio.library=/usr/local/lib/libpcsclite.so.1 -jar SIMTester.jar <arguments>
+
+tutoriel of Kraken
+==================
+
+https://lists.srlabs.de/pipermail/a51/2010-July/000688.html
