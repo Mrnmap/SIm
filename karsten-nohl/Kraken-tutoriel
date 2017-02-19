@@ -1,0 +1,80 @@
+
+[A51] Finding Kc with Kraken (dotting the i's)
+Frank A. Stevenson frank at hvitehus.no
+Sun Jul 18 11:25:09 CEST 2010
+
+    Previous message: [A51] A51 Cracking
+    Next message: [A51] Finding Kc with Kraken (dotting the i's)
+    Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
+
+I made a very simple command line interface to Kraken, which has only 1
+useful command (crack). Once fired up, you can then try to crack
+multiple bursts without reloading the tables every time.
+
+If you have some bursts that you want to crack such as:
+
+3811417:
+011100101011101011101111110101101001110111110111010110111001111100101100010110000110100011010110010101110111101111
+
+3811424:
+111000110011110100011100001000100001011111010101110001101001111010011000010111110001110000101110111000111100111101
+
+The first number is the frame COUNT used for mixing into A5/1 - it can
+be derived from the frame number in the following way:
+
+unsigned int fn2count(unsigned int fn) {
+    unsigned int t1 = fn/1326;
+    unsigned int t2 = fn % 26;
+    unsigned int t3 = fn % 51;
+    return (t1<<11)|(t3<<5)|t2;
+}
+
+
+The second burst can be cracked, and the command to and output from
+Kraken looks like this:
+
+Kraken> crack
+111000110011110100011100001000100001011111010101110001101001111010011000010111110001110000101110111000111100111101
+
+Cracking
+111000110011110100011100001000100001011111010101110001101001111010011000010111110001110000101110111000111100111101
+Found a56290409b507d75 @ 37
+
+Kraken> 
+
+This means a56290409b507d75 is the key that produces the output at
+postion 37 after 100 clockings. These numbers can then be fed into my
+latest tool: find_kc. This program will perform the backclocking,
+reverses the frame count mix, and the key setup mixing (based on some
+earlier programs that I wrote) - finally it can as an option take a
+second frame count together with the burst data as input, and use that
+to eliminate the wrong candidate Kcs from the backclocking. Example:
+
+frank at quant:~/gsm/tmto-svn/tinkering/A5Util$ ./find_kc a56290409b507d75
+37 3811424 3811417
+011100101011101011101111110101101001110111110111010110111001111100101100010110000110100011010110010101110111101111
+#### Found potential key (bits: 37)####
+db18a071e4d1f057 -> db18a071e4d1f057
+Framecount is 3811424
+KC(0): 2e 61 10 5e 80 93 5e 1c  *** MATCHED ***
+KC(1): bc 44 48 ed 03 04 02 53  mismatch
+KC(2): d4 37 41 cf 3d 04 05 a5  mismatch
+KC(3): da 74 09 51 60 07 7b c7  mismatch
+KC(4): f3 f7 a8 3b f6 76 e6 5a  mismatch
+
+The correct Kc is here: 2e 61 10 5e 80 93 5e 1c , and will produce both
+cipherstreams correctly, as well as all other cipherstreams, and can
+consequently be used to decrypt the entire call or SMS. (Byte order may
+have to be changed, depending on your other tools)
+
+How many more nails are needed for A5/1s coffin?  :-)
+
+Frank
+
+
+    Previous message: [A51] A51 Cracking
+    Next message: [A51] Finding Kc with Kraken (dotting the i's)
+    Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
+
+More information about the A51 mailing list
+
