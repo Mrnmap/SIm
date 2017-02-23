@@ -234,5 +234,3 @@ unsigned int bit;   /* bit output from keystream generator */
   return (0);
 
 }
-
-Cliquez ici pour répondre
