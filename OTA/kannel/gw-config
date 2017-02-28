@@ -1,0 +1,44 @@
+#!/bin/sh
+
+usage()
+{
+	echo "usage: $0 [--cflags] [--libs] [--version]"
+	exit 0
+}
+
+cflags=no
+libs=no
+version=no
+
+test "$1" || usage
+
+while test "$1"; do
+	case "$1" in
+	--cflags )
+		cflags=yes
+		;;
+	--libs )
+		libs=yes
+		;;
+	--version )
+		version=yes
+		;;
+	* )
+		usage
+		;;
+	esac
+	shift
+done
+
+test "$cflags" = yes && cat << FOO
+-I/usr/local/include/kannel -g -O2 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -I/usr/include/openssl
+FOO
+
+test "$libs" = yes && cat << FOO
+-L/usr/local/lib/kannel -lgw -lwap -lgwlib -lssl -lrt -lresolv -lnsl -lm  -lpthread -lxml2 -lz -lm -ldl -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64 -lcrypto -lssl 
+FOO
+
+test "$version" = yes && cat << FOO
+svn-r5182
+FOO
+
