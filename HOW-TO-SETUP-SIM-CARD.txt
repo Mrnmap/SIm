@@ -9,3 +9,7 @@ The Library GSM0348 and Gammu combined can help to send SMS-PP download to the s
 This link explain how to setup a programmable sim card.
 
 http://osmocom.org/projects/pysim/wiki
+
+This link is a good description of SMS-PP
+
+https://adywicaksono.wordpress.com/2008/05/21/
