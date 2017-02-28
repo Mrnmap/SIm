@@ -13,3 +13,9 @@ http://osmocom.org/projects/pysim/wiki
 This link is a good description of SMS-PP
 
 https://adywicaksono.wordpress.com/2008/05/21/
+
+
+DCT3-GSMTAP is a command line utility to capture the GSM Um and SIM-ME interfaces from a Nokia DCT3 phone (eg. 3310) and forward via GSMTAP to the
+Wireshark protocol analyzer. It is released under GNU GPL version 2.
+
+http://osmocom.org/projects/baseband/wiki/dct3-gsmtap
