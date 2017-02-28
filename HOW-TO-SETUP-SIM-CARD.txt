@@ -1,1 +1,11 @@
+Strategy to update Sim toolkit on real operator Sim Card
+========================================================
+
+Setup a private network with MCC/MNC corresponding to sim card.
+The MS must authenticate with the private network.
+The MSC sends a "CIPHER MODE COMMAND" to the BSS to disable encryption.
+The Library GSM0348 and Gammu combined can help to send SMS-PP download to the sim card or perhaps SMS-CB to thousands of sims 
+
+This link explain how to setup a programmable sim card.
+
 http://osmocom.org/projects/pysim/wiki
