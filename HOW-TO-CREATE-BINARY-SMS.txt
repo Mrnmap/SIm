@@ -1,0 +1,5 @@
+link to explain how to create a binary sms
+
+https://mobiforge.com/design-development/binary-sms-sending-rich-content-devices-using-sms#comment-6084
+
+https://wammu.eu/docs/manual/c/examples.html#sending-sms-message
