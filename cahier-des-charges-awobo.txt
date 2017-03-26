@@ -1,0 +1,70 @@
+cahier des charges
+==================
+
+Sommaire
+--------
+
+Le projet consiste à concevoir un automate de rechargement de carte à puce.
+L'utilisateur posséde déjà une carte à puce.
+Le code de rechargement peut aussi être imprimé.
+Le réglément se fait en espèces (piéces ou billet en dévises) ou par carte bancaire (EMV--Visa/Mastercard)
+
+Equipement
+-----------
+
+pc  sous linux (centos7) ou windows (version à choisir) ou raspberry sous raspbian (je fournis)
+lecteur de carte à puce avec ses librairies (vous fournissez)
+protocoles monnayeur (librairie,api) (vous fournissez)
+monnayeur acceptant des dévises étrangères (CFA piéces et/ou billet) (vous fournissez)
+écran tactile (vous fournissez)
+terminal de paiement (clavier+écran+entrée carte bancaire) (vous fournissez)
+protocole pour dialoguer/piloter le terminal de paiement (librairie,api)  (vous fournissez)
+protocole de contrôle de l'imprimante (librairie,api) (vous fournissez)
+imprimante (vous fournissez)
+
+modem gsm [option]  (prévoir un emplacement) (je fournis)
+clé gsm   [option]  (prévoir un emplacement) (je fournis)
+clé 4G    [option]  (prévoir un emplacement) (je fournis)
+
+Mecanique  (vous fournissez)
+---------
+
+			-------------
+			|		| T |  
+ecran ->	|		| P |  
+			|		| E |
+			-------------
+				| t |    
+				| r |
+				| o |
+				| n |
+				| c |
+			  ----------  <- pied
+	
+Tolerie    (vous fournissez)
+--------
+ 
+  ergonomie
+  ---------
+  
+  démontable (type meuble ikea)
+	
+	*) le tronc 
+	*) l'écran
+	*) les pieds
+	*) le tpe
+  
+  Les éléments doivent être montables 
+  
+  prises
+  ------
+  
+    ethernet
+	alimentation électrique
+    prise RJ11 (téléphonique)
+	
+Fonctionnalitées
+-----------------
+
+menu (je fournis)
+logiciel pour commander le monnayeur le gsm la 4G et l'imprimante (je fournis)
