@@ -1,0 +1,1 @@
+python pySim-prog.py --pcsc-device=0 --type="sysmoUSIM-SJS1" --mcc=911 --mnc=71 --imsi=901710000011000 --opc=358422278845A5632BBFB7B354DB103A --ki=BDFDFD2BE954A1AA29765DB6DAEEF5E7 --iccid=8988211000000110000 --dry-run
