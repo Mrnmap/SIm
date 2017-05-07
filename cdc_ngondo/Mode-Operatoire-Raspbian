@@ -1,0 +1,72 @@
+21/08/2016  rédaction manuelle
+07/05/2017  recopie sur kwrite
+
+      
+
+     comment installer le raspbian sur une carte SD 
+     ==============================================
+
+
+      La version lite de raspbian pèse 1.3 GB
+      il faut au préalable préparer la carte SD en la formattant sous windows en fat32 
+      il n'est pas nécessaire de partitionner la carte SD.
+
+      démarrer un pc sous centos 5.8
+      monter la clé usb contenant l'image de raspbian à installer
+      installer/copier l'image sur la carte SD.
+
+
+      mount /dev/sdc1  /media/src
+      dd if=/media/src/...img  of=/dev/sdb  bs=1024
+
+      [la commande s'éxecute en 2 minutes]
+
+
+    connexion ouverture d'une session
+    =================================
+
+
+      login:pi
+      pasword:raspberry
+    
+      la première session se fait avec un clavier qwerty qu'il faut convertir en clavier azerty.
+    
+      lancer la commande : sudo raspi-config
+    
+    
+    
+    transformer le rpi en routeur wifi
+    ==================================
+    
+    
+      lancer le script iptables.sh
+      
+      installer hostapd 
+      
+      installer dnsmasq
+      
+      lancer le script rpi3-hotspot.sh
+      
+      
+      
+    installer la 3G/4G
+    =================
+   
+   
+    installer usb_modeswitch
+   
+    installer NetworkManager
+   
+    activer le demarrage automatique de networkmanager au lancement de la pi
+   
+   
+   
+   
+    
+    
+    
+
+
+
+
+
